@@ -10,7 +10,10 @@
   />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
   <style>
     :root{
       --bg:#f7f3ee;
@@ -29,6 +32,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:"Inter",sans-serif;
@@ -40,7 +44,11 @@
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
 
     .topbar{
       position:sticky;
@@ -154,14 +162,21 @@
       border-radius:999px;
       font-weight:700;
       transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      font:inherit;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
     .btn-primary{
       background:#111;
       color:#fff;
       box-shadow:var(--shadow);
     }
+
     .btn-secondary{
       background:#fff;
       border:1px solid var(--line);
@@ -357,19 +372,19 @@
     .theme-1{
       background:
         linear-gradient(135deg, rgba(49,21,7,0.18), rgba(0,0,0,0.2)),
-        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80') center/cover;
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80") center/cover;
     }
 
     .theme-2{
       background:
         linear-gradient(135deg, rgba(0,54,71,0.2), rgba(0,0,0,0.24)),
-        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80') center/cover;
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80") center/cover;
     }
 
     .theme-3{
       background:
         linear-gradient(135deg, rgba(65,17,74,0.25), rgba(0,0,0,0.24)),
-        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80') center/cover;
+        url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80") center/cover;
     }
 
     .showcase{
@@ -497,7 +512,9 @@
       color:#575757;
     }
 
-    .featured ul{color:#ebebeb}
+    .featured ul{
+      color:#ebebeb;
+    }
 
     .cta{
       background:linear-gradient(135deg, #181818 0%, #2d2b2b 100%);
@@ -506,9 +523,9 @@
       padding:34px;
       box-shadow:var(--shadow);
       display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns:1.05fr .95fr;
       gap:20px;
-      align-items:center;
+      align-items:start;
     }
 
     .cta h2{
@@ -530,19 +547,88 @@
       border:1px solid rgba(255,255,255,0.1);
       border-radius:24px;
       padding:22px;
+      display:grid;
+      gap:12px;
     }
 
     .contact-box strong{
       display:block;
-      margin-bottom:12px;
+      margin-bottom:6px;
       font-size:18px;
     }
 
-    .contact-box a{
-      display:block;
-      margin:8px 0;
+    .contact-box small{
+      color:rgba(255,255,255,0.75);
+      line-height:1.6;
+    }
+
+    .contact-box label{
+      font-size:14px;
+      font-weight:700;
       color:#fff;
-      opacity:0.92;
+      margin-top:6px;
+    }
+
+    .contact-box input,
+    .contact-box select,
+    .contact-box textarea{
+      width:100%;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      border-radius:14px;
+      padding:14px 16px;
+      font:inherit;
+      outline:none;
+    }
+
+    .contact-box input::placeholder,
+    .contact-box textarea::placeholder{
+      color:rgba(255,255,255,0.6);
+    }
+
+    .contact-box textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
+    .contact-box select option{
+      color:#111;
+    }
+
+    .checkbox-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px 14px;
+      margin-top:4px;
+    }
+
+    .checkbox-grid label{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      font-weight:500;
+      color:#f1f1f1;
+      margin:0;
+    }
+
+    .checkbox-grid input[type="checkbox"]{
+      width:auto;
+      margin-top:3px;
+      accent-color:#ffffff;
+    }
+
+    .contact-submit{
+      margin-top:8px;
+      width:100%;
+      justify-content:center;
+    }
+
+    .hidden-field{
+      position:absolute;
+      left:-9999px;
+      opacity:0;
+      pointer-events:none;
     }
 
     footer{
@@ -566,92 +652,52 @@
       .cta{
         grid-template-columns:1fr;
       }
+
       .grid-3,
       .themes,
       .pricing{
         grid-template-columns:1fr;
       }
+
       .price-card.featured{
         transform:none;
       }
     }
 
     @media (max-width: 720px){
-      .nav-links{display:none}
-      .hero{padding-top:34px}
-      .hero h1{line-height:1}
-      .hero-card{min-height:auto}
-      .mockup-panel{grid-template-columns:1fr}
-      .section{padding:30px 0}
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding-top:34px;
+      }
+
+      .hero h1{
+        line-height:1;
+      }
+
+      .hero-card{
+        min-height:auto;
+      }
+
+      .mockup-panel{
+        grid-template-columns:1fr;
+      }
+
+      .section{
+        padding:30px 0;
+      }
+
       .section-title{
         flex-direction:column;
         align-items:flex-start;
       }
+
+      .checkbox-grid{
+        grid-template-columns:1fr;
+      }
     }
-
-.contact-box{
-  display:grid;
-  gap:12px;
-}
-
-.contact-box label{
-  font-size:14px;
-  font-weight:700;
-  color:#fff;
-  margin-top:6px;
-}
-
-.contact-box input,
-.contact-box select,
-.contact-box textarea{
-  width:100%;
-  border:1px solid rgba(255,255,255,0.14);
-  background:rgba(255,255,255,0.08);
-  color:#fff;
-  border-radius:14px;
-  padding:14px 16px;
-  font:inherit;
-  outline:none;
-}
-
-.contact-box input::placeholder,
-.contact-box textarea::placeholder{
-  color:rgba(255,255,255,0.6);
-}
-
-.contact-box textarea{
-  resize:vertical;
-  min-height:120px;
-}
-
-.checkbox-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px 14px;
-  margin-top:4px;
-}
-
-.checkbox-grid label{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  font-weight:500;
-  color:#f1f1f1;
-  margin:0;
-}
-
-.checkbox-grid input[type="checkbox"]{
-  width:auto;
-  margin-top:3px;
-}
-
-@media (max-width: 720px){
-  .checkbox-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-
   </style>
 </head>
 <body>
@@ -661,6 +707,7 @@
         <span class="brand-badge">N</span>
         <span>Nord Studio Web</span>
       </a>
+
       <nav class="nav-links">
         <a href="#stilar">Stilar</a>
         <a href="#innehall">Innehåll</a>
@@ -668,7 +715,8 @@
         <a href="#priser">Paket</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
-      <a href="#kontakt" class="nav-cta">Boka gratis idémöte</a>
+
+      <a href="#kontakt" class="nav-cta">Skicka brief</a>
     </div>
   </div>
 
@@ -683,6 +731,7 @@
             snygga bilder, tydlig information, kontaktuppgifter, video, olika stilar och en känsla
             som faktiskt ser ut att ha en plan bakom sig.
           </p>
+
           <div class="hero-actions">
             <a href="#stilar" class="btn btn-primary">Se olika stilar</a>
             <a href="#kontakt" class="btn btn-secondary">Få en egen demo</a>
@@ -696,7 +745,10 @@
           </div>
 
           <div class="mockup-image">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Modern företagsmiljö">
+            <img
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+              alt="Modern företagsmiljö"
+            >
           </div>
 
           <div class="mockup-panel">
@@ -750,7 +802,7 @@
         <div class="section-title">
           <h2>Färger, typsnitt och struktur</h2>
           <p>
-            Här ser kunden att design kan anpassas. Det är inte bara “en sida”. Det är deras uttryck i digital form.
+            Här ser kunden att design kan anpassas. Det är inte bara en sida. Det är deras uttryck i digital form.
           </p>
         </div>
 
@@ -791,7 +843,10 @@
     <section class="section" id="innehall">
       <div class="container showcase">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80" alt="Kontorsmiljö">
+          <img
+            src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80"
+            alt="Kontorsmiljö"
+          >
           <div class="showcase-content">
             <h2 style="margin:0 0 10px; font-size:32px; letter-spacing:-0.04em;">Vad en enkel hemsida kan innehålla</h2>
             <p style="margin:0; color:#5a5a5a; line-height:1.7;">
@@ -810,7 +865,7 @@
         <div class="card" style="padding:26px;">
           <h2 style="margin:0 0 10px; font-size:32px; letter-spacing:-0.04em;">Typsnitt som ändrar hela känslan</h2>
           <p style="margin:0 0 18px; color:#5a5a5a; line-height:1.7;">
-            Bara ett byte av typografi kan ta en sida från “hemmagjord” till “okej, nu händer det”.
+            Bara ett byte av typografi kan ta en sida från hemmagjord till okej, nu händer det.
           </p>
 
           <div style="background:#f7f3ee; border-radius:22px; padding:20px; margin-bottom:14px;">
@@ -836,7 +891,7 @@
         <div class="section-title">
           <h2>Video gör sidan mer levande</h2>
           <p>
-            En kort film kan visa lokal, behandling, produkt eller stämning direkt. Mycket bättre än att hoppas att folk “fattar ändå”.
+            En kort film kan visa lokal, behandling, produkt eller stämning direkt. Mycket bättre än att hoppas att folk fattar ändå.
           </p>
         </div>
 
@@ -911,88 +966,93 @@
             </p>
           </div>
 
-         <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
-  <strong>Intresseanmälan / brief</strong>
+          <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+            <strong>Intresseanmälan / brief</strong>
+            <small>Fyll i så mycket du vill. Ju mer tydlig brief, desto mindre rundgång senare.</small>
 
-  <input type="hidden" name="_subject" value="Ny hemsideförfrågan från demosidan">
-  <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="Ny hemsideförfrågan från demosidan">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://ericanordlof.github.io/tack.html">
 
-  <label for="namn">Namn</label>
-  <input id="namn" type="text" name="Namn" required>
+            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off">
 
-  <label for="foretag">Företag / verksamhet</label>
-  <input id="foretag" type="text" name="Företag">
+            <label for="namn">Namn</label>
+            <input id="namn" type="text" name="Namn" required>
 
-  <label for="email">E-post</label>
-  <input id="email" type="email" name="E-post" required>
+            <label for="foretag">Företag / verksamhet</label>
+            <input id="foretag" type="text" name="Företag">
 
-  <label for="telefon">Telefon</label>
-  <input id="telefon" type="text" name="Telefon">
+            <label for="email">E-post</label>
+            <input id="email" type="email" name="E-post" required>
 
-  <label for="bransch">Vad jobbar du med?</label>
-  <input id="bransch" type="text" name="Bransch">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" type="text" name="Telefon">
 
-  <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
-  <select id="syfte" name="Syfte">
-    <option value="Få fler kunder">Få fler kunder</option>
-    <option value="Se mer proffsig ut">Se mer proffsig ut</option>
-    <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
-    <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
-    <option value="Annat">Annat</option>
-  </select>
+            <label for="bransch">Vad jobbar du med?</label>
+            <input id="bransch" type="text" name="Bransch">
 
-  <label for="sidor">Vad vill du ha med?</label>
-  <div class="checkbox-grid">
-    <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
-    <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
-  </div>
+            <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
+            <select id="syfte" name="Syfte">
+              <option value="Få fler kunder">Få fler kunder</option>
+              <option value="Se mer proffsig ut">Se mer proffsig ut</option>
+              <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
+              <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
+              <option value="Annat">Annat</option>
+            </select>
 
-  <label for="stil">Vilken stil gillar du?</label>
-  <select id="stil" name="Stil">
-    <option value="Varm och personlig">Varm och personlig</option>
-    <option value="Ren och modern">Ren och modern</option>
-    <option value="Mörk och premium">Mörk och premium</option>
-    <option value="Färgstark och lekfull">Färgstark och lekfull</option>
-    <option value="Vet inte än">Vet inte än</option>
-  </select>
+            <label for="sidor">Vad vill du ha med?</label>
+            <div class="checkbox-grid" id="sidor">
+              <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
+            </div>
 
-  <label for="farger">Färger du gillar</label>
-  <input id="farger" type="text" name="Färger" placeholder="t.ex. beige, svart, blått, rosa">
+            <label for="stil">Vilken stil gillar du?</label>
+            <select id="stil" name="Stil">
+              <option value="Varm och personlig">Varm och personlig</option>
+              <option value="Ren och modern">Ren och modern</option>
+              <option value="Mörk och premium">Mörk och premium</option>
+              <option value="Färgstark och lekfull">Färgstark och lekfull</option>
+              <option value="Vet inte än">Vet inte än</option>
+            </select>
 
-  <label for="inspo">Finns det hemsidor du gillar?</label>
-  <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
+            <label for="farger">Färger du gillar</label>
+            <input id="farger" type="text" name="Färger" placeholder="t.ex. beige, svart, blått, rosa">
 
-  <label for="material">Har du material klart?</label>
-  <select id="material" name="Material klart">
-    <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
-    <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
-    <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
-  </select>
+            <label for="inspo">Finns det hemsidor du gillar?</label>
+            <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
 
-  <label for="deadline">När vill du ha sidan klar?</label>
-  <input id="deadline" type="text" name="Deadline" placeholder="t.ex. så snart som möjligt eller före ett visst datum">
+            <label for="material">Har du material klart?</label>
+            <select id="material" name="Material klart">
+              <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
+              <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
+              <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
+            </select>
 
-  <label for="budget">Ungefärlig budget</label>
-  <select id="budget" name="Budget">
-    <option value="Under 3 000 kr">Under 3 000 kr</option>
-    <option value="3 000–5 000 kr">3 000–5 000 kr</option>
-    <option value="5 000–10 000 kr">5 000–10 000 kr</option>
-    <option value="Vet inte än">Vet inte än</option>
-  </select>
+            <label for="deadline">När vill du ha sidan klar?</label>
+            <input id="deadline" type="text" name="Deadline" placeholder="t.ex. så snart som möjligt eller före ett visst datum">
 
-  <label for="ovrigt">Övrigt</label>
-  <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+            <label for="budget">Ungefärlig budget</label>
+            <select id="budget" name="Budget">
+              <option value="Under 3 000 kr">Under 3 000 kr</option>
+              <option value="3 000–5 000 kr">3 000–5 000 kr</option>
+              <option value="5 000–10 000 kr">5 000–10 000 kr</option>
+              <option value="Vet inte än">Vet inte än</option>
+            </select>
 
-  <button class="btn btn-primary" type="submit">Skicka förfrågan</button>
-</form>
+            <label for="ovrigt">Övrigt</label>
+            <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+
+            <button class="btn btn-primary contact-submit" type="submit">Skicka förfrågan</button>
+          </form>
         </div>
       </div>
     </section>
