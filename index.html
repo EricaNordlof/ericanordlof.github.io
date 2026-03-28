@@ -588,6 +588,70 @@
         align-items:flex-start;
       }
     }
+
+.contact-box{
+  display:grid;
+  gap:12px;
+}
+
+.contact-box label{
+  font-size:14px;
+  font-weight:700;
+  color:#fff;
+  margin-top:6px;
+}
+
+.contact-box input,
+.contact-box select,
+.contact-box textarea{
+  width:100%;
+  border:1px solid rgba(255,255,255,0.14);
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  border-radius:14px;
+  padding:14px 16px;
+  font:inherit;
+  outline:none;
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder{
+  color:rgba(255,255,255,0.6);
+}
+
+.contact-box textarea{
+  resize:vertical;
+  min-height:120px;
+}
+
+.checkbox-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 14px;
+  margin-top:4px;
+}
+
+.checkbox-grid label{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-weight:500;
+  color:#f1f1f1;
+  margin:0;
+}
+
+.checkbox-grid input[type="checkbox"]{
+  width:auto;
+  margin-top:3px;
+}
+
+@media (max-width: 720px){
+  .checkbox-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -847,13 +911,88 @@
             </p>
           </div>
 
-          <div class="contact-box">
-            <strong>Kontakt</strong>
-            <a href="mailto:hej@dinsida.se">hej@dinsida.se</a>
-            <a href="tel:+46700000000">070-000 00 00</a>
-            <a href="#">Instagram: @dittkonto</a>
-            <a href="#">Bokning: Lägg till länk här</a>
-          </div>
+         <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+  <strong>Intresseanmälan / brief</strong>
+
+  <input type="hidden" name="_subject" value="Ny hemsideförfrågan från demosidan">
+  <input type="hidden" name="_template" value="table">
+
+  <label for="namn">Namn</label>
+  <input id="namn" type="text" name="Namn" required>
+
+  <label for="foretag">Företag / verksamhet</label>
+  <input id="foretag" type="text" name="Företag">
+
+  <label for="email">E-post</label>
+  <input id="email" type="email" name="E-post" required>
+
+  <label for="telefon">Telefon</label>
+  <input id="telefon" type="text" name="Telefon">
+
+  <label for="bransch">Vad jobbar du med?</label>
+  <input id="bransch" type="text" name="Bransch">
+
+  <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
+  <select id="syfte" name="Syfte">
+    <option value="Få fler kunder">Få fler kunder</option>
+    <option value="Se mer proffsig ut">Se mer proffsig ut</option>
+    <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
+    <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
+    <option value="Annat">Annat</option>
+  </select>
+
+  <label for="sidor">Vad vill du ha med?</label>
+  <div class="checkbox-grid">
+    <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
+    <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
+  </div>
+
+  <label for="stil">Vilken stil gillar du?</label>
+  <select id="stil" name="Stil">
+    <option value="Varm och personlig">Varm och personlig</option>
+    <option value="Ren och modern">Ren och modern</option>
+    <option value="Mörk och premium">Mörk och premium</option>
+    <option value="Färgstark och lekfull">Färgstark och lekfull</option>
+    <option value="Vet inte än">Vet inte än</option>
+  </select>
+
+  <label for="farger">Färger du gillar</label>
+  <input id="farger" type="text" name="Färger" placeholder="t.ex. beige, svart, blått, rosa">
+
+  <label for="inspo">Finns det hemsidor du gillar?</label>
+  <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
+
+  <label for="material">Har du material klart?</label>
+  <select id="material" name="Material klart">
+    <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
+    <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
+    <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
+  </select>
+
+  <label for="deadline">När vill du ha sidan klar?</label>
+  <input id="deadline" type="text" name="Deadline" placeholder="t.ex. så snart som möjligt eller före ett visst datum">
+
+  <label for="budget">Ungefärlig budget</label>
+  <select id="budget" name="Budget">
+    <option value="Under 3 000 kr">Under 3 000 kr</option>
+    <option value="3 000–5 000 kr">3 000–5 000 kr</option>
+    <option value="5 000–10 000 kr">5 000–10 000 kr</option>
+    <option value="Vet inte än">Vet inte än</option>
+  </select>
+
+  <label for="ovrigt">Övrigt</label>
+  <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+
+  <button class="btn btn-primary" type="submit">Skicka förfrågan</button>
+</form>
         </div>
       </div>
     </section>
