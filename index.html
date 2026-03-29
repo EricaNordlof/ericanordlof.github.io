@@ -327,6 +327,7 @@
       display:block;
       font-size:13px;
       margin-bottom:6px;
+      color:#fff;
     }
 
     .mini-card span{
@@ -701,6 +702,18 @@
       font-weight:600;
     }
 
+    /* FIXEN: all text i mörka formulärrutor blir ljus */
+    .contact-box,
+    .contact-box strong,
+    .contact-box small,
+    .contact-box label,
+    .contact-box p,
+    .contact-box span,
+    .contact-box h3,
+    .contact-box h4 {
+      color:#fff;
+    }
+
     .contact-box{
       background:rgba(255,255,255,0.08);
       border:1px solid rgba(255,255,255,0.1);
@@ -717,7 +730,7 @@
     }
 
     .contact-box small{
-      color:rgba(255,255,255,0.75);
+      color:rgba(255,255,255,0.78);
       line-height:1.6;
     }
 
@@ -751,7 +764,14 @@
       min-height:120px;
     }
 
-    .contact-box select option{color:#111}
+    .contact-box select{
+      color:#fff;
+    }
+
+    .contact-box select option{
+      color:#111;
+      background:#fff;
+    }
 
     .checkbox-grid{
       display:grid;
@@ -1373,7 +1393,7 @@
           <div class="card">
             <h3>Prisförslag</h3>
             <p>
-              Billigt nog för att vara lätt att säga ja till, men ändå värt din tid.
+              Billigt nog för att vara lätt att säga ja till, men ändå värt tiden.
             </p>
             <div class="list">
               <div class="list-item"><span class="check">✓</span><span><strong>799 kr</strong> för en enkel reklamflyer</span></div>
