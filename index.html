@@ -3,33 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hemsida på prov — Fyll i formuläret, få ett exempel, köp till fast pris</title>
+
+  <title>Hemsida på prov | Fyll i formulär, få demo, köp till fast pris</title>
   <meta
     name="description"
-    content="Hemsida på prov. Fyll i formuläret, få ett exempel och köp bara om du är nöjd. Fast pris, ny hemsida eller uppdatering av tidigare sida, URL-namn enligt önskemål ingår."
+    content="Hemsida på prov för småföretag i Sverige. Fyll i formuläret, få ett exempel först och köp bara om du är nöjd. Fast pris för ny hemsida eller uppdatering. Bra för hantverkare, lokala firmor och tjänsteföretag som vill slippa sitta vid datorn."
   />
-  <meta property="og:title" content="Hemsida på prov — Fyll i formuläret, få ett exempel, köp till fast pris">
-  <meta property="og:description" content="Se ett exempel först. Nöjd? Köp till fast pris. Ny hemsida eller uppdatering av tidigare sida. URL-namn enligt önskemål ingår.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ericanordlof.github.io/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta
+    name="keywords"
+    content="hemsida på prov, hemsida fast pris, hemsida småföretag, hemsida företag Sverige, billig hemsida företag, hemsida hantverkare, hemsida byggfirma, hemsida elektriker, hemsida VVS, hemsida städfirma, hemsida för småföretag, webbsida fast pris"
+  />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Erica Nordlöf" />
+  <meta property="og:title" content="Hemsida på prov | Fyll i formulär, få demo, köp till fast pris" />
+  <meta property="og:description" content="Se ett exempel först. Nöjd? Köp till fast pris. Ny hemsida eller uppdatering av tidigare sida. För småföretag, hantverkare och lokala firmor i Sverige." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ericanordlof.github.io/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hemsida på prov | Fyll i formulär, få demo, köp till fast pris" />
+  <meta name="twitter:description" content="Fyll i formuläret, få ett exempel först och köp bara om du är nöjd. Fast pris för ny hemsida eller uppdatering." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" />
+  <link rel="canonical" href="https://ericanordlof.github.io/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
-  >
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Hemsida på prov",
+    "serviceType":"Webbdesign och hemsidor till fast pris",
+    "description":"Fyll i formuläret, få ett exempel först och köp bara om du är nöjd. Ny hemsida eller uppdatering av tidigare sida till fast pris.",
+    "provider":{
+      "@type":"Person",
+      "name":"Erica Nordlöf"
+    },
+    "areaServed":{
+      "@type":"Country",
+      "name":"Sverige"
+    },
+    "offers":[
+      {
+        "@type":"Offer",
+        "name":"Ny hemsida Start",
+        "price":"2900",
+        "priceCurrency":"SEK"
+      },
+      {
+        "@type":"Offer",
+        "name":"Ny hemsida Proffs",
+        "price":"4900",
+        "priceCurrency":"SEK"
+      },
+      {
+        "@type":"Offer",
+        "name":"Ny hemsida Utökad",
+        "price":"7900",
+        "priceCurrency":"SEK"
+      },
+      {
+        "@type":"Offer",
+        "name":"Liten uppdatering",
+        "price":"490",
+        "priceCurrency":"SEK"
+      },
+      {
+        "@type":"Offer",
+        "name":"Normal uppdatering",
+        "price":"990",
+        "priceCurrency":"SEK"
+      },
+      {
+        "@type":"Offer",
+        "name":"Större uppdatering",
+        "price":"1490",
+        "priceCurrency":"SEK"
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root{
       --bg:#f7f3ee;
-      --bg-dark:#171717;
       --card:#ffffff;
       --text:#1e1e1e;
       --muted:#666;
       --line:rgba(0,0,0,0.08);
       --brand:#9e6a4d;
       --brand-2:#d7b89c;
-      --accent:#2f6fed;
+      --dark:#111;
       --shadow:0 18px 50px rgba(0,0,0,0.08);
       --radius:24px;
       --max:1180px;
@@ -60,7 +129,7 @@
       top:0;
       z-index:20;
       backdrop-filter:blur(12px);
-      background:rgba(251,248,244,0.76);
+      background:rgba(251,248,244,0.78);
       border-bottom:1px solid rgba(0,0,0,0.06);
     }
 
@@ -116,7 +185,7 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.15fr 0.85fr;
+      grid-template-columns:1.12fr 0.88fr;
       gap:28px;
       align-items:center;
     }
@@ -551,6 +620,74 @@
       color:#fff;
     }
 
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .price-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .price-card.featured{
+      background:#151515;
+      color:#fff;
+      transform:translateY(-8px);
+    }
+
+    .price-card h3{
+      margin:18px 0 10px;
+      font-size:26px;
+    }
+
+    .price{
+      font-size:44px;
+      font-weight:800;
+      letter-spacing:-0.05em;
+      margin:0 0 6px;
+    }
+
+    .price-card p{
+      color:#5f5f5f;
+      line-height:1.7;
+    }
+
+    .price-card ul{
+      list-style:none;
+      padding:0;
+      margin:20px 0 0;
+      display:grid;
+      gap:12px;
+      color:#575757;
+    }
+
+    .price-card li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .price-card li::before{
+      content:"✓";
+      font-weight:800;
+      color:#111;
+    }
+
+    .price-card.featured p,
+    .price-card.featured ul{
+      color:#ebebeb;
+    }
+
+    .price-card.featured li::before{
+      color:#fff;
+    }
+
     .price-box{
       background:linear-gradient(135deg, #181818 0%, #2d2b2b 100%);
       color:#fff;
@@ -780,7 +917,8 @@
 
       .grid-3,
       .themes,
-      .offer-grid{
+      .offer-grid,
+      .pricing{
         grid-template-columns:1fr;
       }
 
@@ -788,7 +926,8 @@
         grid-template-columns:repeat(2,1fr);
       }
 
-      .offer-card.featured{
+      .offer-card.featured,
+      .price-card.featured{
         transform:none;
       }
     }
@@ -839,10 +978,10 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#stilar">Stilar</a>
-        <a href="#innehall">Innehåll</a>
-        <a href="#video">Video</a>
         <a href="#sa-funkar-det">Så funkar det</a>
+        <a href="#stilar">Stilar</a>
+        <a href="#teman">Teman</a>
+        <a href="#priser">Priser</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
@@ -854,18 +993,18 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Ny hemsida eller uppdatering av tidigare sida</span>
+          <span class="eyebrow">För småföretag, hantverkare och lokala firmor i Sverige</span>
           <h1>Hemsida på prov</h1>
           <p>
             Fyll i formuläret. Få ett exempel. Nöjd? Köp till fast pris.
             Du kan beställa en ny hemsida eller en uppdatering av en sida du redan har köpt av mig.
-            Du ser alltid ett exempel först och köper bara om det känns rätt.
+            Bra för dig som vill ha en snygg och tydlig hemsida men inte vill sitta kväll efter kväll vid datorn och försöka bygga den själv.
           </p>
 
           <ul class="hero-points">
             <li><span class="check">✓</span><span>Se ett exempel först innan du bestämmer dig</span></li>
-            <li><span class="check">✓</span><span>Fast pris när du är nöjd</span></li>
-            <li><span class="check">✓</span><span>Ny hemsida eller ändring/uppdatering av tidigare sida</span></li>
+            <li><span class="check">✓</span><span>Ny hemsida från 2 900 kr</span></li>
+            <li><span class="check">✓</span><span>Uppdateringar också till fast pris</span></li>
             <li><span class="check">✓</span><span>URL-namn enligt önskemål ingår</span></li>
           </ul>
 
@@ -898,8 +1037,8 @@
               <span>När du är nöjd köper du till fast pris. Ingen seg prisdimma.</span>
             </div>
             <div class="mini-card">
-              <strong>URL ingår</strong>
-              <span>URL-namn enligt önskemål ingår om det är möjligt och ledigt.</span>
+              <strong>Slipp göra det själv</strong>
+              <span>Perfekt för dig som hellre jobbar i firman än sitter vid datorn.</span>
             </div>
           </div>
         </div>
@@ -960,6 +1099,7 @@
             <p>
               Det är hela poängen. Du fyller i formuläret, får se ett exempel och köper bara om du är nöjd.
               Samma modell gäller om du redan har köpt en hemsida av mig och vill göra ändringar eller uppdateringar.
+              Perfekt för småföretagare i Sverige som vill spara tid och slippa bygga allt själva.
             </p>
           </div>
 
@@ -998,72 +1138,72 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="stilar">
       <div class="container">
         <div class="section-title">
-          <h2>Tre olika uttryck</h2>
+          <h2>Exempelstilar för olika typer av firmor</h2>
           <p>
-            Samma upplägg. Helt olika känsla. Det är här folk fattar att en enkel hemsida inte behöver se billig ut.
+            Samma upplägg. Helt olika känsla. Vissa vill se moderna ut, andra vill kännas lokala, trygga och lätta att anlita.
           </p>
         </div>
 
-        <div class="themes" id="stilar">
+        <div class="themes">
           <article class="theme-card theme-1">
-            <h3>Varm & personlig</h3>
-            <p>Perfekt för salong, café, studio, fotograf eller lokal verksamhet med mänsklig ton.</p>
+            <h3>Rak & tydlig</h3>
+            <p>För hantverkare och firmor som vill att kunder snabbt ska fatta vad de gör.</p>
           </article>
 
           <article class="theme-card theme-2">
-            <h3>Ren & modern</h3>
-            <p>För konsult, byrå, coach eller tjänsteföretag som vill se tydliga och trygga ut.</p>
+            <h3>Lokal & trygg</h3>
+            <p>För mindre företag där förtroende, kontaktuppgifter och tydlig närvaro är viktigast.</p>
           </article>
 
           <article class="theme-card theme-3">
-            <h3>Lyxig & premium</h3>
-            <p>För varumärken som vill signalera känsla, kvalitet och lite mer pondus än standardmall 2009.</p>
+            <h3>Robust & professionell</h3>
+            <p>För bygg, mark, transport och andra tjänster som ska kännas stabila och seriösa.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="teman">
       <div class="container">
         <div class="section-title">
-          <h2>Färger, typsnitt och struktur</h2>
+          <h2>Fler teman beroende på vad du jobbar med</h2>
           <p>
-            Här ser kunden att design kan anpassas. Det är inte bara en sida. Det är deras uttryck i digital form.
+            En hemsida för en snickare ska inte kännas som en hemsida för en stylist. Här är några olika riktningar som passar riktiga firmor.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="card">
-            <div class="swatch">
-              <span style="background:#9e6a4d"></span>
-              <span style="background:#d7b89c"></span>
-              <span style="background:#f7f3ee"></span>
-            </div>
-            <h3>Naturlig & varm</h3>
-            <p>Mjuka toner, exklusiv men mänsklig känsla. Passar verksamheter där förtroende och närhet säljer.</p>
+            <h3>Ren & praktisk</h3>
+            <p>Passar el, VVS, städ, flytt och annan service där tydlighet och snabb kontakt är viktigast.</p>
           </div>
 
           <div class="card">
-            <div class="swatch">
-              <span style="background:#182848"></span>
-              <span style="background:#4b6cb7"></span>
-              <span style="background:#eef4ff"></span>
-            </div>
-            <h3>Skarp & modern</h3>
-            <p>Mer tech, mer precision, mer “de har koll”. Bra för tjänsteföretag, rådgivare och konsulter.</p>
+            <h3>Före-och-efter-fokus</h3>
+            <p>Perfekt för målare, städ, fasad, bilvård och trädgård där resultatbilder gör halva jobbet.</p>
           </div>
 
           <div class="card">
-            <div class="swatch">
-              <span style="background:#111111"></span>
-              <span style="background:#c7a26a"></span>
-              <span style="background:#f5efe6"></span>
-            </div>
-            <h3>Mörk & premium</h3>
-            <p>Mer edge, mer pondus. Funkar för mode, kreatörer, events och varumärken som vill sticka ut.</p>
+            <h3>Offertfokus</h3>
+            <p>För dig som vill att sidan ska leda till fler samtal, formulär och konkreta förfrågningar.</p>
+          </div>
+
+          <div class="card">
+            <h3>Mörk & stark</h3>
+            <p>Funkar bra för verkstad, bilvård, transport eller firmor som vill ha lite mer tryck i uttrycket.</p>
+          </div>
+
+          <div class="card">
+            <h3>Varm & mänsklig</h3>
+            <p>För familjeföretag, lokala verksamheter och firmor där kunden gärna vill se vem de anlitar.</p>
+          </div>
+
+          <div class="card">
+            <h3>Modern firma</h3>
+            <p>För företag som vill se uppdaterade ut utan att det blir för mycket design och för lite jobb.</p>
           </div>
         </div>
       </div>
@@ -1155,6 +1295,107 @@
       </div>
     </section>
 
+    <section class="section" id="priser">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fast pris när du är nöjd</h2>
+          <p>
+            Du får först se ett exempel. Känns det rätt, köper du till fast pris.
+            Samma upplägg gäller för ny hemsida och för uppdatering av tidigare sida.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <span class="tag">Start</span>
+            <h3>Ny hemsida</h3>
+            <p class="price">2 900 kr</p>
+            <p>En enklare one page-sida med tydlig design, text, kontakt och länkar.</p>
+            <ul>
+              <li>Se exempel först</li>
+              <li>One page</li>
+              <li>Mobilanpassad</li>
+              <li>Fast pris</li>
+            </ul>
+          </div>
+
+          <div class="price-card featured">
+            <span class="tag">Populärast</span>
+            <h3>Proffs</h3>
+            <p class="price">4 900 kr</p>
+            <p>Mer genomarbetad sida med fler sektioner, starkare struktur och bättre känsla.</p>
+            <ul>
+              <li>Se exempel först</li>
+              <li>Fler sektioner</li>
+              <li>Mer premium känsla</li>
+              <li>Fast pris</li>
+            </ul>
+          </div>
+
+          <div class="price-card">
+            <span class="tag">Utökad</span>
+            <h3>Större upplägg</h3>
+            <p class="price">7 900 kr</p>
+            <p>För dig som vill ha fler undersidor, mer innehåll och en större helhet.</p>
+            <ul>
+              <li>Se exempel först</li>
+              <li>Fler undersidor</li>
+              <li>Mer innehåll</li>
+              <li>Fast pris</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top:28px;">
+          <h2>Uppdateringar till fast pris</h2>
+          <p>
+            Perfekt för dig som redan har en sida men inte vill sitta och ändra text, bilder eller sektioner själv.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <span class="tag">Liten</span>
+            <h3>Snabb uppdatering</h3>
+            <p class="price">490 kr</p>
+            <p>Textändringar, bildbyte, länkbyte, kontaktuppgifter eller små justeringar.</p>
+            <ul>
+              <li>Se exempel först</li>
+              <li>Små ändringar</li>
+              <li>Snabbt beslut</li>
+              <li>Fast pris</li>
+            </ul>
+          </div>
+
+          <div class="price-card featured">
+            <span class="tag">Vanligast</span>
+            <h3>Normal uppdatering</h3>
+            <p class="price">990 kr</p>
+            <p>Flera ändringar samtidigt, ny sektion eller tydligare uppfräschning.</p>
+            <ul>
+              <li>Se exempel först</li>
+              <li>Flera ändringar</li>
+              <li>Ny sektion eller uppfräschning</li>
+              <li>Fast pris</li>
+            </ul>
+          </div>
+
+          <div class="price-card">
+            <span class="tag">Större</span>
+            <h3>Större uppdatering</h3>
+            <p class="price">1 490 kr</p>
+            <p>Mer innehåll, större ändringar eller större omtag på en befintlig sida.</p>
+            <ul>
+              <li>Se exempel först</li>
+              <li>Mer innehåll</li>
+              <li>Större justeringar</li>
+              <li>Fast pris</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="kontakt">
       <div class="container">
         <div class="cta">
@@ -1179,12 +1420,12 @@
             <strong>Formulär / brief</strong>
             <small>Ju tydligare du fyller i, desto bättre exempel kan du få tillbaka.</small>
 
-            <input type="hidden" name="_subject" value="Ny förfrågan från Hemsida på prov">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://ericanordlof.github.io/#kontakt">
+            <input type="hidden" name="_subject" value="Ny förfrågan från Hemsida på prov" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://ericanordlof.github.io/#kontakt" />
 
-            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off">
+            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
             <label for="typ">Vad vill du ha hjälp med?</label>
             <select id="typ" name="Typ av uppdrag">
@@ -1194,19 +1435,19 @@
             </select>
 
             <label for="namn">Namn</label>
-            <input id="namn" type="text" name="Namn" required>
+            <input id="namn" type="text" name="Namn" required />
 
             <label for="foretag">Företag / verksamhet</label>
-            <input id="foretag" type="text" name="Företag">
+            <input id="foretag" type="text" name="Företag" />
 
             <label for="email">E-post</label>
-            <input id="email" type="email" name="E-post" required>
+            <input id="email" type="email" name="E-post" required />
 
             <label for="telefon">Telefon</label>
-            <input id="telefon" type="text" name="Telefon">
+            <input id="telefon" type="text" name="Telefon" />
 
             <label for="bransch">Vad jobbar du med?</label>
-            <input id="bransch" type="text" name="Bransch">
+            <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, trädgård" />
 
             <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
             <select id="syfte" name="Syfte">
@@ -1234,18 +1475,23 @@
 
             <label for="stil">Vilken stil gillar du?</label>
             <select id="stil" name="Stil">
-              <option value="Varm och personlig">Varm och personlig</option>
-              <option value="Ren och modern">Ren och modern</option>
-              <option value="Mörk och premium">Mörk och premium</option>
-              <option value="Färgstark och lekfull">Färgstark och lekfull</option>
+              <option value="Rak och tydlig">Rak och tydlig</option>
+              <option value="Lokal och trygg">Lokal och trygg</option>
+              <option value="Robust och professionell">Robust och professionell</option>
+              <option value="Ren och praktisk">Ren och praktisk</option>
+              <option value="Före-och-efter-fokus">Före-och-efter-fokus</option>
+              <option value="Offertfokus">Offertfokus</option>
+              <option value="Mörk och stark">Mörk och stark</option>
+              <option value="Varm och mänsklig">Varm och mänsklig</option>
+              <option value="Modern firma">Modern firma</option>
               <option value="Vet inte än">Vet inte än</option>
             </select>
 
             <label for="farger">Färger du gillar</label>
-            <input id="farger" type="text" name="Färger" placeholder="t.ex. beige, svart, blått, rosa">
+            <input id="farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige, rött" />
 
             <label for="urlnamn">Önskat URL-namn</label>
-            <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller mittnamn">
+            <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller mittnamn" />
 
             <label for="inspo">Finns det hemsidor du gillar?</label>
             <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
@@ -1264,15 +1510,17 @@
             </select>
 
             <label for="deadline">När vill du ha sidan klar?</label>
-            <input id="deadline" type="text" name="Deadline" placeholder="t.ex. så snart som möjligt eller före ett visst datum">
+            <input id="deadline" type="text" name="Deadline" placeholder="t.ex. så snart som möjligt eller före ett visst datum" />
 
             <label for="budget">Ungefärlig budget</label>
             <select id="budget" name="Budget">
               <option value="Vet inte än">Vet inte än</option>
-              <option value="Fast pris önskas">Fast pris önskas</option>
-              <option value="Under 3 000 kr">Under 3 000 kr</option>
-              <option value="3 000–5 000 kr">3 000–5 000 kr</option>
-              <option value="5 000–10 000 kr">5 000–10 000 kr</option>
+              <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
+              <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
+              <option value="Ny hemsida Utökad 7 900 kr">Ny hemsida Utökad 7 900 kr</option>
+              <option value="Liten uppdatering 490 kr">Liten uppdatering 490 kr</option>
+              <option value="Normal uppdatering 990 kr">Normal uppdatering 990 kr</option>
+              <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
             </select>
 
             <label for="ovrigt">Övrigt</label>
