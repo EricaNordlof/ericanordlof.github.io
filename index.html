@@ -4,28 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>webutvecklare.se | Personlig webbutvecklare för företag</title>
+  <title>Nordlöf Nordic | Webbutveckling för företag</title>
   <meta
     name="description"
-    content="Jag är webutvecklare och egen företagare. Fyll i formuläret så fixar jag resten och skickar en demo inom 1 arbetsdag. Nöjd? Köp. Inte nöjd? Då ändrar jag tills du är nöjd."
+    content="Nordlöf Nordic erbjuder personlig webbutveckling för företag. Fyll i formuläret så fixar jag resten och skickar en demo inom 1 arbetsdag. Nöjd? Köp. Inte nöjd? Då ändrar jag tills du är nöjd."
   />
   <meta
     name="keywords"
-    content="webutvecklare, webutvecklare.se, hemsida företag, personlig webbutvecklare, hemsida småföretag, hemsida fast pris, webbutvecklare Sverige, hemsida demo först, hemsida inom 1 arbetsdag, AI reklamvideo, reklamflyer"
+    content="Nordlöf Nordic, webbutveckling företag, webutvecklare.se, hemsida företag, personlig webbutvecklare, hemsida småföretag, hemsida fast pris, AI reklamvideo, reklamflyer"
   />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
 
-  <meta property="og:title" content="webutvecklare.se | Personlig webbutvecklare för företag" />
+  <meta property="og:title" content="Nordlöf Nordic | Webbutveckling för företag" />
   <meta property="og:description" content="Fyll i formuläret. Jag fixar resten och skickar en demo inom 1 arbetsdag. Nöjd? Köp. Inte nöjd? Då ändrar jag tills du är nöjd." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.PNG" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="webutvecklare.se | Personlig webbutvecklare för företag" />
-  <meta name="twitter:description" content="Fyll i formuläret. Jag fixar resten och skickar en demo inom 1 arbetsdag. Nöjd? Köp. Inte nöjd? Då ändrar jag tills du är nöjd." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" />
+  <meta name="twitter:title" content="Nordlöf Nordic | Webbutveckling för företag" />
+  <meta name="twitter:description" content="Personlig webbutveckling för företag. Demo inom 1 arbetsdag. Köp först när du gillar det." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.PNG" />
 
   <link rel="canonical" href="https://webutvecklare.se/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,7 +39,7 @@
   {
     "@context":"https://schema.org",
     "@type":"ProfessionalService",
-    "name":"webutvecklare.se",
+    "name":"Nordlöf Nordic",
     "description":"Personlig webbutveckling för företag. Fyll i formuläret, få en demo inom 1 arbetsdag och köp bara om du gillar den.",
     "url":"https://webutvecklare.se/",
     "email":"mailto:nordloferica@gmail.com",
@@ -53,7 +53,7 @@
     },
     "brand":{
       "@type":"Organization",
-      "name":"webutvecklare.se"
+      "name":"Nordlöf Nordic"
     },
     "offers":[
       {"@type":"Offer","name":"Ny hemsida Start","price":"2900","priceCurrency":"SEK"},
@@ -70,14 +70,14 @@
 
   <style>
     :root{
-      --bg:#f7f3ee;
+      --bg:#fff7f4;
       --card:#ffffff;
-      --text:#1e1e1e;
-      --muted:#666;
+      --text:#201d1d;
+      --muted:#635f5f;
       --line:rgba(0,0,0,0.08);
-      --brand:#9e6a4d;
-      --brand-2:#d7b89c;
-      --dark:#111;
+      --brand:#ff4a4a;
+      --brand-2:#ff9252;
+      --dark:#151515;
       --shadow:0 18px 50px rgba(0,0,0,0.08);
       --radius:24px;
       --max:1180px;
@@ -85,13 +85,14 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:"Inter",sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, #fff6ec 0, transparent 28%),
-        linear-gradient(180deg, #fbf8f4 0%, #f3eee8 100%);
+        radial-gradient(circle at top left, rgba(255,74,74,0.12) 0, transparent 26%),
+        linear-gradient(180deg, #fff8f5 0%, #fff1eb 100%);
     }
 
     a{color:inherit;text-decoration:none}
@@ -107,7 +108,7 @@
       top:0;
       z-index:20;
       backdrop-filter:blur(12px);
-      background:rgba(251,248,244,0.78);
+      background:rgba(255,248,245,0.82);
       border-bottom:1px solid rgba(0,0,0,0.06);
     }
 
@@ -122,27 +123,45 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
-      font-weight:800;
-      letter-spacing:-0.03em;
+      gap:14px;
+      min-width:0;
     }
 
-    .brand-badge{
-      width:38px;
-      height:38px;
-      border-radius:12px;
-      background:linear-gradient(135deg, var(--brand), #6d4632);
-      color:#fff;
-      display:grid;
-      place-items:center;
-      font-weight:800;
+    .brand-logo{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      object-fit:cover;
       box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7b7070;
+      white-space:nowrap;
     }
 
     .nav-links{
       display:flex;
       gap:22px;
-      color:#444;
+      color:#4a4646;
       font-size:15px;
     }
 
@@ -152,9 +171,10 @@
       justify-content:center;
       padding:12px 18px;
       border-radius:999px;
-      background:#111;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
       color:#fff;
       font-weight:700;
+      box-shadow:0 14px 34px rgba(255, 90, 76, 0.22);
     }
 
     .hero{
@@ -163,7 +183,7 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.12fr 0.88fr;
+      grid-template-columns:1.08fr 0.92fr;
       gap:28px;
       align-items:center;
     }
@@ -178,7 +198,7 @@
       border-radius:999px;
       font-size:13px;
       font-weight:700;
-      color:#5f4a3c;
+      color:#7d5044;
       box-shadow:0 10px 30px rgba(0,0,0,0.04);
     }
 
@@ -188,16 +208,16 @@
 
     .hero h1{
       margin:16px 0 14px;
-      font-size:clamp(2.7rem, 7vw, 5.2rem);
-      line-height:0.95;
+      font-size:clamp(2.7rem, 7vw, 5.1rem);
+      line-height:0.96;
       letter-spacing:-0.04em;
     }
 
     .hero p{
       margin:0;
       font-size:18px;
-      line-height:1.7;
-      color:#4d4d4d;
+      line-height:1.75;
+      color:#4c4747;
       max-width:700px;
     }
 
@@ -207,7 +227,7 @@
       margin:22px 0 0;
       padding:0;
       list-style:none;
-      color:#3e3e3e;
+      color:#3d3939;
       font-weight:600;
     }
 
@@ -243,9 +263,9 @@
     .btn:hover{transform:translateY(-1px)}
 
     .btn-primary{
-      background:#111;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
       color:#fff;
-      box-shadow:var(--shadow);
+      box-shadow:0 14px 34px rgba(255, 90, 76, 0.22);
     }
 
     .btn-secondary{
@@ -255,14 +275,17 @@
     }
 
     .hero-card{
-      background:linear-gradient(180deg, #1e1d1d 0%, #121212 100%);
+      background:linear-gradient(135deg, #ff4242 0%, #ff6b4c 52%, #ff9a52 100%);
       color:#fff;
-      border-radius:28px;
-      padding:22px;
-      box-shadow:0 25px 80px rgba(0,0,0,0.2);
+      border-radius:30px;
+      padding:26px;
+      box-shadow:0 28px 80px rgba(255,90,76,0.28);
       overflow:hidden;
       position:relative;
-      min-height:540px;
+      min-height:560px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
     .hero-card::after{
@@ -271,7 +294,7 @@
       inset:auto -80px -80px auto;
       width:240px;
       height:240px;
-      background:radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+      background:radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
       border-radius:50%;
     }
 
@@ -279,9 +302,11 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      margin-bottom:16px;
-      color:#ddd;
+      margin-bottom:18px;
+      color:rgba(255,255,255,0.92);
       font-size:14px;
+      position:relative;
+      z-index:1;
     }
 
     .dots{
@@ -293,32 +318,40 @@
       width:9px;
       height:9px;
       border-radius:50%;
-      background:#5b5b5b;
+      background:rgba(255,255,255,0.5);
     }
 
-    .mockup-image{
-      border-radius:22px;
-      overflow:hidden;
-      margin-bottom:16px;
-      aspect-ratio:4/5;
-      background:#333;
+    .hero-logo-wrap{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:28px;
+      padding:26px;
+      display:grid;
+      place-items:center;
+      min-height:320px;
     }
 
-    .mockup-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .hero-logo{
+      width:min(100%, 470px);
+      height:auto;
+      border-radius:18px;
+      box-shadow:0 22px 60px rgba(0,0,0,0.16);
     }
 
     .mockup-panel{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:10px;
+      position:relative;
+      z-index:1;
+      margin-top:18px;
     }
 
     .mini-card{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.12);
       border-radius:18px;
       padding:12px;
     }
@@ -332,7 +365,7 @@
 
     .mini-card span{
       font-size:12px;
-      color:#d0d0d0;
+      color:rgba(255,255,255,0.88);
       line-height:1.5;
     }
 
@@ -358,7 +391,7 @@
     .section-title p{
       margin:0;
       max-width:560px;
-      color:#5b5b5b;
+      color:#5a5555;
       line-height:1.7;
     }
 
@@ -375,7 +408,7 @@
     }
 
     .card{
-      background:rgba(255,255,255,0.84);
+      background:rgba(255,255,255,0.9);
       border:1px solid rgba(0,0,0,0.06);
       border-radius:var(--radius);
       padding:22px;
@@ -390,7 +423,7 @@
 
     .card p{
       margin:0;
-      color:#5f5f5f;
+      color:#5f5a5a;
       line-height:1.7;
     }
 
@@ -417,7 +450,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, transparent 25%, rgba(0,0,0,0.55) 100%);
+      background:linear-gradient(180deg, transparent 25%, rgba(0,0,0,0.58) 100%);
       z-index:-1;
     }
 
@@ -481,7 +514,7 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:#111;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
       color:#fff;
       font-size:13px;
       font-weight:800;
@@ -507,9 +540,10 @@
 
     .offer-card.featured,
     .price-card.featured{
-      background:#151515;
+      background:linear-gradient(135deg, #ff4949 0%, #ff8d52 100%);
       color:#fff;
       transform:translateY(-8px);
+      box-shadow:0 26px 60px rgba(255,90,76,0.24);
     }
 
     .tag{
@@ -524,7 +558,8 @@
     }
 
     .featured .tag{
-      background:rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.15);
+      color:#fff;
     }
 
     .offer-card h3,
@@ -542,7 +577,7 @@
       margin:0;
     }
 
-    .featured p{color:#ebebeb}
+    .featured p{color:#fff}
 
     .offer-card ul,
     .price-card ul{
@@ -554,7 +589,7 @@
       color:#575757;
     }
 
-    .featured ul{color:#ebebeb}
+    .featured ul{color:#fff}
 
     .offer-card li,
     .price-card li{
@@ -581,11 +616,11 @@
     }
 
     .price-box{
-      background:linear-gradient(135deg, #181818 0%, #2d2b2b 100%);
+      background:linear-gradient(135deg, #ff4a4a 0%, #ff8f52 100%);
       color:#fff;
       border-radius:34px;
       padding:30px;
-      box-shadow:var(--shadow);
+      box-shadow:0 28px 60px rgba(255,90,76,0.22);
       display:grid;
       grid-template-columns:1.1fr 0.9fr;
       gap:20px;
@@ -600,14 +635,14 @@
 
     .price-box p{
       margin:0;
-      color:#dfdfdf;
+      color:#fff;
       line-height:1.7;
       max-width:620px;
     }
 
     .price-panel{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.18);
       border-radius:24px;
       padding:22px;
     }
@@ -622,7 +657,7 @@
     }
 
     .price-note{
-      color:#dfdfdf;
+      color:#fff;
       line-height:1.7;
     }
 
@@ -653,11 +688,11 @@
     }
 
     .cta{
-      background:linear-gradient(135deg, #181818 0%, #2d2b2b 100%);
+      background:linear-gradient(135deg, #ff4a4a 0%, #ff9252 100%);
       color:#fff;
       border-radius:34px;
       padding:34px;
-      box-shadow:var(--shadow);
+      box-shadow:0 28px 60px rgba(255,90,76,0.22);
       display:grid;
       grid-template-columns:1.05fr .95fr;
       gap:20px;
@@ -672,7 +707,7 @@
 
     .cta p{
       margin:0;
-      color:#dfdfdf;
+      color:#fff;
       line-height:1.7;
       max-width:620px;
     }
@@ -683,7 +718,7 @@
       margin:20px 0 0;
       padding:0;
       list-style:none;
-      color:#f1f1f1;
+      color:#fff;
       font-weight:600;
     }
 
@@ -699,8 +734,8 @@
     }
 
     .contact-box{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.16);
       border-radius:24px;
       padding:22px;
       display:grid;
@@ -714,7 +749,7 @@
     }
 
     .contact-box small{
-      color:rgba(255,255,255,0.78);
+      color:rgba(255,255,255,0.88);
       line-height:1.6;
     }
 
@@ -729,8 +764,8 @@
     .contact-box select,
     .contact-box textarea{
       width:100%;
-      border:1px solid rgba(255,255,255,0.14);
-      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.1);
       color:#fff;
       border-radius:14px;
       padding:14px 16px;
@@ -740,7 +775,7 @@
 
     .contact-box input::placeholder,
     .contact-box textarea::placeholder{
-      color:rgba(255,255,255,0.6);
+      color:rgba(255,255,255,0.72);
     }
 
     .contact-box textarea{
@@ -765,7 +800,7 @@
       gap:10px;
       align-items:flex-start;
       font-weight:500;
-      color:#f1f1f1;
+      color:#fefefe;
       margin:0;
     }
 
@@ -779,6 +814,9 @@
       margin-top:8px;
       width:100%;
       justify-content:center;
+      background:#fff;
+      color:#ff564b;
+      box-shadow:none;
     }
 
     .hidden-field{
@@ -824,6 +862,71 @@
       border:1px solid var(--line);
       background:#fff;
       font-weight:700;
+    }
+
+    .accordion-grid{
+      display:grid;
+      gap:18px;
+    }
+
+    .accordion{
+      background:linear-gradient(135deg, #ff4a4a 0%, #ff9252 100%);
+      border-radius:28px;
+      box-shadow:0 28px 60px rgba(255,90,76,0.18);
+      overflow:hidden;
+    }
+
+    .accordion summary{
+      list-style:none;
+      cursor:pointer;
+      padding:22px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      color:#fff;
+    }
+
+    .accordion summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .accordion-title{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .accordion-title strong{
+      font-size:20px;
+      line-height:1.2;
+    }
+
+    .accordion-title span{
+      color:rgba(255,255,255,0.9);
+      line-height:1.5;
+      font-size:14px;
+    }
+
+    .accordion-icon{
+      flex:0 0 auto;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,0.16);
+      font-size:22px;
+      font-weight:700;
+      transition:transform .2s ease;
+    }
+
+    .accordion[open] .accordion-icon{
+      transform:rotate(45deg);
+    }
+
+    .accordion-body{
+      padding:0 22px 22px;
     }
 
     footer{
@@ -872,6 +975,10 @@
         display:none;
       }
 
+      .brand-sub{
+        display:none;
+      }
+
       .hero{
         padding-top:34px;
       }
@@ -901,15 +1008,35 @@
       .proof-grid{
         grid-template-columns:1fr;
       }
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+      }
+
+      .brand-title{
+        font-size:15px;
+      }
+
+      .accordion summary{
+        padding:18px;
+      }
+
+      .accordion-body{
+        padding:0 18px 18px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="topbar">
     <div class="container nav">
-      <a href="#" class="brand">
-        <span class="brand-badge">W</span>
-        <span>webutvecklare.se</span>
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img class="brand-logo" src="nordlof-nordic-logo.PNG" alt="Nordlöf Nordic logga">
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Webbutveckling för företag</span>
+        </span>
       </a>
 
       <nav class="nav-links">
@@ -919,6 +1046,7 @@
         <a href="#priser">Priser</a>
         <a href="#ai-video">AI-video</a>
         <a href="#flyer">Flyer</a>
+        <a href="#kop">Köp</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
@@ -930,12 +1058,13 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Personlig service av mig · För företag i Sverige</span>
+          <span class="eyebrow">Nordlöf Nordic · Personlig webbutveckling för företag i Sverige</span>
           <h1>Jag bygger din hemsida. Du fyller bara i formuläret.</h1>
           <p>
-            Jag är webutvecklare och egen företagare. Du fyller i formuläret, jag fixar resten och skickar en demo till dig inom 1 arbetsdag.
-            Är du nöjd, köper du. Är du inte nöjd, då ändrar jag innehållet tills du är nöjd.
-            Enkelt upplägg. Personlig service. Inget byråcirkus-möte med tre personer som “tar det vidare”.
+            Nordlöf Nordic är mitt företag. Webbutveckling är en av tjänsterna jag erbjuder.
+            Du fyller i formuläret, jag fixar resten och skickar en demo inom 1 arbetsdag.
+            Är du nöjd, köper du. Är du inte nöjd, då ändrar jag tills du är nöjd.
+            Personlig service, snabb leverans och noll byråteater.
           </p>
 
           <ul class="hero-points">
@@ -948,35 +1077,36 @@
 
           <div class="hero-actions">
             <a href="#sa-funkar-det" class="btn btn-primary">Så funkar det</a>
-            <a href="#kontakt" class="btn btn-secondary">Få en demo</a>
+            <a href="#kop" class="btn btn-secondary">Köp efter godkänd demo</a>
           </div>
         </div>
 
         <div class="hero-card">
           <div class="mockup-header">
-            <span>Demo först. Beslut sen.</span>
+            <span>Nordlöf Nordic · Demo först. Beslut sen.</span>
             <div class="dots"><span></span><span></span><span></span></div>
           </div>
 
-          <div class="mockup-image">
+          <div class="hero-logo-wrap">
             <img
-              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern arbetsmiljö för webbutveckling"
+              class="hero-logo"
+              src="nordlof-nordic-logo.PNG"
+              alt="Nordlöf Nordic logga"
             >
           </div>
 
           <div class="mockup-panel">
             <div class="mini-card">
               <strong>Fyll i formulär</strong>
-              <span>Du skickar in det jag behöver. Jag tar bollen därifrån.</span>
+              <span>Du skickar in det jag behöver. Jag tar det vidare därifrån.</span>
             </div>
             <div class="mini-card">
               <strong>Demo snabbt</strong>
-              <span>Du får en konkret demo inom 1 arbetsdag, inte bara luft och löften.</span>
+              <span>Du får en konkret demo inom 1 arbetsdag. Inte ett fluffigt “vi återkommer”.</span>
             </div>
             <div class="mini-card">
               <strong>Ändringar ingår</strong>
-              <span>Inte nöjd? Då justerar jag tills det sitter. Punkt.</span>
+              <span>Inte nöjd? Då justerar jag tills det sitter. Enkel operation.</span>
             </div>
           </div>
         </div>
@@ -988,7 +1118,7 @@
         <div class="section-title">
           <h2>Så funkar det</h2>
           <p>
-            Rakt upplägg. Låg friktion. Du behöver inte kunna webbutveckling. Det är mitt KPI-område.
+            Rakt upplägg. Låg friktion. Du behöver inte kunna webbutveckling. Det är min leveransyta.
           </p>
         </div>
 
@@ -1007,7 +1137,7 @@
           <div class="offer-card featured">
             <span class="tag">Steg 2</span>
             <h3>Jag skickar en demo</h3>
-            <p>Inom 1 arbetsdag får du något konkret att titta på. Du slipper köpa i blindo.</p>
+            <p>Inom 1 arbetsdag får du något konkret att titta på. Du slipper köpa grisen i design-säcken.</p>
             <ul>
               <li>Snabb återkoppling</li>
               <li>Personlig service av mig</li>
@@ -1036,7 +1166,7 @@
             <h2>Du slipper göra jobbet själv</h2>
             <p>
               Det här passar dig som vill ha en snygg och tydlig hemsida men inte vill fastna i teknik, designbeslut och texter i tre veckor.
-              Du skickar in briefen. Jag bygger. Du får en demo snabbt. Sedan finjusterar vi tills det känns rätt.
+              Du skickar briefen. Jag bygger. Du får en demo snabbt. Sedan finjusterar vi tills det känns rätt.
             </p>
           </div>
 
@@ -1108,7 +1238,7 @@
         <div class="section-title">
           <h2>Teman beroende på vad du jobbar med</h2>
           <p>
-            En hemsida för en målare ska inte kännas som en hemsida för en coach. Segmentering matters.
+            En hemsida för en målare ska inte kännas som en hemsida för en coach. Positionering är inte pynt. Det är affär.
           </p>
         </div>
 
@@ -1156,7 +1286,7 @@
           <div class="showcase-content">
             <h2 style="margin:0 0 10px; font-size:32px; letter-spacing:-0.04em;">Vad en hemsida kan innehålla</h2>
             <p style="margin:0; color:#5a5a5a; line-height:1.7;">
-              Lagom mycket för att kännas proffsig. Inte så mycket att du behöver avsätta ett kvartalsmöte för att komma igång.
+              Lagom mycket för att kännas proffsig. Inte så mycket att du behöver dra igång en intern projektgrupp för att fylla i allt.
             </p>
             <div class="list">
               <div class="list-item"><span class="check">✓</span><span>Startsida med tydlig rubrik och rätt känsla</span></div>
@@ -1174,19 +1304,19 @@
             Samma företag kan se billigt eller genomtänkt ut beroende på layout, typografi och struktur. Det är där jag kommer in.
           </p>
 
-          <div style="background:#f7f3ee; border-radius:22px; padding:20px; margin-bottom:14px;">
+          <div style="background:#fff2ee; border-radius:22px; padding:20px; margin-bottom:14px;">
             <div style="font-family:'Playfair Display',serif; font-size:42px; line-height:1; margin-bottom:8px;">Personlig premium-känsla</div>
             <div style="color:#666;">När du vill kännas varm, seriös och lite mer exklusiv.</div>
           </div>
 
-          <div style="background:#eef4ff; border-radius:22px; padding:20px; margin-bottom:14px;">
+          <div style="background:#fff0eb; border-radius:22px; padding:20px; margin-bottom:14px;">
             <div style="font-family:'Inter',sans-serif; font-size:34px; line-height:1.1; font-weight:800; margin-bottom:8px;">Ren och modern stil</div>
             <div style="color:#666;">När du vill att allt ska vara tydligt, snabbt och enkelt att fatta.</div>
           </div>
 
-          <div style="background:#111; color:#fff; border-radius:22px; padding:20px;">
-            <div style="font-size:34px; line-height:1.1; font-weight:800; letter-spacing:-0.05em; margin-bottom:8px;">Mörk och stark layout</div>
-            <div style="color:#d7d7d7;">För företag som vill ha mer tyngd, mer edge och mindre kommunal broschyr.</div>
+          <div style="background:linear-gradient(135deg, #ff4a4a 0%, #ff9252 100%); color:#fff; border-radius:22px; padding:20px;">
+            <div style="font-size:34px; line-height:1.1; font-weight:800; letter-spacing:-0.05em; margin-bottom:8px;">Stark layout med mer tryck</div>
+            <div style="color:#fff;">För företag som vill ha mer tyngd, mer edge och mindre kommunal broschyr.</div>
           </div>
         </div>
       </div>
@@ -1293,59 +1423,62 @@
     </section>
 
     <section class="section" id="ai-video">
-      <div class="container">
-        <div class="section-title">
-          <h2>AI-reklamvideo till fast pris</h2>
-          <p>
-            Du skickar brief och gärna exempel. Jag tar fram ett utkast. Gillar du det, köper du. Samma logik. Mindre risk. Smartare affär.
-          </p>
-        </div>
+  <div class="container">
+    <div class="section-title">
+      <h2>AI-reklamvideo till fast pris</h2>
+      <p>
+        Här är ett exempel på video jag kan göra. Du skickar brief och gärna exempel. Jag tar fram ett utkast.
+        Gillar du det, köper du. Samma logik. Mindre risk. Smartare affär.
+      </p>
+    </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <h3>Vad jag kan göra</h3>
-            <p>
-              Det kan vara UGC-känsla, AI-presentatör, verklighetstrogen reklamvideo eller något mer lekfullt. Använd den på sociala medier, hemsidan eller i annonser.
-            </p>
-            <div class="list">
-              <div class="list-item"><span class="check">✓</span><span>Upp till 60 sekunder</span></div>
-              <div class="list-item"><span class="check">✓</span><span>Fast pris 1 999 kr</span></div>
-              <div class="list-item"><span class="check">✓</span><span>Utkast först, köp efter godkännande</span></div>
-              <div class="list-item"><span class="check">✓</span><span>Specialanpassad till ditt företag</span></div>
-            </div>
-          </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Exempelvideo</h3>
+        <p style="margin-bottom:18px;">
+          Ett eget exempel på AI-reklamvideo. Samma upplägg kan jag göra för ditt företag, anpassat till din tjänst, din stil och ditt budskap.
+        </p>
 
-          <div class="card">
-            <h3>Mina egna exempel</h3>
-            <p>
-              Här är exempel på sådant jag gjort själv. Samma upplägg kan jag göra för ditt företag, fast anpassat till din bransch, ditt budskap och din stil.
-            </p>
-            <div class="list">
-              <div class="list-item"><span class="check">✓</span><a href="https://app.heygen.com/videos/9723a6dbc1d0485fa6248d295c90dedf" target="_blank" rel="noopener noreferrer">Exempelvideo 1</a></div>
-              <div class="list-item"><span class="check">✓</span><a href="https://app.heygen.com/videos/08038d82514a4b08912a53bc6504165d" target="_blank" rel="noopener noreferrer">Exempelvideo 2</a></div>
-              <div class="list-item"><span class="check">✓</span><a href="https://app.heygen.com/videos/1aa99e45f77049419e392fbb7f5d7378" target="_blank" rel="noopener noreferrer">Exempelvideo 3</a></div>
-              <div class="list-item"><span class="check">✓</span><a href="https://photos.app.goo.gl/NuQDfvdYNdrBzanJ7" target="_blank" rel="noopener noreferrer">Exempel på reklammaterial</a></div>
-              <div class="list-item"><span class="check">✓</span><a href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Exempelsida: offroadbumpis.se</a></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pricing" style="margin-top:18px;">
-          <div class="price-card featured" style="transform:none;">
-            <span class="tag">Fast pris</span>
-            <h3>AI-reklamvideo</h3>
-            <p class="price">1 999 kr</p>
-            <p>Upp till 60 sekunder. Demo först. Köp efter godkännande om du gillar den.</p>
-            <ul>
-              <li>Input från dig</li>
-              <li>Specialanpassad video</li>
-              <li>För hemsida eller sociala medier</li>
-              <li>Ändringar tills det känns rätt</li>
-            </ul>
-          </div>
+        <div style="border-radius:22px; overflow:hidden; box-shadow:var(--shadow); background:#000;">
+          <video controls playsinline style="width:100%; display:block;">
+            <source src="demo-video.mp4" type="video/mp4">
+            Din webbläsare stödjer inte videouppspelning.
+          </video>
         </div>
       </div>
-    </section>
+
+      <div class="card">
+        <h3>Vad jag kan göra</h3>
+        <p>
+          Det kan vara UGC-känsla, AI-presentatör, verklighetstrogen reklamvideo eller något mer lekfullt.
+          Använd videon på sociala medier, hemsidan eller i annonser.
+        </p>
+
+        <div class="list">
+          <div class="list-item"><span class="check">✓</span><span>Upp till 60 sekunder</span></div>
+          <div class="list-item"><span class="check">✓</span><span>Fast pris 1 999 kr</span></div>
+          <div class="list-item"><span class="check">✓</span><span>Utkast först, köp efter godkännande</span></div>
+          <div class="list-item"><span class="check">✓</span><span>Specialanpassad till ditt företag</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing" style="margin-top:18px;">
+      <div class="price-card featured" style="transform:none;">
+        <span class="tag">Fast pris</span>
+        <h3>AI-reklamvideo</h3>
+        <p class="price">1 999 kr</p>
+        <p>Upp till 60 sekunder. Demo först. Köp efter godkännande om du gillar den.</p>
+        <ul>
+          <li>Input från dig</li>
+          <li>Specialanpassad video</li>
+          <li>För hemsida eller sociala medier</li>
+          <li>Ändringar tills det känns rätt</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="section" id="flyer">
       <div class="container">
@@ -1372,7 +1505,7 @@
           <div class="card">
             <h3>Prisförslag</h3>
             <p>
-              Lågt nog för att vara lätt att testa. Högt nog för att inte vara välgörenhet. Fin balans i affärsmodellen.
+              Lågt nog för att vara lätt att testa. Högt nog för att inte vara välgörenhet. Rimlig marginal, rimlig energi, rimlig affär.
             </p>
             <div class="list">
               <div class="list-item"><span class="check">✓</span><span><strong>799 kr</strong> för en enkel reklamflyer</span></div>
@@ -1401,228 +1534,279 @@
       </div>
     </section>
 
-    <section class="section" id="kontakt">
+    <section class="section" id="kop">
       <div class="container">
-        <div class="cta">
+        <div class="price-box">
           <div>
-            <h2>Fyll i formuläret. Jag fixar resten.</h2>
+            <h2>Klar att köpa efter godkänd demo?</h2>
             <p>
-              Beställ ny hemsida, uppdatering, AI-reklamvideo eller reklamflyer.
-              Du får en demo inom 1 arbetsdag. Är du nöjd, köper du. Är du inte nöjd, då ändrar jag innehållet tills du är nöjd.
+              När du har fått din demo och vill gå vidare kan du betala här.
+              Du fyller själv i beloppet enligt det vi kommit överens om.
+              Enkelt, snabbt och utan onödigt klydd.
             </p>
-
-            <ul class="cta-points">
-              <li><span class="check">✓</span><span>Personlig service direkt av mig</span></li>
-              <li><span class="check">✓</span><span>Demo inom 1 arbetsdag</span></li>
-              <li><span class="check">✓</span><span>Ändringar tills du är nöjd</span></li>
-              <li><span class="check">✓</span><span>Allt material inom 1 arbetsdag efter köp</span></li>
-              <li><span class="check">✓</span><span>Du köper först när det känns rätt</span></li>
-            </ul>
           </div>
 
-          <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
-            <strong>Formulär / brief för hemsida eller uppdatering</strong>
-            <small>Fyll i så mycket du kan. Ju bättre brief, desto bättre demo.</small>
-
-            <input type="hidden" name="_subject" value="Ny förfrågan från webutvecklare.se" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
-            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
-
-            <label for="typ">Vad vill du ha hjälp med?</label>
-            <select id="typ" name="Typ av uppdrag">
-              <option value="Ny hemsida">Ny hemsida</option>
-              <option value="Uppdatering av tidigare hemsida">Uppdatering av tidigare hemsida</option>
-              <option value="Ändring av befintlig sida">Ändring av befintlig sida</option>
-            </select>
-
-            <label for="namn">Namn</label>
-            <input id="namn" type="text" name="Namn" required />
-
-            <label for="foretag">Företag / verksamhet</label>
-            <input id="foretag" type="text" name="Företag" />
-
-            <label for="email">E-post</label>
-            <input id="email" type="email" name="E-post" required />
-
-            <label for="telefon">Telefon</label>
-            <input id="telefon" type="text" name="Telefon" />
-
-            <label for="bransch">Vad jobbar du med?</label>
-            <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, skönhet" />
-
-            <label for="stad">Vilken stad eller område jobbar du i?</label>
-            <input id="stad" type="text" name="Stad / område" placeholder="t.ex. Malmö, Lund, Trelleborg" />
-
-            <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
-            <select id="syfte" name="Syfte">
-              <option value="Få fler kunder">Få fler kunder</option>
-              <option value="Se mer proffsig ut">Se mer proffsig ut</option>
-              <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
-              <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
-              <option value="Uppdatera en tidigare sida">Uppdatera en tidigare sida</option>
-              <option value="Annat">Annat</option>
-            </select>
-
-            <label for="sidor">Vad vill du ha med?</label>
-            <div class="checkbox-grid" id="sidor">
-              <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
-              <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
+          <div class="price-panel">
+            <div class="price-big">Betala här</div>
+            <div class="price-note" style="margin-bottom:16px;">
+              Skriv in överenskommet belopp och slutför köpet via Stripe.
             </div>
-
-            <label for="stil">Vilken stil gillar du?</label>
-            <select id="stil" name="Stil">
-              <option value="Rak och tydlig">Rak och tydlig</option>
-              <option value="Trygg och personlig">Trygg och personlig</option>
-              <option value="Stark och professionell">Stark och professionell</option>
-              <option value="Ren och praktisk">Ren och praktisk</option>
-              <option value="Bildfokus">Bildfokus</option>
-              <option value="Offertfokus">Offertfokus</option>
-              <option value="Mörk och modern">Mörk och modern</option>
-              <option value="Varm och mänsklig">Varm och mänsklig</option>
-              <option value="Enkel och proffsig">Enkel och proffsig</option>
-              <option value="Vet inte än">Vet inte än</option>
-            </select>
-
-            <label for="farger">Färger du gillar</label>
-            <input id="farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
-
-            <label for="urlnamn">Önskat URL-namn</label>
-            <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
-
-            <label for="inspo">Finns det hemsidor du gillar?</label>
-            <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
-
-            <label for="material">Har du material klart?</label>
-            <select id="material" name="Material klart">
-              <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
-              <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
-              <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
-            </select>
-
-            <label for="tidigare">Har du redan köpt av mig tidigare?</label>
-            <select id="tidigare" name="Tidigare kund">
-              <option value="Nej">Nej</option>
-              <option value="Ja">Ja</option>
-            </select>
-
-            <label for="budget">Ungefärlig budget</label>
-            <select id="budget" name="Budget">
-              <option value="Vet inte än">Vet inte än</option>
-              <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
-              <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
-              <option value="Ny hemsida Utökad 7 900 kr">Ny hemsida Utökad 7 900 kr</option>
-              <option value="Liten uppdatering 490 kr">Liten uppdatering 490 kr</option>
-              <option value="Normal uppdatering 990 kr">Normal uppdatering 990 kr</option>
-              <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
-            </select>
-
-            <label for="ovrigt">Övrigt</label>
-            <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
-
-            <button class="btn btn-primary contact-submit" type="submit">Skicka brief</button>
-          </form>
+            <a
+              href="https://buy.stripe.com/bJecN7bcyaLo2O90cO6oo09"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              style="width:100%; background:#fff; color:#ff564b;"
+            >
+              Öppna köplänk
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid-2">
-        <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST" style="background:linear-gradient(135deg, #181818 0%, #2d2b2b 100%);">
-          <strong>Formulär för AI-reklamvideo</strong>
-          <small>Pris: 1 999 kr för upp till 60 sekunder. Utkast först. Köp efter godkännande om du gillar det.</small>
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Formulär</h2>
+          <p>
+            Tryck på det formulär du vill öppna. Mindre väg av frågor direkt i ansiktet. Bättre UX. Färre psykbryt.
+          </p>
+        </div>
 
-          <input type="hidden" name="_subject" value="Ny förfrågan AI-reklamvideo" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://webutvecklare.se/#ai-video" />
-          <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+        <div class="accordion-grid">
+          <details class="accordion" open>
+            <summary>
+              <span class="accordion-title">
+                <strong>Formulär / brief för hemsida eller uppdatering</strong>
+                <span>Tryck här för att öppna eller stänga alla frågor.</span>
+              </span>
+              <span class="accordion-icon">+</span>
+            </summary>
+            <div class="accordion-body">
+              <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+                <strong>Ny hemsida eller uppdatering</strong>
+                <small>Fyll i så mycket du kan. Ju bättre brief, desto bättre demo.</small>
 
-          <label for="vnamn">Namn</label>
-          <input id="vnamn" type="text" name="Namn" required />
+                <input type="hidden" name="_subject" value="Ny förfrågan från Nordlöf Nordic" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
-          <label for="vforetag">Företag / verksamhet</label>
-          <input id="vforetag" type="text" name="Företag" />
+                <label for="typ">Vad vill du ha hjälp med?</label>
+                <select id="typ" name="Typ av uppdrag">
+                  <option value="Ny hemsida">Ny hemsida</option>
+                  <option value="Uppdatering av tidigare hemsida">Uppdatering av tidigare hemsida</option>
+                  <option value="Ändring av befintlig sida">Ändring av befintlig sida</option>
+                </select>
 
-          <label for="vemail">E-post</label>
-          <input id="vemail" type="email" name="E-post" required />
+                <label for="namn">Namn</label>
+                <input id="namn" type="text" name="Namn" required />
 
-          <label for="vsyfte">Vad ska videon användas till?</label>
-          <select id="vsyfte" name="Video syfte">
-            <option value="Sociala medier">Sociala medier</option>
-            <option value="Hemsida">Hemsida</option>
-            <option value="Annons">Annons</option>
-            <option value="Informationsvideo">Informationsvideo</option>
-            <option value="Annat">Annat</option>
-          </select>
+                <label for="foretag">Företag / verksamhet</label>
+                <input id="foretag" type="text" name="Företag" />
 
-          <label for="vstil">Vilken videostil vill du ha?</label>
-          <select id="vstil" name="Video stil">
-            <option value="UGC-känsla">UGC-känsla</option>
-            <option value="AI-presentatör">AI-presentatör</option>
-            <option value="Verklighetstrogen reklam">Verklighetstrogen reklam</option>
-            <option value="Tecknad / lekfull">Tecknad / lekfull</option>
-            <option value="Vet inte än">Vet inte än</option>
-          </select>
+                <label for="email">E-post</label>
+                <input id="email" type="email" name="E-post" required />
 
-          <label for="vbudskap">Vad vill du förmedla?</label>
-          <textarea id="vbudskap" name="Budskap" rows="5" placeholder="Skriv vad videon ska säga eller kännas som"></textarea>
+                <label for="telefon">Telefon</label>
+                <input id="telefon" type="text" name="Telefon" />
 
-          <label for="vexempel">Länkar till videor du gillar</label>
-          <textarea id="vexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar till videor du gillar"></textarea>
+                <label for="bransch">Vad jobbar du med?</label>
+                <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, skönhet" />
 
-          <label for="vovrigt">Övrigt</label>
-          <textarea id="vovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+                <label for="stad">Vilken stad eller område jobbar du i?</label>
+                <input id="stad" type="text" name="Stad / område" placeholder="t.ex. Malmö, Lund, Trelleborg" />
 
-          <button class="btn btn-primary contact-submit" type="submit">Skicka brief för AI-video</button>
-        </form>
+                <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
+                <select id="syfte" name="Syfte">
+                  <option value="Få fler kunder">Få fler kunder</option>
+                  <option value="Se mer proffsig ut">Se mer proffsig ut</option>
+                  <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
+                  <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
+                  <option value="Uppdatera en tidigare sida">Uppdatera en tidigare sida</option>
+                  <option value="Annat">Annat</option>
+                </select>
 
-        <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST" style="background:linear-gradient(135deg, #181818 0%, #2d2b2b 100%);">
-          <strong>Formulär för reklamflyer</strong>
-          <small>Pris från 799 kr. Utkast först. Köp efter godkännande om du gillar det.</small>
+                <label for="sidor">Vad vill du ha med?</label>
+                <div class="checkbox-grid" id="sidor">
+                  <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
+                  <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
+                </div>
 
-          <input type="hidden" name="_subject" value="Ny förfrågan reklamflyer" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://webutvecklare.se/#flyer" />
-          <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+                <label for="stil">Vilken stil gillar du?</label>
+                <select id="stil" name="Stil">
+                  <option value="Rak och tydlig">Rak och tydlig</option>
+                  <option value="Trygg och personlig">Trygg och personlig</option>
+                  <option value="Stark och professionell">Stark och professionell</option>
+                  <option value="Ren och praktisk">Ren och praktisk</option>
+                  <option value="Bildfokus">Bildfokus</option>
+                  <option value="Offertfokus">Offertfokus</option>
+                  <option value="Mörk och modern">Mörk och modern</option>
+                  <option value="Varm och mänsklig">Varm och mänsklig</option>
+                  <option value="Enkel och proffsig">Enkel och proffsig</option>
+                  <option value="Vet inte än">Vet inte än</option>
+                </select>
 
-          <label for="fnamn">Namn</label>
-          <input id="fnamn" type="text" name="Namn" required />
+                <label for="farger">Färger du gillar</label>
+                <input id="farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
 
-          <label for="fforetag">Företag / verksamhet</label>
-          <input id="fforetag" type="text" name="Företag" />
+                <label for="urlnamn">Önskat URL-namn</label>
+                <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
 
-          <label for="femail">E-post</label>
-          <input id="femail" type="email" name="E-post" required />
+                <label for="inspo">Finns det hemsidor du gillar?</label>
+                <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
 
-          <label for="fsyfte">Vad ska flyern användas till?</label>
-          <select id="fsyfte" name="Flyer syfte">
-            <option value="Sociala medier">Sociala medier</option>
-            <option value="Utskrift">Utskrift</option>
-            <option value="Båda">Båda</option>
-          </select>
+                <label for="material">Har du material klart?</label>
+                <select id="material" name="Material klart">
+                  <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
+                  <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
+                  <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
+                </select>
 
-          <label for="fbudskap">Vad vill du förmedla?</label>
-          <textarea id="fbudskap" name="Budskap" rows="5" placeholder="Skriv vad flyern ska säga eller visa"></textarea>
+                <label for="tidigare">Har du redan köpt av mig tidigare?</label>
+                <select id="tidigare" name="Tidigare kund">
+                  <option value="Nej">Nej</option>
+                  <option value="Ja">Ja</option>
+                </select>
 
-          <label for="fexempel">Länkar till exempel du gillar</label>
-          <textarea id="fexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar eller beskriv stil"></textarea>
+                <label for="budget">Ungefärlig budget</label>
+                <select id="budget" name="Budget">
+                  <option value="Vet inte än">Vet inte än</option>
+                  <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
+                  <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
+                  <option value="Ny hemsida Utökad 7 900 kr">Ny hemsida Utökad 7 900 kr</option>
+                  <option value="Liten uppdatering 490 kr">Liten uppdatering 490 kr</option>
+                  <option value="Normal uppdatering 990 kr">Normal uppdatering 990 kr</option>
+                  <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
+                </select>
 
-          <label for="fovrigt">Övrigt</label>
-          <textarea id="fovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+                <label for="ovrigt">Övrigt</label>
+                <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
-          <button class="btn btn-primary contact-submit" type="submit">Skicka brief för flyer</button>
-        </form>
+                <button class="btn contact-submit" type="submit">Skicka brief</button>
+              </form>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>
+              <span class="accordion-title">
+                <strong>Formulär för AI-reklamvideo</strong>
+                <span>Tryck här för att öppna eller stänga frågorna om video.</span>
+              </span>
+              <span class="accordion-icon">+</span>
+            </summary>
+            <div class="accordion-body">
+              <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+                <strong>AI-reklamvideo</strong>
+                <small>Pris: 1 999 kr för upp till 60 sekunder. Utkast först. Köp efter godkännande om du gillar det.</small>
+
+                <input type="hidden" name="_subject" value="Ny förfrågan AI-reklamvideo" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <label for="vnamn">Namn</label>
+                <input id="vnamn" type="text" name="Namn" required />
+
+                <label for="vforetag">Företag / verksamhet</label>
+                <input id="vforetag" type="text" name="Företag" />
+
+                <label for="vemail">E-post</label>
+                <input id="vemail" type="email" name="E-post" required />
+
+                <label for="vsyfte">Vad ska videon användas till?</label>
+                <select id="vsyfte" name="Video syfte">
+                  <option value="Sociala medier">Sociala medier</option>
+                  <option value="Hemsida">Hemsida</option>
+                  <option value="Annons">Annons</option>
+                  <option value="Informationsvideo">Informationsvideo</option>
+                  <option value="Annat">Annat</option>
+                </select>
+
+                <label for="vstil">Vilken videostil vill du ha?</label>
+                <select id="vstil" name="Video stil">
+                  <option value="UGC-känsla">UGC-känsla</option>
+                  <option value="AI-presentatör">AI-presentatör</option>
+                  <option value="Verklighetstrogen reklam">Verklighetstrogen reklam</option>
+                  <option value="Tecknad / lekfull">Tecknad / lekfull</option>
+                  <option value="Vet inte än">Vet inte än</option>
+                </select>
+
+                <label for="vbudskap">Vad vill du förmedla?</label>
+                <textarea id="vbudskap" name="Budskap" rows="5" placeholder="Skriv vad videon ska säga eller kännas som"></textarea>
+
+                <label for="vexempel">Länkar till videor du gillar</label>
+                <textarea id="vexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar till videor du gillar"></textarea>
+
+                <label for="vovrigt">Övrigt</label>
+                <textarea id="vovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+
+                <button class="btn contact-submit" type="submit">Skicka brief för AI-video</button>
+              </form>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>
+              <span class="accordion-title">
+                <strong>Formulär för reklamflyer</strong>
+                <span>Tryck här för att öppna eller stänga frågorna om flyer.</span>
+              </span>
+              <span class="accordion-icon">+</span>
+            </summary>
+            <div class="accordion-body">
+              <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+                <strong>Reklamflyer</strong>
+                <small>Pris från 799 kr. Utkast först. Köp efter godkännande om du gillar det.</small>
+
+                <input type="hidden" name="_subject" value="Ny förfrågan reklamflyer" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <label for="fnamn">Namn</label>
+                <input id="fnamn" type="text" name="Namn" required />
+
+                <label for="fforetag">Företag / verksamhet</label>
+                <input id="fforetag" type="text" name="Företag" />
+
+                <label for="femail">E-post</label>
+                <input id="femail" type="email" name="E-post" required />
+
+                <label for="fsyfte">Vad ska flyern användas till?</label>
+                <select id="fsyfte" name="Flyer syfte">
+                  <option value="Sociala medier">Sociala medier</option>
+                  <option value="Utskrift">Utskrift</option>
+                  <option value="Båda">Båda</option>
+                </select>
+
+                <label for="fbudskap">Vad vill du förmedla?</label>
+                <textarea id="fbudskap" name="Budskap" rows="5" placeholder="Skriv vad flyern ska säga eller visa"></textarea>
+
+                <label for="fexempel">Länkar till exempel du gillar</label>
+                <textarea id="fexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar eller beskriv stil"></textarea>
+
+                <label for="fovrigt">Övrigt</label>
+                <textarea id="fovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+
+                <button class="btn contact-submit" type="submit">Skicka brief för flyer</button>
+              </form>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -1631,8 +1815,8 @@
         <div class="trust-box">
           <h2>Vem driver sidan?</h2>
           <p>
-            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag är <strong>webutvecklare</strong> och <strong>egen företagare</strong>.
-            Jag bygger hemsidor, gör uppdateringar, AI-reklamvideor och reklammaterial med personlig service direkt av mig.
+            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>.
+            Jag är webbutvecklare och egen företagare och bygger hemsidor, gör uppdateringar, AI-reklamvideor och reklammaterial med personlig service direkt av mig.
           </p>
           <p>
             Upplägget är enkelt: du fyller i formuläret, jag fixar resten och skickar en demo inom 1 arbetsdag.
@@ -1651,8 +1835,8 @@
 
   <footer>
     <div class="container footer-line">
-      <span>© 2026 webutvecklare.se</span>
-      <span>Drivs av Erica Nordlöf · Demo inom 1 arbetsdag · Personlig service</span>
+      <span>© 2026 Nordlöf Nordic</span>
+      <span>webutvecklare.se · Demo inom 1 arbetsdag · Personlig service</span>
     </div>
   </footer>
 </body>
