@@ -1571,250 +1571,250 @@
       </div>
     </section>
 
-    <section class="section" id="kontakt">
-      <div class="container">
-        <div class="section-title">
-          <h2>Formulär</h2>
-          <p>
-            Tryck på det formulär du vill öppna. Mindre frågevägg. Mer lugn. Bättre känsla.
-          </p>
+ <section class="section" id="kontakt">
+  <div class="container">
+    <div class="section-title">
+      <h2>Formulär</h2>
+      <p>
+        Tryck på det formulär du vill öppna. Mindre frågevägg. Mer lugn. Bättre känsla.
+      </p>
+    </div>
+
+    <div class="accordion-grid">
+      <details class="accordion">
+        <summary>
+          <span class="accordion-title">
+            <strong>Formulär / brief för hemsida eller uppdatering</strong>
+            <span>Tryck här för att öppna eller stänga alla frågor.</span>
+          </span>
+          <span class="accordion-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+            <strong>Ny hemsida eller uppdatering</strong>
+            <small>Fyll i så mycket du kan. Ju bättre brief, desto bättre demo.</small>
+
+            <input type="hidden" name="_subject" value="Ny förfrågan från Nordlöf Nordic" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+            <label for="typ">Vad vill du ha hjälp med?</label>
+            <select id="typ" name="Typ av uppdrag">
+              <option value="Ny hemsida">Ny hemsida</option>
+              <option value="Uppdatering av tidigare hemsida">Uppdatering av tidigare hemsida</option>
+              <option value="Ändring av befintlig sida">Ändring av befintlig sida</option>
+            </select>
+
+            <label for="namn">Namn</label>
+            <input id="namn" type="text" name="Namn" required />
+
+            <label for="foretag">Företag / verksamhet</label>
+            <input id="foretag" type="text" name="Företag" />
+
+            <label for="email">E-post</label>
+            <input id="email" type="email" name="E-post" required />
+
+            <label for="telefon">Telefon</label>
+            <input id="telefon" type="text" name="Telefon" />
+
+            <label for="bransch">Vad jobbar du med?</label>
+            <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, skönhet" />
+
+            <label for="stad">Vilken stad eller område jobbar du i?</label>
+            <input id="stad" type="text" name="Stad / område" placeholder="t.ex. Malmö, Lund, Trelleborg" />
+
+            <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
+            <select id="syfte" name="Syfte">
+              <option value="Få fler kunder">Få fler kunder</option>
+              <option value="Se mer proffsig ut">Se mer proffsig ut</option>
+              <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
+              <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
+              <option value="Uppdatera en tidigare sida">Uppdatera en tidigare sida</option>
+              <option value="Annat">Annat</option>
+            </select>
+
+            <label for="sidor">Vad vill du ha med?</label>
+            <div class="checkbox-grid" id="sidor">
+              <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
+              <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
+            </div>
+
+            <label for="stil">Vilken stil gillar du?</label>
+            <select id="stil" name="Stil">
+              <option value="Rak och tydlig">Rak och tydlig</option>
+              <option value="Trygg och personlig">Trygg och personlig</option>
+              <option value="Stark och professionell">Stark och professionell</option>
+              <option value="Ren och praktisk">Ren och praktisk</option>
+              <option value="Bildfokus">Bildfokus</option>
+              <option value="Offertfokus">Offertfokus</option>
+              <option value="Mörk och modern">Mörk och modern</option>
+              <option value="Varm och mänsklig">Varm och mänsklig</option>
+              <option value="Enkel och proffsig">Enkel och proffsig</option>
+              <option value="Vet inte än">Vet inte än</option>
+            </select>
+
+            <label for="farger">Färger du gillar</label>
+            <input id="farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
+
+            <label for="urlnamn">Önskat URL-namn</label>
+            <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
+
+            <label for="inspo">Finns det hemsidor du gillar?</label>
+            <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
+
+            <label for="material">Har du material klart?</label>
+            <select id="material" name="Material klart">
+              <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
+              <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
+              <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
+            </select>
+
+            <label for="tidigare">Har du redan köpt av mig tidigare?</label>
+            <select id="tidigare" name="Tidigare kund">
+              <option value="Nej">Nej</option>
+              <option value="Ja">Ja</option>
+            </select>
+
+            <label for="budget">Ungefärlig budget</label>
+            <select id="budget" name="Budget">
+              <option value="Vet inte än">Vet inte än</option>
+              <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
+              <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
+              <option value="Ny hemsida Utökad 7 900 kr">Ny hemsida Utökad 7 900 kr</option>
+              <option value="Liten uppdatering 490 kr">Liten uppdatering 490 kr</option>
+              <option value="Normal uppdatering 990 kr">Normal uppdatering 990 kr</option>
+              <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
+            </select>
+
+            <label for="ovrigt">Övrigt</label>
+            <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+
+            <button class="btn contact-submit" type="submit">Skicka brief</button>
+          </form>
         </div>
+      </details>
 
-        <div class="accordion-grid">
-          <details class="accordion" open>
-            <summary>
-              <span class="accordion-title">
-                <strong>Formulär / brief för hemsida eller uppdatering</strong>
-                <span>Tryck här för att öppna eller stänga alla frågor.</span>
-              </span>
-              <span class="accordion-icon">+</span>
-            </summary>
-            <div class="accordion-body">
-              <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
-                <strong>Ny hemsida eller uppdatering</strong>
-                <small>Fyll i så mycket du kan. Ju bättre brief, desto bättre demo.</small>
+      <details class="accordion">
+        <summary>
+          <span class="accordion-title">
+            <strong>Formulär för AI-reklamvideo</strong>
+            <span>Tryck här för att öppna eller stänga frågorna om video.</span>
+          </span>
+          <span class="accordion-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+            <strong>AI-reklamvideo</strong>
+            <small>Pris: 1 999 kr för upp till 60 sekunder. Utkast först. Köp efter godkännande om du gillar det.</small>
 
-                <input type="hidden" name="_subject" value="Ny förfrågan från Nordlöf Nordic" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
-                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="_subject" value="Ny förfrågan AI-reklamvideo" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
-                <label for="typ">Vad vill du ha hjälp med?</label>
-                <select id="typ" name="Typ av uppdrag">
-                  <option value="Ny hemsida">Ny hemsida</option>
-                  <option value="Uppdatering av tidigare hemsida">Uppdatering av tidigare hemsida</option>
-                  <option value="Ändring av befintlig sida">Ändring av befintlig sida</option>
-                </select>
+            <label for="vnamn">Namn</label>
+            <input id="vnamn" type="text" name="Namn" required />
 
-                <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+            <label for="vforetag">Företag / verksamhet</label>
+            <input id="vforetag" type="text" name="Företag" />
 
-                <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+            <label for="vemail">E-post</label>
+            <input id="vemail" type="email" name="E-post" required />
 
-                <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+            <label for="vsyfte">Vad ska videon användas till?</label>
+            <select id="vsyfte" name="Video syfte">
+              <option value="Sociala medier">Sociala medier</option>
+              <option value="Hemsida">Hemsida</option>
+              <option value="Annons">Annons</option>
+              <option value="Informationsvideo">Informationsvideo</option>
+              <option value="Annat">Annat</option>
+            </select>
 
-                <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" />
+            <label for="vstil">Vilken videostil vill du ha?</label>
+            <select id="vstil" name="Video stil">
+              <option value="UGC-känsla">UGC-känsla</option>
+              <option value="AI-presentatör">AI-presentatör</option>
+              <option value="Verklighetstrogen reklam">Verklighetstrogen reklam</option>
+              <option value="Tecknad / lekfull">Tecknad / lekfull</option>
+              <option value="Vet inte än">Vet inte än</option>
+            </select>
 
-                <label for="bransch">Vad jobbar du med?</label>
-                <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, skönhet" />
+            <label for="vbudskap">Vad vill du förmedla?</label>
+            <textarea id="vbudskap" name="Budskap" rows="5" placeholder="Skriv vad videon ska säga eller kännas som"></textarea>
 
-                <label for="stad">Vilken stad eller område jobbar du i?</label>
-                <input id="stad" type="text" name="Stad / område" placeholder="t.ex. Malmö, Lund, Trelleborg" />
+            <label for="vexempel">Länkar till videor du gillar</label>
+            <textarea id="vexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar till videor du gillar"></textarea>
 
-                <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
-                <select id="syfte" name="Syfte">
-                  <option value="Få fler kunder">Få fler kunder</option>
-                  <option value="Se mer proffsig ut">Se mer proffsig ut</option>
-                  <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
-                  <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
-                  <option value="Uppdatera en tidigare sida">Uppdatera en tidigare sida</option>
-                  <option value="Annat">Annat</option>
-                </select>
+            <label for="vovrigt">Övrigt</label>
+            <textarea id="vovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
 
-                <label for="sidor">Vad vill du ha med?</label>
-                <div class="checkbox-grid" id="sidor">
-                  <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
-                </div>
-
-                <label for="stil">Vilken stil gillar du?</label>
-                <select id="stil" name="Stil">
-                  <option value="Rak och tydlig">Rak och tydlig</option>
-                  <option value="Trygg och personlig">Trygg och personlig</option>
-                  <option value="Stark och professionell">Stark och professionell</option>
-                  <option value="Ren och praktisk">Ren och praktisk</option>
-                  <option value="Bildfokus">Bildfokus</option>
-                  <option value="Offertfokus">Offertfokus</option>
-                  <option value="Mörk och modern">Mörk och modern</option>
-                  <option value="Varm och mänsklig">Varm och mänsklig</option>
-                  <option value="Enkel och proffsig">Enkel och proffsig</option>
-                  <option value="Vet inte än">Vet inte än</option>
-                </select>
-
-                <label for="farger">Färger du gillar</label>
-                <input id="farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
-
-                <label for="urlnamn">Önskat URL-namn</label>
-                <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
-
-                <label for="inspo">Finns det hemsidor du gillar?</label>
-                <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
-
-                <label for="material">Har du material klart?</label>
-                <select id="material" name="Material klart">
-                  <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
-                  <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
-                  <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
-                </select>
-
-                <label for="tidigare">Har du redan köpt av mig tidigare?</label>
-                <select id="tidigare" name="Tidigare kund">
-                  <option value="Nej">Nej</option>
-                  <option value="Ja">Ja</option>
-                </select>
-
-                <label for="budget">Ungefärlig budget</label>
-                <select id="budget" name="Budget">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
-                  <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
-                  <option value="Ny hemsida Utökad 7 900 kr">Ny hemsida Utökad 7 900 kr</option>
-                  <option value="Liten uppdatering 490 kr">Liten uppdatering 490 kr</option>
-                  <option value="Normal uppdatering 990 kr">Normal uppdatering 990 kr</option>
-                  <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
-                </select>
-
-                <label for="ovrigt">Övrigt</label>
-                <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
-
-                <button class="btn contact-submit" type="submit">Skicka brief</button>
-              </form>
-            </div>
-          </details>
-
-          <details class="accordion">
-            <summary>
-              <span class="accordion-title">
-                <strong>Formulär för AI-reklamvideo</strong>
-                <span>Tryck här för att öppna eller stänga frågorna om video.</span>
-              </span>
-              <span class="accordion-icon">+</span>
-            </summary>
-            <div class="accordion-body">
-              <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
-                <strong>AI-reklamvideo</strong>
-                <small>Pris: 1 999 kr för upp till 60 sekunder. Utkast först. Köp efter godkännande om du gillar det.</small>
-
-                <input type="hidden" name="_subject" value="Ny förfrågan AI-reklamvideo" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
-                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
-
-                <label for="vnamn">Namn</label>
-                <input id="vnamn" type="text" name="Namn" required />
-
-                <label for="vforetag">Företag / verksamhet</label>
-                <input id="vforetag" type="text" name="Företag" />
-
-                <label for="vemail">E-post</label>
-                <input id="vemail" type="email" name="E-post" required />
-
-                <label for="vsyfte">Vad ska videon användas till?</label>
-                <select id="vsyfte" name="Video syfte">
-                  <option value="Sociala medier">Sociala medier</option>
-                  <option value="Hemsida">Hemsida</option>
-                  <option value="Annons">Annons</option>
-                  <option value="Informationsvideo">Informationsvideo</option>
-                  <option value="Annat">Annat</option>
-                </select>
-
-                <label for="vstil">Vilken videostil vill du ha?</label>
-                <select id="vstil" name="Video stil">
-                  <option value="UGC-känsla">UGC-känsla</option>
-                  <option value="AI-presentatör">AI-presentatör</option>
-                  <option value="Verklighetstrogen reklam">Verklighetstrogen reklam</option>
-                  <option value="Tecknad / lekfull">Tecknad / lekfull</option>
-                  <option value="Vet inte än">Vet inte än</option>
-                </select>
-
-                <label for="vbudskap">Vad vill du förmedla?</label>
-                <textarea id="vbudskap" name="Budskap" rows="5" placeholder="Skriv vad videon ska säga eller kännas som"></textarea>
-
-                <label for="vexempel">Länkar till videor du gillar</label>
-                <textarea id="vexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar till videor du gillar"></textarea>
-
-                <label for="vovrigt">Övrigt</label>
-                <textarea id="vovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
-
-                <button class="btn contact-submit" type="submit">Skicka brief för AI-video</button>
-              </form>
-            </div>
-          </details>
-
-          <details class="accordion">
-            <summary>
-              <span class="accordion-title">
-                <strong>Formulär för reklamflyer</strong>
-                <span>Tryck här för att öppna eller stänga frågorna om flyer.</span>
-              </span>
-              <span class="accordion-icon">+</span>
-            </summary>
-            <div class="accordion-body">
-              <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
-                <strong>Reklamflyer</strong>
-                <small>Pris från 799 kr. Utkast först. Köp efter godkännande om du gillar det.</small>
-
-                <input type="hidden" name="_subject" value="Ny förfrågan reklamflyer" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
-                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
-
-                <label for="fnamn">Namn</label>
-                <input id="fnamn" type="text" name="Namn" required />
-
-                <label for="fforetag">Företag / verksamhet</label>
-                <input id="fforetag" type="text" name="Företag" />
-
-                <label for="femail">E-post</label>
-                <input id="femail" type="email" name="E-post" required />
-
-                <label for="fsyfte">Vad ska flyern användas till?</label>
-                <select id="fsyfte" name="Flyer syfte">
-                  <option value="Sociala medier">Sociala medier</option>
-                  <option value="Utskrift">Utskrift</option>
-                  <option value="Båda">Båda</option>
-                </select>
-
-                <label for="fbudskap">Vad vill du förmedla?</label>
-                <textarea id="fbudskap" name="Budskap" rows="5" placeholder="Skriv vad flyern ska säga eller visa"></textarea>
-
-                <label for="fexempel">Länkar till exempel du gillar</label>
-                <textarea id="fexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar eller beskriv stil"></textarea>
-
-                <label for="fovrigt">Övrigt</label>
-                <textarea id="fovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
-
-                <button class="btn contact-submit" type="submit">Skicka brief för flyer</button>
-              </form>
-            </div>
-          </details>
+            <button class="btn contact-submit" type="submit">Skicka brief för AI-video</button>
+          </form>
         </div>
-      </div>
-    </section>
+      </details>
+
+      <details class="accordion">
+        <summary>
+          <span class="accordion-title">
+            <strong>Formulär för reklamflyer</strong>
+            <span>Tryck här för att öppna eller stänga frågorna om flyer.</span>
+          </span>
+          <span class="accordion-icon">+</span>
+        </summary>
+        <div class="accordion-body">
+          <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+            <strong>Reklamflyer</strong>
+            <small>Pris från 799 kr. Utkast först. Köp efter godkännande om du gillar det.</small>
+
+            <input type="hidden" name="_subject" value="Ny förfrågan reklamflyer" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+            <label for="fnamn">Namn</label>
+            <input id="fnamn" type="text" name="Namn" required />
+
+            <label for="fforetag">Företag / verksamhet</label>
+            <input id="fforetag" type="text" name="Företag" />
+
+            <label for="femail">E-post</label>
+            <input id="femail" type="email" name="E-post" required />
+
+            <label for="fsyfte">Vad ska flyern användas till?</label>
+            <select id="fsyfte" name="Flyer syfte">
+              <option value="Sociala medier">Sociala medier</option>
+              <option value="Utskrift">Utskrift</option>
+              <option value="Båda">Båda</option>
+            </select>
+
+            <label for="fbudskap">Vad vill du förmedla?</label>
+            <textarea id="fbudskap" name="Budskap" rows="5" placeholder="Skriv vad flyern ska säga eller visa"></textarea>
+
+            <label for="fexempel">Länkar till exempel du gillar</label>
+            <textarea id="fexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar eller beskriv stil"></textarea>
+
+            <label for="fovrigt">Övrigt</label>
+            <textarea id="fovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+
+            <button class="btn contact-submit" type="submit">Skicka brief för flyer</button>
+          </form>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
 
     <section class="section">
       <div class="container">
