@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nord Studio Web — Professionella hemsidor för småföretag</title>
+  <title>Hemsida på prov — Fyll i formuläret, få ett exempel, köp till fast pris</title>
   <meta
     name="description"
-    content="Demo av en modern, enkel och snygg hemsida för småföretag. Foton, video, kontaktuppgifter, tjänster och tydlig design."
+    content="Hemsida på prov. Fyll i formuläret, få ett exempel och köp bara om du är nöjd. Fast pris, ny hemsida eller uppdatering av tidigare sida, URL-namn enligt önskemål ingår."
   />
+  <meta property="og:title" content="Hemsida på prov — Fyll i formuläret, få ett exempel, köp till fast pris">
+  <meta property="og:description" content="Se ett exempel först. Nöjd? Köp till fast pris. Ny hemsida eller uppdatering av tidigare sida. URL-namn enligt önskemål ingår.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ericanordlof.github.io/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -143,7 +148,23 @@
       font-size:18px;
       line-height:1.7;
       color:#4d4d4d;
-      max-width:640px;
+      max-width:680px;
+    }
+
+    .hero-points{
+      display:grid;
+      gap:10px;
+      margin:22px 0 0;
+      padding:0;
+      list-style:none;
+      color:#3e3e3e;
+      font-weight:600;
+    }
+
+    .hero-points li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
     }
 
     .hero-actions{
@@ -297,6 +318,12 @@
       gap:18px;
     }
 
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
     .card{
       background:rgba(255,255,255,0.84);
       border:1px solid rgba(0,0,0,0.06);
@@ -445,13 +472,13 @@
       border:0;
     }
 
-    .pricing{
+    .offer-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
 
-    .price-card{
+    .offer-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:28px;
@@ -460,7 +487,7 @@
       position:relative;
     }
 
-    .price-card.featured{
+    .offer-card.featured{
       background:#151515;
       color:#fff;
       transform:translateY(-8px);
@@ -481,29 +508,21 @@
       background:rgba(255,255,255,0.12);
     }
 
-    .price-card h3{
+    .offer-card h3{
       margin:18px 0 10px;
       font-size:26px;
     }
 
-    .price{
-      font-size:44px;
-      font-weight:800;
-      letter-spacing:-0.05em;
-      margin:0 0 6px;
+    .offer-card p{
+      color:#5f5f5f;
+      line-height:1.7;
     }
 
-    .price small{
-      font-size:16px;
-      font-weight:600;
-      color:#777;
+    .featured p{
+      color:#ebebeb;
     }
 
-    .featured .price small{
-      color:#cfcfcf;
-    }
-
-    .price-card ul{
+    .offer-card ul{
       list-style:none;
       padding:0;
       margin:20px 0 0;
@@ -514,6 +533,94 @@
 
     .featured ul{
       color:#ebebeb;
+    }
+
+    .offer-card li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .offer-card li::before{
+      content:"✓";
+      font-weight:800;
+      color:#111;
+    }
+
+    .featured li::before{
+      color:#fff;
+    }
+
+    .price-box{
+      background:linear-gradient(135deg, #181818 0%, #2d2b2b 100%);
+      color:#fff;
+      border-radius:34px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:20px;
+      align-items:center;
+    }
+
+    .price-box h2{
+      margin:0 0 10px;
+      font-family:"Playfair Display",serif;
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:1;
+    }
+
+    .price-box p{
+      margin:0;
+      color:#dfdfdf;
+      line-height:1.7;
+      max-width:620px;
+    }
+
+    .price-panel{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:24px;
+      padding:22px;
+    }
+
+    .price-big{
+      font-size:52px;
+      font-weight:800;
+      letter-spacing:-0.05em;
+      line-height:1;
+      margin-bottom:10px;
+    }
+
+    .price-note{
+      color:#dfdfdf;
+      line-height:1.7;
+    }
+
+    .proof-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .proof{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .proof strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:8px;
+    }
+
+    .proof span{
+      color:#666;
+      line-height:1.6;
+      font-size:14px;
     }
 
     .cta{
@@ -540,6 +647,22 @@
       color:#dfdfdf;
       line-height:1.7;
       max-width:620px;
+    }
+
+    .cta-points{
+      display:grid;
+      gap:10px;
+      margin:20px 0 0;
+      padding:0;
+      list-style:none;
+      color:#f1f1f1;
+      font-weight:600;
+    }
+
+    .cta-points li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
     }
 
     .contact-box{
@@ -649,17 +772,23 @@
     @media (max-width: 1024px){
       .hero-grid,
       .showcase,
-      .cta{
+      .cta,
+      .price-box,
+      .grid-2{
         grid-template-columns:1fr;
       }
 
       .grid-3,
       .themes,
-      .pricing{
+      .offer-grid{
         grid-template-columns:1fr;
       }
 
-      .price-card.featured{
+      .proof-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .offer-card.featured{
         transform:none;
       }
     }
@@ -694,7 +823,8 @@
         align-items:flex-start;
       }
 
-      .checkbox-grid{
+      .checkbox-grid,
+      .proof-grid{
         grid-template-columns:1fr;
       }
     }
@@ -704,19 +834,19 @@
   <div class="topbar">
     <div class="container nav">
       <a href="#" class="brand">
-        <span class="brand-badge">N</span>
-        <span>Nord Studio Web</span>
+        <span class="brand-badge">H</span>
+        <span>Hemsida på prov</span>
       </a>
 
       <nav class="nav-links">
         <a href="#stilar">Stilar</a>
         <a href="#innehall">Innehåll</a>
         <a href="#video">Video</a>
-        <a href="#priser">Paket</a>
+        <a href="#sa-funkar-det">Så funkar det</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
-      <a href="#kontakt" class="nav-cta">Skicka brief</a>
+      <a href="#kontakt" class="nav-cta">Fyll i formuläret</a>
     </div>
   </div>
 
@@ -724,17 +854,24 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Exempelsida för framtida kunder</span>
-          <h1>En enkel hemsida kan se riktigt dyr ut.</h1>
+          <span class="eyebrow">Ny hemsida eller uppdatering av tidigare sida</span>
+          <h1>Hemsida på prov</h1>
           <p>
-            Det här är en demosida som visar hur en modern hemsida för småföretag kan byggas:
-            snygga bilder, tydlig information, kontaktuppgifter, video, olika stilar och en känsla
-            som faktiskt ser ut att ha en plan bakom sig.
+            Fyll i formuläret. Få ett exempel. Nöjd? Köp till fast pris.
+            Du kan beställa en ny hemsida eller en uppdatering av en sida du redan har köpt av mig.
+            Du ser alltid ett exempel först och köper bara om det känns rätt.
           </p>
 
+          <ul class="hero-points">
+            <li><span class="check">✓</span><span>Se ett exempel först innan du bestämmer dig</span></li>
+            <li><span class="check">✓</span><span>Fast pris när du är nöjd</span></li>
+            <li><span class="check">✓</span><span>Ny hemsida eller ändring/uppdatering av tidigare sida</span></li>
+            <li><span class="check">✓</span><span>URL-namn enligt önskemål ingår</span></li>
+          </ul>
+
           <div class="hero-actions">
-            <a href="#stilar" class="btn btn-primary">Se olika stilar</a>
-            <a href="#kontakt" class="btn btn-secondary">Få en egen demo</a>
+            <a href="#sa-funkar-det" class="btn btn-primary">Så funkar det</a>
+            <a href="#kontakt" class="btn btn-secondary">Få ett exempel</a>
           </div>
         </div>
 
@@ -753,17 +890,109 @@
 
           <div class="mockup-panel">
             <div class="mini-card">
-              <strong>Foton</strong>
-              <span>Professionell känsla med stora bilder och ren layout.</span>
+              <strong>Få ett exempel först</strong>
+              <span>Du får något konkret att ta ställning till, inte bara lösa löften.</span>
             </div>
             <div class="mini-card">
-              <strong>Video</strong>
-              <span>Visa lokal, tjänst eller produkt utan att folk behöver gissa.</span>
+              <strong>Fast pris</strong>
+              <span>När du är nöjd köper du till fast pris. Ingen seg prisdimma.</span>
             </div>
             <div class="mini-card">
-              <strong>Kontakt</strong>
-              <span>Tydliga knappar, telefon, mejl och länkar där de ska vara.</span>
+              <strong>URL ingår</strong>
+              <span>URL-namn enligt önskemål ingår om det är möjligt och ledigt.</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sa-funkar-det">
+      <div class="container">
+        <div class="section-title">
+          <h2>Så funkar det</h2>
+          <p>
+            Enkelt upplägg. Mindre byråsnack, mer konkret leverans. Du ser först. Du köper sen.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <div class="offer-card">
+            <span class="tag">Steg 1</span>
+            <h3>Fyll i formuläret</h3>
+            <p>Berätta vad du vill ha, vilken stil du gillar och vad sidan ska hjälpa dig med.</p>
+            <ul>
+              <li>Ny hemsida eller uppdatering</li>
+              <li>Valfri stil och känsla</li>
+              <li>Text, bild, länkar och behov</li>
+            </ul>
+          </div>
+
+          <div class="offer-card featured">
+            <span class="tag">Steg 2</span>
+            <h3>Få ett exempel</h3>
+            <p>Du får ett konkret upplägg eller demo att titta på innan du bestämmer dig.</p>
+            <ul>
+              <li>Du ser hur det kan bli</li>
+              <li>Du slipper köpa blint</li>
+              <li>Du kan ge feedback först</li>
+            </ul>
+          </div>
+
+          <div class="offer-card">
+            <span class="tag">Steg 3</span>
+            <h3>Nöjd? Köp till fast pris</h3>
+            <p>Känns det rätt, köper du sidan eller uppdateringen till fast pris.</p>
+            <ul>
+              <li>Fast pris</li>
+              <li>Ingen prenumeration</li>
+              <li>URL-namn enligt önskemål ingår</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="price-box">
+          <div>
+            <h2>Du köper inte en chansning</h2>
+            <p>
+              Det är hela poängen. Du fyller i formuläret, får se ett exempel och köper bara om du är nöjd.
+              Samma modell gäller om du redan har köpt en hemsida av mig och vill göra ändringar eller uppdateringar.
+            </p>
+          </div>
+
+          <div class="price-panel">
+            <div class="price-big">Fast pris</div>
+            <div class="price-note">
+              Ny hemsida eller uppdatering.<br>
+              Se först demo igen om du är nöjd innan du köper.<br>
+              URL-namn enligt önskemål ingår.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="proof-grid">
+          <div class="proof">
+            <strong>Ingen lång process</strong>
+            <span>Du fyller i ett formulär i stället för att sitta i onödiga möten.</span>
+          </div>
+          <div class="proof">
+            <strong>Exempel först</strong>
+            <span>Du ser riktning och känsla innan du bestämmer dig.</span>
+          </div>
+          <div class="proof">
+            <strong>Fast pris</strong>
+            <span>Du vet vad du betalar för när du säger ja.</span>
+          </div>
+          <div class="proof">
+            <strong>Uppdateringar också</strong>
+            <span>Har du redan köpt en sida kan du beställa ändringar på samma sätt.</span>
           </div>
         </div>
       </div>
@@ -906,51 +1135,22 @@
       </div>
     </section>
 
-    <section class="section" id="priser">
-      <div class="container">
-        <div class="section-title">
-          <h2>Exempel på paket</h2>
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h3>Ny hemsida på prov</h3>
           <p>
-            Det här är bara demo. Men det hjälper kunden att förstå att du kan leverera både enkelt, snyggt och tydligt.
+            Du beskriver vad du vill ha, vilken känsla sidan ska ha och vad den ska innehålla.
+            Jag visar ett exempel först. Är du nöjd köper du till fast pris.
           </p>
         </div>
 
-        <div class="pricing">
-          <div class="price-card">
-            <span class="tag">Start</span>
-            <h3>One page</h3>
-            <p class="price">2 900 kr</p>
-            <ul>
-              <li>Startsida</li>
-              <li>Text, bilder och kontakt</li>
-              <li>Mobilanpassad design</li>
-              <li>Enkel och snabb leverans</li>
-            </ul>
-          </div>
-
-          <div class="price-card featured">
-            <span class="tag">Populärast</span>
-            <h3>Proffs</h3>
-            <p class="price">4 900 kr <small>exempel</small></p>
-            <ul>
-              <li>Fler sektioner och tydligare layout</li>
-              <li>Video, länkar och starkare design</li>
-              <li>Anpassade färger och typsnitt</li>
-              <li>Mer premium känsla</li>
-            </ul>
-          </div>
-
-          <div class="price-card">
-            <span class="tag">Premium</span>
-            <h3>Utökad</h3>
-            <p class="price">7 900 kr</p>
-            <ul>
-              <li>Fler undersidor</li>
-              <li>Mer innehåll och mer struktur</li>
-              <li>Mer varumärkeskänsla</li>
-              <li>Byggd för att imponera mer</li>
-            </ul>
-          </div>
+        <div class="card">
+          <h3>Ändring eller uppdatering på prov</h3>
+          <p>
+            Har du redan köpt en hemsida av mig kan du beställa ändringar eller uppdateringar på samma sätt.
+            Du ser först ett nytt exempel, och köper bara om du är nöjd.
+          </p>
         </div>
       </div>
     </section>
@@ -959,23 +1159,39 @@
       <div class="container">
         <div class="cta">
           <div>
-            <h2>Vill du ha en egen version av det här?</h2>
+            <h2>Fyll i formuläret. Få ett exempel. Nöjd? Köp till fast pris.</h2>
             <p>
-              Jag kan göra en enkel men snygg hemsida med foton, info, länkar, kontaktuppgifter och rätt känsla för din verksamhet.
-              Du behöver inte kunna teknik. Du behöver bara ha något att visa upp. Resten löser vi.
+              Beställ en ny hemsida eller en uppdatering av en sida du redan har köpt av mig.
+              Du får först se ett exempel. Känns det rätt, köper du till fast pris.
+              URL-namn enligt önskemål ingår.
             </p>
+
+            <ul class="cta-points">
+              <li><span class="check">✓</span><span>Ny hemsida på prov</span></li>
+              <li><span class="check">✓</span><span>Uppdatering på prov</span></li>
+              <li><span class="check">✓</span><span>Köp bara om du är nöjd</span></li>
+              <li><span class="check">✓</span><span>Fast pris</span></li>
+              <li><span class="check">✓</span><span>URL-namn enligt önskemål ingår</span></li>
+            </ul>
           </div>
 
           <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
-            <strong>Intresseanmälan / brief</strong>
-            <small>Fyll i så mycket du vill. Ju mer tydlig brief, desto mindre rundgång senare.</small>
+            <strong>Formulär / brief</strong>
+            <small>Ju tydligare du fyller i, desto bättre exempel kan du få tillbaka.</small>
 
-            <input type="hidden" name="_subject" value="Ny hemsideförfrågan från demosidan">
+            <input type="hidden" name="_subject" value="Ny förfrågan från Hemsida på prov">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://ericanordlof.github.io/tack.html">
+            <input type="hidden" name="_next" value="https://ericanordlof.github.io/#kontakt">
 
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off">
+
+            <label for="typ">Vad vill du ha hjälp med?</label>
+            <select id="typ" name="Typ av uppdrag">
+              <option value="Ny hemsida">Ny hemsida</option>
+              <option value="Uppdatering av tidigare hemsida">Uppdatering av tidigare hemsida</option>
+              <option value="Ändring av befintlig sida">Ändring av befintlig sida</option>
+            </select>
 
             <label for="namn">Namn</label>
             <input id="namn" type="text" name="Namn" required>
@@ -998,6 +1214,7 @@
               <option value="Se mer proffsig ut">Se mer proffsig ut</option>
               <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
               <option value="Samla allt på ett ställe">Samla allt på ett ställe</option>
+              <option value="Uppdatera en tidigare sida">Uppdatera en tidigare sida</option>
               <option value="Annat">Annat</option>
             </select>
 
@@ -1027,6 +1244,9 @@
             <label for="farger">Färger du gillar</label>
             <input id="farger" type="text" name="Färger" placeholder="t.ex. beige, svart, blått, rosa">
 
+            <label for="urlnamn">Önskat URL-namn</label>
+            <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller mittnamn">
+
             <label for="inspo">Finns det hemsidor du gillar?</label>
             <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
 
@@ -1037,21 +1257,28 @@
               <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
             </select>
 
+            <label for="tidigare">Har du redan köpt en hemsida av mig?</label>
+            <select id="tidigare" name="Tidigare kund">
+              <option value="Nej">Nej</option>
+              <option value="Ja">Ja</option>
+            </select>
+
             <label for="deadline">När vill du ha sidan klar?</label>
             <input id="deadline" type="text" name="Deadline" placeholder="t.ex. så snart som möjligt eller före ett visst datum">
 
             <label for="budget">Ungefärlig budget</label>
             <select id="budget" name="Budget">
+              <option value="Vet inte än">Vet inte än</option>
+              <option value="Fast pris önskas">Fast pris önskas</option>
               <option value="Under 3 000 kr">Under 3 000 kr</option>
               <option value="3 000–5 000 kr">3 000–5 000 kr</option>
               <option value="5 000–10 000 kr">5 000–10 000 kr</option>
-              <option value="Vet inte än">Vet inte än</option>
             </select>
 
             <label for="ovrigt">Övrigt</label>
             <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
-            <button class="btn btn-primary contact-submit" type="submit">Skicka förfrågan</button>
+            <button class="btn btn-primary contact-submit" type="submit">Skicka formuläret</button>
           </form>
         </div>
       </div>
@@ -1060,8 +1287,8 @@
 
   <footer>
     <div class="container footer-line">
-      <span>© 2026 Nord Studio Web — demosida</span>
-      <span>Byggd som exempel för framtida kunder</span>
+      <span>© 2026 Hemsida på prov</span>
+      <span>Få ett exempel först. Köp till fast pris om du är nöjd.</span>
     </div>
   </footer>
 </body>
