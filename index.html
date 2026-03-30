@@ -10,27 +10,27 @@
   <title>Webbutveckling för företag i Sverige | Nordlöf Nordic</title>
   <meta
     name="description"
-    content="Personlig webbutveckling för företag i hela Sverige. Få en demo inom 1 arbetsdag. Ny hemsida, uppdateringar, AI-reklamvideo och reklamflyer. Köp först när du gillar det."
+    content="Webbutveckling för företag i hela Sverige. Få en demo inom 1 arbetsdag. Ny hemsida, uppdateringar, AI-reklamvideo och reklamflyer. Köp först efter godkänd demo."
   />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
 
   <meta property="og:title" content="Webbutveckling för företag i Sverige | Nordlöf Nordic" />
-  <meta property="og:description" content="Personlig webbutveckling för företag i hela Sverige. Demo inom 1 arbetsdag. Ny hemsida, uppdateringar, AI-reklamvideo och reklamflyer." />
+  <meta property="og:description" content="Få en demo inom 1 arbetsdag. Köp först efter godkänd demo. Ny hemsida, uppdateringar, AI-reklamvideo och reklamflyer." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/" />
   <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Webbutveckling för företag i Sverige | Nordlöf Nordic" />
-  <meta name="twitter:description" content="Personlig webbutveckling för företag i hela Sverige. Demo inom 1 arbetsdag. Köp först när du gillar det." />
+  <meta name="twitter:description" content="Demo inom 1 arbetsdag. Köp först efter godkänd demo." />
   <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
 
   <link rel="canonical" href="https://webutvecklare.se/" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
-<link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
-<meta name="theme-color" content="#f7f0ec" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,7 +44,7 @@
     "@context":"https://schema.org",
     "@type":"ProfessionalService",
     "name":"Nordlöf Nordic",
-    "description":"Personlig webbutveckling för företag i hela Sverige. Ny hemsida, uppdateringar, AI-reklamvideo och reklamflyer. Demo inom 1 arbetsdag.",
+    "description":"Webbutveckling för företag i hela Sverige. Ny hemsida, uppdateringar, AI-reklamvideo och reklamflyer. Demo inom 1 arbetsdag.",
     "url":"https://webutvecklare.se/",
     "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
     "email":"mailto:nordloferica@gmail.com",
@@ -228,16 +228,16 @@
       min-height:var(--tap);
       padding:12px 18px;
       border-radius:999px;
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
       color:#fff;
-      font-weight:700;
-      box-shadow:0 14px 30px rgba(185,111,97,0.18);
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
       white-space:nowrap;
       flex:0 0 auto;
     }
 
     .hero{
-      padding:clamp(26px, 4vw, 58px) 0 26px;
+      padding:clamp(26px, 4vw, 58px) 0 18px;
     }
 
     .hero-grid{
@@ -257,7 +257,7 @@
       border:1px solid var(--line);
       border-radius:999px;
       font-size:13px;
-      font-weight:700;
+      font-weight:800;
       color:#7c5d53;
       box-shadow:0 10px 30px rgba(35,29,26,0.04);
       line-height:1.4;
@@ -306,6 +306,7 @@
       gap:14px;
       flex-wrap:wrap;
       margin-top:28px;
+      margin-bottom:16px;
     }
 
     .btn{
@@ -316,7 +317,7 @@
       min-height:var(--tap);
       padding:14px 20px;
       border-radius:999px;
-      font-weight:700;
+      font-weight:800;
       transition:.2s ease;
       border:none;
       cursor:pointer;
@@ -329,15 +330,36 @@
     }
 
     .btn-primary{
-      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
       color:#fff;
-      box-shadow:0 14px 30px rgba(185,111,97,0.18);
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
     }
 
     .btn-secondary{
       background:#fff;
       border:1px solid var(--line);
       color:var(--accent);
+    }
+
+    .hero-microproof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 12px;
+      font-size:13px;
+      font-weight:700;
+      color:#4f4742;
+      box-shadow:0 10px 24px rgba(35,29,26,0.04);
     }
 
     .hero-card{
@@ -515,6 +537,13 @@
       margin:0;
       color:#5d5550;
       line-height:1.72;
+    }
+
+    .section-cta{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
     .themes{
@@ -1137,6 +1166,11 @@
         width:100%;
       }
 
+      .hero-microproof{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
       .mockup-header{
         font-size:13px;
         align-items:flex-start;
@@ -1282,7 +1316,7 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
 
-      <a href="#kontakt" class="nav-cta">Fyll i formuläret</a>
+      <a href="#kontakt" class="nav-cta">Få min demo</a>
     </div>
   </div>
 
@@ -1290,26 +1324,33 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Personlig webbutveckling för företag i hela Sverige</span>
-          <h1>Webbutveckling för företag i hela Sverige</h1>
+          <span class="eyebrow">Demo inom 1 arbetsdag · Köp först efter godkänd demo</span>
+
+          <h1>Webbutveckling för företag som vill ha något snyggt, snabbt och enkelt</h1>
+
           <p>
             Jag bygger hemsidor för företag, småföretagare och personliga varumärken i hela Sverige.
-            Du fyller i formuläret, jag fixar resten och skickar en demo inom 1 arbetsdag.
-            Är du nöjd, köper du. Är du inte nöjd, då justerar jag tills det känns helt rätt.
-            Personlig service, tydligt upplägg och noll byråcirkus.
+            Du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först om du gillar resultatet.
+            Ingen byråcirkus. Ingen bindning. Bara ett rakt upplägg som leder framåt.
           </p>
 
           <ul class="hero-points">
-            <li><span class="check">✓</span><span>Webbutveckling på distans i hela Sverige</span></li>
             <li><span class="check">✓</span><span>Demo inom 1 arbetsdag</span></li>
-            <li><span class="check">✓</span><span>Du köper först när du gillar det du ser</span></li>
-            <li><span class="check">✓</span><span>Jag ändrar tills du är nöjd</span></li>
+            <li><span class="check">✓</span><span>Köp först efter godkänd demo</span></li>
+            <li><span class="check">✓</span><span>Fast pris och personlig service</span></li>
             <li><span class="check">✓</span><span>Ny hemsida, uppdateringar, AI-reklamvideo och reklamflyer</span></li>
+            <li><span class="check">✓</span><span>För företag i hela Sverige</span></li>
           </ul>
 
           <div class="hero-actions">
-            <a href="#sa-funkar-det" class="btn btn-primary">Så funkar det</a>
-            <a href="#kop" class="btn btn-secondary">Köp efter godkänd demo</a>
+            <a href="#kontakt" class="btn btn-primary">Få min demo</a>
+            <a href="#priser" class="btn btn-secondary">Se priser</a>
+          </div>
+
+          <div class="hero-microproof" aria-label="Fördelar">
+            <span class="hero-pill">✓ Demo först</span>
+            <span class="hero-pill">✓ Fast pris</span>
+            <span class="hero-pill">✓ Du köper sen</span>
           </div>
         </div>
 
@@ -1329,16 +1370,16 @@
 
           <div class="mockup-panel">
             <div class="mini-card">
-              <strong>Fyll i formulär</strong>
-              <span>Du skickar in det jag behöver. Jag tar över därifrån.</span>
+              <strong>1. Fyll i brief</strong>
+              <span>Du skickar in det viktigaste. Jag tar över därifrån.</span>
             </div>
             <div class="mini-card">
-              <strong>Demo snabbt</strong>
-              <span>Du får något konkret inom 1 arbetsdag. Inte bara luft och löften.</span>
+              <strong>2. Få demo snabbt</strong>
+              <span>Du får något konkret inom 1 arbetsdag. Inte luft och fluff.</span>
             </div>
             <div class="mini-card">
-              <strong>Personlig finish</strong>
-              <span>Inte nöjd? Då justerar jag tills sidan känns rätt på riktigt.</span>
+              <strong>3. Godkänn och köp</strong>
+              <span>Gillar du det du ser går vi vidare. Annars justerar jag.</span>
             </div>
           </div>
         </div>
@@ -1350,7 +1391,7 @@
         <div class="section-title">
           <h2>Så funkar det</h2>
           <p>
-            Rakt upplägg. Låg friktion. Du behöver inte kunna webbutveckling. Det är min leveransyta.
+            Rakt upplägg. Låg friktion. Du behöver inte kunna webbutveckling. Det är min avdelning.
           </p>
         </div>
 
@@ -1358,7 +1399,7 @@
           <div class="offer-card">
             <span class="tag">Steg 1</span>
             <h3>Fyll i formuläret</h3>
-            <p>Berätta vad du vill ha hjälp med, vilken stil du gillar och vad företaget behöver.</p>
+            <p>Berätta vad du behöver, vilken stil du gillar och vad sidan ska hjälpa dig med.</p>
             <ul>
               <li>Ny hemsida eller uppdatering</li>
               <li>AI-video eller reklamflyer</li>
@@ -1372,21 +1413,25 @@
             <p>Inom 1 arbetsdag får du något konkret att titta på. Du slipper köpa i blindo.</p>
             <ul>
               <li>Snabb återkoppling</li>
-              <li>Personlig service av mig</li>
-              <li>Tydlig riktning direkt</li>
+              <li>Personlig service direkt av mig</li>
+              <li>Tydlig riktning från start</li>
             </ul>
           </div>
 
           <div class="offer-card">
             <span class="tag">Steg 3</span>
-            <h3>Nöjd? Köp.</h3>
-            <p>Gillar du det du ser, köper du. Är du inte nöjd, då justerar jag tills det känns rätt.</p>
+            <h3>Gilla läget? Köp.</h3>
+            <p>Gillar du det du ser går vi vidare. Behövs ändringar justerar jag tills det känns rätt.</p>
             <ul>
+              <li>Köp först efter godkänd demo</li>
               <li>Fast pris</li>
-              <li>Inga abonnemang</li>
-              <li>Allt material skickas inom 1 arbetsdag efter köp</li>
+              <li>Leverans inom 1 arbetsdag efter köp</li>
             </ul>
           </div>
+        </div>
+
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-primary">Skicka in brief</a>
         </div>
       </div>
     </section>
@@ -1396,7 +1441,7 @@
         <div class="section-title">
           <h2>Tjänster för företag i hela Sverige</h2>
           <p>
-            Jag hjälper företag, småföretagare och personliga varumärken i hela Sverige med hemsidor, uppdateringar och reklammaterial.
+            Huvudspåret är hemsidor. Sedan kan du också få uppdateringar, AI-reklamvideo och reklamflyer som tillägg eller separata uppdrag.
           </p>
         </div>
 
@@ -1404,21 +1449,21 @@
           <div class="card">
             <h3>Ny hemsida för företag</h3>
             <p>
-              För dig som vill ha en ny hemsida som ser proffsig ut, känns genomtänkt och hjälper ditt företag att få fler kunder.
+              För dig som vill ha en ny hemsida som ser proffsig ut, känns genomtänkt och hjälper ditt företag att få fler förfrågningar.
             </p>
           </div>
 
           <div class="card">
             <h3>Uppdatering av hemsida</h3>
             <p>
-              För dig som redan har en hemsida men behöver hjälp att uppdatera innehåll, förbättra känslan eller göra sidan tydligare.
+              För dig som redan har en sida men vill att någon annan tar hand om ändringarna. Smidigt, snabbt och till fast pris.
             </p>
           </div>
 
           <div class="card">
-            <h3>Hemsidor för småföretag</h3>
+            <h3>Tillägg som säljer mer</h3>
             <p>
-              För småföretagare som vill ha en snygg och tydlig hemsida utan att fastna i teknik, byråspråk eller långa processer.
+              AI-reklamvideo och reklamflyer för dig som vill ha mer än bara en hemsida. Bra när du vill driva trafik, synas mer och se mer genomarbetad ut.
             </p>
           </div>
         </div>
@@ -1441,7 +1486,7 @@
             <div class="price-big">1 arbetsdag</div>
             <div class="price-note">
               Demo inom 1 arbetsdag.<br>
-              Material inom 1 arbetsdag efter köp.<br>
+              Köp först efter godkänd demo.<br>
               Personlig service hela vägen.
             </div>
           </div>
@@ -1454,7 +1499,7 @@
         <div class="proof-grid">
           <div class="proof">
             <strong>Personlig kontakt</strong>
-            <span>Du har kontakt direkt med mig. Inte med ett anonymt system eller ett byråled.</span>
+            <span>Du har kontakt direkt med mig. Inte med ett anonymt system eller tre mellanled.</span>
           </div>
           <div class="proof">
             <strong>Demo först</strong>
@@ -1465,8 +1510,8 @@
             <span>Jag jobbar vidare med innehållet tills helheten landar som den ska.</span>
           </div>
           <div class="proof">
-            <strong>Snabb leverans</strong>
-            <span>När du säger ja skickar jag allt material inom 1 arbetsdag.</span>
+            <strong>Fast pris</strong>
+            <span>Tydligt upplägg utan abonnemangsöverraskningar och övrigt kreativt hittepå.</span>
           </div>
         </div>
       </div>
@@ -1477,7 +1522,7 @@
         <div class="section-title">
           <h2>Olika stilar för olika företag</h2>
           <p>
-            Alla företag ska inte se likadana ut. En bra hemsida ska kännas rätt för just din verksamhet.
+            Alla företag ska inte se likadana ut. En bra hemsida ska kännas rätt för just din verksamhet och hjälpa kunden att lita på dig snabbare.
           </p>
         </div>
 
@@ -1489,13 +1534,17 @@
 
           <article class="theme-card theme-2">
             <h3>Trygg & personlig</h3>
-            <p>För mindre företag där kunden gärna vill känna vem som står bakom.</p>
+            <p>För mindre företag där kunden gärna vill känna vem som står bakom innan de hör av sig.</p>
           </article>
 
           <article class="theme-card theme-3">
             <h3>Stark & professionell</h3>
             <p>För företag som vill kännas seriösa, moderna och lätta att anlita.</p>
           </article>
+        </div>
+
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-secondary">Jag vill ha en sådan stil</a>
         </div>
       </div>
     </section>
@@ -1511,8 +1560,18 @@
 
         <div class="grid-3">
           <div class="card">
-            <h3>Ren & praktisk</h3>
-            <p>Passar serviceföretag där tydlig information, kontakt och förtroende är viktigast.</p>
+            <h3>Hantverk & service</h3>
+            <p>För dig som vill ha tydliga tjänster, starkt förtroende och fler förfrågningar.</p>
+          </div>
+
+          <div class="card">
+            <h3>Konsult & tjänsteföretag</h3>
+            <p>För dig som vill kännas modern, trygg och professionell utan att sidan blir stel.</p>
+          </div>
+
+          <div class="card">
+            <h3>Skönhet & personligt varumärke</h3>
+            <p>För dig som vill ha ett varmare uttryck där känsla, förtroende och helhetsintryck säljer.</p>
           </div>
 
           <div class="card">
@@ -1522,22 +1581,12 @@
 
           <div class="card">
             <h3>Offertfokus</h3>
-            <p>För dig som vill att sidan främst ska leda till förfrågningar, formulär och fler kunder.</p>
-          </div>
-
-          <div class="card">
-            <h3>Mörk & modern</h3>
-            <p>För företag som vill ha ett starkare uttryck och kännas mer premium eller robusta.</p>
-          </div>
-
-          <div class="card">
-            <h3>Varm & mänsklig</h3>
-            <p>För personliga varumärken och lokala företag där relation och trygghet säljer.</p>
+            <p>För dig som vill att sidan främst ska leda till formulär, kontakt och fler kunder.</p>
           </div>
 
           <div class="card">
             <h3>Enkel & proffsig</h3>
-            <p>För dig som vill att det ska se bra ut utan att det blir onödigt avancerat.</p>
+            <p>För dig som vill att det ska se bra ut direkt utan att allt blir onödigt avancerat.</p>
           </div>
         </div>
       </div>
@@ -1553,7 +1602,7 @@
           <div class="showcase-content">
             <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">Vad en hemsida kan innehålla</h2>
             <p style="margin:0; color:#5a5450; line-height:1.75;">
-              Lagom mycket för att kännas proffsig. Inte så mycket att du behöver dra igång en intern projektgrupp för att komma vidare.
+              Lagom mycket för att kännas proffsig och sälja bättre. Inte så mycket att du behöver starta projektgrupp, styrgrupp och kaffekommitté.
             </p>
             <div class="list">
               <div class="list-item"><span class="check">✓</span><span>Startsida med tydlig rubrik och rätt känsla</span></div>
@@ -1568,7 +1617,7 @@
         <div class="card" style="padding:26px;">
           <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">Rätt känsla gör halva jobbet</h2>
           <p style="margin:0 0 18px; color:#5a5450; line-height:1.75;">
-            Samma företag kan se billigt eller genomtänkt ut beroende på layout, typografi och struktur. Det är där jag kommer in.
+            Samma företag kan se billigt eller genomtänkt ut beroende på layout, typografi och struktur. Det påverkar om kunden stannar kvar eller klickar bort.
           </p>
 
           <div style="background:#faf0e9; border-radius:22px; padding:20px; margin-bottom:14px;">
@@ -1594,7 +1643,7 @@
         <div class="section-title">
           <h2>Priser för hemsidor</h2>
           <p>
-            Demo först. Köp sen om du gillar det. Inte nöjd? Då justerar jag tills helheten känns rätt.
+            Demo först. Köp sen om du gillar det. Osäker på paket? Fyll i formuläret så rekommenderar jag rätt nivå.
           </p>
         </div>
 
@@ -1603,7 +1652,7 @@
             <span class="tag">Start</span>
             <h3>Ny hemsida</h3>
             <p class="price">2 900 kr</p>
-            <p>En enklare men snygg one page-sida med tydlig struktur, kontakt och professionell känsla.</p>
+            <p>För dig som vill komma igång snabbt med en snygg one page-sida med tydlig struktur och kontaktväg.</p>
             <ul>
               <li>Demo inom 1 arbetsdag</li>
               <li>One page</li>
@@ -1616,11 +1665,11 @@
             <span class="tag">Populärast</span>
             <h3>Proffs</h3>
             <p class="price">4 900 kr</p>
-            <p>Mer genomarbetad sida med fler sektioner, starkare innehåll och ett tydligare premiumintryck.</p>
+            <p>För de flesta företag. Mer innehåll, starkare helhetsintryck och tydligare premiumkänsla.</p>
             <ul>
               <li>Demo inom 1 arbetsdag</li>
               <li>Fler sektioner</li>
-              <li>Mer premium känsla</li>
+              <li>Mer genomarbetad struktur</li>
               <li>Ändringar tills du är nöjd</li>
             </ul>
           </div>
@@ -1629,7 +1678,7 @@
             <span class="tag">Utökad</span>
             <h3>Större upplägg</h3>
             <p class="price">7 900 kr</p>
-            <p>För dig som vill ha fler undersidor, mer innehåll och ett större upplägg från start.</p>
+            <p>För dig som vill ha fler undersidor, mer innehåll och ett större upplägg redan från start.</p>
             <ul>
               <li>Demo inom 1 arbetsdag</li>
               <li>Fler undersidor</li>
@@ -1639,10 +1688,14 @@
           </div>
         </div>
 
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-primary">Få demo för ny hemsida</a>
+        </div>
+
         <div class="section-title" style="margin-top:28px;">
           <h2>Uppdateringar till fast pris</h2>
           <p>
-            Bra för dig som redan har en sida men vill att någon annan tar hand om ändringarna. Alltså jag.
+            Perfekt för dig som redan har en sida men vill att någon annan tar hand om ändringarna. Alltså jag.
           </p>
         </div>
 
@@ -1651,7 +1704,7 @@
             <span class="tag">Liten</span>
             <h3>Snabb uppdatering</h3>
             <p class="price">490 kr</p>
-            <p>Textändringar, bildbyte, länkbyte eller mindre justeringar.</p>
+            <p>Textändringar, bildbyte, länkbyte eller mindre justeringar som du vill få gjorda utan klydd.</p>
             <ul>
               <li>Snabb återkoppling</li>
               <li>Små ändringar</li>
@@ -1686,6 +1739,10 @@
             </ul>
           </div>
         </div>
+
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-secondary">Beställ hemsideuppdatering</a>
+        </div>
       </div>
     </section>
 
@@ -1694,7 +1751,7 @@
         <div class="section-title">
           <h2>AI-reklamvideo till fast pris</h2>
           <p>
-            Här är ett exempel på video jag kan göra. Du skickar brief och gärna exempel. Jag tar fram ett utkast. Gillar du det, köper du.
+            Ett bra tillägg för dig som vill ha mer material till sociala medier, hemsidan eller annonser. Du får utkast först och köper efter godkännande.
           </p>
         </div>
 
@@ -1714,10 +1771,10 @@
           </div>
 
           <div class="card">
-            <h3>Vad jag kan göra</h3>
+            <h3>Vad du får</h3>
             <p>
               Det kan vara UGC-känsla, AI-presentatör, verklighetstrogen reklamvideo eller något mer lekfullt.
-              Använd videon på sociala medier, hemsidan eller i annonser.
+              Bra när du vill kännas mer modern och ha mer att publicera än ännu en bild på ett fikabord.
             </p>
 
             <div class="list">
@@ -1734,7 +1791,7 @@
             <span class="tag">Fast pris</span>
             <h3>AI-reklamvideo</h3>
             <p class="price">1 999 kr</p>
-            <p>Upp till 60 sekunder. Demo först. Köp efter godkännande om du gillar den.</p>
+            <p>Upp till 60 sekunder. Utkast först. Köp efter godkännande om du gillar den.</p>
             <ul>
               <li>Input från dig</li>
               <li>Specialanpassad video</li>
@@ -1742,6 +1799,10 @@
               <li>Ändringar tills det känns rätt</li>
             </ul>
           </div>
+        </div>
+
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-primary">Beställ AI-reklamvideo</a>
         </div>
       </div>
     </section>
@@ -1751,7 +1812,7 @@
         <div class="section-title">
           <h2>Reklamflyer till fast pris</h2>
           <p>
-            Behöver du något att lägga upp i sociala medier eller skriva ut? Då kan jag göra reklamflyers också. Här är ett eget exempel.
+            Bra komplement till hemsida, kampanjer och sociala medier. Du får utkast först och köper efter godkännande.
           </p>
         </div>
 
@@ -1775,7 +1836,7 @@
             <h3>Så funkar det</h3>
             <p>
               Du beskriver vad du vill säga, skickar gärna exempel du gillar och får sedan ett utkast.
-              Gillar du det, köper du. Annars justerar jag tills det känns rätt.
+              Gillar du det går vi vidare. Annars justerar jag tills det känns rätt.
             </p>
 
             <div class="list">
@@ -1809,6 +1870,10 @@
             </ul>
           </div>
         </div>
+
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-secondary">Beställ reklamflyer</a>
+        </div>
       </div>
     </section>
 
@@ -1816,18 +1881,18 @@
       <div class="container">
         <div class="price-box">
           <div>
-            <h2>Klar att köpa efter godkänd demo?</h2>
+            <h2>Har du redan fått din demo och vill gå vidare?</h2>
             <p>
-              När du har fått din demo och vill gå vidare kan du betala här.
-              Du fyller själv i beloppet enligt det vi kommit överens om.
-              Enkelt, snabbt och utan onödigt klydd.
+              Då betalar du här. Skriv in det belopp vi kommit överens om och slutför köpet via Stripe.
+              Enkelt, snabbt och utan onödiga sidospår.
             </p>
           </div>
 
           <div class="price-panel">
             <div class="price-big">Betala här</div>
             <div class="price-note" style="margin-bottom:16px;">
-              Skriv in överenskommet belopp och slutför köpet via Stripe.
+              För varm trafik, inte sightseeing.<br>
+              Överenskommet belopp fylls i i nästa steg.
             </div>
             <a
               href="https://buy.stripe.com/bJecN7bcyaLo2O90cO6oo09"
@@ -1848,7 +1913,7 @@
         <div class="section-title">
           <h2>Formulär</h2>
           <p>
-            Tryck på det formulär du vill öppna. Mindre frågevägg. Mer lugn. Bättre känsla.
+            Välj det formulär som passar ditt uppdrag. Kortare väg till demo. Mindre friktion. Mer affär.
           </p>
         </div>
 
@@ -1856,8 +1921,8 @@
           <details class="accordion">
             <summary>
               <span class="accordion-title">
-                <strong>Formulär / brief för hemsida eller uppdatering</strong>
-                <span>Tryck här för att öppna eller stänga alla frågor.</span>
+                <strong>Få demo för ny hemsida eller beställ uppdatering</strong>
+                <span>Svarar på det viktigaste. Resten löser vi därifrån.</span>
               </span>
               <span class="accordion-icon">+</span>
             </summary>
@@ -1971,7 +2036,7 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
-                <button class="btn contact-submit" type="submit">Skicka brief</button>
+                <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
             </div>
           </details>
@@ -1979,8 +2044,8 @@
           <details class="accordion">
             <summary>
               <span class="accordion-title">
-                <strong>Formulär för AI-reklamvideo</strong>
-                <span>Tryck här för att öppna eller stänga frågorna om video.</span>
+                <strong>Beställ AI-reklamvideo</strong>
+                <span>För sociala medier, hemsida eller annons. Utkast först.</span>
               </span>
               <span class="accordion-icon">+</span>
             </summary>
@@ -2039,8 +2104,8 @@
           <details class="accordion">
             <summary>
               <span class="accordion-title">
-                <strong>Formulär för reklamflyer</strong>
-                <span>Tryck här för att öppna eller stänga frågorna om flyer.</span>
+                <strong>Beställ reklamflyer</strong>
+                <span>För sociala medier, utskrift eller båda delar.</span>
               </span>
               <span class="accordion-icon">+</span>
             </summary>
@@ -2094,17 +2159,17 @@
           <h2>Vem driver sidan?</h2>
           <p>
             Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>.
-            Jag är webbutvecklare och egen företagare och bygger hemsidor för företag i hela Sverige.
-            Jag gör också uppdateringar, AI-reklamvideor och reklammaterial med personlig service direkt av mig.
+            Jag bygger hemsidor för företag i hela Sverige och hjälper även till med uppdateringar, AI-reklamvideor och reklammaterial.
+            Du har direktkontakt med mig hela vägen.
           </p>
           <p>
-            Upplägget är enkelt: du fyller i formuläret, jag fixar resten och skickar en demo inom 1 arbetsdag.
-            Nöjd? Då köper du och jag skickar allt material inom 1 arbetsdag. Inte nöjd? Då justerar jag tills det känns rätt.
+            Upplägget är enkelt: du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först när du gillar resultatet.
+            Behövs ändringar fixar jag det tills helheten känns rätt.
           </p>
           <div class="trust-links">
             <a class="trust-link" href="https://www.linkedin.com/in/erica-nordlöf?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Se min LinkedIn</a>
             <a class="trust-link" href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Se offroadbumpis.se</a>
-             <a class="trust-link" href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Se safestandard.se</a>
+            <a class="trust-link" href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Se safestandard.se</a>
             <a class="trust-link" href="#ai-video">Se AI-video</a>
             <a class="trust-link" href="#flyer">Se reklamflyer</a>
           </div>
@@ -2116,7 +2181,7 @@
   <footer>
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
-      <span>webutvecklare.se · Webbutveckling för företag i hela Sverige · Personlig service</span>
+      <span>webutvecklare.se · Webbutveckling för företag i hela Sverige · Demo inom 1 arbetsdag</span>
     </div>
   </footer>
 </body>
