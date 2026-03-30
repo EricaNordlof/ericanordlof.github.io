@@ -824,11 +824,11 @@
       gap:18px;
     }
 
-    .accordion{
+  .accordion{
   background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
   border-radius:28px;
   box-shadow:0 24px 58px rgba(185,111,97,0.14);
-  overflow:visible;
+  overflow:hidden;
   position:relative;
 }
 
@@ -842,68 +842,17 @@
   gap:16px;
   color:#fff;
   min-height:var(--tap);
-  position:relative;
-  z-index:3;
 }
 
-.accordion-body{
-  padding:0 22px 22px;
-  position:relative;
-  z-index:2;
+
+
+details[open] summary{
+  margin-bottom:14px;
 }
 
-.contact-box{
-  background:rgba(255,255,255,0.10);
-  border:1px solid rgba(255,255,255,0.16);
-  border-radius:24px;
-  padding:22px;
-  display:grid;
-  gap:12px;
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-  position:relative;
-  z-index:2;
-}
 
-.contact-box input,
-.contact-box select,
-.contact-box textarea,
-.checkbox-grid label,
-.checkbox-grid input[type="checkbox"]{
-  position:relative;
-  z-index:5;
-  pointer-events:auto;
-}
 
-.checkbox-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px 14px;
-  margin-top:4px;
-  position:relative;
-  z-index:5;
-}
 
-.checkbox-grid label{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  font-weight:500;
-  color:#fff;
-  margin:0;
-  line-height:1.5;
-  cursor:pointer;
-}
-
-.checkbox-grid input[type="checkbox"]{
-  width:18px;
-  height:18px;
-  min-height:auto;
-  margin-top:3px;
-  accent-color:#ffffff;
-  flex:0 0 auto;
-  padding:0;
-}
 
     .accordion summary::-webkit-details-marker{
       display:none;
