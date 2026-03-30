@@ -2,7 +2,10 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
 
   <title>Webbutveckling för företag i Sverige | Nordlöf Nordic</title>
   <meta
@@ -68,8 +71,8 @@
     ],
     "offers":[
       {"@type":"Offer","name":"Ny hemsida Start","price":"2900","priceCurrency":"SEK"},
-      {"@type":"Offer","name":"Ny hemsida Plus","price":"4490","priceCurrency":"SEK"},
-      {"@type":"Offer","name":"Ny hemsida Premium","price":"6900","priceCurrency":"SEK"},
+      {"@type":"Offer","name":"Ny hemsida Proffs","price":"4900","priceCurrency":"SEK"},
+      {"@type":"Offer","name":"Ny hemsida Utökad","price":"7900","priceCurrency":"SEK"},
       {"@type":"Offer","name":"Liten uppdatering","price":"490","priceCurrency":"SEK"},
       {"@type":"Offer","name":"Normal uppdatering","price":"990","priceCurrency":"SEK"},
       {"@type":"Offer","name":"Större uppdatering","price":"1490","priceCurrency":"SEK"},
@@ -98,10 +101,18 @@
       --radius:24px;
       --radius-lg:30px;
       --max:1180px;
+      --space:clamp(16px, 2vw, 28px);
+      --section-pad:clamp(34px, 5vw, 64px);
+      --tap:48px;
+      --header-offset:96px;
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
+    }
 
     body{
       margin:0;
@@ -110,13 +121,22 @@
       background:
         radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
         linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img,video{max-width:100%;display:block}
+
+    input,select,textarea,button{
+      font:inherit;
+    }
+
+    :target{
+      scroll-margin-top:var(--header-offset);
+    }
 
     .container{
-      width:min(var(--max), calc(100% - 32px));
+      width:min(var(--max), calc(100% - 28px));
       margin:0 auto;
     }
 
@@ -125,7 +145,8 @@
       top:0;
       z-index:30;
       backdrop-filter:blur(12px);
-      background:rgba(250,246,243,0.82);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
       border-bottom:1px solid var(--line-soft);
     }
 
@@ -133,15 +154,17 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
-      padding:16px 0;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:12px;
       min-width:0;
+      flex:1 1 auto;
     }
 
     .brand-logo{
@@ -165,6 +188,8 @@
       font-size:16px;
       letter-spacing:-0.03em;
       white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
 
     .brand-sub{
@@ -173,17 +198,22 @@
       text-transform:uppercase;
       color:#7f7169;
       white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
 
     .nav-links{
       display:flex;
-      gap:22px;
+      gap:18px;
       color:#4c433f;
-      font-size:15px;
+      font-size:14px;
+      align-items:center;
+      flex:0 1 auto;
     }
 
     .nav-links a{
       transition:.18s ease;
+      white-space:nowrap;
     }
 
     .nav-links a:hover{
@@ -194,21 +224,24 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      min-height:var(--tap);
       padding:12px 18px;
       border-radius:999px;
       background:linear-gradient(135deg, var(--brand), var(--brand-2));
       color:#fff;
       font-weight:700;
       box-shadow:0 14px 30px rgba(185,111,97,0.18);
+      white-space:nowrap;
+      flex:0 0 auto;
     }
 
     .hero{
-      padding:58px 0 30px;
+      padding:clamp(26px, 4vw, 58px) 0 26px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.06fr 0.94fr;
+      grid-template-columns:minmax(0,1.06fr) minmax(0,0.94fr);
       gap:28px;
       align-items:center;
     }
@@ -217,6 +250,7 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
+      max-width:100%;
       padding:9px 13px;
       background:#fff;
       border:1px solid var(--line);
@@ -225,6 +259,7 @@
       font-weight:700;
       color:#7c5d53;
       box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
     }
 
     h1,h2,h3{
@@ -233,15 +268,16 @@
 
     .hero h1{
       margin:18px 0 14px;
-      font-size:clamp(2.7rem, 7vw, 5.05rem);
-      line-height:0.96;
+      font-size:clamp(2.2rem, 8.4vw, 5.05rem);
+      line-height:0.98;
       letter-spacing:-0.045em;
+      text-wrap:balance;
     }
 
     .hero p{
       margin:0;
-      font-size:18px;
-      line-height:1.78;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.72;
       color:#4f4742;
       max-width:720px;
     }
@@ -268,7 +304,7 @@
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-top:30px;
+      margin-top:28px;
     }
 
     .btn{
@@ -276,6 +312,7 @@
       align-items:center;
       justify-content:center;
       gap:10px;
+      min-height:var(--tap);
       padding:14px 20px;
       border-radius:999px;
       font-weight:700;
@@ -283,9 +320,12 @@
       border:none;
       cursor:pointer;
       font:inherit;
+      text-align:center;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .btn-primary{
       background:linear-gradient(135deg, var(--brand), var(--brand-2));
@@ -303,7 +343,7 @@
       background:linear-gradient(145deg, #d98571 0%, #e9ab86 100%);
       color:#fff;
       border-radius:var(--radius-lg);
-      padding:26px;
+      padding:clamp(18px, 2.2vw, 26px);
       box-shadow:0 28px 70px rgba(185,111,97,0.18);
       overflow:hidden;
       position:relative;
@@ -311,6 +351,7 @@
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+      min-width:0;
     }
 
     .hero-card::before{
@@ -338,16 +379,19 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:12px;
       margin-bottom:18px;
       color:rgba(255,255,255,0.96);
       font-size:14px;
       position:relative;
       z-index:1;
+      line-height:1.4;
     }
 
     .dots{
       display:flex;
       gap:6px;
+      flex:0 0 auto;
     }
 
     .dots span{
@@ -363,11 +407,12 @@
       background:rgba(255,255,255,0.10);
       border:1px solid rgba(255,255,255,0.16);
       border-radius:28px;
-      padding:26px;
+      padding:clamp(18px, 2.4vw, 26px);
       display:grid;
       place-items:center;
       min-height:320px;
       backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
     }
 
     .hero-logo{
@@ -392,6 +437,8 @@
       border-radius:18px;
       padding:12px;
       backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      min-width:0;
     }
 
     .mini-card strong{
@@ -408,7 +455,7 @@
     }
 
     .section{
-      padding:44px 0;
+      padding:var(--section-pad) 0;
     }
 
     .section-title{
@@ -421,9 +468,10 @@
 
     .section-title h2{
       margin:0;
-      font-size:clamp(2rem, 4vw, 3.15rem);
-      line-height:1;
+      font-size:clamp(1.9rem, 5.3vw, 3.15rem);
+      line-height:1.02;
       letter-spacing:-0.03em;
+      text-wrap:balance;
     }
 
     .section-title p{
@@ -431,17 +479,18 @@
       max-width:580px;
       color:#5b524d;
       line-height:1.75;
+      font-size:clamp(15px, 1.8vw, 17px);
     }
 
     .grid-3{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
 
     .grid-2{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:18px;
     }
 
@@ -451,12 +500,14 @@
       border-radius:var(--radius);
       padding:22px;
       box-shadow:var(--shadow);
+      min-width:0;
     }
 
     .card h3{
       margin:0 0 10px;
       font-size:22px;
       letter-spacing:-0.03em;
+      text-wrap:balance;
     }
 
     .card p{
@@ -467,7 +518,7 @@
 
     .themes{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
 
@@ -525,7 +576,7 @@
 
     .showcase{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
       gap:18px;
       align-items:stretch;
     }
@@ -563,7 +614,7 @@
     .offer-grid,
     .pricing{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
 
@@ -575,6 +626,7 @@
       padding:24px;
       box-shadow:var(--shadow);
       position:relative;
+      min-width:0;
     }
 
     .offer-card.featured,
@@ -594,6 +646,7 @@
       padding:8px 10px;
       border-radius:999px;
       background:rgba(0,0,0,0.06);
+      line-height:1.2;
     }
 
     .featured .tag{
@@ -607,6 +660,7 @@
       font-size:26px;
       font-family:"Inter",sans-serif;
       letter-spacing:-0.03em;
+      text-wrap:balance;
     }
 
     .offer-card p,
@@ -635,6 +689,7 @@
       display:flex;
       gap:10px;
       align-items:flex-start;
+      line-height:1.55;
     }
 
     .offer-card li::before,
@@ -642,34 +697,37 @@
       content:"✓";
       font-weight:800;
       color:#111;
+      flex:0 0 auto;
     }
 
     .featured li::before{color:#fff}
 
     .price{
-      font-size:44px;
+      font-size:clamp(34px, 4.8vw, 44px);
       font-weight:800;
       letter-spacing:-0.05em;
       margin:8px 0 10px;
       font-family:"Inter",sans-serif;
+      line-height:1;
     }
 
     .price-box{
       background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
       color:#fff;
       border-radius:34px;
-      padding:30px;
+      padding:clamp(22px, 4vw, 30px);
       box-shadow:0 24px 58px rgba(185,111,97,0.16);
       display:grid;
-      grid-template-columns:1.08fr 0.92fr;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr);
       gap:20px;
       align-items:center;
     }
 
     .price-box h2{
       margin:0 0 10px;
-      font-size:clamp(2rem, 4vw, 3rem);
-      line-height:1;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
     }
 
     .price-box p{
@@ -685,15 +743,18 @@
       border-radius:24px;
       padding:22px;
       backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      min-width:0;
     }
 
     .price-big{
-      font-size:52px;
+      font-size:clamp(38px, 7vw, 52px);
       font-weight:800;
       letter-spacing:-0.05em;
       line-height:1;
       margin-bottom:10px;
       font-family:"Inter",sans-serif;
+      text-wrap:balance;
     }
 
     .price-note{
@@ -703,7 +764,7 @@
 
     .proof-grid{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(4,minmax(0,1fr));
       gap:18px;
     }
 
@@ -713,6 +774,7 @@
       border-radius:22px;
       padding:20px;
       box-shadow:var(--shadow);
+      min-width:0;
     }
 
     .proof strong{
@@ -748,6 +810,7 @@
       justify-content:space-between;
       gap:16px;
       color:#fff;
+      min-height:var(--tap);
     }
 
     .accordion summary::-webkit-details-marker{
@@ -758,11 +821,13 @@
       display:flex;
       flex-direction:column;
       gap:6px;
+      min-width:0;
     }
 
     .accordion-title strong{
       font-size:20px;
       line-height:1.2;
+      text-wrap:balance;
     }
 
     .accordion-title span{
@@ -811,6 +876,7 @@
       display:grid;
       gap:12px;
       backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
     }
 
     .contact-box strong{
@@ -835,13 +901,15 @@
     .contact-box select,
     .contact-box textarea{
       width:100%;
+      min-height:var(--tap);
       border:1px solid rgba(255,255,255,0.18);
       background:rgba(255,255,255,0.12);
       color:#fff;
       border-radius:14px;
       padding:14px 16px;
-      font:inherit;
       outline:none;
+      appearance:none;
+      -webkit-appearance:none;
     }
 
     .contact-box input::placeholder,
@@ -859,6 +927,13 @@
       background:#fff;
     }
 
+    .contact-box input:focus,
+    .contact-box select:focus,
+    .contact-box textarea:focus{
+      border-color:rgba(255,255,255,0.5);
+      box-shadow:0 0 0 3px rgba(255,255,255,0.15);
+    }
+
     .checkbox-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -873,12 +948,17 @@
       font-weight:500;
       color:#fff;
       margin:0;
+      line-height:1.5;
     }
 
     .checkbox-grid input[type="checkbox"]{
-      width:auto;
+      width:18px;
+      height:18px;
+      min-height:auto;
       margin-top:3px;
       accent-color:#ffffff;
+      flex:0 0 auto;
+      padding:0;
     }
 
     .contact-submit{
@@ -901,14 +981,15 @@
       background:#fff;
       border:1px solid var(--line);
       border-radius:28px;
-      padding:28px;
+      padding:clamp(22px, 4vw, 28px);
       box-shadow:var(--shadow);
     }
 
     .trust-box h2{
       margin:0 0 12px;
-      font-size:clamp(2rem, 4vw, 3rem);
-      line-height:1;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
     }
 
     .trust-box p{
@@ -928,15 +1009,17 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      min-height:var(--tap);
       padding:12px 16px;
       border-radius:999px;
       border:1px solid var(--line);
       background:#fff;
       font-weight:700;
+      text-align:center;
     }
 
     footer{
-      padding:36px 0 60px;
+      padding:30px 0 calc(60px + env(safe-area-inset-bottom));
       color:#6d6662;
       font-size:14px;
     }
@@ -948,9 +1031,14 @@
       justify-content:space-between;
       gap:16px;
       flex-wrap:wrap;
+      line-height:1.6;
     }
 
-    @media (max-width: 1024px){
+    @media (max-width: 1140px){
+      .nav-links{
+        display:none;
+      }
+
       .hero-grid,
       .showcase,
       .price-box,
@@ -966,34 +1054,96 @@
       }
 
       .proof-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
       .offer-card.featured,
       .price-card.featured{
         transform:none;
       }
+
+      .hero-card{
+        min-height:auto;
+      }
     }
 
     @media (max-width: 720px){
-      .nav-links{
-        display:none;
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+        --header-offset:88px;
+      }
+
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+
+      .topbar{
+        padding-top:env(safe-area-inset-top);
+      }
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{
+        gap:10px;
+        min-width:0;
       }
 
       .brand-sub{
         display:none;
       }
 
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{
+        font-size:15px;
+      }
+
+      .nav-cta{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
       .hero{
-        padding-top:34px;
+        padding-top:18px;
       }
 
       .hero h1{
         line-height:1;
+        margin:14px 0 12px;
       }
 
-      .hero-card{
-        min-height:auto;
+      .hero p{
+        line-height:1.66;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .mockup-header{
+        font-size:13px;
+        align-items:flex-start;
+      }
+
+      .hero-logo-wrap{
+        min-height:220px;
+        border-radius:22px;
       }
 
       .mockup-panel{
@@ -1001,12 +1151,27 @@
       }
 
       .section{
-        padding:32px 0;
+        padding:30px 0;
       }
 
       .section-title{
         flex-direction:column;
         align-items:flex-start;
+        margin-bottom:16px;
+      }
+
+      .card,
+      .offer-card,
+      .price-card,
+      .proof,
+      .accordion-body,
+      .contact-box{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .showcase-content{
+        padding:18px;
       }
 
       .checkbox-grid,
@@ -1014,21 +1179,82 @@
         grid-template-columns:1fr;
       }
 
-      .brand-logo{
-        width:40px;
-        height:40px;
+      .price-box{
+        border-radius:24px;
       }
 
-      .brand-title{
-        font-size:15px;
+      .price-panel{
+        padding:18px;
+      }
+
+      .accordion{
+        border-radius:22px;
       }
 
       .accordion summary{
         padding:18px;
+        align-items:flex-start;
       }
 
-      .accordion-body{
-        padding:0 18px 18px;
+      .accordion-title strong{
+        font-size:18px;
+      }
+
+      .trust-box{
+        border-radius:22px;
+      }
+
+      .trust-links{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .trust-link{
+        width:100%;
+      }
+
+      footer{
+        font-size:13px;
+      }
+    }
+
+    @media (max-width: 480px){
+      .eyebrow{
+        font-size:12px;
+        padding:8px 11px;
+      }
+
+      .hero-points{
+        gap:9px;
+      }
+
+      .check{
+        width:22px;
+        height:22px;
+        font-size:12px;
+      }
+
+      .offer-card h3,
+      .price-card h3{
+        font-size:23px;
+      }
+
+      .price{
+        font-size:32px;
+      }
+
+      .price-big{
+        font-size:36px;
+      }
+
+      .card h3{
+        font-size:20px;
+      }
+
+      .accordion-icon{
+        width:34px;
+        height:34px;
+        font-size:20px;
       }
     }
   </style>
@@ -1044,7 +1270,7 @@
         </span>
       </a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Huvudnavigering">
         <a href="#sa-funkar-det">Så funkar det</a>
         <a href="#tjanster">Tjänster</a>
         <a href="#stilar">Stilar</a>
@@ -1324,7 +1550,7 @@
             alt="Exempel på modern företagshemsida"
           >
           <div class="showcase-content">
-            <h2 style="margin:0 0 10px; font-size:32px; letter-spacing:-0.04em;">Vad en hemsida kan innehålla</h2>
+            <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">Vad en hemsida kan innehålla</h2>
             <p style="margin:0; color:#5a5450; line-height:1.75;">
               Lagom mycket för att kännas proffsig. Inte så mycket att du behöver dra igång en intern projektgrupp för att komma vidare.
             </p>
@@ -1339,23 +1565,23 @@
         </div>
 
         <div class="card" style="padding:26px;">
-          <h2 style="margin:0 0 10px; font-size:32px; letter-spacing:-0.04em;">Rätt känsla gör halva jobbet</h2>
+          <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">Rätt känsla gör halva jobbet</h2>
           <p style="margin:0 0 18px; color:#5a5450; line-height:1.75;">
             Samma företag kan se billigt eller genomtänkt ut beroende på layout, typografi och struktur. Det är där jag kommer in.
           </p>
 
           <div style="background:#faf0e9; border-radius:22px; padding:20px; margin-bottom:14px;">
-            <div style="font-family:'Playfair Display',serif; font-size:42px; line-height:1; margin-bottom:8px;">Personlig premium-känsla</div>
+            <div style="font-family:'Playfair Display',serif; font-size:clamp(32px,7vw,42px); line-height:1; margin-bottom:8px;">Personlig premium-känsla</div>
             <div style="color:#666;">När du vill kännas varm, seriös och lite mer exklusiv.</div>
           </div>
 
           <div style="background:#f8f3ef; border-radius:22px; padding:20px; margin-bottom:14px;">
-            <div style="font-family:'Inter',sans-serif; font-size:34px; line-height:1.1; font-weight:800; margin-bottom:8px;">Ren och modern stil</div>
+            <div style="font-family:'Inter',sans-serif; font-size:clamp(28px,6vw,34px); line-height:1.1; font-weight:800; margin-bottom:8px;">Ren och modern stil</div>
             <div style="color:#666;">När du vill att allt ska vara tydligt, snabbt och lätt att förstå.</div>
           </div>
 
           <div style="background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%); color:#fff; border-radius:22px; padding:20px;">
-            <div style="font-size:34px; line-height:1.1; font-weight:800; letter-spacing:-0.05em; margin-bottom:8px;">Stark layout med mer tyngd</div>
+            <div style="font-size:clamp(28px,6vw,34px); line-height:1.1; font-weight:800; letter-spacing:-0.05em; margin-bottom:8px;">Stark layout med mer tyngd</div>
             <div style="color:#fff;">För företag som vill kännas genomarbetade, moderna och lätta att lita på.</div>
           </div>
         </div>
@@ -1376,7 +1602,7 @@
             <span class="tag">Start</span>
             <h3>Ny hemsida</h3>
             <p class="price">2 900 kr</p>
-            <p>En snygg och tydlig one page-sida för dig som vill komma igång snabbt utan att det känns budget.</p>
+            <p>En enklare men snygg one page-sida med tydlig struktur, kontakt och professionell känsla.</p>
             <ul>
               <li>Demo inom 1 arbetsdag</li>
               <li>One page</li>
@@ -1387,26 +1613,26 @@
 
           <div class="price-card featured">
             <span class="tag">Populärast</span>
-            <h3>Plus</h3>
-            <p class="price">4 490 kr</p>
-            <p>För dig som vill ha mer innehåll, starkare struktur och en tydligare premiumkänsla utan att gå all in direkt.</p>
+            <h3>Proffs</h3>
+            <p class="price">4 900 kr</p>
+            <p>Mer genomarbetad sida med fler sektioner, starkare innehåll och ett tydligare premiumintryck.</p>
             <ul>
               <li>Demo inom 1 arbetsdag</li>
               <li>Fler sektioner</li>
-              <li>Mer genomarbetat intryck</li>
+              <li>Mer premium känsla</li>
               <li>Ändringar tills du är nöjd</li>
             </ul>
           </div>
 
           <div class="price-card">
-            <span class="tag">Premium</span>
+            <span class="tag">Utökad</span>
             <h3>Större upplägg</h3>
-            <p class="price">6 900 kr</p>
-            <p>För dig som vill ha fler undersidor, mer innehåll och ett större upplägg som känns mer komplett från start.</p>
+            <p class="price">7 900 kr</p>
+            <p>För dig som vill ha fler undersidor, mer innehåll och ett större upplägg från start.</p>
             <ul>
               <li>Demo inom 1 arbetsdag</li>
               <li>Fler undersidor</li>
-              <li>Mer innehåll och mer tyngd</li>
+              <li>Mer innehåll</li>
               <li>Ändringar tills du är nöjd</li>
             </ul>
           </div>
@@ -1479,7 +1705,7 @@
             </p>
 
             <div style="border-radius:22px; overflow:hidden; box-shadow:var(--shadow); background:#000;">
-              <video controls playsinline style="width:100%; display:block;">
+              <video controls playsinline preload="metadata" style="width:100%; display:block;">
                 <source src="demo-video.mp4" type="video/mp4">
                 Din webbläsare stödjer inte videouppspelning.
               </video>
@@ -1662,7 +1888,7 @@
                 <input id="email" type="email" name="E-post" required />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" />
+                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
 
                 <label for="bransch">Vad jobbar du med?</label>
                 <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, skönhet" />
@@ -1734,8 +1960,8 @@
                 <select id="budget" name="Budget">
                   <option value="Vet inte än">Vet inte än</option>
                   <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
-                  <option value="Ny hemsida Plus 4 490 kr">Ny hemsida Plus 4 490 kr</option>
-                  <option value="Ny hemsida Premium 6 900 kr">Ny hemsida Premium 6 900 kr</option>
+                  <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
+                  <option value="Ny hemsida Utökad 7 900 kr">Ny hemsida Utökad 7 900 kr</option>
                   <option value="Liten uppdatering 490 kr">Liten uppdatering 490 kr</option>
                   <option value="Normal uppdatering 990 kr">Normal uppdatering 990 kr</option>
                   <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
