@@ -48,18 +48,9 @@
     "url":"https://webutvecklare.se/",
     "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
     "email":"mailto:nordloferica@gmail.com",
-    "areaServed":{
-      "@type":"Country",
-      "name":"Sverige"
-    },
-    "provider":{
-      "@type":"Person",
-      "name":"Erica Nordlöf"
-    },
-    "brand":{
-      "@type":"Organization",
-      "name":"Nordlöf Nordic"
-    },
+    "areaServed":{"@type":"Country","name":"Sverige"},
+    "provider":{"@type":"Person","name":"Erica Nordlöf"},
+    "brand":{"@type":"Organization","name":"Nordlöf Nordic"},
     "serviceType":[
       "Webbutveckling för företag",
       "Hemsidor för småföretag",
@@ -102,19 +93,13 @@
       --radius:24px;
       --radius-lg:30px;
       --max:1180px;
-      --space:clamp(16px, 2vw, 28px);
       --section-pad:clamp(34px, 5vw, 64px);
       --tap:48px;
       --header-offset:96px;
     }
 
     *{box-sizing:border-box}
-
-    html{
-      scroll-behavior:smooth;
-      -webkit-text-size-adjust:100%;
-    }
-
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{
       margin:0;
       font-family:"Inter",sans-serif;
@@ -127,14 +112,8 @@
 
     a{color:inherit;text-decoration:none}
     img,video{max-width:100%;display:block}
-
-    input,select,textarea,button{
-      font:inherit;
-    }
-
-    :target{
-      scroll-margin-top:var(--header-offset);
-    }
+    input,select,textarea,button{font:inherit}
+    :target{scroll-margin-top:var(--header-offset)}
 
     .container{
       width:min(var(--max), calc(100% - 28px));
@@ -217,9 +196,7 @@
       white-space:nowrap;
     }
 
-    .nav-links a:hover{
-      color:var(--accent);
-    }
+    .nav-links a:hover{color:var(--accent)}
 
     .nav-cta{
       display:inline-flex;
@@ -236,9 +213,7 @@
       flex:0 0 auto;
     }
 
-    .hero{
-      padding:clamp(26px, 4vw, 58px) 0 18px;
-    }
+    .hero{padding:clamp(26px, 4vw, 58px) 0 18px}
 
     .hero-grid{
       display:grid;
@@ -263,9 +238,7 @@
       line-height:1.4;
     }
 
-    h1,h2,h3{
-      font-family:"Playfair Display",serif;
-    }
+    h1,h2,h3{font-family:"Playfair Display",serif}
 
     .hero h1{
       margin:18px 0 14px;
@@ -293,9 +266,7 @@
       font-weight:600;
     }
 
-    .hero-points li,
-    .cta-points li,
-    .list-item{
+    .hero-points li,.list-item{
       display:flex;
       gap:10px;
       align-items:flex-start;
@@ -321,13 +292,10 @@
       transition:.2s ease;
       border:none;
       cursor:pointer;
-      font:inherit;
       text-align:center;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px)}
 
     .btn-primary{
       background:linear-gradient(135deg, var(--brand-dark), var(--brand));
@@ -411,12 +379,7 @@
       line-height:1.4;
     }
 
-    .dots{
-      display:flex;
-      gap:6px;
-      flex:0 0 auto;
-    }
-
+    .dots{display:flex;gap:6px;flex:0 0 auto}
     .dots span{
       width:9px;
       height:9px;
@@ -477,9 +440,7 @@
       line-height:1.55;
     }
 
-    .section{
-      padding:var(--section-pad) 0;
-    }
+    .section{padding:var(--section-pad) 0}
 
     .section-title{
       display:flex;
@@ -505,17 +466,8 @@
       font-size:clamp(15px, 1.8vw, 17px);
     }
 
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
-    }
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 
     .card{
       background:rgba(255,255,255,0.94);
@@ -533,11 +485,7 @@
       text-wrap:balance;
     }
 
-    .card p{
-      margin:0;
-      color:#5d5550;
-      line-height:1.72;
-    }
+    .card p{margin:0;color:#5d5550;line-height:1.72}
 
     .section-cta{
       margin-top:18px;
@@ -573,12 +521,7 @@
       z-index:-1;
     }
 
-    .theme-card h3,
-    .theme-card p{
-      color:#fff;
-      margin:0;
-    }
-
+    .theme-card h3,.theme-card p{color:#fff;margin:0}
     .theme-card p{
       margin-top:8px;
       line-height:1.6;
@@ -611,14 +554,8 @@
       align-items:stretch;
     }
 
-    .showcase .card{
-      padding:0;
-      overflow:hidden;
-    }
-
-    .showcase-content{
-      padding:26px;
-    }
+    .showcase .card{padding:0;overflow:hidden}
+    .showcase-content{padding:26px}
 
     .list{
       display:grid;
@@ -641,15 +578,13 @@
       box-shadow:0 8px 18px rgba(185,111,97,0.15);
     }
 
-    .offer-grid,
-    .pricing{
+    .offer-grid,.pricing{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
 
-    .offer-card,
-    .price-card{
+    .offer-card,.price-card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:28px;
@@ -659,8 +594,7 @@
       min-width:0;
     }
 
-    .offer-card.featured,
-    .price-card.featured{
+    .offer-card.featured,.price-card.featured{
       background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
       color:#fff;
       transform:translateY(-6px);
@@ -684,8 +618,7 @@
       color:#fff;
     }
 
-    .offer-card h3,
-    .price-card h3{
+    .offer-card h3,.price-card h3{
       margin:18px 0 10px;
       font-size:26px;
       font-family:"Inter",sans-serif;
@@ -693,17 +626,10 @@
       text-wrap:balance;
     }
 
-    .offer-card p,
-    .price-card p{
-      color:#5f5b58;
-      line-height:1.72;
-      margin:0;
-    }
-
+    .offer-card p,.price-card p{color:#5f5b58;line-height:1.72;margin:0}
     .featured p{color:#fff}
 
-    .offer-card ul,
-    .price-card ul{
+    .offer-card ul,.price-card ul{
       list-style:none;
       padding:0;
       margin:20px 0 0;
@@ -714,16 +640,14 @@
 
     .featured ul{color:#fff}
 
-    .offer-card li,
-    .price-card li{
+    .offer-card li,.price-card li{
       display:flex;
       gap:10px;
       align-items:flex-start;
       line-height:1.55;
     }
 
-    .offer-card li::before,
-    .price-card li::before{
+    .offer-card li::before,.price-card li::before{
       content:"✓";
       font-weight:800;
       color:#111;
@@ -787,10 +711,7 @@
       text-wrap:balance;
     }
 
-    .price-note{
-      color:#fff;
-      line-height:1.7;
-    }
+    .price-note{color:#fff;line-height:1.7}
 
     .proof-grid{
       display:grid;
@@ -819,83 +740,39 @@
       font-size:14px;
     }
 
-    .accordion-grid{
+    /* FORM SECTION - without details/summary to avoid click-bugs */
+    .form-grid{
       display:grid;
       gap:18px;
     }
 
-  .accordion{
-  background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
-  border-radius:28px;
-  box-shadow:0 24px 58px rgba(185,111,97,0.14);
-  overflow:hidden;
-  position:relative;
-}
-
-.accordion summary{
-  list-style:none;
-  cursor:pointer;
-  padding:22px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  color:#fff;
-  min-height:var(--tap);
-}
-
-
-
-details[open] summary{
-  margin-bottom:14px;
-}
-
-
-
-
-
-    .accordion summary::-webkit-details-marker{
-      display:none;
+    .form-card{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      border-radius:28px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.14);
+      overflow:hidden;
+      color:#fff;
     }
 
-    .accordion-title{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      min-width:0;
+    .form-card-head{
+      padding:22px 24px 0;
     }
 
-    .accordion-title strong{
-      font-size:20px;
-      line-height:1.2;
-      text-wrap:balance;
+    .form-card-head h3{
+      margin:0 0 8px;
+      font-size:28px;
+      color:#fff;
+      font-family:"Playfair Display",serif;
     }
 
-    .accordion-title span{
-      color:rgba(255,255,255,0.9);
-      line-height:1.5;
-      font-size:14px;
+    .form-card-head p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      line-height:1.65;
     }
 
-    .accordion-icon{
-      flex:0 0 auto;
-      width:38px;
-      height:38px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:rgba(255,255,255,0.16);
-      font-size:22px;
-      font-weight:700;
-      transition:transform .2s ease;
-    }
-
-    .accordion[open] .accordion-icon{
-      transform:rotate(45deg);
-    }
-
-    .accordion-body{
-      padding:0 22px 22px;
+    .form-body{
+      padding:22px;
     }
 
     .contact-box,
@@ -975,31 +852,63 @@ details[open] summary{
       box-shadow:0 0 0 3px rgba(255,255,255,0.15);
     }
 
+    .check-field{
+      border:0;
+      padding:0;
+      margin:0;
+      min-width:0;
+    }
+
+    .check-field legend{
+      font-size:14px;
+      font-weight:700;
+      color:#fff;
+      margin-bottom:10px;
+      padding:0;
+    }
+
     .checkbox-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px 14px;
-      margin-top:4px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:2px;
     }
 
-    .checkbox-grid label{
+    .check-option{
       display:flex;
-      gap:10px;
-      align-items:flex-start;
-      font-weight:500;
+      align-items:center;
+      gap:12px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.08);
+      cursor:pointer;
+      line-height:1.45;
+      font-weight:600;
       color:#fff;
-      margin:0;
-      line-height:1.5;
+      user-select:none;
+      -webkit-tap-highlight-color:transparent;
     }
 
-    .checkbox-grid input[type="checkbox"]{
+    .check-option:hover{
+      background:rgba(255,255,255,0.12);
+    }
+
+    .check-option input[type="checkbox"]{
+      appearance:auto;
+      -webkit-appearance:checkbox;
       width:18px;
       height:18px;
-      min-height:auto;
-      margin-top:3px;
-      accent-color:#ffffff;
+      min-width:18px;
+      min-height:18px;
+      margin:0;
+      accent-color:#fff;
+      cursor:pointer;
       flex:0 0 auto;
-      padding:0;
+      background:none;
+      border:none;
+      box-shadow:none;
+      pointer-events:auto;
     }
 
     .contact-submit{
@@ -1075,53 +984,24 @@ details[open] summary{
       line-height:1.6;
     }
 
-    @media (max-width: 1140px){
-      .nav-links{
-        display:none;
-      }
-
-      .hero-grid,
-      .showcase,
-      .price-box,
-      .grid-2{
-        grid-template-columns:1fr;
-      }
-
-      .grid-3,
-      .themes,
-      .offer-grid,
-      .pricing{
-        grid-template-columns:1fr;
-      }
-
-      .proof-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .offer-card.featured,
-      .price-card.featured{
-        transform:none;
-      }
-
-      .hero-card{
-        min-height:auto;
-      }
+    @media (max-width:1140px){
+      .nav-links{display:none}
+      .hero-grid,.showcase,.price-box,.grid-2{grid-template-columns:1fr}
+      .grid-3,.themes,.offer-grid,.pricing{grid-template-columns:1fr}
+      .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .offer-card.featured,.price-card.featured{transform:none}
+      .hero-card{min-height:auto}
     }
 
-    @media (max-width: 720px){
+    @media (max-width:720px){
       :root{
         --radius:20px;
         --radius-lg:24px;
         --header-offset:88px;
       }
 
-      .container{
-        width:min(var(--max), calc(100% - 20px));
-      }
-
-      .topbar{
-        padding-top:env(safe-area-inset-top);
-      }
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
 
       .nav{
         gap:10px;
@@ -1129,14 +1009,8 @@ details[open] summary{
         min-height:64px;
       }
 
-      .brand{
-        gap:10px;
-        min-width:0;
-      }
-
-      .brand-sub{
-        display:none;
-      }
+      .brand{gap:10px;min-width:0}
+      .brand-sub{display:none}
 
       .brand-logo{
         width:40px;
@@ -1144,9 +1018,7 @@ details[open] summary{
         border-radius:12px;
       }
 
-      .brand-title{
-        font-size:15px;
-      }
+      .brand-title{font-size:15px}
 
       .nav-cta{
         padding:10px 14px;
@@ -1154,18 +1026,14 @@ details[open] summary{
         font-size:14px;
       }
 
-      .hero{
-        padding-top:18px;
-      }
+      .hero{padding-top:18px}
 
       .hero h1{
         line-height:1;
         margin:14px 0 12px;
       }
 
-      .hero p{
-        line-height:1.66;
-      }
+      .hero p{line-height:1.66}
 
       .hero-actions{
         display:grid;
@@ -1173,14 +1041,8 @@ details[open] summary{
         gap:12px;
       }
 
-      .hero-actions .btn{
-        width:100%;
-      }
-
-      .hero-microproof{
-        display:grid;
-        grid-template-columns:1fr;
-      }
+      .hero-actions .btn{width:100%}
+      .hero-microproof{display:grid;grid-template-columns:1fr}
 
       .mockup-header{
         font-size:13px;
@@ -1192,13 +1054,8 @@ details[open] summary{
         border-radius:22px;
       }
 
-      .mockup-panel{
-        grid-template-columns:1fr;
-      }
-
-      .section{
-        padding:30px 0;
-      }
+      .mockup-panel{grid-template-columns:1fr}
+      .section{padding:30px 0}
 
       .section-title{
         flex-direction:column;
@@ -1210,69 +1067,31 @@ details[open] summary{
       .offer-card,
       .price-card,
       .proof,
-      .accordion-body,
+      .form-body,
+      .form-card-head,
       .contact-box{
         padding-left:18px;
         padding-right:18px;
       }
 
-      .showcase-content{
-        padding:18px;
-      }
-
-      .checkbox-grid,
-      .proof-grid{
-        grid-template-columns:1fr;
-      }
-
-      .price-box{
-        border-radius:24px;
-      }
-
-      .price-panel{
-        padding:18px;
-      }
-
-      .accordion{
-        border-radius:22px;
-      }
-
-      .accordion summary{
-        padding:18px;
-        align-items:flex-start;
-      }
-
-      .accordion-title strong{
-        font-size:18px;
-      }
-
-      .trust-box{
-        border-radius:22px;
-      }
-
-      .trust-links{
-        display:grid;
-        grid-template-columns:1fr;
-      }
-
-      .trust-link{
-        width:100%;
-      }
-
-      footer{
-        font-size:13px;
-      }
+      .showcase-content{padding:18px}
+      .checkbox-grid,.proof-grid{grid-template-columns:1fr}
+      .price-box{border-radius:24px}
+      .price-panel{padding:18px}
+      .form-card{border-radius:22px}
+      .trust-box{border-radius:22px}
+      .trust-links{display:grid;grid-template-columns:1fr}
+      .trust-link{width:100%}
+      footer{font-size:13px}
     }
 
-    @media (max-width: 480px){
+    @media (max-width:480px){
       .eyebrow{
         font-size:12px;
         padding:8px 11px;
       }
 
-      .hero-points{
-        gap:9px;
-      }
+      .hero-points{gap:9px}
 
       .check{
         width:22px;
@@ -1285,23 +1104,10 @@ details[open] summary{
         font-size:23px;
       }
 
-      .price{
-        font-size:32px;
-      }
-
-      .price-big{
-        font-size:36px;
-      }
-
-      .card h3{
-        font-size:20px;
-      }
-
-      .accordion-icon{
-        width:34px;
-        height:34px;
-        font-size:20px;
-      }
+      .price{font-size:32px}
+      .price-big{font-size:36px}
+      .card h3{font-size:20px}
+      .form-card-head h3{font-size:24px}
     }
   </style>
 </head>
@@ -1924,20 +1730,17 @@ details[open] summary{
         <div class="section-title">
           <h2>Formulär</h2>
           <p>
-            Välj det formulär som passar ditt uppdrag. Kortare väg till demo. Mindre friktion. Mer affär.
+            Välj det formulär som passar ditt uppdrag. Jag tog bort accordion-lagret här, så checkboxarna ska nu bete sig som vuxet folk.
           </p>
         </div>
 
-        <div class="accordion-grid">
-          <details class="accordion">
-            <summary>
-              <span class="accordion-title">
-                <strong>Få demo för ny hemsida eller beställ uppdatering</strong>
-                <span>Svarar på det viktigaste. Resten löser vi därifrån.</span>
-              </span>
-              <span class="accordion-icon">+</span>
-            </summary>
-            <div class="accordion-body">
+        <div class="form-grid">
+          <section class="form-card">
+            <div class="form-card-head">
+              <h3>Få demo för ny hemsida eller beställ uppdatering</h3>
+              <p>Svara på det viktigaste. Resten löser vi därifrån.</p>
+            </div>
+            <div class="form-body">
               <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
                 <strong>Ny hemsida eller uppdatering</strong>
                 <small>Fyll i så mycket du kan. Ju bättre brief, desto bättre demo.</small>
@@ -1983,19 +1786,51 @@ details[open] summary{
                   <option value="Annat">Annat</option>
                 </select>
 
-                <label for="sidor">Vad vill du ha med?</label>
-                <div class="checkbox-grid" id="sidor">
-                  <label><input type="checkbox" name="Innehåll[]" value="Startsida"> Startsida</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Om oss"> Om oss</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Tjänster"> Tjänster</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Priser"> Priser</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Galleri / foton"> Galleri / foton</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Video"> Video</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Kontaktformulär"> Kontaktformulär</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Bokningslänk"> Bokningslänk</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Instagram / sociala medier"> Instagram / sociala medier</label>
-                  <label><input type="checkbox" name="Innehåll[]" value="Karta"> Karta</label>
-                </div>
+                <fieldset class="check-field">
+                  <legend>Vad vill du ha med?</legend>
+                  <div class="checkbox-grid">
+                    <label class="check-option" for="startsida">
+                      <input id="startsida" type="checkbox" name="Innehåll[]" value="Startsida">
+                      <span>Startsida</span>
+                    </label>
+                    <label class="check-option" for="om-oss">
+                      <input id="om-oss" type="checkbox" name="Innehåll[]" value="Om oss">
+                      <span>Om oss</span>
+                    </label>
+                    <label class="check-option" for="tjanster-check">
+                      <input id="tjanster-check" type="checkbox" name="Innehåll[]" value="Tjänster">
+                      <span>Tjänster</span>
+                    </label>
+                    <label class="check-option" for="priser-check">
+                      <input id="priser-check" type="checkbox" name="Innehåll[]" value="Priser">
+                      <span>Priser</span>
+                    </label>
+                    <label class="check-option" for="galleri">
+                      <input id="galleri" type="checkbox" name="Innehåll[]" value="Galleri / foton">
+                      <span>Galleri / foton</span>
+                    </label>
+                    <label class="check-option" for="video-check">
+                      <input id="video-check" type="checkbox" name="Innehåll[]" value="Video">
+                      <span>Video</span>
+                    </label>
+                    <label class="check-option" for="kontaktformular">
+                      <input id="kontaktformular" type="checkbox" name="Innehåll[]" value="Kontaktformulär">
+                      <span>Kontaktformulär</span>
+                    </label>
+                    <label class="check-option" for="bokningslank">
+                      <input id="bokningslank" type="checkbox" name="Innehåll[]" value="Bokningslänk">
+                      <span>Bokningslänk</span>
+                    </label>
+                    <label class="check-option" for="instagram">
+                      <input id="instagram" type="checkbox" name="Innehåll[]" value="Instagram / sociala medier">
+                      <span>Instagram / sociala medier</span>
+                    </label>
+                    <label class="check-option" for="karta-check">
+                      <input id="karta-check" type="checkbox" name="Innehåll[]" value="Karta">
+                      <span>Karta</span>
+                    </label>
+                  </div>
+                </fieldset>
 
                 <label for="stil">Vilken stil gillar du?</label>
                 <select id="stil" name="Stil">
@@ -2050,17 +1885,14 @@ details[open] summary{
                 <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
             </div>
-          </details>
+          </section>
 
-          <details class="accordion">
-            <summary>
-              <span class="accordion-title">
-                <strong>Beställ AI-reklamvideo</strong>
-                <span>För sociala medier, hemsida eller annons. Utkast först.</span>
-              </span>
-              <span class="accordion-icon">+</span>
-            </summary>
-            <div class="accordion-body">
+          <section class="form-card">
+            <div class="form-card-head">
+              <h3>Beställ AI-reklamvideo</h3>
+              <p>För sociala medier, hemsida eller annons. Utkast först.</p>
+            </div>
+            <div class="form-body">
               <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
                 <strong>AI-reklamvideo</strong>
                 <small>Pris: 1 999 kr för upp till 60 sekunder. Utkast först. Köp efter godkännande om du gillar det.</small>
@@ -2110,17 +1942,14 @@ details[open] summary{
                 <button class="btn contact-submit" type="submit">Skicka brief för AI-video</button>
               </form>
             </div>
-          </details>
+          </section>
 
-          <details class="accordion">
-            <summary>
-              <span class="accordion-title">
-                <strong>Beställ reklamflyer</strong>
-                <span>För sociala medier, utskrift eller båda delar.</span>
-              </span>
-              <span class="accordion-icon">+</span>
-            </summary>
-            <div class="accordion-body">
+          <section class="form-card">
+            <div class="form-card-head">
+              <h3>Beställ reklamflyer</h3>
+              <p>För sociala medier, utskrift eller båda delar.</p>
+            </div>
+            <div class="form-body">
               <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
                 <strong>Reklamflyer</strong>
                 <small>Pris från 799 kr. Utkast först. Köp efter godkännande om du gillar det.</small>
@@ -2159,7 +1988,7 @@ details[open] summary{
                 <button class="btn contact-submit" type="submit">Skicka brief för flyer</button>
               </form>
             </div>
-          </details>
+          </section>
         </div>
       </div>
     </section>
