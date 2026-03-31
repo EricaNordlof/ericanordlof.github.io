@@ -805,6 +805,46 @@
 
     .seo-copy p:last-child{margin-bottom:0}
 
+    .seo-links{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--line-soft);
+    }
+
+    .seo-links-label{
+      display:block;
+      margin-bottom:10px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#8a7e77;
+      font-weight:800;
+    }
+
+    .seo-links-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .seo-link-chip{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#faf7f5;
+      color:#5c534e;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .seo-link-chip:hover{
+      background:#fff;
+      color:var(--accent);
+    }
+
     .faq-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -831,7 +871,6 @@
       line-height:1.75;
     }
 
-    /* FORM SECTION */
     .form-grid{
       display:grid;
       gap:18px;
@@ -1356,39 +1395,39 @@
         </div>
 
         <div class="grid-3">
-  <div class="card">
-    <h3><a href="ny-hemsida-foretag.html">Ny hemsida för företag</a></h3>
-    <p>
-      För dig som vill ha en ny hemsida som ser proffsig ut, känns genomtänkt och hjälper företaget att få fler förfrågningar och bättre första intryck.
-    </p>
-    <div class="section-cta">
-      <a href="ny-hemsida-foretag.html" class="btn btn-secondary">Läs mer</a>
-    </div>
-  </div>
+          <div class="card">
+            <h3>Ny hemsida för företag</h3>
+            <p>
+              För dig som vill ha en ny hemsida som ser proffsig ut, känns genomtänkt och hjälper företaget att få fler förfrågningar och bättre första intryck.
+            </p>
+          </div>
 
-  <div class="card">
-    <h3><a href="uppdatera-hemsida.html">Uppdatera hemsida</a></h3>
-    <p>
-      För dig som redan har en hemsida men vill förbättra text, struktur, design eller innehåll så att sidan känns tydligare, modernare och mer säljande.
-    </p>
-    <div class="section-cta">
-      <a href="uppdatera-hemsida.html" class="btn btn-secondary">Läs mer</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Tillägg som stärker helheten</h3>
-    <p>
-      AI-reklamvideo och reklamflyer för dig som vill ha mer än bara en hemsida. Bra när du vill driva trafik, synas bättre och se mer genomarbetad ut.
-    </p>
-  </div>
-</div>
+          <div class="card">
+            <h3>Uppdatera hemsida</h3>
+            <p>
+              För dig som redan har en hemsida men vill förbättra text, struktur, design eller innehåll så att sidan känns tydligare, modernare och mer säljande.
+            </p>
+          </div>
 
           <div class="card">
             <h3>Tillägg som stärker helheten</h3>
             <p>
               AI-reklamvideo och reklamflyer för dig som vill ha mer än bara en hemsida. Bra när du vill driva trafik, synas bättre och se mer genomarbetad ut.
             </p>
+          </div>
+        </div>
+
+        <div class="seo-copy" style="margin-top:18px;">
+          <h2>Startsidan säljer. Undersidorna fångar sökningar.</h2>
+          <p>
+            Förstasidan ska bära affären och vara lätt att förstå direkt. Undersidorna finns främst för att möta mer specifika sökningar i Google, till exempel när någon redan vet ungefär vad de letar efter. Därför håller jag länkarna till dem lågmälda här på startsidan, istället för att göra hela sajten till en internlänks-karusell.
+          </p>
+          <div class="seo-links">
+            <span class="seo-links-label">Diskreta genvägar</span>
+            <div class="seo-links-list">
+              <a href="ny-hemsida-foretag.html" class="seo-link-chip">Ny hemsida för företag</a>
+              <a href="uppdatera-hemsida.html" class="seo-link-chip">Uppdatera hemsida</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1853,7 +1892,6 @@
       <div class="container">
         <div class="section-title">
           <h2>Vanliga frågor</h2>
-        
         </div>
 
         <div class="faq-grid">
