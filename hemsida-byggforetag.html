@@ -1,0 +1,1571 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Hemsida för byggföretag | Byggfirma hemsida | Nordlöf Nordic</title>
+  <meta
+    name="description"
+    content="Behöver ditt byggföretag en hemsida? Få en tydlig och snygg hemsida för byggfirma med demo inom 1 arbetsdag. Köp först efter godkänd demo, fast pris och personlig hjälp hela vägen."
+  />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Erica Nordlöf" />
+
+  <meta property="og:title" content="Hemsida för byggföretag | Nordlöf Nordic" />
+  <meta property="og:description" content="Hemsida för byggföretag i hela Sverige. Demo inom 1 arbetsdag, köp först efter godkänd demo och fast pris." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/hemsida-byggforetag.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hemsida för byggföretag | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Ny hemsida för byggföretag. Demo inom 1 arbetsdag och köp först efter godkänd demo." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="canonical" href="https://webutvecklare.se/hemsida-byggforetag.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"ProfessionalService",
+        "name":"Nordlöf Nordic",
+        "description":"Hemsida för byggföretag i hela Sverige. Tydlig, mobilanpassad och säljande hemsida för byggfirma med demo inom 1 arbetsdag.",
+        "url":"https://webutvecklare.se/hemsida-byggforetag.html",
+        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "email":"mailto:erica@webutvecklare.se",
+        "areaServed":{"@type":"Country","name":"Sverige"},
+        "provider":{"@type":"Person","name":"Erica Nordlöf"},
+        "brand":{"@type":"Organization","name":"Nordlöf Nordic"},
+        "serviceType":[
+          "Hemsida för byggföretag",
+          "Byggfirma hemsida",
+          "Ny hemsida byggföretag",
+          "Hemsida för byggfirma",
+          "Webbutveckling för byggföretag"
+        ],
+        "offers":[
+          {"@type":"Offer","name":"Ny hemsida Start","price":"2900","priceCurrency":"SEK"},
+          {"@type":"Offer","name":"Ny hemsida Proffs","price":"4900","priceCurrency":"SEK"},
+          {"@type":"Offer","name":"Ny hemsida Utökad","price":"7900","priceCurrency":"SEK"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Vad behöver en hemsida för byggföretag ha med?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"En hemsida för byggföretag bör tydligt visa tjänster, kontaktvägar, arbetsområden, referenser och varför kunder ska välja just er."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Hur snabbt får jag en demo?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Du får normalt en demo eller första upplägg inom 1 arbetsdag efter att du skickat in din brief."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Måste jag betala innan jag sett något?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Nej. Du köper först efter att du sett demon och tycker att det känns rätt."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Passar det här små byggfirmor?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Ja. Det här passar särskilt bra för små och medelstora byggföretag, lokala byggfirmor och hantverksföretag som vill ha en tydligare och mer proffsig hemsida."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --bg-soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#231d1a;
+      --muted:#6d625c;
+      --line:rgba(35,29,26,0.08);
+      --line-soft:rgba(35,29,26,0.05);
+      --brand:#d98672;
+      --brand-2:#e8b18d;
+      --brand-3:#f5dfd1;
+      --brand-dark:#b96f61;
+      --accent:#1f1a17;
+      --shadow:0 18px 50px rgba(35,29,26,0.08);
+      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --radius:24px;
+      --radius-lg:30px;
+      --max:1180px;
+      --section-pad:clamp(34px, 5vw, 64px);
+      --tap:48px;
+      --header-offset:96px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
+        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    input,select,textarea,button{font:inherit}
+    :target{scroll-margin-top:var(--header-offset)}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      flex:1 1 auto;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7f7169;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      color:#4c433f;
+      font-size:14px;
+      align-items:center;
+      flex:0 1 auto;
+    }
+
+    .nav-links a{
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+
+    .nav-links a:hover{color:var(--accent)}
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+
+    .hero{padding:clamp(26px, 4vw, 58px) 0 18px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.06fr) minmax(0,0.94fr);
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      max-width:100%;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#7c5d53;
+      box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
+    }
+
+    h1,h2,h3{font-family:"Playfair Display",serif}
+
+    .hero h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.2rem, 8.4vw, 5.05rem);
+      line-height:0.98;
+      letter-spacing:-0.045em;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.72;
+      color:#4f4742;
+      max-width:720px;
+    }
+
+    .hero-points{
+      display:grid;
+      gap:10px;
+      margin:24px 0 0;
+      padding:0;
+      list-style:none;
+      color:#3d3733;
+      font-weight:600;
+    }
+
+    .hero-points li,.list-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+      margin-bottom:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .hero-microproof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 12px;
+      font-size:13px;
+      font-weight:700;
+      color:#4f4742;
+      box-shadow:0 10px 24px rgba(35,29,26,0.04);
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg, #d98571 0%, #e9ab86 100%);
+      color:#fff;
+      border-radius:var(--radius-lg);
+      padding:clamp(18px, 2.2vw, 26px);
+      box-shadow:0 28px 70px rgba(185,111,97,0.18);
+      overflow:hidden;
+      position:relative;
+      min-height:560px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-width:0;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.20), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:auto -80px -80px auto;
+      width:250px;
+      height:250px;
+      background:radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .mockup-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+      color:rgba(255,255,255,0.96);
+      font-size:14px;
+      position:relative;
+      z-index:1;
+      line-height:1.4;
+    }
+
+    .dots{display:flex;gap:6px;flex:0 0 auto}
+    .dots span{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.48);
+    }
+
+    .hero-logo-wrap{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:28px;
+      padding:clamp(18px, 2.4vw, 26px);
+      display:grid;
+      place-items:center;
+      min-height:320px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .hero-logo{
+      width:min(100%, 470px);
+      height:auto;
+      border-radius:18px;
+      box-shadow:0 22px 60px rgba(35,29,26,0.16);
+    }
+
+    .mockup-panel{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      position:relative;
+      z-index:1;
+      margin-top:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:12px;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      min-width:0;
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:13px;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .mini-card span{
+      font-size:12px;
+      color:rgba(255,255,255,0.9);
+      line-height:1.55;
+    }
+
+    .section{padding:var(--section-pad) 0}
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:clamp(1.9rem, 5.3vw, 3.15rem);
+      line-height:1.02;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .section-title p{
+      margin:0;
+      max-width:580px;
+      color:#5b524d;
+      line-height:1.75;
+      font-size:clamp(15px, 1.8vw, 17px);
+    }
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+
+    .card{
+      background:rgba(255,255,255,0.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .card p{margin:0;color:#5d5550;line-height:1.72}
+
+    .section-cta{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .showcase{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .showcase .card{padding:0;overflow:hidden}
+    .showcase-content{padding:26px}
+
+    .list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+      box-shadow:0 8px 18px rgba(185,111,97,0.15);
+    }
+
+    .offer-grid,.pricing{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .offer-card,.price-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      min-width:0;
+    }
+
+    .offer-card.featured,.price-card.featured{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      transform:translateY(-6px);
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.06);
+      line-height:1.2;
+    }
+
+    .featured .tag{
+      background:rgba(255,255,255,0.16);
+      color:#fff;
+    }
+
+    .offer-card h3,.price-card h3{
+      margin:18px 0 10px;
+      font-size:26px;
+      font-family:"Inter",sans-serif;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .offer-card p,.price-card p{color:#5f5b58;line-height:1.72;margin:0}
+    .featured p{color:#fff}
+
+    .offer-card ul,.price-card ul{
+      list-style:none;
+      padding:0;
+      margin:20px 0 0;
+      display:grid;
+      gap:12px;
+      color:#5a5551;
+    }
+
+    .featured ul{color:#fff}
+
+    .offer-card li,.price-card li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      line-height:1.55;
+    }
+
+    .offer-card li::before,.price-card li::before{
+      content:"✓";
+      font-weight:800;
+      color:#111;
+      flex:0 0 auto;
+    }
+
+    .featured li::before{color:#fff}
+
+    .price{
+      font-size:clamp(34px, 4.8vw, 44px);
+      font-weight:800;
+      letter-spacing:-0.05em;
+      margin:8px 0 10px;
+      font-family:"Inter",sans-serif;
+      line-height:1;
+    }
+
+    .price-box{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      border-radius:34px;
+      padding:clamp(22px, 4vw, 30px);
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr);
+      gap:20px;
+      align-items:center;
+    }
+
+    .price-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .price-box p{
+      margin:0;
+      color:#fff;
+      line-height:1.75;
+      max-width:620px;
+    }
+
+    .price-panel{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      min-width:0;
+    }
+
+    .price-big{
+      font-size:clamp(38px, 7vw, 52px);
+      font-weight:800;
+      letter-spacing:-0.05em;
+      line-height:1;
+      margin-bottom:10px;
+      font-family:"Inter",sans-serif;
+      text-wrap:balance;
+    }
+
+    .price-note{color:#fff;line-height:1.7}
+
+    .proof-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .proof{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+
+    .proof strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:8px;
+    }
+
+    .proof span{
+      color:#666;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    .seo-copy{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(22px, 4vw, 30px);
+      box-shadow:var(--shadow);
+    }
+
+    .seo-copy h2{
+      margin:0 0 14px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .seo-copy p{
+      margin:0 0 14px;
+      color:#56514d;
+      line-height:1.82;
+      max-width:950px;
+    }
+
+    .seo-copy p:last-child{margin-bottom:0}
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .faq-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .faq-item h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+    }
+
+    .faq-item p{
+      margin:0;
+      color:#5b544f;
+      line-height:1.75;
+    }
+
+    .form-grid{
+      display:grid;
+      gap:18px;
+    }
+
+    .form-card{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      border-radius:28px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.14);
+      overflow:hidden;
+      color:#fff;
+    }
+
+    .form-card-head{
+      padding:22px 24px 0;
+    }
+
+    .form-card-head h3{
+      margin:0 0 8px;
+      font-size:28px;
+      color:#fff;
+      font-family:"Playfair Display",serif;
+    }
+
+    .form-card-head p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      line-height:1.65;
+    }
+
+    .form-body{
+      padding:22px;
+    }
+
+    .contact-box,
+    .contact-box strong,
+    .contact-box small,
+    .contact-box label,
+    .contact-box p,
+    .contact-box span,
+    .contact-box h3,
+    .contact-box h4 {
+      color:#fff;
+    }
+
+    .contact-box{
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      display:grid;
+      gap:12px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .contact-box strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:18px;
+    }
+
+    .contact-box small{
+      color:rgba(255,255,255,0.9);
+      line-height:1.6;
+    }
+
+    .contact-box label{
+      font-size:14px;
+      font-weight:700;
+      color:#fff;
+      margin-top:6px;
+    }
+
+    .contact-box input,
+    .contact-box select,
+    .contact-box textarea{
+      width:100%;
+      min-height:var(--tap);
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.12);
+      color:#fff;
+      border-radius:14px;
+      padding:14px 16px;
+      outline:none;
+      appearance:none;
+      -webkit-appearance:none;
+    }
+
+    .contact-box input::placeholder,
+    .contact-box textarea::placeholder{
+      color:rgba(255,255,255,0.76);
+    }
+
+    .contact-box textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
+    .contact-box select option{
+      color:#111;
+      background:#fff;
+    }
+
+    .contact-box input:focus,
+    .contact-box select:focus,
+    .contact-box textarea:focus{
+      border-color:rgba(255,255,255,0.5);
+      box-shadow:0 0 0 3px rgba(255,255,255,0.15);
+    }
+
+    .contact-submit{
+      margin-top:8px;
+      width:100%;
+      justify-content:center;
+      background:#fff;
+      color:var(--brand-dark);
+      box-shadow:none;
+    }
+
+    .hidden-field{
+      position:absolute;
+      left:-9999px;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .trust-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(22px, 4vw, 28px);
+      box-shadow:var(--shadow);
+    }
+
+    .trust-box h2{
+      margin:0 0 12px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .trust-box p{
+      margin:0 0 14px;
+      color:#55514d;
+      line-height:1.82;
+    }
+
+    .trust-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .trust-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      text-align:center;
+    }
+
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      color:#6f635d;
+      margin-bottom:18px;
+    }
+
+    footer{
+      padding:30px 0 calc(60px + env(safe-area-inset-bottom));
+      color:#6d6662;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    @media (max-width:1140px){
+      .nav-links{display:none}
+      .hero-grid,.showcase,.price-box,.grid-2{grid-template-columns:1fr}
+      .grid-3,.offer-grid,.pricing,.faq-grid{grid-template-columns:1fr}
+      .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .offer-card.featured,.price-card.featured{transform:none}
+      .hero-card{min-height:auto}
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+        --header-offset:88px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{gap:10px;min-width:0}
+      .brand-sub{display:none}
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{font-size:15px}
+
+      .nav-cta{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
+      .hero{padding-top:18px}
+
+      .hero h1{
+        line-height:1;
+        margin:14px 0 12px;
+      }
+
+      .hero p{line-height:1.66}
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .hero-actions .btn{width:100%}
+      .hero-microproof{display:grid;grid-template-columns:1fr}
+
+      .mockup-header{
+        font-size:13px;
+        align-items:flex-start;
+      }
+
+      .hero-logo-wrap{
+        min-height:220px;
+        border-radius:22px;
+      }
+
+      .mockup-panel{grid-template-columns:1fr}
+      .section{padding:30px 0}
+
+      .section-title{
+        flex-direction:column;
+        align-items:flex-start;
+        margin-bottom:16px;
+      }
+
+      .card,
+      .offer-card,
+      .price-card,
+      .proof,
+      .faq-item,
+      .form-body,
+      .form-card-head,
+      .contact-box{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .showcase-content{padding:18px}
+      .proof-grid{grid-template-columns:1fr}
+      .price-box{border-radius:24px}
+      .price-panel{padding:18px}
+      .form-card{border-radius:22px}
+      .trust-box,.seo-copy{border-radius:22px}
+      .trust-links{display:grid;grid-template-columns:1fr}
+      .trust-link{width:100%}
+      footer{font-size:13px}
+    }
+
+    @media (max-width:480px){
+      .eyebrow{
+        font-size:12px;
+        padding:8px 11px;
+      }
+
+      .hero-points{gap:9px}
+
+      .check{
+        width:22px;
+        height:22px;
+        font-size:12px;
+      }
+
+      .offer-card h3,
+      .price-card h3{
+        font-size:23px;
+      }
+
+      .price{font-size:32px}
+      .price-big{font-size:36px}
+      .card h3,.faq-item h3{font-size:20px}
+      .form-card-head h3{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Gå till startsidan">
+        <img class="brand-logo" src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga för hemsidor till byggföretag i Sverige">
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Hemsida för byggföretag</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Sidnavigering">
+        <a href="#sa-funkar-det">Så funkar det</a>
+        <a href="#vad-du-far">Vad du får</a>
+        <a href="#priser">Priser</a>
+        <a href="#faq">Vanliga frågor</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <a href="#kontakt" class="nav-cta">Få min demo</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <a class="back-link" href="index.html">← Till startsidan</a>
+          <span class="eyebrow">Hemsida för byggföretag · Demo inom 1 arbetsdag · Köp först efter godkänd demo</span>
+
+          <h1>Behöver ditt byggföretag en hemsida som känns lika stadig som jobbet ni gör?</h1>
+
+          <p>
+            Jag hjälper byggföretag och byggfirmor att få en tydlig, snygg och mobilanpassad hemsida som visar vad ni gör, var ni jobbar och hur kunder kontaktar er.
+            Du får en demo inom 1 arbetsdag och köper först om du gillar upplägget.
+          </p>
+
+          <ul class="hero-points">
+            <li><span class="check">✓</span><span>Hemsida för byggföretag i hela Sverige</span></li>
+            <li><span class="check">✓</span><span>Tydlig byggfirma hemsida som visar tjänster och kontaktvägar</span></li>
+            <li><span class="check">✓</span><span>Demo eller första upplägg inom 1 arbetsdag</span></li>
+            <li><span class="check">✓</span><span>Köp först efter godkänd demo</span></li>
+            <li><span class="check">✓</span><span>Fast pris och personlig kontakt</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Få en demo på byggfirmans hemsida</a>
+            <a href="#priser" class="btn btn-secondary">Se priser</a>
+          </div>
+
+          <div class="hero-microproof" aria-label="Fördelar">
+            <span class="hero-pill">✓ Tydliga tjänster</span>
+            <span class="hero-pill">✓ Lätt att kontakta</span>
+            <span class="hero-pill">✓ Bra i mobilen</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup-header">
+            <span>Byggfirma hemsida som visar rätt sak direkt</span>
+            <div class="dots"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="hero-logo-wrap">
+            <img
+              class="hero-logo"
+              src="nordlof-nordic-logo.png"
+              alt="Nordlöf Nordic för hemsida till byggföretag"
+            >
+          </div>
+
+          <div class="mockup-panel">
+            <div class="mini-card">
+              <strong>1. Du skickar brief</strong>
+              <span>Berätta vad byggfirman gör, vilka jobb ni tar och vilket område ni jobbar i.</span>
+            </div>
+            <div class="mini-card">
+              <strong>2. Du får en demo</strong>
+              <span>Inom 1 arbetsdag får du ett första upplägg för hur hemsidan kan se ut.</span>
+            </div>
+            <div class="mini-card">
+              <strong>3. Vi bygger klart</strong>
+              <span>När det känns rätt går vi vidare och landar en hemsida som är lätt att visa upp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sa-funkar-det">
+      <div class="container">
+        <div class="section-title">
+          <h2>Så funkar det när du vill ha en hemsida för byggfirma</h2>
+          <p>
+            En byggfirma behöver inte en massa fluff. Ni behöver en hemsida som visar vad ni gör och får folk att höra av sig.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <div class="offer-card">
+            <span class="tag">Steg 1</span>
+            <h3>Visa hur firman jobbar</h3>
+            <p>
+              Skicka kort info om byggföretaget, era tjänster, var ni jobbar och om ni redan har bilder eller text.
+            </p>
+            <ul>
+              <li>Byggfirma eller byggföretag</li>
+              <li>Tjänster och arbetsområde</li>
+              <li>Om ni har material idag</li>
+            </ul>
+          </div>
+
+          <div class="offer-card featured">
+            <span class="tag">Steg 2</span>
+            <h3>Jag tar fram en demo</h3>
+            <p>
+              Du får ett första upplägg inom 1 arbetsdag så du snabbt ser hur hemsidan för byggföretaget kan bli.
+            </p>
+            <ul>
+              <li>Tydlig riktning</li>
+              <li>Snabb återkoppling</li>
+              <li>Låg risk</li>
+            </ul>
+          </div>
+
+          <div class="offer-card">
+            <span class="tag">Steg 3</span>
+            <h3>Vi gör sidan klar</h3>
+            <p>
+              När du gillar upplägget bygger jag klart hemsidan så att den känns tydlig, proffsig och enkel att använda för nya kunder.
+            </p>
+            <ul>
+              <li>Köp först efter godkänd demo</li>
+              <li>Fast pris</li>
+              <li>Ändringar tills det känns rätt</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-primary">Skicka brief för bygghemsida</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vad-du-far">
+      <div class="container">
+        <div class="seo-copy">
+          <h2>Vad en bra hemsida för byggföretag behöver göra</h2>
+          <p>
+            En hemsida för byggföretag ska snabbt visa vad ni bygger, renoverar eller hjälper till med. Den ska också göra det lätt att förstå var ni jobbar, hur man kontaktar er och varför man ska välja just er byggfirma.
+          </p>
+          <p>
+            Många byggfirmor har antingen ingen hemsida alls eller en gammal sida som säger för lite. Då tappar man jobb i onödan. En tydlig byggfirma hemsida gör att företaget känns mer seriöst och enklare att anlita.
+          </p>
+          <p>
+            Det här passar särskilt bra för små och medelstora byggföretag, lokala byggfirmor, renoveringsfirmor och andra hantverksföretag som vill ha en hemsida som faktiskt hjälper till att få in fler förfrågningar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="price-box">
+          <div>
+            <h2>En byggfirma ska se trygg ut även online</h2>
+            <p>
+              När någon letar byggföretag vill de snabbt se att ni verkar riktiga, tydliga och enkla att få tag på. En bra hemsida hjälper med exakt det. Den visar tjänster, kontakt, arbetsområde och gör att ni känns mer värda att ringa än konkurrenten med hemsidan från stenåldern.
+            </p>
+          </div>
+
+          <div class="price-panel">
+            <div class="price-big">Tydligare byggfirma</div>
+            <div class="price-note">
+              Visa tjänster tydligt.<br>
+              Få bättre första intryck.<br>
+              Gör det lätt att kontakta er.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="proof-grid">
+          <div class="proof">
+            <strong>Visa vad ni gör</strong>
+            <span>Tjänsterna blir tydligare så rätt kund fattar direkt vad ni kan hjälpa till med.</span>
+          </div>
+          <div class="proof">
+            <strong>Mer förtroende</strong>
+            <span>En bra hemsida gör att byggföretaget känns mer seriöst och mer värt att kontakta.</span>
+          </div>
+          <div class="proof">
+            <strong>Funkar i mobilen</strong>
+            <span>Många kollar byggfirmor i mobilen, så sidan måste vara lätt att läsa där.</span>
+          </div>
+          <div class="proof">
+            <strong>Enklare att få in jobb</strong>
+            <span>Tydliga knappar och kontaktvägar gör det lättare att få in förfrågningar.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="innehall">
+      <div class="container showcase">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+            alt="Hemsida för byggföretag med tydliga tjänster och kontaktvägar"
+          >
+          <div class="showcase-content">
+            <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">Det här brukar vara bra att ha med</h2>
+            <p style="margin:0; color:#5a5450; line-height:1.75;">
+              En byggfirma hemsida behöver inte vara krånglig. Den behöver bara visa rätt saker tydligt.
+            </p>
+            <div class="list">
+              <div class="list-item"><span class="check">✓</span><span>Tjänster som renovering, tillbyggnad, byggservice eller annat ni gör</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Områden ni jobbar i så kunden vet att ni är relevanta</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Tydlig kontaktsektion med telefon och formulär</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Bilder eller exempel som gör sidan mer trovärdig</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Text som låter rak och tydlig istället för stel och konstig</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:26px;">
+          <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">När byggföretag brukar behöva en ny hemsida</h2>
+          <p style="margin:0 0 18px; color:#5a5450; line-height:1.75;">
+            Ofta märks det på att sidan inte hjälper firman som den borde.
+          </p>
+
+          <div style="background:#faf0e9; border-radius:22px; padding:20px; margin-bottom:14px;">
+            <div style="font-family:'Playfair Display',serif; font-size:clamp(32px,7vw,42px); line-height:1; margin-bottom:8px;">Ingen tydlig info</div>
+            <div style="color:#666;">Kunden fattar inte snabbt nog vad ni gör eller om ni jobbar i rätt område.</div>
+          </div>
+
+          <div style="background:#f8f3ef; border-radius:22px; padding:20px; margin-bottom:14px;">
+            <div style="font-family:'Inter',sans-serif; font-size:clamp(28px,6vw,34px); line-height:1.1; font-weight:800; margin-bottom:8px;">Sidan känns gammal</div>
+            <div style="color:#666;">Hemsidan speglar inte hur bra firman faktiskt är idag.</div>
+          </div>
+
+          <div style="background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%); color:#fff; border-radius:22px; padding:20px;">
+            <div style="font-size:clamp(28px,6vw,34px); line-height:1.1; font-weight:800; letter-spacing:-0.05em; margin-bottom:8px;">Ni vill få fler förfrågningar</div>
+            <div style="color:#fff;">Och då behöver sidan göra det lätt att förstå, lita på er och ta kontakt direkt.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="priser">
+      <div class="container">
+        <div class="section-title">
+          <h2>Priser för hemsida till byggföretag</h2>
+          <p>
+            Välj nivå efter hur mycket ni behöver. Är du osäker rekommenderar jag rätt upplägg när jag sett briefen.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <span class="tag">Start</span>
+            <h3>Enkel byggfirma hemsida</h3>
+            <p class="price">2 900 kr</p>
+            <p>För byggfirmor som behöver en enkel, tydlig och snygg hemsida utan att göra det större än nödvändigt.</p>
+            <ul>
+              <li>Fast pris</li>
+              <li>Mobilanpassad</li>
+              <li>Tydlig kontaktväg</li>
+              <li>Snabbt igång</li>
+            </ul>
+          </div>
+
+          <div class="price-card featured">
+            <span class="tag">Vanligast</span>
+            <h3>Proffsig hemsida för byggföretag</h3>
+            <p class="price">4 900 kr</p>
+            <p>För byggföretag som vill ha mer innehåll, tydligare tjänster och en hemsida som känns mer färdig direkt.</p>
+            <ul>
+              <li>Mer tydlig struktur</li>
+              <li>Fler sektioner eller sidor</li>
+              <li>Bättre första intryck</li>
+              <li>Ändringar tills det känns rätt</li>
+            </ul>
+          </div>
+
+          <div class="price-card">
+            <span class="tag">Utökad</span>
+            <h3>Större bygghemsida</h3>
+            <p class="price">7 900 kr</p>
+            <p>För byggfirmor som behöver mer innehåll, fler delar och ett större upplägg för att visa allt tydligt.</p>
+            <ul>
+              <li>Större omfång</li>
+              <li>Fler delar och mer innehåll</li>
+              <li>Fast pris</li>
+              <li>Personlig kontakt hela vägen</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-cta">
+          <a href="#kontakt" class="btn btn-primary">Beställ hemsida för byggfirma</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="relaterat">
+      <div class="container">
+        <div class="section-title">
+          <h2>Relaterade sidor</h2>
+          <p>
+            Behöver du fler vägar vidare finns det här också.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <a class="card" href="hemsida-till-foretag.html">
+            <h3>Hemsida till företag</h3>
+            <p>För företag som vill ha en ny hemsida från grunden.</p>
+          </a>
+
+          <a class="card" href="anlita-webbutvecklare.html">
+            <h3>Anlita webbutvecklare</h3>
+            <p>För dig som vill ha hjälp med hemsida, struktur och utveckling.</p>
+          </a>
+
+          <a class="card" href="index.html">
+            <h3>Till startsidan</h3>
+            <p>Se alla tjänster för hemsidor, uppdateringar och mer.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vanliga frågor om hemsida för byggföretag</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Vad behöver en hemsida för byggföretag ha med?</h3>
+            <p>Den behöver tydligt visa tjänster, kontaktvägar, arbetsområde och varför kunden ska välja just er byggfirma.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Hur snabbt får jag en demo?</h3>
+            <p>Normalt inom 1 arbetsdag efter att du skickat in briefen med det viktigaste om byggfirman och vad ni vill ha hjälp med.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Måste jag betala innan jag sett något?</h3>
+            <p>Nej. Du köper först efter att du sett demon eller upplägget och känner att det ser bra ut.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Passar det här små byggfirmor?</h3>
+            <p>Ja. Det här passar särskilt bra för små och medelstora byggföretag som vill ha en tydligare och mer proffsig hemsida utan krångel.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Få en demo på hemsida för byggföretag</h2>
+          <p>
+            Skicka lite info om byggfirman och vad ni vill ha hjälp med, så tar jag det därifrån.
+          </p>
+        </div>
+
+        <div class="form-grid">
+          <section class="form-card">
+            <div class="form-card-head">
+              <h3>Brief för byggfirma hemsida</h3>
+              <p>Ju tydligare du beskriver firman och tjänsterna, desto bättre demo får du direkt.</p>
+            </div>
+            <div class="form-body">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+                <strong>Hemsida för byggföretag</strong>
+                <small>Demo inom 1 arbetsdag. Köp först efter godkänd demo.</small>
+
+                <input type="hidden" name="_subject" value="Förfrågan: hemsida-byggforetag.html" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/hemsida-byggforetag.html#kontakt" />
+                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <label for="namn">Namn</label>
+                <input id="namn" type="text" name="Namn" required />
+
+                <label for="foretag">Företag / byggfirma</label>
+                <input id="foretag" type="text" name="Företag" required />
+
+                <label for="email">E-post</label>
+                <input id="email" type="email" name="E-post" required />
+
+                <label for="telefon">Telefon</label>
+                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+
+                <label for="tjanster">Vilka byggtjänster erbjuder ni?</label>
+                <input id="tjanster" type="text" name="Tjänster" placeholder="Till exempel renovering, tillbyggnad, kök, badrum, byggservice" />
+
+                <label for="omrade">Vilket område jobbar ni i?</label>
+                <input id="omrade" type="text" name="Arbetsområde" placeholder="Till exempel Malmö, Lund, Skåne eller hela Sverige" />
+
+                <label for="behov">Vad behöver ni mest hjälp med?</label>
+                <select id="behov" name="Behov">
+                  <option value="Ny hemsida från grunden">Ny hemsida från grunden</option>
+                  <option value="Tydligare tjänster">Tydligare tjänster</option>
+                  <option value="Mer proffsig hemsida">Mer proffsig hemsida</option>
+                  <option value="Fler förfrågningar">Fler förfrågningar</option>
+                  <option value="Vet inte exakt än">Vet inte exakt än</option>
+                </select>
+
+                <label for="innehall">Vad vill ni ha med på sidan?</label>
+                <textarea id="innehall" name="Önskat innehåll" rows="5" placeholder="Skriv gärna vilka tjänster ni gör, vilket område ni jobbar i och om ni har bilder eller text redan"></textarea>
+
+                <label for="budget">Ungefärlig nivå</label>
+                <select id="budget" name="Budget">
+                  <option value="Vet inte än">Vet inte än</option>
+                  <option value="Ny hemsida Start 2900 kr">Ny hemsida Start 2900 kr</option>
+                  <option value="Ny hemsida Proffs 4900 kr">Ny hemsida Proffs 4900 kr</option>
+                  <option value="Ny hemsida Utökad 7900 kr">Ny hemsida Utökad 7900 kr</option>
+                </select>
+
+                <label for="ovrigt">Övrigt</label>
+                <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som är bra att veta om byggfirman, målgruppen eller hur ni vill att sidan ska kännas"></textarea>
+
+                <button class="btn contact-submit" type="submit">Skicka brief för bygghemsida</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="trust-box">
+          <h2>Direktkontakt och enkelt upplägg</h2>
+          <p>
+            Hej. Det är jag, <strong>Erica Nordlöf</strong>, som driver <strong>Nordlöf Nordic</strong>.
+            Jag hjälper företag i hela Sverige med hemsidor, uppdateringar och annat som gör att företaget ser bättre ut online.
+          </p>
+          <p>
+            När du beställer en hemsida för byggföretag jobbar du direkt med mig. Det gör processen snabbare, tydligare och mindre stökig. Du slipper mellanhänder och får istället raka besked, snabb återkoppling och en byggfirma hemsida som faktiskt känns genomtänkt.
+          </p>
+          <div class="trust-links">
+            <a class="trust-link" href="https://www.linkedin.com/in/erica-nordlöf?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Se min LinkedIn</a>
+            <a class="trust-link" href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Se offroadbumpis.se</a>
+            <a class="trust-link" href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Se safestandard.se</a>
+            <a class="trust-link" href="#kontakt">Få min demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span>
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · Hemsidor för företag i hela Sverige
+        · Demo inom 1 arbetsdag
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
