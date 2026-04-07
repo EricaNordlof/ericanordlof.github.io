@@ -1,0 +1,8 @@
+Site: https://webutvecklare.se
+Owner: Nordlöf Nordic
+Purpose: Information about web development services for Swedish businesses
+Preferred URLs:
+https://webutvecklare.se/
+https://webutvecklare.se/anlita-webbutvecklare.html
+https://webutvecklare.se/skapa-hemsida.html
+https://webutvecklare.se/uppdatera-hemsida.html
