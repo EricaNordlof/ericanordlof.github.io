@@ -1248,6 +1248,78 @@
       .card h3,.faq-item h3{font-size:20px}
       .form-card-head h3{font-size:24px}
     }
+
+        .form-toggle{
+      width:100%;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:22px 24px;
+      border:0;
+      background:transparent;
+      color:#fff;
+      text-align:left;
+      cursor:pointer;
+    }
+
+    .form-toggle h3{
+      margin:0 0 8px;
+      font-size:28px;
+      color:#fff;
+      font-family:"Playfair Display",serif;
+    }
+
+    .form-toggle p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      line-height:1.65;
+    }
+
+    .form-toggle-icon{
+      flex:0 0 auto;
+      width:38px;
+      height:38px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      font-size:22px;
+      font-weight:700;
+      line-height:1;
+      transition:transform .2s ease, background .2s ease;
+      margin-top:2px;
+    }
+
+    .form-toggle[aria-expanded="true"] .form-toggle-icon{
+      transform:rotate(45deg);
+      background:rgba(255,255,255,0.2);
+    }
+
+    .form-body[hidden]{
+      display:none;
+    }
+
+    .form-card.is-open .form-card-head{
+      padding-bottom:0;
+    }
+
+    @media (max-width:720px){
+      .form-toggle{
+        padding:18px;
+      }
+
+      .form-toggle h3{
+        font-size:24px;
+      }
+
+      .form-toggle-icon{
+        width:34px;
+        height:34px;
+        font-size:20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2035,7 +2107,7 @@
       </div>
     </section>
 
-    <section class="section" id="kontakt">
+        <section class="section" id="kontakt">
       <div class="container">
         <div class="section-title">
           <h2>Få demo eller beställ webbutveckling</h2>
@@ -2047,10 +2119,15 @@
         <div class="form-grid">
           <section class="form-card">
             <div class="form-card-head">
-              <h3>Få demo för ny hemsida eller beställ uppdatering</h3>
-              <p>Svara på det viktigaste så tar vi resten därifrån.</p>
+              <button class="form-toggle" type="button" aria-expanded="false" aria-controls="form-hemsida">
+                <span>
+                  <h3>Få demo för ny hemsida eller beställ uppdatering</h3>
+                  <p>Svara på det viktigaste så tar vi resten därifrån.</p>
+                </span>
+                <span class="form-toggle-icon" aria-hidden="true">+</span>
+              </button>
             </div>
-            <div class="form-body">
+            <div class="form-body" id="form-hemsida" hidden>
               <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
                 <strong>Ny hemsida eller uppdatering</strong>
                 <small>Fyll i så mycket du kan. Det hjälper mig att göra en bättre demo.</small>
@@ -2202,6 +2279,122 @@
 
           <section class="form-card">
             <div class="form-card-head">
+              <button class="form-toggle" type="button" aria-expanded="false" aria-controls="form-video">
+                <span>
+                  <h3>Beställ AI-reklamvideo</h3>
+                  <p>För sociala medier, hemsida eller annons. Du får ett utkast först.</p>
+                </span>
+                <span class="form-toggle-icon" aria-hidden="true">+</span>
+              </button>
+            </div>
+            <div class="form-body" id="form-video" hidden>
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+                <strong>AI-reklamvideo</strong>
+                <small>Pris: 1 999 kr för upp till 60 sekunder. Du får ett utkast först och bestämmer sedan.</small>
+
+                <input type="hidden" name="_subject" value="Ny förfrågan AI-reklamvideo" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <label for="vnamn">Namn</label>
+                <input id="vnamn" type="text" name="Namn" required />
+
+                <label for="vforetag">Företag / verksamhet</label>
+                <input id="vforetag" type="text" name="Företag" />
+
+                <label for="vemail">E-post</label>
+                <input id="vemail" type="email" name="E-post" required />
+
+                <label for="vsyfte">Vad ska videon användas till?</label>
+                <select id="vsyfte" name="Video syfte">
+                  <option value="Sociala medier">Sociala medier</option>
+                  <option value="Hemsida">Hemsida</option>
+                  <option value="Annons">Annons</option>
+                  <option value="Informationsvideo">Informationsvideo</option>
+                  <option value="Annat">Annat</option>
+                </select>
+
+                <label for="vstil">Vilken videostil vill du ha?</label>
+                <select id="vstil" name="Video stil">
+                  <option value="UGC-känsla">UGC-känsla</option>
+                  <option value="AI-presentatör">AI-presentatör</option>
+                  <option value="Verklighetstrogen reklam">Verklighetstrogen reklam</option>
+                  <option value="Tecknad / lekfull">Tecknad / lekfull</option>
+                  <option value="Vet inte än">Vet inte än</option>
+                </select>
+
+                <label for="vbudskap">Vad vill du förmedla?</label>
+                <textarea id="vbudskap" name="Budskap" rows="5" placeholder="Skriv vad videon ska säga eller kännas som"></textarea>
+
+                <label for="vexempel">Länkar till videor du gillar</label>
+                <textarea id="vexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar till videor du gillar"></textarea>
+
+                <label for="vovrigt">Övrigt</label>
+                <textarea id="vovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+
+                <button class="btn contact-submit" type="submit">Skicka brief för AI-video</button>
+              </form>
+            </div>
+          </section>
+
+          <section class="form-card">
+            <div class="form-card-head">
+              <button class="form-toggle" type="button" aria-expanded="false" aria-controls="form-flyer">
+                <span>
+                  <h3>Beställ reklamflyer</h3>
+                  <p>För sociala medier, utskrift eller båda delar.</p>
+                </span>
+                <span class="form-toggle-icon" aria-hidden="true">+</span>
+              </button>
+            </div>
+            <div class="form-body" id="form-flyer" hidden>
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+                <strong>Reklamflyer</strong>
+                <small>Pris från 799 kr. Du får ett utkast först och bestämmer sedan.</small>
+
+                <input type="hidden" name="_subject" value="Ny förfrågan reklamflyer" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/#kontakt" />
+                <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <label for="fnamn">Namn</label>
+                <input id="fnamn" type="text" name="Namn" required />
+
+                <label for="fforetag">Företag / verksamhet</label>
+                <input id="fforetag" type="text" name="Företag" />
+
+                <label for="femail">E-post</label>
+                <input id="femail" type="email" name="E-post" required />
+
+                <label for="fsyfte">Vad ska flyern användas till?</label>
+                <select id="fsyfte" name="Flyer syfte">
+                  <option value="Sociala medier">Sociala medier</option>
+                  <option value="Utskrift">Utskrift</option>
+                  <option value="Båda">Båda</option>
+                </select>
+
+                <label for="fbudskap">Vad vill du förmedla?</label>
+                <textarea id="fbudskap" name="Budskap" rows="5" placeholder="Skriv vad flyern ska säga eller visa"></textarea>
+
+                <label for="fexempel">Länkar till exempel du gillar</label>
+                <textarea id="fexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar eller beskriv stil"></textarea>
+
+                <label for="fovrigt">Övrigt</label>
+                <textarea id="fovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+
+                <button class="btn contact-submit" type="submit">Skicka brief för flyer</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+          <section class="form-card">
+            <div class="form-card-head">
               <h3>Beställ AI-reklamvideo</h3>
               <p>För sociala medier, hemsida eller annons. Du får ett utkast först.</p>
             </div>
@@ -2349,5 +2542,33 @@
       </span>
     </div>
   </footer>
+    <script>
+    document.querySelectorAll('.form-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const formCard = button.closest('.form-card');
+        const targetId = button.getAttribute('aria-controls');
+        const target = document.getElementById(targetId);
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+        document.querySelectorAll('.form-toggle').forEach((otherButton) => {
+          otherButton.setAttribute('aria-expanded', 'false');
+        });
+
+        document.querySelectorAll('.form-body').forEach((body) => {
+          body.hidden = true;
+        });
+
+        document.querySelectorAll('.form-card').forEach((card) => {
+          card.classList.remove('is-open');
+        });
+
+        if (!isOpen) {
+          button.setAttribute('aria-expanded', 'true');
+          target.hidden = false;
+          formCard.classList.add('is-open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
