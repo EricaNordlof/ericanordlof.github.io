@@ -49,7 +49,7 @@
         "description":"AI-reklamvideo för företag i hela Sverige. Utkast inom 1 arbetsdag, köp först efter godkänd demo, fast pris och personlig kontakt.",
         "url":"https://webutvecklare.se/ai-reklamvideo-foretag.html",
         "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
-        "email":"mailto:nordloferica@gmail.com",
+        "email":"mailto:erica@webutvecklare.se",
         "areaServed":{"@type":"Country","name":"Sverige"},
         "provider":{"@type":"Person","name":"Erica Nordlöf"},
         "brand":{"@type":"Organization","name":"Nordlöf Nordic"},
@@ -864,6 +864,38 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
     }
 
     .hidden-field{
@@ -1376,27 +1408,30 @@
               <p>För sociala medier, hemsida eller annons. Utkast först.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/nordloferica@gmail.com" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="ai-video-page">
                 <strong>AI-reklamvideo för företag</strong>
                 <small>Pris: 1 999 kr för upp till 60 sekunder. Utkast först. Köp efter godkännande om du gillar det.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan från ai-reklamvideo-foretag.html" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/ai-reklamvideo-foretag.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan om AI-reklamvideo och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
+                <div class="form-status" aria-live="polite"></div>
+
                 <label for="vnamn">Namn</label>
-                <input id="vnamn" type="text" name="Namn" required />
+                <input id="vnamn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="vforetag">Företag / verksamhet</label>
-                <input id="vforetag" type="text" name="Företag" />
+                <input id="vforetag" type="text" name="Företag" autocomplete="organization" />
 
                 <label for="vemail">E-post</label>
-                <input id="vemail" type="email" name="E-post" required />
+                <input id="vemail" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="vtelefon">Telefon</label>
-                <input id="vtelefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="vtelefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="vbransch">Vad jobbar du med?</label>
                 <input id="vbransch" type="text" name="Bransch" placeholder="t.ex. bygg, konsult, skönhet, butik, bilvård" />
@@ -1471,5 +1506,53 @@
       <span>ai-reklamvideo-foretag.html · AI-reklamvideo för företag i hela Sverige · Utkast inom 1 arbetsdag</span>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
