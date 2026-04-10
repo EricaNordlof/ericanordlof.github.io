@@ -888,6 +888,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -947,6 +992,11 @@
       margin-bottom:18px;
     }
 
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
     footer{
       padding:30px 0 calc(60px + env(safe-area-inset-bottom));
       color:#6d6662;
@@ -965,7 +1015,7 @@
 
     @media (max-width:1140px){
       .nav-links{display:none}
-      .hero-grid,.showcase,.price-box,.grid-2{grid-template-columns:1fr}
+      .hero-grid,.showcase,.grid-2,.price-box{grid-template-columns:1fr}
       .grid-3,.offer-grid,.pricing,.faq-grid{grid-template-columns:1fr}
       .proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .offer-card.featured,.price-card.featured{transform:none}
@@ -1121,7 +1171,7 @@
           <a class="back-link" href="index.html">← Till startsidan</a>
           <span class="eyebrow">Köpa ny hemsida · Fast pris · Demo inom 1 arbetsdag</span>
 
-          <h1>Vill du köpa ny hemsida till ditt företag utan att köpa grisen i säcken?</h1>
+          <h1>Vill du köpa ny hemsida till ditt företag utan att köpa något blint?</h1>
 
           <p>
             Den här sidan är för dig som redan vet att du vill köpa en ny hemsida, men vill se pris, upplägg och nivå först. Du får en demo inom 1 arbetsdag och köper först efter att du sett att det faktiskt ser bra ut.
@@ -1143,7 +1193,7 @@
           <div class="hero-microproof" aria-label="Fördelar">
             <span class="hero-pill">✓ Fast pris</span>
             <span class="hero-pill">✓ Demo först</span>
-            <span class="hero-pill">✓ Inget klydd</span>
+            <span class="hero-pill">✓ Enkelt upplägg</span>
           </div>
         </div>
 
@@ -1172,7 +1222,7 @@
             </div>
             <div class="mini-card">
               <strong>3. Du köper sen</strong>
-              <span>Först när du gillar det du ser går vi vidare. Sunt upplägg, faktiskt.</span>
+              <span>Först när du gillar det du ser går vi vidare.</span>
             </div>
           </div>
         </div>
@@ -1184,7 +1234,7 @@
         <div class="section-title">
           <h2>Så funkar det när du vill köpa ny hemsida</h2>
           <p>
-            Fokus här är inte allmän inspiration. Fokus är att göra köpet enkelt att förstå.
+            Fokus här är att göra köpet enkelt att förstå.
           </p>
         </div>
 
@@ -1243,10 +1293,10 @@
             På startsidan och andra undersidor finns den breda bilden. Här är jobbet smalare: hjälpa dig som vill köpa ny hemsida till företag och snabbt förstå vad det kostar, hur det funkar och vilken nivå som passar.
           </p>
           <p>
-            Många fastnar annars i samma gamla loop. Antingen hittar man bara byråsnack utan pris, eller så hittar man billiga lösningar som känns som att de är byggda med vänster armbåge. Här är upplägget enklare: fast pris, demo först, köp sen.
+            Många fastnar annars i samma gamla loop. Antingen hittar man bara byråsnack utan pris, eller så hittar man billiga lösningar som inte känns seriösa. Här är upplägget enklare: fast pris, demo först, köp sen.
           </p>
           <p>
-            Det passar särskilt bra för småföretag, lokala företag, konsulter, hantverkare och andra tjänsteföretag som vill beställa en ny hemsida utan att dra igång ett halvårsprojekt med workshops, moodboards och annat tidsätande lull-lull.
+            Det passar särskilt bra för småföretag, lokala företag, hantverkare, konsulter och andra tjänsteföretag som vill beställa en ny hemsida utan att dra igång ett stort projekt.
           </p>
         </div>
       </div>
@@ -1258,7 +1308,7 @@
           <div>
             <h2>Du ska kunna förstå priset innan du bestämmer dig</h2>
             <p>
-              Därför är den här sidan byggd kring pris och nivåer. Målet är att du snabbt ska kunna känna: okej, det här är ungefär vad jag behöver, det här kostar det, och jag får dessutom se en demo först. Inte direkt raketforskning. Bara vettigt.
+              Därför är den här sidan byggd kring pris och nivåer. Målet är att du snabbt ska kunna känna: okej, det här är ungefär vad jag behöver, det här kostar det, och jag får dessutom se en demo först.
             </p>
           </div>
 
@@ -1291,7 +1341,7 @@
           </div>
           <div class="proof">
             <strong>Personlig kontakt</strong>
-            <span>Du jobbar direkt med mig, inte genom tre led och en projektledare med buzzword-abstinens.</span>
+            <span>Du jobbar direkt med mig hela vägen.</span>
           </div>
         </div>
       </div>
@@ -1383,7 +1433,7 @@
 
           <div style="background:#faf0e9; border-radius:22px; padding:20px; margin-bottom:14px;">
             <div style="font-family:'Playfair Display',serif; font-size:clamp(32px,7vw,42px); line-height:1; margin-bottom:8px;">Du vill se pris</div>
-            <div style="color:#666;">Du är trött på sidor där allt är “skräddarsytt” tills man knappt vågar fråga vad något kostar.</div>
+            <div style="color:#666;">Du är trött på sidor där allt är otydligt tills man knappt vågar fråga vad något kostar.</div>
           </div>
 
           <div style="background:#f8f3ef; border-radius:22px; padding:20px; margin-bottom:14px;">
@@ -1393,7 +1443,7 @@
 
           <div style="background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%); color:#fff; border-radius:22px; padding:20px;">
             <div style="font-size:clamp(28px,6vw,34px); line-height:1.1; font-weight:800; letter-spacing:-0.05em; margin-bottom:8px;">Du vill köpa och komma vidare</div>
-            <div style="color:#fff;">Inte bara läsa tio varma ord om digital närvaro. Du vill ha en hemsida som går att beställa på riktigt.</div>
+            <div style="color:#fff;">Du vill ha en hemsida som går att beställa på riktigt.</div>
           </div>
         </div>
       </div>
@@ -1445,27 +1495,30 @@
               <p>Ju tydligare brief, desto snabbare och bättre demo.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="ny-hemsida-foretag">
                 <strong>Köpa ny hemsida</strong>
                 <small>Demo inom 1 arbetsdag. Köp först efter godkänd demo.</small>
 
                 <input type="hidden" name="_subject" value="Förfrågan: ny-hemsida-foretag.html" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/ny-hemsida-foretag.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
+                <div class="form-status" aria-live="polite"></div>
+
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" required />
+                <input id="foretag" type="text" name="Företag" required autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="bransch">Vad gör företaget?</label>
                 <input id="bransch" type="text" name="Bransch" placeholder="Till exempel bygg, städ, konsult, salong, vård eller annat" />
@@ -1496,6 +1549,11 @@
 
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som är bra att veta om företaget, målgruppen eller känslan du vill ha"></textarea>
+
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
 
                 <button class="btn contact-submit" type="submit">Skicka brief för köp av ny hemsida</button>
               </form>
@@ -1530,14 +1588,64 @@
   <footer>
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
-      <span>
+      <span class="footer-meta">
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · webutvecklare.se
         · Hemsidor för företag i hela Sverige
         · Demo inom 1 arbetsdag
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
       </span>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
