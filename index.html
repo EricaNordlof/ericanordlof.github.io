@@ -1090,6 +1090,19 @@
       color:#fff;
     }
 
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
     .hidden-field{
       position:absolute;
       left:-9999px;
@@ -1152,6 +1165,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -2330,6 +2348,11 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
             </div>
@@ -2395,6 +2418,11 @@
                 <label for="vovrigt">Övrigt</label>
                 <textarea id="vovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för AI-video</button>
               </form>
             </div>
@@ -2449,6 +2477,11 @@
                 <label for="fovrigt">Övrigt</label>
                 <textarea id="fovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för flyer</button>
               </form>
             </div>
@@ -2491,12 +2524,14 @@
   <footer>
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
-      <span>
+      <span class="footer-meta">
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · webutvecklare.se
         · Hemsidor och webbutveckling för företag i Sverige
         · Demo inom 1 arbetsdag
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
       </span>
     </div>
   </footer>
