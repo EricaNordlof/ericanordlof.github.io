@@ -978,6 +978,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -1022,6 +1067,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1232,7 +1282,7 @@
             </div>
             <div class="mini-card">
               <strong>3. Gilla och köp</strong>
-              <span>Du betalar först när du gillar demon. Mycket rimligare än att chansköpa luft.</span>
+              <span>Du betalar först när du gillar demon.</span>
             </div>
           </div>
         </div>
@@ -1244,7 +1294,7 @@
         <div class="section-title">
           <h2>Så funkar det om du vill skapa hemsida utan att bygga allt själv</h2>
           <p>
-            Upplägget är gjort för att vara enkelt, snabbt och affärsmässigt. Ingen lång process. Ingen digital hinderbana.
+            Upplägget är gjort för att vara enkelt, snabbt och tydligt.
           </p>
         </div>
 
@@ -1313,7 +1363,7 @@
         <div class="section-title">
           <h2>För vem passar det här?</h2>
           <p>
-            För företag som vill ha en bra hemsida utan att själva behöva bli halvtidsutbildade i webb, copy, UX och knappakrobatik.
+            För företag som vill ha en bra hemsida utan att själva behöva bli halvtidsutbildade i webb, copy, UX och teknik.
           </p>
         </div>
 
@@ -1335,7 +1385,7 @@
           <div class="card">
             <h3>Konsulter & tjänsteföretag</h3>
             <p>
-              För dig som behöver en proffsig sida som känns mer genomarbetad än något som ser ut att ha byggts mellan två kaffepauser.
+              För dig som behöver en proffsig sida som känns mer genomarbetad och tydlig från start.
             </p>
           </div>
         </div>
@@ -1359,7 +1409,7 @@
           <div>
             <h2>Det tar tid att lära sig skapa hemsida. Jag kan göra det snabbare åt dig.</h2>
             <p>
-              Du kan absolut lära dig själv. Frågan är bara om det är där din tid ger bäst avkastning just nu.
+              Du kan absolut lära dig själv. Frågan är bara om det är där din tid gör mest nytta just nu.
               Jag tar fram en demo snabbt, du ser om det känns rätt och betalar först när du gillar resultatet.
             </p>
           </div>
@@ -1392,8 +1442,8 @@
             <span>En bra hemsida handlar inte bara om teknik utan också om struktur, känsla och förtroende.</span>
           </div>
           <div class="proof">
-            <strong>Du slipper byråkrångel</strong>
-            <span>Direktkontakt, tydligt upplägg och mindre process. Mer faktisk leverans.</span>
+            <strong>Du slipper krångel</strong>
+            <span>Direktkontakt, tydligt upplägg och mindre process.</span>
           </div>
         </div>
       </div>
@@ -1450,7 +1500,7 @@
         <div class="section-title">
           <h2>Priser om du vill skapa hemsida utan att göra allt själv</h2>
           <p>
-            Demo först. Köp sen om du gillar det. Det är ett bättre upplägg än att köpa på chans och hoppas att internetgudarna är på gott humör.
+            Demo först. Köp sen om du gillar det.
           </p>
         </div>
 
@@ -1507,7 +1557,7 @@
             <span class="tag">Liten</span>
             <h3>Snabb uppdatering</h3>
             <p class="price">490 kr</p>
-            <p>Textändringar, bildbyte, länkbyte eller små justeringar som du vill få gjorda utan klydd.</p>
+            <p>Textändringar, bildbyte, länkbyte eller små justeringar som du vill få gjorda utan krångel.</p>
             <ul>
               <li>Snabb återkoppling</li>
               <li>Små ändringar</li>
@@ -1554,7 +1604,7 @@
         <div class="section-title">
           <h2>Större projekt, specialfunktioner och webappar</h2>
           <p>
-            Vissa uppdrag är större än en vanlig företagshemsida. Då blir timpris oftast en rimligare modell än att låsa allt i ett paket.
+            Vissa uppdrag är större än en vanlig företagshemsida. Då blir timpris oftast en rimligare modell.
           </p>
         </div>
 
@@ -1563,7 +1613,7 @@
             <h3>När större upplägg passar bättre</h3>
             <p>
               Det gäller till exempel när du behöver inloggning, mer avancerade flöden, specialfunktioner eller en lösning som ska byggas vidare över tid.
-              Då handlar det inte bara om att skapa hemsida, utan om att bygga något större och smartare från grunden.
+              Då handlar det inte bara om att skapa hemsida, utan om att bygga något större från grunden.
             </p>
             <div class="list">
               <div class="list-item"><span class="check">✓</span><span>Webappar och större lösningar</span></div>
@@ -1575,7 +1625,7 @@
           <div class="card">
             <h3>Timpris utan byråpåslag</h3>
             <p>
-              Jag jobbar själv. Det betyder att du betalar för faktiskt arbete istället för fördröjningar, fluff och möteskoreografi.
+              Jag jobbar själv. Det betyder att du betalar för faktiskt arbete istället för onödiga mellanled.
             </p>
             <div style="margin-top:22px; padding:20px; border-radius:22px; background:#faf1ea;">
               <h3 style="margin:0 0 8px; font-family:'Inter',sans-serif; font-size:24px;">Pris</h3>
@@ -1602,7 +1652,7 @@
         <div class="faq-grid">
           <article class="faq-item">
             <h3>Kan jag skapa hemsida själv?</h3>
-            <p>Ja, absolut. Frågan är främst om du vill lägga tiden på att lära dig allt själv eller om du vill få en bättre sida snabbare med hjälp direkt.</p>
+            <p>Ja, absolut. Frågan är mest om du vill lägga tiden på att lära dig allt själv eller om du vill få en bättre sida snabbare med hjälp direkt.</p>
           </article>
 
           <article class="faq-item">
@@ -1638,7 +1688,7 @@
         <div class="section-title">
           <h2>Få demo för ny hemsida</h2>
           <p>
-            Svara på det viktigaste. Ju bättre brief, desto bättre demo och mindre pingpong sen.
+            Svara på det viktigaste. Ju bättre brief, desto bättre demo.
           </p>
         </div>
 
@@ -1649,15 +1699,18 @@
               <p>Du beskriver kort vad du vill ha. Jag återkommer med en demo inom 1 arbetsdag.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="skapa-hemsida">
                 <strong>Ny hemsida eller uppdatering</strong>
                 <small>Fyll i så mycket du kan. Du betalar först efter att du sett demon och gillar upplägget.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan: skapa hemsida" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/skapa-hemsida.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <div class="form-status" aria-live="polite"></div>
 
                 <label for="typ">Vad vill du ha hjälp med?</label>
                 <select id="typ" name="Typ av uppdrag">
@@ -1668,16 +1721,16 @@
                 </select>
 
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <input id="foretag" type="text" name="Företag" autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="bransch">Vad jobbar du med?</label>
                 <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, konsult, skönhet" />
@@ -1787,6 +1840,11 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
             </div>
@@ -1804,7 +1862,7 @@
             Jag hjälper företag i hela Sverige att få hemsidor som ser bättre ut, känns tydligare och är lättare att agera på.
           </p>
           <p>
-            Du har direktkontakt med mig hela vägen. Det betyder mindre krångel, snabbare beslut och färre led där information kan förvandlas till gröt.
+            Du har direktkontakt med mig hela vägen. Det betyder mindre krångel, snabbare beslut och färre led där information försvinner på vägen.
           </p>
           <p>
             Vanliga hemsidor och uppdateringar säljer jag till fast pris. Större lösningar, specialfunktioner och webapp-utveckling tar jag per timme, <strong>från 650 kr/h utan byråpåslag</strong>.
@@ -1817,14 +1875,64 @@
   <footer>
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
-      <span>
+      <span class="footer-meta">
         <a href="https://webutvecklare.se/">Hem</a>
         ·
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · Skapa hemsida för företag i hela Sverige
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
       </span>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
