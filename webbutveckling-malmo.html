@@ -114,6 +114,23 @@
             }
           }
         ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Webbutveckling Malmö",
+            "item":"https://webutvecklare.se/webbutveckling-malmo.html"
+          }
+        ]
       }
     ]
   }
@@ -1012,6 +1029,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -1076,6 +1138,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1241,9 +1308,7 @@
           <h1>Webbutveckling i Malmö för företag som vill se bra ut och få fler kunder</h1>
 
           <p>
-            Jag bygger hemsidor för småföretag, lokala företag, hantverkare, konsulter och personliga varumärken i Malmö.
-            Du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först om du gillar det.
-            Enkelt upplägg, fast pris och personlig kontakt hela vägen.
+            Jag bygger hemsidor för småföretag, lokala företag, hantverkare, konsulter och personliga varumärken i Malmö. Du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först om du gillar det. Enkelt upplägg, fast pris och personlig kontakt hela vägen.
           </p>
 
           <ul class="hero-points">
@@ -1406,9 +1471,7 @@
           <div>
             <h2>Du slipper göra allt själv</h2>
             <p>
-              Det här passar dig som vill ha en snygg och tydlig hemsida för ditt företag i Malmö men inte vill fastna i teknik,
-              designval och texter i flera veckor. Du skickar briefen. Jag bygger. Du får en demo snabbt.
-              Sedan justerar vi tills det känns rätt.
+              Det här passar dig som vill ha en snygg och tydlig hemsida för ditt företag i Malmö men inte vill fastna i teknik, designval och texter i flera veckor. Du skickar briefen. Jag bygger. Du får en demo snabbt. Sedan justerar vi tills det känns rätt.
             </p>
           </div>
 
@@ -1881,43 +1944,46 @@
               <p>Svara på det viktigaste så tar vi resten därifrån.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="malmo-hemsida">
                 <strong>Ny hemsida eller uppdatering</strong>
                 <small>Fyll i så mycket du kan. Det hjälper mig att göra en bättre demo.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan från Nordlöf Nordic Malmö" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/webbutveckling-malmo.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
-                <label for="typ">Vad vill du ha hjälp med?</label>
-                <select id="typ" name="Typ av uppdrag">
+                <div class="form-status" aria-live="polite"></div>
+
+                <label for="malmo-typ">Vad vill du ha hjälp med?</label>
+                <select id="malmo-typ" name="Typ av uppdrag">
                   <option value="Ny hemsida">Ny hemsida</option>
                   <option value="Uppdatering av tidigare hemsida">Uppdatering av tidigare hemsida</option>
                   <option value="Ändring av befintlig sida">Ändring av befintlig sida</option>
                 </select>
 
-                <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <label for="malmo-namn">Namn</label>
+                <input id="malmo-namn" type="text" name="Namn" required autocomplete="name" />
 
-                <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <label for="malmo-foretag">Företag / verksamhet</label>
+                <input id="malmo-foretag" type="text" name="Företag" autocomplete="organization" />
 
-                <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <label for="malmo-email">E-post</label>
+                <input id="malmo-email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
-                <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <label for="malmo-telefon">Telefon</label>
+                <input id="malmo-telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
-                <label for="bransch">Vad jobbar du med?</label>
-                <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, skönhet" />
+                <label for="malmo-bransch">Vad jobbar du med?</label>
+                <input id="malmo-bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, bilvård, skönhet" />
 
-                <label for="stad">Var i Malmö finns ditt företag?</label>
-                <input id="stad" type="text" name="Ort / område" placeholder="t.ex. Malmö centrum, Limhamn, Hyllie, Fosie eller online" />
+                <label for="malmo-stad">Var i Malmö finns ditt företag?</label>
+                <input id="malmo-stad" type="text" name="Ort / område" placeholder="t.ex. Malmö centrum, Limhamn, Hyllie, Fosie eller online" />
 
-                <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
-                <select id="syfte" name="Syfte">
+                <label for="malmo-syfte">Vad ska hemsidan hjälpa dig med?</label>
+                <select id="malmo-syfte" name="Syfte">
                   <option value="Få fler kunder">Få fler kunder</option>
                   <option value="Se mer proffsig ut">Se mer proffsig ut</option>
                   <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
@@ -1929,51 +1995,51 @@
                 <fieldset class="check-field">
                   <legend>Vad vill du ha med?</legend>
                   <div class="checkbox-grid">
-                    <label class="check-option" for="startsida">
-                      <input id="startsida" type="checkbox" name="Innehåll[]" value="Startsida">
+                    <label class="check-option" for="malmo-startsida">
+                      <input id="malmo-startsida" type="checkbox" name="Innehåll[]" value="Startsida">
                       <span>Startsida</span>
                     </label>
-                    <label class="check-option" for="om-oss">
-                      <input id="om-oss" type="checkbox" name="Innehåll[]" value="Om oss">
+                    <label class="check-option" for="malmo-om-oss">
+                      <input id="malmo-om-oss" type="checkbox" name="Innehåll[]" value="Om oss">
                       <span>Om oss</span>
                     </label>
-                    <label class="check-option" for="tjanster-check">
-                      <input id="tjanster-check" type="checkbox" name="Innehåll[]" value="Tjänster">
+                    <label class="check-option" for="malmo-tjanster">
+                      <input id="malmo-tjanster" type="checkbox" name="Innehåll[]" value="Tjänster">
                       <span>Tjänster</span>
                     </label>
-                    <label class="check-option" for="priser-check">
-                      <input id="priser-check" type="checkbox" name="Innehåll[]" value="Priser">
+                    <label class="check-option" for="malmo-priser">
+                      <input id="malmo-priser" type="checkbox" name="Innehåll[]" value="Priser">
                       <span>Priser</span>
                     </label>
-                    <label class="check-option" for="galleri">
-                      <input id="galleri" type="checkbox" name="Innehåll[]" value="Galleri / foton">
+                    <label class="check-option" for="malmo-galleri">
+                      <input id="malmo-galleri" type="checkbox" name="Innehåll[]" value="Galleri / foton">
                       <span>Galleri / foton</span>
                     </label>
-                    <label class="check-option" for="video-check">
-                      <input id="video-check" type="checkbox" name="Innehåll[]" value="Video">
+                    <label class="check-option" for="malmo-video">
+                      <input id="malmo-video" type="checkbox" name="Innehåll[]" value="Video">
                       <span>Video</span>
                     </label>
-                    <label class="check-option" for="kontaktformular">
-                      <input id="kontaktformular" type="checkbox" name="Innehåll[]" value="Kontaktformulär">
+                    <label class="check-option" for="malmo-kontaktformular">
+                      <input id="malmo-kontaktformular" type="checkbox" name="Innehåll[]" value="Kontaktformulär">
                       <span>Kontaktformulär</span>
                     </label>
-                    <label class="check-option" for="bokningslank">
-                      <input id="bokningslank" type="checkbox" name="Innehåll[]" value="Bokningslänk">
+                    <label class="check-option" for="malmo-bokningslank">
+                      <input id="malmo-bokningslank" type="checkbox" name="Innehåll[]" value="Bokningslänk">
                       <span>Bokningslänk</span>
                     </label>
-                    <label class="check-option" for="instagram">
-                      <input id="instagram" type="checkbox" name="Innehåll[]" value="Instagram / sociala medier">
+                    <label class="check-option" for="malmo-instagram">
+                      <input id="malmo-instagram" type="checkbox" name="Innehåll[]" value="Instagram / sociala medier">
                       <span>Instagram / sociala medier</span>
                     </label>
-                    <label class="check-option" for="karta-check">
-                      <input id="karta-check" type="checkbox" name="Innehåll[]" value="Karta">
+                    <label class="check-option" for="malmo-karta">
+                      <input id="malmo-karta" type="checkbox" name="Innehåll[]" value="Karta">
                       <span>Karta</span>
                     </label>
                   </div>
                 </fieldset>
 
-                <label for="stil">Vilken stil gillar du?</label>
-                <select id="stil" name="Stil">
+                <label for="malmo-stil">Vilken stil gillar du?</label>
+                <select id="malmo-stil" name="Stil">
                   <option value="Rak och tydlig">Rak och tydlig</option>
                   <option value="Trygg och personlig">Trygg och personlig</option>
                   <option value="Stark och professionell">Stark och professionell</option>
@@ -1986,30 +2052,30 @@
                   <option value="Vet inte än">Vet inte än</option>
                 </select>
 
-                <label for="farger">Färger du gillar</label>
-                <input id="farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
+                <label for="malmo-farger">Färger du gillar</label>
+                <input id="malmo-farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
 
-                <label for="urlnamn">Önskat URL-namn</label>
-                <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
+                <label for="malmo-urlnamn">Önskat URL-namn</label>
+                <input id="malmo-urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
 
-                <label for="inspo">Finns det hemsidor du gillar?</label>
-                <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
+                <label for="malmo-inspo">Finns det hemsidor du gillar?</label>
+                <textarea id="malmo-inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
 
-                <label for="material">Har du material klart?</label>
-                <select id="material" name="Material klart">
+                <label for="malmo-material">Har du material klart?</label>
+                <select id="malmo-material" name="Material klart">
                   <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
                   <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
                   <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
                 </select>
 
-                <label for="tidigare">Har du redan köpt av mig tidigare?</label>
-                <select id="tidigare" name="Tidigare kund">
+                <label for="malmo-tidigare">Har du redan köpt av mig tidigare?</label>
+                <select id="malmo-tidigare" name="Tidigare kund">
                   <option value="Nej">Nej</option>
                   <option value="Ja">Ja</option>
                 </select>
 
-                <label for="budget">Ungefärlig budget</label>
-                <select id="budget" name="Budget">
+                <label for="malmo-budget">Ungefärlig budget</label>
+                <select id="malmo-budget" name="Budget">
                   <option value="Vet inte än">Vet inte än</option>
                   <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
                   <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
@@ -2019,8 +2085,13 @@
                   <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
                 </select>
 
-                <label for="ovrigt">Övrigt</label>
-                <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+                <label for="malmo-ovrigt">Övrigt</label>
+                <textarea id="malmo-ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
 
                 <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
@@ -2033,27 +2104,30 @@
               <p>För sociala medier, hemsida eller annons. Du får ett utkast först.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="malmo-ai-video">
                 <strong>AI-reklamvideo</strong>
                 <small>Pris: 1 999 kr för upp till 60 sekunder. Du får ett utkast först och bestämmer sedan.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan AI-reklamvideo Malmö" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/webbutveckling-malmo.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan om AI-reklamvideo och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
-                <label for="vnamn">Namn</label>
-                <input id="vnamn" type="text" name="Namn" required />
+                <div class="form-status" aria-live="polite"></div>
 
-                <label for="vforetag">Företag / verksamhet</label>
-                <input id="vforetag" type="text" name="Företag" />
+                <label for="video-namn">Namn</label>
+                <input id="video-namn" type="text" name="Namn" required autocomplete="name" />
 
-                <label for="vemail">E-post</label>
-                <input id="vemail" type="email" name="E-post" required />
+                <label for="video-foretag">Företag / verksamhet</label>
+                <input id="video-foretag" type="text" name="Företag" autocomplete="organization" />
 
-                <label for="vsyfte">Vad ska videon användas till?</label>
-                <select id="vsyfte" name="Video syfte">
+                <label for="video-email">E-post</label>
+                <input id="video-email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
+
+                <label for="video-syfte">Vad ska videon användas till?</label>
+                <select id="video-syfte" name="Video syfte">
                   <option value="Sociala medier">Sociala medier</option>
                   <option value="Hemsida">Hemsida</option>
                   <option value="Annons">Annons</option>
@@ -2061,8 +2135,8 @@
                   <option value="Annat">Annat</option>
                 </select>
 
-                <label for="vstil">Vilken videostil vill du ha?</label>
-                <select id="vstil" name="Video stil">
+                <label for="video-stil">Vilken videostil vill du ha?</label>
+                <select id="video-stil" name="Video stil">
                   <option value="UGC-känsla">UGC-känsla</option>
                   <option value="AI-presentatör">AI-presentatör</option>
                   <option value="Verklighetstrogen reklam">Verklighetstrogen reklam</option>
@@ -2070,14 +2144,19 @@
                   <option value="Vet inte än">Vet inte än</option>
                 </select>
 
-                <label for="vbudskap">Vad vill du förmedla?</label>
-                <textarea id="vbudskap" name="Budskap" rows="5" placeholder="Skriv vad videon ska säga eller kännas som"></textarea>
+                <label for="video-budskap">Vad vill du förmedla?</label>
+                <textarea id="video-budskap" name="Budskap" rows="5" placeholder="Skriv vad videon ska säga eller kännas som"></textarea>
 
-                <label for="vexempel">Länkar till videor du gillar</label>
-                <textarea id="vexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar till videor du gillar"></textarea>
+                <label for="video-exempel">Länkar till videor du gillar</label>
+                <textarea id="video-exempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar till videor du gillar"></textarea>
 
-                <label for="vovrigt">Övrigt</label>
-                <textarea id="vovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+                <label for="video-ovrigt">Övrigt</label>
+                <textarea id="video-ovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
 
                 <button class="btn contact-submit" type="submit">Skicka brief för AI-video</button>
               </form>
@@ -2090,40 +2169,48 @@
               <p>För sociala medier, utskrift eller båda delar.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="malmo-flyer">
                 <strong>Reklamflyer</strong>
                 <small>Pris från 799 kr. Du får ett utkast först och bestämmer sedan.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan reklamflyer Malmö" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/webbutveckling-malmo.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan om reklamflyer och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
-                <label for="fnamn">Namn</label>
-                <input id="fnamn" type="text" name="Namn" required />
+                <div class="form-status" aria-live="polite"></div>
 
-                <label for="fforetag">Företag / verksamhet</label>
-                <input id="fforetag" type="text" name="Företag" />
+                <label for="flyer-namn">Namn</label>
+                <input id="flyer-namn" type="text" name="Namn" required autocomplete="name" />
 
-                <label for="femail">E-post</label>
-                <input id="femail" type="email" name="E-post" required />
+                <label for="flyer-foretag">Företag / verksamhet</label>
+                <input id="flyer-foretag" type="text" name="Företag" autocomplete="organization" />
 
-                <label for="fsyfte">Vad ska flyern användas till?</label>
-                <select id="fsyfte" name="Flyer syfte">
+                <label for="flyer-email">E-post</label>
+                <input id="flyer-email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
+
+                <label for="flyer-syfte">Vad ska flyern användas till?</label>
+                <select id="flyer-syfte" name="Flyer syfte">
                   <option value="Sociala medier">Sociala medier</option>
                   <option value="Utskrift">Utskrift</option>
                   <option value="Båda">Båda</option>
                 </select>
 
-                <label for="fbudskap">Vad vill du förmedla?</label>
-                <textarea id="fbudskap" name="Budskap" rows="5" placeholder="Skriv vad flyern ska säga eller visa"></textarea>
+                <label for="flyer-budskap">Vad vill du förmedla?</label>
+                <textarea id="flyer-budskap" name="Budskap" rows="5" placeholder="Skriv vad flyern ska säga eller visa"></textarea>
 
-                <label for="fexempel">Länkar till exempel du gillar</label>
-                <textarea id="fexempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar eller beskriv stil"></textarea>
+                <label for="flyer-exempel">Länkar till exempel du gillar</label>
+                <textarea id="flyer-exempel" name="Exempel länkar" rows="4" placeholder="Klistra in länkar eller beskriv stil"></textarea>
 
-                <label for="fovrigt">Övrigt</label>
-                <textarea id="fovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+                <label for="flyer-ovrigt">Övrigt</label>
+                <textarea id="flyer-ovrigt" name="Övrigt" rows="4" placeholder="Allt annat som kan vara bra att veta"></textarea>
+
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
 
                 <button class="btn contact-submit" type="submit">Skicka brief för flyer</button>
               </form>
@@ -2138,13 +2225,10 @@
         <div class="trust-box">
           <h2>Vem driver sidan?</h2>
           <p>
-            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>.
-            Jag bygger hemsidor för företag i Malmö och resten av Sverige och hjälper också till med uppdateringar, AI-video och reklammaterial.
-            Du har kontakt direkt med mig hela vägen.
+            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>. Jag bygger hemsidor för företag i Malmö och resten av Sverige och hjälper också till med uppdateringar, AI-video och reklammaterial. Du har kontakt direkt med mig hela vägen.
           </p>
           <p>
-            Upplägget är enkelt: du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först när du gillar resultatet.
-            Behövs ändringar fixar jag det tills helheten känns rätt.
+            Upplägget är enkelt: du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först när du gillar resultatet. Behövs ändringar fixar jag det tills helheten känns rätt.
           </p>
           <div class="trust-links">
             <a class="trust-link" href="https://www.linkedin.com/in/erica-nordlöf?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Se min LinkedIn</a>
@@ -2161,14 +2245,63 @@
   <footer>
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
-      <span>
+      <span class="footer-meta">
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · webutvecklare.se
         · Hemsidor för företag i hela Sverige
-        · Demo inom 1 arbetsdag
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
       </span>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
