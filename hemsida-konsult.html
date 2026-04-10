@@ -950,6 +950,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -1007,6 +1052,11 @@
       display:inline-block;
     }
 
+    .tiny-back a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
     footer{
       padding:30px 0 calc(60px + env(safe-area-inset-bottom));
       color:#6d6662;
@@ -1021,6 +1071,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1186,7 +1241,7 @@
             Driver du konsultverksamhet behöver du sällan en hemsida som skriker. Du behöver en som signalerar kompetens,
             tydlighet och förtroende direkt. Jag bygger konsulthemsidor för solo-konsulter, mindre konsultbolag, rådgivare
             och specialisttjänster i hela Sverige. Du skickar briefen, jag tar fram en demo inom 1 arbetsdag, och du köper
-            först om det känns rätt. Effektivt upplägg. Noll byråcirkus.
+            först om det känns rätt.
           </p>
 
           <ul class="hero-points">
@@ -1230,11 +1285,11 @@
             </div>
             <div class="mini-card">
               <strong>2. Förtroende</strong>
-              <span>Rätt struktur, rätt ton och rätt känsla. Ingen powerpoint på steroider.</span>
+              <span>Rätt struktur, rätt ton och rätt känsla.</span>
             </div>
             <div class="mini-card">
               <strong>3. Kontakt</strong>
-              <span>Sidan byggs för att leda till förfrågningar, inte bara artigt nickande.</span>
+              <span>Sidan byggs för att leda till förfrågningar, inte bara visningar.</span>
             </div>
           </div>
         </div>
@@ -1246,7 +1301,7 @@
         <div class="section-title">
           <h2>Så funkar det</h2>
           <p>
-            Upplägget är gjort för dig som vill ha fart framåt, inte ett projekt som får egen kommunal förvaltning.
+            Upplägget är gjort för dig som vill ha fart framåt utan att dra igång ett segt projekt.
           </p>
         </div>
 
@@ -1296,7 +1351,7 @@
         <div class="section-title">
           <h2>Varför en hemsida för konsult behöver kännas rätt direkt</h2>
           <p>
-            Konsultaffärer börjar ofta med intryck. Inte alltid med pris. Inte alltid med CV. Först kommer känslan av om du verkar skarp, trygg och värd att prata med.
+            Konsultaffärer börjar ofta med intryck. Först kommer känslan av om du verkar skarp, trygg och värd att prata med.
           </p>
         </div>
 
@@ -1311,14 +1366,14 @@
           <div class="card">
             <h3>Rätt förtroende</h3>
             <p>
-              För en konsult säljer hemsidan mycket via struktur, språk och ton. Den ska kännas lugn, professionell och genomtänkt, inte övermöblerad.
+              För en konsult säljer hemsidan mycket via struktur, språk och ton. Den ska kännas lugn, professionell och genomtänkt.
             </p>
           </div>
 
           <div class="card">
             <h3>Färre fel leads</h3>
             <p>
-              När positioneringen sitter bättre blir det enklare att locka rätt uppdrag och minska mängden halvvarma förfrågningar från helt fel håll.
+              När positioneringen sitter bättre blir det enklare att locka rätt uppdrag och minska mängden förfrågningar från fel håll.
             </p>
           </div>
         </div>
@@ -1326,18 +1381,15 @@
         <div class="seo-copy" style="margin-top:18px;">
           <h2>Det här passar dig som säljer kunskap, rådgivning eller specialisttjänster</h2>
           <p>
-            Söker någon efter en hemsida för konsult handlar det nästan alltid om mer än att “bara synas online”. Det handlar om att se trovärdig ut,
-            få rätt typ av kontakt och visa vad man är bra på utan att skriva en avhandling om sig själv. Därför bygger jag sidor som kombinerar tydlig
-            positionering, genomtänkt design och stark kontaktfokus.
+            Söker någon efter en hemsida för konsult handlar det nästan alltid om mer än att bara synas online. Det handlar om att se trovärdig ut,
+            få rätt typ av kontakt och visa vad man är bra på utan att skriva för mycket om allt möjligt.
           </p>
           <p>
-            Det passar till exempel managementkonsulter, marknadskonsulter, HR-konsulter, IT-konsulter, affärsrådgivare, coacher med företagskunder,
-            frilansspecialister och mindre konsultbolag som vill ha en sida som känns professionell men inte stel. Målet är enkelt: besökaren ska snabbt
-            fatta vad du gör, känna förtroende och ta nästa steg.
+            Det passar till exempel managementkonsulter, marknadskonsulter, HR-konsulter, IT-konsulter, affärsrådgivare,
+            frilansspecialister och mindre konsultbolag som vill ha en sida som känns professionell men inte stel.
           </p>
           <p>
-            Du behöver inte ha allt färdigt från början. Har du text, bra. Har du inte text, också bra. Jag hjälper dig att få ihop helheten så att sidan
-            inte bara existerar, utan faktiskt jobbar lite för lönen.
+            Du behöver inte ha allt färdigt från början. Har du text, bra. Har du inte text, också bra. Jag hjälper dig att få ihop helheten så att sidan faktiskt gör nytta.
           </p>
         </div>
       </div>
@@ -1353,13 +1405,13 @@
           <div class="showcase-content">
             <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">Vad en konsulthemsida kan innehålla</h2>
             <p style="margin:0; color:#5a5450; line-height:1.75;">
-              Lagom mycket för att bygga förtroende och få kontakt. Inte så mycket att sidan känns som ett internt kunskapsbibliotek.
+              Lagom mycket för att bygga förtroende och få kontakt.
             </p>
             <div class="list">
               <div class="list-item"><span class="check">✓</span><span>Tydlig startsida med vad du gör och för vem</span></div>
               <div class="list-item"><span class="check">✓</span><span>Sektionen tjänster eller erbjudanden med rätt vinkel</span></div>
-              <div class="list-item"><span class="check">✓</span><span>Om dig eller om bolaget utan att det blir navelskåderi</span></div>
-              <div class="list-item"><span class="check">✓</span><span>Kontaktvägar, formulär och tydliga CTA-knappar</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Om dig eller om bolaget</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Kontaktvägar, formulär och tydliga knappar</span></div>
               <div class="list-item"><span class="check">✓</span><span>Referenser, case eller annan trygghetssignal om det finns</span></div>
             </div>
           </div>
@@ -1395,7 +1447,7 @@
           <div>
             <h2>Du ska inte behöva bygga din konsulthemsida själv på kvällstid</h2>
             <p>
-              Det här passar dig som vill ha en proffsig sida utan att fastna i teknik, textpill, designval och tio öppna flikar med “bästa hemsidan för konsult”.
+              Det här passar dig som vill ha en proffsig sida utan att fastna i teknik, textpill och designval.
               Du skickar briefen. Jag bygger upp ett förslag. Du får en demo snabbt och vi justerar tills helheten känns rätt.
             </p>
           </div>
@@ -1417,7 +1469,7 @@
         <div class="proof-grid">
           <div class="proof">
             <strong>Personlig kontakt</strong>
-            <span>Du har kontakt direkt med mig. Inga mellanled, inga märkliga processledare med färgglada post-its.</span>
+            <span>Du har kontakt direkt med mig hela vägen.</span>
           </div>
           <div class="proof">
             <strong>Demo först</strong>
@@ -1429,7 +1481,7 @@
           </div>
           <div class="proof">
             <strong>Fast pris</strong>
-            <span>Tydligt upplägg utan kreativ fakturapoetik i efterhand.</span>
+            <span>Tydligt upplägg utan överraskningar i efterhand.</span>
           </div>
         </div>
       </div>
@@ -1556,12 +1608,12 @@
 
           <article class="faq-item">
             <h3>Hur snabbt får jag en demo?</h3>
-            <p>Normalt inom 1 arbetsdag efter att du skickat in formuläret. Poängen är att du ska kunna ta ställning snabbt utan att köpa på chans.</p>
+            <p>Normalt inom 1 arbetsdag efter att du skickat in formuläret.</p>
           </article>
 
           <article class="faq-item">
             <h3>Måste jag köpa innan jag sett något?</h3>
-            <p>Nej. Du köper först efter att du sett demon och gillar upplägget. Det gör tröskeln betydligt rimligare för båda parter.</p>
+            <p>Nej. Du köper först efter att du sett demon och gillar upplägget.</p>
           </article>
 
           <article class="faq-item">
@@ -1588,27 +1640,30 @@
               <p>För solo-konsulter, mindre konsultbolag, rådgivare och specialisttjänster i hela Sverige.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="hemsida-konsult">
                 <strong>Konsulthemsida</strong>
                 <small>Demo inom 1 arbetsdag. Köp först efter godkänd demo. Fast pris och ändringar tills det känns rätt.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan: hemsida-konsult.html" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/hemsida-konsult.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
+                <div class="form-status" aria-live="polite"></div>
+
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <input id="foretag" type="text" name="Företag" autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="konsulttyp">Vilken typ av konsult är du?</label>
                 <input id="konsulttyp" type="text" name="Typ av konsult" placeholder="t.ex. IT-konsult, HR-konsult, marknadskonsult, affärsrådgivare" />
@@ -1698,6 +1753,11 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv det som är bra att veta om din verksamhet, din målgrupp eller vad du vill att sidan ska uppnå"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för konsulthemsida</button>
               </form>
             </div>
@@ -1713,7 +1773,7 @@
           <p>
             Hej. Det är jag, <strong>Erica Nordlöf</strong>, som driver <strong>Nordlöf Nordic</strong>.
             Jag bygger hemsidor för företag i hela Sverige med fokus på tydlighet, förtroende och konvertering.
-            På den här typen av sida är målet inte att imponera på andra webbdesigners. Målet är att rätt kund ska känna: “det här verkar vettigt”.
+            Målet är att rätt kund snabbt ska känna att du verkar vettig att anlita.
           </p>
           <p>
             Du har direktkontakt med mig hela vägen. Inga mellanled, inget krångel och inget köpkrav innan du faktiskt sett demon.
@@ -1723,23 +1783,75 @@
             <a class="trust-link" href="#kontakt">Få min demo</a>
             <a class="trust-link" href="#priser">Se priser</a>
           </div>
-          <a class="tiny-back" href="index.html">Till startsidan</a>
+          <div class="tiny-back">
+            <a href="index.html">Till startsidan</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
- <footer>
-  <div class="container footer-line">
-    <span>© 2026 Nordlöf Nordic</span>
-    <span>
-      Kontakt:
-      <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-      · webutvecklare.se
-      · Hemsidor för företag i hela Sverige
-      · Demo inom 1 arbetsdag
-    </span>
-  </div>
-</footer>
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span class="footer-meta">
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · Hemsidor för företag i hela Sverige
+        · Demo inom 1 arbetsdag
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
