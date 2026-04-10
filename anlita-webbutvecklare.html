@@ -16,7 +16,7 @@
   <meta name="author" content="Erica Nordlöf" />
 
   <meta property="og:title" content="Anlita webbutvecklare i Sverige | Nordlöf Nordic" />
-  <meta property="og:description" content="Anlita webbutvecklare utan byråkrångel. Få en demo inom 1 arbetsdag och köp först efter godkänd demo." />
+  <meta property="og:description" content="Anlita webbutvecklare utan krångel. Få en demo inom 1 arbetsdag och köp först efter godkänd demo." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/anlita-webbutvecklare.html" />
   <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
@@ -764,46 +764,6 @@
 
     .seo-copy p:last-child{margin-bottom:0}
 
-    .seo-links{
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid var(--line-soft);
-    }
-
-    .seo-links-label{
-      display:block;
-      margin-bottom:10px;
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#8a7e77;
-      font-weight:800;
-    }
-
-    .seo-links-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .seo-link-chip{
-      display:inline-flex;
-      align-items:center;
-      min-height:38px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#faf7f5;
-      color:#5c534e;
-      font-size:13px;
-      font-weight:600;
-    }
-
-    .seo-link-chip:hover{
-      background:#fff;
-      color:var(--accent);
-    }
-
     .faq-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1000,6 +960,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -1064,6 +1069,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1223,16 +1233,16 @@
         <div>
           <span class="eyebrow">Anlita webbutvecklare · Demo inom 1 arbetsdag · Köp först efter godkänd demo</span>
 
-          <h1>Anlita webbutvecklare för en hemsida som faktiskt hjälper ditt företag framåt</h1>
+          <h1>Anlita webbutvecklare för en hemsida som hjälper ditt företag framåt</h1>
 
           <p>
-            Vill du anlita webbutvecklare utan att fastna i byråmöten, fluffiga processer och offertgymnastik?
+            Vill du anlita webbutvecklare utan att fastna i långa processer?
             Jag hjälper småföretag, tjänsteföretag, hantverkare, konsulter och personliga varumärken i hela Sverige
             med hemsidor, uppdateringar och större webblösningar. Du får en demo inom 1 arbetsdag och köper först om du gillar det du ser.
           </p>
 
           <ul class="hero-points">
-            <li><span class="check">✓</span><span>Anlita webbutvecklare direkt utan mellanled</span></li>
+            <li><span class="check">✓</span><span>Direktkontakt utan mellanled</span></li>
             <li><span class="check">✓</span><span>Demo inom 1 arbetsdag</span></li>
             <li><span class="check">✓</span><span>Köp först efter godkänd demo</span></li>
             <li><span class="check">✓</span><span>Fast pris för vanliga hemsidor och uppdateringar</span></li>
@@ -1247,13 +1257,13 @@
           <div class="hero-microproof" aria-label="Fördelar">
             <span class="hero-pill">✓ Demo först</span>
             <span class="hero-pill">✓ Direktkontakt</span>
-            <span class="hero-pill">✓ Ingen byråteater</span>
+            <span class="hero-pill">✓ Enkelt upplägg</span>
           </div>
         </div>
 
         <div class="hero-card">
           <div class="mockup-header">
-            <span>Nordlöf Nordic · Anlita webbutvecklare utan klydd</span>
+            <span>Nordlöf Nordic · Enkelt att anlita</span>
             <div class="dots"><span></span><span></span><span></span></div>
           </div>
 
@@ -1275,8 +1285,8 @@
               <span>Inom 1 arbetsdag får du något konkret att ta ställning till.</span>
             </div>
             <div class="mini-card">
-              <strong>3. Gilla och köp</strong>
-              <span>Du köper först när upplägget känns rätt. Inte tvärtom, som hos cirkusen.</span>
+              <strong>3. Gå vidare</strong>
+              <span>Du köper först när upplägget känns rätt.</span>
             </div>
           </div>
         </div>
@@ -1288,13 +1298,16 @@
         <div class="seo-copy">
           <h2>Varför anlita webbutvecklare i stället för att bygga själv?</h2>
           <p>
-            Många företag börjar med tanken att “det där fixar vi själva”. Sedan går tre kvällar, två halvdana mallar och ett existentiellt sammanbrott åt till att flytta en knapp tre pixlar. Problemet är sällan bara tekniken. Problemet är helheten: struktur, copy, känsla, tydlighet och att sidan faktiskt ska hjälpa företaget att sälja bättre.
+            Många företag börjar med att försöka bygga själva. Sedan tar det mycket längre tid än tänkt.
+            Det handlar inte bara om teknik. Det handlar också om struktur, texter, känsla och att sidan faktiskt ska hjälpa företaget framåt.
           </p>
           <p>
-            När du anlitar webbutvecklare köper du inte bara kod. Du köper fart, riktning och ett skarpare affärsuttryck. En bra hemsida ska förklara vad du gör, bygga förtroende snabbt och få rätt person att höra av sig. Den ska inte bara existera digitalt och hoppas på det bästa.
+            När du anlitar webbutvecklare köper du inte bara kod. Du köper fart, tydlighet och ett bättre upplägg.
+            En bra hemsida ska förklara vad du gör, bygga förtroende snabbt och göra det lätt för rätt kund att höra av sig.
           </p>
           <p>
-            Den här sidan är byggd för dig som söker efter hur man anlitar webbutvecklare, vill jämföra upplägg eller redan vet att du behöver hjälp med hemsida, uppdatering eller större webblösning. Här är modellen enkel: demo först, beslut sen.
+            Den här sidan är för dig som söker efter hur man anlitar webbutvecklare, vill jämföra upplägg eller redan vet att du behöver hjälp med hemsida, uppdatering eller större webblösning.
+            Upplägget är enkelt: demo först, beslut sen.
           </p>
         </div>
       </div>
@@ -1305,7 +1318,7 @@
         <div class="section-title">
           <h2>Så funkar det när du anlitar mig</h2>
           <p>
-            Det ska vara lätt att köpa hjälp med webbutveckling. Ingen ska behöva boka tre möten för att få en vanlig företagshemsida.
+            Det ska vara lätt att köpa hjälp med webbutveckling.
           </p>
         </div>
 
@@ -1313,21 +1326,21 @@
           <div class="offer-card">
             <span class="tag">Steg 1</span>
             <h3>Skicka din brief</h3>
-            <p>Du berättar vad du behöver hjälp med, vilken känsla du vill ha och vad sidan ska hjälpa dig att uppnå.</p>
+            <p>Du berättar vad du behöver hjälp med, vilken känsla du vill ha och vad sidan ska hjälpa dig med.</p>
             <ul>
               <li>Ny hemsida eller uppdatering</li>
               <li>Företag i hela Sverige</li>
-              <li>Referenser, länkar eller fri text funkar</li>
+              <li>Länkar eller fri text funkar bra</li>
             </ul>
           </div>
 
           <div class="offer-card featured">
             <span class="tag">Steg 2</span>
             <h3>Jag bygger en demo</h3>
-            <p>Du får något konkret inom 1 arbetsdag. Det är mycket lättare att säga ja eller nej till något som faktiskt finns.</p>
+            <p>Du får något konkret inom 1 arbetsdag. Då blir det lättare att se om upplägget känns rätt.</p>
             <ul>
               <li>Snabb återkoppling</li>
-              <li>Riktig riktning direkt</li>
+              <li>Tydlig riktning direkt</li>
               <li>Personlig kontakt hela vägen</li>
             </ul>
           </div>
@@ -1335,11 +1348,11 @@
           <div class="offer-card">
             <span class="tag">Steg 3</span>
             <h3>Godkänn och gå vidare</h3>
-            <p>Gillar du upplägget går vi vidare. Behövs justeringar finslipar jag tills det landar rätt för ditt företag.</p>
+            <p>Gillar du upplägget går vi vidare. Behövs justeringar fixar jag det.</p>
             <ul>
               <li>Köp först efter godkänd demo</li>
               <li>Fast pris eller timpris beroende på uppdrag</li>
-              <li>Tydligt och rakt upplägg</li>
+              <li>Tydligt och enkelt upplägg</li>
             </ul>
           </div>
         </div>
@@ -1355,7 +1368,7 @@
         <div class="section-title">
           <h2>Vem passar det här för?</h2>
           <p>
-            Det här är inte ett generiskt korvbröd till hemsida. Upplägget är gjort för företag som vill kännas tydliga, seriösa och lätta att anlita.
+            Det här passar företag som vill kännas tydliga, seriösa och lätta att anlita.
           </p>
         </div>
 
@@ -1363,21 +1376,21 @@
           <div class="card">
             <h3>Småföretag</h3>
             <p>
-              För dig som vill ha en proffsig hemsida utan att lägga byråbudget på att någon ska prata om kundresa i ett konferensrum med torr banan.
+              För dig som vill ha en proffsig hemsida utan att lägga onödigt mycket tid på att försöka bygga själv.
             </p>
           </div>
 
           <div class="card">
             <h3>Hantverkare & lokala företag</h3>
             <p>
-              För dig som vill att kunden snabbt ska förstå vad du gör, var du jobbar och hur man kontaktar dig för offert eller bokning.
+              För dig som vill att kunden snabbt ska förstå vad du gör, var du jobbar och hur man kontaktar dig.
             </p>
           </div>
 
           <div class="card">
             <h3>Konsulter & tjänsteföretag</h3>
             <p>
-              För dig som behöver ett starkt första intryck, tydlig positionering och en sida som känns mer genomarbetad än “hej vi hjälper er med helhetslösningar”.
+              För dig som behöver ett starkt första intryck, tydlig positionering och en sida som känns genomarbetad.
             </p>
           </div>
         </div>
@@ -1385,10 +1398,12 @@
         <div class="seo-copy" style="margin-top:18px;">
           <h2>När det är rätt läge att anlita webbutvecklare</h2>
           <p>
-            Det är rätt läge att anlita webbutvecklare när din nuvarande sida känns gammal, spretig, oklar eller inte riktigt representerar nivån på ditt företag. Det är också rätt läge när du inte har en hemsida alls, när du behöver fler förfrågningar eller när du vill slippa göra jobbet själv.
+            Det är rätt läge när din nuvarande sida känns gammal, spretig, oklar eller inte riktigt visar nivån på ditt företag.
+            Det är också rätt läge när du inte har en hemsida alls, när du behöver fler förfrågningar eller när du vill slippa göra jobbet själv.
           </p>
           <p>
-            Många söker efter saker som “anlita webbutvecklare”, “webbutvecklare anlita”, “hyra webbutvecklare”, “hjälp med hemsida företag” eller “någon som bygger hemsida åt företag”. Det är i grunden samma affärsbehov: du vill ha någon som kan ta ansvar för helheten och leverera utan att göra processen tyngre än jobbet.
+            Många söker efter saker som “anlita webbutvecklare”, “webbutvecklare anlita”, “hjälp med hemsida företag” eller “någon som bygger hemsida åt företag”.
+            I grunden handlar det om samma sak: du vill ha någon som kan ta ansvar för helheten och leverera något som faktiskt fungerar.
           </p>
         </div>
       </div>
@@ -1398,9 +1413,9 @@
       <div class="container">
         <div class="price-box">
           <div>
-            <h2>Anlita webbutvecklare utan att köpa grisen i CSS-säcken</h2>
+            <h2>Du får se först innan du bestämmer dig</h2>
             <p>
-              Du får först se riktning, känsla och upplägg i en demo. Det gör beslutet enklare och minskar risken för att du betalar för något som känns fel. Bra affär för båda parter. Nästan provocerande rimligt.
+              Du får först se riktning, känsla och upplägg i en demo. Det gör beslutet enklare och minskar risken för att du betalar för något som känns fel.
             </p>
           </div>
 
@@ -1421,11 +1436,11 @@
         <div class="proof-grid">
           <div class="proof">
             <strong>Direktkontakt</strong>
-            <span>Du pratar med personen som faktiskt gör jobbet. Inte med en säljare som “tar det vidare internt”.</span>
+            <span>Du pratar med personen som faktiskt gör jobbet.</span>
           </div>
           <div class="proof">
             <strong>Demo först</strong>
-            <span>Du ser något konkret innan du köper. Det är sund affärslogik, inte magi.</span>
+            <span>Du ser något konkret innan du köper.</span>
           </div>
           <div class="proof">
             <strong>Fast pris eller timpris</strong>
@@ -1433,7 +1448,7 @@
           </div>
           <div class="proof">
             <strong>För företag i hela Sverige</strong>
-            <span>Jag hjälper företag oavsett om du finns lokalt eller jobbar nationellt.</span>
+            <span>Jag hjälper företag oavsett om du jobbar lokalt eller nationellt.</span>
           </div>
         </div>
       </div>
@@ -1492,7 +1507,7 @@
         <div class="section-title" style="margin-top:28px;">
           <h2>Uppdateringar till fast pris</h2>
           <p>
-            Bra för dig som redan har en hemsida men behöver någon som faktiskt tar tag i den.
+            Bra för dig som redan har en hemsida men behöver hjälp att få ordning på den.
           </p>
         </div>
 
@@ -1501,7 +1516,7 @@
             <span class="tag">Liten</span>
             <h3>Snabb uppdatering</h3>
             <p class="price">490 kr</p>
-            <p>Textändringar, bildbyten, länkbyten eller små justeringar som du vill få gjorda utan strul.</p>
+            <p>Textändringar, bildbyten, länkbyten eller små justeringar.</p>
             <ul>
               <li>Små ändringar</li>
               <li>Fast pris</li>
@@ -1549,7 +1564,8 @@
           <div class="card">
             <h3>Behöver du mer än en vanlig hemsida?</h3>
             <p>
-              Ibland räcker inte ett standardupplägg. Kanske behöver du inloggning, formulärflöden, licenssystem, specialfunktioner eller en webapp som växer över tid. Då är det bättre att jobba per timme och bygga rätt från början.
+              Ibland räcker inte ett standardupplägg. Kanske behöver du inloggning, formulärflöden, licenssystem, specialfunktioner eller en webapp som växer över tid.
+              Då är det bättre att jobba per timme och bygga rätt från början.
             </p>
             <div style="margin-top:18px;" class="list">
               <div class="list-item"><span class="check">✓</span><span>Webappar och större digitala lösningar</span></div>
@@ -1561,7 +1577,7 @@
           <div class="card">
             <h3>Timpris utan byråpåslag</h3>
             <p>
-              Jag jobbar själv. Det betyder att du inte betalar för mellanled, fluffiga processer eller intern overhead. Du betalar för faktiskt arbete, vilket är en ovanligt underskattad affärsmodell.
+              Jag jobbar själv. Det betyder att du betalar för faktiskt arbete, inte för mellanled.
             </p>
             <div style="margin-top:22px; padding:20px; border-radius:22px; background:#faf1ea;">
               <h3 style="margin:0 0 8px; font-family:'Inter',sans-serif; font-size:24px;">Pris</h3>
@@ -1580,12 +1596,12 @@
         <div class="seo-copy">
           <h2>Vill du anlita webbutvecklare i Stockholm, Göteborg, Malmö eller någon annanstans?</h2>
           <p>
-            Jag hjälper företag i hela Sverige. Det spelar alltså mindre roll om du söker efter att anlita webbutvecklare i Stockholm, Göteborg, Malmö, Uppsala eller mindre orter. För vanliga företagshemsidor, uppdateringar och många större digitala lösningar fungerar upplägget utmärkt på distans.
+            Jag hjälper företag i hela Sverige. Det spelar alltså mindre roll om du söker efter att anlita webbutvecklare i Stockholm, Göteborg, Malmö, Uppsala eller mindre orter.
+            För vanliga företagshemsidor, uppdateringar och många större digitala lösningar fungerar upplägget bra på distans.
           </p>
           <p>
-            Det viktiga är inte postnumret. Det viktiga är att du får en tydlig partner som kan förstå företaget, bygga rätt känsla och leverera något som hjälper dig att få fler förfrågningar eller ett starkare intryck online.
+            Det viktiga är inte orten. Det viktiga är att du får en tydlig partner som kan förstå företaget, bygga rätt känsla och leverera något som hjälper dig att få fler förfrågningar eller ett starkare intryck online.
           </p>
-          </div>
         </div>
       </div>
     </section>
@@ -1604,7 +1620,7 @@
 
           <article class="faq-item">
             <h3>Är det här bara för stora företag?</h3>
-            <p>Nej. Tvärtom. Upplägget passar särskilt bra för småföretag, lokala företag, hantverkare, konsulter och tjänsteföretag.</p>
+            <p>Nej. Upplägget passar särskilt bra för småföretag, lokala företag, hantverkare, konsulter och tjänsteföretag.</p>
           </article>
 
           <article class="faq-item">
@@ -1635,7 +1651,7 @@
         <div class="section-title">
           <h2>Anlita webbutvecklare här</h2>
           <p>
-            Skriv det viktigaste. Ju bättre brief, desto bättre demo. Resten tar vi därifrån.
+            Skriv det viktigaste. Ju bättre brief, desto bättre demo.
           </p>
         </div>
 
@@ -1643,18 +1659,21 @@
           <section class="form-card">
             <div class="form-card-head">
               <h3>Få demo för ny hemsida eller beställ uppdatering</h3>
-              <p>Enkelt, tydligt och utan onödigt pingpong.</p>
+              <p>Enkelt och tydligt.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="anlita-webbutvecklare">
                 <strong>Anlita webbutvecklare</strong>
                 <small>Skicka in så mycket du kan. Jag återkommer med rätt upplägg för ditt företag.</small>
 
                 <input type="hidden" name="_subject" value="Förfrågan: anlita webbutvecklare" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/anlita-webbutvecklare.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <div class="form-status" aria-live="polite"></div>
 
                 <label for="typ">Vad vill du ha hjälp med?</label>
                 <select id="typ" name="Typ av uppdrag">
@@ -1665,16 +1684,16 @@
                 </select>
 
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <input id="foretag" type="text" name="Företag" autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="bransch">Vad jobbar du med?</label>
                 <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, konsult, skönhet" />
@@ -1771,7 +1790,12 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
-                <button class="btn contact-submit" type="submit">Skicka brief och anlita mig</button>
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
+                <button class="btn contact-submit" type="submit">Skicka brief</button>
               </form>
             </div>
           </section>
@@ -1782,7 +1806,7 @@
     <section class="section">
       <div class="container">
         <div class="trust-box">
-          <h2>Vem anlitar du egentligen?</h2>
+          <h2>Vem anlitar du?</h2>
           <p>
             Hej. Det är jag, <strong>Erica Nordlöf</strong>, som driver <strong>Nordlöf Nordic</strong>.
             Jag hjälper företag i hela Sverige med hemsidor, uppdateringar, AI-material och större digitala lösningar.
@@ -1790,10 +1814,10 @@
           </p>
           <p>
             Jag har också byggt egna skarpa projekt som <strong>webutvecklare.se</strong>, <strong>offroadbumpis.se</strong> och <strong>safestandard.se</strong>.
-            Det betyder att jag inte bara gör säljande företagshemsidor, utan också kan bygga större digitala upplägg när det behövs.
+            Det betyder att jag inte bara gör vanliga företagshemsidor, utan också kan bygga större digitala upplägg när det behövs.
           </p>
           <p>
-            Vanliga hemsidor och uppdateringar säljer jag till fast pris. Större lösningar, specialfunktioner och webapp-utveckling tar jag per timme, <strong>från 650 kr/h utan byråpåslag</strong>.
+            Vanliga hemsidor och uppdateringar säljer jag till fast pris. Större lösningar, specialfunktioner och webapp-utveckling tar jag per timme, <strong>från 650 kr/h</strong>.
           </p>
           <div class="trust-links">
             <a class="trust-link" href="https://www.linkedin.com/in/erica-nordlöf?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Se min LinkedIn</a>
@@ -1808,14 +1832,64 @@
   <footer>
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
-      <span>
+      <span class="footer-meta">
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · webutvecklare.se
         · Anlita webbutvecklare i hela Sverige
         · Demo inom 1 arbetsdag
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
       </span>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
