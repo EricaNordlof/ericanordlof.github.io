@@ -949,6 +949,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -1024,6 +1069,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1186,7 +1236,7 @@
           <h1>Hemsida för småföretag som vill se proffsig ut och få fler förfrågningar</h1>
 
           <p>
-            Behöver du en hemsida för småföretag som känns seriös, tydlig och faktiskt hjälper dig framåt? Jag bygger hemsidor för småföretag i hela Sverige med fokus på förtroende, tydligt budskap och låg friktion till kontakt. Du får en demo inom 1 arbetsdag och köper först om du gillar resultatet. Det är en ganska trevlig affärsmodell jämfört med att betala först och hoppas på det bästa.
+            Behöver du en hemsida för småföretag som känns seriös, tydlig och faktiskt hjälper dig framåt? Jag bygger hemsidor för småföretag i hela Sverige med fokus på förtroende, tydligt budskap och låg friktion till kontakt. Du får en demo inom 1 arbetsdag och köper först om du gillar resultatet.
           </p>
 
           <ul class="hero-points">
@@ -1230,7 +1280,7 @@
             </div>
             <div class="mini-card">
               <strong>2. Jag bygger demo</strong>
-              <span>Du får något konkret inom 1 arbetsdag. Inte ett möte om ett kommande möte.</span>
+              <span>Du får något konkret inom 1 arbetsdag.</span>
             </div>
             <div class="mini-card">
               <strong>3. Du godkänner</strong>
@@ -1296,13 +1346,13 @@
         <div class="seo-copy">
           <h2>Varför småföretag behöver en hemsida som känns tydlig direkt</h2>
           <p>
-            En hemsida för småföretag behöver inte vara stor för att fungera bra. Den behöver vara tydlig. När en besökare landar på sidan ska det synas direkt vad du erbjuder, vem du hjälper och hur man tar nästa steg. Det är där många småföretag tappar fart: sidan säger för lite, känns för gammal eller ser ut som att den överlevt tre ägare och två kommunikationsbyråer.
+            En hemsida för småföretag behöver inte vara stor för att fungera bra. Den behöver vara tydlig. När en besökare landar på sidan ska det synas direkt vad du erbjuder, vem du hjälper och hur man tar nästa steg.
           </p>
           <p>
             En bra företagshemsida för småföretag bygger förtroende snabbt. Det gäller särskilt för lokala företag, hantverkare, konsulter och tjänsteföretag där kunden ofta jämför flera alternativ på kort tid. Ser din sida trygg, modern och enkel ut att använda blir tröskeln lägre att höra av sig.
           </p>
           <p>
-            Därför bygger jag hemsidor för småföretag med fokus på tre saker: rätt känsla, rätt struktur och tydlig väg till kontakt. Inte digital konfetti. Inte fluff. Bara en genomarbetad sida som hjälper ditt företag att se bra ut och konvertera bättre.
+            Därför bygger jag hemsidor för småföretag med fokus på tre saker: rätt känsla, rätt struktur och tydlig väg till kontakt.
           </p>
         </div>
       </div>
@@ -1324,7 +1374,7 @@
               <div class="list-item"><span class="check">✓</span><span>Se mer professionell och trovärdig ut</span></div>
               <div class="list-item"><span class="check">✓</span><span>Göra det enklare för kunder att förstå tjänsterna</span></div>
               <div class="list-item"><span class="check">✓</span><span>Få fler förfrågningar via formulär, telefon eller mejl</span></div>
-              <div class="list-item"><span class="check">✓</span><span>Samla allt snyggt på ett ställe istället för att leva på ett Facebookinlägg från 2022</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Samla allt snyggt på ett ställe</span></div>
               <div class="list-item"><span class="check">✓</span><span>Skapa en stabil grund för framtida marknadsföring</span></div>
             </div>
           </div>
@@ -1360,7 +1410,7 @@
           <div>
             <h2>Småföretag behöver fart, inte friktion</h2>
             <p>
-              Därför är upplägget medvetet enkelt. Du får en demo inom 1 arbetsdag, du köper först efter godkänd demo och du har kontakt direkt med mig. Inga lager av process, inga långa startsträckor och inget behov av att låtsas att en hemsida kräver ett halvårs digital transformation.
+              Därför är upplägget medvetet enkelt. Du får en demo inom 1 arbetsdag, du köper först efter godkänd demo och du har kontakt direkt med mig.
             </p>
           </div>
 
@@ -1385,11 +1435,11 @@
           </div>
           <div class="proof">
             <strong>Fast pris</strong>
-            <span>Tydligt upplägg utan kreativa överraskningar på fakturan.</span>
+            <span>Tydligt upplägg utan överraskningar på fakturan.</span>
           </div>
           <div class="proof">
             <strong>Personlig kontakt</strong>
-            <span>Du har kontakt direkt med mig, inte ett supportnummer med ambitioner.</span>
+            <span>Du har kontakt direkt med mig.</span>
           </div>
           <div class="proof">
             <strong>Hela Sverige</strong>
@@ -1404,7 +1454,7 @@
         <div class="section-title">
           <h2>Priser för hemsida till småföretag</h2>
           <p>
-            Osäker på vilket upplägg som passar? Skicka briefen så rekommenderar jag rätt nivå utifrån företagets behov, inte utifrån maximal faktureringsfantasi.
+            Osäker på vilket upplägg som passar? Skicka briefen så rekommenderar jag rätt nivå utifrån företagets behov.
           </p>
         </div>
 
@@ -1452,7 +1502,7 @@
         <div class="section-title" style="margin-top:28px;">
           <h2>Har du redan en hemsida?</h2>
           <p>
-            Då kan du få hjälp med uppdateringar till fast pris istället för att störa dig på samma gamla text, fel bild och halvtrasiga känsla varje vecka.
+            Då kan du få hjälp med uppdateringar till fast pris.
           </p>
         </div>
 
@@ -1517,12 +1567,12 @@
 
           <article class="faq-item">
             <h3>Hur snabbt får jag en demo?</h3>
-            <p>Normalt inom 1 arbetsdag efter att du skickat in formuläret. Målet är att du snabbt ska kunna ta ställning till riktning och känsla.</p>
+            <p>Normalt inom 1 arbetsdag efter att du skickat in formuläret.</p>
           </article>
 
           <article class="faq-item">
             <h3>Måste jag köpa innan jag sett något?</h3>
-            <p>Nej. Du köper först efter att du sett demon och godkänt upplägget. Det minskar risken och gör beslutet enklare.</p>
+            <p>Nej. Du köper först efter att du sett demon och godkänt upplägget.</p>
           </article>
 
           <article class="faq-item">
@@ -1538,7 +1588,7 @@
         <div class="section-title">
           <h2>Få demo för hemsida till småföretag</h2>
           <p>
-            Svara på det viktigaste så återkommer jag med rätt upplägg. Ju bättre brief, desto bättre demo och mindre onödigt bollande senare.
+            Svara på det viktigaste så återkommer jag med rätt upplägg.
           </p>
         </div>
 
@@ -1549,15 +1599,18 @@
               <p>Enkelt formulär. Tydlig process. Snabb återkoppling.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="hemsida-smaforetag">
                 <strong>Hemsida för småföretag</strong>
                 <small>Demo inom 1 arbetsdag. Köp först efter godkänd demo. Fast pris och personlig kontakt.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan från hemsida-smaforetag.html" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/hemsida-smaforetag.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <div class="form-status" aria-live="polite"></div>
 
                 <label for="typ">Vad vill du ha hjälp med?</label>
                 <select id="typ" name="Typ av uppdrag">
@@ -1567,16 +1620,16 @@
                 </select>
 
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <input id="foretag" type="text" name="Företag" autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="bransch">Vad jobbar du med?</label>
                 <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, el, VVS, städ, konsult, skönhet" />
@@ -1668,6 +1721,11 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
             </div>
@@ -1686,7 +1744,7 @@
           </p>
           <p>
             Upplägget är gjort för att kännas tryggt och enkelt: demo inom 1 arbetsdag, köp först efter godkänd demo, fast pris och ändringar tills det känns rätt.
-            Det passar särskilt bra för småföretag som vill ha fart framåt utan att drunkna i process.
+            Det passar särskilt bra för småföretag som vill ha fart framåt utan att fastna i en tung process.
           </p>
           <div class="trust-links">
             <a class="trust-link" href="https://www.linkedin.com/in/erica-nordlöf?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Se min LinkedIn</a>
@@ -1702,16 +1760,66 @@
   </main>
 
   <footer>
-  <div class="container footer-line">
-    <span>© 2026 Nordlöf Nordic</span>
-    <span>
-      Kontakt:
-      <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-      · webutvecklare.se
-      · Hemsidor för företag i hela Sverige
-      · Demo inom 1 arbetsdag
-    </span>
-  </div>
-</footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span class="footer-meta">
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · Hemsidor för företag i hela Sverige
+        · Demo inom 1 arbetsdag
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
