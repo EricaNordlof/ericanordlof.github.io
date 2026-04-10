@@ -111,6 +111,23 @@
             }
           }
         ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Webbutveckling Göteborg",
+            "item":"https://webutvecklare.se/webbutveckling-goteborg.html"
+          }
+        ]
       }
     ]
   }
@@ -932,6 +949,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -987,6 +1049,8 @@
       margin-top:10px;
       font-size:13px;
       color:#7a6f68;
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     footer{
@@ -1003,6 +1067,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1165,10 +1234,7 @@
           <h1>Webbutveckling i Göteborg för företag som vill se proffsiga ut och få fler förfrågningar</h1>
 
           <p>
-            Behöver du webbutveckling i Göteborg? Jag bygger hemsidor för småföretag, lokala företag, konsulter och tjänsteföretag
-            som vill kännas tydliga, moderna och lätta att anlita. Du skickar in din brief, jag tar fram en demo inom 1 arbetsdag
-            och du köper först om du gillar resultatet. Fast pris. Personlig kontakt. Ändringar tills det känns rätt.
-            Inga onödiga processer, inget byrågymnastiknummer.
+            Behöver du webbutveckling i Göteborg? Jag bygger hemsidor för småföretag, lokala företag, konsulter och tjänsteföretag som vill kännas tydliga, moderna och lätta att anlita. Du skickar in din brief, jag tar fram en demo inom 1 arbetsdag och du köper först om du gillar resultatet. Fast pris. Personlig kontakt. Ändringar tills det känns rätt. Inga onödiga processer, inget byrågymnastiknummer.
           </p>
 
           <ul class="hero-points">
@@ -1352,12 +1418,10 @@
         <div class="trust-box" style="margin-top:18px;">
           <h2>Det här passar företag som vill ha låg risk och snabb framdrift</h2>
           <p>
-            Många småföretag i Göteborg behöver en bättre hemsida men drar sig för att starta ett projekt eftersom det känns dyrt, otydligt eller långsamt.
-            Därför är upplägget rakt: du skickar briefen, jag bygger en demo inom 1 arbetsdag och du köper först efter att du sett något konkret.
+            Många småföretag i Göteborg behöver en bättre hemsida men drar sig för att starta ett projekt eftersom det känns dyrt, otydligt eller långsamt. Därför är upplägget rakt: du skickar briefen, jag bygger en demo inom 1 arbetsdag och du köper först efter att du sett något konkret.
           </p>
           <p>
-            Det betyder mindre chans att du fastnar i fel riktning från start. Och betydligt mindre risk att du lägger pengar på något som känns halvdant.
-            Målet är att hemsidan ska kännas tydlig, professionell och lätt att lita på, både för vanliga besökare och för den som googlat sig fram till dig.
+            Det betyder mindre chans att du fastnar i fel riktning från start. Och betydligt mindre risk att du lägger pengar på något som känns halvdant. Målet är att hemsidan ska kännas tydlig, professionell och lätt att lita på, både för vanliga besökare och för den som googlat sig fram till dig.
           </p>
         </div>
       </div>
@@ -1369,9 +1433,7 @@
           <div>
             <h2>Du behöver inte bygga hemsidan själv på kvällstid</h2>
             <p>
-              Det här passar dig som vill ha en snygg och genomtänkt hemsida för företaget i Göteborg men inte vill fastna i teknik,
-              struktur, texter och designbeslut i veckor. Du skickar briefen. Jag bygger. Du får en demo snabbt.
-              Sedan finjusterar vi tills helheten känns rätt.
+              Det här passar dig som vill ha en snygg och genomtänkt hemsida för företaget i Göteborg men inte vill fastna i teknik, struktur, texter och designbeslut i veckor. Du skickar briefen. Jag bygger. Du får en demo snabbt. Sedan finjusterar vi tills helheten känns rätt.
             </p>
           </div>
 
@@ -1560,15 +1622,18 @@
               <p>För företag i Göteborg som vill ha något snyggt, tydligt och genomtänkt.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="webbutveckling-goteborg">
                 <strong>Webbutveckling Göteborg</strong>
                 <small>Demo inom 1 arbetsdag. Köp först efter godkänd demo. Fast pris och personlig kontakt.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan webbutveckling Göteborg" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/webbutveckling-goteborg.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan om webbutveckling i Göteborg och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+                <div class="form-status" aria-live="polite"></div>
 
                 <label for="typ">Vad vill du ha hjälp med?</label>
                 <select id="typ" name="Typ av uppdrag">
@@ -1578,16 +1643,16 @@
                 </select>
 
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <input id="foretag" type="text" name="Företag" autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="bransch">Vad jobbar du med?</label>
                 <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, konsult, städ, skönhet, vård, service" />
@@ -1701,6 +1766,11 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
             </div>
@@ -1714,13 +1784,10 @@
         <div class="trust-box">
           <h2>Vem driver sidan?</h2>
           <p>
-            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>.
-            Jag bygger hemsidor för företag i hela Sverige och hjälper även till med uppdateringar, AI-reklamvideor och reklammaterial.
-            Du har direktkontakt med mig hela vägen.
+            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>. Jag bygger hemsidor för företag i hela Sverige och hjälper även till med uppdateringar, AI-reklamvideor och reklammaterial. Du har direktkontakt med mig hela vägen.
           </p>
           <p>
-            Upplägget är enkelt: du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först när du gillar resultatet.
-            Behövs ändringar fixar jag det tills helheten känns rätt. För företag i Göteborg betyder det snabb framdrift utan att köpa grisen i den digitala säcken.
+            Upplägget är enkelt: du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först när du gillar resultatet. Behövs ändringar fixar jag det tills helheten känns rätt. För företag i Göteborg betyder det snabb framdrift utan att köpa grisen i den digitala säcken.
           </p>
           <div class="trust-links">
             <a class="trust-link" href="#kontakt">Få min demo</a>
@@ -1735,14 +1802,63 @@
   <footer>
   <div class="container footer-line">
     <span>© 2026 Nordlöf Nordic</span>
-    <span>
+    <span class="footer-meta">
       Kontakt:
       <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
       · webutvecklare.se
       · Hemsidor för företag i hela Sverige
-      · Demo inom 1 arbetsdag
+      · <a href="villkor.html">Villkor</a>
+      · <a href="integritet.html">Integritet</a>
     </span>
   </div>
 </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
