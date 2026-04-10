@@ -111,6 +111,23 @@
             }
           }
         ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Webbutveckling Stockholm",
+            "item":"https://webutvecklare.se/webbutveckling-stockholm.html"
+          }
+        ]
       }
     ]
   }
@@ -956,6 +973,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -1011,6 +1073,8 @@
       margin-top:10px;
       font-size:13px;
       color:#7a6f68;
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     footer{
@@ -1027,6 +1091,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1160,7 +1229,7 @@
 <body>
   <div class="topbar">
     <div class="container nav">
-      <a href="index.html" class="brand" aria-label="Gå till startsidan">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
         <img class="brand-logo" src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga för webbutveckling i Stockholm">
         <span class="brand-text">
           <span class="brand-title">Nordlöf Nordic</span>
@@ -1189,10 +1258,7 @@
           <h1>Webbutveckling i Stockholm för företag som vill se skarpa ut och få fler förfrågningar</h1>
 
           <p>
-            Behöver du hjälp med webbutveckling i Stockholm? Jag bygger hemsidor för småföretag, lokala företag,
-            konsulter och tjänsteföretag som vill se proffsiga ut, kännas tydliga och göra det lättare för rätt kunder
-            att höra av sig. Du skickar in din brief, jag tar fram en demo inom 1 arbetsdag och du köper först om du
-            gillar resultatet. Enkelt upplägg. Fast pris. Personlig kontakt. Noll byråakrobatik.
+            Behöver du hjälp med webbutveckling i Stockholm? Jag bygger hemsidor för småföretag, lokala företag, konsulter och tjänsteföretag som vill se proffsiga ut, kännas tydliga och göra det lättare för rätt kunder att höra av sig. Du skickar in din brief, jag tar fram en demo inom 1 arbetsdag och du köper först om du gillar resultatet. Enkelt upplägg. Fast pris. Personlig kontakt.
           </p>
 
           <ul class="hero-points">
@@ -1332,16 +1398,13 @@
         <div class="seo-copy" style="margin-top:18px;">
           <h2>En hemsida i Stockholm ska inte bara vara snygg. Den ska göra jobbet också.</h2>
           <p>
-            Konkurrensen i Stockholm är sällan lågmäld. Därför behöver en företagshemsida vara tydlig, trygg och byggd för att snabbt förklara vad du erbjuder.
-            Besökaren ska inte behöva detektivjobba för att förstå din tjänst, din nivå eller hur man kontaktar dig.
+            Konkurrensen i Stockholm är sällan lågmäld. Därför behöver en företagshemsida vara tydlig, trygg och byggd för att snabbt förklara vad du erbjuder. Besökaren ska inte behöva detektivjobba för att förstå din tjänst, din nivå eller hur man kontaktar dig.
           </p>
           <p>
-            Jag hjälper företag i Stockholm med webbutveckling som kombinerar design, struktur och säljande copy. Resultatet ska kännas modernt och genomtänkt,
-            men också enkelt att ta till sig. En bra hemsida ska minska friktionen, bygga förtroende och göra det lätt att gå vidare till kontakt.
+            Jag hjälper företag i Stockholm med webbutveckling som kombinerar design, struktur och säljande copy. Resultatet ska kännas modernt och genomtänkt, men också enkelt att ta till sig. En bra hemsida ska minska friktionen, bygga förtroende och göra det lätt att gå vidare till kontakt.
           </p>
           <p>
-            Det passar särskilt bra för mindre företag, lokala verksamheter, konsulter, hantverkare och andra tjänsteföretag som vill ha hjälp snabbt utan att köpa först.
-            Demo inom 1 arbetsdag gör att du ser riktningen direkt. Gillar du det går vi vidare. Gillar du det inte, då vet du det innan plånboken behöver få prestationsångest.
+            Det passar särskilt bra för mindre företag, lokala verksamheter, konsulter, hantverkare och andra tjänsteföretag som vill ha hjälp snabbt utan att köpa först. Demo inom 1 arbetsdag gör att du ser riktningen direkt. Gillar du det går vi vidare. Gillar du det inte, då vet du det innan plånboken behöver få prestationsångest.
           </p>
         </div>
       </div>
@@ -1399,8 +1462,7 @@
           <div>
             <h2>Du behöver inte bygga hemsidan själv efter jobbet</h2>
             <p>
-              Det här passar dig som vill ha en snygg och genomtänkt hemsida för företaget i Stockholm men inte vill sitta kväll efter kväll med design, texter,
-              struktur och tekniskt smågrus. Du skickar briefen. Jag bygger. Du får en demo snabbt. Sedan finjusterar vi tills allt känns rätt.
+              Det här passar dig som vill ha en snygg och genomtänkt hemsida för företaget i Stockholm men inte vill sitta kväll efter kväll med design, texter, struktur och tekniskt smågrus. Du skickar briefen. Jag bygger. Du får en demo snabbt. Sedan finjusterar vi tills allt känns rätt.
             </p>
           </div>
 
@@ -1566,43 +1628,46 @@
               <p>För företag i Stockholm som vill ha något snyggt, tydligt och genomtänkt.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="stockholm-hemsida">
                 <strong>Webbutveckling Stockholm</strong>
                 <small>Demo inom 1 arbetsdag. Köp först efter godkänd demo. Fast pris och personlig kontakt.</small>
 
                 <input type="hidden" name="_subject" value="Ny förfrågan webbutveckling Stockholm" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/webbutveckling-stockholm.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
-                <label for="typ">Vad vill du ha hjälp med?</label>
-                <select id="typ" name="Typ av uppdrag">
+                <div class="form-status" aria-live="polite"></div>
+
+                <label for="stockholm-typ">Vad vill du ha hjälp med?</label>
+                <select id="stockholm-typ" name="Typ av uppdrag">
                   <option value="Ny hemsida">Ny hemsida</option>
                   <option value="Uppdatering av tidigare hemsida">Uppdatering av tidigare hemsida</option>
                   <option value="Ändring av befintlig sida">Ändring av befintlig sida</option>
                 </select>
 
-                <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <label for="stockholm-namn">Namn</label>
+                <input id="stockholm-namn" type="text" name="Namn" required autocomplete="name" />
 
-                <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <label for="stockholm-foretag">Företag / verksamhet</label>
+                <input id="stockholm-foretag" type="text" name="Företag" autocomplete="organization" />
 
-                <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <label for="stockholm-email">E-post</label>
+                <input id="stockholm-email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
-                <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <label for="stockholm-telefon">Telefon</label>
+                <input id="stockholm-telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
-                <label for="bransch">Vad jobbar du med?</label>
-                <input id="bransch" type="text" name="Bransch" placeholder="t.ex. bygg, konsult, städ, skönhet, juridik, service" />
+                <label for="stockholm-bransch">Vad jobbar du med?</label>
+                <input id="stockholm-bransch" type="text" name="Bransch" placeholder="t.ex. bygg, konsult, städ, skönhet, juridik, service" />
 
-                <label for="stad">Var i Stockholm finns ditt företag?</label>
-                <input id="stad" type="text" name="Ort / område" placeholder="t.ex. Södermalm, Solna, Täby, Nacka, Bromma eller hela Stockholm" />
+                <label for="stockholm-stad">Var i Stockholm finns ditt företag?</label>
+                <input id="stockholm-stad" type="text" name="Ort / område" placeholder="t.ex. Södermalm, Solna, Täby, Nacka, Bromma eller hela Stockholm" />
 
-                <label for="syfte">Vad ska hemsidan hjälpa dig med?</label>
-                <select id="syfte" name="Syfte">
+                <label for="stockholm-syfte">Vad ska hemsidan hjälpa dig med?</label>
+                <select id="stockholm-syfte" name="Syfte">
                   <option value="Få fler kunder">Få fler kunder</option>
                   <option value="Se mer proffsig ut">Se mer proffsig ut</option>
                   <option value="Visa tjänster och kontakt">Visa tjänster och kontakt</option>
@@ -1614,51 +1679,51 @@
                 <fieldset class="check-field">
                   <legend>Vad vill du ha med?</legend>
                   <div class="checkbox-grid">
-                    <label class="check-option" for="startsida">
-                      <input id="startsida" type="checkbox" name="Innehåll[]" value="Startsida">
+                    <label class="check-option" for="stockholm-startsida">
+                      <input id="stockholm-startsida" type="checkbox" name="Innehåll[]" value="Startsida">
                       <span>Startsida</span>
                     </label>
-                    <label class="check-option" for="om-oss">
-                      <input id="om-oss" type="checkbox" name="Innehåll[]" value="Om oss">
+                    <label class="check-option" for="stockholm-om-oss">
+                      <input id="stockholm-om-oss" type="checkbox" name="Innehåll[]" value="Om oss">
                       <span>Om oss</span>
                     </label>
-                    <label class="check-option" for="tjanster-check">
-                      <input id="tjanster-check" type="checkbox" name="Innehåll[]" value="Tjänster">
+                    <label class="check-option" for="stockholm-tjanster">
+                      <input id="stockholm-tjanster" type="checkbox" name="Innehåll[]" value="Tjänster">
                       <span>Tjänster</span>
                     </label>
-                    <label class="check-option" for="priser-check">
-                      <input id="priser-check" type="checkbox" name="Innehåll[]" value="Priser">
+                    <label class="check-option" for="stockholm-priser">
+                      <input id="stockholm-priser" type="checkbox" name="Innehåll[]" value="Priser">
                       <span>Priser</span>
                     </label>
-                    <label class="check-option" for="galleri">
-                      <input id="galleri" type="checkbox" name="Innehåll[]" value="Galleri / foton">
+                    <label class="check-option" for="stockholm-galleri">
+                      <input id="stockholm-galleri" type="checkbox" name="Innehåll[]" value="Galleri / foton">
                       <span>Galleri / foton</span>
                     </label>
-                    <label class="check-option" for="video-check">
-                      <input id="video-check" type="checkbox" name="Innehåll[]" value="Video">
+                    <label class="check-option" for="stockholm-video">
+                      <input id="stockholm-video" type="checkbox" name="Innehåll[]" value="Video">
                       <span>Video</span>
                     </label>
-                    <label class="check-option" for="kontaktformular">
-                      <input id="kontaktformular" type="checkbox" name="Innehåll[]" value="Kontaktformulär">
+                    <label class="check-option" for="stockholm-kontaktformular">
+                      <input id="stockholm-kontaktformular" type="checkbox" name="Innehåll[]" value="Kontaktformulär">
                       <span>Kontaktformulär</span>
                     </label>
-                    <label class="check-option" for="bokningslank">
-                      <input id="bokningslank" type="checkbox" name="Innehåll[]" value="Bokningslänk">
+                    <label class="check-option" for="stockholm-bokningslank">
+                      <input id="stockholm-bokningslank" type="checkbox" name="Innehåll[]" value="Bokningslänk">
                       <span>Bokningslänk</span>
                     </label>
-                    <label class="check-option" for="instagram">
-                      <input id="instagram" type="checkbox" name="Innehåll[]" value="Instagram / sociala medier">
+                    <label class="check-option" for="stockholm-instagram">
+                      <input id="stockholm-instagram" type="checkbox" name="Innehåll[]" value="Instagram / sociala medier">
                       <span>Instagram / sociala medier</span>
                     </label>
-                    <label class="check-option" for="karta-check">
-                      <input id="karta-check" type="checkbox" name="Innehåll[]" value="Karta">
+                    <label class="check-option" for="stockholm-karta">
+                      <input id="stockholm-karta" type="checkbox" name="Innehåll[]" value="Karta">
                       <span>Karta</span>
                     </label>
                   </div>
                 </fieldset>
 
-                <label for="stil">Vilken stil gillar du?</label>
-                <select id="stil" name="Stil">
+                <label for="stockholm-stil">Vilken stil gillar du?</label>
+                <select id="stockholm-stil" name="Stil">
                   <option value="Rak och tydlig">Rak och tydlig</option>
                   <option value="Trygg och personlig">Trygg och personlig</option>
                   <option value="Stark och professionell">Stark och professionell</option>
@@ -1671,30 +1736,30 @@
                   <option value="Vet inte än">Vet inte än</option>
                 </select>
 
-                <label for="farger">Färger du gillar</label>
-                <input id="farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
+                <label for="stockholm-farger">Färger du gillar</label>
+                <input id="stockholm-farger" type="text" name="Färger" placeholder="t.ex. svart, blått, grönt, beige" />
 
-                <label for="urlnamn">Önskat URL-namn</label>
-                <input id="urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
+                <label for="stockholm-urlnamn">Önskat URL-namn</label>
+                <input id="stockholm-urlnamn" type="text" name="Önskat URL-namn" placeholder="t.ex. dittforetag eller dittnamn" />
 
-                <label for="inspo">Finns det hemsidor du gillar?</label>
-                <textarea id="inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
+                <label for="stockholm-inspo">Finns det hemsidor du gillar?</label>
+                <textarea id="stockholm-inspo" name="Inspiration" rows="4" placeholder="Klistra in länkar eller beskriv känslan"></textarea>
 
-                <label for="material">Har du material klart?</label>
-                <select id="material" name="Material klart">
+                <label for="stockholm-material">Har du material klart?</label>
+                <select id="stockholm-material" name="Material klart">
                   <option value="Ja, jag har text och bilder">Ja, jag har text och bilder</option>
                   <option value="Jag har lite men inte allt">Jag har lite men inte allt</option>
                   <option value="Nej, jag behöver hjälp">Nej, jag behöver hjälp</option>
                 </select>
 
-                <label for="tidigare">Har du redan köpt av mig tidigare?</label>
-                <select id="tidigare" name="Tidigare kund">
+                <label for="stockholm-tidigare">Har du redan köpt av mig tidigare?</label>
+                <select id="stockholm-tidigare" name="Tidigare kund">
                   <option value="Nej">Nej</option>
                   <option value="Ja">Ja</option>
                 </select>
 
-                <label for="budget">Ungefärlig budget</label>
-                <select id="budget" name="Budget">
+                <label for="stockholm-budget">Ungefärlig budget</label>
+                <select id="stockholm-budget" name="Budget">
                   <option value="Vet inte än">Vet inte än</option>
                   <option value="Ny hemsida Start 2 900 kr">Ny hemsida Start 2 900 kr</option>
                   <option value="Ny hemsida Proffs 4 900 kr">Ny hemsida Proffs 4 900 kr</option>
@@ -1704,8 +1769,13 @@
                   <option value="Större uppdatering 1 490 kr">Större uppdatering 1 490 kr</option>
                 </select>
 
-                <label for="ovrigt">Övrigt</label>
-                <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+                <label for="stockholm-ovrigt">Övrigt</label>
+                <textarea id="stockholm-ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta"></textarea>
+
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
 
                 <button class="btn contact-submit" type="submit">Skicka brief för hemsida</button>
               </form>
@@ -1720,35 +1790,81 @@
         <div class="trust-box">
           <h2>Vem driver sidan?</h2>
           <p>
-            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>.
-            Jag bygger hemsidor för företag i hela Sverige och hjälper även till med uppdateringar, AI-reklamvideor och reklammaterial.
-            Du har direktkontakt med mig hela vägen.
+            Hej. Det är jag, <strong>Erica Nordlöf</strong>. Jag driver <strong>Nordlöf Nordic</strong>. Jag bygger hemsidor för företag i hela Sverige och hjälper även till med uppdateringar, AI-reklamvideor och reklammaterial. Du har direktkontakt med mig hela vägen.
           </p>
           <p>
-            Upplägget är enkelt: du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först när du gillar resultatet.
-            Behövs ändringar fixar jag det tills helheten känns rätt. För företag i Stockholm betyder det snabb framdrift utan att behöva springa in i ännu ett långsamt webbprojekt.
+            Upplägget är enkelt: du fyller i formuläret, jag skickar en demo inom 1 arbetsdag och du köper först när du gillar resultatet. Behövs ändringar fixar jag det tills helheten känns rätt. För företag i Stockholm betyder det snabb framdrift utan att behöva springa in i ännu ett långsamt webbprojekt.
           </p>
           <div class="trust-links">
             <a class="trust-link" href="#kontakt">Få min demo</a>
             <a class="trust-link" href="#priser">Se priser</a>
           </div>
-          <a class="tiny-link" href="index.html">Till startsidan</a>
+          <a class="tiny-link" href="https://webutvecklare.se/">Till startsidan</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-  <div class="container footer-line">
-    <span>© 2026 Nordlöf Nordic</span>
-    <span>
-      Kontakt:
-      <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-      · webutvecklare.se
-      · Hemsidor för företag i hela Sverige
-      · Demo inom 1 arbetsdag
-    </span>
-  </div>
-</footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span class="footer-meta">
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · Hemsidor för företag i hela Sverige
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
