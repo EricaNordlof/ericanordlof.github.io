@@ -60,6 +60,9 @@
           "Designuppdatering av hemsida",
           "Fast pris för webbuppdatering"
         ],
+        "sameAs":[
+          "https://www.linkedin.com/in/erica-nordlöf?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+        ],
         "offers":[
           {"@type":"Offer","name":"Liten uppdatering","price":"490","priceCurrency":"SEK"},
           {"@type":"Offer","name":"Normal uppdatering","price":"990","priceCurrency":"SEK"},
@@ -100,6 +103,23 @@
               "@type":"Answer",
               "text":"Ja. Tjänsten är gjord för företag som redan har en hemsida men vill förbättra den utan att bygga om allt från noll."
             }
+          }
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Uppdatera hemsida",
+            "item":"https://webutvecklare.se/uppdatera-hemsida.html"
           }
         ]
       }
@@ -888,6 +908,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -961,6 +1026,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1124,8 +1194,7 @@
           <h1>Uppdatera hemsida utan att göra om hela livet samtidigt</h1>
 
           <p>
-            Har du redan en hemsida men känner att den ser trött, rörig eller halvklar ut? Då kan jag hjälpa dig att uppdatera hemsidan med bättre text, tydligare struktur, snyggare känsla och mer säljande innehåll.
-            Fast pris, personlig kontakt och ett upplägg som inte kräver att du startar intern styrgrupp för att byta en rubrik.
+            Har du redan en hemsida men känner att den ser trött, rörig eller halvklar ut? Då kan jag hjälpa dig att uppdatera hemsidan med bättre text, tydligare struktur, snyggare känsla och mer säljande innehåll. Fast pris, personlig kontakt och ett upplägg som inte kräver att du startar intern styrgrupp för att byta en rubrik.
           </p>
 
           <ul class="hero-points">
@@ -1244,7 +1313,7 @@
             Att uppdatera hemsidan behöver inte betyda total rivning och nystart. Ofta räcker det med rätt justeringar på rätt ställen. En bättre rubrik. Tydligare tjänstebeskrivningar. Snyggare sektioner. Renare struktur. Mer förtroende. Färre frågetecken.
           </p>
           <p>
-            Många företagshemsidor är inte katastrofer. De är bara lite... trötta. De säger för lite, visar för lite eller känns för gamla jämfört med hur bra företaget faktiskt är. Det är där en smart hemsideuppdatering gör skillnad. Inte för att allt måste bli flashigt, utan för att rätt kund snabbare ska förstå att du är värd att kontakta.
+            Många företagshemsidor är inte katastrofer. De är bara lite trötta. De säger för lite, visar för lite eller känns för gamla jämfört med hur bra företaget faktiskt är. Det är där en smart hemsideuppdatering gör skillnad. Inte för att allt måste bli flashigt, utan för att rätt kund snabbare ska förstå att du är värd att kontakta.
           </p>
           <p>
             Det här passar särskilt bra för småföretag, lokala företag, hantverkare, konsulter och tjänsteföretag i hela Sverige som redan har en sida men vill att den ska prestera bättre utan att behöva börja från noll.
@@ -1259,8 +1328,7 @@
           <div>
             <h2>Små ändringar kan göra stor skillnad</h2>
             <p>
-              En hemsida känns ofta mycket bättre efter att rätt delar justerats. Tydligare rubriker, bättre knappar, mindre textgröt och en renare struktur gör att sidan känns mer proffsig direkt.
-              Ofta behövs inte ett totalt omtag. Bara någon som faktiskt ser vad som drar ner helheten.
+              En hemsida känns ofta mycket bättre efter att rätt delar justerats. Tydligare rubriker, bättre knappar, mindre textgröt och en renare struktur gör att sidan känns mer proffsig direkt. Ofta behövs inte ett totalt omtag. Bara någon som faktiskt ser vad som drar ner helheten.
             </p>
           </div>
 
@@ -1316,7 +1384,7 @@
               <div class="list-item"><span class="check">✓</span><span>Bilder, sektioner och struktur som känns gamla eller spretiga</span></div>
               <div class="list-item"><span class="check">✓</span><span>Knappar och kontaktvägar som behöver bli tydligare</span></div>
               <div class="list-item"><span class="check">✓</span><span>Tjänstesidor som behöver bli mer säljande och mer begripliga</span></div>
-              <div class="list-item"><span class="check">✓</span><span>Helhetskänslan när sidan ser “okej” ut men inte riktigt imponerar</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Helhetskänslan när sidan ser okej ut men inte riktigt imponerar</span></div>
             </div>
           </div>
         </div>
@@ -1324,7 +1392,7 @@
         <div class="card" style="padding:26px;">
           <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">När en hemsida brukar behöva kärlek</h2>
           <p style="margin:0 0 18px; color:#5a5450; line-height:1.75;">
-            Du behöver ofta inte gissa. Om sidan känns lite pinsam att länka till, då är det signal nog.
+            Om sidan känns lite pinsam att länka till, då är det signal nog.
           </p>
 
           <div style="background:#faf0e9; border-radius:22px; padding:20px; margin-bottom:14px;">
@@ -1447,30 +1515,33 @@
               <p>Ju tydligare brief, desto bättre demo och mindre pingpong längre fram.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="uppdatera-hemsida">
                 <strong>Uppdatera hemsida</strong>
                 <small>Demo inom 1 arbetsdag. Köp först efter godkänd demo.</small>
 
                 <input type="hidden" name="_subject" value="Förfrågan: uppdatera-hemsida.html" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/uppdatera-hemsida.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan om hemsideuppdatering och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
+                <div class="form-status" aria-live="polite"></div>
+
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" />
+                <input id="foretag" type="text" name="Företag" autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="webbplats">Länk till hemsidan</label>
-                <input id="webbplats" type="url" name="Nuvarande hemsida" placeholder="https://dinsida.se" />
+                <input id="webbplats" type="url" name="Nuvarande hemsida" placeholder="https://dinsida.se" inputmode="url" />
 
                 <label for="typ">Vad vill du främst ha hjälp med?</label>
                 <select id="typ" name="Typ av uppdatering">
@@ -1504,6 +1575,11 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som kan vara bra att veta om sidan, företaget eller vad du vill ändra"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för uppdatering</button>
               </form>
             </div>
@@ -1535,16 +1611,65 @@
   </main>
 
   <footer>
-  <div class="container footer-line">
-    <span>© 2026 Nordlöf Nordic</span>
-    <span>
-      Kontakt:
-      <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-      · webutvecklare.se
-      · Hemsidor för företag i hela Sverige
-      · Demo inom 1 arbetsdag
-    </span>
-  </div>
-</footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span class="footer-meta">
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · Hemsidor för företag i hela Sverige
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
