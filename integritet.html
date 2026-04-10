@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Integritetspolicy | Webbutvecklare.se | Nordlöf Nordic</title>
+  <meta
+    name="description"
+    content="Integritetspolicy för webbutvecklare.se. Information om vilka personuppgifter som samlas in, varför de används och hur du kontaktar Nordlöf Nordic."
+  />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Erica Nordlöf" />
+
+  <meta property="og:title" content="Integritetspolicy | Webbutvecklare.se | Nordlöf Nordic" />
+  <meta property="og:description" content="Integritetspolicy för webbutvecklare.se och Nordlöf Nordic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/integritet.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Integritetspolicy | Webbutvecklare.se | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Så behandlas personuppgifter via webbutvecklare.se." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="canonical" href="https://webutvecklare.se/integritet.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --bg-soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#231d1a;
+      --muted:#6d625c;
+      --line:rgba(35,29,26,0.08);
+      --line-soft:rgba(35,29,26,0.05);
+      --brand:#d98672;
+      --brand-2:#e8b18d;
+      --brand-dark:#b96f61;
+      --accent:#1f1a17;
+      --shadow:0 18px 50px rgba(35,29,26,0.08);
+      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --radius:24px;
+      --radius-lg:30px;
+      --max:980px;
+      --tap:48px;
+    }
+
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
+        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7f7169;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      white-space:nowrap;
+    }
+
+    .hero{
+      padding:32px 0 18px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      max-width:100%;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#7c5d53;
+      box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
+    }
+
+    h1,h2,h3{font-family:"Playfair Display",serif}
+
+    h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.2rem, 8vw, 4.8rem);
+      line-height:0.98;
+      letter-spacing:-0.045em;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.75;
+      color:#4f4742;
+      max-width:760px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .section{
+      padding:20px 0 34px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.96);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:clamp(22px, 4vw, 34px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .intro-box{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+      margin-bottom:18px;
+    }
+
+    .intro-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.7rem, 4vw, 2.5rem);
+      line-height:1.02;
+      color:#fff;
+    }
+
+    .intro-box p{
+      margin:0;
+      color:#fff;
+      line-height:1.75;
+    }
+
+    .toc{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:22px;
+    }
+
+    .toc a{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#faf7f5;
+      color:#5c534e;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .toc a:hover{
+      background:#fff;
+      color:var(--accent);
+    }
+
+    .content{
+      display:grid;
+      gap:22px;
+    }
+
+    .content section{
+      padding-top:6px;
+      border-top:1px solid var(--line-soft);
+    }
+
+    .content section:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .content h2{
+      margin:0 0 10px;
+      font-size:clamp(1.6rem, 4vw, 2.3rem);
+      line-height:1.06;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .content p{
+      margin:0 0 12px;
+      line-height:1.82;
+      color:#554f4a;
+    }
+
+    .content p:last-child{
+      margin-bottom:0;
+    }
+
+    .content ul{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .content li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      line-height:1.7;
+      color:#554f4a;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+      box-shadow:0 8px 18px rgba(185,111,97,0.15);
+    }
+
+    .note{
+      margin-top:16px;
+      padding:16px 18px;
+      border-radius:18px;
+      background:#faf1ea;
+      border:1px solid var(--line);
+      color:#554f4a;
+      line-height:1.75;
+    }
+
+    .contact-box{
+      margin-top:20px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-box h3{
+      margin:0 0 10px;
+      font-size:26px;
+      letter-spacing:-0.03em;
+    }
+
+    .contact-box p{
+      margin:0 0 12px;
+      color:#55514d;
+      line-height:1.8;
+    }
+
+    footer{
+      padding:28px 0 calc(40px + env(safe-area-inset-bottom));
+      color:#6d6662;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{gap:10px}
+      .brand-sub{display:none}
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{font-size:15px}
+
+      .nav-link{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .card,
+      .contact-box{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .toc{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .toc a{
+        width:100%;
+        justify-content:center;
+      }
+
+      footer{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img
+          class="brand-logo"
+          src="nordlof-nordic-logo.png"
+          alt="Nordlöf Nordic logga"
+        >
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Webbutvecklare för företag</span>
+        </span>
+      </a>
+
+      <a href="https://webutvecklare.se/" class="nav-link">Till startsidan</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Integritet · Formulär, e-post och kundkontakt</span>
+        <h1>Integritetspolicy</h1>
+        <p>
+          Här förklaras hur personuppgifter behandlas via webbutvecklare.se. Poängen är enkel: jag samlar in det som behövs för att kunna svara, hjälpa dig och genomföra uppdrag. Inte mer än nödvändigt. Inget onödigt datagymnastiknummer.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#integritet" class="btn btn-primary">Läs policyn</a>
+          <a href="https://webutvecklare.se/#kontakt" class="btn btn-secondary">Kontakta mig</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integritet">
+      <div class="container">
+        <div class="card">
+          <div class="intro-box">
+            <h2>Kort version</h2>
+            <p>
+              När du kontaktar mig via formulär eller mejl behandlas dina uppgifter för att jag ska kunna svara dig, hantera förfrågan och vid behov genomföra ett uppdrag. Uppgifter delas inte i onödan och sparas inte längre än det finns ett rimligt skäl till.
+            </p>
+          </div>
+
+          <div class="toc" aria-label="Innehåll">
+            <a href="#ansvarig">1. Personuppgiftsansvarig</a>
+            <a href="#vilka-uppgifter">2. Vilka uppgifter som samlas in</a>
+            <a href="#varfor">3. Varför uppgifterna används</a>
+            <a href="#rattslig-grund">4. Rättslig grund</a>
+            <a href="#lagring">5. Lagringstid</a>
+            <a href="#delning">6. Delning och verktyg</a>
+            <a href="#rattigheter">7. Dina rättigheter</a>
+            <a href="#sakring">8. Säkerhet</a>
+            <a href="#kontaktinfo">9. Kontakt</a>
+          </div>
+
+          <div class="content">
+            <section id="ansvarig">
+              <h2>1. Personuppgiftsansvarig</h2>
+              <p>
+                Personuppgiftsansvarig för behandling av personuppgifter via webbutvecklare.se är Nordlöf Nordic, med Erica Nordlöf som kontaktperson.
+              </p>
+              <p>
+                Har du frågor om hur uppgifter behandlas är du välkommen att kontakta mig direkt på
+                <a href="mailto:erica@webutvecklare.se"><strong>erica@webutvecklare.se</strong></a>.
+              </p>
+            </section>
+
+            <section id="vilka-uppgifter">
+              <h2>2. Vilka uppgifter som samlas in</h2>
+              <p>
+                När du använder formulär på sidan eller kontaktar mig via e-post kan följande uppgifter behandlas, beroende på vad du själv skickar in:
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>namn</span></li>
+                <li><span class="check">✓</span><span>e-postadress</span></li>
+                <li><span class="check">✓</span><span>telefonnummer</span></li>
+                <li><span class="check">✓</span><span>företagsnamn eller verksamhetsnamn</span></li>
+                <li><span class="check">✓</span><span>ort eller område</span></li>
+                <li><span class="check">✓</span><span>uppgifter om ditt uppdrag, din brief eller dina önskemål</span></li>
+                <li><span class="check">✓</span><span>annan information som du själv väljer att skriva i formulär eller mejl</span></li>
+              </ul>
+              <p class="note">
+                Skicka helst inte känsliga personuppgifter i formulär eller vanlig e-post om det inte verkligen behövs. Det blir sällan bättre bara för att ett mejl innehåller mer dramatik.
+              </p>
+            </section>
+
+            <section id="varfor">
+              <h2>3. Varför uppgifterna används</h2>
+              <p>
+                Personuppgifter används för att kunna:
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>svara på frågor och förfrågningar</span></li>
+                <li><span class="check">✓</span><span>ta fram demo, utkast, offert eller upplägg</span></li>
+                <li><span class="check">✓</span><span>genomföra beställda uppdrag</span></li>
+                <li><span class="check">✓</span><span>kommunicera om pågående arbete, ändringar, leverans eller betalning</span></li>
+                <li><span class="check">✓</span><span>hantera administration, bokföring och affärsdokumentation när det behövs</span></li>
+              </ul>
+              <p>
+                Uppgifterna används alltså för praktiskt kundarbete och normal företagsadministration. Inte för att bygga något avancerat personprofilscirkus.
+              </p>
+            </section>
+
+            <section id="rattslig-grund">
+              <h2>4. Rättslig grund för behandlingen</h2>
+              <p>
+                Personuppgifter behandlas huvudsakligen med stöd av:
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>berättigat intresse, till exempel för att kunna svara på en förfrågan och hantera kontakt</span></li>
+                <li><span class="check">✓</span><span>avtal eller åtgärder inför avtal, till exempel när du vill beställa en tjänst eller be om offert</span></li>
+                <li><span class="check">✓</span><span>rättslig förpliktelse, till exempel när uppgifter behöver sparas enligt bokföringsregler</span></li>
+              </ul>
+              <p>
+                Om någon behandling i framtiden skulle kräva samtycke används det i så fall för just den delen.
+              </p>
+            </section>
+
+            <section id="lagring">
+              <h2>5. Hur länge uppgifterna sparas</h2>
+              <p>
+                Uppgifter sparas inte längre än nödvändigt för det ändamål de samlades in för.
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>förfrågningar som inte leder till uppdrag sparas normalt bara så länge det behövs för kontakt och uppföljning</span></li>
+                <li><span class="check">✓</span><span>uppgifter kopplade till genomförda uppdrag kan sparas längre om det behövs för administration, support eller bokföring</span></li>
+                <li><span class="check">✓</span><span>bokföringsunderlag sparas enligt de krav som gäller enligt lag</span></li>
+              </ul>
+              <p>
+                Om du vill fråga vad som finns sparat eller be om radering där det är möjligt, hör av dig.
+              </p>
+            </section>
+
+            <section id="delning">
+              <h2>6. Delning av uppgifter och använda verktyg</h2>
+              <p>
+                Personuppgifter säljs inte vidare. Uppgifter delas inte heller med andra i onödan. Däremot kan vissa tekniska tjänster användas för att sidan och kontakten ska fungera i praktiken.
+              </p>
+              <p>
+                Exempel på sådana tjänster kan vara:
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>formulärtjänst för att ta emot formulärmeddelanden</span></li>
+                <li><span class="check">✓</span><span>e-posttjänst för att läsa och besvara förfrågningar</span></li>
+                <li><span class="check">✓</span><span>webbhotell eller domänrelaterade tjänster</span></li>
+                <li><span class="check">✓</span><span>betal- eller fakturarelaterade tjänster när ett uppdrag genomförs</span></li>
+              </ul>
+              <p>
+                Om du använder formulären på sidan kan uppgifterna alltså passera via den tekniska formulärtjänst som används för att skicka meddelandet vidare till min e-post.
+              </p>
+              <p class="note">
+                Om du vill minimera vad du skickar via formulär går det alltid bra att först skriva kortfattat och ta resten i nästa steg.
+              </p>
+            </section>
+
+            <section id="rattigheter">
+              <h2>7. Dina rättigheter</h2>
+              <p>
+                Du har enligt dataskyddsreglerna rätt att i vissa fall:
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>få information om vilka personuppgifter som behandlas</span></li>
+                <li><span class="check">✓</span><span>begära rättelse av felaktiga uppgifter</span></li>
+                <li><span class="check">✓</span><span>begära radering av uppgifter när det är möjligt</span></li>
+                <li><span class="check">✓</span><span>invända mot viss behandling</span></li>
+                <li><span class="check">✓</span><span>begära begränsning av behandling i vissa situationer</span></li>
+              </ul>
+              <p>
+                Om du vill använda någon av dina rättigheter kontaktar du mig via e-post. Du har också rätt att lämna klagomål till Integritetsskyddsmyndigheten om du anser att personuppgifter behandlas fel.
+              </p>
+            </section>
+
+            <section id="sakring">
+              <h2>8. Säkerhet</h2>
+              <p>
+                Rimliga tekniska och organisatoriska åtgärder används för att skydda personuppgifter mot obehörig åtkomst, förlust eller missbruk.
+              </p>
+              <p>
+                Samtidigt är ingen vanlig webbplats, e-post eller formulärtjänst en magisk bunker. Därför är det klokt att inte skicka mer persondata än vad som faktiskt behövs.
+              </p>
+            </section>
+
+            <section id="kontaktinfo">
+              <h2>9. Kontakt</h2>
+              <p>
+                Har du frågor om integritet, personuppgifter eller denna policy kontaktar du:
+              </p>
+              <div class="contact-box">
+                <h3>Nordlöf Nordic</h3>
+                <p><strong>Kontaktperson:</strong> Erica Nordlöf</p>
+                <p><strong>E-post:</strong> <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a></p>
+                <p><strong>Webbplats:</strong> <a href="https://webutvecklare.se/">webutvecklare.se</a></p>
+                <p>
+                  Om du undrar något om uppgifter du skickat in är det bäst att skriva vad det gäller, vilken e-postadress du använde och ungefär när kontakten skedde. Då går det snabbare att reda ut det utan att någon behöver leka digital detektiv i onödan.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span>
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · Integritetspolicy
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
