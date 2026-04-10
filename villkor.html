@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Villkor | Webbutvecklare.se | Nordlöf Nordic</title>
+  <meta
+    name="description"
+    content="Villkor för webbutveckling, AI-reklamvideo, reklamflyer och större webbprojekt via webbutvecklare.se. Tydlig information om demo, köp, betalning, leverans och kontakt."
+  />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Erica Nordlöf" />
+
+  <meta property="og:title" content="Villkor | Webbutvecklare.se | Nordlöf Nordic" />
+  <meta property="og:description" content="Tydliga villkor för webbutveckling, AI-reklamvideo, reklamflyer och större webbprojekt via webbutvecklare.se." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/villkor.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Villkor | Webbutvecklare.se | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Villkor för hemsidor, uppdateringar, AI-reklamvideo, reklamflyer och större webbprojekt." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="canonical" href="https://webutvecklare.se/villkor.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --bg-soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#231d1a;
+      --muted:#6d625c;
+      --line:rgba(35,29,26,0.08);
+      --line-soft:rgba(35,29,26,0.05);
+      --brand:#d98672;
+      --brand-2:#e8b18d;
+      --brand-dark:#b96f61;
+      --accent:#1f1a17;
+      --shadow:0 18px 50px rgba(35,29,26,0.08);
+      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --radius:24px;
+      --radius-lg:30px;
+      --max:980px;
+      --tap:48px;
+    }
+
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
+        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7f7169;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      white-space:nowrap;
+    }
+
+    .hero{
+      padding:32px 0 18px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      max-width:100%;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#7c5d53;
+      box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
+    }
+
+    h1,h2,h3{font-family:"Playfair Display",serif}
+
+    h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.2rem, 8vw, 4.8rem);
+      line-height:0.98;
+      letter-spacing:-0.045em;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.75;
+      color:#4f4742;
+      max-width:760px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .section{
+      padding:20px 0 34px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.96);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:clamp(22px, 4vw, 34px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .intro-box{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+      margin-bottom:18px;
+    }
+
+    .intro-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.7rem, 4vw, 2.5rem);
+      line-height:1.02;
+      color:#fff;
+    }
+
+    .intro-box p{
+      margin:0;
+      color:#fff;
+      line-height:1.75;
+    }
+
+    .toc{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:22px;
+    }
+
+    .toc a{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#faf7f5;
+      color:#5c534e;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .toc a:hover{
+      background:#fff;
+      color:var(--accent);
+    }
+
+    .content{
+      display:grid;
+      gap:22px;
+    }
+
+    .content section{
+      padding-top:6px;
+      border-top:1px solid var(--line-soft);
+    }
+
+    .content section:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .content h2{
+      margin:0 0 10px;
+      font-size:clamp(1.6rem, 4vw, 2.3rem);
+      line-height:1.06;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .content p{
+      margin:0 0 12px;
+      line-height:1.82;
+      color:#554f4a;
+    }
+
+    .content p:last-child{
+      margin-bottom:0;
+    }
+
+    .content ul{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .content li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      line-height:1.7;
+      color:#554f4a;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+      box-shadow:0 8px 18px rgba(185,111,97,0.15);
+    }
+
+    .note{
+      margin-top:16px;
+      padding:16px 18px;
+      border-radius:18px;
+      background:#faf1ea;
+      border:1px solid var(--line);
+      color:#554f4a;
+      line-height:1.75;
+    }
+
+    .contact-box{
+      margin-top:20px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-box h3{
+      margin:0 0 10px;
+      font-size:26px;
+      letter-spacing:-0.03em;
+    }
+
+    .contact-box p{
+      margin:0 0 12px;
+      color:#55514d;
+      line-height:1.8;
+    }
+
+    footer{
+      padding:28px 0 calc(40px + env(safe-area-inset-bottom));
+      color:#6d6662;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{gap:10px}
+      .brand-sub{display:none}
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{font-size:15px}
+
+      .nav-link{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .card,
+      .contact-box{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .toc{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .toc a{
+        width:100%;
+        justify-content:center;
+      }
+
+      footer{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img
+          class="brand-logo"
+          src="nordlof-nordic-logo.png"
+          alt="Nordlöf Nordic logga"
+        >
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Webbutvecklare för företag</span>
+        </span>
+      </a>
+
+      <a href="https://webutvecklare.se/" class="nav-link">Till startsidan</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Villkor · Webbutveckling, AI-video, flyer och större webbprojekt</span>
+        <h1>Villkor</h1>
+        <p>
+          Här står de grundläggande villkoren för tjänster via webbutvecklare.se. Poängen är enkel: tydligt upplägg, demo eller utkast först där det passar, och mindre gråzoner senare. Mindre juridisk dimma. Mer rak affär.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#villkor" class="btn btn-primary">Läs villkoren</a>
+          <a href="https://webutvecklare.se/#kontakt" class="btn btn-secondary">Kontakta mig</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="villkor">
+      <div class="container">
+        <div class="card">
+          <div class="intro-box">
+            <h2>Kort version</h2>
+            <p>
+              Du skickar in en förfrågan. Jag återkopplar. För många upplägg får du en demo eller ett utkast först. Du köper först efter godkännande där det upplägget anges. För större projekt eller speciallösningar kan separat offert, timpris och särskild överenskommelse gälla.
+            </p>
+          </div>
+
+          <div class="toc" aria-label="Innehåll">
+            <a href="#omfattning">1. Omfattning</a>
+            <a href="#bestallning">2. Beställning och avtal</a>
+            <a href="#demo">3. Demo och utkast</a>
+            <a href="#priser">4. Priser och betalning</a>
+            <a href="#leverans">5. Leverans och ändringar</a>
+            <a href="#kundens-ansvar">6. Kundens ansvar</a>
+            <a href="#rattigheter">7. Material och rättigheter</a>
+            <a href="#ansvar">8. Ansvar</a>
+            <a href="#angerratt">9. Ångerrätt och avbokning</a>
+            <a href="#kontaktinfo">10. Kontakt</a>
+          </div>
+
+          <div class="content">
+            <section id="omfattning">
+              <h2>1. Omfattning</h2>
+              <p>
+                Dessa villkor gäller för tjänster som erbjuds via webbutvecklare.se av Nordlöf Nordic. Det gäller bland annat:
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>ny hemsida till fast pris</span></li>
+                <li><span class="check">✓</span><span>uppdatering av befintlig hemsida till fast pris</span></li>
+                <li><span class="check">✓</span><span>AI-reklamvideo</span></li>
+                <li><span class="check">✓</span><span>reklamflyer och liknande digitalt reklammaterial</span></li>
+                <li><span class="check">✓</span><span>större webbprojekt, specialfunktioner och webapp-utveckling</span></li>
+              </ul>
+              <p class="note">
+                För större projekt kan kompletterande överenskommelser, offert eller särskilda projektvillkor gälla utöver denna sida.
+              </p>
+            </section>
+
+            <section id="bestallning">
+              <h2>2. Beställning och avtal</h2>
+              <p>
+                En förfrågan via formulär, mejl eller annan kontakt är inte automatiskt ett bindande köp. Avtal anses ingånget först när du och jag tydligt har kommit överens om att arbetet ska starta som en betald beställning.
+              </p>
+              <p>
+                För upplägg där det står att du får demo eller utkast först gäller att själva demon eller utkastet är ett underlag för beslut. Du köper alltså först när du godkänner att vi går vidare med den betalda leveransen.
+              </p>
+              <p>
+                För större projekt, löpande arbete eller timbaserade upplägg gäller avtal när offert, prisupplägg eller arbetsstart har godkänts.
+              </p>
+            </section>
+
+            <section id="demo">
+              <h2>3. Demo och utkast</h2>
+              <p>
+                På webbutvecklare.se används upplägget “demo först” eller “utkast först” för vissa tjänster. Det betyder att du i många fall får något konkret att ta ställning till innan du köper den slutliga leveransen.
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>Demo eller utkast är till för bedömning och dialog</span></li>
+                <li><span class="check">✓</span><span>Slutleverans sker först efter att du godkänt köp</span></li>
+                <li><span class="check">✓</span><span>Demo eller utkast innebär inte att full slutprodukt redan ingår</span></li>
+              </ul>
+              <p>
+                Jag förbehåller mig rätten att avgöra hur omfattande en demo eller ett utkast behöver vara för att visa riktning, struktur eller idé. Det är inte samma sak som full produktion.
+              </p>
+            </section>
+
+            <section id="priser">
+              <h2>4. Priser och betalning</h2>
+              <p>
+                Priser som visas på sidan är de priser som gäller om inget annat har överenskommits skriftligt. För större webbprojekt, specialfunktioner och webapp-utveckling kan timpris eller separat offert användas i stället för fast pris.
+              </p>
+              <p>
+                Betalning sker enligt den betalningslösning, faktura eller överenskommelse som används i det enskilda uppdraget. Om inget annat uttryckligen har avtalats ska betalning göras inom den tid som anges på faktura eller betalningsunderlag.
+              </p>
+              <p>
+                Vid utebliven betalning förbehåller jag mig rätten att pausa arbete, leverans eller fortsatt support tills betalning kommit in.
+              </p>
+            </section>
+
+            <section id="leverans">
+              <h2>5. Leverans och ändringar</h2>
+              <p>
+                Leveranstid beror på uppdragets typ, omfattning och hur snabbt nödvändigt material och återkoppling kommer in från dig. När sidan anger exempelvis demo inom 1 arbetsdag gäller det normalt första utkast eller första riktning, inte alltid färdig slutleverans.
+              </p>
+              <p>
+                Rimliga ändringar ingår i den mån det följer det upplägg som kommunicerats för tjänsten. Om önskemål ändrar omfattningen tydligt, till exempel nya funktioner, större textjobb, fler sidor eller annan riktning än det som först beställdes, kan nytt pris eller tilläggsarbete behöva godkännas.
+              </p>
+              <ul>
+                <li><span class="check">✓</span><span>mindre justeringar hanteras normalt inom överenskommen ram</span></li>
+                <li><span class="check">✓</span><span>större ändringar kan innebära ny offert eller nytt pris</span></li>
+                <li><span class="check">✓</span><span>tidsplan påverkas om underlag eller svar drar ut på tiden</span></li>
+              </ul>
+            </section>
+
+            <section id="kundens-ansvar">
+              <h2>6. Kundens ansvar</h2>
+              <p>
+                Du ansvarar för att de uppgifter, texter, bilder, länkar och instruktioner du lämnar är korrekta och att du har rätt att använda materialet. Du ansvarar också för att lämna relevant information om verksamheten, erbjudandet och eventuella krav som påverkar uppdraget.
+              </p>
+              <p>
+                Om du dröjer länge med återkoppling, inte skickar nödvändigt material eller ändrar riktning flera gånger kan det påverka leveranstid, pris eller om arbetet behöver pausas.
+              </p>
+            </section>
+
+            <section id="rattigheter">
+              <h2>7. Material och rättigheter</h2>
+              <p>
+                Du ansvarar för att du har rätt att använda material som du skickar in, till exempel bilder, texter, logotyper, videoklipp eller grafik.
+              </p>
+              <p>
+                När ett uppdrag är betalt får du använda slutleveransen för det ändamål vi kommit överens om. Arbetsmaterial, skisser, utkast, koncept och icke godkända versioner får inte automatiskt användas fritt om inte det särskilt avtalats.
+              </p>
+              <p>
+                Jag förbehåller mig rätten att visa upp genomförda projekt som referens i egen marknadsföring, om inget annat har avtalats i det enskilda fallet.
+              </p>
+            </section>
+
+            <section id="ansvar">
+              <h2>8. Ansvar</h2>
+              <p>
+                Jag gör mitt bästa för att leverera tydliga, fungerande och genomtänkta lösningar, men kan inte garantera specifika affärsresultat såsom ett visst antal leads, försäljning, visningar, rankingplaceringar eller annonsresultat.
+              </p>
+              <p>
+                Jag ansvarar inte för indirekta skador, utebliven vinst, förlorad data, förlorade affärsmöjligheter eller problem som uppstår hos tredjepartstjänster, exempelvis domänleverantörer, webbhotell, betalplattformar, formulärtjänster, annonsplattformar eller sociala medier.
+              </p>
+              <p>
+                Om du upptäcker ett konkret fel i leveransen ska du meddela det så snart som möjligt, så att det kan bedömas och i rimlig mån rättas till.
+              </p>
+            </section>
+
+            <section id="angerratt">
+              <h2>9. Ångerrätt och avbokning</h2>
+              <p>
+                Om du handlar som konsument kan regler om ångerrätt enligt distansavtalslagen bli aktuella. Samtidigt gäller särskilda undantag för tjänster som har påbörjats med ditt uttryckliga samtycke eller för anpassade digitala leveranser. Därför behöver det ibland bedömas från fall till fall vad som gäller för just ditt köp.
+              </p>
+              <p>
+                Om du vill avboka innan ett bindande köp har godkänts är det normalt inga konstigheter. Om arbete redan har startats som betald leverans, eller om anpassad produktion redan har påbörjats efter ditt godkännande, kan ersättning för utfört arbete eller redan påbörjat arbete bli aktuell.
+              </p>
+              <p class="note">
+                Det är därför smartast att du hör av dig direkt om du är osäker, vill pausa eller vill avbryta något. Ju tidigare, desto mindre administrativt gegg.
+              </p>
+            </section>
+
+            <section id="kontaktinfo">
+              <h2>10. Kontakt</h2>
+              <p>
+                Har du frågor om villkoren, ett pågående uppdrag eller en beställning kontaktar du mig här:
+              </p>
+              <div class="contact-box">
+                <h3>Nordlöf Nordic</h3>
+                <p><strong>Kontaktperson:</strong> Erica Nordlöf</p>
+                <p><strong>E-post:</strong> <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a></p>
+                <p><strong>Webbplats:</strong> <a href="https://webutvecklare.se/">webutvecklare.se</a></p>
+                <p>
+                  Vid frågor om hemsidor, AI-reklamvideo, reklamflyer eller större webbprojekt är det bäst att skriva kort och tydligt vad det gäller, så går vi rakt på sak.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span>
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · Villkor
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
