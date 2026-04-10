@@ -106,6 +106,23 @@
             }
           }
         ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Sökmotoroptimering",
+            "item":"https://webutvecklare.se/sokmotoroptimering.html"
+          }
+        ]
       }
     ]
   }
@@ -892,6 +909,51 @@
       background:#fff;
       color:var(--brand-dark);
       box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{
+      display:block;
+    }
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     .hidden-field{
@@ -965,6 +1027,11 @@
       gap:16px;
       flex-wrap:wrap;
       line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
     }
 
     @media (max-width:1140px){
@@ -1176,7 +1243,7 @@
             </div>
             <div class="mini-card">
               <strong>3. Växla upp sen</strong>
-              <span>När grunden är vettig blir resten betydligt mindre pajigt.</span>
+              <span>När grunden är vettig blir resten betydligt enklare.</span>
             </div>
           </div>
         </div>
@@ -1188,7 +1255,7 @@
         <div class="section-title">
           <h2>Så funkar sökmotoroptimering här</h2>
           <p>
-            Det här är inte ett “vi gör lite SEO” och skickar ett PDF-helvete i slutet. Fokus ligger på konkret förbättring av det som finns på riktigt.
+            Fokus ligger på konkret förbättring av det som faktiskt finns på sidan.
           </p>
         </div>
 
@@ -1227,7 +1294,7 @@
             </p>
             <ul>
               <li>Bättre startläge</li>
-              <li>Mindre chans till SEO-klydd</li>
+              <li>Mindre SEO-klydd</li>
               <li>Mer logiskt upplägg framåt</li>
             </ul>
           </div>
@@ -1250,7 +1317,7 @@
             Många företag har en hemsida som ser okej ut men säger för lite, för otydligt eller på fel sätt. Då blir det svårt att synas på rätt sökningar. Här hjälper jag till att göra sidan mer begriplig, mer säljande och bättre anpassad för det folk faktiskt söker efter.
           </p>
           <p>
-            Det passar särskilt bra för företag som vill synas bättre i Google, få fler förfrågningar från hemsidan och bygga upp fler sidor kring sina tjänster, orter eller nischer utan att fastna i byråsnack och månadsavtal med dimma som affärsmodell.
+            Det passar särskilt bra för företag som vill synas bättre i Google, få fler förfrågningar från hemsidan och bygga upp fler sidor kring sina tjänster, orter eller nischer utan att fastna i byråsnack och oklara månadsupplägg.
           </p>
         </div>
       </div>
@@ -1286,7 +1353,7 @@
           </div>
           <div class="proof">
             <strong>Rätt landningssidor</strong>
-            <span>Sidor för rätt tjänster, rätt orter och rätt sökningar i stället för ett hopkok.</span>
+            <span>Sidor för rätt tjänster, rätt orter och rätt sökningar istället för ett hopkok.</span>
           </div>
           <div class="proof">
             <strong>Passar småföretag</strong>
@@ -1401,7 +1468,7 @@
           <div class="showcase-content">
             <h2 style="margin:0 0 10px; font-size:clamp(28px,5vw,32px); letter-spacing:-0.04em;">Vad SEO-arbetet kan innehålla</h2>
             <p style="margin:0; color:#5a5450; line-height:1.75;">
-              Inte luft. Faktiska förbättringar på sidan.
+              Faktiska förbättringar på sidan.
             </p>
             <div class="list">
               <div class="list-item"><span class="check">✓</span><span>Tydligare rubriker och sidstruktur</span></div>
@@ -1431,7 +1498,7 @@
 
           <div style="background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%); color:#fff; border-radius:22px; padding:20px;">
             <div style="font-size:clamp(28px,6vw,34px); line-height:1.1; font-weight:800; letter-spacing:-0.05em; margin-bottom:8px;">Du vill ha verkstad</div>
-            <div style="color:#fff;">Mindre byråjazz, mer konkret förbättring. En ovanligt rimlig önskan ändå.</div>
+            <div style="color:#fff;">Mindre byråjazz, mer konkret förbättring.</div>
           </div>
         </div>
       </div>
@@ -1451,7 +1518,7 @@
 
           <article class="faq-item">
             <h3>Jobbar du med löpande SEO?</h3>
-            <p>Ja, när det finns en tydlig plan. Ofta börjar jobbet med att fixa grunden på hemsidan först, annars blir löpande arbete lätt bara ett dyrt motionspass utan riktning.</p>
+            <p>Ja, när det finns en tydlig plan. Ofta börjar jobbet med att fixa grunden på hemsidan först, annars blir löpande arbete lätt bara aktivitet utan tydlig riktning.</p>
           </article>
 
           <article class="faq-item">
@@ -1483,30 +1550,33 @@
               <p>Ju tydligare brief, desto bättre första riktning.</p>
             </div>
             <div class="form-body">
-              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+              <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" data-form-name="sokmotoroptimering">
                 <strong>Sökmotoroptimering</strong>
                 <small>För företag som vill förbättra struktur, innehåll, landningssidor eller SEO-grund på hemsidan.</small>
 
                 <input type="hidden" name="_subject" value="Förfrågan: sokmotoroptimering.html" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://webutvecklare.se/sokmotoroptimering.html#kontakt" />
+                <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+                <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din SEO-förfrågan och återkommer så snart jag kan." />
                 <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
+                <div class="form-status" aria-live="polite"></div>
+
                 <label for="namn">Namn</label>
-                <input id="namn" type="text" name="Namn" required />
+                <input id="namn" type="text" name="Namn" required autocomplete="name" />
 
                 <label for="foretag">Företag / verksamhet</label>
-                <input id="foretag" type="text" name="Företag" required />
+                <input id="foretag" type="text" name="Företag" required autocomplete="organization" />
 
                 <label for="email">E-post</label>
-                <input id="email" type="email" name="E-post" required />
+                <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
 
                 <label for="telefon">Telefon</label>
-                <input id="telefon" type="text" name="Telefon" inputmode="tel" />
+                <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
 
                 <label for="webbplats">Har ni redan en hemsida?</label>
-                <input id="webbplats" type="text" name="Nuvarande hemsida" placeholder="Klistra in länk om ni har en sida redan" />
+                <input id="webbplats" type="url" name="Nuvarande hemsida" placeholder="Klistra in länk om ni har en sida redan" inputmode="url" />
 
                 <label for="bransch">Vad gör företaget?</label>
                 <input id="bransch" type="text" name="Bransch" placeholder="Till exempel bygg, konsult, event, städ, VVS, salong eller annat" />
@@ -1545,6 +1615,11 @@
                 <label for="ovrigt">Övrigt</label>
                 <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv allt som är bra att veta om företaget, målgruppen eller vad ni testat tidigare"></textarea>
 
+                <small class="form-legal">
+                  Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                  <a href="integritet.html">integritetspolicyn</a>.
+                </small>
+
                 <button class="btn contact-submit" type="submit">Skicka brief för sökmotoroptimering</button>
               </form>
             </div>
@@ -1562,7 +1637,7 @@
             Jag hjälper företag i Sverige med hemsidor, uppdateringar, landningssidor och större digitala lösningar.
           </p>
           <p>
-            När jag hjälper till med sökmotoroptimering är fokus ofta att göra själva hemsidan bättre först. Tydligare struktur, bättre innehåll, rätt sidor och starkare grund. Det är oftast där mest affärsnytta finns, inte i att slänga runt ordet SEO som om det vore svartkonst.
+            När jag hjälper till med sökmotoroptimering är fokus ofta att göra själva hemsidan bättre först. Tydligare struktur, bättre innehåll, rätt sidor och starkare grund. Det är oftast där mest affärsnytta finns.
           </p>
           <div class="trust-links">
             <a class="trust-link" href="anlita-webbutvecklare.html">Anlita webbutvecklare</a>
@@ -1579,14 +1654,63 @@
   <footer>
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
-      <span>
+      <span class="footer-meta">
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · webutvecklare.se
         · Sökmotoroptimering och webbutveckling för företag i Sverige
-        · Demo inom 1 arbetsdag
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
       </span>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
