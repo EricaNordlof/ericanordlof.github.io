@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Affiliate | Tjäna provision på webbkunder | Webutvecklare.se</title>
+  <meta
+    name="description"
+    content="Bli affiliate för Webutvecklare.se och tjäna 20 % provision på första betalda ordern. Tipsa företag om hemsidor och få betalt för godkända affärer."
+  />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Erica Nordlöf" />
+
+  <meta property="og:title" content="Affiliate | Tjäna provision på webbkunder | Webutvecklare.se" />
+  <meta property="og:description" content="Tipsa företag om webbutveckling och få 20 % provision på första betalda ordern." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/affiliate.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Affiliate | Tjäna provision på webbkunder | Webutvecklare.se" />
+  <meta name="twitter:description" content="Tipsa företag om webbutveckling och få 20 % provision på första betalda ordern." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="canonical" href="https://webutvecklare.se/affiliate.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "name":"Affiliate | Webutvecklare.se",
+        "url":"https://webutvecklare.se/affiliate.html",
+        "description":"Affiliateprogram för Webutvecklare.se där affiliates får 20 % provision på första betalda ordern från nya kunder."
+      },
+      {
+        "@type":"ProfessionalService",
+        "name":"Nordlöf Nordic",
+        "url":"https://webutvecklare.se/",
+        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "email":"mailto:erica@webutvecklare.se",
+        "areaServed":{"@type":"Country","name":"Sverige"},
+        "provider":{"@type":"Person","name":"Erica Nordlöf"},
+        "brand":{"@type":"Organization","name":"Nordlöf Nordic"},
+        "serviceType":[
+          "Webbutvecklare för företag",
+          "Ny hemsida",
+          "Uppdatera hemsida",
+          "Webbutveckling för småföretag"
+        ],
+        "offers":[
+          {"@type":"Offer","name":"Ny hemsida Start","price":"2900","priceCurrency":"SEK"},
+          {"@type":"Offer","name":"Ny hemsida Proffs","price":"4900","priceCurrency":"SEK"},
+          {"@type":"Offer","name":"Ny hemsida Utökad","price":"7900","priceCurrency":"SEK"}
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Hur mycket får jag i provision?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Du får 20 procent på första betalda ordern från nya kunder du tipsat om."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"När betalas provision ut?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Provision betalas ut efter att affären är genomförd och kundens order är betald."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Vilka kunder räknas?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Det gäller nya kunder. Spam, fejkförfrågningar eller oseriösa leads godkänns inte."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --bg-soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#231d1a;
+      --muted:#6d625c;
+      --line:rgba(35,29,26,0.08);
+      --line-soft:rgba(35,29,26,0.05);
+      --brand:#d98672;
+      --brand-2:#e8b18d;
+      --brand-3:#f5dfd1;
+      --brand-dark:#b96f61;
+      --accent:#1f1a17;
+      --shadow:0 18px 50px rgba(35,29,26,0.08);
+      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --radius:24px;
+      --radius-lg:30px;
+      --max:1180px;
+      --section-pad:clamp(34px, 5vw, 64px);
+      --tap:48px;
+      --header-offset:96px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
+        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    input,textarea,button{font:inherit}
+    :target{scroll-margin-top:var(--header-offset)}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      flex:1 1 auto;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7f7169;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      color:#4c433f;
+      font-size:14px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+
+    .nav-links a:hover{color:var(--accent)}
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+
+    h1,h2,h3{font-family:"Playfair Display",serif}
+
+    .hero{padding:clamp(26px, 4vw, 58px) 0 18px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.04fr) minmax(0,0.96fr);
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      max-width:100%;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#7c5d53;
+      box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
+    }
+
+    .hero h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.2rem, 8.2vw, 4.8rem);
+      line-height:0.98;
+      letter-spacing:-0.045em;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.72;
+      color:#4f4742;
+      max-width:680px;
+    }
+
+    .hero-points{
+      display:grid;
+      gap:10px;
+      margin:24px 0 0;
+      padding:0;
+      list-style:none;
+      color:#3d3733;
+      font-weight:600;
+    }
+
+    .hero-points li,.list-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+      box-shadow:0 8px 18px rgba(185,111,97,0.15);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg, #d98571 0%, #e9ab86 100%);
+      color:#fff;
+      border-radius:var(--radius-lg);
+      padding:clamp(18px, 2.2vw, 26px);
+      box-shadow:0 28px 70px rgba(185,111,97,0.18);
+      overflow:hidden;
+      position:relative;
+      min-height:460px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-width:0;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.20), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .mockup-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+      color:rgba(255,255,255,0.96);
+      font-size:14px;
+      position:relative;
+      z-index:1;
+      line-height:1.4;
+    }
+
+    .dots{display:flex;gap:6px;flex:0 0 auto}
+    .dots span{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.48);
+    }
+
+    .hero-logo-wrap{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:28px;
+      padding:clamp(18px, 2.4vw, 26px);
+      display:grid;
+      place-items:center;
+      min-height:230px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .hero-logo{
+      width:min(100%, 320px);
+      height:auto;
+      border-radius:18px;
+      box-shadow:0 22px 60px rgba(35,29,26,0.16);
+    }
+
+    .mockup-panel{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      position:relative;
+      z-index:1;
+      margin-top:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:12px;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      min-width:0;
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:13px;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .mini-card span{
+      font-size:12px;
+      color:rgba(255,255,255,0.9);
+      line-height:1.55;
+    }
+
+    .section{padding:var(--section-pad) 0}
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:clamp(1.9rem, 5.3vw, 3.1rem);
+      line-height:1.02;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .section-title p{
+      margin:0;
+      max-width:560px;
+      color:#5b524d;
+      line-height:1.75;
+      font-size:clamp(15px, 1.8vw, 17px);
+    }
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+
+    .card{
+      background:rgba(255,255,255,0.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .card p{margin:0;color:#5d5550;line-height:1.72}
+
+    .offer-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .offer-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      min-width:0;
+    }
+
+    .offer-card.featured{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      transform:translateY(-6px);
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.06);
+      line-height:1.2;
+    }
+
+    .featured .tag{
+      background:rgba(255,255,255,0.16);
+      color:#fff;
+    }
+
+    .offer-card h3{
+      margin:18px 0 10px;
+      font-size:26px;
+      font-family:"Inter",sans-serif;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .offer-card p{color:#5f5b58;line-height:1.72;margin:0}
+    .featured p{color:#fff}
+
+    .offer-card ul{
+      list-style:none;
+      padding:0;
+      margin:20px 0 0;
+      display:grid;
+      gap:12px;
+      color:#5a5551;
+    }
+
+    .featured ul{color:#fff}
+
+    .offer-card li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      line-height:1.55;
+    }
+
+    .offer-card li::before{
+      content:"✓";
+      font-weight:800;
+      color:#111;
+      flex:0 0 auto;
+    }
+
+    .featured li::before{color:#fff}
+
+    .price-box{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      border-radius:34px;
+      padding:clamp(22px, 4vw, 30px);
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr);
+      gap:20px;
+      align-items:center;
+    }
+
+    .price-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .price-box p{
+      margin:0;
+      color:#fff;
+      line-height:1.75;
+      max-width:620px;
+    }
+
+    .price-panel{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      min-width:0;
+    }
+
+    .price-big{
+      font-size:clamp(38px, 7vw, 52px);
+      font-weight:800;
+      letter-spacing:-0.05em;
+      line-height:1;
+      margin-bottom:10px;
+      font-family:"Inter",sans-serif;
+      text-wrap:balance;
+    }
+
+    .price-note{color:#fff;line-height:1.7}
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .faq-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .faq-item h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+    }
+
+    .faq-item p{
+      margin:0;
+      color:#5b544f;
+      line-height:1.75;
+    }
+
+    .form-card{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      border-radius:28px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.14);
+      overflow:hidden;
+      color:#fff;
+    }
+
+    .form-card-head{
+      padding:22px 24px 0;
+    }
+
+    .form-card-head h3{
+      margin:0 0 8px;
+      font-size:28px;
+      color:#fff;
+      font-family:"Playfair Display",serif;
+    }
+
+    .form-card-head p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      line-height:1.65;
+    }
+
+    .form-body{padding:22px}
+
+    .contact-box{
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      display:grid;
+      gap:12px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .contact-box strong,
+    .contact-box small,
+    .contact-box label,
+    .contact-box p{color:#fff}
+
+    .contact-box strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:18px;
+    }
+
+    .contact-box small{
+      color:rgba(255,255,255,0.9);
+      line-height:1.6;
+    }
+
+    .contact-box input,
+    .contact-box textarea{
+      width:100%;
+      min-height:var(--tap);
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.12);
+      color:#fff;
+      border-radius:14px;
+      padding:14px 16px;
+      outline:none;
+      appearance:none;
+      -webkit-appearance:none;
+    }
+
+    .contact-box input::placeholder,
+    .contact-box textarea::placeholder{
+      color:rgba(255,255,255,0.76);
+    }
+
+    .contact-box textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
+    .contact-box input:focus,
+    .contact-box textarea:focus{
+      border-color:rgba(255,255,255,0.5);
+      box-shadow:0 0 0 3px rgba(255,255,255,0.15);
+    }
+
+    .contact-submit{
+      margin-top:8px;
+      width:100%;
+      justify-content:center;
+      background:#fff;
+      color:var(--brand-dark);
+      box-shadow:none;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    .hidden-field{
+      position:absolute;
+      left:-9999px;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .trust-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(22px, 4vw, 28px);
+      box-shadow:var(--shadow);
+    }
+
+    .trust-box h2{
+      margin:0 0 12px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .trust-box p{
+      margin:0 0 14px;
+      color:#55514d;
+      line-height:1.82;
+    }
+
+    .trust-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .trust-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      text-align:center;
+    }
+
+    footer{
+      padding:30px 0 calc(60px + env(safe-area-inset-bottom));
+      color:#6d6662;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    @media (max-width:1140px){
+      .nav-links{display:none}
+      .hero-grid,.price-box,.grid-2{grid-template-columns:1fr}
+      .grid-3,.offer-grid,.faq-grid{grid-template-columns:1fr}
+      .offer-card.featured{transform:none}
+      .hero-card{min-height:auto}
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+        --header-offset:88px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{gap:10px;min-width:0}
+      .brand-sub{display:none}
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{font-size:15px}
+
+      .nav-cta{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
+      .hero{padding-top:18px}
+
+      .hero h1{
+        line-height:1;
+        margin:14px 0 12px;
+      }
+
+      .hero p{line-height:1.66}
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .hero-actions .btn{width:100%}
+
+      .mockup-header{
+        font-size:13px;
+        align-items:flex-start;
+      }
+
+      .hero-logo-wrap{
+        min-height:200px;
+        border-radius:22px;
+      }
+
+      .mockup-panel{grid-template-columns:1fr}
+      .section{padding:30px 0}
+
+      .section-title{
+        flex-direction:column;
+        align-items:flex-start;
+        margin-bottom:16px;
+      }
+
+      .card,
+      .offer-card,
+      .faq-item,
+      .form-body,
+      .form-card-head,
+      .contact-box{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .price-box{border-radius:24px}
+      .price-panel{padding:18px}
+      .form-card{border-radius:22px}
+      .trust-box{border-radius:22px}
+      .trust-links{display:grid;grid-template-columns:1fr}
+      .trust-link{width:100%}
+      footer{font-size:13px}
+    }
+
+    @media (max-width:480px){
+      .eyebrow{
+        font-size:12px;
+        padding:8px 11px;
+      }
+
+      .check{
+        width:22px;
+        height:22px;
+        font-size:12px;
+      }
+
+      .offer-card h3{font-size:23px}
+      .price-big{font-size:36px}
+      .card h3,.faq-item h3{font-size:20px}
+      .form-card-head h3{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img class="brand-logo" src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Affiliate för webbkunder</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Huvudnavigering">
+        <a href="#sa-funkar-det">Så funkar det</a>
+        <a href="#ersattning">Provision</a>
+        <a href="#passar">Vem det passar</a>
+        <a href="#faq">Vanliga frågor</a>
+        <a href="#ansok">Ansök</a>
+      </nav>
+
+      <a href="#ansok" class="nav-cta">Ansök nu</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Affiliate · 20 % på första betalda ordern</span>
+
+          <h1>Tjäna pengar genom att tipsa företag om webbutveckling</h1>
+
+          <p>
+            Känner du företagare som behöver en ny hemsida eller hjälp med sin nuvarande?
+            Tipsa om Webutvecklare.se och få provision när affären blir godkänd och betald.
+            Enkelt upplägg. Ingen anställning. Bara rak provision på riktiga affärer.
+          </p>
+
+          <ul class="hero-points">
+            <li><span class="check">✓</span><span>20 % på första betalda ordern</span></li>
+            <li><span class="check">✓</span><span>Gäller nya kunder du tipsat om</span></li>
+            <li><span class="check">✓</span><span>Manuell granskning, inga luftslott</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#ansok" class="btn btn-primary">Ansök om att bli affiliate</a>
+            <a href="#ersattning" class="btn btn-secondary">Se provision</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup-header">
+            <span>Webutvecklare.se · Tipsa rätt företag. Få betalt.</span>
+            <div class="dots"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="hero-logo-wrap">
+            <img
+              class="hero-logo"
+              src="nordlof-nordic-logo.png"
+              alt="Nordlöf Nordic logga"
+            >
+          </div>
+
+          <div class="mockup-panel">
+            <div class="mini-card">
+              <strong>1. Du tipsar</strong>
+              <span>Du skickar vidare företag som behöver hemsida.</span>
+            </div>
+            <div class="mini-card">
+              <strong>2. Kunden köper</strong>
+              <span>Affären godkänns och betalas.</span>
+            </div>
+            <div class="mini-card">
+              <strong>3. Du får provision</strong>
+              <span>20 % på första ordern. Inget krångel.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sa-funkar-det">
+      <div class="container">
+        <div class="section-title">
+          <h2>Så funkar det</h2>
+          <p>
+            Upplägget är enkelt. Du behöver inte sälja in tekniken som en powerpoint-zombie. Du behöver bara tipsa rätt företag.
+          </p>
+        </div>
+
+        <div class="offer-grid">
+          <div class="offer-card">
+            <span class="tag">Steg 1</span>
+            <h3>Tipsa en kund</h3>
+            <p>Skicka vidare företag som behöver ny hemsida eller hjälp med sin nuvarande.</p>
+            <ul>
+              <li>Nya kunder</li>
+              <li>Småföretag och lokala bolag</li>
+              <li>Tydlig matchning</li>
+            </ul>
+          </div>
+
+          <div class="offer-card featured">
+            <span class="tag">Steg 2</span>
+            <h3>Affären går igenom</h3>
+            <p>Kunden beställer och betalar. Först då räknas affären som godkänd.</p>
+            <ul>
+              <li>Ingen provision på snack</li>
+              <li>Ingen provision på spam</li>
+              <li>Manuell bedömning</li>
+            </ul>
+          </div>
+
+          <div class="offer-card">
+            <span class="tag">Steg 3</span>
+            <h3>Du får betalt</h3>
+            <p>Du får 20 % på första betalda ordern från kunden du skickat in.</p>
+            <ul>
+              <li>Rakt upplägg</li>
+              <li>Tydlig nivå</li>
+              <li>Enkelt att följa upp</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ersattning">
+      <div class="container">
+        <div class="price-box">
+          <div>
+            <h2>20 % provision på första betalda ordern</h2>
+            <p>
+              Här är nivåerna svart på vitt. Inte “spännande möjlighet”, utan faktiska siffror.
+            </p>
+          </div>
+
+          <div class="price-panel">
+            <div class="price-big">20 %</div>
+            <div class="price-note">
+              Start 2900 kr → 580 kr<br>
+              Proffs 4900 kr → 980 kr<br>
+              Utökad 7900 kr → 1580 kr
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="card">
+            <h3>Start</h3>
+            <p>2900 kr för kunden. 580 kr till dig.</p>
+          </div>
+          <div class="card">
+            <h3>Proffs</h3>
+            <p>4900 kr för kunden. 980 kr till dig.</p>
+          </div>
+          <div class="card">
+            <h3>Utökad</h3>
+            <p>7900 kr för kunden. 1580 kr till dig.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="passar">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vem det passar för</h2>
+          <p>
+            Det här passar dig som redan har kontakt med folk som driver företag. Du behöver inte trolla fram leads ur tomma intet.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Nätverkare & säljare</h3>
+            <p>Du känner företagare och kan öppna dörrar utan att göra det komplicerat.</p>
+          </div>
+
+          <div class="card">
+            <h3>Freelancers & kreatörer</h3>
+            <p>Du jobbar med foto, sociala medier, branding eller liknande och stöter ofta på företag som behöver hemsida.</p>
+          </div>
+
+          <div class="card">
+            <h3>Lokala kontakter</h3>
+            <p>Du har kontakt med hantverkare, salonger, konsulter eller andra småföretag som behöver en bättre webbnärvaro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h3>Regler utan fluff</h3>
+          <div class="hero-points" style="margin-top:0;">
+            <div class="list-item"><span class="check">✓</span><span>Gäller bara nya kunder</span></div>
+            <div class="list-item"><span class="check">✓</span><span>Provision betalas bara på genomförd och betald affär</span></div>
+            <div class="list-item"><span class="check">✓</span><span>Spam, fejk eller oseriösa leads godkänns inte</span></div>
+            <div class="list-item"><span class="check">✓</span><span>Alla ansökningar och affärer granskas manuellt</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Vad du tipsar om</h3>
+          <p>
+            Webutvecklare.se säljer hemsidor för företag i Sverige med demo inom 1 arbetsdag och köp först efter godkänd demo.
+            Det gör erbjudandet lättare att sälja in, eftersom kunden slipper köpa blint.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vanliga frågor</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Hur mycket får jag?</h3>
+            <p>Du får 20 % på första betalda ordern från nya kunder du tipsat om.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>När får jag provision?</h3>
+            <p>När affären är genomförd, godkänd och betald.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Gäller det gamla kunder?</h3>
+            <p>Nej. Det gäller nya kunder.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Måste jag vara företag?</h3>
+            <p>Det går att diskutera upplägget manuellt vid ansökan. Poängen är att det ska vara seriöst och tydligt från start.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ansok">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ansök om att bli affiliate</h2>
+          <p>
+            Håll det enkelt. Skriv vem du är, hur du tänker nå kunder och varför du passar.
+          </p>
+        </div>
+
+        <section class="form-card">
+          <div class="form-card-head">
+            <h3>Skicka in din ansökan</h3>
+            <p>Jag går igenom ansökningar manuellt och återkommer om upplägget känns rätt.</p>
+          </div>
+
+          <div class="form-body">
+            <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
+              <strong>Affiliateansökan</strong>
+              <small>Tipsa om webbutveckling och få provision på riktiga affärer.</small>
+
+              <input type="hidden" name="_subject" value="Ny affiliateansökan från webutvecklare.se" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+              <input type="hidden" name="_autoresponse" value="Tack! Din affiliateansökan har kommit in." />
+              <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+              <label for="namn">Namn</label>
+              <input id="namn" type="text" name="Namn" required autocomplete="name" />
+
+              <label for="email">E-post</label>
+              <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
+
+              <label for="kanaler">Hur tänker du nå kunder?</label>
+              <input id="kanaler" type="text" name="Hur når du kunder?" placeholder="t.ex. nätverk, sociala medier, lokala kontakter" />
+
+              <label for="bakgrund">Berätta kort om dig</label>
+              <textarea id="bakgrund" name="Kort om dig" rows="4" placeholder="Vad du jobbar med och varför du passar"></textarea>
+
+              <label for="ovrigt">Övrigt</label>
+              <textarea id="ovrigt" name="Övrigt" rows="4" placeholder="Länkar, målgrupp eller annat som är bra att veta"></textarea>
+
+              <small class="form-legal">
+                Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                <a href="integritet.html">integritetspolicyn</a>.
+              </small>
+
+              <button class="btn contact-submit" type="submit">Skicka affiliateansökan</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="trust-box">
+          <h2>Vem driver detta?</h2>
+          <p>
+            Hej. Det är jag, <strong>Erica Nordlöf</strong>, som driver <strong>Nordlöf Nordic</strong> och <strong>webutvecklare.se</strong>.
+            Jag bygger hemsidor för företag i Sverige med fokus på tydliga upplägg, snabb demo och personlig kontakt.
+          </p>
+          <p>
+            Affiliateupplägget finns för att belöna personer som faktiskt kan skicka rätt kunder. Enkelt, rakryggat och utan onödigt systembygge från dag ett.
+          </p>
+          <div class="trust-links">
+            <a class="trust-link" href="https://webutvecklare.se">Till startsidan</a>
+            <a class="trust-link" href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+            <a class="trust-link" href="anlita-webbutvecklare.html">Läs mer om tjänsten</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span class="footer-meta">
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · <a href="https://webutvecklare.se/">webutvecklare.se</a>
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
