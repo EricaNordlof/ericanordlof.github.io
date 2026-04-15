@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Tack för köpet | Nordlöf Nordic</title>
+  <meta
+    name="description"
+    content="Tack för ditt köp hos Nordlöf Nordic. Din beställning är mottagen och jag återkommer med nästa steg så snart som möjligt."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="author" content="Erica Nordlöf" />
+
+  <meta property="og:title" content="Tack för köpet | Nordlöf Nordic" />
+  <meta property="og:description" content="Din beställning är mottagen. Jag återkommer med nästa steg så snart som möjligt." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/tack-kop.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tack för köpet | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Din beställning är mottagen. Jag återkommer med nästa steg så snart som möjligt." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="canonical" href="https://webutvecklare.se/tack-kop.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --bg-soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#231d1a;
+      --muted:#6d625c;
+      --line:rgba(35,29,26,0.08);
+      --line-soft:rgba(35,29,26,0.05);
+      --brand:#d98672;
+      --brand-2:#e8b18d;
+      --brand-dark:#b96f61;
+      --accent:#1f1a17;
+      --shadow:0 18px 50px rgba(35,29,26,0.08);
+      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --radius:24px;
+      --radius-lg:30px;
+      --max:1180px;
+      --tap:48px;
+    }
+
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
+        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
+      min-height:100vh;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7f7169;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      white-space:nowrap;
+    }
+
+    .page{
+      min-height:calc(100vh - 90px);
+      display:grid;
+      place-items:center;
+      padding:32px 0 40px;
+    }
+
+    .thankyou-wrap{
+      width:100%;
+      max-width:760px;
+    }
+
+    .thankyou-card{
+      background:rgba(255,255,255,0.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:clamp(24px, 4vw, 40px);
+      box-shadow:var(--shadow-lg);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .thankyou-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(217,134,114,0.10), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#7c5d53;
+      box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
+      position:relative;
+      z-index:1;
+    }
+
+    h1,h2{
+      font-family:"Playfair Display",serif;
+      letter-spacing:-0.04em;
+      text-wrap:balance;
+    }
+
+    h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.2rem, 8vw, 4.6rem);
+      line-height:0.98;
+      position:relative;
+      z-index:1;
+    }
+
+    .lead{
+      margin:0;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.75;
+      color:#4f4742;
+      max-width:620px;
+      position:relative;
+      z-index:1;
+    }
+
+    .status-box{
+      margin-top:24px;
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+      position:relative;
+      z-index:1;
+    }
+
+    .status-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.6rem, 4vw, 2.4rem);
+      line-height:1.02;
+      color:#fff;
+    }
+
+    .status-box p{
+      margin:0;
+      color:#fff;
+      line-height:1.75;
+    }
+
+    .points{
+      display:grid;
+      gap:12px;
+      margin-top:24px;
+      position:relative;
+      z-index:1;
+    }
+
+    .point{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:16px 18px;
+      background:#fbf7f4;
+      border:1px solid var(--line);
+      border-radius:20px;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+      box-shadow:0 8px 18px rgba(185,111,97,0.15);
+    }
+
+    .point strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:16px;
+    }
+
+    .point span:last-child{
+      color:#5a534e;
+      line-height:1.65;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+      position:relative;
+      z-index:1;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .mini-note{
+      margin-top:18px;
+      color:#6a605a;
+      line-height:1.7;
+      font-size:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    footer{
+      padding:24px 0 calc(34px + env(safe-area-inset-bottom));
+      color:#6d6662;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{gap:10px}
+      .brand-sub{display:none}
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{font-size:15px}
+
+      .nav-link{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
+      .page{
+        padding:18px 0 30px;
+        align-items:start;
+      }
+
+      .thankyou-card{
+        padding:22px 18px;
+      }
+
+      .actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .actions .btn{
+        width:100%;
+      }
+
+      footer{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img
+          class="brand-logo"
+          src="nordlof-nordic-logo.png"
+          alt="Nordlöf Nordic logga"
+        >
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Webbutvecklare för företag</span>
+        </span>
+      </a>
+
+      <a href="https://webutvecklare.se/" class="nav-link">Till startsidan</a>
+    </div>
+  </div>
+
+  <main class="page">
+    <div class="container">
+      <div class="thankyou-wrap">
+        <section class="thankyou-card">
+          <span class="eyebrow">Klart · Din förfrågan är inne</span>
+
+          <h1>Tack</h1>
+
+          <p class="lead">
+            Jag har fått din förfrågan. Jag kikar på den och återkommer så snart jag kan.
+          </p>
+
+          <div class="status-box">
+            <h2>Nästa steg</h2>
+            <p>
+  Gäller det hemsida skickar jag normalt en gratis demo inom 1 arbetsdag. Du köper först efter att du sett demon och godkänt upplägget. Gäller det AI-video, flyer eller större projekt återkommer jag med nästa steg så fort jag gått igenom allt. Gäller det affiliateansökan återkommer jag efter manuell genomgång om upplägget känns rätt.
+</p>
+          </div>
+
+          <div class="points">
+            <div class="point">
+              <span class="check">✓</span>
+              <span>
+                <strong>Förfrågan mottagen</strong>
+                Din brief har gått iväg och är inne hos mig nu.
+              </span>
+            </div>
+
+            <div class="point">
+              <span class="check">✓</span>
+              <span>
+                <strong>Jag går igenom underlaget</strong>
+                Ju tydligare du skrev, desto snabbare kan jag sätta rätt riktning.
+              </span>
+            </div>
+
+            <div class="point">
+              <span class="check">✓</span>
+              <span>
+                <strong>Du hör från mig</strong>
+Antingen med gratis demo, återkoppling, besked om affiliate eller en följdfråga om något behöver förtydligas.
+              </span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a href="https://webutvecklare.se/" class="btn btn-primary">Till startsidan</a>
+            <a href="https://webutvecklare.se/#priser" class="btn btn-secondary">Se priser igen</a>
+          </div>
+
+          <p class="mini-note">
+  Har du redan fått en demo tidigare och nu vill gå vidare med köp, vill komplettera en affiliateansökan eller har missat något viktigt i formuläret, kan du mejla direkt till
+  <a href="mailto:erica@webutvecklare.se"><strong>erica@webutvecklare.se</strong></a>.
+</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span>
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
