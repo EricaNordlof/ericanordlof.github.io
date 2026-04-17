@@ -1,0 +1,1436 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Hemsida för kylteknikföretag | Specialanpassad brief | Nordlöf Nordic</title>
+  <meta
+    name="description"
+    content="Specialanpassad brief för kylteknikföretag som vill ha en tydlig, mobilanpassad och säljande hemsida. Fyll i formuläret så återkommer Nordlöf Nordic med upplägg."
+  />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="author" content="Erica Nordlöf" />
+
+  <meta property="og:title" content="Hemsida för kylteknikföretag | Specialanpassad brief | Nordlöf Nordic" />
+  <meta property="og:description" content="Fyll i briefen för ert kylteknikföretag så återkommer jag med ett konkret upplägg." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/kylteknikforetag-brief.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hemsida för kylteknikföretag | Specialanpassad brief | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Specialanpassad brief för hemsida till kylteknikföretag." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="canonical" href="https://webutvecklare.se/kylteknikforetag-brief.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"ProfessionalService",
+        "name":"Nordlöf Nordic",
+        "description":"Webbutvecklare för företag i Sverige. Ny hemsida, uppdateringar och större webblösningar. Specialanpassad brief för kylteknikföretag.",
+        "url":"https://webutvecklare.se/kylteknikforetag-brief.html",
+        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "email":"mailto:erica@webutvecklare.se",
+        "areaServed":{"@type":"Country","name":"Sverige"},
+        "provider":{"@type":"Person","name":"Erica Nordlöf"},
+        "brand":{"@type":"Organization","name":"Nordlöf Nordic"},
+        "serviceType":[
+          "Hemsida för företag",
+          "Webbutveckling för företag",
+          "Hemsida för kylteknikföretag",
+          "Webbdesign för tjänsteföretag",
+          "Leadgenererande företagshemsida"
+        ]
+      },
+      {
+        "@type":"WebPage",
+        "name":"Hemsida för kylteknikföretag | Specialanpassad brief",
+        "url":"https://webutvecklare.se/kylteknikforetag-brief.html",
+        "description":"Specialanpassad brief för kylteknikföretag som vill ha en ny hemsida eller uppdatera befintlig sida."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --bg-soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#231d1a;
+      --muted:#6d625c;
+      --line:rgba(35,29,26,0.08);
+      --line-soft:rgba(35,29,26,0.05);
+      --brand:#d98672;
+      --brand-2:#e8b18d;
+      --brand-3:#f5dfd1;
+      --brand-dark:#b96f61;
+      --accent:#1f1a17;
+      --shadow:0 18px 50px rgba(35,29,26,0.08);
+      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --radius:24px;
+      --radius-lg:30px;
+      --max:1180px;
+      --section-pad:clamp(34px, 5vw, 64px);
+      --tap:48px;
+      --header-offset:96px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
+        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    input,select,textarea,button{font:inherit}
+    :target{scroll-margin-top:var(--header-offset)}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      flex:1 1 auto;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7f7169;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      color:#4c433f;
+      font-size:14px;
+      align-items:center;
+      flex:0 1 auto;
+    }
+
+    .nav-links a{
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+
+    .nav-links a:hover{color:var(--accent)}
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+
+    .hero{padding:clamp(26px, 4vw, 58px) 0 18px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.02fr) minmax(0,0.98fr);
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      max-width:100%;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#7c5d53;
+      box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
+    }
+
+    h1,h2,h3{font-family:"Playfair Display",serif}
+
+    .hero h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.1rem, 7vw, 4.6rem);
+      line-height:0.98;
+      letter-spacing:-0.045em;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.72;
+      color:#4f4742;
+      max-width:720px;
+    }
+
+    .hero-points{
+      display:grid;
+      gap:10px;
+      margin:24px 0 0;
+      padding:0;
+      list-style:none;
+      color:#3d3733;
+      font-weight:600;
+    }
+
+    .hero-points li,.list-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+      margin-bottom:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .hero-microproof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 12px;
+      font-size:13px;
+      font-weight:700;
+      color:#4f4742;
+      box-shadow:0 10px 24px rgba(35,29,26,0.04);
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg, #d98571 0%, #e9ab86 100%);
+      color:#fff;
+      border-radius:var(--radius-lg);
+      padding:clamp(18px, 2.2vw, 26px);
+      box-shadow:0 28px 70px rgba(185,111,97,0.18);
+      overflow:hidden;
+      position:relative;
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-width:0;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.20), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:auto -80px -80px auto;
+      width:250px;
+      height:250px;
+      background:radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .mockup-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+      color:rgba(255,255,255,0.96);
+      font-size:14px;
+      position:relative;
+      z-index:1;
+      line-height:1.4;
+    }
+
+    .dots{display:flex;gap:6px;flex:0 0 auto}
+    .dots span{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.48);
+    }
+
+    .hero-panel{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:28px;
+      padding:clamp(18px, 2.4vw, 26px);
+      display:grid;
+      gap:14px;
+      min-height:320px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .hero-panel h3{
+      margin:0;
+      color:#fff;
+      font-size:clamp(28px, 4vw, 38px);
+      line-height:1.02;
+      letter-spacing:-0.04em;
+    }
+
+    .hero-panel p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      line-height:1.7;
+      font-size:16px;
+    }
+
+    .mockup-panel{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      position:relative;
+      z-index:1;
+      margin-top:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:12px;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      min-width:0;
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:13px;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .mini-card span{
+      font-size:12px;
+      color:rgba(255,255,255,0.9);
+      line-height:1.55;
+    }
+
+    .section{padding:var(--section-pad) 0}
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:clamp(1.9rem, 5.3vw, 3.15rem);
+      line-height:1.02;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .section-title p{
+      margin:0;
+      max-width:580px;
+      color:#5b524d;
+      line-height:1.75;
+      font-size:clamp(15px, 1.8vw, 17px);
+    }
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+
+    .card{
+      background:rgba(255,255,255,0.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .card p{margin:0;color:#5d5550;line-height:1.72}
+
+    .list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+      box-shadow:0 8px 18px rgba(185,111,97,0.15);
+    }
+
+    .note-box{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      border-radius:34px;
+      padding:clamp(22px, 4vw, 30px);
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr);
+      gap:20px;
+      align-items:center;
+    }
+
+    .note-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .note-box p{
+      margin:0;
+      color:#fff;
+      line-height:1.75;
+      max-width:620px;
+    }
+
+    .note-panel{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      min-width:0;
+    }
+
+    .note-big{
+      font-size:clamp(36px, 6vw, 50px);
+      font-weight:800;
+      letter-spacing:-0.05em;
+      line-height:1;
+      margin-bottom:10px;
+      font-family:"Inter",sans-serif;
+    }
+
+    .note-small{color:#fff;line-height:1.7}
+
+    .form-card{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      border-radius:28px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.14);
+      overflow:hidden;
+      color:#fff;
+    }
+
+    .form-card-head{
+      padding:24px 24px 0;
+    }
+
+    .form-card-head h3{
+      margin:0 0 8px;
+      font-size:32px;
+      color:#fff;
+      font-family:"Playfair Display",serif;
+    }
+
+    .form-card-head p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      line-height:1.65;
+    }
+
+    .form-body{
+      padding:22px;
+    }
+
+    .contact-box,
+    .contact-box strong,
+    .contact-box small,
+    .contact-box label,
+    .contact-box p,
+    .contact-box span,
+    .contact-box h3,
+    .contact-box h4,
+    .contact-box legend {
+      color:#fff;
+    }
+
+    .contact-box{
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      display:grid;
+      gap:12px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .contact-box strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:18px;
+    }
+
+    .contact-box small{
+      color:rgba(255,255,255,0.9);
+      line-height:1.6;
+    }
+
+    .contact-box input,
+    .contact-box select,
+    .contact-box textarea{
+      width:100%;
+      min-height:var(--tap);
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.12);
+      color:#fff;
+      border-radius:14px;
+      padding:14px 16px;
+      outline:none;
+      appearance:none;
+      -webkit-appearance:none;
+    }
+
+    .contact-box input::placeholder,
+    .contact-box textarea::placeholder{
+      color:rgba(255,255,255,0.76);
+    }
+
+    .contact-box textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
+    .contact-box select option{
+      color:#111;
+      background:#fff;
+    }
+
+    .contact-box input:focus,
+    .contact-box select:focus,
+    .contact-box textarea:focus{
+      border-color:rgba(255,255,255,0.5);
+      box-shadow:0 0 0 3px rgba(255,255,255,0.15);
+    }
+
+    .check-field{
+      border:0;
+      padding:0;
+      margin:0;
+      min-width:0;
+    }
+
+    .check-field legend{
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:10px;
+      padding:0;
+    }
+
+    .checkbox-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:2px;
+    }
+
+    .check-option{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.08);
+      cursor:pointer;
+      line-height:1.45;
+      font-weight:600;
+      color:#fff;
+      user-select:none;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .check-option:hover{
+      background:rgba(255,255,255,0.12);
+    }
+
+    .check-option input[type="checkbox"]{
+      appearance:auto;
+      -webkit-appearance:checkbox;
+      width:18px;
+      height:18px;
+      min-width:18px;
+      min-height:18px;
+      margin:0;
+      accent-color:#fff;
+      cursor:pointer;
+      flex:0 0 auto;
+      background:none;
+      border:none;
+      box-shadow:none;
+      pointer-events:auto;
+    }
+
+    .contact-submit{
+      margin-top:8px;
+      width:100%;
+      justify-content:center;
+      background:#fff;
+      color:var(--brand-dark);
+      box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .form-status.is-visible{display:block}
+
+    .form-status.is-error{
+      background:rgba(117, 24, 24, 0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    .hidden-field{
+      position:absolute;
+      left:-9999px;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .trust-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(22px, 4vw, 28px);
+      box-shadow:var(--shadow);
+    }
+
+    .trust-box h2{
+      margin:0 0 12px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .trust-box p{
+      margin:0 0 14px;
+      color:#55514d;
+      line-height:1.82;
+    }
+
+    .trust-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .trust-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      text-align:center;
+    }
+
+    footer{
+      padding:30px 0 calc(60px + env(safe-area-inset-bottom));
+      color:#6d6662;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    @media (max-width:1140px){
+      .nav-links{display:none}
+      .hero-grid,.note-box,.grid-2,.grid-3{grid-template-columns:1fr}
+      .hero-card{min-height:auto}
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+        --header-offset:88px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{gap:10px;min-width:0}
+      .brand-sub{display:none}
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{font-size:15px}
+
+      .nav-cta{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
+      .hero{padding-top:18px}
+
+      .hero h1{
+        line-height:1;
+        margin:14px 0 12px;
+      }
+
+      .hero p{line-height:1.66}
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .hero-actions .btn{width:100%}
+      .hero-microproof{display:grid;grid-template-columns:1fr}
+      .hero-panel{min-height:220px}
+      .mockup-panel{grid-template-columns:1fr}
+      .section{padding:30px 0}
+
+      .section-title{
+        flex-direction:column;
+        align-items:flex-start;
+        margin-bottom:16px;
+      }
+
+      .card,
+      .form-body,
+      .form-card-head,
+      .contact-box{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .checkbox-grid{grid-template-columns:1fr}
+      .note-box{border-radius:24px}
+      .note-panel{padding:18px}
+      .form-card{border-radius:22px}
+      .trust-box{border-radius:22px}
+      .trust-links{display:grid;grid-template-columns:1fr}
+      .trust-link{width:100%}
+      footer{font-size:13px}
+    }
+
+    @media (max-width:480px){
+      .eyebrow{
+        font-size:12px;
+        padding:8px 11px;
+      }
+
+      .hero-points{gap:9px}
+
+      .check{
+        width:22px;
+        height:22px;
+        font-size:12px;
+      }
+
+      .card h3{font-size:20px}
+      .form-card-head h3{font-size:24px}
+      .note-big{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img class="brand-logo" src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Webbutvecklare för företag</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Huvudnavigering">
+        <a href="#upplagg">Upplägg</a>
+        <a href="#innehall">Innehåll</a>
+        <a href="#brief">Brief</a>
+        <a href="#om">Om</a>
+      </nav>
+
+      <a href="#brief" class="nav-cta">Fyll i briefen</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Specialanpassad sida för ert uppdrag · Hemsida för kylteknikföretag</span>
+
+          <h1>Brief för hemsida till kylteknikföretag</h1>
+
+          <p>
+            Den här sidan är gjord för er förfrågan. Fyll i formuläret så tydligt ni kan, så blir det enklare att ta fram ett träffsäkert upplägg för en hemsida som visar era tjänster tydligt och gör det lättare för kunder att kontakta er.
+          </p>
+
+          <ul class="hero-points">
+            <li><span class="check">✓</span><span>Fokus på tydliga tjänster, förtroende och fler förfrågningar</span></li>
+            <li><span class="check">✓</span><span>Mobilanpassad hemsida för företag inom kyla, frys, värmepumpar och AC</span></li>
+            <li><span class="check">✓</span><span>Formuläret är anpassat efter just ert case istället för ett generiskt standardformulär</span></li>
+            <li><span class="check">✓</span><span>Snabbare väg till rätt scope och mindre risk för klassisk “kan ni bara fixa lite till?”-cirkus</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#brief" class="btn btn-primary">Fyll i briefen</a>
+            <a href="#innehall" class="btn btn-secondary">Se vad sidan kan innehålla</a>
+          </div>
+
+          <div class="hero-microproof" aria-label="Fördelar">
+            <span class="hero-pill">✓ Tydlig brief</span>
+            <span class="hero-pill">✓ Rätt frågor direkt</span>
+            <span class="hero-pill">✓ Mindre missförstånd</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup-header">
+            <span>Nordlöf Nordic · Specialanpassad projektbrief</span>
+            <div class="dots"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="hero-panel">
+            <h3>Vad en bra hemsida ska göra för ert företag</h3>
+            <p>Den ska snabbt förklara vad ni gör, vilka tjänster ni erbjuder, var ni jobbar och hur kunden kontaktar er.</p>
+            <p>För ett kylteknikföretag brukar det vara extra viktigt med tydliga tjänstesidor, lokal trovärdighet, serviceområden, snabb kontaktväg och ett seriöst helhetsintryck.</p>
+          </div>
+
+          <div class="mockup-panel">
+            <div class="mini-card">
+              <strong>1. Tydliga tjänster</strong>
+              <span>Kyla, frys, värmepump, AC, service, installation eller jour.</span>
+            </div>
+            <div class="mini-card">
+              <strong>2. Lokalt förtroende</strong>
+              <span>Ort, serviceområde, kontaktvägar och gärna referenser eller recensioner.</span>
+            </div>
+            <div class="mini-card">
+              <strong>3. Fler leads</strong>
+              <span>Gör det enkelt att ringa, mejla eller skicka förfrågan direkt.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="upplagg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vad briefen hjälper till att landa</h2>
+          <p>
+            Målet här är inte att skapa fler mejltrådar än nödvändigt. Målet är att få fram rätt underlag så att upplägget blir skarpt direkt.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Rätt innehåll</h3>
+            <p>
+              Ni beskriver vilka tjänster ni faktiskt vill lyfta, vilka orter ni arbetar i och om sidan främst ska ge fler samtal, fler formulär eller bara ett mer seriöst första intryck.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Rätt nivå</h3>
+            <p>
+              Det blir tydligare om ni behöver en enkel företagshemsida, en större sida med flera tjänstesidor eller något mer omfattande med exempelvis referenser och lokala undersidor.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Rätt scope</h3>
+            <p>
+              Ni slipper att viktiga saker dyker upp först efter start. Det sparar tid, pengar och onödigt klydd. Scope creep är sällan charmigt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="innehall">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vanligt innehåll för hemsida till kylteknikföretag</h2>
+          <p>
+            Allt behöver inte med. Men det här är ofta det som gör störst affärsnytta för den här typen av företag.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Det som brukar vara viktigast</h3>
+            <div class="list">
+              <div class="list-item"><span class="check">✓</span><span>Startsida med tydlig rubrik om vad ni gör</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Tjänstesidor för exempelvis kyla, frys, värmepumpar, AC, service och installation</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Kontakt med telefon, mejl, formulär och gärna klickbar karta</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Om företaget för att bygga förtroende</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Tydliga serviceområden eller orter</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Det som ofta lyfter helheten</h3>
+            <div class="list">
+              <div class="list-item"><span class="check">✓</span><span>Referenser, recensioner eller tidigare jobb</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Bildmaterial från riktiga uppdrag eller teamet</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Vanliga frågor om service, installation och arbetsområde</span></div>
+              <div class="list-item"><span class="check">✓</span><span>En tydlig anledning till varför kunden ska välja just er</span></div>
+              <div class="list-item"><span class="check">✓</span><span>Grundläggande lokal SEO så ni inte gömmer er bättre än kundernas gamla ismaskin</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="note-box">
+          <div>
+            <h2>Ju tydligare brief, desto bättre upplägg</h2>
+            <p>
+              Det här formuläret är byggt för att få fram rätt saker direkt: mål, tjänster, orter, material, önskat upplägg och vad ni faktiskt vill att hemsidan ska göra. Det gör processen snabbare och mer träffsäker.
+            </p>
+          </div>
+
+          <div class="note-panel">
+            <div class="note-big">20–50 tkr</div>
+            <div class="note-small">
+              Budgetspannet i uppdraget tyder på att det här kan vara mer än bara en enkel startsida. Den här briefen hjälper till att avgöra om det är ett mindre eller större upplägg.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="brief">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fyll i briefen</h2>
+          <p>
+            Svara så konkret ni kan. Det behöver inte vara perfekt skrivet. Det viktiga är att rätt information kommer fram.
+          </p>
+        </div>
+
+        <section class="form-card">
+          <div class="form-card-head">
+            <h3>Specialanpassad brief för kylteknikföretag</h3>
+            <p>Det här formuläret är gjort för er förfrågan via marknadsplatsen.</p>
+          </div>
+
+          <div class="form-body">
+            <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
+              <strong>Projektbrief</strong>
+              <small>Fyll i så mycket ni kan. Det gör det lättare att ge ett träffsäkert upplägg.</small>
+
+              <input type="hidden" name="_subject" value="Specialanpassad brief – kylteknikföretag" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+              <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot er brief och återkommer så snart jag kan." />
+              <input type="hidden" name="Leadkälla" value="Specialanpassad sida för kylteknikföretag via marknadsplats" />
+              <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+              <div class="form-status" aria-live="polite"></div>
+
+              <label for="uppdrag">Vad behöver ni hjälp med?</label>
+              <select id="uppdrag" name="Typ av uppdrag" required>
+                <option value="Ny hemsida">Ny hemsida</option>
+                <option value="Göra om befintlig hemsida">Göra om befintlig hemsida</option>
+                <option value="Uppdatera befintlig hemsida">Uppdatera befintlig hemsida</option>
+                <option value="Vet inte än">Vet inte än</option>
+              </select>
+
+              <label for="namn">Kontaktperson</label>
+              <input id="namn" type="text" name="Kontaktperson" required autocomplete="name" />
+
+              <label for="foretag">Företagsnamn</label>
+              <input id="foretag" type="text" name="Företagsnamn" required autocomplete="organization" />
+
+              <label for="email">E-post</label>
+              <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
+
+              <label for="telefon">Telefon</label>
+              <input id="telefon" type="tel" name="Telefon" inputmode="tel" autocomplete="tel" />
+
+              <label for="webb">Har ni en nuvarande hemsida?</label>
+              <input id="webb" type="url" name="Nuvarande hemsida" placeholder="https://..." inputmode="url" />
+
+              <label for="verksamhet">Beskriv kort vad ni gör</label>
+              <textarea id="verksamhet" name="Kort om verksamheten" rows="4" placeholder="Till exempel installation, service och reparation inom kyla, frys, värmepumpar, ventilation eller AC"></textarea>
+
+              <fieldset class="check-field">
+                <legend>Vilka tjänster vill ni lyfta på hemsidan?</legend>
+                <div class="checkbox-grid">
+                  <label class="check-option" for="kyla">
+                    <input id="kyla" type="checkbox" name="Tjänster att lyfta[]" value="Kyla">
+                    <span>Kyla</span>
+                  </label>
+                  <label class="check-option" for="frys">
+                    <input id="frys" type="checkbox" name="Tjänster att lyfta[]" value="Frys">
+                    <span>Frys</span>
+                  </label>
+                  <label class="check-option" for="varmepump">
+                    <input id="varmepump" type="checkbox" name="Tjänster att lyfta[]" value="Värmepumpar">
+                    <span>Värmepumpar</span>
+                  </label>
+                  <label class="check-option" for="ac">
+                    <input id="ac" type="checkbox" name="Tjänster att lyfta[]" value="AC / luftkonditionering">
+                    <span>AC / luftkonditionering</span>
+                  </label>
+                  <label class="check-option" for="service">
+                    <input id="service" type="checkbox" name="Tjänster att lyfta[]" value="Service">
+                    <span>Service</span>
+                  </label>
+                  <label class="check-option" for="installation">
+                    <input id="installation" type="checkbox" name="Tjänster att lyfta[]" value="Installation">
+                    <span>Installation</span>
+                  </label>
+                  <label class="check-option" for="jour">
+                    <input id="jour" type="checkbox" name="Tjänster att lyfta[]" value="Jour">
+                    <span>Jour</span>
+                  </label>
+                  <label class="check-option" for="foretagstjanster">
+                    <input id="foretagstjanster" type="checkbox" name="Tjänster att lyfta[]" value="Företagskunder / kommersiella uppdrag">
+                    <span>Företagskunder / kommersiella uppdrag</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <label for="omrade">Vilka orter eller områden jobbar ni i?</label>
+              <textarea id="omrade" name="Orter / serviceområden" rows="3" placeholder="Till exempel Järfälla, Stockholm, Solna, Sundbyberg och resten av Storstockholm"></textarea>
+
+              <label for="kundtyp">Vilka kunder vill ni helst nå?</label>
+              <select id="kundtyp" name="Önskad kundtyp">
+                <option value="Privatpersoner">Privatpersoner</option>
+                <option value="Företag">Företag</option>
+                <option value="Både privatpersoner och företag">Både privatpersoner och företag</option>
+                <option value="Vet inte än">Vet inte än</option>
+              </select>
+
+              <label for="mal">Vad ska hemsidan främst hjälpa er med?</label>
+              <select id="mal" name="Mål med hemsidan" required>
+                <option value="Få fler offertförfrågningar">Få fler offertförfrågningar</option>
+                <option value="Få fler samtal">Få fler samtal</option>
+                <option value="Se mer seriösa och etablerade ut">Se mer seriösa och etablerade ut</option>
+                <option value="Visa tjänster tydligare">Visa tjänster tydligare</option>
+                <option value="Bli tydligare lokalt">Bli tydligare lokalt</option>
+                <option value="Både fler leads och starkare förtroende">Både fler leads och starkare förtroende</option>
+              </select>
+
+              <label for="skillnad">Vad skiljer er från andra i branschen?</label>
+              <textarea id="skillnad" name="Det som skiljer företaget" rows="4" placeholder="Till exempel snabb service, lång erfarenhet, certifieringar, jour, tydlig kommunikation eller särskild nisch"></textarea>
+
+              <fieldset class="check-field">
+                <legend>Vad vill ni helst ha med på hemsidan?</legend>
+                <div class="checkbox-grid">
+                  <label class="check-option" for="startsida">
+                    <input id="startsida" type="checkbox" name="Önskat innehåll[]" value="Startsida">
+                    <span>Startsida</span>
+                  </label>
+                  <label class="check-option" for="omoss">
+                    <input id="omoss" type="checkbox" name="Önskat innehåll[]" value="Om företaget">
+                    <span>Om företaget</span>
+                  </label>
+                  <label class="check-option" for="tjanster">
+                    <input id="tjanster" type="checkbox" name="Önskat innehåll[]" value="Tjänstesidor">
+                    <span>Tjänstesidor</span>
+                  </label>
+                  <label class="check-option" for="kontakt">
+                    <input id="kontakt" type="checkbox" name="Önskat innehåll[]" value="Kontakt">
+                    <span>Kontakt</span>
+                  </label>
+                  <label class="check-option" for="referenser">
+                    <input id="referenser" type="checkbox" name="Önskat innehåll[]" value="Referenser / recensioner">
+                    <span>Referenser / recensioner</span>
+                  </label>
+                  <label class="check-option" for="bilder">
+                    <input id="bilder" type="checkbox" name="Önskat innehåll[]" value="Bildsektion / galleri">
+                    <span>Bildsektion / galleri</span>
+                  </label>
+                  <label class="check-option" for="orter">
+                    <input id="orter" type="checkbox" name="Önskat innehåll[]" value="Ortssidor / lokala undersidor">
+                    <span>Ortssidor / lokala undersidor</span>
+                  </label>
+                  <label class="check-option" for="faq">
+                    <input id="faq" type="checkbox" name="Önskat innehåll[]" value="Vanliga frågor">
+                    <span>Vanliga frågor</span>
+                  </label>
+                  <label class="check-option" for="formular">
+                    <input id="formular" type="checkbox" name="Önskat innehåll[]" value="Kontaktformulär">
+                    <span>Kontaktformulär</span>
+                  </label>
+                  <label class="check-option" for="maps">
+                    <input id="maps" type="checkbox" name="Önskat innehåll[]" value="Google Maps / karta">
+                    <span>Google Maps / karta</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <label for="ton">Hur vill ni att sidan ska kännas?</label>
+              <select id="ton" name="Önskad känsla">
+                <option value="Trygg och professionell">Trygg och professionell</option>
+                <option value="Rak och tydlig">Rak och tydlig</option>
+                <option value="Modern och teknisk">Modern och teknisk</option>
+                <option value="Personlig men seriös">Personlig men seriös</option>
+                <option value="Vet inte än">Vet inte än</option>
+              </select>
+
+              <label for="material">Har ni material klart redan?</label>
+              <select id="material" name="Material">
+                <option value="Ja, vi har text och bilder">Ja, vi har text och bilder</option>
+                <option value="Vi har en del men inte allt">Vi har en del men inte allt</option>
+                <option value="Nej, vi behöver hjälp med innehåll">Nej, vi behöver hjälp med innehåll</option>
+              </select>
+
+              <label for="logga">Har ni logga, färger eller grafisk profil?</label>
+              <select id="logga" name="Logga / grafisk profil">
+                <option value="Ja">Ja</option>
+                <option value="Delvis">Delvis</option>
+                <option value="Nej">Nej</option>
+              </select>
+
+              <label for="inspo">Finns det hemsidor ni gillar?</label>
+              <textarea id="inspo" name="Inspiration / länkar" rows="4" placeholder="Klistra in länkar eller beskriv vad ni gillar med dem"></textarea>
+
+              <label for="seo">Behöver sidan hjälpa er synas lokalt i sökresultat?</label>
+              <select id="seo" name="Lokal synlighet / SEO">
+                <option value="Ja, det är viktigt">Ja, det är viktigt</option>
+                <option value="Bra om det finns med som grund">Bra om det finns med som grund</option>
+                <option value="Inte prioriterat just nu">Inte prioriterat just nu</option>
+                <option value="Vet inte än">Vet inte än</option>
+              </select>
+
+              <label for="befintligtproblem">Vad fungerar dåligt idag eller vad saknas?</label>
+              <textarea id="befintligtproblem" name="Nuvarande problem / behov" rows="4" placeholder="Till exempel gammal sida, otydligt innehåll, dåligt första intryck, svårt att visa tjänster eller för få förfrågningar"></textarea>
+
+              <label for="budget">Ungefärlig budget</label>
+              <select id="budget" name="Budget">
+                <option value="20 000–30 000 kr">20 000–30 000 kr</option>
+                <option value="30 000–40 000 kr">30 000–40 000 kr</option>
+                <option value="40 000–50 000 kr">40 000–50 000 kr</option>
+                <option value="Öppen för förslag">Öppen för förslag</option>
+              </select>
+
+              <label for="tid">När vill ni helst komma igång?</label>
+              <select id="tid" name="Tidsplan">
+                <option value="Så snart som möjligt">Så snart som möjligt</option>
+                <option value="Inom 2–4 veckor">Inom 2–4 veckor</option>
+                <option value="Inom 1–2 månader">Inom 1–2 månader</option>
+                <option value="Ingen exakt tidplan än">Ingen exakt tidplan än</option>
+              </select>
+
+              <label for="ovrigt">Övrigt som är bra att veta</label>
+              <textarea id="ovrigt" name="Övrigt" rows="5" placeholder="Skriv gärna allt som kan hjälpa till att förstå uppdraget bättre"></textarea>
+
+              <small class="form-legal">
+                Genom att skicka formuläret godkänner ni att uppgifterna behandlas enligt
+                <a href="integritet.html">integritetspolicyn</a>.
+              </small>
+
+              <button class="btn contact-submit" type="submit">Skicka brief</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="om">
+      <div class="container">
+        <div class="trust-box">
+          <h2>Vem får ni kontakt med?</h2>
+          <p>
+            Hej. Det är jag, <strong>Erica Nordlöf</strong>, som driver <strong>Nordlöf Nordic</strong>. Jag bygger hemsidor och webblösningar med fokus på tydlighet, struktur och ett starkt första intryck. Den här sidan är gjord för att ni snabbt ska kunna lämna rätt underlag utan att behöva fastna i en lång startsträcka.
+          </p>
+          <p>
+            Jag bygger främst från grunden i kod och jobbar inte främst i färdiga plattformar som WordPress och liknande. Det passar bra när man vill ha ett mer genomtänkt upplägg och slippa standardmall-känsla.
+          </p>
+          <p>
+            Ni har direktkontakt med den som gör jobbet. Kortare beslutsväg, mindre mellanled och mindre konsultteater. Bara rak produktion.
+          </p>
+
+          <div class="trust-links">
+            <a class="trust-link" href="https://webutvecklare.se" target="_blank" rel="noopener noreferrer">Se webutvecklare.se</a>
+            <a class="trust-link" href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Se offroadbumpis.se</a>
+            <a class="trust-link" href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Se safestandard.se</a>
+            <a class="trust-link" href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span class="footer-meta">
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · webutvecklare.se
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('form.contact-box').forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector('.form-status');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = 'form-status is-visible is-error';
+            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Skickar...';
+          submitButton.setAttribute('aria-busy', 'true');
+        }
+
+        if (statusBox) {
+          statusBox.className = 'form-status is-visible is-loading';
+          statusBox.textContent = 'Skickar formuläret...';
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute('aria-busy');
+          }
+        }, 15000);
+      });
+
+      form.addEventListener('input', () => {
+        if (statusBox && statusBox.classList.contains('is-error')) {
+          statusBox.className = 'form-status';
+          statusBox.textContent = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
