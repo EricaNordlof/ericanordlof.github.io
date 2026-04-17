@@ -1,0 +1,1389 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>Förslag på ny hemsida för PRB VVS Teknik Stockholm AB | Nordlöf Nordic</title>
+  <meta
+    name="description"
+    content="Förslag på ny, enklare och tydligare hemsida för PRB VVS Teknik Stockholm AB. Demo inom 1 arbetsdag. Köp först om upplägget känns rätt."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="author" content="Erica Nordlöf" />
+
+  <meta property="og:title" content="Förslag på ny hemsida för PRB VVS Teknik Stockholm AB | Nordlöf Nordic" />
+  <meta property="og:description" content="Enklare, tydligare och modernare hemsida för PRB VVS Teknik Stockholm AB." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/prb-vvs-demo.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Förslag på ny hemsida för PRB VVS Teknik Stockholm AB | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Enklare, tydligare och modernare hemsida för PRB VVS Teknik Stockholm AB." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="canonical" href="https://webutvecklare.se/prb-vvs-demo.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#12305f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#eef3fa;
+      --bg-2:#f7faff;
+      --card:#ffffff;
+      --text:#13233e;
+      --muted:#5d6b82;
+      --line:rgba(19,35,62,0.10);
+      --line-soft:rgba(19,35,62,0.06);
+      --brand:#2f66d7;
+      --brand-dark:#15396f;
+      --brand-soft:#dbe7ff;
+      --accent:#0f2749;
+      --ok:#1f8a5b;
+      --shadow:0 18px 48px rgba(16,35,67,0.08);
+      --shadow-lg:0 28px 70px rgba(16,35,67,0.12);
+      --radius:24px;
+      --radius-lg:32px;
+      --max:1180px;
+      --tap:48px;
+      --header-offset:96px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(47,102,215,0.10) 0, transparent 28%),
+        linear-gradient(180deg, #f8fbff 0%, #eef3fa 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    input,textarea,button{font:inherit}
+    :target{scroll-margin-top:var(--header-offset)}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(248,251,255,0.90);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      min-height:74px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      flex:1 1 auto;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:#62728a;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      font-size:14px;
+      color:#516076;
+      flex:0 1 auto;
+    }
+
+    .nav-links a{
+      white-space:nowrap;
+      transition:.18s ease;
+    }
+
+    .nav-links a:hover{color:var(--accent)}
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(21,57,111,0.24);
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+
+    .hero{
+      padding:clamp(28px, 5vw, 62px) 0 22px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.04fr) minmax(0,0.96fr);
+      gap:26px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#4a5c78;
+      box-shadow:0 10px 28px rgba(16,35,67,0.04);
+      line-height:1.4;
+    }
+
+    h1,h2,h3{margin:0;letter-spacing:-0.04em}
+    h1{
+      margin-top:18px;
+      font-size:clamp(2.2rem, 7vw, 4.7rem);
+      line-height:0.96;
+      text-wrap:balance;
+    }
+
+    .hero p{
+      margin:16px 0 0;
+      max-width:720px;
+      font-size:clamp(16px, 1.9vw, 18px);
+      line-height:1.76;
+      color:#435267;
+    }
+
+    .hero-points{
+      list-style:none;
+      padding:0;
+      margin:24px 0 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .hero-points li,
+    .list-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#22324d;
+      font-weight:600;
+      line-height:1.55;
+    }
+
+    .check{
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      flex:0 0 auto;
+      box-shadow:0 8px 18px rgba(21,57,111,0.18);
+      margin-top:1px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(21,57,111,0.24);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .proof-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 12px;
+      font-size:13px;
+      font-weight:700;
+      color:#46556c;
+      box-shadow:0 10px 24px rgba(16,35,67,0.04);
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg, #15396f 0%, #2f66d7 100%);
+      color:#fff;
+      border-radius:var(--radius-lg);
+      padding:clamp(18px, 2.5vw, 28px);
+      box-shadow:var(--shadow-lg);
+      position:relative;
+      overflow:hidden;
+      min-height:560px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .mockup-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      position:relative;
+      z-index:1;
+      font-size:14px;
+      color:rgba(255,255,255,0.96);
+    }
+
+    .dots{
+      display:flex;
+      gap:6px;
+      flex:0 0 auto;
+    }
+
+    .dots span{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.46);
+    }
+
+    .mockup-box{
+      position:relative;
+      z-index:1;
+      margin-top:18px;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:28px;
+      padding:20px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .mockup-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.16);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .mockup-title{
+      font-size:clamp(28px, 4vw, 40px);
+      line-height:1.02;
+      font-weight:800;
+      letter-spacing:-0.05em;
+      margin-bottom:10px;
+      max-width:520px;
+      text-wrap:balance;
+    }
+
+    .mockup-text{
+      color:rgba(255,255,255,0.92);
+      line-height:1.7;
+      max-width:520px;
+    }
+
+    .mockup-grid{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .mockup-item{
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:14px;
+    }
+
+    .mockup-item strong{
+      display:block;
+      font-size:14px;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .mockup-item span{
+      display:block;
+      font-size:13px;
+      line-height:1.55;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .mockup-bottom{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .mockup-mini{
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:12px;
+      font-size:12px;
+      line-height:1.5;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .section{
+      padding:clamp(34px, 5vw, 66px) 0;
+    }
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .section-title h2{
+      font-size:clamp(1.9rem, 5vw, 3.1rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .section-title p{
+      margin:0;
+      max-width:620px;
+      color:#55647a;
+      line-height:1.75;
+      font-size:clamp(15px, 1.8vw, 17px);
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.95);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{
+      font-size:23px;
+      line-height:1.08;
+      margin-bottom:10px;
+      text-wrap:balance;
+    }
+
+    .card p{
+      margin:0;
+      color:#576579;
+      line-height:1.72;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      min-height:32px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--brand-soft);
+      color:var(--brand-dark);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .board{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(22px, 4vw, 30px);
+      box-shadow:var(--shadow);
+    }
+
+    .board-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+      margin-top:16px;
+    }
+
+    .board-box{
+      border-radius:22px;
+      padding:20px;
+      min-height:100%;
+    }
+
+    .board-box h3{
+      font-size:24px;
+      margin-bottom:10px;
+    }
+
+    .board-box p{
+      margin:0;
+      line-height:1.72;
+    }
+
+    .board-box.old{
+      background:#f4f7fc;
+      border:1px solid rgba(19,35,62,0.08);
+    }
+
+    .board-box.new{
+      background:linear-gradient(145deg, #15396f 0%, #2f66d7 100%);
+      color:#fff;
+    }
+
+    .board-box.new p,
+    .board-box.new .list-item{
+      color:rgba(255,255,255,0.92);
+    }
+
+    .wireframe{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .wire{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:14px;
+      align-items:start;
+      background:#f7faff;
+      border:1px solid rgba(19,35,62,0.08);
+      border-radius:20px;
+      padding:16px;
+    }
+
+    .wire strong{
+      font-size:15px;
+      color:var(--accent);
+      display:block;
+    }
+
+    .wire span{
+      display:block;
+      color:#5a687d;
+      line-height:1.68;
+    }
+
+    .price-box{
+      background:linear-gradient(145deg, #15396f 0%, #2f66d7 100%);
+      color:#fff;
+      border-radius:32px;
+      padding:clamp(22px, 4vw, 30px);
+      box-shadow:var(--shadow-lg);
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(0,0.92fr);
+      gap:20px;
+      align-items:center;
+    }
+
+    .price-box h2{
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      margin-bottom:10px;
+      text-wrap:balance;
+    }
+
+    .price-box p{
+      margin:0;
+      line-height:1.75;
+      color:rgba(255,255,255,0.94);
+      max-width:620px;
+    }
+
+    .price-panel{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .price-label{
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.84);
+      display:block;
+      margin-bottom:10px;
+    }
+
+    .price-big{
+      font-size:clamp(38px, 7vw, 54px);
+      font-weight:800;
+      letter-spacing:-0.05em;
+      line-height:1;
+      margin-bottom:10px;
+      text-wrap:balance;
+    }
+
+    .price-note{
+      color:rgba(255,255,255,0.94);
+      line-height:1.7;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .step-no{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      margin-bottom:16px;
+      box-shadow:0 10px 22px rgba(21,57,111,0.18);
+    }
+
+    .step h3{
+      font-size:24px;
+      margin-bottom:10px;
+    }
+
+    .step p{
+      margin:0;
+      color:#5b697e;
+      line-height:1.72;
+    }
+
+    .contact-wrap{
+      display:grid;
+      grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);
+      gap:18px;
+      align-items:start;
+    }
+
+    .contact-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-card h2{
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      margin-bottom:12px;
+      text-wrap:balance;
+    }
+
+    .contact-card p{
+      margin:0 0 14px;
+      color:#566478;
+      line-height:1.78;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .contact-row{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#263754;
+      line-height:1.6;
+      font-weight:600;
+    }
+
+    .form-card{
+      background:linear-gradient(145deg, #15396f 0%, #2f66d7 100%);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow-lg);
+      color:#fff;
+    }
+
+    .form-card h3{
+      font-size:32px;
+      line-height:1.02;
+      margin-bottom:10px;
+      text-wrap:balance;
+    }
+
+    .form-card p{
+      margin:0 0 18px;
+      color:rgba(255,255,255,0.92);
+      line-height:1.72;
+    }
+
+    .form-box{
+      display:grid;
+      gap:12px;
+    }
+
+    .form-box label{
+      font-size:14px;
+      font-weight:700;
+      color:#fff;
+    }
+
+    .form-box input,
+    .form-box textarea{
+      width:100%;
+      min-height:var(--tap);
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.12);
+      color:#fff;
+      border-radius:14px;
+      padding:14px 16px;
+      outline:none;
+    }
+
+    .form-box input::placeholder,
+    .form-box textarea::placeholder{
+      color:rgba(255,255,255,0.78);
+    }
+
+    .form-box textarea{
+      min-height:130px;
+      resize:vertical;
+    }
+
+    .form-box input:focus,
+    .form-box textarea:focus{
+      border-color:rgba(255,255,255,0.50);
+      box-shadow:0 0 0 3px rgba(255,255,255,0.15);
+    }
+
+    .hidden-field{
+      position:absolute;
+      left:-9999px;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .submit{
+      margin-top:8px;
+      width:100%;
+      background:#fff;
+      color:var(--brand-dark);
+      box-shadow:none;
+    }
+
+    .legal{
+      display:block;
+      margin-top:8px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.9);
+      font-size:13px;
+    }
+
+    .mini-note{
+      margin-top:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.14);
+      font-size:13px;
+      font-weight:700;
+      color:#fff;
+    }
+
+    footer{
+      padding:30px 0 calc(60px + env(safe-area-inset-bottom));
+      color:#627188;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    .footer-line a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    @media (max-width:1140px){
+      .nav-links{display:none}
+      .hero-grid,
+      .grid-2,
+      .price-box,
+      .contact-wrap{
+        grid-template-columns:1fr;
+      }
+      .grid-3,
+      .grid-4,
+      .steps{
+        grid-template-columns:1fr;
+      }
+      .board-grid{
+        grid-template-columns:1fr;
+      }
+      .hero-card{min-height:auto}
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+        --header-offset:88px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        min-height:64px;
+        padding:10px 0;
+      }
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-sub{display:none}
+      .brand-title{font-size:15px}
+
+      .nav-cta{
+        min-height:44px;
+        padding:10px 14px;
+        font-size:14px;
+      }
+
+      .hero{
+        padding-top:18px;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .hero-actions .btn,
+      .btn{
+        width:100%;
+      }
+
+      .hero-proof{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .mockup-grid,
+      .mockup-bottom{
+        grid-template-columns:1fr;
+      }
+
+      .section{
+        padding:30px 0;
+      }
+
+      .section-title{
+        flex-direction:column;
+        align-items:flex-start;
+        margin-bottom:16px;
+      }
+
+      .wire{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+
+      .price-box,
+      .contact-card,
+      .form-card,
+      .card,
+      .step,
+      .board{
+        padding-left:18px;
+        padding-right:18px;
+      }
+    }
+
+    @media (max-width:480px){
+      .eyebrow{
+        font-size:12px;
+        padding:8px 11px;
+      }
+
+      .card h3,
+      .step h3{
+        font-size:21px;
+      }
+
+      .form-card h3{
+        font-size:27px;
+      }
+
+      .price-big{
+        font-size:36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img
+          class="brand-logo"
+          src="nordlof-nordic-logo.png"
+          alt="Nordlöf Nordic logga"
+        >
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Specialanpassat för PRB VVS</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Huvudnavigering">
+        <a href="#rakt-pa-sak">Min take</a>
+        <a href="#upplagg">Upplägg</a>
+        <a href="#pris">Pris</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <a href="#kontakt" class="nav-cta">Skicka svar</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Speciallänk för PRB VVS Teknik Stockholm AB</span>
+
+          <h1>Förslag på ny hemsida som känns enklare, tydligare och mer modern</h1>
+
+          <p>
+            Jag har kollat på er nuvarande sida och min tanke är inte att göra något krångligt.
+            Bara en bättre paketerad hemsida där man direkt fattar vad ni gör, ser riktiga bilder från jobben
+            och hittar kontakt utan att behöva leta runt.
+          </p>
+
+          <ul class="hero-points">
+            <li><span class="check">✓</span><span>Rak startsida där man snabbt fattar vad ni gör</span></li>
+            <li><span class="check">✓</span><span>Era egna bilder får ta mer plats och göra jobbet</span></li>
+            <li><span class="check">✓</span><span>Tjänster, kontakt och Instagram kommer fram tydligare</span></li>
+            <li><span class="check">✓</span><span>Bättre känsla i mobil utan att det blir överdrivet</span></li>
+            <li><span class="check">✓</span><span>Första demo inom 1 arbetsdag om ni vill gå vidare</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-primary">Skicka det ni vill ha med</a>
+            <a href="#upplagg" class="btn btn-secondary">Se mitt upplägg</a>
+          </div>
+
+          <div class="hero-proof" aria-label="Fördelar">
+            <span class="proof-pill">✓ Demo först</span>
+            <span class="proof-pill">✓ Fast pris</span>
+            <span class="proof-pill">✓ Personlig kontakt</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup-head">
+            <span>Demoidé · PRB VVS</span>
+            <div class="dots"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="mockup-box">
+            <span class="mockup-badge">Ny startsida</span>
+            <div class="mockup-title">Rörmärkning, ventilmärkning och instruktioner utan krångel</div>
+            <div class="mockup-text">
+              Tydlig första ruta. Tydliga tjänster. Riktiga bilder från era jobb. Tydlig kontakt.
+            </div>
+
+            <div class="mockup-grid">
+              <div class="mockup-item">
+                <strong>Vad ni gör</strong>
+                <span>Kort och tydligt direkt högst upp.</span>
+              </div>
+              <div class="mockup-item">
+                <strong>Projektbilder</strong>
+                <span>Riktiga bilder ger mer tyngd än långa texter.</span>
+              </div>
+              <div class="mockup-item">
+                <strong>Tjänster</strong>
+                <span>Rörmärkning, ventilation, instruktioner, injustering.</span>
+              </div>
+              <div class="mockup-item">
+                <strong>Kontakt</strong>
+                <span>Telefon, mejl och enkel väg att höra av sig.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mockup-bottom">
+            <div class="mockup-mini">Enklare första intryck</div>
+            <div class="mockup-mini">Starkare mobilkänsla</div>
+            <div class="mockup-mini">Mindre rörigt, mer träffsäkert</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rakt-pa-sak">
+      <div class="container">
+        <div class="section-title">
+          <h2>Rakt på sak</h2>
+          <p>
+            Ni har redan bra grejer. Det syns att ni gör riktiga jobb och har varit med länge.
+            Det jag hade gjort är att paketera det bättre.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <span class="kicker">Det som redan funkar</span>
+            <h3>Ni känns som ett riktigt bolag</h3>
+            <p>
+              Det finns redan tydliga tjänster, riktiga personer, riktiga kontaktuppgifter och riktiga jobb bakom det ni visar.
+              Det är bra grund.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="kicker">Det som går att lyfta</span>
+            <h3>För mycket på en gång</h3>
+            <p>
+              Förstasidan blir lång och lite spretig. Man får mycket info direkt, men inte i den ordning som säljer bäst.
+              Jag hade styrt upp det.
+            </p>
+          </div>
+
+          <div class="card">
+            <span class="kicker">Min plan</span>
+            <h3>Enklare sida som känns mer nutid</h3>
+            <p>
+              Mindre snack. Mer tydlighet. Era bilder högre upp. Tjänsterna rakare. Kontakt snabbare.
+              Samma bolag, bara bättre paketerat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="upplagg">
+      <div class="container">
+        <div class="board">
+          <div class="section-title" style="margin-bottom:0;">
+            <h2>Så hade jag lagt upp den</h2>
+            <p>
+              Inte massa lull-lull. Bara en tydlig företagshemsida som känns proffsig, enkel och lätt att ta till sig.
+            </p>
+          </div>
+
+          <div class="board-grid">
+            <div class="board-box old">
+              <h3>Nu</h3>
+              <div class="list-item"><span class="check">✓</span><span>Mycket innehåll på en gång</span></div>
+              <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Mer information än styrning</span></div>
+              <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Starka bilder men de jobbar inte fullt ut för er</span></div>
+              <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Kontakt finns, men kunde ligga ännu tydligare</span></div>
+            </div>
+
+            <div class="board-box new">
+              <h3>Förslag</h3>
+              <div class="list-item"><span class="check">✓</span><span>Tydlig rubrik direkt: vad ni gör och för vem</span></div>
+              <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Kort intro om bolaget, inte för långt</span></div>
+              <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Tjänster i tydliga block</span></div>
+              <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Projektbilder och Instagram som stärker intrycket</span></div>
+              <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Snabb kontakt längst upp och längst ner</span></div>
+            </div>
+          </div>
+
+          <div class="wireframe">
+            <div class="wire">
+              <strong>1. Första rutan</strong>
+              <span>En tydlig rubrik, en kort text om vad ni gör och en knapp till kontakt. Här ska besökaren fatta grejen direkt.</span>
+            </div>
+            <div class="wire">
+              <strong>2. Tjänster</strong>
+              <span>Fyra tydliga block, till exempel rörmärkning, ventilmärkning, drift- och underhållsinstruktioner och injustering.</span>
+            </div>
+            <div class="wire">
+              <strong>3. Bilder från jobb</strong>
+              <span>Ert bildmaterial är starkt. Det ska upp tydligt så man ser att ni faktiskt är ute och gör jobbet.</span>
+            </div>
+            <div class="wire">
+              <strong>4. Om PRB VVS</strong>
+              <span>Kort om bolaget och erfarenheten. Inget långt romanblock. Bara det som bygger förtroende.</span>
+            </div>
+            <div class="wire">
+              <strong>5. Kontakt</strong>
+              <span>Telefon, mejl, adress och enkel kontaktväg. Rakt och lätt.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Det här hade jag byggt in</h2>
+          <p>
+            Allt nedan är sånt som gör sidan bättre utan att det blir större än det behöver vara.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <div class="card">
+            <h3>Mobil först</h3>
+            <p>Den ska kännas bra i mobilen direkt. Många tittar där först.</p>
+          </div>
+
+          <div class="card">
+            <h3>Rak struktur</h3>
+            <p>Man ska snabbt fatta vad ni gör, utan att läsa massa text.</p>
+          </div>
+
+          <div class="card">
+            <h3>Era egna bilder</h3>
+            <p>Riktiga jobb slår alltid stockbilder och allmänt snack.</p>
+          </div>
+
+          <div class="card">
+            <h3>Instagramlänk</h3>
+            <p>En tydlig väg vidare till fler bilder och mer aktivitet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pris">
+      <div class="container">
+        <div class="price-box">
+          <div>
+            <h2>Pris och upplägg</h2>
+            <p>
+              Min rekommendation här är en enkel men genomtänkt företagshemsida som känns renare än det ni har idag,
+              men fortfarande rak och lätt att jobba vidare med.
+            </p>
+          </div>
+
+          <div class="price-panel">
+            <span class="price-label">Fast pris</span>
+            <div class="price-big">7 900 kr</div>
+            <div class="price-note">
+              exkl. moms<br>
+              Demo inom 1 arbetsdag<br>
+              Köp först om upplägget känns rätt
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="card">
+            <h3>Detta ingår</h3>
+            <div class="list-item"><span class="check">✓</span><span>Ny enklare startsida</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Mobilanpassning</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Tjänsteblock</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Kontaktsektion</span></div>
+          </div>
+
+          <div class="card">
+            <h3>Mer som ingår</h3>
+            <div class="list-item"><span class="check">✓</span><span>Instagramlänk</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Hjälp med struktur</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Grundläggande SEO på sidan</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Personlig kontakt med mig</span></div>
+          </div>
+
+          <div class="card">
+            <h3>Så jobbar jag</h3>
+            <div class="list-item"><span class="check">✓</span><span>Ni skickar det viktigaste</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Jag gör första demo snabbt</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Gillar ni det så kör vi vidare</span></div>
+            <div class="list-item" style="margin-top:10px;"><span class="check">✓</span><span>Inget onödigt krångel</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Så går det till</h2>
+          <p>
+            Det här ska vara lätt att säga ja eller nej till.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-no">1</div>
+            <h3>Ni svarar</h3>
+            <p>
+              Ni skickar det ni vill ha med, till exempel kontaktuppgifter, tjänster och om ni vill att jag ska lyfta något extra.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-no">2</div>
+            <h3>Jag bygger första demo</h3>
+            <p>
+              Jag tar fram ett första förslag inom 1 arbetsdag så ni får något konkret att titta på direkt.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-no">3</div>
+            <h3>Ni bestämmer</h3>
+            <p>
+              Känns det bra så går vi vidare. Känns det inte rätt så har ni ändå fått se upplägget utan att köpa blint.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container contact-wrap">
+        <div class="contact-card">
+          <h2>Om ni vill kan ni svara här direkt</h2>
+          <p>
+            Skicka bara det viktigaste. Jag behöver inte en lång brief. Det räcker att ni skriver vad ni vill ha med och om ni vill att jag ska bygga första demo.
+          </p>
+          <p>
+            Vill ni hellre svara på mejl går det också bra.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-row"><span class="check">✓</span><span>Enklare och tydligare än nuvarande sida</span></div>
+            <div class="contact-row"><span class="check">✓</span><span>Byggd med era riktiga bilder i fokus</span></div>
+            <div class="contact-row"><span class="check">✓</span><span>Fast pris och demo först</span></div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:22px;">
+            <a href="mailto:erica@webutvecklare.se?subject=PRB%20VVS%20-%20ny%20hemsida" class="btn btn-primary">Mejla direkt</a>
+            <a href="https://www.prbvvs.se/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Se nuvarande sida</a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Skicka ett snabbt svar</h3>
+          <p>
+            Skriv bara rakt på sak. Typ vad ni vill ha med, om ni gillar upplägget och om ni vill att jag gör första demo.
+          </p>
+
+          <form
+            class="form-box"
+            action="https://formsubmit.co/erica@webutvecklare.se"
+            method="POST"
+            accept-charset="UTF-8"
+            autocomplete="on"
+          >
+            <input type="hidden" name="_subject" value="PRB VVS - svar från speciallänk" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+            <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot ert svar och återkommer så snart jag kan." />
+            <input type="hidden" name="Kund" value="PRB VVS Teknik Stockholm AB" />
+            <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+            <label for="namn">Namn</label>
+            <input id="namn" type="text" name="Namn" required autocomplete="name" />
+
+            <label for="epost">E-post</label>
+            <input id="epost" type="email" name="E-post" required autocomplete="email" inputmode="email" />
+
+            <label for="telefon">Telefon</label>
+            <input id="telefon" type="tel" name="Telefon" autocomplete="tel" inputmode="tel" />
+
+            <label for="meddelande">Vad vill ni ha med på nya sidan?</label>
+            <textarea
+              id="meddelande"
+              name="Meddelande"
+              placeholder="Skriv t.ex. vilka tjänster ni vill lyfta, om ni vill ha kvar något från nuvarande sida och om ni vill att jag gör första demo."
+              required
+            ></textarea>
+
+            <button class="btn submit" type="submit">Skicka svar</button>
+
+            <small class="legal">
+              Genom att skicka formuläret godkänner ni att uppgifterna behandlas för att jag ska kunna återkomma om uppdraget.
+            </small>
+          </form>
+
+          <span class="mini-note">Demo inom 1 arbetsdag om ni vill köra</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span>
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        ·
+        <a href="https://webutvecklare.se/">webutvecklare.se</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
