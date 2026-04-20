@@ -841,46 +841,6 @@
 
     .seo-copy p:last-child{margin-bottom:0}
 
-    .seo-links{
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid var(--line-soft);
-    }
-
-    .seo-links-label{
-      display:block;
-      margin-bottom:10px;
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:#8a7e77;
-      font-weight:800;
-    }
-
-    .seo-links-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .seo-link-chip{
-      display:inline-flex;
-      align-items:center;
-      min-height:38px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#faf7f5;
-      color:#5c534e;
-      font-size:13px;
-      font-weight:600;
-    }
-
-    .seo-link-chip:hover{
-      background:#fff;
-      color:var(--accent);
-    }
-
     .faq-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -1178,6 +1138,66 @@
       font-size:14px;
     }
 
+    .footer-seo{
+      margin-bottom:24px;
+    }
+
+    .footer-seo-box{
+      background:rgba(255,255,255,0.7);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-seo-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.5rem, 4vw, 2.2rem);
+      line-height:1.05;
+      letter-spacing:-0.03em;
+    }
+
+    .footer-seo-box p{
+      margin:0 0 14px;
+      color:#5c544f;
+      line-height:1.75;
+      max-width:920px;
+    }
+
+    .footer-seo-label{
+      display:block;
+      margin-bottom:10px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:#8a7e77;
+      font-weight:800;
+    }
+
+    .footer-seo-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .footer-seo-chip{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#faf7f5;
+      color:#5c534e;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .footer-seo-chip:hover{
+      background:#fff;
+      color:var(--accent);
+    }
+
     .footer-line{
       border-top:1px solid var(--line);
       padding-top:18px;
@@ -1287,7 +1307,8 @@
       .faq-item,
       .form-body,
       .form-card-head,
-      .contact-box{
+      .contact-box,
+      .footer-seo-box{
         padding-left:18px;
         padding-right:18px;
       }
@@ -1300,6 +1321,8 @@
       .trust-box,.seo-copy{border-radius:22px}
       .trust-links{display:grid;grid-template-columns:1fr}
       .trust-link{width:100%}
+      .footer-seo-links{display:grid;grid-template-columns:1fr}
+      .footer-seo-chip{width:100%;justify-content:flex-start}
       footer{font-size:13px}
     }
 
@@ -1587,33 +1610,6 @@
               För dig som behöver mer än en vanlig företagshemsida, till exempel specialfunktioner, inloggning eller en webbaserad lösning
               som byggs vidare över tid.
             </p>
-          </div>
-        </div>
-
-        <div class="seo-copy" style="margin-top:18px;">
-          <h2>Mer om olika tjänster och upplägg</h2>
-          <p>
-            Alla företag behöver inte samma lösning. Vissa vill ha en ny hemsida från grunden, andra vill uppdatera en befintlig sida
-            eller få hjälp utifrån bransch, stad eller typ av upplägg. Här hittar du fler sidor med mer specifik information.
-          </p>
-          <div class="seo-links">
-            <span class="seo-links-label">Läs mer</span>
-            <div class="seo-links-list">
-              <a href="hemsida-till-foretag.html" class="seo-link-chip">Hemsida till företag</a>
-              <a href="webbdesign-foretag.html" class="seo-link-chip">Webbdesign för företag</a>
-              <a href="hemsida-byggforetag.html" class="seo-link-chip">Hemsida för byggföretag</a>
-              <a href="ny-hemsida-foretag.html" class="seo-link-chip">Köpa ny hemsida</a>
-              <a href="uppdatera-hemsida.html" class="seo-link-chip">Uppdatera hemsida</a>
-              <a href="hemsida-smaforetag.html" class="seo-link-chip">Hemsida för småföretag</a>
-              <a href="hemsida-hantverkare.html" class="seo-link-chip">Hemsida för hantverkare</a>
-              <a href="hemsida-konsult.html" class="seo-link-chip">Hemsida för konsult</a>
-              <a href="webbutveckling-stockholm.html" class="seo-link-chip">Webbutveckling Stockholm</a>
-              <a href="webbutveckling-goteborg.html" class="seo-link-chip">Webbutveckling Göteborg</a>
-              <a href="webbutveckling-malmo.html" class="seo-link-chip">Webbutveckling Malmö</a>
-              <a href="anlita-webbutvecklare.html" class="seo-link-chip">Anlita webbutvecklare</a>
-              <a href="skapa-hemsida.html" class="seo-link-chip">Skapa hemsida</a>
-              <a href="sokmotoroptimering.html" class="seo-link-chip">Sökmotoroptimering</a>
-            </div>
           </div>
         </div>
       </div>
@@ -2328,6 +2324,33 @@
   </main>
 
   <footer>
+    <div class="container footer-seo">
+      <div class="footer-seo-box">
+        <h2>Mer om olika tjänster och upplägg</h2>
+        <p>
+          Alla företag behöver inte samma lösning. Vissa vill ha en ny hemsida från grunden, andra vill uppdatera en befintlig sida
+          eller få hjälp utifrån bransch, stad eller typ av upplägg. Här hittar du fler sidor med mer specifik information.
+        </p>
+        <span class="footer-seo-label">Läs mer</span>
+        <div class="footer-seo-links">
+          <a href="hemsida-till-foretag.html" class="footer-seo-chip">Hemsida till företag</a>
+          <a href="webbdesign-foretag.html" class="footer-seo-chip">Webbdesign för företag</a>
+          <a href="hemsida-byggforetag.html" class="footer-seo-chip">Hemsida för byggföretag</a>
+          <a href="ny-hemsida-foretag.html" class="footer-seo-chip">Köpa ny hemsida</a>
+          <a href="uppdatera-hemsida.html" class="footer-seo-chip">Uppdatera hemsida</a>
+          <a href="hemsida-smaforetag.html" class="footer-seo-chip">Hemsida för småföretag</a>
+          <a href="hemsida-hantverkare.html" class="footer-seo-chip">Hemsida för hantverkare</a>
+          <a href="hemsida-konsult.html" class="footer-seo-chip">Hemsida för konsult</a>
+          <a href="webbutveckling-stockholm.html" class="footer-seo-chip">Webbutveckling Stockholm</a>
+          <a href="webbutveckling-goteborg.html" class="footer-seo-chip">Webbutveckling Göteborg</a>
+          <a href="webbutveckling-malmo.html" class="footer-seo-chip">Webbutveckling Malmö</a>
+          <a href="anlita-webbutvecklare.html" class="footer-seo-chip">Anlita webbutvecklare</a>
+          <a href="skapa-hemsida.html" class="footer-seo-chip">Skapa hemsida</a>
+          <a href="sokmotoroptimering.html" class="footer-seo-chip">Sökmotoroptimering</a>
+        </div>
+      </div>
+    </div>
+
     <div class="container footer-line">
       <span>© 2026 Nordlöf Nordic</span>
       <span class="footer-meta">
