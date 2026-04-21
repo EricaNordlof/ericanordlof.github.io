@@ -77,6 +77,12 @@
       border-radius:10px;
       border:1px solid #ddd;
       font-size:16px;
+      box-sizing:border-box;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
     }
 
     form{
@@ -88,6 +94,13 @@
       display:block;
       margin-top:10px;
       color:#6d625c;
+    }
+
+    .status{
+      margin-top:12px;
+      font-size:14px;
+      font-weight:600;
+      color:#4f4742;
     }
   </style>
 </head>
@@ -106,34 +119,28 @@
     <div>Din rabattkod</div>
     <div class="code" id="code">LADDAR...</div>
 
-    <button class="btn primary" onclick="copyCode()">Kopiera kod</button>
+    <button class="btn primary" type="button" onclick="copyCode()">Kopiera kod</button>
   </div>
 
   <div class="card">
     <h2>Be om demo</h2>
 
-    <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+    <form id="demoForm">
+      <label for="namn">Namn</label>
+      <input id="namn" type="text" name="Namn" required>
 
-      <input type="hidden" name="_subject" value="Ny demo via affiliate" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+      <label for="epost">E-post</label>
+      <input id="epost" type="email" name="E-post" required>
 
-      <input type="hidden" name="Källa" id="refField" />
+      <label for="behov">Vad behöver du hjälp med?</label>
+      <textarea id="behov" name="Behov" required></textarea>
 
-      <label>Namn</label>
-      <input type="text" name="Namn" required>
-
-      <label>E-post</label>
-      <input type="email" name="E-post" required>
-
-      <label>Vad behöver du hjälp med?</label>
-      <textarea name="Behov" required></textarea>
-
-      <label>Rabattkod</label>
+      <label for="codeInput">Rabattkod</label>
       <input type="text" name="Kod" id="codeInput" required style="text-transform:uppercase;">
 
-      <button class="btn primary" type="submit">Skicka</button>
+      <button class="btn primary" type="submit" id="submitBtn">Skicka</button>
+
+      <div class="status" id="status"></div>
 
       <small>
         Rabattkoden används endast om du går vidare efter demon.
@@ -144,47 +151,62 @@
 </div>
 
 <script>
-  const params = new URLSearchParams(window.location.search);
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOK9Rbc9Y1YFyU24SQiOeCpP-DUos5fT_wQU4s-JZGMJQQf1RptZFFCjGviGSvkUeq/exec";
 
+  const params = new URLSearchParams(window.location.search);
   const code = (params.get("code") || "DEMO-0000").toUpperCase();
   const ref = params.get("ref") || "direkt";
 
-  // Sätt UI
-  document.getElementById("code").textContent = code;
-  document.getElementById("codeInput").value = code;
-  document.getElementById("refField").value = ref;
+  const form = document.getElementById("demoForm");
+  const codeBox = document.getElementById("code");
+  const codeInput = document.getElementById("codeInput");
+  const status = document.getElementById("status");
+  const submitBtn = document.getElementById("submitBtn");
 
-  // Lägg till tracking i mail
-  const form = document.querySelector("form");
+  codeBox.textContent = code;
+  codeInput.value = code;
 
-  if (form) {
-    const hiddenCode = document.createElement("input");
-    hiddenCode.type = "hidden";
-    hiddenCode.name = "Affiliate kod";
-    hiddenCode.value = code;
-    form.appendChild(hiddenCode);
-
-    const hiddenRef = document.createElement("input");
-    hiddenRef.type = "hidden";
-    hiddenRef.name = "Ref";
-    hiddenRef.value = ref;
-    form.appendChild(hiddenRef);
-  }
-
-  // Copy funktion
-  function copyCode(){
+  function copyCode() {
     navigator.clipboard.writeText(code);
     alert("Koden kopierad: " + code);
   }
   window.copyCode = copyCode;
 
-  // Validering
-  document.querySelector("form").addEventListener("submit", function(e){
-    const input = document.getElementById("codeInput").value.trim().toUpperCase();
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-    if(input !== code){
-      e.preventDefault();
+    const inputCode = codeInput.value.trim().toUpperCase();
+
+    if (inputCode !== code) {
       alert("Använd koden du fick via länken.");
+      codeInput.focus();
+      return;
+    }
+
+    const data = {
+      Namn: form.elements["Namn"].value.trim(),
+      "E-post": form.elements["E-post"].value.trim(),
+      Behov: form.elements["Behov"].value.trim(),
+      Kod: inputCode,
+      Ref: ref
+    };
+
+    try {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Skickar...";
+      status.textContent = "Skickar...";
+
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      });
+
+      window.location.href = "https://webutvecklare.se/tack.html";
+    } catch (error) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Skicka";
+      status.textContent = "Något gick fel. Testa igen.";
+      alert("Något gick fel när formuläret skulle skickas.");
     }
   });
 </script>
