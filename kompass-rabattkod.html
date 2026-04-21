@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Gratis demo först + 10 % rabatt | Webutvecklare.se</title>
+  <meta
+    name="description"
+    content="Få en gratis demo först hos Webutvecklare.se. Spara rabattkoden KOMPASS-1026 och använd den om du väljer att gå vidare efter godkänd demo."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="author" content="Erica Nordlöf" />
+  <link rel="canonical" href="https://webutvecklare.se/kompass-rabattkod.html" />
+
+  <meta property="og:title" content="Gratis demo först + 10 % rabatt | Webutvecklare.se" />
+  <meta property="og:description" content="Börja med en gratis demo. Spara rabattkoden KOMPASS-1026 och använd den om du går vidare." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/kompass-rabattkod.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gratis demo först + 10 % rabatt | Webutvecklare.se" />
+  <meta name="twitter:description" content="Spara rabattkoden KOMPASS-1026 och börja med en gratis demo." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <meta name="theme-color" content="#f7f0ec" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --bg-soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#231d1a;
+      --muted:#6d625c;
+      --line:rgba(35,29,26,0.08);
+      --line-soft:rgba(35,29,26,0.05);
+      --brand:#d98672;
+      --brand-2:#e8b18d;
+      --brand-3:#f5dfd1;
+      --brand-dark:#b96f61;
+      --accent:#1f1a17;
+      --ok:#2a6d46;
+      --shadow:0 18px 50px rgba(35,29,26,0.08);
+      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --radius:24px;
+      --radius-lg:30px;
+      --max:1120px;
+      --section-pad:clamp(30px, 5vw, 60px);
+      --tap:48px;
+      --header-offset:96px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
+        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    input,textarea,button,select{font:inherit}
+    :target{scroll-margin-top:var(--header-offset)}
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      background:rgba(250,246,243,0.86);
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      flex:1 1 auto;
+    }
+
+    .brand-logo{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-weight:800;
+      font-size:16px;
+      letter-spacing:-0.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#7f7169;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      color:#4c433f;
+      font-size:14px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+
+    .nav-links a:hover{color:var(--accent)}
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+
+    h1,h2,h3{font-family:"Playfair Display",serif}
+
+    .hero{padding:clamp(24px, 4vw, 56px) 0 18px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.02fr) minmax(0,0.98fr);
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      max-width:100%;
+      padding:9px 13px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      color:#7c5d53;
+      box-shadow:0 10px 30px rgba(35,29,26,0.04);
+      line-height:1.4;
+    }
+
+    .hero h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.3rem, 8vw, 4.9rem);
+      line-height:0.98;
+      letter-spacing:-0.045em;
+      text-wrap:balance;
+      max-width:12ch;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:clamp(16px, 2vw, 18px);
+      line-height:1.72;
+      color:#4f4742;
+      max-width:700px;
+    }
+
+    .hero-points{
+      display:grid;
+      gap:10px;
+      margin:24px 0 0;
+      padding:0;
+      list-style:none;
+      color:#3d3733;
+      font-weight:600;
+    }
+
+    .hero-points li,.list-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .check{
+      flex:0 0 auto;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+      box-shadow:0 8px 18px rgba(185,111,97,0.15);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:var(--tap);
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+    }
+
+    .hero-note{
+      margin-top:16px;
+      color:#5f5651;
+      line-height:1.7;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg, #d98571 0%, #e9ab86 100%);
+      color:#fff;
+      border-radius:var(--radius-lg);
+      padding:clamp(18px, 2.2vw, 26px);
+      box-shadow:0 28px 70px rgba(185,111,97,0.18);
+      overflow:hidden;
+      position:relative;
+      min-height:500px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-width:0;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.20), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+      pointer-events:none;
+    }
+
+    .mockup-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+      color:rgba(255,255,255,0.96);
+      font-size:14px;
+      position:relative;
+      z-index:1;
+      line-height:1.4;
+    }
+
+    .dots{display:flex;gap:6px;flex:0 0 auto}
+    .dots span{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.48);
+    }
+
+    .code-box{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:28px;
+      padding:24px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .code-label{
+      font-size:13px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      margin-bottom:10px;
+      color:rgba(255,255,255,0.96);
+    }
+
+    .code-value{
+      background:#fff;
+      color:#1f1a17;
+      border-radius:22px;
+      padding:18px 16px;
+      text-align:center;
+      font-size:clamp(2rem, 6vw, 3rem);
+      line-height:1;
+      letter-spacing:-0.05em;
+      font-weight:800;
+      font-family:"Inter",sans-serif;
+      box-shadow:0 16px 40px rgba(35,29,26,0.14);
+      word-break:break-word;
+    }
+
+    .code-copy-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .code-copy-row .btn{
+      flex:1 1 220px;
+      min-width:0;
+    }
+
+    .code-help{
+      margin-top:12px;
+      color:rgba(255,255,255,0.94);
+      line-height:1.68;
+      font-size:15px;
+    }
+
+    .code-status{
+      margin-top:10px;
+      min-height:22px;
+      font-size:14px;
+      font-weight:700;
+      color:#fff;
+    }
+
+    .mockup-panel{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      position:relative;
+      z-index:1;
+      margin-top:18px;
+    }
+
+    .mini-card{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      padding:12px;
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      min-width:0;
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:13px;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .mini-card span{
+      font-size:12px;
+      color:rgba(255,255,255,0.9);
+      line-height:1.55;
+    }
+
+    .section{padding:var(--section-pad) 0}
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:clamp(1.9rem, 5.3vw, 3.1rem);
+      line-height:1.02;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .section-title p{
+      margin:0;
+      max-width:560px;
+      color:#5b524d;
+      line-height:1.75;
+      font-size:clamp(15px, 1.8vw, 17px);
+    }
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+
+    .card{
+      background:rgba(255,255,255,0.94);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+      text-wrap:balance;
+    }
+
+    .card p{
+      margin:0;
+      color:#5d5550;
+      line-height:1.72;
+    }
+
+    .highlight-box{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      color:#fff;
+      border-radius:34px;
+      padding:clamp(22px, 4vw, 30px);
+      box-shadow:0 24px 58px rgba(185,111,97,0.16);
+      display:grid;
+      grid-template-columns:minmax(0,1.02fr) minmax(0,0.98fr);
+      gap:20px;
+      align-items:center;
+    }
+
+    .highlight-box h2{
+      margin:0 0 10px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .highlight-box p{
+      margin:0;
+      color:#fff;
+      line-height:1.75;
+      max-width:620px;
+    }
+
+    .highlight-panel{
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      min-width:0;
+    }
+
+    .highlight-big{
+      font-size:clamp(34px, 7vw, 52px);
+      font-weight:800;
+      letter-spacing:-0.05em;
+      line-height:1;
+      margin-bottom:10px;
+      font-family:"Inter",sans-serif;
+    }
+
+    .highlight-note{
+      color:#fff;
+      line-height:1.7;
+    }
+
+    .form-card{
+      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      border-radius:28px;
+      box-shadow:0 24px 58px rgba(185,111,97,0.14);
+      overflow:hidden;
+      color:#fff;
+    }
+
+    .form-card-head{
+      padding:22px 24px 0;
+    }
+
+    .form-card-head h3{
+      margin:0 0 8px;
+      font-size:28px;
+      color:#fff;
+      font-family:"Playfair Display",serif;
+    }
+
+    .form-card-head p{
+      margin:0;
+      color:rgba(255,255,255,0.92);
+      line-height:1.65;
+    }
+
+    .form-body{padding:22px}
+
+    .contact-box{
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:24px;
+      padding:22px;
+      display:grid;
+      gap:12px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+    }
+
+    .contact-box strong,
+    .contact-box small,
+    .contact-box label,
+    .contact-box p{color:#fff}
+
+    .contact-box strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:18px;
+    }
+
+    .contact-box small{
+      color:rgba(255,255,255,0.9);
+      line-height:1.6;
+    }
+
+    .contact-box input,
+    .contact-box textarea,
+    .contact-box select{
+      width:100%;
+      min-height:var(--tap);
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.12);
+      color:#fff;
+      border-radius:14px;
+      padding:14px 16px;
+      outline:none;
+      appearance:none;
+      -webkit-appearance:none;
+    }
+
+    .contact-box input::placeholder,
+    .contact-box textarea::placeholder{
+      color:rgba(255,255,255,0.76);
+    }
+
+    .contact-box textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
+    .contact-box select option{
+      color:#111;
+      background:#fff;
+    }
+
+    .contact-box input:focus,
+    .contact-box textarea:focus,
+    .contact-box select:focus{
+      border-color:rgba(255,255,255,0.5);
+      box-shadow:0 0 0 3px rgba(255,255,255,0.15);
+    }
+
+    .form-tip{
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.14);
+      color:#fff;
+      line-height:1.65;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .form-status{
+      display:none;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:14px;
+      line-height:1.5;
+      font-weight:700;
+    }
+
+    .form-status.is-visible{display:block}
+    .form-status.is-error{
+      background:rgba(117,24,24,0.22);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .form-status.is-loading{
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
+
+    .contact-submit{
+      margin-top:8px;
+      width:100%;
+      justify-content:center;
+      background:#fff;
+      color:var(--brand-dark);
+      box-shadow:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-submit[disabled]{
+      opacity:.78;
+      cursor:wait;
+      transform:none;
+    }
+
+    .form-legal{
+      display:block;
+      margin-top:4px;
+      line-height:1.6;
+      color:rgba(255,255,255,0.92);
+      font-size:13px;
+    }
+
+    .form-legal a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    .hidden-field{
+      position:absolute;
+      left:-9999px;
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .trust-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(22px, 4vw, 28px);
+      box-shadow:var(--shadow);
+    }
+
+    .trust-box h2{
+      margin:0 0 12px;
+      font-size:clamp(1.9rem, 5vw, 3rem);
+      line-height:1.02;
+      text-wrap:balance;
+    }
+
+    .trust-box p{
+      margin:0 0 14px;
+      color:#55514d;
+      line-height:1.82;
+    }
+
+    .trust-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .trust-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:var(--tap);
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      text-align:center;
+    }
+
+    footer{
+      padding:30px 0 calc(60px + env(safe-area-inset-bottom));
+      color:#6d6662;
+      font-size:14px;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+
+    .footer-meta a{
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
+    @media (max-width:1140px){
+      .nav-links{display:none}
+      .hero-grid,.highlight-box,.grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .hero-card{min-height:auto}
+    }
+
+    @media (max-width:720px){
+      :root{
+        --radius:20px;
+        --radius-lg:24px;
+        --header-offset:88px;
+      }
+
+      .container{width:min(var(--max), calc(100% - 20px))}
+      .topbar{padding-top:env(safe-area-inset-top)}
+
+      .nav{
+        gap:10px;
+        padding:10px 0;
+        min-height:64px;
+      }
+
+      .brand{gap:10px;min-width:0}
+      .brand-sub{display:none}
+
+      .brand-logo{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+
+      .brand-title{font-size:15px}
+
+      .nav-cta{
+        padding:10px 14px;
+        min-height:44px;
+        font-size:14px;
+      }
+
+      .hero{padding-top:18px}
+
+      .hero h1{
+        line-height:1;
+        margin:14px 0 12px;
+        max-width:none;
+      }
+
+      .hero p{line-height:1.66}
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .hero-actions .btn,
+      .code-copy-row .btn{width:100%}
+
+      .mockup-header{
+        font-size:13px;
+        align-items:flex-start;
+      }
+
+      .mockup-panel{grid-template-columns:1fr}
+      .section{padding:30px 0}
+
+      .section-title{
+        flex-direction:column;
+        align-items:flex-start;
+        margin-bottom:16px;
+      }
+
+      .card,
+      .form-body,
+      .form-card-head,
+      .contact-box,
+      .trust-box{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .highlight-box{border-radius:24px}
+      .highlight-panel{padding:18px}
+      .form-card{border-radius:22px}
+      .trust-box{border-radius:22px}
+      .trust-links{display:grid;grid-template-columns:1fr}
+      .trust-link{width:100%}
+      footer{font-size:13px}
+    }
+
+    @media (max-width:480px){
+      .eyebrow{
+        font-size:12px;
+        padding:8px 11px;
+      }
+
+      .check{
+        width:22px;
+        height:22px;
+        font-size:12px;
+      }
+
+      .highlight-big{font-size:36px}
+      .card h3{font-size:20px}
+      .form-card-head h3{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+        <img class="brand-logo" src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+        <span class="brand-text">
+          <span class="brand-title">Nordlöf Nordic</span>
+          <span class="brand-sub">Gratis demo först</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Snabblänkar">
+        <a href="#sa-funkar-det">Så funkar det</a>
+        <a href="#demo">Gratis demo</a>
+        <a href="#faq">Vanliga frågor</a>
+      </nav>
+
+      <a href="#demo" class="nav-cta">Få gratis demo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Gratis demo först · 10 % rabatt om du går vidare</span>
+
+          <h1>Få en gratis demo först. Spara koden till senare.</h1>
+
+          <p>
+            Behöver du en ny hemsida eller hjälp att uppdatera din nuvarande?
+            Börja med en gratis demo. Du köper inget nu.
+            Spara rabattkoden nedan och använd den bara om du väljer att gå vidare efter att du sett demon.
+          </p>
+
+          <ul class="hero-points">
+            <li><span class="check">✓</span><span>Gratis demo innan du bestämmer dig</span></li>
+            <li><span class="check">✓</span><span>Du köper först efter godkänd demo</span></li>
+            <li><span class="check">✓</span><span>Rabattkoden ger 10 % på första ordern om du går vidare</span></li>
+            <li><span class="check">✓</span><span>Spara koden nu så du har den kvar till nästa steg</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="copyCodeBtn" type="button">Kopiera rabattkoden</button>
+            <a href="#demo" class="btn btn-secondary">Få gratis demo</a>
+          </div>
+
+          <div class="hero-note">
+            Den här sidan är inte en köpsida. Den är till för att du ska spara koden och börja med en demo först.
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mockup-header">
+            <span>Webutvecklare.se · Demo först. Rabatt efteråt.</span>
+            <div class="dots"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="code-box">
+            <div class="code-label">Din rabattkod</div>
+            <div class="code-value" id="discountCode">KOMPASS-1026</div>
+
+            <div class="code-copy-row">
+              <button class="btn btn-secondary" id="copyCodeBtnCard" type="button">Kopiera kod</button>
+              <a href="#demo" class="btn btn-primary">Spara och få demo</a>
+            </div>
+
+            <div class="code-help">
+              Spara koden nu. Om du gillar demon och vill gå vidare använder du koden då, inte nu.
+            </div>
+
+            <div class="code-status" id="codeStatus" aria-live="polite"></div>
+          </div>
+
+          <div class="mockup-panel">
+            <div class="mini-card">
+              <strong>1. Spara koden</strong>
+              <span>Kopiera eller ta en skärmdump direkt nu.</span>
+            </div>
+            <div class="mini-card">
+              <strong>2. Skicka demoformuläret</strong>
+              <span>Jag återkommer med en gratis demo inom normal arbetstid.</span>
+            </div>
+            <div class="mini-card">
+              <strong>3. Använd koden senare</strong>
+              <span>10 % rabatt gäller om du väljer att gå vidare efter demon.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sa-funkar-det">
+      <div class="container">
+        <div class="section-title">
+          <h2>Så funkar det</h2>
+          <p>
+            Målet här är enkelt: du ska slippa köpa blint. Först ser du något konkret. Sedan bestämmer du dig.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Spara koden först</h3>
+            <p>
+              Rabattkoden är kopplad till den här sidan. Spara den direkt så du inte behöver leta efter den senare.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Be om gratis demo</h3>
+            <p>
+              Fyll i formuläret längre ner och beskriv vad du behöver hjälp med. Du börjar med demo, inte köp.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Gå vidare bara om det känns rätt</h3>
+            <p>
+              Gillar du upplägget använder du rabattkoden på första ordern. Gillar du inte demon har du inte köpt något.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="highlight-box">
+          <div>
+            <h2>Gratis demo nu. 10 % rabatt senare.</h2>
+            <p>
+              Det här upplägget är gjort för att sänka tröskeln. Du får se något först.
+              Först därefter tar du ställning till om du vill köpa.
+            </p>
+          </div>
+
+          <div class="highlight-panel">
+            <div class="highlight-big">KOMPASS-1026</div>
+            <div class="highlight-note">
+              Spara koden nu.<br>
+              Gratis demo först.<br>
+              10 % rabatt om du går vidare efter godkänd demo.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vanliga frågor</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Kostar demon något?</h3>
+            <p>Nej. Du börjar med en gratis demo och köper först om du gillar upplägget.</p>
+          </article>
+
+          <article class="card">
+            <h3>När använder jag rabattkoden?</h3>
+            <p>Först om du väljer att gå vidare efter att du sett demon. Inte innan.</p>
+          </article>
+
+          <article class="card">
+            <h3>Vad gäller rabatten för?</h3>
+            <p>10 % rabatt på första ordern. Rabattkoden kan inte kombineras med andra erbjudanden.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-title">
+          <h2>Be om gratis demo</h2>
+          <p>
+            Beskriv kort vad du behöver. Spara rabattkoden först, skicka sedan formuläret.
+          </p>
+        </div>
+
+        <section class="form-card">
+          <div class="form-card-head">
+            <h3>Gratis demo för ny hemsida eller uppdatering</h3>
+            <p>
+              Ingen betalning här. Bara en rak start där du får något konkret att ta ställning till.
+            </p>
+          </div>
+
+          <div class="form-body">
+            <form class="contact-box" action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on" id="demoForm">
+              <strong>Skicka demo-förfrågan</strong>
+              <small>
+                Börja med demo först. Om du sedan vill gå vidare använder du rabattkoden KOMPASS-1026.
+              </small>
+
+              <input type="hidden" name="_subject" value="Ny demo-förfrågan från kompass-rabattkod" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+              <input type="hidden" name="_autoresponse" value="Tack! Din demo-förfrågan har kommit in. Jag återkommer så snart jag kan." />
+              <input type="hidden" name="Källa" value="kompass-rabattkod.html" />
+              <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+
+              <div class="form-tip">
+                Viktigt: spara rabattkoden nu. Du använder den först om du väljer att gå vidare efter demon.
+              </div>
+
+              <div class="form-status" id="formStatus" aria-live="polite"></div>
+
+              <label for="namn">Namn</label>
+              <input id="namn" type="text" name="Namn" required autocomplete="name" />
+
+              <label for="foretag">Företag / verksamhet</label>
+              <input id="foretag" type="text" name="Företag" autocomplete="organization" />
+
+              <label for="email">E-post</label>
+              <input id="email" type="email" name="E-post" required autocomplete="email" inputmode="email" />
+
+              <label for="telefon">Telefon</label>
+              <input id="telefon" type="tel" name="Telefon" autocomplete="tel" inputmode="tel" />
+
+              <label for="typ">Vad vill du ha hjälp med?</label>
+              <select id="typ" name="Typ av uppdrag">
+                <option value="Ny hemsida">Ny hemsida</option>
+                <option value="Uppdatering av befintlig hemsida">Uppdatering av befintlig hemsida</option>
+                <option value="Större webbprojekt eller webblösning">Större webbprojekt eller webblösning</option>
+              </select>
+
+              <label for="nuvarande">Nuvarande hemsida om du har en</label>
+              <input id="nuvarande" type="url" name="Nuvarande hemsida" placeholder="https://..." inputmode="url" />
+
+              <label for="behov">Vad vill du att sidan ska hjälpa dig med?</label>
+              <textarea id="behov" name="Vad behöver du hjälp med?" rows="5" placeholder="t.ex. få fler kunder, se mer proffsig ut, uppdatera nuvarande sida, samla allt på ett ställe" required></textarea>
+
+              <label for="savedCode">Skriv rabattkoden du sparat</label>
+              <input
+                id="savedCode"
+                type="text"
+                name="Sparad rabattkod"
+                placeholder="Skriv eller klistra in koden här"
+                required
+                autocapitalize="characters"
+                spellcheck="false"
+              />
+
+              <small class="form-legal">
+                Rabattkoden används först om du väljer att gå vidare efter godkänd demo.<br>
+                Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+                <a href="integritet.html">integritetspolicyn</a>.
+              </small>
+
+              <button class="btn contact-submit" type="submit" id="submitBtn">Skicka demo-förfrågan</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="trust-box">
+          <h2>Vad du tipsas om här</h2>
+          <p>
+            Webutvecklare.se drivs av Erica Nordlöf och Nordlöf Nordic. Upplägget är enkelt:
+            du kan få en demo först, köpa först efter godkänd demo och sedan använda rabattkoden om du väljer att gå vidare.
+          </p>
+          <p>
+            Det här passar företag som behöver en ny hemsida, vill förbättra sin nuvarande sida eller behöver en större webblösning.
+            Fokus är tydlig struktur, modern design och rak kommunikation utan onödigt krångel.
+          </p>
+          <div class="trust-links">
+            <a class="trust-link" href="https://webutvecklare.se/">Till startsidan</a>
+            <a class="trust-link" href="anlita-webbutvecklare.html">Läs mer om tjänsten</a>
+            <a class="trust-link" href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-line">
+      <span>© 2026 Nordlöf Nordic</span>
+      <span class="footer-meta">
+        Kontakt:
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+        · <a href="https://webutvecklare.se/">webutvecklare.se</a>
+        · <a href="villkor.html">Villkor</a>
+        · <a href="integritet.html">Integritet</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const DISCOUNT_CODE = "KOMPASS-1026";
+      const copyButtons = [
+        document.getElementById("copyCodeBtn"),
+        document.getElementById("copyCodeBtnCard")
+      ].filter(Boolean);
+
+      const codeStatus = document.getElementById("codeStatus");
+      const savedCodeInput = document.getElementById("savedCode");
+      const demoForm = document.getElementById("demoForm");
+      const formStatus = document.getElementById("formStatus");
+      const submitBtn = document.getElementById("submitBtn");
+      const originalButtonText = submitBtn ? submitBtn.textContent : "";
+
+      function setCodeStatus(message) {
+        if (codeStatus) {
+          codeStatus.textContent = message;
+        }
+      }
+
+      async function copyCode() {
+        try {
+          await navigator.clipboard.writeText(DISCOUNT_CODE);
+          setCodeStatus("Rabattkoden är kopierad. Spara den och använd den senare om du går vidare.");
+          if (savedCodeInput && !savedCodeInput.value.trim()) {
+            savedCodeInput.value = DISCOUNT_CODE;
+          }
+          try {
+            localStorage.setItem("webutvecklare_discount_code", DISCOUNT_CODE);
+            localStorage.setItem("webutvecklare_discount_slug", "kompass");
+          } catch (error) {}
+        } catch (error) {
+          setCodeStatus("Kunde inte kopiera automatiskt. Rabattkoden är: " + DISCOUNT_CODE);
+        }
+      }
+
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", copyCode);
+      });
+
+      if (savedCodeInput) {
+        savedCodeInput.addEventListener("input", function () {
+          this.value = this.value.toUpperCase().replace(/\s+/g, "");
+          if (formStatus && formStatus.classList.contains("is-error")) {
+            formStatus.className = "form-status";
+            formStatus.textContent = "";
+          }
+        });
+      }
+
+      if (demoForm) {
+        demoForm.addEventListener("submit", function (event) {
+          const codeValue = savedCodeInput ? savedCodeInput.value.trim().toUpperCase().replace(/\s+/g, "") : "";
+
+          if (!demoForm.checkValidity()) {
+            event.preventDefault();
+            if (formStatus) {
+              formStatus.className = "form-status is-visible is-error";
+              formStatus.textContent = "Fyll i de obligatoriska fälten först.";
+            }
+            demoForm.reportValidity();
+            return;
+          }
+
+          if (codeValue !== DISCOUNT_CODE) {
+            event.preventDefault();
+            if (formStatus) {
+              formStatus.className = "form-status is-visible is-error";
+              formStatus.textContent = "Skriv rabattkoden exakt som du sparade den innan du skickar formuläret.";
+            }
+            if (savedCodeInput) {
+              savedCodeInput.focus();
+            }
+            return;
+          }
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Skickar...";
+            submitBtn.setAttribute("aria-busy", "true");
+          }
+
+          if (formStatus) {
+            formStatus.className = "form-status is-visible is-loading";
+            formStatus.textContent = "Skickar formuläret...";
+          }
+
+          setTimeout(function () {
+            if (submitBtn && submitBtn.disabled) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalButtonText;
+              submitBtn.removeAttribute("aria-busy");
+            }
+          }, 15000);
+        });
+      }
+
+      try {
+        const storedCode = localStorage.getItem("webutvecklare_discount_code");
+        if (storedCode === DISCOUNT_CODE && savedCodeInput && !savedCodeInput.value.trim()) {
+          savedCodeInput.value = storedCode;
+        }
+      } catch (error) {}
+    })();
+  </script>
+</body>
+</html>
