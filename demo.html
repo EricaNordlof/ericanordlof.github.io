@@ -102,6 +102,10 @@
       font-weight:600;
       color:#4f4742;
     }
+
+    iframe{
+      display:none;
+    }
   </style>
 </head>
 
@@ -125,7 +129,14 @@
   <div class="card">
     <h2>Be om demo</h2>
 
-    <form id="demoForm">
+    <form
+      id="demoForm"
+      action="https://script.google.com/macros/s/AKfycby_fFFwgtMGDgsm8lB0jZ_b1nfFHdc6LnnitVF-FSY2-JhEyuxix48hFV0SiMKLqFnP/exec"
+      method="POST"
+      target="hidden_iframe"
+    >
+      <input type="hidden" name="Ref" id="refField">
+
       <label for="namn">Namn</label>
       <input id="namn" type="text" name="Namn" required>
 
@@ -146,13 +157,13 @@
         Rabattkoden används endast om du går vidare efter demon.
       </small>
     </form>
+
+    <iframe name="hidden_iframe" id="hidden_iframe"></iframe>
   </div>
 
 </div>
 
 <script>
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyAQlASV4md_9MeMYtf5FWY-yLMen5oFrNsB8oKPZACGL3kJdhqP0tnp9UYhQ-ChR6K/exec";
-
   const params = new URLSearchParams(window.location.search);
   const code = (params.get("code") || "DEMO-0000").toUpperCase();
   const ref = params.get("ref") || "direkt";
@@ -160,11 +171,13 @@
   const form = document.getElementById("demoForm");
   const codeBox = document.getElementById("code");
   const codeInput = document.getElementById("codeInput");
+  const refField = document.getElementById("refField");
   const status = document.getElementById("status");
   const submitBtn = document.getElementById("submitBtn");
 
   codeBox.textContent = code;
   codeInput.value = code;
+  refField.value = ref;
 
   function copyCode() {
     navigator.clipboard.writeText(code);
@@ -173,45 +186,18 @@
   window.copyCode = copyCode;
 
   form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
     const inputCode = codeInput.value.trim().toUpperCase();
 
     if (inputCode !== code) {
+      e.preventDefault();
       alert("Använd koden du fick via länken.");
       codeInput.focus();
       return;
     }
 
-    const data = {
-      Namn: form.elements["Namn"].value.trim(),
-      "E-post": form.elements["E-post"].value.trim(),
-      Behov: form.elements["Behov"].value.trim(),
-      Kod: inputCode,
-      Ref: ref
-    };
-
     submitBtn.disabled = true;
     submitBtn.textContent = "Skickar...";
     status.textContent = "Skickar...";
-
-    fetch(SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: new URLSearchParams(data).toString()
-    })
-    .then(() => {
-      window.location.href = "https://webutvecklare.se/tack.html";
-    })
-    .catch(() => {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Skicka";
-      status.textContent = "Något gick fel. Testa igen.";
-      alert("Något gick fel när formuläret skulle skickas.");
-    });
 
     setTimeout(function() {
       window.location.href = "https://webutvecklare.se/tack.html";
