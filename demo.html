@@ -52,6 +52,7 @@
       background:#f7f0ec;
       padding:15px;
       border-radius:12px;
+      word-break:break-all;
     }
 
     .btn{
@@ -69,17 +70,13 @@
       color:#fff;
     }
 
-    .secondary{
-      background:#fff;
-      border:1px solid #ddd;
-    }
-
     input, textarea{
       width:100%;
       padding:12px;
       margin-top:10px;
       border-radius:10px;
       border:1px solid #ddd;
+      font-size:16px;
     }
 
     form{
@@ -116,9 +113,11 @@
     <h2>Be om demo</h2>
 
     <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST">
+
       <input type="hidden" name="_subject" value="Ny demo via affiliate" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
 
       <input type="hidden" name="Källa" id="refField" />
 
@@ -132,7 +131,7 @@
       <textarea name="Behov" required></textarea>
 
       <label>Rabattkod</label>
-      <input type="text" name="Kod" id="codeInput" required>
+      <input type="text" name="Kod" id="codeInput" required style="text-transform:uppercase;">
 
       <button class="btn primary" type="submit">Skicka</button>
 
@@ -147,21 +146,47 @@
 <script>
   const params = new URLSearchParams(window.location.search);
 
-  // Hämta kod från URL
-  const code = params.get("code") || "DEMO-0000";
+  const code = (params.get("code") || "DEMO-0000").toUpperCase();
+  const ref = params.get("ref") || "direkt";
 
-  // Hämta ref (valfri tracking)
-  const ref = params.get("ref") || "okänd";
-
-  // Sätt värden
+  // Sätt UI
   document.getElementById("code").textContent = code;
   document.getElementById("codeInput").value = code;
   document.getElementById("refField").value = ref;
 
+  // Lägg till tracking i mail
+  const form = document.querySelector("form");
+
+  if (form) {
+    const hiddenCode = document.createElement("input");
+    hiddenCode.type = "hidden";
+    hiddenCode.name = "Affiliate kod";
+    hiddenCode.value = code;
+    form.appendChild(hiddenCode);
+
+    const hiddenRef = document.createElement("input");
+    hiddenRef.type = "hidden";
+    hiddenRef.name = "Ref";
+    hiddenRef.value = ref;
+    form.appendChild(hiddenRef);
+  }
+
+  // Copy funktion
   function copyCode(){
     navigator.clipboard.writeText(code);
     alert("Koden kopierad: " + code);
   }
+  window.copyCode = copyCode;
+
+  // Validering
+  document.querySelector("form").addEventListener("submit", function(e){
+    const input = document.getElementById("codeInput").value.trim().toUpperCase();
+
+    if(input !== code){
+      e.preventDefault();
+      alert("Använd koden du fick via länken.");
+    }
+  });
 </script>
 
 </body>
