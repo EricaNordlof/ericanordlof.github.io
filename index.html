@@ -12,6 +12,9 @@
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
   <link rel="canonical" href="https://webutvecklare.se/" />
+  <link rel="alternate" hreflang="sv-SE" href="https://webutvecklare.se/" />
+  <link rel="alternate" hreflang="en" href="https://webutvecklare.se/en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://webutvecklare.se/" />
 
   <meta property="og:title" content="Webbutvecklare för småföretag | Nordlöf Nordic" />
   <meta property="og:description" content="Demo inom 1 arbetsdag. Fast pris eller 650 kr/h. Hemsidor, landningssidor, webbfix och webblösningar utan byråkrångel." />
@@ -56,8 +59,11 @@
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
-        "description":"Webbutvecklare för småföretag i Sverige. Hemsidor, landningssidor, uppdateringar, API, backend och speciallösningar. Demo inom 1 arbetsdag.",
-        "areaServed":{"@type":"Country","name":"Sverige"},
+        "description":"Webbutvecklare för småföretag i Sverige. Hemsidor, landningssidor, uppdateringar, API, backend och speciallösningar. Demo inom 1 arbetsdag. Projekt kan även göras på engelska.",
+        "areaServed":[
+          {"@type":"Country","name":"Sverige"},
+          {"@type":"Place","name":"Internationellt"}
+        ],
         "founder":{
           "@type":"Person",
           "name":"Erica Nordlöf",
@@ -189,6 +195,14 @@
             "acceptedAnswer":{
               "@type":"Answer",
               "text":"Ja. API, backend, databaskopplingar, formulärflöden, inloggning, licensflöden och specialfunktioner görs per timme."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Kan jobbet göras på engelska?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Ja. Projekt, kommunikation och webbinnehåll kan även göras på engelska."
             }
           }
         ]
@@ -458,6 +472,13 @@
       color:var(--brand-dark);
     }
 
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:0 0 auto;
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -494,6 +515,26 @@
       background:#fff;
       color:var(--brand-deep);
       box-shadow:0 16px 34px rgba(36,30,26,.08);
+    }
+
+    .lang-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:14px 18px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:900;
+      box-shadow:0 12px 28px rgba(36,30,26,.05);
+      white-space:nowrap;
+    }
+
+    .lang-link:hover{
+      background:#fff7f3;
+      color:var(--brand-deep);
     }
 
     .hero{
@@ -1301,7 +1342,8 @@
 
     body.high-contrast .btn-primary,
     body.high-contrast .btn-secondary,
-    body.high-contrast .btn-light{
+    body.high-contrast .btn-light,
+    body.high-contrast .lang-link{
       background:#000;
       color:#fff;
       border:3px solid #000;
@@ -1414,6 +1456,7 @@
       }
 
       .btn,
+      .lang-link,
       .card,
       .quick-item,
       .cta-box,
@@ -1497,7 +1540,12 @@
         display:none;
       }
 
-      .nav .btn{
+      .nav-actions{
+        gap:8px;
+      }
+
+      .nav .btn,
+      .lang-link{
         min-height:44px;
         padding:11px 14px;
         font-size:14px;
@@ -1561,7 +1609,7 @@
         bottom:calc(10px + env(safe-area-inset-bottom));
         z-index:60;
         display:flex;
-        gap:10px;
+        gap:8px;
         padding:10px;
         border-radius:22px;
         background:rgba(251,247,244,.92);
@@ -1574,8 +1622,8 @@
       .mobile-sticky .btn{
         flex:1;
         min-height:44px;
-        padding:11px 12px;
-        font-size:14px;
+        padding:11px 10px;
+        font-size:13px;
       }
     }
   </style>
@@ -1614,7 +1662,12 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
 
-      <a class="btn btn-primary" href="#kontakt">Få demo</a>
+      <div class="nav-actions" aria-label="Språk och kontakt">
+        <a class="lang-link" href="en.html" hreflang="en" aria-label="View this page in English">
+          English
+        </a>
+        <a class="btn btn-primary" href="#kontakt">Få demo</a>
+      </div>
     </div>
   </header>
 
@@ -1629,11 +1682,13 @@
           <p class="lead">
             Jag bygger hemsidor, landningssidor, webbfix och speciallösningar för småföretag i Sverige.
             Du får en demo först, ser om upplägget passar och betalar först när du vill gå vidare.
+            Självklart kan jag även göra jobbet på engelska.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Få min demo</a>
             <a class="btn btn-secondary" href="#priser">Se priser</a>
+            <a class="btn btn-secondary" href="en.html" hreflang="en">English version</a>
             <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
               Lyssna på kort sammanfattning
             </button>
@@ -2189,6 +2244,16 @@
         </details>
 
         <details>
+          <summary>Kan du göra jobbet på engelska också?</summary>
+          <p>Ja. Jag kan göra projekt, kommunikation och webbinnehåll på engelska också. Du kan även se den engelska versionen av sidan via länken “English”.</p>
+        </details>
+
+        <details>
+          <summary>Can I view this page in English?</summary>
+          <p>Yes. You can open the English version here: <a href="en.html" hreflang="en">webutvecklare.se/en.html</a>.</p>
+        </details>
+
+        <details>
           <summary>Kan jag bara anlita dig för småfix?</summary>
           <p>Ja. Mindre uppdateringar börjar från 490 kr beroende på vad som ska göras.</p>
         </details>
@@ -2323,7 +2388,7 @@
       <div>
         <strong>© 2026 Nordlöf Nordic</strong><br>
         Hemsidor, landningssidor och webbutveckling för småföretag i Sverige.<br>
-        Demo inom 1 arbetsdag · Fast pris eller 650 kr/h
+        Demo inom 1 arbetsdag · Fast pris eller 650 kr/h · Kan även göras på engelska
       </div>
 
       <div>
@@ -2333,6 +2398,7 @@
         <a href="tel:+46793442520">079-344 25 20</a>
 
         <div class="footer-links">
+          <a href="en.html" hreflang="en">English</a>
           <a href="villkor.html">Villkor</a>
           <a href="integritet.html">Integritet</a>
           <a href="affiliate.html">Affiliate</a>
@@ -2346,8 +2412,9 @@
   </footer>
 
   <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Se priser</a>
-    <a class="btn btn-primary" href="#kontakt">Få demo</a>
+    <a class="btn btn-secondary" href="en.html" hreflang="en">English</a>
+    <a class="btn btn-secondary" href="#priser">Priser</a>
+    <a class="btn btn-primary" href="#kontakt">Demo</a>
   </nav>
 
   <script>
@@ -2430,9 +2497,24 @@
     }
 
     const listenButton = document.getElementById('listenSummary');
+    let isSpeaking = false;
+
+    function resetListenButton() {
+      if (listenButton) {
+        listenButton.setAttribute('aria-pressed', 'false');
+        listenButton.textContent = 'Lyssna på kort sammanfattning';
+      }
+      isSpeaking = false;
+    }
 
     if (listenButton && 'speechSynthesis' in window) {
       listenButton.addEventListener('click', () => {
+        if (isSpeaking) {
+          window.speechSynthesis.cancel();
+          resetListenButton();
+          return;
+        }
+
         window.speechSynthesis.cancel();
 
         const summaryText = `
@@ -2442,6 +2524,7 @@
           Webbfix börjar från fyra hundra nittio kronor.
           Större tekniska lösningar kostar sex hundra femtio kronor per timme.
           Du blir inte låst, och kan få material, inloggning och kod efter köp.
+          Jag kan även göra projekt, kommunikation och webbinnehåll på engelska.
           Kontakt sker via formuläret på sidan, e-post eller telefon.
         `;
 
@@ -2450,17 +2533,16 @@
         utterance.rate = 0.95;
         utterance.pitch = 1;
 
+        isSpeaking = true;
         listenButton.setAttribute('aria-pressed', 'true');
-        listenButton.textContent = 'Läser upp sammanfattning...';
+        listenButton.textContent = 'Stoppa uppläsning';
 
         utterance.onend = () => {
-          listenButton.setAttribute('aria-pressed', 'false');
-          listenButton.textContent = 'Lyssna på kort sammanfattning';
+          resetListenButton();
         };
 
         utterance.onerror = () => {
-          listenButton.setAttribute('aria-pressed', 'false');
-          listenButton.textContent = 'Lyssna på kort sammanfattning';
+          resetListenButton();
         };
 
         window.speechSynthesis.speak(utterance);
@@ -2468,6 +2550,12 @@
     } else if (listenButton) {
       listenButton.hidden = true;
     }
+
+    window.addEventListener('pagehide', () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    });
   </script>
 </body>
 </html>
