@@ -84,7 +84,8 @@
           "Java",
           "Spring Boot",
           "PostgreSQL",
-          "SEO för småföretag"
+          "SEO för småföretag",
+          "Tillgänglighet på webben"
         ],
         "hasOfferCatalog":{
           "@type":"OfferCatalog",
@@ -261,6 +262,49 @@
       scroll-margin-top:96px;
     }
 
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      z-index:999;
+      transform:translateY(-150%);
+      background:#fff;
+      color:var(--text);
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:900;
+      border:2px solid var(--brand-deep);
+      box-shadow:0 12px 30px rgba(36,30,26,.16);
+      transition:.15s ease;
+    }
+
+    .skip-link:focus{
+      transform:translateY(0);
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
+    }
+
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
@@ -426,6 +470,13 @@
       flex-wrap:wrap;
       gap:12px;
       margin-top:28px;
+    }
+
+    .speech-note{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
     }
 
     .proof-row{
@@ -811,12 +862,6 @@
       margin:8px 0 12px;
     }
 
-    .price small{
-      font-size:15px;
-      letter-spacing:-.02em;
-      font-weight:800;
-    }
-
     .price-note{
       margin-top:16px;
       padding:14px;
@@ -1142,6 +1187,24 @@
       display:none;
     }
 
+    @media (prefers-reduced-motion: reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+
+      .btn:hover{
+        transform:none;
+      }
+    }
+
     @media(max-width:1080px){
       .nav-links{
         display:none;
@@ -1276,6 +1339,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="https://webutvecklare.se/" aria-label="Gå till startsidan">
@@ -1300,13 +1365,13 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">För småföretag · Demo inom 1 arbetsdag · Fast pris eller 650 kr/h</span>
 
-          <h1>Hemsida utan byråbudget, krångel eller gissningslek.</h1>
+          <h1 id="hero-title">Hemsida utan byråbudget, krångel eller gissningslek.</h1>
 
           <p class="lead">
             Jag bygger hemsidor, landningssidor, webbfix och speciallösningar för småföretag i Sverige.
@@ -1316,7 +1381,14 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Få min demo</a>
             <a class="btn btn-secondary" href="#priser">Se priser</a>
+            <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
+              Lyssna på kort sammanfattning
+            </button>
           </div>
+
+          <p class="speech-note" id="speechNote">
+            Knappen läser upp en kort sammanfattning. Den är ett extra stöd, men sidan fungerar även med vanliga skärmläsare.
+          </p>
 
           <div class="proof-row" aria-label="Fördelar">
             <div class="proof-pill">
@@ -1337,7 +1409,7 @@
         </div>
 
         <aside class="hero-card" aria-label="Kort sammanfattning">
-          <img class="hero-logo" src="nordlof-nordic-logo.png" alt="Nordlöf Nordic">
+          <img class="hero-logo" src="nordlof-nordic-logo.png" alt="">
 
           <div class="mini-steps">
             <div class="mini-step">
@@ -2015,10 +2087,10 @@
     </div>
   </footer>
 
-  <div class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Priser</a>
+  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
+    <a class="btn btn-secondary" href="#priser">Se priser</a>
     <a class="btn btn-primary" href="#kontakt">Få demo</a>
-  </div>
+  </nav>
 
   <script>
     document.querySelectorAll('form').forEach((form) => {
@@ -2059,6 +2131,46 @@
         }, 15000);
       });
     });
+
+    const listenButton = document.getElementById('listenSummary');
+
+    if (listenButton && 'speechSynthesis' in window) {
+      listenButton.addEventListener('click', () => {
+        window.speechSynthesis.cancel();
+
+        const summaryText = `
+          Nordlöf Nordic hjälper småföretag i Sverige med hemsidor, landningssidor, webbfix och speciallösningar.
+          Du får en demo inom en arbetsdag och betalar först om du vill gå vidare.
+          En ny hemsida kostar från två tusen niohundra kronor.
+          Webbfix börjar från fyra hundra nittio kronor.
+          Större tekniska lösningar kostar sex hundra femtio kronor per timme.
+          Du blir inte låst, och kan få material, inloggning och kod efter köp.
+          Kontakt sker via formuläret på sidan, e-post eller telefon.
+        `;
+
+        const utterance = new SpeechSynthesisUtterance(summaryText);
+        utterance.lang = 'sv-SE';
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        listenButton.setAttribute('aria-pressed', 'true');
+        listenButton.textContent = 'Läser upp sammanfattning...';
+
+        utterance.onend = () => {
+          listenButton.setAttribute('aria-pressed', 'false');
+          listenButton.textContent = 'Lyssna på kort sammanfattning';
+        };
+
+        utterance.onerror = () => {
+          listenButton.setAttribute('aria-pressed', 'false');
+          listenButton.textContent = 'Lyssna på kort sammanfattning';
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
   </script>
 </body>
 </html>
