@@ -237,6 +237,51 @@
       overflow-x:hidden;
     }
 
+    body.large-text{
+      font-size:120%;
+    }
+
+    body.large-text .lead{
+      font-size:clamp(20px,2.4vw,24px);
+      line-height:1.85;
+    }
+
+    body.large-text p,
+    body.large-text li,
+    body.large-text span,
+    body.large-text input,
+    body.large-text select,
+    body.large-text textarea,
+    body.large-text button,
+    body.large-text a{
+      line-height:1.8;
+    }
+
+    body.large-text .btn{
+      min-height:56px;
+      padding:16px 24px;
+    }
+
+    body.high-contrast{
+      --bg:#fff;
+      --soft:#fff;
+      --soft-2:#fff;
+      --card:#fff;
+      --text:#000;
+      --muted:#111;
+      --muted-2:#111;
+      --line:#000;
+      --line-strong:#000;
+      --brand:#000;
+      --brand-dark:#000;
+      --brand-deep:#000;
+      --brand-soft:#fff;
+      --shadow:none;
+      --shadow-strong:none;
+      background:#fff;
+      color:#000;
+    }
+
     a{
       color:inherit;
       text-decoration:none;
@@ -303,6 +348,38 @@
       outline:3px solid #111;
       outline-offset:4px;
       box-shadow:0 0 0 6px rgba(255,255,255,.88);
+    }
+
+    .accessibility-tools{
+      position:fixed;
+      right:12px;
+      top:88px;
+      z-index:70;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .accessibility-btn{
+      min-height:44px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      border:2px solid #fff;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 12px 30px rgba(36,30,26,.18);
+    }
+
+    .accessibility-btn:hover{
+      background:#000;
+    }
+
+    .accessibility-btn[aria-pressed="true"]{
+      background:#fff;
+      color:#111;
+      border-color:#111;
     }
 
     .container{
@@ -1187,6 +1264,113 @@
       display:none;
     }
 
+    body.high-contrast .topbar,
+    body.high-contrast .card,
+    body.high-contrast .quick-item,
+    body.high-contrast .best-box,
+    body.high-contrast .compare-card,
+    body.high-contrast .truth-box,
+    body.high-contrast .faq details,
+    body.high-contrast .price-note{
+      background:#fff;
+      color:#000;
+      border:2px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .hero-card,
+    body.high-contrast .highlight,
+    body.high-contrast .price-card.featured,
+    body.high-contrast .cta-box,
+    body.high-contrast .form-card,
+    body.high-contrast .compare-card.mine{
+      background:#000;
+      color:#fff;
+      border:2px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .hero-card p,
+    body.high-contrast .highlight p,
+    body.high-contrast .price-card.featured p,
+    body.high-contrast .cta-box p,
+    body.high-contrast .form-card p,
+    body.high-contrast .compare-card.mine p{
+      color:#fff;
+    }
+
+    body.high-contrast .btn-primary,
+    body.high-contrast .btn-secondary,
+    body.high-contrast .btn-light{
+      background:#000;
+      color:#fff;
+      border:3px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .form-card .btn-light,
+    body.high-contrast .cta-panel .btn-light{
+      background:#fff;
+      color:#000;
+      border:3px solid #fff;
+    }
+
+    body.high-contrast input,
+    body.high-contrast select,
+    body.high-contrast textarea{
+      background:#fff;
+      color:#000;
+      border:3px solid #000;
+    }
+
+    body.high-contrast .form-card input,
+    body.high-contrast .form-card select,
+    body.high-contrast .form-card textarea{
+      background:#000;
+      color:#fff;
+      border:3px solid #fff;
+    }
+
+    body.high-contrast input::placeholder,
+    body.high-contrast textarea::placeholder{
+      color:#333;
+    }
+
+    body.high-contrast .form-card input::placeholder,
+    body.high-contrast .form-card textarea::placeholder{
+      color:#ddd;
+    }
+
+    body.high-contrast .tag,
+    body.high-contrast .chip{
+      background:#fff;
+      color:#000;
+      border:2px solid #000;
+    }
+
+    body.high-contrast .tag.dark{
+      background:#000;
+      color:#fff;
+      border:2px solid #fff;
+    }
+
+    body.high-contrast a{
+      text-decoration:underline;
+      text-decoration-thickness:2px;
+      text-underline-offset:4px;
+    }
+
+    body.high-contrast a:focus-visible,
+    body.high-contrast button:focus-visible,
+    body.high-contrast input:focus-visible,
+    body.high-contrast select:focus-visible,
+    body.high-contrast textarea:focus-visible,
+    body.high-contrast summary:focus-visible{
+      outline:4px solid #ff0;
+      outline-offset:5px;
+      box-shadow:none;
+    }
+
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
@@ -1202,6 +1386,48 @@
 
       .btn:hover{
         transform:none;
+      }
+    }
+
+    @media (prefers-contrast: more){
+      :root{
+        --text:#000;
+        --muted:#222;
+        --line:rgba(0,0,0,.35);
+      }
+
+      .card,
+      .quick-item,
+      .faq details,
+      .price-note{
+        border-color:rgba(0,0,0,.35);
+      }
+
+      a{
+        text-decoration-thickness:2px;
+      }
+    }
+
+    @media (forced-colors: active){
+      *{
+        forced-color-adjust:auto;
+      }
+
+      .btn,
+      .card,
+      .quick-item,
+      .cta-box,
+      .form-card,
+      .hero-card,
+      input,
+      select,
+      textarea{
+        border:2px solid ButtonText;
+      }
+
+      a,
+      button{
+        text-decoration:underline;
       }
     }
 
@@ -1238,6 +1464,23 @@
 
       .topbar{
         padding-top:env(safe-area-inset-top);
+      }
+
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 20px));
+        margin:10px auto 0;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+      }
+
+      .accessibility-btn{
+        width:100%;
+        min-height:48px;
+      }
+
+      body.large-text .mobile-sticky{
+        display:none;
       }
 
       .nav{
@@ -1340,6 +1583,16 @@
 
 <body>
   <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
+      Hög kontrast
+    </button>
+
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
+      Större text
+    </button>
+  </div>
 
   <header class="topbar">
     <div class="container nav">
@@ -1949,6 +2202,11 @@
           <summary>Kan jag lämna en recension efter jobbet?</summary>
           <p>Ja, gärna. Om du är nöjd får du gärna lämna en kort rekommendation på min LinkedIn. Det hjälper mig att bygga förtroende som ny egenföretagare.</p>
         </details>
+
+        <details>
+          <summary>Är sidan tillgänglig för personer med synnedsättning?</summary>
+          <p>Ja. Sidan har stöd för skärmläsare, tangentbordsnavigering, tydlig fokusmarkering, uppläsning av kort sammanfattning, större text och hög kontrast.</p>
+        </details>
       </div>
     </section>
 
@@ -2131,6 +2389,45 @@
         }, 15000);
       });
     });
+
+    const contrastButton = document.getElementById('toggleContrast');
+    const largeTextButton = document.getElementById('toggleLargeText');
+
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute('aria-pressed', String(isPressed));
+      }
+    }
+
+    const savedContrast = localStorage.getItem('highContrast') === 'true';
+    const savedLargeText = localStorage.getItem('largeText') === 'true';
+
+    if (savedContrast) {
+      document.body.classList.add('high-contrast');
+    }
+
+    if (savedLargeText) {
+      document.body.classList.add('large-text');
+    }
+
+    setPressed(contrastButton, savedContrast);
+    setPressed(largeTextButton, savedLargeText);
+
+    if (contrastButton) {
+      contrastButton.addEventListener('click', () => {
+        const isActive = document.body.classList.toggle('high-contrast');
+        localStorage.setItem('highContrast', String(isActive));
+        setPressed(contrastButton, isActive);
+      });
+    }
+
+    if (largeTextButton) {
+      largeTextButton.addEventListener('click', () => {
+        const isActive = document.body.classList.toggle('large-text');
+        localStorage.setItem('largeText', String(isActive));
+        setPressed(largeTextButton, isActive);
+      });
+    }
 
     const listenButton = document.getElementById('listenSummary');
 
