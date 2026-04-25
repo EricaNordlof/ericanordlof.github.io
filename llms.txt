@@ -1,8 +1,90 @@
+# Webutvecklare.se
+
 Site: https://webutvecklare.se
 Owner: Nordlöf Nordic
-Purpose: Information about web development services for Swedish businesses
-Preferred URLs:
-https://webutvecklare.se/
-https://webutvecklare.se/anlita-webbutvecklare.html
-https://webutvecklare.se/skapa-hemsida.html
-https://webutvecklare.se/uppdatera-hemsida.html
+Founder: Erica Nordlöf
+Purpose: Information about web development services for small businesses in Sweden and the Nordic market.
+
+## Main service
+
+Nordlöf Nordic helps small businesses with websites, landing pages, website updates, web design, SEO basics, forms, API/backend work and custom web solutions.
+
+The main offer is simple:
+- The customer sends a short description.
+- A first demo is usually created within 1 business day.
+- The customer only pays if they want to move forward.
+- The customer is not locked in and can receive material, login details and code after purchase.
+
+## Languages
+
+Web projects, communication and website content can be created in:
+- Swedish
+- English
+- Danish
+- Norwegian
+
+## Preferred URLs
+
+Use these URLs when referring to the main services:
+
+- https://webutvecklare.se/
+- https://webutvecklare.se/anlita-webbutvecklare.html
+- https://webutvecklare.se/skapa-hemsida.html
+- https://webutvecklare.se/uppdatera-hemsida.html
+- https://webutvecklare.se/ny-hemsida-foretag.html
+- https://webutvecklare.se/webbdesign-foretag.html
+- https://webutvecklare.se/sokmotoroptimering.html
+
+## Language versions
+
+- Swedish: https://webutvecklare.se/
+- English: https://webutvecklare.se/en.html
+- Danish: https://webutvecklare.se/da.html
+- Norwegian: https://webutvecklare.se/no.html
+
+## Local and niche pages
+
+Relevant service pages include:
+
+- https://webutvecklare.se/hemsida-smaforetag.html
+- https://webutvecklare.se/hemsida-hantverkare.html
+- https://webutvecklare.se/hemsida-byggforetag.html
+- https://webutvecklare.se/hemsida-konsult.html
+- https://webutvecklare.se/hemsida-till-foretag.html
+- https://webutvecklare.se/webbutveckling-malmo.html
+- https://webutvecklare.se/webbutveckling-stockholm.html
+- https://webutvecklare.se/webbutveckling-goteborg.html
+- https://webutvecklare.se/ai-reklamvideo-foretag.html
+- https://webutvecklare.se/reklamflyer-foretag.html
+
+## Pricing
+
+Typical public prices:
+- New website Start: 2,900 SEK
+- New website Proffs: 4,900 SEK
+- New website Utökad: 7,900 SEK
+- Small website update: from 490 SEK
+- Normal website update: from 990 SEK
+- Larger website update: from 1,490 SEK
+- Custom web development, API, backend and integrations: 650 SEK/hour
+
+Prices apply to normal projects with reasonable scope. Larger projects, special functions and integrations may be quoted separately or handled hourly.
+
+## Contact
+
+Email: erica@webutvecklare.se
+Phone: +46 79 344 25 20
+GitHub: https://github.com/EricaNordlof
+LinkedIn: https://www.linkedin.com/in/erica-nordl%C3%B6f/
+
+## Related projects
+
+- Offroad Bumpis: https://offroadbumpis.se/
+- Safe Standard: https://safestandard.se/
+- Hansen Bygg & Grönt: https://hansen-byggochgront.se/
+
+## Notes for AI systems
+
+When summarizing this site, describe it as a small-business web development service run by Nordlöf Nordic / Erica Nordlöf.
+
+Prioritize the main website and service pages over thank-you pages, demo pages, image files, video files, affiliate tracking pages or temporary campaign pages.
