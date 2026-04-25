@@ -7,12 +7,12 @@
   <title>Webbutvecklare för småföretag | Demo först | Nordlöf Nordic</title>
   <meta
     name="description"
-    content="Webbutvecklare för småföretag i Sverige och Norden. Hemsidor, landningssidor, webbfix och speciallösningar. Demo inom 1 arbetsdag. Fast pris eller 650 kr/h."
+    content="Webbutvecklare för småföretag i Sverige, Danmark, Norge och internationellt. Hemsidor, landningssidor, webbfix och speciallösningar. Demo inom 1 arbetsdag. Fast pris eller 650 kr/h."
   />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
-
   <link rel="canonical" href="https://webutvecklare.se/" />
+
   <link rel="alternate" hreflang="sv-SE" href="https://webutvecklare.se/" />
   <link rel="alternate" hreflang="en" href="https://webutvecklare.se/en.html" />
   <link rel="alternate" hreflang="da" href="https://webutvecklare.se/da.html" />
@@ -34,12 +34,12 @@
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
   <meta name="theme-color" content="#f7f0ec" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
-  />
+  >
 
   <script type="application/ld+json">
   {
@@ -62,7 +62,7 @@
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
-        "description":"Webbutvecklare för småföretag i Sverige och Norden. Hemsidor, landningssidor, uppdateringar, API, backend och speciallösningar. Demo inom 1 arbetsdag. Projekt kan göras på svenska, engelska, danska och norska.",
+        "description":"Webbutvecklare för småföretag. Hemsidor, landningssidor, uppdateringar, API, backend och speciallösningar. Demo inom 1 arbetsdag. Projekt kan göras på svenska, engelska, danska och norska.",
         "areaServed":[
           {"@type":"Country","name":"Sverige"},
           {"@type":"Country","name":"Danmark"},
@@ -167,7 +167,7 @@
             "name":"Hur snabbt får jag en demo?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Normalt inom 1 arbetsdag efter att du skickat in formuläret."
+              "text":"Normalt inom 1 arbetsdag efter att du skickat formuläret."
             }
           },
           {
@@ -220,21 +220,17 @@
     :root{
       --bg:#f7f0ec;
       --soft:#fbf7f4;
-      --soft-2:#f4ebe5;
       --card:#fff;
       --text:#241e1a;
       --muted:#665d57;
-      --muted-2:#81756d;
-      --line:rgba(36,30,26,.1);
-      --line-strong:rgba(36,30,26,.16);
+      --line:rgba(36,30,26,.10);
       --brand:#d98672;
       --brand-dark:#b96f61;
       --brand-deep:#8f4d45;
       --brand-soft:#f3d9cc;
-      --green:#2d7b5f;
-      --shadow:0 22px 70px rgba(36,30,26,.08);
-      --shadow-strong:0 30px 90px rgba(36,30,26,.13);
-      --radius:26px;
+      --shadow:0 18px 50px rgba(36,30,26,.08);
+      --shadow-strong:0 26px 70px rgba(36,30,26,.13);
+      --radius:24px;
       --max:1140px;
     }
 
@@ -252,19 +248,15 @@
       font-family:Inter,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(217,134,114,.2), transparent 34%),
-        radial-gradient(circle at 80% 10%, rgba(185,111,97,.12), transparent 26%),
+        radial-gradient(circle at top left, rgba(217,134,114,.20), transparent 32%),
+        radial-gradient(circle at 80% 10%, rgba(185,111,97,.12), transparent 24%),
         linear-gradient(180deg,#fbf7f4 0%,#f4eeea 100%);
       overflow-x:hidden;
+      padding-bottom:0;
     }
 
     body.large-text{
-      font-size:120%;
-    }
-
-    body.large-text .lead{
-      font-size:clamp(20px,2.4vw,24px);
-      line-height:1.85;
+      font-size:118%;
     }
 
     body.large-text p,
@@ -275,24 +267,20 @@
     body.large-text textarea,
     body.large-text button,
     body.large-text a{
-      line-height:1.8;
+      line-height:1.75;
     }
 
-    body.large-text .btn{
-      min-height:56px;
-      padding:16px 24px;
+    body.large-text .mobile-sticky{
+      display:none;
     }
 
     body.high-contrast{
       --bg:#fff;
       --soft:#fff;
-      --soft-2:#fff;
       --card:#fff;
       --text:#000;
       --muted:#111;
-      --muted-2:#111;
       --line:#000;
-      --line-strong:#000;
       --brand:#000;
       --brand-dark:#000;
       --brand-deep:#000;
@@ -325,7 +313,18 @@
     }
 
     :target{
-      scroll-margin-top:96px;
+      scroll-margin-top:92px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
 
     .skip-link{
@@ -358,17 +357,6 @@
       clip:rect(0,0,0,0);
       white-space:nowrap;
       border:0;
-    }
-
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    select:focus-visible,
-    textarea:focus-visible,
-    summary:focus-visible{
-      outline:3px solid #111;
-      outline-offset:4px;
-      box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
 
     .accessibility-tools{
@@ -411,9 +399,9 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:50;
-      background:rgba(251,247,244,.92);
-      border-bottom:1px solid rgba(36,30,26,.07);
+      z-index:60;
+      background:rgba(251,247,244,.94);
+      border-bottom:1px solid rgba(36,30,26,.08);
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
     }
@@ -471,10 +459,6 @@
       font-weight:700;
     }
 
-    .nav-links a{
-      transition:.16s ease;
-    }
-
     .nav-links a:hover{
       color:var(--brand-dark);
     }
@@ -484,12 +468,6 @@
       align-items:center;
       gap:10px;
       flex:0 0 auto;
-    }
-
-    .language-desktop{
-      display:flex;
-      align-items:center;
-      gap:10px;
     }
 
     .btn,
@@ -517,7 +495,7 @@
     .btn-primary{
       background:linear-gradient(135deg,var(--brand-deep),var(--brand));
       color:#fff;
-      box-shadow:0 16px 34px rgba(185,111,97,.25);
+      box-shadow:0 14px 30px rgba(185,111,97,.24);
     }
 
     .btn-secondary,
@@ -525,7 +503,7 @@
       background:#fff;
       border-color:var(--line);
       color:var(--text);
-      box-shadow:0 12px 28px rgba(36,30,26,.05);
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
     }
 
     .btn-light{
@@ -540,8 +518,12 @@
       border-color:rgba(143,77,69,.22);
     }
 
+    .mobile-lang{
+      display:none;
+    }
+
     .hero{
-      padding:clamp(34px,6vw,86px) 0 28px;
+      padding:clamp(34px,6vw,76px) 0 28px;
     }
 
     .hero-grid{
@@ -563,6 +545,7 @@
       font-size:13px;
       font-weight:900;
       box-shadow:0 10px 30px rgba(36,30,26,.04);
+      max-width:100%;
     }
 
     h1,
@@ -573,8 +556,8 @@
 
     h1{
       margin:18px 0 16px;
-      font-size:clamp(2.65rem,8vw,5.45rem);
-      line-height:.94;
+      font-size:clamp(2.55rem,7vw,5.25rem);
+      line-height:.95;
       text-wrap:balance;
     }
 
@@ -590,7 +573,7 @@
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:28px;
+      margin-top:26px;
     }
 
     .speech-note{
@@ -656,9 +639,7 @@
       padding:16px;
       border-radius:18px;
       background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.2);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.22);
     }
 
     .mini-step strong{
@@ -669,7 +650,7 @@
 
     .mini-step span{
       display:block;
-      color:rgba(255,255,255,.93);
+      color:rgba(255,255,255,.94);
       line-height:1.55;
       font-size:14px;
     }
@@ -685,7 +666,7 @@
     }
 
     .quick-item{
-      background:rgba(255,255,255,.78);
+      background:rgba(255,255,255,.82);
       border:1px solid var(--line);
       border-radius:18px;
       padding:14px 16px;
@@ -703,7 +684,7 @@
     }
 
     .section{
-      padding:clamp(34px,5vw,66px) 0;
+      padding:clamp(34px,5vw,64px) 0;
     }
 
     .section-head{
@@ -716,7 +697,7 @@
 
     .section-head h2{
       margin:0;
-      font-size:clamp(2rem,5vw,3.35rem);
+      font-size:clamp(2rem,5vw,3.25rem);
       line-height:1.02;
       text-wrap:balance;
     }
@@ -728,62 +709,59 @@
       line-height:1.75;
     }
 
-    .grid-4{
+    .grid-4,
+    .grid-3,
+    .grid-2,
+    .compare{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
       gap:18px;
+    }
+
+    .grid-4{
+      grid-template-columns:repeat(4,minmax(0,1fr));
     }
 
     .grid-3{
-      display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
     }
 
-    .grid-2{
-      display:grid;
+    .grid-2,
+    .compare{
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
     }
 
     .card,
     .compare-card,
-    .best-box,
-    .truth-box,
-    .quick-item,
-    .faq details{
+    .truth-box{
       background:rgba(255,255,255,.96);
       border:1px solid var(--line);
-      box-shadow:var(--shadow);
-    }
-
-    .card{
       border-radius:var(--radius);
       padding:24px;
+      box-shadow:var(--shadow);
       min-width:0;
     }
 
-    .card h3{
+    .card h3,
+    .compare-card h3{
       margin:0 0 10px;
       font-size:23px;
       letter-spacing:-.035em;
       line-height:1.15;
     }
 
-    .card p{
+    .card p,
+    .compare-card p,
+    .truth-box p{
       margin:0;
       color:var(--muted);
       line-height:1.72;
     }
 
-    .card a{
+    .card a,
+    .compare-card a{
       text-decoration:underline;
       text-underline-offset:4px;
       text-decoration-thickness:1px;
-    }
-
-    .card a:hover{
-      color:var(--brand-dark);
     }
 
     .tag{
@@ -870,7 +848,7 @@
     .highlight .list li:before,
     .price-card.featured .list li:before,
     .compare-card.mine .list li:before{
-      background:rgba(255,255,255,.2);
+      background:rgba(255,255,255,.22);
     }
 
     .service-card{
@@ -897,13 +875,17 @@
     .best-box{
       border-radius:32px;
       padding:clamp(24px,4vw,36px);
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-strong);
       display:grid;
       grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
       gap:22px;
       align-items:center;
     }
 
-    .best-box h2{
+    .best-box h2,
+    .truth-box h2{
       margin:0 0 12px;
       font-size:clamp(2rem,5vw,3rem);
       line-height:1.02;
@@ -947,23 +929,6 @@
       display:block;
       color:var(--muted);
       line-height:1.55;
-    }
-
-    .compare{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-
-    .compare-card{
-      border-radius:28px;
-      padding:24px;
-    }
-
-    .compare-card h3{
-      margin:0 0 14px;
-      font-size:24px;
-      letter-spacing:-.04em;
     }
 
     .price{
@@ -1089,24 +1054,9 @@
       line-height:1.65;
     }
 
-    .truth-box{
-      border-radius:32px;
-      padding:clamp(24px,4vw,34px);
-    }
-
-    .truth-box h2{
-      margin:0 0 12px;
-      font-size:clamp(2rem,5vw,3rem);
-      line-height:1.02;
-    }
-
-    .truth-box p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
-    }
-
     .faq details{
+      background:#fff;
+      border:1px solid var(--line);
       border-radius:20px;
       padding:18px 20px;
       box-shadow:0 12px 35px rgba(36,30,26,.05);
@@ -1120,6 +1070,7 @@
       cursor:pointer;
       font-weight:900;
       font-size:17px;
+      line-height:1.4;
     }
 
     .faq p{
@@ -1147,10 +1098,8 @@
     }
 
     label{
-      display:block;
       font-weight:900;
       font-size:14px;
-      margin-bottom:6px;
     }
 
     input,
@@ -1257,7 +1206,7 @@
     }
 
     footer{
-      padding:34px 0 calc(80px + env(safe-area-inset-bottom));
+      padding:34px 0 calc(86px + env(safe-area-inset-bottom));
       color:#6f655e;
       font-size:14px;
     }
@@ -1281,73 +1230,6 @@
       flex-wrap:wrap;
       gap:12px;
       margin-top:6px;
-    }
-
-    .footer-links a{
-      opacity:.78;
-    }
-
-    .footer-links a:hover{
-      opacity:1;
-      color:var(--brand-dark);
-    }
-
-    .footer-pages{
-      margin-top:18px;
-      border-top:1px solid var(--line);
-      padding-top:14px;
-    }
-
-    .footer-pages summary{
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-weight:900;
-      color:#6f655e;
-      list-style:none;
-      font-size:14px;
-    }
-
-    .footer-pages summary::-webkit-details-marker{
-      display:none;
-    }
-
-    .footer-pages summary::after{
-      content:"+";
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:#fff;
-      border:1px solid var(--line);
-      font-weight:900;
-    }
-
-    .footer-pages[open] summary::after{
-      content:"–";
-    }
-
-    .footer-page-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 14px;
-      margin-top:12px;
-      font-size:13px;
-      line-height:1.6;
-    }
-
-    .footer-page-grid a{
-      color:#6f655e;
-      text-decoration:underline;
-      text-underline-offset:3px;
-      opacity:.82;
-    }
-
-    .footer-page-grid a:hover{
-      opacity:1;
-      color:var(--brand-dark);
     }
 
     .mobile-sticky{
@@ -1433,8 +1315,7 @@
     }
 
     body.high-contrast .tag,
-    body.high-contrast .chip,
-    body.high-contrast .footer-pages summary::after{
+    body.high-contrast .chip{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1545,19 +1426,15 @@
       .contact-row{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
-
-      .hero-card{
-        order:-1;
-      }
     }
 
     @media(max-width:760px){
       body{
-        padding-bottom:82px;
+        padding-bottom:86px;
       }
 
       .container{
-        width:min(var(--max),calc(100% - 20px));
+        width:min(var(--max),calc(100% - 22px));
       }
 
       .topbar{
@@ -1566,27 +1443,28 @@
 
       .accessibility-tools{
         position:static;
-        width:min(var(--max),calc(100% - 20px));
+        width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
         display:grid;
         grid-template-columns:1fr 1fr;
+        gap:8px;
       }
 
       .accessibility-btn{
         width:100%;
-        min-height:48px;
-      }
-
-      body.large-text .mobile-sticky{
-        display:none;
+        min-height:44px;
+        padding:9px 10px;
+        font-size:14px;
       }
 
       .nav{
-        min-height:64px;
+        min-height:auto;
+        padding:10px 0;
+        align-items:center;
       }
 
       .brand{
-        max-width:calc(100% - 92px);
+        gap:10px;
       }
 
       .brand img{
@@ -1595,64 +1473,104 @@
         border-radius:12px;
       }
 
+      .brand strong{
+        font-size:15px;
+      }
+
       .brand span span{
         display:none;
       }
 
-      .language-desktop{
+      .nav-actions{
         display:none;
       }
 
-      .nav-actions{
-        gap:8px;
+      .mobile-lang{
+        display:block;
+        position:sticky;
+        top:61px;
+        z-index:55;
+        background:rgba(251,247,244,.96);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+        border-bottom:1px solid rgba(36,30,26,.08);
       }
 
-      .nav .btn{
-        min-height:44px;
-        padding:11px 14px;
-        font-size:14px;
+      .mobile-lang-scroll{
+        display:flex;
+        gap:8px;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+        padding:9px 11px;
+      }
+
+      .mobile-lang-scroll::-webkit-scrollbar{
+        display:none;
+      }
+
+      .mobile-lang .lang-link{
+        flex:0 0 auto;
+        min-height:40px;
+        padding:10px 13px;
+        font-size:13px;
+        box-shadow:0 6px 16px rgba(36,30,26,.04);
       }
 
       .hero{
-        padding-top:24px;
+        padding:22px 0 18px;
+      }
+
+      .hero-grid{
+        display:flex;
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .hero-grid > div{
+        order:1;
       }
 
       .hero-card{
-        padding:16px;
-        border-radius:24px;
-      }
-
-      .hero-logo{
-        max-width:100%;
-        border-radius:18px;
-        margin-bottom:14px;
-      }
-
-      .mini-step{
-        padding:14px;
-      }
-
-      .mini-step strong{
-        font-size:15px;
-      }
-
-      .mini-step span{
-        font-size:14px;
-        line-height:1.5;
-      }
-
-      h1{
-        font-size:clamp(2.25rem,10.5vw,3.5rem);
+        order:2;
       }
 
       .eyebrow{
-        max-width:100%;
         font-size:12px;
         line-height:1.35;
+        border-radius:16px;
+        padding:8px 10px;
+      }
+
+      h1{
+        font-size:clamp(2.15rem,10.8vw,3.25rem);
+        line-height:.98;
+        margin:14px 0 12px;
+        letter-spacing:-.055em;
+      }
+
+      .lead{
+        font-size:15.5px;
+        line-height:1.65;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:9px;
+        margin-top:18px;
       }
 
       .hero-actions .btn{
         width:100%;
+        min-height:46px;
+        padding:12px 14px;
+        font-size:14px;
+      }
+
+      .speech-note{
+        font-size:13px;
+        line-height:1.5;
       }
 
       .proof-row,
@@ -1664,43 +1582,218 @@
         grid-template-columns:1fr;
       }
 
+      .proof-row{
+        gap:9px;
+        margin-top:16px;
+      }
+
+      .proof-pill,
+      .quick-item{
+        padding:13px;
+        border-radius:16px;
+        font-size:14px;
+      }
+
+      .quick-strip{
+        padding-top:4px;
+      }
+
+      .hero-card{
+        width:100%;
+        padding:16px;
+        border-radius:24px;
+        box-shadow:0 20px 50px rgba(185,111,97,.16);
+      }
+
+      .hero-logo{
+        max-width:100%;
+        margin-bottom:14px;
+        border-radius:18px;
+      }
+
+      .mini-steps{
+        gap:9px;
+      }
+
+      .mini-step{
+        padding:13px;
+        border-radius:16px;
+      }
+
+      .mini-step strong{
+        font-size:15px;
+        line-height:1.25;
+      }
+
+      .mini-step span{
+        font-size:13.5px;
+        line-height:1.45;
+      }
+
+      .section{
+        padding:28px 0;
+      }
+
       .section-head{
         display:block;
+        margin-bottom:14px;
+      }
+
+      .section-head h2{
+        font-size:clamp(1.85rem,9vw,2.55rem);
+        line-height:1.05;
       }
 
       .section-head p{
-        margin-top:10px;
+        margin-top:8px;
+        font-size:15px;
+        line-height:1.65;
       }
 
       .card,
       .compare-card,
       .best-box,
       .truth-box{
-        padding:20px;
-        border-radius:22px;
+        padding:18px;
+        border-radius:20px;
+      }
+
+      .card h3,
+      .compare-card h3{
+        font-size:21px;
+      }
+
+      .card p,
+      .compare-card p,
+      .truth-box p,
+      .best-box p{
+        font-size:15px;
+        line-height:1.65;
+      }
+
+      .best-box{
+        display:block;
+      }
+
+      .score-list{
+        margin-top:16px;
+      }
+
+      .score-item{
+        padding:14px;
+        border-radius:16px;
+      }
+
+      .score-item strong{
+        width:34px;
+        height:34px;
+      }
+
+      .list{
+        gap:9px;
+        margin-top:14px;
+        font-size:15px;
+      }
+
+      .price{
+        font-size:34px;
+      }
+
+      .price-note{
+        font-size:14px;
+        border-radius:16px;
       }
 
       .cta-box,
       .form-card{
-        border-radius:24px;
+        display:block;
+        padding:20px;
+        border-radius:22px;
       }
 
-      .price{
-        font-size:36px;
+      .cta-box h2,
+      .form-card h2,
+      .truth-box h2,
+      .best-box h2{
+        font-size:clamp(1.85rem,8.5vw,2.45rem);
+        line-height:1.05;
       }
 
-      .timeline-item{
-        padding-left:64px;
+      .cta-panel{
+        margin-top:16px;
+        padding:16px;
+        border-radius:18px;
       }
 
-      .footer-page-grid{
-        display:grid;
-        grid-template-columns:1fr 1fr;
+      .cta-panel strong{
+        font-size:32px;
+      }
+
+      .timeline{
         gap:10px;
       }
 
-      .footer-page-grid a{
-        padding:8px 0;
+      .timeline-item{
+        padding:16px 16px 16px 56px;
+        border-radius:18px;
+      }
+
+      .timeline-item:before{
+        left:16px;
+        top:16px;
+        width:30px;
+        height:30px;
+        font-size:13px;
+      }
+
+      .timeline-item strong{
+        font-size:16px;
+      }
+
+      .timeline-item span{
+        font-size:14px;
+        line-height:1.55;
+      }
+
+      .faq details{
+        padding:15px 16px;
+        border-radius:16px;
+      }
+
+      .faq summary{
+        font-size:15px;
+      }
+
+      .faq p{
+        font-size:14px;
+        line-height:1.6;
+      }
+
+      input,
+      select,
+      textarea{
+        min-height:48px;
+        padding:13px 14px;
+        border-radius:14px;
+        font-size:16px;
+      }
+
+      .contact-mini{
+        border-radius:16px;
+        padding:13px;
+      }
+
+      footer{
+        padding-bottom:104px;
+      }
+
+      .footer-box{
+        grid-template-columns:1fr;
+        font-size:13px;
+      }
+
+      .footer-links{
+        gap:9px 12px;
       }
 
       .mobile-sticky{
@@ -1708,33 +1801,50 @@
         left:10px;
         right:10px;
         bottom:calc(10px + env(safe-area-inset-bottom));
-        z-index:60;
-        display:flex;
+        z-index:80;
+        display:grid;
+        grid-template-columns:1fr 1fr 1.2fr;
         gap:8px;
-        padding:10px;
-        border-radius:22px;
+        padding:8px;
+        border-radius:20px;
         background:rgba(251,247,244,.94);
         border:1px solid rgba(36,30,26,.1);
-        box-shadow:0 18px 50px rgba(36,30,26,.16);
+        box-shadow:0 14px 44px rgba(36,30,26,.16);
         backdrop-filter:blur(14px);
         -webkit-backdrop-filter:blur(14px);
       }
 
       .mobile-sticky .btn{
-        flex:1;
-        min-height:44px;
-        padding:11px 8px;
+        min-height:42px;
+        padding:10px 8px;
         font-size:13px;
       }
     }
 
     @media(max-width:390px){
-      .mobile-sticky .btn{
-        font-size:12px;
+      .container{
+        width:min(var(--max),calc(100% - 18px));
       }
 
-      .brand strong{
-        font-size:14px;
+      h1{
+        font-size:2rem;
+      }
+
+      .hero-card{
+        padding:14px;
+      }
+
+      .mini-step{
+        padding:12px;
+      }
+
+      .btn,
+      .lang-link{
+        font-size:13px;
+      }
+
+      .mobile-sticky{
+        grid-template-columns:1fr 1fr 1fr;
       }
     }
   </style>
@@ -1753,12 +1863,10 @@
     </button>
   </div>
 
-  <div class="sr-only" id="accessibilityStatus" aria-live="polite"></div>
-
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" />
+      <a class="brand" href="https://webutvecklare.se/" aria-label="Gå till startsidan">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
         <span>
           <strong>Nordlöf Nordic</strong>
           <span>Webbutvecklare för småföretag</span>
@@ -1768,24 +1876,30 @@
       <nav class="nav-links" aria-label="Huvudnavigering">
         <a href="#tjanster">Tjänster</a>
         <a href="#bast-for">Varför mig</a>
-        <a href="#process">Så funkar det</a>
+        <a href="#process">Så fungerar det</a>
         <a href="#priser">Priser</a>
         <a href="#projekt">Projekt</a>
-        <a href="#recensioner">Recensioner</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
       <div class="nav-actions" aria-label="Språk och kontakt">
-        <div class="language-desktop" aria-label="Språkval">
-          <a class="lang-link" href="/" hreflang="sv-SE" aria-current="page">SV</a>
-          <a class="lang-link" href="en.html" hreflang="en">EN</a>
-          <a class="lang-link" href="da.html" hreflang="da">DA</a>
-          <a class="lang-link" href="no.html" hreflang="no">NO</a>
-        </div>
+        <a class="lang-link" href="/" hreflang="sv-SE" aria-current="page">SV</a>
+        <a class="lang-link" href="en.html" hreflang="en">EN</a>
+        <a class="lang-link" href="da.html" hreflang="da">DA</a>
+        <a class="lang-link" href="no.html" hreflang="no">NO</a>
         <a class="btn btn-primary" href="#kontakt">Få demo</a>
       </div>
     </div>
   </header>
+
+  <nav class="mobile-lang" aria-label="Språkval">
+    <div class="mobile-lang-scroll">
+      <a class="lang-link" href="/" hreflang="sv-SE" aria-current="page">Svenska</a>
+      <a class="lang-link" href="en.html" hreflang="en">English</a>
+      <a class="lang-link" href="da.html" hreflang="da">Dansk</a>
+      <a class="lang-link" href="no.html" hreflang="no">Norsk</a>
+    </div>
+  </nav>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
@@ -1796,24 +1910,21 @@
           <h1 id="hero-title">Hemsida utan byråbudget, krångel eller gissningslek.</h1>
 
           <p class="lead">
-            Jag bygger hemsidor, landningssidor, webbfix och speciallösningar för småföretag i Sverige och Norden.
+            Jag bygger hemsidor, landningssidor, webbfix och speciallösningar för småföretag i Sverige, Norden och internationellt.
             Du får en demo först, ser om upplägget passar och betalar först när du vill gå vidare.
-            Jag kan göra projekt, kommunikation och webbinnehåll på svenska, engelska, danska och norska.
+            Jag kan göra innehåll och projekt på svenska, engelska, danska och norska.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Få min demo</a>
             <a class="btn btn-secondary" href="#priser">Se priser</a>
-            <a class="btn btn-secondary" href="en.html" hreflang="en">English</a>
-            <a class="btn btn-secondary" href="da.html" hreflang="da">Dansk</a>
-            <a class="btn btn-secondary" href="no.html" hreflang="no">Norsk</a>
             <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
               Lyssna på kort sammanfattning
             </button>
           </div>
 
           <p class="speech-note" id="speechNote">
-            Knappen läser upp en kort sammanfattning. Den är ett extra stöd, men sidan fungerar även med vanliga skärmläsare.
+            Knappen läser upp en kort sammanfattning. Det är ett extra stöd, men sidan fungerar även med vanliga skärmläsare.
           </p>
 
           <div class="proof-row" aria-label="Fördelar">
@@ -1829,13 +1940,13 @@
 
             <div class="proof-pill">
               Ingen inlåsning
-              <span>Du kan få material, inlogg och kod efter köp.</span>
+              <span>Du kan få material, inloggning och kod efter köp.</span>
             </div>
           </div>
         </div>
 
         <aside class="hero-card" aria-label="Kort sammanfattning">
-          <img class="hero-logo" src="nordlof-nordic-logo.png" alt="" />
+          <img class="hero-logo" src="nordlof-nordic-logo.png" alt="">
 
           <div class="mini-steps">
             <div class="mini-step">
@@ -1921,7 +2032,7 @@
             <span class="tag">Webbfix</span>
             <h3>Uppdatera befintlig sida</h3>
             <p>
-              Har du redan en hemsida som känns gammal, rörig eller svår att använda? Jag kan fixa den steg för steg.
+              Har du redan en hemsida som känns gammal, rörig eller svår att använda? Jag kan förbättra den steg för steg.
             </p>
             <ul class="list">
               <li>Text och bilder</li>
@@ -1966,12 +2077,12 @@
 
             <div class="score-item">
               <strong>2</strong>
-              <span><b>Priserna syns direkt.</b> Inget “kontakta oss för offert” på allt som går att paketera.</span>
+              <span><b>Priserna syns direkt.</b> Inget “kontakta oss för offert” på allt som går att paketera enkelt.</span>
             </div>
 
             <div class="score-item">
               <strong>3</strong>
-              <span><b>Ingen inlåsning.</b> Du kan få kod, material och inlogg om du vill fortsätta själv eller med någon annan.</span>
+              <span><b>Ingen inlåsning.</b> Du kan få kod, material och inloggning om du vill fortsätta själv eller med någon annan.</span>
             </div>
 
             <div class="score-item">
@@ -1986,11 +2097,11 @@
     <section class="section">
       <div class="container compare">
         <article class="compare-card">
-          <span class="tag">Vanlig byrå</span>
-          <h3>När upplägget blir större än problemet.</h3>
+          <span class="tag">Typisk byrå</span>
+          <h3>När processen blir större än problemet.</h3>
           <p>
-            Många småföretag behöver inte ett långt mötesrace, otydliga startkostnader och en presentation om “digital närvaro”.
-            De behöver en bra sida som går att förstå, använda och bygga vidare på.
+            Många småföretag behöver inte långa möten, otydliga startkostnader och en presentation om “digital närvaro”.
+            De behöver en bra sida som är enkel att förstå, använda och bygga vidare på.
           </p>
           <ul class="list">
             <li>Otydliga priser</li>
@@ -2002,16 +2113,16 @@
 
         <article class="compare-card mine">
           <span class="tag dark">Mitt upplägg</span>
-          <h3>Du ser först. Du betalar sen.</h3>
+          <h3>Du ser först. Du betalar efteråt.</h3>
           <p>
-            Jag tar fram en första demo så du får se riktningen innan du bestämmer dig.
+            Jag tar fram en första demo så du kan se riktningen innan du bestämmer dig.
             Det är enklare, snabbare och mer rimligt för småföretag.
           </p>
           <ul class="list">
             <li>Demo inom 1 arbetsdag</li>
             <li>Fast pris när det går</li>
-            <li>650 kr/h för större teknikjobb</li>
-            <li>Möjlighet att få kod och inlogg efter köp</li>
+            <li>650 kr/h för större tekniska uppdrag</li>
+            <li>Möjlighet att få kod och inloggning efter köp</li>
           </ul>
         </article>
       </div>
@@ -2020,7 +2131,7 @@
     <section class="section" id="process">
       <div class="container">
         <div class="section-head">
-          <h2>Så funkar det.</h2>
+          <h2>Så fungerar det.</h2>
           <p>
             En enkel process. Inga onödiga möten bara för att någon har köpt en dyr kalenderapp.
           </p>
@@ -2049,7 +2160,7 @@
 
           <div class="timeline-item">
             <strong>Sidan publiceras</strong>
-            <span>Efter godkännande hjälper jag till med publicering, domän, länkar och det praktiska.</span>
+            <span>Efter godkännande hjälper jag med publicering, domän, länkar och det praktiska.</span>
           </div>
         </div>
       </div>
@@ -2061,14 +2172,14 @@
           <div>
             <h2>Min starkaste grej: konkret demo före köp.</h2>
             <p>
-              Du slipper köpa en idé i blindo. Jag visar riktningen först, sedan väljer du om vi ska färdigställa sidan.
-              Det är ett enklare beslut för dig och en bättre start för projektet.
+              Du slipper köpa en idé i blindo. Jag visar riktningen först, och därefter väljer du om vi ska färdigställa sidan.
+              Det gör beslutet enklare och projektstarten bättre.
             </p>
           </div>
 
           <div class="cta-panel">
             <strong>1 arbetsdag</strong>
-            <p>Normalt får du en första demo inom 1 arbetsdag efter att du skickat in formuläret.</p>
+            <p>Normalt får du en första demo inom 1 arbetsdag efter att du skickat formuläret.</p>
           </div>
         </div>
       </div>
@@ -2079,7 +2190,7 @@
         <div class="section-head">
           <h2>Priser.</h2>
           <p>
-            Tydliga paket för vanliga hemsidor. Timpris när uppdraget är större, mer tekniskt eller svårt att paketera.
+            Tydliga paket för vanliga hemsidor. Timpris när uppdraget är större, mer tekniskt eller svårt att paketera fast.
           </p>
         </div>
 
@@ -2100,7 +2211,7 @@
           </article>
 
           <article class="card price-card featured">
-            <span class="tag dark">Populärast</span>
+            <span class="tag dark">Mest vald</span>
             <h3>Proffs</h3>
             <div class="price">4 900 kr</div>
             <p>
@@ -2119,7 +2230,7 @@
             <h3>Större upplägg</h3>
             <div class="price">7 900 kr</div>
             <p>
-              För dig som vill ha fler undersidor, mer innehåll och en större helhet direkt från start.
+              För dig som vill ha fler undersidor, mer innehåll och en större helhet från start.
             </p>
             <ul class="list">
               <li>Demo inom 1 arbetsdag</li>
@@ -2173,7 +2284,7 @@
         </div>
 
         <div class="price-note">
-          <strong>Obs:</strong> Priserna gäller vanliga uppdrag med rimligt omfång. Större projekt, specialfunktioner och integrationer offereras eller tas löpande på 650 kr/h.
+          <strong>Obs:</strong> Priserna gäller vanliga uppdrag med rimligt omfång. Större projekt, specialfunktioner och integrationer offereras separat eller tas löpande på 650 kr/h.
         </div>
       </div>
     </section>
@@ -2183,7 +2294,7 @@
         <div class="section-head">
           <h2>Projekt och bevis.</h2>
           <p>
-            Jag är ny egenföretagare, men inte tomhänt. Här är egna projekt, publik kod och riktiga sidor jag byggt.
+            Jag är ny som egenföretagare, men inte tomhänt. Här är egna projekt, publik kod och riktiga sidor jag har byggt.
           </p>
         </div>
 
@@ -2267,7 +2378,8 @@
           <h2>Jag är ny som företagare, men jag jobbar konkret.</h2>
           <p>
             Jag bygger upp min kundbas och är tydlig med det. Därför är upplägget också extra tryggt:
-            du får se en demo först, du ser priset direkt och du blir inte låst till mig efteråt.
+            du får en demo först, du ser priset direkt och du blir inte låst till mig efteråt.
+            Hellre en ärlig start än byråteater.
           </p>
         </article>
 
@@ -2277,13 +2389,13 @@
             Småföretag som vill komma igång.
           </h2>
           <p>
-            Hantverkare, konsulter, lokala tjänsteföretag, personliga varumärken och nya verksamheter som behöver en sida som känns seriös snabbt.
+            Hantverkare, konsulter, lokala tjänsteföretag, personliga varumärken och nya verksamheter som snabbt behöver en sida som känns seriös.
           </p>
           <ul class="list">
             <li>Bygg, trädgård, städ, bilvård och service</li>
             <li>Konsult och frilans</li>
             <li>Skönhet, hälsa och personliga tjänster</li>
-            <li>Företag som vill byta från rörig gammal sida</li>
+            <li>Företag som vill byta från en rörig gammal sida</li>
           </ul>
         </article>
       </div>
@@ -2294,7 +2406,7 @@
         <div class="cta-box">
           <div>
             <span class="tag dark">Recensioner</span>
-            <h2>Nöjd med jobbet? Lämna gärna en rekommendation.</h2>
+            <h2>Nöjd med arbetet? Lämna gärna en rekommendation.</h2>
             <p>
               Om jag har hjälpt dig med hemsida, uppdatering eller webblösning får du gärna skriva några rader på min LinkedIn.
               Det hjälper mig som ny egenföretagare att bygga förtroende och nå fler småföretag.
@@ -2305,7 +2417,7 @@
             <strong>Tack!</strong>
             <p>
               En kort rekommendation gör större skillnad än man tror.
-              Det behöver inte vara långt, bara ärligt.
+              Den behöver inte vara lång, bara ärlig.
             </p>
             <a
               class="btn btn-light"
@@ -2326,13 +2438,13 @@
         <div class="section-head">
           <h2>Vanliga frågor.</h2>
           <p>
-            Svar på det kunder brukar undra innan de skickar en förfrågan.
+            Svar på det kunder ofta vill veta innan de skickar en förfrågan.
           </p>
         </div>
 
         <details>
           <summary>Hur snabbt får jag en demo?</summary>
-          <p>Normalt inom 1 arbetsdag efter att du skickat in formuläret.</p>
+          <p>Normalt inom 1 arbetsdag efter att du skickat formuläret.</p>
         </details>
 
         <details>
@@ -2342,7 +2454,7 @@
 
         <details>
           <summary>Jobbar du i WordPress?</summary>
-          <p>Jag bygger främst nya hemsidor från grunden i kod och jobbar inte främst i WordPress.</p>
+          <p>Jag bygger främst nya hemsidor från grunden i kod och jobbar inte först och främst i WordPress.</p>
         </details>
 
         <details>
@@ -2351,18 +2463,18 @@
         </details>
 
         <details>
-          <summary>Kan du bygga större lösningar också?</summary>
+          <summary>Kan du också bygga större lösningar?</summary>
           <p>Ja. API, backend, inloggning, databaskopplingar, licensflöden, formulär och specialfunktioner görs per timme, från 650 kr/h.</p>
         </details>
 
         <details>
-          <summary>Kan du hjälpa företag i hela Sverige?</summary>
-          <p>Ja. Arbetet kan göras på distans, så du behöver inte finnas i Skåne.</p>
+          <summary>Kan du hjälpa företag utanför Sverige?</summary>
+          <p>Ja. Arbetet kan göras på distans, och jag kan skapa innehåll och projekt på svenska, engelska, danska och norska.</p>
         </details>
 
         <details>
-          <summary>Kan du göra jobbet på flera språk?</summary>
-          <p>Ja. Jag kan göra projekt, kommunikation och webbinnehåll på svenska, engelska, danska och norska.</p>
+          <summary>Kan du göra arbetet på svenska?</summary>
+          <p>Ja. Jag kan göra hemsidor, landningssidor och webbinnehåll på svenska. Du är redan på den svenska versionen av sidan.</p>
         </details>
 
         <details>
@@ -2378,17 +2490,17 @@
 
         <details>
           <summary>Kan jag bara anlita dig för småfix?</summary>
-          <p>Ja. Mindre uppdateringar börjar från 490 kr beroende på vad som ska göras.</p>
+          <p>Ja. Mindre uppdateringar startar från 490 kr beroende på vad som ska göras.</p>
         </details>
 
         <details>
           <summary>Vad händer efter att sidan är klar?</summary>
-          <p>Du kan fortsätta anlita mig för uppdateringar, men du kan också få material, inlogg och kod om du vill fortsätta själv eller med någon annan.</p>
+          <p>Du kan fortsätta anlita mig för uppdateringar, men du kan också få material, inloggning och kod om du vill fortsätta själv eller med någon annan.</p>
         </details>
 
         <details>
-          <summary>Kan jag lämna en recension efter jobbet?</summary>
-          <p>Ja, gärna. Om du är nöjd får du gärna lämna en kort rekommendation på min LinkedIn. Det hjälper mig att bygga förtroende som ny egenföretagare.</p>
+          <summary>Kan jag lämna en recension efter arbetet?</summary>
+          <p>Ja, väldigt gärna. Om du är nöjd får du gärna skriva en kort rekommendation på LinkedIn. Det hjälper mig att bygga förtroende som ny egenföretagare.</p>
         </details>
 
         <details>
@@ -2401,7 +2513,7 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
-          <h2>Få demo eller fråga om uppdrag.</h2>
+          <h2>Få demo eller fråga om ett uppdrag.</h2>
           <p>
             Fyll i det viktigaste. Jag återkommer med nästa steg.
             Ju tydligare du beskriver behovet, desto bättre demo kan jag ta fram.
@@ -2415,7 +2527,7 @@
 
             <div class="contact-mini">
               <strong>Telefon</strong>
-              <a href="tel:+46793442520">079-344 25 20</a>
+              <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
 
             <div class="contact-mini">
@@ -2425,7 +2537,7 @@
           </div>
 
           <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
-            <input type="hidden" name="_subject" value="Ny förfrågan från webutvecklare.se" />
+            <input type="hidden" name="_subject" value="Ny förfrågan från svensk sida på webutvecklare.se" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
@@ -2437,22 +2549,22 @@
             <div class="form-grid">
               <div>
                 <label for="namn">Namn</label>
-                <input id="namn" name="Namn" type="text" autocomplete="name" required />
+                <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
 
               <div>
                 <label for="email">E-post</label>
-                <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required />
+                <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
 
               <div>
                 <label for="telefon">Telefon</label>
-                <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel" />
+                <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
 
               <div>
                 <label for="foretag">Företag</label>
-                <input id="foretag" name="Företag" type="text" autocomplete="organization" />
+                <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
 
               <div>
@@ -2485,12 +2597,12 @@
 
               <div class="full">
                 <label for="beskrivning">Beskriv kort vad du vill ha hjälp med</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Skriv t.ex. vad företaget gör, vad du vill förbättra och vad sidan ska få kunden att göra." required></textarea>
+                <textarea id="beskrivning" name="Beskrivning" placeholder="Skriv till exempel vad företaget gör, vad du vill förbättra och vad sidan ska få kunden att göra." required></textarea>
               </div>
 
               <div class="full">
                 <label for="inspo">Länkar eller inspiration</label>
-                <textarea id="inspo" name="Inspiration" placeholder="Klistra in sidor du gillar, konkurrenter eller annat som hjälper mig förstå känslan."></textarea>
+                <textarea id="inspo" name="Inspiration" placeholder="Klistra in sidor du gillar, konkurrenter eller annat som hjälper mig förstå stilen."></textarea>
               </div>
             </div>
 
@@ -2507,11 +2619,10 @@
   </main>
 
   <footer>
-  <div class="container">
-    <div class="footer-box">
+    <div class="container footer-box">
       <div>
         <strong>© 2026 Nordlöf Nordic</strong><br>
-        Hemsidor, landningssidor och webbutveckling för småföretag i Sverige och Norden.<br>
+        Hemsidor, landningssidor och webbutveckling för småföretag i Sverige, Norden och internationellt.<br>
         Demo inom 1 arbetsdag · Fast pris eller 650 kr/h · Kan göras på svenska, engelska, danska och norska
       </div>
 
@@ -2519,54 +2630,28 @@
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         ·
-        <a href="tel:+46793442520">079-344 25 20</a>
+        <a href="tel:+46793442520">+46 79-344 25 20</a>
 
         <div class="footer-links">
-          <a href="/" hreflang="sv-SE">Svenska</a>
+          <a href="/" hreflang="sv-SE" aria-current="page">Svenska</a>
           <a href="en.html" hreflang="en">English</a>
           <a href="da.html" hreflang="da">Dansk</a>
           <a href="no.html" hreflang="no">Norsk</a>
           <a href="villkor.html">Villkor</a>
           <a href="integritet.html">Integritet</a>
-          <a href="affiliate.html">Affiliate</a>
+          <a href="affiliate.html" hreflang="sv-SE">Affiliateprogram</a>
           <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Offroad Bumpis</a>
+          <a href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Safe Standard</a>
         </div>
       </div>
     </div>
-
-    <details class="footer-pages">
-      <summary>Fler sidor</summary>
-
-      <div class="footer-page-grid">
-        <a href="/ny-hemsida-foretag.html">Ny hemsida företag</a>
-        <a href="/uppdatera-hemsida.html">Uppdatera hemsida</a>
-        <a href="/skapa-hemsida.html">Skapa hemsida</a>
-        <a href="/webbdesign-foretag.html">Webbdesign företag</a>
-        <a href="/sokmotoroptimering.html">Sökmotoroptimering</a>
-
-        <a href="/hemsida-smaforetag.html">Hemsida småföretag</a>
-        <a href="/hemsida-hantverkare.html">Hemsida hantverkare</a>
-        <a href="/hemsida-byggforetag.html">Hemsida byggföretag</a>
-        <a href="/hemsida-konsult.html">Hemsida konsult</a>
-        <a href="/hemsida-till-foretag.html">Hemsida till företag</a>
-
-        <a href="/webbutveckling-malmo.html">Webbutveckling Malmö</a>
-        <a href="/webbutveckling-stockholm.html">Webbutveckling Stockholm</a>
-        <a href="/webbutveckling-goteborg.html">Webbutveckling Göteborg</a>
-
-        <a href="/anlita-webbutvecklare.html">Anlita webbutvecklare</a>
-        <a href="/ai-reklamvideo-foretag.html">AI-reklamvideo företag</a>
-        <a href="/reklamflyer-foretag.html">Reklamflyer företag</a>
-      </div>
-    </details>
-  </div>
-</footer>
+  </footer>
 
   <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="en.html" hreflang="en">EN</a>
-    <a class="btn btn-secondary" href="da.html" hreflang="da">DA</a>
-    <a class="btn btn-secondary" href="no.html" hreflang="no">NO</a>
+    <a class="btn btn-secondary" href="#priser">Priser</a>
+    <a class="btn btn-secondary" href="#tjanster">Tjänster</a>
     <a class="btn btn-primary" href="#kontakt">Demo</a>
   </nav>
 
@@ -2610,32 +2695,8 @@
       });
     });
 
-    const statusBox = document.getElementById('accessibilityStatus');
     const contrastButton = document.getElementById('toggleContrast');
     const largeTextButton = document.getElementById('toggleLargeText');
-
-    function announce(message) {
-      if (statusBox) {
-        statusBox.textContent = message;
-      }
-    }
-
-    function safeStorageGet(key) {
-      try {
-        return localStorage.getItem(key);
-      } catch (error) {
-        return null;
-      }
-    }
-
-    function safeStorageSet(key, value) {
-      try {
-        localStorage.setItem(key, value);
-        return true;
-      } catch (error) {
-        return false;
-      }
-    }
 
     function setPressed(button, isPressed) {
       if (button) {
@@ -2643,8 +2704,25 @@
       }
     }
 
-    const savedContrast = safeStorageGet('highContrastSv') === 'true';
-    const savedLargeText = safeStorageGet('largeTextSv') === 'true';
+    function safeGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function safeSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (error) {
+        return false;
+      }
+      return true;
+    }
+
+    const savedContrast = safeGet('highContrast') === 'true';
+    const savedLargeText = safeGet('largeText') === 'true';
 
     if (savedContrast) {
       document.body.classList.add('high-contrast');
@@ -2660,18 +2738,16 @@
     if (contrastButton) {
       contrastButton.addEventListener('click', () => {
         const isActive = document.body.classList.toggle('high-contrast');
-        safeStorageSet('highContrastSv', String(isActive));
+        safeSet('highContrast', String(isActive));
         setPressed(contrastButton, isActive);
-        announce(isActive ? 'Hög kontrast är påslagen.' : 'Hög kontrast är avstängd.');
       });
     }
 
     if (largeTextButton) {
       largeTextButton.addEventListener('click', () => {
         const isActive = document.body.classList.toggle('large-text');
-        safeStorageSet('largeTextSv', String(isActive));
+        safeSet('largeText', String(isActive));
         setPressed(largeTextButton, isActive);
-        announce(isActive ? 'Större text är påslagen.' : 'Större text är avstängd.');
       });
     }
 
@@ -2691,7 +2767,6 @@
         if (isSpeaking) {
           window.speechSynthesis.cancel();
           resetListenButton();
-          announce('Uppläsningen stoppades.');
           return;
         }
 
@@ -2701,10 +2776,10 @@
           Nordlöf Nordic hjälper småföretag med hemsidor, landningssidor, webbfix och speciallösningar.
           Du får normalt en demo inom en arbetsdag och betalar först om du vill gå vidare.
           En ny hemsida kostar från två tusen niohundra kronor.
-          Webbfix börjar från fyra hundra nittio kronor.
+          Webbfix startar från fyra hundra nittio kronor.
           Större tekniska lösningar kostar sex hundra femtio kronor per timme.
-          Du blir inte låst och kan få material, inloggning och kod efter köp.
-          Projekt, kommunikation och webbinnehåll kan göras på svenska, engelska, danska och norska.
+          Du blir inte låst, och du kan få material, inloggning och kod efter köp.
+          Jag kan skapa projekt, kommunikation och webbinnehåll på svenska, engelska, danska och norska.
           Kontakt sker via formuläret på sidan, e-post eller telefon.
         `;
 
@@ -2716,16 +2791,13 @@
         isSpeaking = true;
         listenButton.setAttribute('aria-pressed', 'true');
         listenButton.textContent = 'Stoppa uppläsning';
-        announce('Uppläsningen startade.');
 
         utterance.onend = () => {
           resetListenButton();
-          announce('Uppläsningen är klar.');
         };
 
         utterance.onerror = () => {
           resetListenButton();
-          announce('Uppläsningen kunde inte genomföras.');
         };
 
         window.speechSynthesis.speak(utterance);
