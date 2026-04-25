@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Affiliate Program | Web Development Referrals | Nordlöf Nordic</title>
+  <title>Affiliate Program | 10% Customer Discount + 20% Commission | Nordlöf Nordic</title>
   <meta
     name="description"
-    content="Become an affiliate/referral partner for Webutvecklare.se. Refer small businesses that need websites, landing pages or web fixes. The customer gets 10% off and you get 20% commission on the first paid order."
+    content="Become an affiliate/referral partner for Webutvecklare.se. Refer customers who need a website, landing page or web fix. The customer gets 10% off going forward, and you get 20% commission on paid orders from customers you referred from the start."
   />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
@@ -19,15 +19,15 @@
   <link rel="alternate" hreflang="no" href="https://webutvecklare.se/affiliate-no.html" />
   <link rel="alternate" hreflang="x-default" href="https://webutvecklare.se/affiliate-en.html" />
 
-  <meta property="og:title" content="Affiliate Program | Web Development Referrals | Nordlöf Nordic" />
-  <meta property="og:description" content="Refer small businesses that need websites or web fixes. The customer gets 10% off and you get 20% commission on the first paid order." />
+  <meta property="og:title" content="Affiliate Program | 10% Customer Discount + 20% Commission | Nordlöf Nordic" />
+  <meta property="og:description" content="Refer customers who need a website or web fix. The customer gets 10% off going forward, and you get 20% commission on paid orders from customers you referred from the start." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/affiliate-en.html" />
   <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Affiliate Program | Nordlöf Nordic" />
-  <meta name="twitter:description" content="Refer small businesses. Customer gets 10% off. Affiliate gets 20% commission on the first paid order." />
+  <meta name="twitter:description" content="The customer gets 10% off going forward. The affiliate gets 20% commission on paid orders from customers the affiliate referred from the start." />
   <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
@@ -52,7 +52,7 @@
         "name":"Affiliate Program | Webutvecklare.se",
         "url":"https://webutvecklare.se/affiliate-en.html",
         "inLanguage":"en",
-        "description":"Affiliate and referral program for Webutvecklare.se. Affiliates can refer small businesses that need websites, landing pages or web fixes. The customer gets 10 percent off and the affiliate gets 20 percent commission on the first paid order.",
+        "description":"Affiliate and referral program for Webutvecklare.se. Affiliates can refer customers who need websites, landing pages or web fixes. The customer gets 10 percent off going forward, and the affiliate gets 20 percent commission on paid orders from customers the affiliate referred from the start.",
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"}
       },
@@ -72,13 +72,14 @@
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
-        "description":"Web development for small businesses in Sweden and the Nordics. Websites, landing pages, web fixes, API, backend and custom web solutions. First demo normally within one business day.",
+        "description":"Remote web development for small businesses, solo founders and local service businesses in any country, when the project can be handled in Swedish, English, Danish or Norwegian. Websites, landing pages, web fixes, API, backend and custom solutions. First demo normally within one business day.",
         "areaServed":[
+          {"@type":"Place","name":"International"},
           {"@type":"Country","name":"Sweden"},
           {"@type":"Country","name":"Denmark"},
-          {"@type":"Country","name":"Norway"},
-          {"@type":"Place","name":"International"}
+          {"@type":"Country","name":"Norway"}
         ],
+        "availableLanguage":["sv","en","da","no"],
         "founder":{
           "@type":"Person",
           "name":"Erica Nordlöf",
@@ -142,14 +143,14 @@
             },
             {
               "@type":"Offer",
-              "name":"Web development hourly",
+              "name":"Web development per hour",
               "priceSpecification":{
                 "@type":"UnitPriceSpecification",
                 "price":"650",
                 "priceCurrency":"SEK",
                 "unitCode":"HUR"
               },
-              "description":"API, backend, integrations, form flows and custom web functionality."
+              "description":"API, backend, integrations, form flows and custom functionality."
             }
           ]
         }
@@ -163,7 +164,23 @@
             "name":"How does the affiliate program work?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"If approved, you receive a personal link and discount code. You refer relevant customers to Webutvecklare.se. The customer gets 10 percent off and you get 20 percent commission on the first paid order from a new customer."
+              "text":"If approved, you receive a personal referral link and discount code. The customer gets 10 percent off going forward, and you get 20 percent commission on paid orders from customers you referred from the start."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Does commission only apply to the first order?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"No. If the affiliate brings in the customer from the start, the customer is connected to that affiliate code going forward. The customer gets 10 percent off future orders, and the affiliate gets 20 percent commission on paid orders from that customer."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Can I get commission on an existing customer?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"No. Commission only applies to customers the affiliate genuinely referred from the start, and who were not already in contact with Nordlöf Nordic before the referral. Existing customers cannot be registered afterwards as affiliate customers."
             }
           },
           {
@@ -184,10 +201,18 @@
           },
           {
             "@type":"Question",
+            "name":"Can customers outside the Nordics use the service?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Yes. Nordlöf Nordic can work remotely with customers in any country, as long as the project can be handled in Swedish, English, Danish or Norwegian."
+            }
+          },
+          {
+            "@type":"Question",
             "name":"When is commission paid?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Commission is paid after the customer has paid the first order and the referral has been approved. Spam, fake enquiries and misleading marketing are not accepted."
+              "text":"Commission is paid after the customer has paid the order and the referral has been approved. Spam, fake enquiries and misleading marketing are not accepted."
             }
           }
         ]
@@ -211,7 +236,6 @@
       --brand-dark:#b96f61;
       --brand-deep:#8f4d45;
       --brand-soft:#f3d9cc;
-      --green:#2d7b5f;
       --shadow:0 22px 70px rgba(36,30,26,.08);
       --shadow-strong:0 30px 90px rgba(36,30,26,.13);
       --radius:26px;
@@ -1796,12 +1820,13 @@
         <div>
           <span class="eyebrow">Affiliate · Referral · 10% customer discount · 20% commission</span>
 
-          <h1 id="hero-title">Refer small businesses that need a better website.</h1>
+          <h1 id="hero-title">Refer customers who need a better website.</h1>
 
           <p class="lead">
             Do you know business owners with an outdated, messy or missing website?
             As an affiliate for <strong>Webutvecklare.se</strong>, you get a personal referral link and discount code.
-            The customer gets 10% off, and you get 20% commission on the first paid order.
+            The customer gets 10% off going forward, and you get 20% commission on paid orders from customers you referred from the start.
+            I can build websites remotely for customers in any country in Swedish, English, Danish or Norwegian.
           </p>
 
           <div class="hero-actions">
@@ -1815,34 +1840,34 @@
           </div>
 
           <p class="speech-note" id="speechNote">
-            The listen button reads a short summary. It is an extra support, and the page also works with regular screen readers.
+            The button reads a short summary. It is an extra support tool, and the page also works with regular screen readers.
           </p>
 
           <div class="proof-row" aria-label="Affiliate benefits">
             <div class="proof-pill">
               Customer gets 10% off
-              <span>A clear reason to use your link.</span>
+              <span>Also on future orders, if the customer was brought in through you.</span>
             </div>
 
             <div class="proof-pill">
               You get 20%
-              <span>Commission on the first paid order.</span>
+              <span>Commission on paid orders from customers you referred from the start.</span>
             </div>
 
             <div class="proof-pill">
               Swedish prices
-              <span>Useful when referring Nordic or international clients.</span>
+              <span>A strong argument for customers in many markets.</span>
             </div>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Affiliate flow summary">
+        <aside class="hero-card" aria-label="Short affiliate flow">
           <img class="hero-logo" src="nordlof-nordic-logo.png" alt="" />
 
           <div class="mini-steps">
             <div class="mini-step">
               <strong>1. You find the right customer</strong>
-              <span>A small business that needs a website, landing page or web fix.</span>
+              <span>A business, association or solo founder that needs a website, landing page or web fix.</span>
             </div>
 
             <div class="mini-step">
@@ -1852,12 +1877,12 @@
 
             <div class="mini-step">
               <strong>3. I build a first demo</strong>
-              <span>The customer sees something concrete before buying.</span>
+              <span>The customer sees something concrete before deciding.</span>
             </div>
 
             <div class="mini-step">
               <strong>4. You get commission</strong>
-              <span>When the first order is paid and approved, you get 20% commission.</span>
+              <span>When the customer pays an order, you get 20% commission if the customer is your referred customer.</span>
             </div>
           </div>
         </aside>
@@ -1868,12 +1893,12 @@
       <div class="container quick-grid">
         <div class="quick-item">
           <strong>10% off</strong>
-          Customer discount
+          For the customer going forward
         </div>
 
         <div class="quick-item">
           <strong>20%</strong>
-          Affiliate commission
+          Commission per paid order
         </div>
 
         <div class="quick-item">
@@ -1883,7 +1908,7 @@
 
         <div class="quick-item">
           <strong>650 SEK/h</strong>
-          Custom web work
+          Custom solutions
         </div>
       </div>
     </section>
@@ -1893,15 +1918,16 @@
         <div class="problem-box">
           <h2>The problem is simple: many small businesses have websites that do not help them sell.</h2>
           <p>
-            Many business owners have an old website, a half-finished website, only a Facebook page, or a website that looks acceptable on desktop but falls apart on mobile.
-            They know it needs fixing, but they postpone it because web agencies can feel expensive, unclear or too slow for what they actually need.
+            Many business owners have an old website, a half-finished website, only a Facebook page,
+            or a website that looks fine on desktop but falls apart on mobile.
+            They know it should be fixed, but they postpone it because web agencies can feel expensive, unclear or slow.
           </p>
 
           <div class="quote-box">
             <strong>What you can say to the customer</strong>
             <p>
-              “I know a web developer who builds a first demo before you buy. You only move forward if you like it.
-              If you use my link, you also get 10% off.”
+              “I know a web developer who builds a first demo before you buy. You only move forward if you like the direction.
+              If you use my link, you also get 10% off going forward.”
             </p>
           </div>
         </div>
@@ -1913,8 +1939,8 @@
         <div class="section-head">
           <h2>What you are actually referring.</h2>
           <p>
-            The offer is designed to be easy to understand. No heavy agency process.
-            No three-meeting quote circus. The customer gets something concrete first.
+            The offer is built to be easy to understand. No heavy agency process.
+            No meeting marathon. The customer gets something concrete to look at first.
           </p>
         </div>
 
@@ -1923,25 +1949,25 @@
             <span class="tag">Clear offer</span>
             <h3>First demo before purchase</h3>
             <p>
-              The customer describes what they need. I build a first demo quickly, normally within one business day.
+              The customer describes what needs to be built. I create a first demo quickly, normally within one business day.
               The customer only buys after approving the demo.
             </p>
             <ul class="list">
               <li>Lower risk for the customer</li>
               <li>Easier for you to refer</li>
-              <li>No blind buying</li>
+              <li>The customer does not buy blind</li>
             </ul>
           </article>
 
           <article class="card service-card highlight">
-            <span class="tag dark">Most referral-friendly</span>
+            <span class="tag dark">Easiest to refer</span>
             <h3>Websites for small businesses</h3>
             <p>
-              Websites, landing pages, web fixes and simple web solutions for businesses that need a more professional online presence.
+              Websites, landing pages, web fixes and simple web solutions for businesses that want a more professional online presence.
             </p>
             <ul class="list">
               <li>Fixed prices for simpler websites</li>
-              <li>650 SEK/h for larger or custom work</li>
+              <li>650 SEK/h for larger or custom-built projects</li>
               <li>Built in code, not locked into an agency system</li>
             </ul>
           </article>
@@ -1951,12 +1977,12 @@
             <h3>No lock-in</h3>
             <p>
               After purchase, the customer can get access to material, logins and code.
-              If they want to continue alone or with someone else later, they can.
+              If the customer later wants to continue alone or with someone else, that is possible.
             </p>
             <ul class="list">
               <li>Personal contact</li>
               <li>Clear pricing</li>
-              <li>Straightforward communication</li>
+              <li>Direct communication</li>
             </ul>
           </article>
         </div>
@@ -1969,7 +1995,7 @@
           <h2>Proof: I build in practice, not just in theory.</h2>
           <p>
             This matters when you refer someone. The customer should not only hear that I “do web”.
-            They should be able to see real examples.
+            They should be able to see concrete examples.
           </p>
         </div>
 
@@ -2032,7 +2058,7 @@
             <span class="tag dark">GitHub</span>
             <h3><a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">Public projects on GitHub</a></h3>
             <p>
-              Public projects include backend/API work with Java, Spring Boot, PostgreSQL, Swagger, Docker and integration testing.
+              Public projects include backend/API work with Java, Spring Boot, PostgreSQL, Swagger, Docker and integration tests.
               In plain English: not just pretty sections.
             </p>
             <div class="meta">
@@ -2048,7 +2074,7 @@
             <h3><a href="https://mini-api-sp7z.onrender.com/swagger-ui/index.html" target="_blank" rel="noopener noreferrer">Mini API with Swagger</a></h3>
             <p>
               A backend portfolio project showing API structure, documentation and technical foundation.
-              Render may load slowly on a free plan, but the project shows the work behind the surface.
+              Render can be slow on a free tier, but the project shows the work behind the surface.
             </p>
             <div class="meta">
               <span class="chip">Backend</span>
@@ -2064,17 +2090,17 @@
       <div class="container">
         <div class="commission-box">
           <div>
-            <h2>10% off for the customer. 20% commission for you.</h2>
+            <h2>10% off for the customer going forward. 20% commission for you on paid orders.</h2>
             <p>
-              The customer gets a clear reason to use your link. You get paid when the referral becomes a real paid order.
-              Simple, trackable and without having to build the product yourself.
+              If you bring in the customer from the start, the customer is connected to your affiliate code going forward.
+              The customer gets 10% off future orders, and you get 20% commission on paid orders from that customer.
             </p>
           </div>
 
           <div class="commission-panel">
             <strong>20%</strong>
             <p>
-              Commission on the first paid order from a new customer.
+              Commission per paid order from customers you genuinely referred from the start.
               The customer gets 10% off through your personal link or code.
             </p>
           </div>
@@ -2087,7 +2113,7 @@
                 <th>Package</th>
                 <th>Regular price</th>
                 <th>Customer with 10% off</th>
-                <th>Your commission, 20% of paid amount</th>
+                <th>Your commission per paid order, if the customer is your referred customer</th>
               </tr>
             </thead>
             <tbody>
@@ -2104,7 +2130,7 @@
                 <td><strong>882 SEK</strong></td>
               </tr>
               <tr>
-                <td><strong>New Website Extended</strong>A larger setup with more pages/content.</td>
+                <td><strong>New Website Extended</strong>A larger setup with more pages and more content.</td>
                 <td>7,900 SEK</td>
                 <td>7,110 SEK</td>
                 <td><strong>1,422 SEK</strong></td>
@@ -2113,13 +2139,14 @@
                 <td><strong>Hourly work / web fixes</strong>Larger or custom web work.</td>
                 <td>650 SEK/h</td>
                 <td>By agreement</td>
-                <td><strong>20%</strong> on approved first paid order</td>
+                <td><strong>20%</strong> on approved paid orders from your referred customer</td>
               </tr>
             </tbody>
           </table>
 
           <p class="note">
-            The examples are calculated on the paid amount after the customer discount. Exact terms and payout method are confirmed after an approved affiliate application.
+            The examples are calculated on the amount after the customer’s 10% discount. Commission applies to paid orders from customers the affiliate genuinely referred from the start.
+            Existing customers cannot be registered afterwards as affiliate customers. Yes, that rule is boring — but it saves everyone from commission theatre.
           </p>
         </div>
       </div>
@@ -2128,7 +2155,7 @@
     <section class="section" id="fit">
       <div class="container">
         <div class="section-head">
-          <h2>Who this affiliate program is best for.</h2>
+          <h2>Who the affiliate program is best for.</h2>
           <p>
             This works best if you already have contact with business owners, associations or people building something.
             You do not need a megaphone. You need the right audience and a relevant recommendation.
@@ -2138,17 +2165,17 @@
         <div class="grid-3">
           <article class="card">
             <span class="tag">Network</span>
-            <h3>You know small business owners</h3>
+            <h3>You know business owners</h3>
             <p>
-              Builders, salons, consultants, therapists, associations, local shops or other businesses that should have a stronger web presence.
+              Tradespeople, salons, consultants, therapists, associations, local shops or other businesses that should have a stronger online presence.
             </p>
           </article>
 
           <article class="card">
-            <span class="tag">Adjacent service</span>
-            <h3>You work near businesses</h3>
+            <span class="tag">Close to business</span>
+            <h3>You work close to customers</h3>
             <p>
-              Photography, social media, branding, copywriting, print, accounting, consulting or anything where clients often also need a website.
+              Photography, social media, branding, copywriting, print, accounting, consulting or anything where customers often also need a website.
             </p>
           </article>
 
@@ -2156,7 +2183,7 @@
             <span class="tag">Audience</span>
             <h3>You have the right reach</h3>
             <p>
-              A local group, a business network, a relevant social media audience or just real trust with people who run businesses.
+              A local group, a business network, a relevant social media audience or simply real trust with people who run businesses.
             </p>
           </article>
         </div>
@@ -2166,13 +2193,13 @@
             <span class="tag">Not a fit</span>
             <h3>This is not for spam.</h3>
             <p>
-              Mass DMs, fake leads, misleading claims or link dumping are not interesting.
+              Mass DMs, fake leads, misleading promises or link dumping are not interesting.
               The goal is relevant referrals to real customers.
             </p>
             <ul class="list">
               <li>No fake enquiries</li>
-              <li>No misleading claims</li>
-              <li>No forced sales tactics</li>
+              <li>No misleading promises</li>
+              <li>No pressured sales tactics</li>
             </ul>
           </article>
 
@@ -2181,8 +2208,8 @@
             <h3>This is for trust-based referrals.</h3>
             <p>
               It works best when you can honestly say:
-              “I think this could actually be useful for you.”
-              Less spam cannon, more signal.
+              “I actually think this could be relevant for you.”
+              Less spam cannon. More signal.
             </p>
             <ul class="list">
               <li>Relevant audience</li>
@@ -2199,24 +2226,24 @@
         <div class="section-head">
           <h2>How it works step by step.</h2>
           <p>
-            The setup is meant to be easy to understand for both you and the customer.
+            The setup is built to be easy to understand for both you and the customer.
           </p>
         </div>
 
         <div class="timeline">
           <div class="timeline-item">
             <strong>You apply</strong>
-            <span>You send who you are, which customers you can reach and how you plan to refer them.</span>
+            <span>You write who you are, which customers you can reach and how you want to refer them.</span>
           </div>
 
           <div class="timeline-item">
             <strong>You get a link and discount code</strong>
-            <span>If approved, you get a personal link and discount code connected to you.</span>
+            <span>If approved, you receive a personal link and discount code connected to you.</span>
           </div>
 
           <div class="timeline-item">
             <strong>You refer relevant customers</strong>
-            <span>You share the link with small businesses that may need a website, landing page or web fix.</span>
+            <span>You share the link with businesses that may need a website, landing page or web fix.</span>
           </div>
 
           <div class="timeline-item">
@@ -2225,8 +2252,8 @@
           </div>
 
           <div class="timeline-item">
-            <strong>You get commission</strong>
-            <span>When the customer pays the first order and the referral is approved, you get 20% commission.</span>
+            <strong>You get commission going forward</strong>
+            <span>When your referred customer pays approved orders, you get 20% commission on those paid orders.</span>
           </div>
         </div>
       </div>
@@ -2238,20 +2265,20 @@
           <span class="tag">Strongest angle</span>
           <h2>The best argument is not “cheap website”.</h2>
           <p>
-            The best argument is: the customer gets to see a first demo before buying.
-            That lowers risk for the customer and makes it much easier for you to refer without feeling like you are selling smoke in a suit.
+            The best argument is: the customer gets a first demo before purchase.
+            That lowers the customer’s risk and makes it much easier for you to refer without feeling like you are selling smoke in a suit.
           </p>
         </article>
 
         <article class="script-box">
-          <span class="tag">Copy/paste</span>
+          <span class="tag">Copy / paste</span>
           <h3>Short message you can send to a business owner</h3>
           <div class="script-text">
             <p>
               Hi! I thought you might benefit from a clearer website or landing page.
             </p>
             <p>
-              I know a web developer who builds a first demo before you buy, so you only move forward if you like the direction. If you use my link, you also get 10% off.
+              I know a web developer who builds a first demo before purchase, so you only move forward if you like the direction. If you use my link, you also get 10% off going forward.
             </p>
             <p>
               Here is the link if you want to take a look: [your personal link]
@@ -2267,10 +2294,12 @@
           <span class="tag">Rules</span>
           <h3>Basic rules</h3>
           <ul class="list">
-            <li>Applies to new customers.</li>
+            <li>The customer must genuinely be referred by you from the start.</li>
             <li>The customer should use your personal link or discount code.</li>
-            <li>The customer gets 10% off the first order.</li>
-            <li>You get 20% commission on the first paid and approved order.</li>
+            <li>The customer gets 10% off future orders as long as the customer is connected to your affiliate code.</li>
+            <li>You get 20% commission on paid and approved orders from that customer.</li>
+            <li>Commission does not apply to customers who were already in dialogue with Nordlöf Nordic before your referral.</li>
+            <li>Existing customers cannot be registered afterwards as affiliate customers.</li>
             <li>Spam, fake enquiries and misleading marketing are not accepted.</li>
             <li>Payout method is agreed after approval.</li>
           </ul>
@@ -2278,15 +2307,16 @@
 
         <article class="card">
           <span class="tag">Markets</span>
-          <h3>Sweden, Denmark, Norway and English-speaking customers</h3>
+          <h3>Customers in any country — in Swedish, English, Danish or Norwegian</h3>
           <p>
-            Webutvecklare.se is primarily built around small businesses in Sweden and the Nordics,
-            but I can also work with English-speaking customers. Projects, communication and web content can be handled in Swedish, English, Danish and Norwegian.
+            Webutvecklare.se can help customers remotely, no matter which country they are in, as long as the project can be handled in one of the languages I offer:
+            Swedish, English, Danish or Norwegian. English also works for many international businesses.
           </p>
           <ul class="list">
             <li>Swedish prices</li>
-            <li>Remote work possible</li>
-            <li>Good fit for small businesses and local service providers</li>
+            <li>Remote work</li>
+            <li>Websites in Swedish, English, Danish or Norwegian</li>
+            <li>Best for small businesses, solo founders and local service businesses</li>
           </ul>
         </article>
       </div>
@@ -2297,43 +2327,54 @@
         <div class="section-head">
           <h2>Frequently asked questions.</h2>
           <p>
-            Short answers before you apply. No 47-page partner agreement with PowerPoint perfume.
+            Short answers before you apply. No 47-page partner agreement smelling of PowerPoint.
           </p>
         </div>
 
         <details>
           <summary>Do I need to know web development?</summary>
-          <p>No. You do not need to build websites. You only need to refer relevant customers and explain the offer honestly.</p>
+          <p>No. You do not need to build websites yourself. You just need to refer relevant customers and explain the offer honestly.</p>
         </details>
 
         <details>
           <summary>What does the customer get?</summary>
-          <p>The customer gets 10% off the first order and can receive a first demo before buying.</p>
+          <p>The customer gets 10% off going forward, if the customer is connected to your affiliate code, and the customer can get a first demo before purchase.</p>
         </details>
 
         <details>
           <summary>What do I get as an affiliate?</summary>
-          <p>You get 20% commission on the first paid order from a new customer who comes through your personal link or discount code.</p>
+          <p>You get 20% commission on paid orders from customers you genuinely referred from the start.</p>
+        </details>
+
+        <details>
+          <summary>Does commission only apply to the first order?</summary>
+          <p>
+            No. If you as an affiliate bring in the customer from the start, the customer is connected to your affiliate code going forward.
+            The customer gets 10% off future orders, and you get 20% commission on paid orders from that customer.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I get commission on an existing customer?</summary>
+          <p>
+            No. Commission only applies to customers you genuinely referred from the start, and who were not already in dialogue with Nordlöf Nordic before your referral.
+            Existing customers cannot be registered afterwards as affiliate customers.
+          </p>
         </details>
 
         <details>
           <summary>How do you know who referred the customer?</summary>
-          <p>Each approved affiliate gets a personal referral link and discount code. That makes it clear where the customer came from.</p>
+          <p>Each approved affiliate receives a personal referral link and discount code. That makes it clear where the customer came from.</p>
         </details>
 
         <details>
           <summary>When is commission paid?</summary>
-          <p>After the customer has paid and the order has been approved. Exact payout method is agreed after your application is approved.</p>
-        </details>
-
-        <details>
-          <summary>Do old customers count?</summary>
-          <p>No. The program applies to new customers where your link or code has actually been used.</p>
+          <p>After the customer has paid the order, and the order has been approved. Exact payout method is agreed when your application is approved.</p>
         </details>
 
         <details>
           <summary>Can I create my own marketing material?</summary>
-          <p>Yes, but it must be accurate and must not promise things that are not true. I can also help with short texts if needed.</p>
+          <p>Yes, but it must be accurate and must not promise things that are not true. I can also help with short texts if you want.</p>
         </details>
 
         <details>
@@ -2343,12 +2384,15 @@
 
         <details>
           <summary>Which customers should I refer?</summary>
-          <p>Small businesses, associations, local companies, solo founders, consultants and service providers that need a better website, landing page or web fix.</p>
+          <p>Small businesses, associations, local companies, solo founders, consultants and service businesses that need a better website, landing page or web fix.</p>
         </details>
 
         <details>
-          <summary>Can customers outside Sweden use the service?</summary>
-          <p>Yes. I can work remotely and handle projects in Swedish, English, Danish and Norwegian.</p>
+          <summary>Can customers outside the Nordics use the service?</summary>
+          <p>
+            Yes. I can work remotely with customers in any country, as long as the project can be handled in Swedish, English, Danish or Norwegian.
+            English works for many international customers.
+          </p>
         </details>
       </div>
     </section>
@@ -2358,7 +2402,7 @@
         <div class="form-card">
           <h2>Apply to become an affiliate.</h2>
           <p>
-            Tell me who you are, what audience you can reach and how you plan to refer customers.
+            Tell me who you are, what audience you can reach and how you want to refer customers.
             If the setup feels right, you receive a personal referral link and discount code.
           </p>
 
@@ -2443,7 +2487,7 @@
                   id="payout"
                   type="text"
                   name="Preferred payout method"
-                  placeholder="For example bank transfer, invoice from your company, or another practical method"
+                  placeholder="For example bank transfer, invoice from your company or another practical method"
                 />
               </div>
 
@@ -2488,7 +2532,7 @@
           <p>
             I run Nordlöf Nordic and build websites, landing pages, web fixes and simple web solutions for businesses.
             I am a newly started solo business owner, so the positioning is intentionally practical:
-            first demo, clear price, no lock-in.
+            demo first, clear pricing and no lock-in.
           </p>
         </article>
 
@@ -2497,7 +2541,7 @@
           <h3>I prefer relevant referrals over broad advertising.</h3>
           <p>
             A relevant recommendation from the right person can be stronger than throwing money at ads.
-            The goal is not to get everyone. The goal is to reach the business owners who actually need the help.
+            The goal is not to reach everyone. The goal is to reach customers who actually need the help.
           </p>
           <ul class="list">
             <li>Fewer but better leads</li>
@@ -2515,8 +2559,8 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Affiliate and referral program for web development services for small businesses in Sweden and the Nordics.<br>
-          Customer gets 10% off · Affiliate gets 20% commission · Swedish prices · Remote work possible
+          Affiliate and referral program for web development for small businesses, solo founders and local service businesses.<br>
+          Customer gets 10% off going forward · Affiliate gets 20% commission on paid orders from referred customers · Swedish prices · Remote work · Websites in Swedish, English, Danish or Norwegian
         </div>
 
         <div>
@@ -2546,13 +2590,15 @@
         <div class="footer-page-grid">
           <a href="en.html">English homepage</a>
           <a href="affiliate-en.html">Affiliate program</a>
+          <a href="da.html">Danish homepage</a>
+          <a href="no.html">Norwegian homepage</a>
           <a href="/ny-hemsida-foretag.html">New website for business</a>
           <a href="/uppdatera-hemsida.html">Update website</a>
           <a href="/skapa-hemsida.html">Create website</a>
-          <a href="/webbdesign-foretag.html">Web design for business</a>
+          <a href="/webbdesign-foretag.html">Web design for businesses</a>
           <a href="/sokmotoroptimering.html">SEO</a>
           <a href="/hemsida-smaforetag.html">Website for small business</a>
-          <a href="/hemsida-hantverkare.html">Website for tradesmen</a>
+          <a href="/hemsida-hantverkare.html">Website for tradespeople</a>
           <a href="/hemsida-konsult.html">Website for consultants</a>
           <a href="/webbutveckling-malmo.html">Web development Malmö</a>
           <a href="/anlita-webbutvecklare.html">Hire web developer</a>
@@ -2697,12 +2743,12 @@
 
         const summaryText = `
           This is the affiliate program for Webutvecklare.se.
-          You can refer small businesses that need a website, landing page or web fix.
+          You can refer customers who need a website, landing page or web fix.
           The customer gets ten percent off through your personal link or discount code.
-          You get twenty percent commission on the first paid and approved order from a new customer.
-          Customers normally get a first demo within one business day and only pay if they want to move forward.
-          The service can be delivered remotely in Swedish, English, Danish and Norwegian.
-          This is not employment and there is no guaranteed income. It is referral commission on approved paid orders.
+          If you bring in the customer from the start, you get twenty percent commission on paid and approved orders from that customer.
+          The customer can normally get a first demo within one business day and only pays if the customer wants to move forward.
+          The service can be delivered remotely to customers in any country in Swedish, English, Danish or Norwegian.
+          This is not employment and there is no guaranteed income. It is commission on approved paid orders.
         `;
 
         const utterance = new SpeechSynthesisUtterance(summaryText);
