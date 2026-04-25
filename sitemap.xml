@@ -1,71 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://webutvecklare.se/</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
+  <url>
+    <loc>https://webutvecklare.se/en.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/da.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/no.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
   <url>
     <loc>https://webutvecklare.se/affiliate.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
   <url>
-    <loc>https://webutvecklare.se/ai-reklamvideo-foretag.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <loc>https://webutvecklare.se/villkor.html</loc>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
   <url>
-    <loc>https://webutvecklare.se/anlita-webbutvecklare.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <loc>https://webutvecklare.se/integritet.html</loc>
+    <lastmod>2026-04-25</lastmod>
   </url>
-  <url>
-    <loc>https://webutvecklare.se/hemsida-byggforetag.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
-  <url>
-    <loc>https://webutvecklare.se/hemsida-hantverkare.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
-  <url>
-    <loc>https://webutvecklare.se/hemsida-konsult.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
-  <url>
-    <loc>https://webutvecklare.se/hemsida-smaforetag.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
-  <url>
-    <loc>https://webutvecklare.se/hemsida-till-foretag.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
+
   <url>
     <loc>https://webutvecklare.se/ny-hemsida-foretag.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
-  <url>
-    <loc>https://webutvecklare.se/skapa-hemsida.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
-  <url>
-    <loc>https://webutvecklare.se/sokmotoroptimering.html</loc>
-    <lastmod>2026-04-10</lastmod>
-  </url>
+
   <url>
     <loc>https://webutvecklare.se/uppdatera-hemsida.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
+  <url>
+    <loc>https://webutvecklare.se/skapa-hemsida.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
   <url>
     <loc>https://webutvecklare.se/webbdesign-foretag.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
   <url>
-    <loc>https://webutvecklare.se/webbutveckling-goteborg.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <loc>https://webutvecklare.se/sokmotoroptimering.html</loc>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
+  <url>
+    <loc>https://webutvecklare.se/hemsida-smaforetag.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/hemsida-hantverkare.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/hemsida-byggforetag.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/hemsida-konsult.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/hemsida-till-foretag.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
   <url>
     <loc>https://webutvecklare.se/webbutveckling-malmo.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
   <url>
     <loc>https://webutvecklare.se/webbutveckling-stockholm.html</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
+
+  <url>
+    <loc>https://webutvecklare.se/webbutveckling-goteborg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/anlita-webbutvecklare.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/ai-reklamvideo-foretag.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://webutvecklare.se/reklamflyer-foretag.html</loc>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+
 </urlset>
