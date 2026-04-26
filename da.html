@@ -7,7 +7,7 @@
   <title>Webudvikler til små virksomheder | Demo først | Nordlöf Nordic</title>
   <meta
     name="description"
-    content="Webudvikler til små virksomheder i Sverige, Danmark og Norden. Hjemmesider, landingssider, webfix og specialløsninger. Demo inden for 1 arbejdsdag. Fast pris eller 650 SEK/time."
+    content="Webudvikler til små virksomheder i Sverige, Danmark og Norden. Hjemmesider, landingssider, webfix, kampagnesider og specialløsninger. Demo inden for 1 arbejdsdag. Fast pris eller 650 SEK/time."
   />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
@@ -62,7 +62,7 @@
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
-        "description":"Webudvikler til små virksomheder. Hjemmesider, landingssider, opdateringer, API, backend og specialløsninger. Demo inden for 1 arbejdsdag. Projekter kan laves på svensk, engelsk, dansk og norsk.",
+        "description":"Webudvikler til små virksomheder. Hjemmesider, landingssider, kampagnesider, webfix, API, backend og specialløsninger. Demo inden for 1 arbejdsdag. Projekter kan laves på svensk, engelsk, dansk og norsk.",
         "areaServed":[
           {"@type":"Country","name":"Sverige"},
           {"@type":"Country","name":"Danmark"},
@@ -85,7 +85,11 @@
         "knowsAbout":[
           "Webudvikling",
           "Hjemmesider til små virksomheder",
+          "Hjemmesider til nystartede virksomheder",
+          "Hjemmesider til udlejning",
           "Landingssider",
+          "Kampagnesider",
+          "Webfix",
           "Frontendudvikling",
           "Backendudvikling",
           "API",
@@ -125,21 +129,21 @@
             },
             {
               "@type":"Offer",
-              "name":"Lille opdatering",
+              "name":"Lille opdatering / webfix",
               "price":"490",
               "priceCurrency":"SEK",
               "description":"Mindre ændring på eksisterende hjemmeside."
             },
             {
               "@type":"Offer",
-              "name":"Normal opdatering",
+              "name":"Normal opdatering / webfix",
               "price":"990",
               "priceCurrency":"SEK",
               "description":"Flere ændringer eller tydeligere opfriskning."
             },
             {
               "@type":"Offer",
-              "name":"Større opdatering",
+              "name":"Større opdatering / webfix",
               "price":"1490",
               "priceCurrency":"SEK",
               "description":"Større forbedring af eksisterende hjemmeside."
@@ -453,10 +457,10 @@
     .nav-links{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:16px;
       color:#4f4741;
       font-size:14px;
-      font-weight:700;
+      font-weight:800;
     }
 
     .nav-links a:hover{
@@ -762,6 +766,48 @@
       text-decoration:underline;
       text-underline-offset:4px;
       text-decoration-thickness:1px;
+    }
+
+    .route-card{
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+
+    .route-card:after{
+      content:"";
+      position:absolute;
+      right:-46px;
+      top:-46px;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:rgba(217,134,114,.12);
+    }
+
+    .route-card > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .route-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:18px;
+      min-height:42px;
+      padding:11px 14px;
+      border-radius:999px;
+      background:#f4e5dc;
+      color:#7a5148;
+      font-weight:900;
+      text-decoration:none !important;
+    }
+
+    .route-link:hover{
+      background:#efd7cc;
     }
 
     .tag{
@@ -1232,6 +1278,64 @@
       margin-top:6px;
     }
 
+    .footer-pages{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+
+    .footer-pages summary{
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight:900;
+      color:#6f655e;
+      list-style:none;
+      font-size:14px;
+    }
+
+    .footer-pages summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .footer-pages summary::after{
+      content:"+";
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      font-weight:900;
+    }
+
+    .footer-pages[open] summary::after{
+      content:"–";
+    }
+
+    .footer-page-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      margin-top:12px;
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .footer-page-grid a{
+      color:#6f655e;
+      text-decoration:underline;
+      text-underline-offset:3px;
+      opacity:.82;
+    }
+
+    .footer-page-grid a:hover{
+      opacity:1;
+      color:var(--brand-dark);
+    }
+
     .mobile-sticky{
       display:none;
     }
@@ -1315,7 +1419,9 @@
     }
 
     body.high-contrast .tag,
-    body.high-contrast .chip{
+    body.high-contrast .chip,
+    body.high-contrast .footer-pages summary::after,
+    body.high-contrast .route-link{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1796,6 +1902,16 @@
         gap:9px 12px;
       }
 
+      .footer-page-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      .footer-page-grid a{
+        padding:8px 0;
+      }
+
       .mobile-sticky{
         position:fixed;
         left:10px;
@@ -1874,11 +1990,11 @@
       </a>
 
       <nav class="nav-links" aria-label="Hovednavigation">
+        <a href="/gratis-demo.html">Gratis demo</a>
+        <a href="/case.html">Cases</a>
+        <a href="/webbfix.html">Webfix</a>
         <a href="#tjanster">Ydelser</a>
-        <a href="#bast-for">Hvorfor mig</a>
-        <a href="#process">Sådan fungerer det</a>
         <a href="#priser">Priser</a>
-        <a href="#projekt">Projekter</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
@@ -1917,7 +2033,8 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Få min demo</a>
-            <a class="btn btn-secondary" href="#priser">Se priser</a>
+            <a class="btn btn-secondary" href="/gratis-demo.html">Sådan fungerer demo først</a>
+            <a class="btn btn-secondary" href="/case.html">Se cases</a>
             <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
               Lyt til kort opsummering
             </button>
@@ -1988,6 +2105,73 @@
         <div class="quick-item">
           <strong>Demo først</strong>
           Køb først når det føles rigtigt
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hurtigvalg">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hvad har du brug for hjælp til?</h2>
+          <p>
+            Vælg den hurtigste vej ind. Denne side er hovedsiden, men undersiderne er skarpere, hvis du allerede ved hvad du mangler.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card route-card">
+            <span class="tag">Tryg start</span>
+            <h3>Jeg vil se en demo først</h3>
+            <p>
+              Til dig der vil forstå oplægget, før du sender en forespørgsel. Se hvordan demo først fungerer, og hvorfor du ikke køber i blinde.
+            </p>
+            <a class="route-link" href="/gratis-demo.html">Læs om gratis demo</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Bevis</span>
+            <h3>Jeg vil se hvad du har bygget</h3>
+            <p>
+              Se egne projekter, cases, offentlig kode og tekniske eksempler. Godt hvis du vil se substans bag de pæne sektioner.
+            </p>
+            <a class="route-link" href="/case.html">Se cases</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Småfix</span>
+            <h3>Jeg skal bare have rettet min side</h3>
+            <p>
+              Til tekstændringer, billedskift, knapper, links, formularer, mobilfix, SEO-grundlag eller andre små problemer på en eksisterende hjemmeside.
+            </p>
+            <a class="route-link" href="/webbfix.html">Gå til webfix</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Ny virksomhed</span>
+            <h3>Jeg har startet virksomhed</h3>
+            <p>
+              Til enkeltmandsvirksomheder, nye selskaber, freelancere, konsulenter og nye forretninger, der har brug for en seriøs første hjemmeside.
+            </p>
+            <a class="route-link" href="/hemsida-nystartat-foretag.html">Hjemmeside til nystartet virksomhed</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Udlejning</span>
+            <h3>Jeg udlejer noget</h3>
+            <p>
+              Til hytter, køretøjer, både, trailere, udstyr, lokaler, aktiviteter eller andre udlejningsoplæg med booking og vilkår.
+            </p>
+            <a class="route-link" href="/hemsida-uthyrning.html">Hjemmeside til udlejning</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Kampagne</span>
+            <h3>Jeg skal bruge en landingsside</h3>
+            <p>
+              Til kampagner, tilbud, rabatkoder, booking, leadformularer, affiliateflows eller lancering af noget nyt.
+            </p>
+            <a class="route-link" href="/landningssida-kampanj.html">Landingsside til kampagne</a>
+          </article>
         </div>
       </div>
     </section>
@@ -2180,6 +2364,9 @@
           <div class="cta-panel">
             <strong>1 arbejdsdag</strong>
             <p>Normalt får du en første demo inden for 1 arbejdsdag efter at du har sendt formularen.</p>
+            <a class="btn btn-light" href="/gratis-demo.html" style="margin-top:16px;width:100%;">
+              Læs mere om demo først
+            </a>
           </div>
         </div>
       </div>
@@ -2368,6 +2555,10 @@
             </div>
           </article>
         </div>
+
+        <div class="price-note">
+          Vil du se projekterne samlet? Åbn <a href="/case.html">case-siden</a>.
+        </div>
       </div>
     </section>
 
@@ -2490,7 +2681,7 @@
 
         <details>
           <summary>Kan jeg kun hyre dig til småfix?</summary>
-          <p>Ja. Mindre opdateringer starter fra 490 SEK afhængigt af, hvad der skal laves.</p>
+          <p>Ja. Mindre opdateringer starter fra 490 SEK afhængigt af, hvad der skal laves. Der findes også en separat side for <a href="/webbfix.html">webfix</a>.</p>
         </details>
 
         <details>
@@ -2571,8 +2762,11 @@
                 <label for="typ">Hvad har du brug for?</label>
                 <select id="typ" name="Type af opgave">
                   <option value="Ny hjemmeside">Ny hjemmeside</option>
-                  <option value="Opdatere eksisterende hjemmeside">Opdatere eksisterende hjemmeside</option>
-                  <option value="Landingsside">Landingsside</option>
+                  <option value="Demo først">Demo først</option>
+                  <option value="Webfix / opdatere eksisterende hjemmeside">Webfix / opdatere eksisterende hjemmeside</option>
+                  <option value="Hjemmeside til nystartet virksomhed">Hjemmeside til nystartet virksomhed</option>
+                  <option value="Hjemmeside til udlejning">Hjemmeside til udlejning</option>
+                  <option value="Landingsside / kampagne">Landingsside / kampagne</option>
                   <option value="API / backend / specialfunktion">API / backend / specialfunktion</option>
                   <option value="Ved ikke endnu">Ved ikke endnu</option>
                 </select>
@@ -2619,39 +2813,69 @@
   </main>
 
   <footer>
-    <div class="container footer-box">
-      <div>
-        <strong>© 2026 Nordlöf Nordic</strong><br>
-        Hjemmesider, landingssider og webudvikling til små virksomheder i Norden.<br>
-        Demo inden for 1 arbejdsdag · Fast pris eller 650 SEK/time · Kan laves på svensk, engelsk, dansk og norsk
-      </div>
+    <div class="container">
+      <div class="footer-box">
+        <div>
+          <strong>© 2026 Nordlöf Nordic</strong><br>
+          Hjemmesider, landingssider og webudvikling til små virksomheder i Norden.<br>
+          Demo inden for 1 arbejdsdag · Fast pris eller 650 SEK/time · Kan laves på svensk, engelsk, dansk og norsk
+        </div>
 
-      <div>
-        Kontakt:
-        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-        ·
-        <a href="tel:+46793442520">+46 79-344 25 20</a>
+        <div>
+          Kontakt:
+          <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+          ·
+          <a href="tel:+46793442520">+46 79-344 25 20</a>
 
-        <div class="footer-links">
-          <a href="/" hreflang="sv-SE">Svenska</a>
-          <a href="en.html" hreflang="en">English</a>
-          <a href="da.html" hreflang="da" aria-current="page">Dansk</a>
-          <a href="no.html" hreflang="no">Norsk</a>
-          <a href="villkor.html">Vilkår</a>
-          <a href="integritet.html">Privatliv</a>
-          <a href="affiliate-da.html" hreflang="da">Affiliateprogram</a>
-          <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Offroad Bumpis</a>
-          <a href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Safe Standard</a>
+          <div class="footer-links">
+            <a href="/" hreflang="sv-SE">Svenska</a>
+            <a href="en.html" hreflang="en">English</a>
+            <a href="da.html" hreflang="da" aria-current="page">Dansk</a>
+            <a href="no.html" hreflang="no">Norsk</a>
+            <a href="villkor.html">Vilkår</a>
+            <a href="integritet.html">Privatliv</a>
+            <a href="affiliate-da.html" hreflang="da">Affiliateprogram</a>
+            <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Offroad Bumpis</a>
+            <a href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Safe Standard</a>
+          </div>
         </div>
       </div>
+
+      <details class="footer-pages">
+        <summary>Flere sider</summary>
+        <div class="footer-page-grid">
+          <a href="/gratis-demo.html">Gratis demo</a>
+          <a href="/case.html">Cases og eksempler</a>
+          <a href="/webbfix.html">Webfix</a>
+          <a href="/hemsida-nystartat-foretag.html">Hjemmeside til nystartet virksomhed</a>
+          <a href="/hemsida-uthyrning.html">Hjemmeside til udlejning</a>
+          <a href="/landningssida-kampanj.html">Landingsside til kampagne</a>
+          <a href="/ny-hemsida-foretag.html">Ny hjemmeside til virksomhed</a>
+          <a href="/uppdatera-hemsida.html">Opdater hjemmeside</a>
+          <a href="/skapa-hemsida.html">Skab hjemmeside</a>
+          <a href="/webbdesign-foretag.html">Webdesign til virksomhed</a>
+          <a href="/sokmotoroptimering.html">Søgemaskineoptimering</a>
+          <a href="/hemsida-smaforetag.html">Hjemmeside til små virksomheder</a>
+          <a href="/hemsida-hantverkare.html">Hjemmeside til håndværker</a>
+          <a href="/hemsida-byggforetag.html">Hjemmeside til byggefirma</a>
+          <a href="/hemsida-konsult.html">Hjemmeside til konsulent</a>
+          <a href="/hemsida-till-foretag.html">Hjemmeside til firma</a>
+          <a href="/webbutveckling-malmo.html">Webudvikling Malmö</a>
+          <a href="/webbutveckling-stockholm.html">Webudvikling Stockholm</a>
+          <a href="/webbutveckling-goteborg.html">Webudvikling Göteborg</a>
+          <a href="/anlita-webbutvecklare.html">Hyre webudvikler</a>
+          <a href="/ai-reklamvideo-foretag.html">AI-reklamevideo til virksomhed</a>
+          <a href="/reklamflyer-foretag.html">Reklameflyer til virksomhed</a>
+        </div>
+      </details>
     </div>
   </footer>
 
   <nav class="mobile-sticky" aria-label="Hurtigvalg på mobil">
+    <a class="btn btn-secondary" href="/webbfix.html">Webfix</a>
     <a class="btn btn-secondary" href="#priser">Priser</a>
-    <a class="btn btn-secondary" href="#tjanster">Ydelser</a>
     <a class="btn btn-primary" href="#kontakt">Demo</a>
   </nav>
 
@@ -2779,6 +3003,7 @@
           Webfix starter fra fire hundrede halvfems svenske kroner.
           Større tekniske løsninger koster seks hundrede halvtreds svenske kroner per time.
           Du bliver ikke låst, og du kan få materiale, login og kode efter køb.
+          Der findes også separate sider for gratis demo, cases, webfix, nystartede virksomheder, udlejning og landingssider til kampagner.
           Jeg kan lave projekter, kommunikation og webindhold på svensk, engelsk, dansk og norsk.
           Kontakt sker via formularen på siden, e-mail eller telefon.
         `;
