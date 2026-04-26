@@ -7,7 +7,7 @@
   <title>Web Developer for Small Businesses | Demo First | Nordlöf Nordic</title>
   <meta
     name="description"
-    content="Web developer for small businesses in Sweden, Denmark, Norway and internationally. Websites, landing pages, website updates and custom web solutions. Demo within 1 business day. Fixed price or 650 SEK/hour."
+    content="Web developer for small businesses in Sweden, Denmark, Norway and internationally. Websites, landing pages, website fixes and custom web solutions. Demo within 1 business day. Fixed price or 650 SEK/hour."
   />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
@@ -20,7 +20,7 @@
   <link rel="alternate" hreflang="x-default" href="https://webutvecklare.se/" />
 
   <meta property="og:title" content="Web Developer for Small Businesses | Nordlöf Nordic" />
-  <meta property="og:description" content="Demo within 1 business day. Fixed price or 650 SEK/hour. Websites, landing pages, website updates and web solutions without agency chaos." />
+  <meta property="og:description" content="Demo within 1 business day. Fixed price or 650 SEK/hour. Websites, landing pages, website fixes and web solutions without agency chaos." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/en.html" />
   <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
@@ -62,7 +62,7 @@
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/hour",
-        "description":"Web developer for small businesses. Websites, landing pages, updates, API, backend and custom web solutions. Demo within 1 business day. Projects can be done in Swedish, English, Danish and Norwegian.",
+        "description":"Web developer for small businesses. Websites, landing pages, campaign pages, website fixes, API, backend and custom web solutions. Demo within 1 business day. Projects can be done in Swedish, English, Danish and Norwegian.",
         "areaServed":[
           {"@type":"Country","name":"Sweden"},
           {"@type":"Country","name":"Denmark"},
@@ -85,7 +85,11 @@
         "knowsAbout":[
           "Web development",
           "Websites for small businesses",
+          "Websites for new businesses",
+          "Websites for rental businesses",
           "Landing pages",
+          "Campaign pages",
+          "Website fixes",
           "Frontend development",
           "Backend development",
           "API",
@@ -125,21 +129,21 @@
             },
             {
               "@type":"Offer",
-              "name":"Small website update",
+              "name":"Small website update / website fix",
               "price":"490",
               "priceCurrency":"SEK",
               "description":"A smaller change on an existing website."
             },
             {
               "@type":"Offer",
-              "name":"Normal website update",
+              "name":"Normal website update / website fix",
               "price":"990",
               "priceCurrency":"SEK",
               "description":"Several changes or a clearer refresh."
             },
             {
               "@type":"Offer",
-              "name":"Larger website update",
+              "name":"Larger website update / website fix",
               "price":"1490",
               "priceCurrency":"SEK",
               "description":"A larger improvement of an existing website."
@@ -453,10 +457,10 @@
     .nav-links{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:16px;
       color:#4f4741;
       font-size:14px;
-      font-weight:700;
+      font-weight:800;
     }
 
     .nav-links a:hover{
@@ -762,6 +766,48 @@
       text-decoration:underline;
       text-underline-offset:4px;
       text-decoration-thickness:1px;
+    }
+
+    .route-card{
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+
+    .route-card:after{
+      content:"";
+      position:absolute;
+      right:-46px;
+      top:-46px;
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      background:rgba(217,134,114,.12);
+    }
+
+    .route-card > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .route-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:18px;
+      min-height:42px;
+      padding:11px 14px;
+      border-radius:999px;
+      background:#f4e5dc;
+      color:#7a5148;
+      font-weight:900;
+      text-decoration:none !important;
+    }
+
+    .route-link:hover{
+      background:#efd7cc;
     }
 
     .tag{
@@ -1232,6 +1278,64 @@
       margin-top:6px;
     }
 
+    .footer-pages{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+
+    .footer-pages summary{
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight:900;
+      color:#6f655e;
+      list-style:none;
+      font-size:14px;
+    }
+
+    .footer-pages summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .footer-pages summary::after{
+      content:"+";
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      font-weight:900;
+    }
+
+    .footer-pages[open] summary::after{
+      content:"–";
+    }
+
+    .footer-page-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      margin-top:12px;
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .footer-page-grid a{
+      color:#6f655e;
+      text-decoration:underline;
+      text-underline-offset:3px;
+      opacity:.82;
+    }
+
+    .footer-page-grid a:hover{
+      opacity:1;
+      color:var(--brand-dark);
+    }
+
     .mobile-sticky{
       display:none;
     }
@@ -1315,7 +1419,9 @@
     }
 
     body.high-contrast .tag,
-    body.high-contrast .chip{
+    body.high-contrast .chip,
+    body.high-contrast .footer-pages summary::after,
+    body.high-contrast .route-link{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1796,6 +1902,16 @@
         gap:9px 12px;
       }
 
+      .footer-page-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      .footer-page-grid a{
+        padding:8px 0;
+      }
+
       .mobile-sticky{
         position:fixed;
         left:10px;
@@ -1874,11 +1990,11 @@
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
+        <a href="/gratis-demo.html">Free demo</a>
+        <a href="/case.html">Cases</a>
+        <a href="/webbfix.html">Website fixes</a>
         <a href="#services">Services</a>
-        <a href="#best-for">Why me</a>
-        <a href="#process">How it works</a>
         <a href="#prices">Prices</a>
-        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -1917,7 +2033,8 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Get my demo</a>
-            <a class="btn btn-secondary" href="#prices">See prices</a>
+            <a class="btn btn-secondary" href="/gratis-demo.html">How demo first works</a>
+            <a class="btn btn-secondary" href="/case.html">See cases</a>
             <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
               Listen to short summary
             </button>
@@ -1988,6 +2105,73 @@
         <div class="quick-item">
           <strong>Demo first</strong>
           Pay only when it feels right
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quick-options">
+      <div class="container">
+        <div class="section-head">
+          <h2>What do you need help with?</h2>
+          <p>
+            Choose the fastest way in. This page is the main hub, but these pages are sharper if you already know what you need.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card route-card">
+            <span class="tag">Safe start</span>
+            <h3>I want to see a demo first</h3>
+            <p>
+              For you who want to understand the setup before sending a request. See how demo first works and why you do not have to buy blindly.
+            </p>
+            <a class="route-link" href="/gratis-demo.html">Read about free demo</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Proof</span>
+            <h3>I want to see what you have built</h3>
+            <p>
+              See own projects, cases, public code and technical examples. Good if you want substance behind the nice sections.
+            </p>
+            <a class="route-link" href="/case.html">See cases</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Small fixes</span>
+            <h3>I just need my website fixed</h3>
+            <p>
+              For text changes, image swaps, buttons, links, forms, mobile fixes, SEO basics or other small issues on an existing website.
+            </p>
+            <a class="route-link" href="/webbfix.html">Go to website fixes</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">New business</span>
+            <h3>I have started a new business</h3>
+            <p>
+              For sole proprietors, new companies, freelancers, consultants and new businesses that need a serious first website.
+            </p>
+            <a class="route-link" href="/hemsida-nystartat-foretag.html">Website for a new business</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Rentals</span>
+            <h3>I rent something out</h3>
+            <p>
+              For cabins, vehicles, boats, trailers, equipment, venues, activities or other rental setups with booking and terms.
+            </p>
+            <a class="route-link" href="/hemsida-uthyrning.html">Website for rentals</a>
+          </article>
+
+          <article class="card route-card">
+            <span class="tag">Campaign</span>
+            <h3>I need a landing page</h3>
+            <p>
+              For campaigns, offers, discount codes, bookings, lead forms, affiliate flows or launching something new.
+            </p>
+            <a class="route-link" href="/landningssida-kampanj.html">Campaign landing page</a>
+          </article>
         </div>
       </div>
     </section>
@@ -2180,6 +2364,9 @@
           <div class="cta-panel">
             <strong>1 business day</strong>
             <p>Usually, you get a first demo within 1 business day after sending the form.</p>
+            <a class="btn btn-light" href="/gratis-demo.html" style="margin-top:16px;width:100%;">
+              Read more about demo first
+            </a>
           </div>
         </div>
       </div>
@@ -2368,6 +2555,10 @@
             </div>
           </article>
         </div>
+
+        <div class="price-note">
+          Want to see the projects in one place? Open the <a href="/case.html">case page</a>.
+        </div>
       </div>
     </section>
 
@@ -2490,7 +2681,7 @@
 
         <details>
           <summary>Can I hire you only for small updates?</summary>
-          <p>Yes. Smaller updates start from 490 SEK depending on what needs to be done.</p>
+          <p>Yes. Smaller updates start from 490 SEK depending on what needs to be done. There is also a dedicated page for <a href="/webbfix.html">website fixes</a>.</p>
         </details>
 
         <details>
@@ -2571,8 +2762,11 @@
                 <label for="type">What do you need?</label>
                 <select id="type" name="Project type">
                   <option value="New website">New website</option>
-                  <option value="Update existing website">Update existing website</option>
-                  <option value="Landing page">Landing page</option>
+                  <option value="Demo first">Demo first</option>
+                  <option value="Website fix / update existing website">Website fix / update existing website</option>
+                  <option value="Website for a new business">Website for a new business</option>
+                  <option value="Website for rentals">Website for rentals</option>
+                  <option value="Landing page / campaign">Landing page / campaign</option>
                   <option value="API / backend / custom function">API / backend / custom function</option>
                   <option value="Not sure yet">Not sure yet</option>
                 </select>
@@ -2619,39 +2813,69 @@
   </main>
 
   <footer>
-    <div class="container footer-box">
-      <div>
-        <strong>© 2026 Nordlöf Nordic</strong><br>
-        Websites, landing pages and web development for small businesses in Sweden, the Nordics and internationally.<br>
-        Demo within 1 business day · Fixed price or 650 SEK/hour · Can be done in Swedish, English, Danish and Norwegian
-      </div>
+    <div class="container">
+      <div class="footer-box">
+        <div>
+          <strong>© 2026 Nordlöf Nordic</strong><br>
+          Websites, landing pages and web development for small businesses in Sweden, the Nordics and internationally.<br>
+          Demo within 1 business day · Fixed price or 650 SEK/hour · Can be done in Swedish, English, Danish and Norwegian
+        </div>
 
-      <div>
-        Contact:
-        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-        ·
-        <a href="tel:+46793442520">+46 79-344 25 20</a>
+        <div>
+          Contact:
+          <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+          ·
+          <a href="tel:+46793442520">+46 79-344 25 20</a>
 
-        <div class="footer-links">
-          <a href="/" hreflang="sv-SE">Svenska</a>
-          <a href="en.html" hreflang="en" aria-current="page">English</a>
-          <a href="da.html" hreflang="da">Dansk</a>
-          <a href="no.html" hreflang="no">Norsk</a>
-          <a href="villkor.html">Terms</a>
-          <a href="integritet.html">Privacy</a>
-          <a href="affiliate-en.html" hreflang="en">Affiliate program</a>
-          <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Offroad Bumpis</a>
-          <a href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Safe Standard</a>
+          <div class="footer-links">
+            <a href="/" hreflang="sv-SE">Svenska</a>
+            <a href="en.html" hreflang="en" aria-current="page">English</a>
+            <a href="da.html" hreflang="da">Dansk</a>
+            <a href="no.html" hreflang="no">Norsk</a>
+            <a href="villkor.html">Terms</a>
+            <a href="integritet.html">Privacy</a>
+            <a href="affiliate-en.html" hreflang="en">Affiliate program</a>
+            <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">Offroad Bumpis</a>
+            <a href="https://safestandard.se" target="_blank" rel="noopener noreferrer">Safe Standard</a>
+          </div>
         </div>
       </div>
+
+      <details class="footer-pages">
+        <summary>More pages</summary>
+        <div class="footer-page-grid">
+          <a href="/gratis-demo.html">Free demo</a>
+          <a href="/case.html">Cases and examples</a>
+          <a href="/webbfix.html">Website fixes</a>
+          <a href="/hemsida-nystartat-foretag.html">Website for new business</a>
+          <a href="/hemsida-uthyrning.html">Website for rentals</a>
+          <a href="/landningssida-kampanj.html">Campaign landing page</a>
+          <a href="/ny-hemsida-foretag.html">New business website</a>
+          <a href="/uppdatera-hemsida.html">Update website</a>
+          <a href="/skapa-hemsida.html">Create website</a>
+          <a href="/webbdesign-foretag.html">Web design for business</a>
+          <a href="/sokmotoroptimering.html">Search engine optimization</a>
+          <a href="/hemsida-smaforetag.html">Website for small business</a>
+          <a href="/hemsida-hantverkare.html">Website for trades</a>
+          <a href="/hemsida-byggforetag.html">Website for construction company</a>
+          <a href="/hemsida-konsult.html">Website for consultant</a>
+          <a href="/hemsida-till-foretag.html">Website for company</a>
+          <a href="/webbutveckling-malmo.html">Web development Malmö</a>
+          <a href="/webbutveckling-stockholm.html">Web development Stockholm</a>
+          <a href="/webbutveckling-goteborg.html">Web development Gothenburg</a>
+          <a href="/anlita-webbutvecklare.html">Hire web developer</a>
+          <a href="/ai-reklamvideo-foretag.html">AI ad video for business</a>
+          <a href="/reklamflyer-foretag.html">Ad flyer for business</a>
+        </div>
+      </details>
     </div>
   </footer>
 
   <nav class="mobile-sticky" aria-label="Quick options on mobile">
+    <a class="btn btn-secondary" href="/webbfix.html">Fixes</a>
     <a class="btn btn-secondary" href="#prices">Prices</a>
-    <a class="btn btn-secondary" href="#services">Services</a>
     <a class="btn btn-primary" href="#contact">Demo</a>
   </nav>
 
@@ -2779,6 +3003,7 @@
           Website fixes start from four hundred ninety Swedish kronor.
           Larger technical solutions cost six hundred fifty Swedish kronor per hour.
           You are not locked in and can get material, login details and code after purchase.
+          There are also separate pages for free demo, cases, website fixes, new businesses, rentals and campaign landing pages.
           I can create projects, communication and web content in Swedish, English, Danish and Norwegian.
           Contact is available through the form on the page, by email or by phone.
         `;
