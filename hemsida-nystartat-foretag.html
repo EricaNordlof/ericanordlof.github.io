@@ -46,6 +46,7 @@
         "name":"Hemsida för nystartat företag",
         "description":"Hemsida för nystartat företag från 2 900 kr. Demo först och köp bara om du vill gå vidare.",
         "inLanguage":"sv-SE",
+        "availableLanguage":["sv-SE","en","da-DK","no-NO"],
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"}
       },
@@ -66,7 +67,7 @@
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
-        "description":"Webbutvecklare för småföretag och nystartade företag. Hemsidor, landningssidor, webbfix och speciallösningar. Demo inom 1 arbetsdag.",
+        "description":"Webbutvecklare för småföretag och nystartade företag. Hemsidor, landningssidor, webbfix, API, backend, formulärflöden, integrationer och speciallösningar. Demo inom 1 arbetsdag.",
         "areaServed":[
           {"@type":"Country","name":"Sverige"},
           {"@type":"Country","name":"Danmark"},
@@ -110,6 +111,24 @@
             }
           ]
         }
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://webutvecklare.se/hemsida-nystartat-foretag.html#breadcrumb",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Hemsida för nystartat företag",
+            "item":"https://webutvecklare.se/hemsida-nystartat-foretag.html"
+          }
+        ]
       },
       {
         "@type":"FAQPage",
@@ -287,20 +306,29 @@
       top:86px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      align-items:center;
       gap:8px;
+      padding:8px;
+      border-radius:22px;
+      background:rgba(251,247,244,.94);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .accessibility-btn{
-      min-height:44px;
-      padding:10px 14px;
+      min-height:42px;
+      padding:9px 13px;
       border-radius:999px;
       background:#111;
       color:#fff;
       border:2px solid #fff;
       font-weight:900;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(36,30,26,.18);
+      box-shadow:0 8px 20px rgba(36,30,26,.14);
+      white-space:nowrap;
+      font-size:13px;
     }
 
     .accessibility-btn[aria-pressed="true"]{
@@ -363,6 +391,14 @@
       text-overflow:ellipsis;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
     .nav-links{
       display:flex;
       align-items:center;
@@ -374,6 +410,33 @@
 
     .nav-links a:hover{
       color:var(--brand-dark);
+    }
+
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .language-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .language-select{
+      min-height:42px;
+      max-width:190px;
+      padding:10px 36px 10px 14px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      outline:none;
     }
 
     .btn{
@@ -935,7 +998,9 @@
     body.high-contrast .card,
     body.high-contrast .price-card,
     body.high-contrast .step,
-    body.high-contrast .faq details{
+    body.high-contrast .faq details,
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -999,6 +1064,15 @@
       }
     }
 
+    @media(max-width:1100px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+      }
+    }
+
     @media(max-width:980px){
       .nav-links{
         display:none;
@@ -1023,29 +1097,36 @@
         padding-bottom:86px;
       }
 
+      body.large-text .mobile-sticky{
+        display:none;
+      }
+
       .container{
         width:min(var(--max),calc(100% - 22px));
       }
 
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
 
       .accessibility-btn{
         width:100%;
         min-height:44px;
-        padding:9px 10px;
-        font-size:14px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
         min-height:auto;
         padding:10px 0;
+        align-items:flex-start;
       }
 
       .brand img{
@@ -1060,6 +1141,22 @@
 
       .brand span span{
         display:none;
+      }
+
+      .nav-right{
+        align-items:flex-end;
+        gap:8px;
+      }
+
+      .language-label{
+        display:none;
+      }
+
+      .language-select{
+        max-width:150px;
+        min-height:40px;
+        padding:9px 32px 9px 11px;
+        font-size:13px;
       }
 
       .hero{
@@ -1157,37 +1254,71 @@
         font-size:13px;
       }
     }
+
+    @media(max-width:390px){
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+
+      .language-select{
+        max-width:132px;
+        font-size:12px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
 
-  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
-    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityTools">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
       Hög kontrast
     </button>
-    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
+
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
       Större text
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">
+      Kort uppläsning
     </button>
   </div>
 
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+      <a class="brand" href="/" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" data-i18n-alt="logoAlt">
         <span>
           <strong>Nordlöf Nordic</strong>
-          <span>Hemsida för nystartat företag</span>
+          <span data-i18n="brandSub">Hemsida för nystartat företag</span>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Huvudnavigering">
-        <a href="#problem">Problem</a>
-        <a href="#det-du-far">Det du får</a>
-        <a href="#priser">Priser</a>
-        <a href="#kontakt">Få demo</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Huvudnavigering" data-i18n-aria-label="mainNav">
+          <a href="#problem" data-i18n="navProblem">Problem</a>
+          <a href="#det-du-far" data-i18n="navGets">Det du får</a>
+          <a href="#priser" data-i18n="navPrices">Priser</a>
+          <a href="#kontakt" data-i18n="navDemo">Få demo</a>
+        </nav>
+
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select
+            id="languageSelect"
+            class="language-select"
+            aria-label="Välj språk"
+            data-i18n-aria-label="languageSwitch"
+          >
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1195,51 +1326,51 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">För nystartade företag · Demo först · Från 2 900 kr</span>
+          <span class="eyebrow" data-i18n="eyebrow">För nystartade företag · Demo först · Från 2 900 kr</span>
 
-          <h1 id="hero-title">Hemsida för nystartat företag utan onödig startkostnads-panikkänsla.</h1>
+          <h1 id="hero-title" data-i18n="heroTitle">Hemsida för nystartat företag utan onödig startkostnads-panikkänsla.</h1>
 
-          <p class="lead">
+          <p class="lead" data-i18n="heroLead">
             Har du precis startat företag och behöver en seriös hemsida snabbt?
             Jag bygger en första demo innan du bestämmer dig.
             Du köper bara om du gillar riktningen och vill gå vidare.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Få en demo först</a>
-            <a class="btn btn-secondary" href="#priser">Se priser</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="heroCta">Få en demo först</a>
+            <a class="btn btn-secondary" href="#priser" data-i18n="heroPriceCta">Se priser</a>
           </div>
 
-          <div class="proof-row" aria-label="Fördelar">
+          <div class="proof-row" aria-label="Fördelar" data-i18n-aria-label="benefitsAria">
             <div class="proof-pill">
-              Låg risk
-              <span>Du ser ett förslag innan köp.</span>
+              <span data-i18n="proof1Title">Låg risk</span>
+              <span data-i18n="proof1Text">Du ser ett förslag innan köp.</span>
             </div>
             <div class="proof-pill">
-              Tydligt pris
-              <span>Ny hemsida från 2 900 kr.</span>
+              <span data-i18n="proof2Title">Tydligt pris</span>
+              <span data-i18n="proof2Text">Ny hemsida från 2 900 kr.</span>
             </div>
             <div class="proof-pill">
-              Ingen inlåsning
-              <span>Du kan få kod, material och inloggningar efter köp.</span>
+              <span data-i18n="proof3Title">Ingen inlåsning</span>
+              <span data-i18n="proof3Text">Du kan få kod, material och inloggningar efter köp.</span>
             </div>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Kort sammanfattning">
+        <aside class="hero-card" aria-label="Kort sammanfattning" data-i18n-aria-label="summaryAria">
           <img src="nordlof-nordic-logo.png" alt="">
           <ul class="mini-list">
             <li>
-              <strong>1. Du skickar vad företaget gör</strong>
-              Tjänst, målgrupp, kontaktväg och vad sidan ska hjälpa dig med.
+              <strong data-i18n="mini1Title">1. Du skickar vad företaget gör</strong>
+              <span data-i18n="mini1Text">Tjänst, målgrupp, kontaktväg och vad sidan ska hjälpa dig med.</span>
             </li>
             <li>
-              <strong>2. Jag bygger en första demo</strong>
-              Normalt inom 1 arbetsdag när jag har tillräcklig information.
+              <strong data-i18n="mini2Title">2. Jag bygger en första demo</strong>
+              <span data-i18n="mini2Text">Normalt inom 1 arbetsdag när jag har tillräcklig information.</span>
             </li>
             <li>
-              <strong>3. Du bestämmer</strong>
-              Gillar du upplägget går vi vidare. Annars stannar det där.
+              <strong data-i18n="mini3Title">3. Du bestämmer</strong>
+              <span data-i18n="mini3Text">Gillar du upplägget går vi vidare. Annars stannar det där.</span>
             </li>
           </ul>
         </aside>
@@ -1249,33 +1380,33 @@
     <section class="section" id="problem">
       <div class="container">
         <div class="section-head">
-          <h2>När man är ny vill man komma igång utan att köpa fel.</h2>
-          <p>
+          <h2 data-i18n="problemTitle">När man är ny vill man komma igång utan att köpa fel.</h2>
+          <p data-i18n="problemLead">
             Det är ofta mycket samtidigt: namn, kunder, priser, fakturor, sociala medier och någon som säger “du borde ha en hemsida”. Jo tack. Bra att börja med rätt nivå.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Du behöver se seriös ut snabbt</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag">Problem</span>
+            <h3 data-i18n="problem1Title">Du behöver se seriös ut snabbt</h3>
+            <p data-i18n="problem1Text">
               Kunden ska kunna hitta dig, förstå vad du erbjuder och känna att företaget är på riktigt.
             </p>
           </article>
 
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Du vill inte lägga stor budget direkt</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag2">Problem</span>
+            <h3 data-i18n="problem2Title">Du vill inte lägga stor budget direkt</h3>
+            <p data-i18n="problem2Text">
               Som nystartad vill man vara smart med pengarna. Hemsidan ska hjälpa affären, inte äta upp starten.
             </p>
           </article>
 
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Du vet kanske inte exakt vad du behöver</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag3">Problem</span>
+            <h3 data-i18n="problem3Title">Du vet kanske inte exakt vad du behöver</h3>
+            <p data-i18n="problem3Text">
               Det är normalt. Därför är demo först bra: du får se en riktning innan du bestämmer dig.
             </p>
           </article>
@@ -1286,49 +1417,49 @@
     <section class="section" id="det-du-far">
       <div class="container">
         <div class="section-head">
-          <h2>Det jag kan bygga åt ditt nya företag.</h2>
-          <p>
+          <h2 data-i18n="getsTitle">Det jag kan bygga åt ditt nya företag.</h2>
+          <p data-i18n="getsLead">
             En enkel, tydlig och mobilanpassad hemsida som ger ditt företag en riktig plats att skicka kunder till.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <span class="tag">Start</span>
-            <h3>Startsida som förklarar företaget</h3>
-            <p>
+            <span class="tag" data-i18n="gets1Tag">Start</span>
+            <h3 data-i18n="gets1Title">Startsida som förklarar företaget</h3>
+            <p data-i18n="gets1Text">
               Vem du hjälper, vad du erbjuder och varför kunden ska kontakta dig.
             </p>
             <ul class="list">
-              <li>Tydlig hero</li>
-              <li>Tjänstesektion</li>
-              <li>Kontaktväg</li>
+              <li data-i18n="gets1List1">Tydlig hero</li>
+              <li data-i18n="gets1List2">Tjänstesektion</li>
+              <li data-i18n="gets1List3">Kontaktväg</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Förtroende</span>
-            <h3>Innehåll som känns seriöst</h3>
-            <p>
+            <span class="tag" data-i18n="gets2Tag">Förtroende</span>
+            <h3 data-i18n="gets2Title">Innehåll som känns seriöst</h3>
+            <p data-i18n="gets2Text">
               Rubriker, texter, FAQ och struktur som gör sidan lätt att förstå.
             </p>
             <ul class="list">
-              <li>Text och rubriker</li>
-              <li>FAQ</li>
-              <li>Priser eller frånpris</li>
+              <li data-i18n="gets2List1">Text och rubriker</li>
+              <li data-i18n="gets2List2">FAQ</li>
+              <li data-i18n="gets2List3">Priser eller frånpris</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Teknik</span>
-            <h3>Grund som går att bygga vidare på</h3>
-            <p>
+            <span class="tag" data-i18n="gets3Tag">Teknik</span>
+            <h3 data-i18n="gets3Title">Grund som går att bygga vidare på</h3>
+            <p data-i18n="gets3Text">
               Mobilanpassning, metadata, SEO-grund och möjlighet att lägga till mer senare.
             </p>
             <ul class="list">
-              <li>Mobilanpassning</li>
-              <li>SEO-grund</li>
-              <li>Ingen onödig inlåsning</li>
+              <li data-i18n="gets3List1">Mobilanpassning</li>
+              <li data-i18n="gets3List2">SEO-grund</li>
+              <li data-i18n="gets3List3">Ingen onödig inlåsning</li>
             </ul>
           </article>
         </div>
@@ -1338,46 +1469,45 @@
     <section class="section" id="priser">
       <div class="container">
         <div class="section-head">
-          <h2>Priser för ny hemsida.</h2>
-          <p>
+          <h2 data-i18n="pricesTitle">Priser för ny hemsida.</h2>
+          <p data-i18n="pricesLead">
             Börja enkelt. Bygg vidare när företaget växer. Som en vettig affär, inte ett byråpaket med champagne i offerten.
           </p>
         </div>
 
         <div class="price-grid">
           <article class="price-card">
-            <span class="tag">Start</span>
-            <h3>Ny hemsida</h3>
-            <div class="price">2 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price1Tag">Start</span>
+            <h3 data-i18n="price1Title">Ny hemsida</h3>
+            <div class="price" data-i18n="price1Amount">2 900 kr</div>
+            <p data-i18n="price1Text">
               En enkel one page-sida för nystartat företag som behöver komma ut snabbt.
             </p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Proffs</span>
-            <h3>Mer genomarbetad</h3>
-            <div class="price">4 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price2Tag">Proffs</span>
+            <h3 data-i18n="price2Title">Mer genomarbetad</h3>
+            <div class="price" data-i18n="price2Amount">4 900 kr</div>
+            <p data-i18n="price2Text">
               För dig som vill ha fler sektioner, tydligare säljstruktur och starkare helhet.
             </p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Utökad</span>
-            <h3>Större upplägg</h3>
-            <div class="price">7 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price3Tag">Utökad</span>
+            <h3 data-i18n="price3Title">Större upplägg</h3>
+            <div class="price" data-i18n="price3Amount">7 900 kr</div>
+            <p data-i18n="price3Text">
               För fler undersidor, mer innehåll och en mer komplett start från början.
             </p>
           </article>
         </div>
 
         <div class="card" style="margin-top:18px;">
-          <h3>Behöver du bara småfix?</h3>
-          <p>
-            Mindre uppdateringar på befintlig hemsida startar från <strong>490 kr</strong>.
-            Större tekniska lösningar, API, backend och integrationer görs från <strong>650 kr/h</strong>.
+          <h3 data-i18n="extraTitle">Behöver du bara småfix?</h3>
+          <p data-i18n="extraText">
+            Mindre uppdateringar på befintlig hemsida startar från 490 kr. Större tekniska lösningar, API, backend och integrationer görs från 650 kr/h.
           </p>
         </div>
       </div>
@@ -1386,36 +1516,36 @@
     <section class="section" id="sa-funkar-det">
       <div class="container">
         <div class="section-head">
-          <h2>Så går det till.</h2>
-          <p>
+          <h2 data-i18n="howTitle">Så går det till.</h2>
+          <p data-i18n="howLead">
             Låg tröskel. Tydlig process. Ingen “vi bokar tre workshops” innan du ens har en sida.
           </p>
         </div>
 
         <div class="steps">
           <div class="step">
-            <strong>Du skickar info</strong>
-            <span>Skriv vad företaget gör, vilka kunder du vill nå och vad hemsidan ska få kunden att göra.</span>
+            <strong data-i18n="step1Title">Du skickar info</strong>
+            <span data-i18n="step1Text">Skriv vad företaget gör, vilka kunder du vill nå och vad hemsidan ska få kunden att göra.</span>
           </div>
 
           <div class="step">
-            <strong>Jag bygger en första demo</strong>
-            <span>Du får ett konkret förslag på struktur, känsla och upplägg.</span>
+            <strong data-i18n="step2Title">Jag bygger en första demo</strong>
+            <span data-i18n="step2Text">Du får ett konkret förslag på struktur, känsla och upplägg.</span>
           </div>
 
           <div class="step">
-            <strong>Du ger feedback</strong>
-            <span>Vi justerar riktning, text, innehåll och känsla så att sidan passar ditt företag.</span>
+            <strong data-i18n="step3Title">Du ger feedback</strong>
+            <span data-i18n="step3Text">Vi justerar riktning, text, innehåll och känsla så att sidan passar ditt företag.</span>
           </div>
 
           <div class="step">
-            <strong>Du köper bara om du vill gå vidare</strong>
-            <span>Om du gillar demon färdigställer vi sidan enligt valt paket.</span>
+            <strong data-i18n="step4Title">Du köper bara om du vill gå vidare</strong>
+            <span data-i18n="step4Text">Om du gillar demon färdigställer vi sidan enligt valt paket.</span>
           </div>
 
           <div class="step">
-            <strong>Sidan publiceras</strong>
-            <span>Jag hjälper med publicering, domän, länkar och det praktiska efter godkännande.</span>
+            <strong data-i18n="step5Title">Sidan publiceras</strong>
+            <span data-i18n="step5Text">Jag hjälper med publicering, domän, länkar och det praktiska efter godkännande.</span>
           </div>
         </div>
       </div>
@@ -1424,33 +1554,33 @@
     <section class="section">
       <div class="container grid-2">
         <article class="card">
-          <span class="tag">Passar bra för</span>
-          <h2>Nystartade företag som behöver synas.</h2>
-          <p>
+          <span class="tag" data-i18n="fitTag">Passar bra för</span>
+          <h2 data-i18n="fitTitle">Nystartade företag som behöver synas.</h2>
+          <p data-i18n="fitText">
             Sidan passar särskilt bra om du behöver en seriös första hemsida utan att börja med en stor byråbudget.
           </p>
           <ul class="list">
-            <li>Enskild firma</li>
-            <li>Nystartat aktiebolag</li>
-            <li>Frilansare och konsulter</li>
-            <li>Hantverkare och lokala tjänsteföretag</li>
-            <li>Personligt varumärke</li>
-            <li>Ny verksamhet som behöver första riktiga sidan</li>
+            <li data-i18n="fitList1">Enskild firma</li>
+            <li data-i18n="fitList2">Nystartat aktiebolag</li>
+            <li data-i18n="fitList3">Frilansare och konsulter</li>
+            <li data-i18n="fitList4">Hantverkare och lokala tjänsteföretag</li>
+            <li data-i18n="fitList5">Personligt varumärke</li>
+            <li data-i18n="fitList6">Ny verksamhet som behöver första riktiga sidan</li>
           </ul>
         </article>
 
         <article class="card">
-          <span class="tag">Bra start</span>
-          <h2>Du behöver inte allt dag ett.</h2>
-          <p>
+          <span class="tag" data-i18n="startTag">Bra start</span>
+          <h2 data-i18n="startTitle">Du behöver inte allt dag ett.</h2>
+          <p data-i18n="startText">
             En nystartad verksamhet behöver ofta en tydlig grund först: vad du gör, vem du hjälper och hur kunden kontaktar dig.
             Mer kan byggas på senare.
           </p>
           <ul class="list">
-            <li>Börja med en tydlig sida</li>
-            <li>Lägg till fler undersidor senare</li>
-            <li>Bygg vidare när du vet vad kunderna frågar efter</li>
-            <li>Håll kostnaden rimlig i starten</li>
+            <li data-i18n="startList1">Börja med en tydlig sida</li>
+            <li data-i18n="startList2">Lägg till fler undersidor senare</li>
+            <li data-i18n="startList3">Bygg vidare när du vet vad kunderna frågar efter</li>
+            <li data-i18n="startList4">Håll kostnaden rimlig i starten</li>
           </ul>
         </article>
       </div>
@@ -1460,18 +1590,18 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Starta med en hemsida som gör jobbet.</h2>
-            <p>
+            <h2 data-i18n="ctaTitle">Starta med en hemsida som gör jobbet.</h2>
+            <p data-i18n="ctaText">
               Skicka vad företaget gör, så tar jag fram en första demo. Du får se riktningen innan du bestämmer dig.
             </p>
           </div>
 
           <div class="cta-panel">
-            <strong>Demo först</strong>
-            <p>
+            <strong data-i18n="ctaPanelTitle">Demo först</strong>
+            <p data-i18n="ctaPanelText">
               Du köper bara om du gillar upplägget. Bra för starten, bra för magkänslan.
             </p>
-            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;">
+            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;" data-i18n="ctaButton">
               Få demo
             </a>
           </div>
@@ -1482,50 +1612,50 @@
     <section class="section faq" id="fragor">
       <div class="container">
         <div class="section-head">
-          <h2>Vanliga frågor.</h2>
-          <p>
+          <h2 data-i18n="faqTitle">Vanliga frågor.</h2>
+          <p data-i18n="faqLead">
             Det viktigaste innan du skickar in.
           </p>
         </div>
 
         <details>
-          <summary>Vad kostar en hemsida för nystartat företag?</summary>
-          <p>
+          <summary data-i18n="faq1Q">Vad kostar en hemsida för nystartat företag?</summary>
+          <p data-i18n="faq1A">
             En enkel ny hemsida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning.
           </p>
         </details>
 
         <details>
-          <summary>Kan jag få demo innan jag köper?</summary>
-          <p>
+          <summary data-i18n="faq2Q">Kan jag få demo innan jag köper?</summary>
+          <p data-i18n="faq2A">
             Ja. Du får normalt en första demo inom 1 arbetsdag efter att du skickat in tillräcklig information. Du köper bara om du vill gå vidare.
           </p>
         </details>
 
         <details>
-          <summary>Passar det här för enskild firma?</summary>
-          <p>
+          <summary data-i18n="faq3Q">Passar det här för enskild firma?</summary>
+          <p data-i18n="faq3A">
             Ja. Upplägget passar bra för enskild firma, nystartat aktiebolag, frilansare, konsulter och lokala tjänsteföretag.
           </p>
         </details>
 
         <details>
-          <summary>Behöver jag ha färdig text?</summary>
-          <p>
+          <summary data-i18n="faq4Q">Behöver jag ha färdig text?</summary>
+          <p data-i18n="faq4A">
             Nej. Det räcker att du beskriver vad företaget gör. Jag kan hjälpa till med struktur, rubriker och tydligare texter.
           </p>
         </details>
 
         <details>
-          <summary>Kan jag bygga vidare senare?</summary>
-          <p>
+          <summary data-i18n="faq5Q">Kan jag bygga vidare senare?</summary>
+          <p data-i18n="faq5A">
             Ja. Du kan börja med en enkel sida och lägga till fler sektioner, undersidor, formulär eller funktioner senare.
           </p>
         </details>
 
         <details>
-          <summary>Blir jag låst till dig?</summary>
-          <p>
+          <summary data-i18n="faq6Q">Blir jag låst till dig?</summary>
+          <p data-i18n="faq6A">
             Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.
           </p>
         </details>
@@ -1535,102 +1665,103 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
-          <h2>Få demo på hemsida för ditt nya företag.</h2>
-          <p>
+          <h2 data-i18n="formTitle">Få demo på hemsida för ditt nya företag.</h2>
+          <p data-i18n="formLead">
             Fyll i det viktigaste. Skriv vad företaget gör, vilka kunder du vill nå och vad sidan ska hjälpa dig med.
           </p>
 
-          <div class="contact-row" aria-label="Kontaktuppgifter">
+          <div class="contact-row" aria-label="Kontaktuppgifter" data-i18n-aria-label="contactAria">
             <div class="contact-mini">
-              <strong>E-post</strong>
+              <strong data-i18n="contactEmail">E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
             <div class="contact-mini">
-              <strong>Telefon</strong>
+              <strong data-i18n="contactPhone">Telefon</strong>
               <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
             <div class="contact-mini">
-              <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              <strong data-i18n="contactCompany">Företag</strong>
+              <span data-i18n="companyType">Nordlöf Nordic · Enskild firma</span>
             </div>
           </div>
 
           <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
-            <input type="hidden" name="_subject" value="Ny förfrågan från hemsida-nystartat-foretag.html" />
+            <input id="subjectField" type="hidden" name="_subject" value="Ny förfrågan från hemsida-nystartat-foretag.html" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
-            <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="autoResponseField" type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="languageField" type="hidden" name="Valt språk" value="Svenska" />
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
             <div class="form-status" aria-live="polite"></div>
 
             <div class="form-grid">
               <div>
-                <label for="namn">Namn</label>
+                <label for="namn" data-i18n="labelName">Namn</label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
 
               <div>
-                <label for="email">E-post</label>
+                <label for="email" data-i18n="labelEmail">E-post</label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
 
               <div>
-                <label for="telefon">Telefon</label>
+                <label for="telefon" data-i18n="labelPhone">Telefon</label>
                 <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
 
               <div>
-                <label for="foretag">Företag</label>
+                <label for="foretag" data-i18n="labelCompany">Företag</label>
                 <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
 
               <div>
-                <label for="bolagsform">Bolagsform</label>
+                <label for="bolagsform" data-i18n="labelBusinessType">Bolagsform</label>
                 <select id="bolagsform" name="Bolagsform">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Enskild firma">Enskild firma</option>
-                  <option value="Aktiebolag">Aktiebolag</option>
-                  <option value="Handelsbolag">Handelsbolag</option>
-                  <option value="Förening">Förening</option>
-                  <option value="Annan">Annan</option>
+                  <option value="Vet inte än" data-i18n="businessNotSure">Vet inte än</option>
+                  <option value="Enskild firma" data-i18n="businessSole">Enskild firma</option>
+                  <option value="Aktiebolag" data-i18n="businessLimited">Aktiebolag</option>
+                  <option value="Handelsbolag" data-i18n="businessPartnership">Handelsbolag</option>
+                  <option value="Förening" data-i18n="businessAssociation">Förening</option>
+                  <option value="Annan" data-i18n="businessOther">Annan</option>
                 </select>
               </div>
 
               <div>
-                <label for="budget">Budget / paket</label>
+                <label for="budget" data-i18n="labelBudget">Budget / paket</label>
                 <select id="budget" name="Budget">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Start 2 900 kr">Start 2 900 kr</option>
-                  <option value="Proffs 4 900 kr">Proffs 4 900 kr</option>
-                  <option value="Utökad 7 900 kr">Utökad 7 900 kr</option>
-                  <option value="Timpris 650 kr/h">Timpris 650 kr/h</option>
+                  <option value="Vet inte än" data-i18n="budgetNotSure">Vet inte än</option>
+                  <option value="Start 2 900 kr" data-i18n="budgetStart">Start 2 900 kr</option>
+                  <option value="Proffs 4 900 kr" data-i18n="budgetPro">Proffs 4 900 kr</option>
+                  <option value="Utökad 7 900 kr" data-i18n="budgetExtended">Utökad 7 900 kr</option>
+                  <option value="Timpris 650 kr/h" data-i18n="budgetHourly">Timpris 650 kr/h</option>
                 </select>
               </div>
 
               <div class="full">
-                <label for="nuvarande">Nuvarande hemsida, om du har en</label>
+                <label for="nuvarande" data-i18n="labelCurrent">Nuvarande hemsida, om du har en</label>
                 <input id="nuvarande" name="Nuvarande hemsida" type="url" inputmode="url" placeholder="https://..." />
               </div>
 
               <div class="full">
-                <label for="beskrivning">Beskriv företaget och vad sidan ska hjälpa dig med</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad gör företaget? Vem är kunden? Ska sidan få folk att ringa, boka, köpa, mejla eller skicka offertförfrågan?" required></textarea>
+                <label for="beskrivning" data-i18n="labelDescription">Beskriv företaget och vad sidan ska hjälpa dig med</label>
+                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad gör företaget? Vem är kunden? Ska sidan få folk att ringa, boka, köpa, mejla eller skicka offertförfrågan?" data-i18n-placeholder="placeholderDescription" required></textarea>
               </div>
 
               <div class="full">
-                <label for="inspo">Länkar eller inspiration</label>
-                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in konkurrenter, sidor du gillar eller exempel på stil."></textarea>
+                <label for="inspo" data-i18n="labelInspo">Länkar eller inspiration</label>
+                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in konkurrenter, sidor du gillar eller exempel på stil." data-i18n-placeholder="placeholderInspo"></textarea>
               </div>
             </div>
 
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
-              <a href="integritet.html">integritetspolicyn</a>.
+              <span data-i18n="privacyText">Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt</span>
+              <a href="integritet.html" data-i18n="privacyLink">integritetspolicyn</a>.
             </span>
 
-            <button class="btn btn-light" type="submit" style="width:100%;">Skicka och få demo</button>
+            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">Skicka och få demo</button>
           </form>
         </div>
       </div>
@@ -1642,24 +1773,24 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Hemsidor, landningssidor och webbutveckling för nystartade företag och småföretag.<br>
-          Demo inom 1 arbetsdag · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h
+          <span data-i18n="footerText1">Hemsidor, landningssidor och webbutveckling för nystartade företag och småföretag.</span><br>
+          <span data-i18n="footerText2">Demo inom 1 arbetsdag · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h</span>
         </div>
 
         <div>
-          Kontakt:
+          <span data-i18n="footerContact">Kontakt:</span>
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
 
           <div class="footer-links">
-            <a href="/">Startsida</a>
-            <a href="gratis-demo.html">Gratis demo</a>
-            <a href="case.html">Case</a>
-            <a href="webbfix.html">Webbfix</a>
-            <a href="villkor.html">Villkor</a>
-            <a href="integritet.html">Integritet</a>
-            <a href="affiliate.html">Affiliate</a>
+            <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="gratis-demo.html" data-i18n="footerDemo">Gratis demo</a>
+            <a href="case.html" data-i18n="footerCase">Case</a>
+            <a href="webbfix.html" data-i18n="footerWebfix">Webbfix</a>
+            <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
+            <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+            <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
             <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
@@ -1668,58 +1799,845 @@
     </div>
   </footer>
 
-  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Priser</a>
-    <a class="btn btn-primary" href="#kontakt">Få demo</a>
+  <nav class="mobile-sticky" aria-label="Snabbval på mobil" data-i18n-aria-label="mobileStickyAria">
+    <a class="btn btn-secondary" href="#priser" data-i18n="mobilePrices">Priser</a>
+    <a class="btn btn-primary" href="#kontakt" data-i18n="mobileDemo">Få demo</a>
   </nav>
 
   <script>
-    document.querySelectorAll('form').forEach((form) => {
-      const submitButton = form.querySelector('button[type="submit"]');
-      const statusBox = form.querySelector('.form-status');
-      const originalButtonText = submitButton ? submitButton.textContent : '';
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        speechLang: "sv-SE",
+        languageName: "Svenska",
+        metaTitle: "Hemsida för nystartat företag | Demo först | Nordlöf Nordic",
+        metaDescription: "Hemsida för nystartat företag från 2 900 kr. Få en demo först och köp bara om du vill gå vidare. Tydlig, mobilanpassad hemsida utan byråkrångel.",
+        ogTitle: "Hemsida för nystartat företag | Nordlöf Nordic",
+        ogDescription: "Starta snyggt utan stor budget. Få demo först och köp bara om du vill gå vidare.",
+        twitterTitle: "Hemsida för nystartat företag | Nordlöf Nordic",
+        twitterDescription: "Få en första demo på din nya hemsida innan du bestämmer dig. Hemsida från 2 900 kr.",
+        subject: "Ny förfrågan från hemsida-nystartat-foretag.html",
+        autoresponse: "Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan.",
+        validationRequired: "Fyll i de obligatoriska fälten först.",
+        sending: "Skickar...",
+        sendingStatus: "Skickar formuläret...",
 
-      form.addEventListener('submit', (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityTools: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Hemsida för nystartat företag",
+        mainNav: "Huvudnavigering",
+        navProblem: "Problem",
+        navGets: "Det du får",
+        navPrices: "Priser",
+        navDemo: "Få demo",
+        languageLabel: "Språk",
+        languageSwitch: "Välj språk",
 
-          if (statusBox) {
-            statusBox.className = 'form-status is-visible';
-            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
-          }
+        eyebrow: "För nystartade företag · Demo först · Från 2 900 kr",
+        heroTitle: "Hemsida för nystartat företag utan onödig startkostnads-panikkänsla.",
+        heroLead: "Har du precis startat företag och behöver en seriös hemsida snabbt? Jag bygger en första demo innan du bestämmer dig. Du köper bara om du gillar riktningen och vill gå vidare.",
+        heroCta: "Få en demo först",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fördelar",
+        proof1Title: "Låg risk",
+        proof1Text: "Du ser ett förslag innan köp.",
+        proof2Title: "Tydligt pris",
+        proof2Text: "Ny hemsida från 2 900 kr.",
+        proof3Title: "Ingen inlåsning",
+        proof3Text: "Du kan få kod, material och inloggningar efter köp.",
+        summaryAria: "Kort sammanfattning",
+        mini1Title: "1. Du skickar vad företaget gör",
+        mini1Text: "Tjänst, målgrupp, kontaktväg och vad sidan ska hjälpa dig med.",
+        mini2Title: "2. Jag bygger en första demo",
+        mini2Text: "Normalt inom 1 arbetsdag när jag har tillräcklig information.",
+        mini3Title: "3. Du bestämmer",
+        mini3Text: "Gillar du upplägget går vi vidare. Annars stannar det där.",
 
-          form.reportValidity();
-          return;
-        }
+        problemTitle: "När man är ny vill man komma igång utan att köpa fel.",
+        problemLead: "Det är ofta mycket samtidigt: namn, kunder, priser, fakturor, sociala medier och någon som säger “du borde ha en hemsida”. Jo tack. Bra att börja med rätt nivå.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "Du behöver se seriös ut snabbt",
+        problem1Text: "Kunden ska kunna hitta dig, förstå vad du erbjuder och känna att företaget är på riktigt.",
+        problem2Title: "Du vill inte lägga stor budget direkt",
+        problem2Text: "Som nystartad vill man vara smart med pengarna. Hemsidan ska hjälpa affären, inte äta upp starten.",
+        problem3Title: "Du vet kanske inte exakt vad du behöver",
+        problem3Text: "Det är normalt. Därför är demo först bra: du får se en riktning innan du bestämmer dig.",
 
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = 'Skickar...';
-          submitButton.setAttribute('aria-busy', 'true');
-        }
+        getsTitle: "Det jag kan bygga åt ditt nya företag.",
+        getsLead: "En enkel, tydlig och mobilanpassad hemsida som ger ditt företag en riktig plats att skicka kunder till.",
+        gets1Tag: "Start",
+        gets1Title: "Startsida som förklarar företaget",
+        gets1Text: "Vem du hjälper, vad du erbjuder och varför kunden ska kontakta dig.",
+        gets1List1: "Tydlig hero",
+        gets1List2: "Tjänstesektion",
+        gets1List3: "Kontaktväg",
+        gets2Tag: "Förtroende",
+        gets2Title: "Innehåll som känns seriöst",
+        gets2Text: "Rubriker, texter, FAQ och struktur som gör sidan lätt att förstå.",
+        gets2List1: "Text och rubriker",
+        gets2List2: "FAQ",
+        gets2List3: "Priser eller frånpris",
+        gets3Tag: "Teknik",
+        gets3Title: "Grund som går att bygga vidare på",
+        gets3Text: "Mobilanpassning, metadata, SEO-grund och möjlighet att lägga till mer senare.",
+        gets3List1: "Mobilanpassning",
+        gets3List2: "SEO-grund",
+        gets3List3: "Ingen onödig inlåsning",
 
-        if (statusBox) {
-          statusBox.className = 'form-status is-visible';
-          statusBox.textContent = 'Skickar formuläret...';
-        }
+        pricesTitle: "Priser för ny hemsida.",
+        pricesLead: "Börja enkelt. Bygg vidare när företaget växer. Som en vettig affär, inte ett byråpaket med champagne i offerten.",
+        price1Tag: "Start",
+        price1Title: "Ny hemsida",
+        price1Amount: "2 900 kr",
+        price1Text: "En enkel one page-sida för nystartat företag som behöver komma ut snabbt.",
+        price2Tag: "Proffs",
+        price2Title: "Mer genomarbetad",
+        price2Amount: "4 900 kr",
+        price2Text: "För dig som vill ha fler sektioner, tydligare säljstruktur och starkare helhet.",
+        price3Tag: "Utökad",
+        price3Title: "Större upplägg",
+        price3Amount: "7 900 kr",
+        price3Text: "För fler undersidor, mer innehåll och en mer komplett start från början.",
+        extraTitle: "Behöver du bara småfix?",
+        extraText: "Mindre uppdateringar på befintlig hemsida startar från 490 kr. Större tekniska lösningar, API, backend och integrationer görs från 650 kr/h.",
 
-        setTimeout(() => {
-          if (submitButton && submitButton.disabled) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            submitButton.removeAttribute('aria-busy');
-          }
-        }, 15000);
-      });
-    });
+        howTitle: "Så går det till.",
+        howLead: "Låg tröskel. Tydlig process. Ingen “vi bokar tre workshops” innan du ens har en sida.",
+        step1Title: "Du skickar info",
+        step1Text: "Skriv vad företaget gör, vilka kunder du vill nå och vad hemsidan ska få kunden att göra.",
+        step2Title: "Jag bygger en första demo",
+        step2Text: "Du får ett konkret förslag på struktur, känsla och upplägg.",
+        step3Title: "Du ger feedback",
+        step3Text: "Vi justerar riktning, text, innehåll och känsla så att sidan passar ditt företag.",
+        step4Title: "Du köper bara om du vill gå vidare",
+        step4Text: "Om du gillar demon färdigställer vi sidan enligt valt paket.",
+        step5Title: "Sidan publiceras",
+        step5Text: "Jag hjälper med publicering, domän, länkar och det praktiska efter godkännande.",
 
-    const contrastButton = document.getElementById('toggleContrast');
-    const largeTextButton = document.getElementById('toggleLargeText');
+        fitTag: "Passar bra för",
+        fitTitle: "Nystartade företag som behöver synas.",
+        fitText: "Sidan passar särskilt bra om du behöver en seriös första hemsida utan att börja med en stor byråbudget.",
+        fitList1: "Enskild firma",
+        fitList2: "Nystartat aktiebolag",
+        fitList3: "Frilansare och konsulter",
+        fitList4: "Hantverkare och lokala tjänsteföretag",
+        fitList5: "Personligt varumärke",
+        fitList6: "Ny verksamhet som behöver första riktiga sidan",
+        startTag: "Bra start",
+        startTitle: "Du behöver inte allt dag ett.",
+        startText: "En nystartad verksamhet behöver ofta en tydlig grund först: vad du gör, vem du hjälper och hur kunden kontaktar dig. Mer kan byggas på senare.",
+        startList1: "Börja med en tydlig sida",
+        startList2: "Lägg till fler undersidor senare",
+        startList3: "Bygg vidare när du vet vad kunderna frågar efter",
+        startList4: "Håll kostnaden rimlig i starten",
 
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
+        ctaTitle: "Starta med en hemsida som gör jobbet.",
+        ctaText: "Skicka vad företaget gör, så tar jag fram en första demo. Du får se riktningen innan du bestämmer dig.",
+        ctaPanelTitle: "Demo först",
+        ctaPanelText: "Du köper bara om du gillar upplägget. Bra för starten, bra för magkänslan.",
+        ctaButton: "Få demo",
+
+        faqTitle: "Vanliga frågor.",
+        faqLead: "Det viktigaste innan du skickar in.",
+        faq1Q: "Vad kostar en hemsida för nystartat företag?",
+        faq1A: "En enkel ny hemsida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning.",
+        faq2Q: "Kan jag få demo innan jag köper?",
+        faq2A: "Ja. Du får normalt en första demo inom 1 arbetsdag efter att du skickat in tillräcklig information. Du köper bara om du vill gå vidare.",
+        faq3Q: "Passar det här för enskild firma?",
+        faq3A: "Ja. Upplägget passar bra för enskild firma, nystartat aktiebolag, frilansare, konsulter och lokala tjänsteföretag.",
+        faq4Q: "Behöver jag ha färdig text?",
+        faq4A: "Nej. Det räcker att du beskriver vad företaget gör. Jag kan hjälpa till med struktur, rubriker och tydligare texter.",
+        faq5Q: "Kan jag bygga vidare senare?",
+        faq5A: "Ja. Du kan börja med en enkel sida och lägga till fler sektioner, undersidor, formulär eller funktioner senare.",
+        faq6Q: "Blir jag låst till dig?",
+        faq6A: "Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.",
+
+        formTitle: "Få demo på hemsida för ditt nya företag.",
+        formLead: "Fyll i det viktigaste. Skriv vad företaget gör, vilka kunder du vill nå och vad sidan ska hjälpa dig med.",
+        contactAria: "Kontaktuppgifter",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Företag",
+        companyType: "Nordlöf Nordic · Enskild firma",
+        labelName: "Namn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Företag",
+        labelBusinessType: "Bolagsform",
+        businessNotSure: "Vet inte än",
+        businessSole: "Enskild firma",
+        businessLimited: "Aktiebolag",
+        businessPartnership: "Handelsbolag",
+        businessAssociation: "Förening",
+        businessOther: "Annan",
+        labelBudget: "Budget / paket",
+        budgetNotSure: "Vet inte än",
+        budgetStart: "Start 2 900 kr",
+        budgetPro: "Proffs 4 900 kr",
+        budgetExtended: "Utökad 7 900 kr",
+        budgetHourly: "Timpris 650 kr/h",
+        labelCurrent: "Nuvarande hemsida, om du har en",
+        labelDescription: "Beskriv företaget och vad sidan ska hjälpa dig med",
+        placeholderDescription: "Vad gör företaget? Vem är kunden? Ska sidan få folk att ringa, boka, köpa, mejla eller skicka offertförfrågan?",
+        labelInspo: "Länkar eller inspiration",
+        placeholderInspo: "Klistra gärna in konkurrenter, sidor du gillar eller exempel på stil.",
+        privacyText: "Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt",
+        privacyLink: "integritetspolicyn",
+        submitButton: "Skicka och få demo",
+
+        footerText1: "Hemsidor, landningssidor och webbutveckling för nystartade företag och småföretag.",
+        footerText2: "Demo inom 1 arbetsdag · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h",
+        footerContact: "Kontakt:",
+        footerHome: "Startsida",
+        footerDemo: "Gratis demo",
+        footerCase: "Case",
+        footerWebfix: "Webbfix",
+        footerTerms: "Villkor",
+        footerPrivacy: "Integritet",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Snabbval på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic bygger hemsidor för nystartade företag och småföretag. Du kan få en första demo innan du bestämmer dig och du köper bara om du vill gå vidare. En enkel ny hemsida startar från 2 900 kronor. Mer genomarbetade upplägg finns från 4 900 kronor och 7 900 kronor. Sidan passar enskild firma, nystartat aktiebolag, frilansare, konsulter, hantverkare och lokala tjänsteföretag. Efter köp blir du inte låst till Nordlöf Nordic, utan kan få material, kod och inloggningar om du vill fortsätta själv eller med någon annan."
+      },
+
+      en: {
+        htmlLang: "en",
+        speechLang: "en-GB",
+        languageName: "English",
+        metaTitle: "Website for a new business | Demo first | Nordlöf Nordic",
+        metaDescription: "Website for a new business from 2,900 SEK. Get a demo first and only buy if you want to move forward. Clear, mobile-friendly website without agency hassle.",
+        ogTitle: "Website for a new business | Nordlöf Nordic",
+        ogDescription: "Start properly without a huge budget. Get a demo first and only buy if you want to move forward.",
+        twitterTitle: "Website for a new business | Nordlöf Nordic",
+        twitterDescription: "Get a first demo of your new website before you decide. Website from 2,900 SEK.",
+        subject: "New request from hemsida-nystartat-foretag.html - English",
+        autoresponse: "Thank you! I have received your request and will get back to you as soon as I can.",
+        validationRequired: "Please fill in the required fields first.",
+        sending: "Sending...",
+        sendingStatus: "Sending the form...",
+
+        skip: "Skip to main content",
+        accessibilityTools: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Website for a new business",
+        mainNav: "Main navigation",
+        navProblem: "Problem",
+        navGets: "What you get",
+        navPrices: "Prices",
+        navDemo: "Get demo",
+        languageLabel: "Language",
+        languageSwitch: "Choose language",
+
+        eyebrow: "For new businesses · Demo first · From 2,900 SEK",
+        heroTitle: "Website for a new business without startup-cost panic.",
+        heroLead: "Have you just started a business and need a serious website quickly? I build a first demo before you decide. You only buy if you like the direction and want to move forward.",
+        heroCta: "Get a demo first",
+        heroPriceCta: "See prices",
+        benefitsAria: "Benefits",
+        proof1Title: "Low risk",
+        proof1Text: "You see a proposal before buying.",
+        proof2Title: "Clear price",
+        proof2Text: "New website from 2,900 SEK.",
+        proof3Title: "No lock-in",
+        proof3Text: "You can get code, material and logins after purchase.",
+        summaryAria: "Short summary",
+        mini1Title: "1. You send what the business does",
+        mini1Text: "Service, target group, contact path and what the website should help with.",
+        mini2Title: "2. I build a first demo",
+        mini2Text: "Usually within 1 business day when I have enough information.",
+        mini3Title: "3. You decide",
+        mini3Text: "If you like the setup, we continue. If not, it stops there.",
+
+        problemTitle: "When you are new, you want to start without buying the wrong thing.",
+        problemLead: "There is often a lot at once: name, customers, prices, invoices, social media and someone saying “you should have a website”. Yes, thanks. Better to start at the right level.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "You need to look serious quickly",
+        problem1Text: "Customers should be able to find you, understand what you offer and feel that the business is real.",
+        problem2Title: "You do not want a huge budget right away",
+        problem2Text: "As a new business, money needs to work hard. The website should help the business, not eat the launch budget.",
+        problem3Title: "You may not know exactly what you need",
+        problem3Text: "That is normal. That is why demo first works well: you see a direction before deciding.",
+
+        getsTitle: "What I can build for your new business.",
+        getsLead: "A simple, clear and mobile-friendly website that gives your business a real place to send customers.",
+        gets1Tag: "Start",
+        gets1Title: "Homepage that explains the business",
+        gets1Text: "Who you help, what you offer and why the customer should contact you.",
+        gets1List1: "Clear hero section",
+        gets1List2: "Service section",
+        gets1List3: "Contact path",
+        gets2Tag: "Trust",
+        gets2Title: "Content that feels serious",
+        gets2Text: "Headlines, text, FAQ and structure that make the page easy to understand.",
+        gets2List1: "Text and headlines",
+        gets2List2: "FAQ",
+        gets2List3: "Prices or starting price",
+        gets3Tag: "Tech",
+        gets3Title: "Foundation you can build on",
+        gets3Text: "Mobile adaptation, metadata, basic SEO and room to add more later.",
+        gets3List1: "Mobile-friendly",
+        gets3List2: "Basic SEO",
+        gets3List3: "No unnecessary lock-in",
+
+        pricesTitle: "Prices for a new website.",
+        pricesLead: "Start simple. Build more as the business grows. A sensible business move, not an agency package with champagne in the quote.",
+        price1Tag: "Start",
+        price1Title: "New website",
+        price1Amount: "2,900 SEK",
+        price1Text: "A simple one-page website for a new business that needs to get online quickly.",
+        price2Tag: "Pro",
+        price2Title: "More polished",
+        price2Amount: "4,900 SEK",
+        price2Text: "For businesses that want more sections, clearer sales structure and a stronger full impression.",
+        price3Tag: "Extended",
+        price3Title: "Larger setup",
+        price3Amount: "7,900 SEK",
+        price3Text: "For more subpages, more content and a more complete start from day one.",
+        extraTitle: "Only need smaller fixes?",
+        extraText: "Smaller updates on an existing website start from 490 SEK. Larger technical solutions, API, backend and integrations start from 650 SEK/hour.",
+
+        howTitle: "How it works.",
+        howLead: "Low threshold. Clear process. No “let’s book three workshops” before you even have a website.",
+        step1Title: "You send info",
+        step1Text: "Write what the business does, what customers you want to reach and what the website should make the customer do.",
+        step2Title: "I build a first demo",
+        step2Text: "You get a concrete proposal for structure, feeling and setup.",
+        step3Title: "You give feedback",
+        step3Text: "We adjust direction, text, content and feeling so the website fits your business.",
+        step4Title: "You only buy if you want to continue",
+        step4Text: "If you like the demo, we finish the website according to the selected package.",
+        step5Title: "The website is published",
+        step5Text: "I help with publishing, domain, links and the practical parts after approval.",
+
+        fitTag: "Good fit for",
+        fitTitle: "New businesses that need visibility.",
+        fitText: "This is especially useful if you need a serious first website without starting with a large agency budget.",
+        fitList1: "Sole proprietorship",
+        fitList2: "New limited company",
+        fitList3: "Freelancers and consultants",
+        fitList4: "Craftspeople and local service businesses",
+        fitList5: "Personal brand",
+        fitList6: "New business that needs its first proper website",
+        startTag: "Good start",
+        startTitle: "You do not need everything on day one.",
+        startText: "A new business often needs a clear foundation first: what you do, who you help and how the customer contacts you. More can be added later.",
+        startList1: "Start with a clear website",
+        startList2: "Add more subpages later",
+        startList3: "Build more when you know what customers ask for",
+        startList4: "Keep the starting cost reasonable",
+
+        ctaTitle: "Start with a website that does the job.",
+        ctaText: "Send what the business does and I will create a first demo. You see the direction before deciding.",
+        ctaPanelTitle: "Demo first",
+        ctaPanelText: "You only buy if you like the setup. Good for the launch, good for the gut feeling.",
+        ctaButton: "Get demo",
+
+        faqTitle: "Frequently asked questions.",
+        faqLead: "The essentials before you send a request.",
+        faq1Q: "What does a website for a new business cost?",
+        faq1A: "A simple new website starts from 2,900 SEK. More polished setups start from 4,900 SEK or 7,900 SEK depending on scope.",
+        faq2Q: "Can I get a demo before buying?",
+        faq2A: "Yes. You normally get a first demo within 1 business day after you send enough information. You only buy if you want to move forward.",
+        faq3Q: "Is this suitable for a sole proprietorship?",
+        faq3A: "Yes. The setup suits sole proprietorships, new limited companies, freelancers, consultants and local service businesses.",
+        faq4Q: "Do I need finished text?",
+        faq4A: "No. It is enough to describe what the business does. I can help with structure, headlines and clearer text.",
+        faq5Q: "Can I build more later?",
+        faq5A: "Yes. You can start with a simple website and add more sections, subpages, forms or features later.",
+        faq6Q: "Will I be locked in to you?",
+        faq6A: "No. After purchase, you can get material, code and logins if you want to continue yourself or with someone else.",
+
+        formTitle: "Get a website demo for your new business.",
+        formLead: "Fill in the essentials. Write what the business does, what customers you want to reach and what the website should help with.",
+        contactAria: "Contact details",
+        contactEmail: "Email",
+        contactPhone: "Phone",
+        contactCompany: "Company",
+        companyType: "Nordlöf Nordic · Sole proprietorship",
+        labelName: "Name",
+        labelEmail: "Email",
+        labelPhone: "Phone",
+        labelCompany: "Company",
+        labelBusinessType: "Business type",
+        businessNotSure: "Not sure yet",
+        businessSole: "Sole proprietorship",
+        businessLimited: "Limited company",
+        businessPartnership: "Partnership",
+        businessAssociation: "Association",
+        businessOther: "Other",
+        labelBudget: "Budget / package",
+        budgetNotSure: "Not sure yet",
+        budgetStart: "Start 2,900 SEK",
+        budgetPro: "Pro 4,900 SEK",
+        budgetExtended: "Extended 7,900 SEK",
+        budgetHourly: "Hourly 650 SEK/hour",
+        labelCurrent: "Current website, if you have one",
+        labelDescription: "Describe the business and what the website should help with",
+        placeholderDescription: "What does the business do? Who is the customer? Should the website make people call, book, buy, email or send a quote request?",
+        labelInspo: "Links or inspiration",
+        placeholderInspo: "Paste competitors, websites you like or style examples.",
+        privacyText: "By sending the form, you agree that your information is handled according to the",
+        privacyLink: "privacy policy",
+        submitButton: "Send and get demo",
+
+        footerText1: "Websites, landing pages and web development for new businesses and small businesses.",
+        footerText2: "Demo within 1 business day · New website from 2,900 SEK · Custom solutions from 650 SEK/hour",
+        footerContact: "Contact:",
+        footerHome: "Homepage",
+        footerDemo: "Free demo",
+        footerCase: "Cases",
+        footerWebfix: "Website fixes",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Quick options on mobile",
+        mobilePrices: "Prices",
+        mobileDemo: "Get demo",
+
+        speechSummary: "Nordlöf Nordic builds websites for new businesses and small businesses. You can get a first demo before deciding and only buy if you want to move forward. A simple new website starts from 2,900 SEK. More polished setups start from 4,900 SEK and 7,900 SEK. This suits sole proprietorships, new limited companies, freelancers, consultants, craftspeople and local service businesses. After purchase, you are not locked in to Nordlöf Nordic and can get material, code and logins if you want to continue yourself or with someone else."
+      },
+
+      da: {
+        htmlLang: "da",
+        speechLang: "da-DK",
+        languageName: "Dansk",
+        metaTitle: "Hjemmeside til nystartet virksomhed | Demo først | Nordlöf Nordic",
+        metaDescription: "Hjemmeside til nystartet virksomhed fra 2 900 SEK. Få en demo først og køb kun, hvis du vil gå videre. Tydelig, mobiltilpasset hjemmeside uden bureau-bøvl.",
+        ogTitle: "Hjemmeside til nystartet virksomhed | Nordlöf Nordic",
+        ogDescription: "Start ordentligt uden stort budget. Få demo først og køb kun, hvis du vil gå videre.",
+        twitterTitle: "Hjemmeside til nystartet virksomhed | Nordlöf Nordic",
+        twitterDescription: "Få en første demo på din nye hjemmeside, før du beslutter dig. Hjemmeside fra 2 900 SEK.",
+        subject: "Ny forespørgsel fra hemsida-nystartat-foretag.html - Dansk",
+        autoresponse: "Tak! Jeg har modtaget din forespørgsel og vender tilbage så snart jeg kan.",
+        validationRequired: "Udfyld de obligatoriske felter først.",
+        sending: "Sender...",
+        sendingStatus: "Sender formularen...",
+
+        skip: "Spring til hovedindhold",
+        accessibilityTools: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        listen: "Kort oplæsning",
+        stopListen: "Stop oplæsning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Hjemmeside til nystartet virksomhed",
+        mainNav: "Hovednavigation",
+        navProblem: "Problem",
+        navGets: "Det du får",
+        navPrices: "Priser",
+        navDemo: "Få demo",
+        languageLabel: "Sprog",
+        languageSwitch: "Vælg sprog",
+
+        eyebrow: "Til nystartede virksomheder · Demo først · Fra 2 900 SEK",
+        heroTitle: "Hjemmeside til nystartet virksomhed uden unødig startbudget-panik.",
+        heroLead: "Har du lige startet virksomhed og brug for en seriøs hjemmeside hurtigt? Jeg bygger en første demo, før du beslutter dig. Du køber kun, hvis du kan lide retningen og vil gå videre.",
+        heroCta: "Få en demo først",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fordele",
+        proof1Title: "Lav risiko",
+        proof1Text: "Du ser et forslag før køb.",
+        proof2Title: "Tydelig pris",
+        proof2Text: "Ny hjemmeside fra 2 900 SEK.",
+        proof3Title: "Ingen binding",
+        proof3Text: "Du kan få kode, materiale og login efter køb.",
+        summaryAria: "Kort opsummering",
+        mini1Title: "1. Du sender hvad virksomheden laver",
+        mini1Text: "Ydelse, målgruppe, kontaktvej og hvad siden skal hjælpe med.",
+        mini2Title: "2. Jeg bygger en første demo",
+        mini2Text: "Normalt inden for 1 arbejdsdag, når jeg har nok information.",
+        mini3Title: "3. Du beslutter",
+        mini3Text: "Kan du lide oplægget, går vi videre. Ellers stopper vi der.",
+
+        problemTitle: "Når man er ny, vil man i gang uden at købe forkert.",
+        problemLead: "Der er ofte meget på samme tid: navn, kunder, priser, fakturaer, sociale medier og nogen der siger “du burde have en hjemmeside”. Ja tak. Det er smart at starte på rigtigt niveau.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "Du skal se seriøs ud hurtigt",
+        problem1Text: "Kunden skal kunne finde dig, forstå hvad du tilbyder og føle, at virksomheden er reel.",
+        problem2Title: "Du vil ikke bruge stort budget med det samme",
+        problem2Text: "Som nystartet skal pengene bruges klogt. Hjemmesiden skal hjælpe forretningen, ikke spise starten.",
+        problem3Title: "Du ved måske ikke præcis, hvad du har brug for",
+        problem3Text: "Det er normalt. Derfor er demo først smart: du ser en retning, før du beslutter dig.",
+
+        getsTitle: "Det jeg kan bygge til din nye virksomhed.",
+        getsLead: "En enkel, tydelig og mobiltilpasset hjemmeside, som giver din virksomhed et rigtigt sted at sende kunder hen.",
+        gets1Tag: "Start",
+        gets1Title: "Forside der forklarer virksomheden",
+        gets1Text: "Hvem du hjælper, hvad du tilbyder, og hvorfor kunden skal kontakte dig.",
+        gets1List1: "Tydelig hero",
+        gets1List2: "Ydelsessektion",
+        gets1List3: "Kontaktvej",
+        gets2Tag: "Troværdighed",
+        gets2Title: "Indhold der føles seriøst",
+        gets2Text: "Overskrifter, tekster, FAQ og struktur, som gør siden let at forstå.",
+        gets2List1: "Tekst og overskrifter",
+        gets2List2: "FAQ",
+        gets2List3: "Priser eller fra-pris",
+        gets3Tag: "Teknik",
+        gets3Title: "Grundlag der kan bygges videre på",
+        gets3Text: "Mobiltilpasning, metadata, SEO-grundlag og mulighed for at tilføje mere senere.",
+        gets3List1: "Mobiltilpasning",
+        gets3List2: "SEO-grundlag",
+        gets3List3: "Ingen unødvendig binding",
+
+        pricesTitle: "Priser for ny hjemmeside.",
+        pricesLead: "Start enkelt. Byg videre når virksomheden vokser. Som en fornuftig forretning, ikke en bureaupakke med champagne i tilbuddet.",
+        price1Tag: "Start",
+        price1Title: "Ny hjemmeside",
+        price1Amount: "2 900 SEK",
+        price1Text: "En enkel one page-side til en nystartet virksomhed, der skal hurtigt online.",
+        price2Tag: "Pro",
+        price2Title: "Mere gennemarbejdet",
+        price2Amount: "4 900 SEK",
+        price2Text: "Til dig der vil have flere sektioner, tydeligere salgsstruktur og stærkere helhed.",
+        price3Tag: "Udvidet",
+        price3Title: "Større oplæg",
+        price3Amount: "7 900 SEK",
+        price3Text: "Til flere undersider, mere indhold og en mere komplet start fra begyndelsen.",
+        extraTitle: "Har du kun brug for småfix?",
+        extraText: "Mindre opdateringer på eksisterende hjemmeside starter fra 490 SEK. Større tekniske løsninger, API, backend og integrationer laves fra 650 SEK/time.",
+
+        howTitle: "Sådan foregår det.",
+        howLead: "Lav tærskel. Tydelig proces. Ingen “vi booker tre workshops”, før du overhovedet har en side.",
+        step1Title: "Du sender info",
+        step1Text: "Skriv hvad virksomheden laver, hvilke kunder du vil nå, og hvad hjemmesiden skal få kunden til at gøre.",
+        step2Title: "Jeg bygger en første demo",
+        step2Text: "Du får et konkret forslag til struktur, følelse og oplæg.",
+        step3Title: "Du giver feedback",
+        step3Text: "Vi justerer retning, tekst, indhold og følelse, så siden passer til din virksomhed.",
+        step4Title: "Du køber kun, hvis du vil videre",
+        step4Text: "Hvis du kan lide demoen, færdiggør vi siden efter valgt pakke.",
+        step5Title: "Siden publiceres",
+        step5Text: "Jeg hjælper med publicering, domæne, links og det praktiske efter godkendelse.",
+
+        fitTag: "Passer godt til",
+        fitTitle: "Nystartede virksomheder der skal ses.",
+        fitText: "Siden passer særligt godt, hvis du har brug for en seriøs første hjemmeside uden at starte med et stort bureaubudget.",
+        fitList1: "Enkeltmandsvirksomhed",
+        fitList2: "Nystartet selskab",
+        fitList3: "Freelancere og konsulenter",
+        fitList4: "Håndværkere og lokale servicevirksomheder",
+        fitList5: "Personligt brand",
+        fitList6: "Ny virksomhed der har brug for første rigtige side",
+        startTag: "God start",
+        startTitle: "Du behøver ikke alt på dag ét.",
+        startText: "En nystartet virksomhed har ofte først brug for et tydeligt grundlag: hvad du laver, hvem du hjælper, og hvordan kunden kontakter dig. Mere kan bygges på senere.",
+        startList1: "Start med en tydelig side",
+        startList2: "Tilføj flere undersider senere",
+        startList3: "Byg videre når du ved, hvad kunderne spørger om",
+        startList4: "Hold startomkostningen rimelig",
+
+        ctaTitle: "Start med en hjemmeside der gør jobbet.",
+        ctaText: "Send hvad virksomheden laver, så laver jeg en første demo. Du ser retningen, før du beslutter dig.",
+        ctaPanelTitle: "Demo først",
+        ctaPanelText: "Du køber kun, hvis du kan lide oplægget. Godt for starten, godt for mavefornemmelsen.",
+        ctaButton: "Få demo",
+
+        faqTitle: "Ofte stillede spørgsmål.",
+        faqLead: "Det vigtigste før du sender ind.",
+        faq1Q: "Hvad koster en hjemmeside til nystartet virksomhed?",
+        faq1A: "En enkel ny hjemmeside starter fra 2 900 SEK. Mere gennemarbejdede oplæg koster fra 4 900 SEK eller 7 900 SEK afhængigt af omfang.",
+        faq2Q: "Kan jeg få demo før jeg køber?",
+        faq2A: "Ja. Du får normalt en første demo inden for 1 arbejdsdag, efter du har sendt nok information. Du køber kun, hvis du vil videre.",
+        faq3Q: "Passer det til enkeltmandsvirksomhed?",
+        faq3A: "Ja. Oplægget passer godt til enkeltmandsvirksomhed, nystartet selskab, freelancere, konsulenter og lokale servicevirksomheder.",
+        faq4Q: "Skal jeg have færdig tekst?",
+        faq4A: "Nej. Det er nok, at du beskriver, hvad virksomheden laver. Jeg kan hjælpe med struktur, overskrifter og tydeligere tekster.",
+        faq5Q: "Kan jeg bygge videre senere?",
+        faq5A: "Ja. Du kan starte med en enkel side og tilføje flere sektioner, undersider, formularer eller funktioner senere.",
+        faq6Q: "Bliver jeg låst til dig?",
+        faq6A: "Nej. Efter køb kan du få materiale, kode og login, hvis du vil fortsætte selv eller med en anden.",
+
+        formTitle: "Få demo på hjemmeside til din nye virksomhed.",
+        formLead: "Udfyld det vigtigste. Skriv hvad virksomheden laver, hvilke kunder du vil nå, og hvad siden skal hjælpe med.",
+        contactAria: "Kontaktoplysninger",
+        contactEmail: "E-mail",
+        contactPhone: "Telefon",
+        contactCompany: "Virksomhed",
+        companyType: "Nordlöf Nordic · Enkeltmandsvirksomhed",
+        labelName: "Navn",
+        labelEmail: "E-mail",
+        labelPhone: "Telefon",
+        labelCompany: "Virksomhed",
+        labelBusinessType: "Virksomhedsform",
+        businessNotSure: "Ved ikke endnu",
+        businessSole: "Enkeltmandsvirksomhed",
+        businessLimited: "Selskab",
+        businessPartnership: "Interessentskab",
+        businessAssociation: "Forening",
+        businessOther: "Andet",
+        labelBudget: "Budget / pakke",
+        budgetNotSure: "Ved ikke endnu",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Udvidet 7 900 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nuværende hjemmeside, hvis du har en",
+        labelDescription: "Beskriv virksomheden og hvad siden skal hjælpe med",
+        placeholderDescription: "Hvad laver virksomheden? Hvem er kunden? Skal siden få folk til at ringe, booke, købe, maile eller sende tilbudsforespørgsel?",
+        labelInspo: "Links eller inspiration",
+        placeholderInspo: "Indsæt gerne konkurrenter, sider du kan lide eller eksempler på stil.",
+        privacyText: "Ved at sende formularen accepterer du, at dine oplysninger behandles i henhold til",
+        privacyLink: "privatlivspolitikken",
+        submitButton: "Send og få demo",
+
+        footerText1: "Hjemmesider, landingssider og webudvikling til nystartede virksomheder og små virksomheder.",
+        footerText2: "Demo inden for 1 arbejdsdag · Ny hjemmeside fra 2 900 SEK · Specialløsninger fra 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerCase: "Cases",
+        footerWebfix: "Webfix",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Privatliv",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic bygger hjemmesider til nystartede virksomheder og små virksomheder. Du kan få en første demo, før du beslutter dig, og du køber kun, hvis du vil gå videre. En enkel ny hjemmeside starter fra 2 900 SEK. Mere gennemarbejdede oplæg findes fra 4 900 SEK og 7 900 SEK. Det passer til enkeltmandsvirksomheder, nystartede selskaber, freelancere, konsulenter, håndværkere og lokale servicevirksomheder. Efter køb bliver du ikke låst til Nordlöf Nordic, men kan få materiale, kode og login, hvis du vil fortsætte selv eller med en anden."
+      },
+
+      no: {
+        htmlLang: "no",
+        speechLang: "no-NO",
+        languageName: "Norsk",
+        metaTitle: "Nettside for nyoppstartet bedrift | Demo først | Nordlöf Nordic",
+        metaDescription: "Nettside for nyoppstartet bedrift fra 2 900 SEK. Få en demo først og kjøp bare hvis du vil gå videre. Tydelig, mobiltilpasset nettside uten byråkrøll.",
+        ogTitle: "Nettside for nyoppstartet bedrift | Nordlöf Nordic",
+        ogDescription: "Start ryddig uten stort budsjett. Få demo først og kjøp bare hvis du vil gå videre.",
+        twitterTitle: "Nettside for nyoppstartet bedrift | Nordlöf Nordic",
+        twitterDescription: "Få en første demo på din nye nettside før du bestemmer deg. Nettside fra 2 900 SEK.",
+        subject: "Ny forespørsel fra hemsida-nystartat-foretag.html - Norsk",
+        autoresponse: "Takk! Jeg har mottatt forespørselen din og kommer tilbake så snart jeg kan.",
+        validationRequired: "Fyll ut de obligatoriske feltene først.",
+        sending: "Sender...",
+        sendingStatus: "Sender skjemaet...",
+
+        skip: "Hopp til hovedinnhold",
+        accessibilityTools: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        listen: "Kort opplesning",
+        stopListen: "Stopp opplesning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Nettside for nyoppstartet bedrift",
+        mainNav: "Hovednavigasjon",
+        navProblem: "Problem",
+        navGets: "Det du får",
+        navPrices: "Priser",
+        navDemo: "Få demo",
+        languageLabel: "Språk",
+        languageSwitch: "Velg språk",
+
+        eyebrow: "For nyoppstartede bedrifter · Demo først · Fra 2 900 SEK",
+        heroTitle: "Nettside for nyoppstartet bedrift uten unødvendig startkostnads-panikk.",
+        heroLead: "Har du nettopp startet bedrift og trenger en seriøs nettside raskt? Jeg bygger en første demo før du bestemmer deg. Du kjøper bare hvis du liker retningen og vil gå videre.",
+        heroCta: "Få en demo først",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fordeler",
+        proof1Title: "Lav risiko",
+        proof1Text: "Du ser et forslag før kjøp.",
+        proof2Title: "Tydelig pris",
+        proof2Text: "Ny nettside fra 2 900 SEK.",
+        proof3Title: "Ingen innlåsing",
+        proof3Text: "Du kan få kode, materiale og innlogginger etter kjøp.",
+        summaryAria: "Kort oppsummering",
+        mini1Title: "1. Du sender hva bedriften gjør",
+        mini1Text: "Tjeneste, målgruppe, kontaktvei og hva siden skal hjelpe med.",
+        mini2Title: "2. Jeg bygger en første demo",
+        mini2Text: "Normalt innen 1 arbeidsdag når jeg har nok informasjon.",
+        mini3Title: "3. Du bestemmer",
+        mini3Text: "Liker du opplegget, går vi videre. Hvis ikke, stopper det der.",
+
+        problemTitle: "Når man er ny, vil man komme i gang uten å kjøpe feil.",
+        problemLead: "Det er ofte mye samtidig: navn, kunder, priser, fakturaer, sosiale medier og noen som sier “du burde ha en nettside”. Ja takk. Smart å starte på riktig nivå.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "Du må se seriøs ut raskt",
+        problem1Text: "Kunden skal kunne finne deg, forstå hva du tilbyr og føle at bedriften er ekte.",
+        problem2Title: "Du vil ikke bruke stort budsjett med en gang",
+        problem2Text: "Som nyoppstartet vil man bruke pengene smart. Nettsiden skal hjelpe bedriften, ikke spise opp starten.",
+        problem3Title: "Du vet kanskje ikke nøyaktig hva du trenger",
+        problem3Text: "Det er normalt. Derfor er demo først bra: du får se en retning før du bestemmer deg.",
+
+        getsTitle: "Det jeg kan bygge for din nye bedrift.",
+        getsLead: "En enkel, tydelig og mobiltilpasset nettside som gir bedriften din et ordentlig sted å sende kunder til.",
+        gets1Tag: "Start",
+        gets1Title: "Startside som forklarer bedriften",
+        gets1Text: "Hvem du hjelper, hva du tilbyr og hvorfor kunden skal kontakte deg.",
+        gets1List1: "Tydelig hero",
+        gets1List2: "Tjenesteseksjon",
+        gets1List3: "Kontaktvei",
+        gets2Tag: "Tillit",
+        gets2Title: "Innhold som føles seriøst",
+        gets2Text: "Overskrifter, tekster, FAQ og struktur som gjør siden enkel å forstå.",
+        gets2List1: "Tekst og overskrifter",
+        gets2List2: "FAQ",
+        gets2List3: "Priser eller fra-pris",
+        gets3Tag: "Teknikk",
+        gets3Title: "Grunnlag som kan bygges videre på",
+        gets3Text: "Mobiltilpasning, metadata, SEO-grunnlag og mulighet til å legge til mer senere.",
+        gets3List1: "Mobiltilpasning",
+        gets3List2: "SEO-grunnlag",
+        gets3List3: "Ingen unødvendig innlåsing",
+
+        pricesTitle: "Priser for ny nettside.",
+        pricesLead: "Start enkelt. Bygg videre når bedriften vokser. Som en fornuftig investering, ikke en byråpakke med champagne i tilbudet.",
+        price1Tag: "Start",
+        price1Title: "Ny nettside",
+        price1Amount: "2 900 SEK",
+        price1Text: "En enkel one page-side for nyoppstartet bedrift som trenger å komme raskt ut.",
+        price2Tag: "Pro",
+        price2Title: "Mer gjennomarbeidet",
+        price2Amount: "4 900 SEK",
+        price2Text: "For deg som vil ha flere seksjoner, tydeligere salgsstruktur og sterkere helhet.",
+        price3Tag: "Utvidet",
+        price3Title: "Større opplegg",
+        price3Amount: "7 900 SEK",
+        price3Text: "For flere undersider, mer innhold og en mer komplett start fra begynnelsen.",
+        extraTitle: "Trenger du bare småfiks?",
+        extraText: "Mindre oppdateringer på eksisterende nettside starter fra 490 SEK. Større tekniske løsninger, API, backend og integrasjoner gjøres fra 650 SEK/time.",
+
+        howTitle: "Slik går det til.",
+        howLead: "Lav terskel. Tydelig prosess. Ingen “vi booker tre workshops” før du engang har en side.",
+        step1Title: "Du sender info",
+        step1Text: "Skriv hva bedriften gjør, hvilke kunder du vil nå og hva nettsiden skal få kunden til å gjøre.",
+        step2Title: "Jeg bygger en første demo",
+        step2Text: "Du får et konkret forslag til struktur, følelse og opplegg.",
+        step3Title: "Du gir tilbakemelding",
+        step3Text: "Vi justerer retning, tekst, innhold og følelse slik at siden passer bedriften din.",
+        step4Title: "Du kjøper bare hvis du vil gå videre",
+        step4Text: "Hvis du liker demoen, ferdigstiller vi siden etter valgt pakke.",
+        step5Title: "Siden publiseres",
+        step5Text: "Jeg hjelper med publisering, domene, lenker og det praktiske etter godkjenning.",
+
+        fitTag: "Passer godt for",
+        fitTitle: "Nyoppstartede bedrifter som må synes.",
+        fitText: "Siden passer spesielt godt hvis du trenger en seriøs første nettside uten å starte med stort byråbudsjett.",
+        fitList1: "Enkeltpersonforetak",
+        fitList2: "Nyoppstartet aksjeselskap",
+        fitList3: "Frilansere og konsulenter",
+        fitList4: "Håndverkere og lokale tjenestebedrifter",
+        fitList5: "Personlig merkevare",
+        fitList6: "Ny virksomhet som trenger første ordentlige side",
+        startTag: "God start",
+        startTitle: "Du trenger ikke alt dag én.",
+        startText: "En nyoppstartet virksomhet trenger ofte et tydelig grunnlag først: hva du gjør, hvem du hjelper og hvordan kunden kontakter deg. Mer kan bygges på senere.",
+        startList1: "Start med en tydelig side",
+        startList2: "Legg til flere undersider senere",
+        startList3: "Bygg videre når du vet hva kundene spør om",
+        startList4: "Hold kostnaden rimelig i starten",
+
+        ctaTitle: "Start med en nettside som gjør jobben.",
+        ctaText: "Send hva bedriften gjør, så lager jeg en første demo. Du får se retningen før du bestemmer deg.",
+        ctaPanelTitle: "Demo først",
+        ctaPanelText: "Du kjøper bare hvis du liker opplegget. Bra for starten, bra for magefølelsen.",
+        ctaButton: "Få demo",
+
+        faqTitle: "Vanlige spørsmål.",
+        faqLead: "Det viktigste før du sender inn.",
+        faq1Q: "Hva koster en nettside for nyoppstartet bedrift?",
+        faq1A: "En enkel ny nettside starter fra 2 900 SEK. Mer gjennomarbeidede opplegg koster fra 4 900 SEK eller 7 900 SEK avhengig av omfang.",
+        faq2Q: "Kan jeg få demo før jeg kjøper?",
+        faq2A: "Ja. Du får normalt en første demo innen 1 arbeidsdag etter at du har sendt nok informasjon. Du kjøper bare hvis du vil gå videre.",
+        faq3Q: "Passer dette for enkeltpersonforetak?",
+        faq3A: "Ja. Opplegget passer godt for enkeltpersonforetak, nyoppstartet aksjeselskap, frilansere, konsulenter og lokale tjenestebedrifter.",
+        faq4Q: "Må jeg ha ferdig tekst?",
+        faq4A: "Nei. Det holder at du beskriver hva bedriften gjør. Jeg kan hjelpe med struktur, overskrifter og tydeligere tekster.",
+        faq5Q: "Kan jeg bygge videre senere?",
+        faq5A: "Ja. Du kan starte med en enkel side og legge til flere seksjoner, undersider, skjemaer eller funksjoner senere.",
+        faq6Q: "Blir jeg låst til deg?",
+        faq6A: "Nei. Etter kjøp kan du få materiale, kode og innlogginger hvis du vil fortsette selv eller med noen andre.",
+
+        formTitle: "Få demo på nettside for din nye bedrift.",
+        formLead: "Fyll inn det viktigste. Skriv hva bedriften gjør, hvilke kunder du vil nå og hva siden skal hjelpe deg med.",
+        contactAria: "Kontaktopplysninger",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Bedrift",
+        companyType: "Nordlöf Nordic · Enkeltpersonforetak",
+        labelName: "Navn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Bedrift",
+        labelBusinessType: "Selskapsform",
+        businessNotSure: "Vet ikke ennå",
+        businessSole: "Enkeltpersonforetak",
+        businessLimited: "Aksjeselskap",
+        businessPartnership: "Ansvarlig selskap",
+        businessAssociation: "Forening",
+        businessOther: "Annet",
+        labelBudget: "Budsjett / pakke",
+        budgetNotSure: "Vet ikke ennå",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Utvidet 7 900 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nåværende nettside, hvis du har en",
+        labelDescription: "Beskriv bedriften og hva siden skal hjelpe med",
+        placeholderDescription: "Hva gjør bedriften? Hvem er kunden? Skal siden få folk til å ringe, booke, kjøpe, sende e-post eller sende tilbudsforespørsel?",
+        labelInspo: "Lenker eller inspirasjon",
+        placeholderInspo: "Lim gjerne inn konkurrenter, sider du liker eller eksempler på stil.",
+        privacyText: "Ved å sende skjemaet godtar du at opplysningene dine behandles i henhold til",
+        privacyLink: "personvernerklæringen",
+        submitButton: "Send og få demo",
+
+        footerText1: "Nettsider, landingssider og webutvikling for nyoppstartede bedrifter og småbedrifter.",
+        footerText2: "Demo innen 1 arbeidsdag · Ny nettside fra 2 900 SEK · Spesialløsninger fra 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerCase: "Case",
+        footerWebfix: "Webfiks",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Personvern",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic bygger nettsider for nyoppstartede bedrifter og småbedrifter. Du kan få en første demo før du bestemmer deg, og du kjøper bare hvis du vil gå videre. En enkel ny nettside starter fra 2 900 SEK. Mer gjennomarbeidede opplegg finnes fra 4 900 SEK og 7 900 SEK. Dette passer for enkeltpersonforetak, nyoppstartede aksjeselskap, frilansere, konsulenter, håndverkere og lokale tjenestebedrifter. Etter kjøp blir du ikke låst til Nordlöf Nordic, men kan få materiale, kode og innlogginger hvis du vil fortsette selv eller med noen andre."
       }
+    };
+
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+    let isSpeaking = false;
+
+    const languageSelect = document.getElementById("languageSelect");
+    const listenButton = document.getElementById("listenSummary");
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
     }
 
     function safeGet(key) {
@@ -1740,35 +2658,235 @@
       return true;
     }
 
-    const savedContrast = safeGet('highContrast') === 'true';
-    const savedLargeText = safeGet('largeText') === 'true';
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    function stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      isSpeaking = false;
+
+      if (listenButton) {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        listenButton.setAttribute("aria-pressed", "false");
+        listenButton.textContent = dictionary.listen;
+      }
+    }
+
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+
+      stopSpeaking();
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (dictionary[key]) {
+          element.setAttribute("placeholder", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+
+      if (languageSelect) {
+        languageSelect.value = lang;
+        languageSelect.setAttribute("aria-label", dictionary.languageSwitch);
+      }
+
+      const subjectField = document.getElementById("subjectField");
+      if (subjectField) {
+        subjectField.value = dictionary.subject;
+      }
+
+      const autoResponseField = document.getElementById("autoResponseField");
+      if (autoResponseField) {
+        autoResponseField.value = dictionary.autoresponse;
+      }
+
+      const languageField = document.getElementById("languageField");
+      if (languageField) {
+        languageField.value = dictionary.languageName;
+      }
+
+      safeSet("startupWebsiteLanguage", lang);
+    }
+
+    if (languageSelect) {
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
+      });
+    }
+
+    document.querySelectorAll("form").forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector(".form-status");
+
+      form.addEventListener("submit", (event) => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        const originalButtonText = dictionary.submitButton;
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = "form-status is-visible";
+            statusBox.textContent = dictionary.validationRequired;
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = dictionary.sending;
+          submitButton.setAttribute("aria-busy", "true");
+        }
+
+        if (statusBox) {
+          statusBox.className = "form-status is-visible";
+          statusBox.textContent = dictionary.sendingStatus;
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute("aria-busy");
+          }
+        }, 15000);
+      });
+    });
+
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
 
     if (savedContrast) {
-      document.body.classList.add('high-contrast');
+      document.body.classList.add("high-contrast");
     }
 
     if (savedLargeText) {
-      document.body.classList.add('large-text');
+      document.body.classList.add("large-text");
     }
 
     setPressed(contrastButton, savedContrast);
     setPressed(largeTextButton, savedLargeText);
 
     if (contrastButton) {
-      contrastButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('high-contrast');
-        safeSet('highContrast', String(isActive));
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
         setPressed(contrastButton, isActive);
       });
     }
 
     if (largeTextButton) {
-      largeTextButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('large-text');
-        safeSet('largeText', String(isActive));
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
         setPressed(largeTextButton, isActive);
       });
     }
+
+    if (listenButton && "speechSynthesis" in window) {
+      listenButton.addEventListener("click", () => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+
+        if (isSpeaking) {
+          stopSpeaking();
+          return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(dictionary.speechSummary);
+        utterance.lang = dictionary.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        isSpeaking = true;
+        listenButton.setAttribute("aria-pressed", "true");
+        listenButton.textContent = dictionary.stopListen;
+
+        utterance.onend = () => {
+          stopSpeaking();
+        };
+
+        utterance.onerror = () => {
+          stopSpeaking();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+
+    window.addEventListener("pagehide", () => {
+      stopSpeaking();
+    });
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("startupWebsiteLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
   </script>
 </body>
 </html>
