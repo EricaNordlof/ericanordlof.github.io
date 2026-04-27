@@ -911,8 +911,9 @@
 
     .video-shell video{
       width:100%;
-      aspect-ratio:16/9;
-      object-fit:cover;
+      height:auto;
+      max-height:520px;
+      object-fit:contain;
       background:#111;
     }
 
@@ -1610,24 +1611,32 @@
       <div class="container grid-2">
         <article class="card">
           <span class="tag">Exempel</span>
-          <h2>Har du en demovideo kan den ligga här.</h2>
+          <h2>Egen reklamvideo för Offroad Bumpis.</h2>
           <p>
-            Byt filnamnet <strong>demo-video.mp4</strong> mot din faktiska videofil när du har en färdig demo. Sektionen är byggd så att sidan fortfarande fungerar även om videofilen saknas.
+            Här är ett exempel på en AI-reklamvideo jag tagit fram till mitt eget projekt
+            <strong>Offroad Bumpis</strong>, en bumperball-uthyrning i Skåne.
+            Videon är gjord för att snabbt visa känslan, tjänsten och varför någon ska boka.
           </p>
 
           <div class="video-shell" style="margin-top:18px;">
-            <video controls playsinline preload="metadata">
+            <video controls playsinline preload="metadata" poster="nordlof-nordic-logo.png">
               <source src="demo-video.mp4" type="video/mp4">
               Din webbläsare stödjer inte videouppspelning.
             </video>
           </div>
+
+          <p style="margin-top:14px;">
+            Samma typ av upplägg kan användas för företag som vill visa en tjänst,
+            ett erbjudande eller en kampanj på sociala medier, hemsidan eller i annonser.
+          </p>
         </article>
 
         <article class="card">
           <span class="tag">För vem</span>
           <h2>Passar bäst när du vill få ut material snabbt.</h2>
           <p>
-            Tjänsten passar småföretag och tjänsteföretag som vill se mer professionella ut online utan att lägga en hel kampanjbudget på videoproduktion.
+            Tjänsten passar småföretag och tjänsteföretag som vill se mer professionella ut online
+            utan att lägga en hel kampanjbudget på videoproduktion.
           </p>
           <ul class="list">
             <li>Småföretag och lokala verksamheter</li>
