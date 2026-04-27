@@ -35,9 +35,81 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"https://webutvecklare.se/villkor.html#webpage",
+        "url":"https://webutvecklare.se/villkor.html",
+        "name":"Villkor | Webbutvecklare.se | Nordlöf Nordic",
+        "description":"Villkor för webbutveckling, hemsidor och större webblösningar via webbutvecklare.se.",
+        "inLanguage":"sv-SE",
+        "availableLanguage":["sv-SE","en","da-DK","no-NO"],
+        "isPartOf":{"@id":"https://webutvecklare.se/#website"},
+        "about":{"@id":"https://webutvecklare.se/#business"}
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://webutvecklare.se/#website",
+        "name":"Webutvecklare.se",
+        "url":"https://webutvecklare.se/",
+        "inLanguage":"sv-SE",
+        "publisher":{"@id":"https://webutvecklare.se/#business"}
+      },
+      {
+        "@type":"ProfessionalService",
+        "@id":"https://webutvecklare.se/#business",
+        "name":"Nordlöf Nordic",
+        "url":"https://webutvecklare.se/",
+        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "email":"erica@webutvecklare.se",
+        "telephone":"+46793442520",
+        "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
+        "description":"Webbutvecklare för småföretag. Hemsidor, landningssidor, webbfix, API, backend, formulärflöden, integrationer och speciallösningar. Demo inom 1 arbetsdag.",
+        "areaServed":[
+          {"@type":"Country","name":"Sverige"},
+          {"@type":"Country","name":"Danmark"},
+          {"@type":"Country","name":"Norge"},
+          {"@type":"Place","name":"Internationellt"}
+        ],
+        "founder":{
+          "@type":"Person",
+          "name":"Erica Nordlöf",
+          "url":"https://github.com/EricaNordlof"
+        },
+        "brand":{"@type":"Brand","name":"Nordlöf Nordic"},
+        "sameAs":[
+          "https://github.com/EricaNordlof",
+          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://webutvecklare.se/villkor.html#breadcrumb",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Villkor",
+            "item":"https://webutvecklare.se/villkor.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root{
@@ -60,8 +132,15 @@
       --tap:48px;
     }
 
-    *{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      -webkit-text-size-adjust:100%;
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:"Inter",sans-serif;
@@ -72,21 +151,137 @@
       overflow-x:hidden;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    body.large-text{
+      font-size:118%;
+    }
+
+    body.large-text p,
+    body.large-text li,
+    body.large-text a,
+    body.large-text button,
+    body.large-text select{
+      line-height:1.75;
+    }
+
+    body.high-contrast{
+      --bg:#fff;
+      --bg-soft:#fff;
+      --card:#fff;
+      --text:#000;
+      --muted:#111;
+      --line:#000;
+      --line-soft:#000;
+      --brand:#000;
+      --brand-2:#000;
+      --brand-dark:#000;
+      --accent:#000;
+      --shadow:none;
+      --shadow-lg:none;
+      background:#fff;
+      color:#000;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    button,
+    select{
+      font:inherit;
+    }
+
+    button{
+      border:0;
+    }
+
+    :target{
+      scroll-margin-top:96px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    select:focus-visible,
+    summary:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
+    }
+
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      z-index:999;
+      transform:translateY(-150%);
+      background:#fff;
+      color:var(--text);
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:900;
+      border:2px solid var(--brand-dark);
+      box-shadow:0 12px 30px rgba(35,29,26,.16);
+      transition:.15s ease;
+    }
+
+    .skip-link:focus{
+      transform:translateY(0);
+    }
 
     .container{
       width:min(var(--max), calc(100% - 28px));
       margin:0 auto;
     }
 
+    .accessibility-tools{
+      position:fixed;
+      right:12px;
+      top:86px;
+      z-index:70;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px;
+      border-radius:22px;
+      background:rgba(250,246,243,.92);
+      border:1px solid rgba(35,29,26,.10);
+      box-shadow:0 14px 40px rgba(35,29,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    .accessibility-btn{
+      min-height:42px;
+      padding:9px 13px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      border:2px solid #fff;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 8px 20px rgba(35,29,26,.14);
+      white-space:nowrap;
+      font-size:13px;
+    }
+
+    .accessibility-btn[aria-pressed="true"]{
+      background:#fff;
+      color:#111;
+      border-color:#111;
+    }
+
     .topbar{
       position:sticky;
       top:0;
-      z-index:30;
+      z-index:60;
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
-      background:rgba(250,246,243,0.86);
+      background:rgba(250,246,243,0.90);
       border-bottom:1px solid var(--line-soft);
     }
 
@@ -123,7 +318,7 @@
     }
 
     .brand-title{
-      font-weight:800;
+      font-weight:900;
       font-size:16px;
       letter-spacing:-0.03em;
       white-space:nowrap;
@@ -141,6 +336,15 @@
       text-overflow:ellipsis;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex:0 0 auto;
+      min-width:0;
+    }
+
     .nav-link{
       display:inline-flex;
       align-items:center;
@@ -150,9 +354,37 @@
       border-radius:999px;
       background:linear-gradient(135deg, var(--brand-dark), var(--brand));
       color:#fff;
-      font-weight:800;
+      font-weight:900;
       box-shadow:0 14px 30px rgba(185,111,97,0.22);
       white-space:nowrap;
+    }
+
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .language-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .language-select{
+      min-height:42px;
+      width:auto;
+      max-width:190px;
+      padding:10px 38px 10px 14px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(35,29,26,.05);
+      outline:none;
     }
 
     .hero{
@@ -169,13 +401,17 @@
       border:1px solid var(--line);
       border-radius:999px;
       font-size:13px;
-      font-weight:800;
+      font-weight:900;
       color:#7c5d53;
       box-shadow:0 10px 30px rgba(35,29,26,0.04);
       line-height:1.4;
     }
 
-    h1,h2,h3{font-family:"Playfair Display",serif}
+    h1,
+    h2,
+    h3{
+      font-family:"Playfair Display",serif;
+    }
 
     h1{
       margin:18px 0 14px;
@@ -208,12 +444,14 @@
       min-height:var(--tap);
       padding:14px 20px;
       border-radius:999px;
-      font-weight:800;
+      font-weight:900;
       transition:.2s ease;
       text-align:center;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .btn-primary{
       background:linear-gradient(135deg, var(--brand-dark), var(--brand));
@@ -278,7 +516,7 @@
       background:#faf7f5;
       color:#5c534e;
       font-size:13px;
-      font-weight:700;
+      font-weight:800;
     }
 
     .toc a:hover{
@@ -345,7 +583,7 @@
       background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
       color:#fff;
       font-size:13px;
-      font-weight:800;
+      font-weight:900;
       margin-top:1px;
       box-shadow:0 8px 18px rgba(185,111,97,0.15);
     }
@@ -381,6 +619,13 @@
       line-height:1.8;
     }
 
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:6px;
+    }
+
     footer{
       padding:28px 0 calc(40px + env(safe-area-inset-bottom));
       color:#6d6662;
@@ -397,14 +642,104 @@
       line-height:1.6;
     }
 
-    @media (max-width:720px){
+    .footer-line a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    body.high-contrast .topbar,
+    body.high-contrast .card,
+    body.high-contrast .contact-box,
+    body.high-contrast .toc a,
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools,
+    body.high-contrast .note{
+      background:#fff;
+      color:#000;
+      border:2px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .intro-box,
+    body.high-contrast .btn-primary,
+    body.high-contrast .nav-link{
+      background:#000;
+      color:#fff;
+      border:3px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .btn-secondary{
+      background:#fff;
+      color:#000;
+      border:3px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast a{
+      text-decoration:underline;
+      text-decoration-thickness:2px;
+      text-underline-offset:4px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+
+      .btn:hover{
+        transform:none;
+      }
+    }
+
+    @media (max-width:1100px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max), calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+      }
+    }
+
+    @media (max-width:760px){
       :root{
         --radius:20px;
         --radius-lg:24px;
       }
 
-      .container{width:min(var(--max), calc(100% - 20px))}
-      .topbar{padding-top:env(safe-area-inset-top)}
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+
+      .topbar{
+        padding-top:env(safe-area-inset-top);
+      }
+
+      .accessibility-tools{
+        width:min(var(--max), calc(100% - 20px));
+        margin:10px auto 0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:8px;
+        padding:8px;
+        border-radius:18px;
+      }
+
+      .accessibility-btn{
+        width:100%;
+        min-height:44px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
+      }
 
       .nav{
         gap:10px;
@@ -412,8 +747,13 @@
         min-height:64px;
       }
 
-      .brand{gap:10px}
-      .brand-sub{display:none}
+      .brand{
+        gap:10px;
+      }
+
+      .brand-sub{
+        display:none;
+      }
 
       .brand-logo{
         width:40px;
@@ -421,12 +761,27 @@
         border-radius:12px;
       }
 
-      .brand-title{font-size:15px}
+      .brand-title{
+        font-size:15px;
+      }
+
+      .nav-right{
+        gap:8px;
+      }
 
       .nav-link{
-        padding:10px 14px;
-        min-height:44px;
-        font-size:14px;
+        display:none;
+      }
+
+      .language-label{
+        display:none;
+      }
+
+      .language-select{
+        min-height:40px;
+        max-width:150px;
+        padding:9px 32px 9px 11px;
+        font-size:13px;
       }
 
       .hero-actions{
@@ -454,43 +809,92 @@
         justify-content:center;
       }
 
-      footer{font-size:13px}
+      footer{
+        font-size:13px;
+      }
+    }
+
+    @media (max-width:390px){
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+
+      .language-select{
+        max-width:132px;
+        font-size:12px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="topbar">
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
+
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityTools">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
+      Hög kontrast
+    </button>
+
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
+      Större text
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">
+      Kort uppläsning
+    </button>
+  </div>
+
+  <header class="topbar">
     <div class="container nav">
-      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
+      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
         <img
           class="brand-logo"
           src="nordlof-nordic-logo.png"
           alt="Nordlöf Nordic logga"
+          data-i18n-alt="logoAlt"
         >
         <span class="brand-text">
           <span class="brand-title">Nordlöf Nordic</span>
-          <span class="brand-sub">Webbutvecklare för företag</span>
+          <span class="brand-sub" data-i18n="brandSub">Webbutvecklare för företag</span>
         </span>
       </a>
 
-      <a href="https://webutvecklare.se/" class="nav-link">Till startsidan</a>
-    </div>
-  </div>
+      <div class="nav-right">
+        <a href="https://webutvecklare.se/" class="nav-link" data-i18n="homeButton">Till startsidan</a>
 
-  <main>
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select
+            id="languageSelect"
+            class="language-select"
+            aria-label="Välj språk"
+            data-i18n-aria-label="languageSwitch"
+          >
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
     <section class="hero">
       <div class="container">
-        <span class="eyebrow">Villkor · Webbutveckling, hemsidor och större webblösningar</span>
-        <h1>Villkor</h1>
-        <p>
+        <span class="eyebrow" data-i18n="eyebrow">Villkor · Webbutveckling, hemsidor och större webblösningar</span>
+        <h1 data-i18n="heroTitle">Villkor</h1>
+        <p data-i18n="heroLead">
           Här står de grundläggande villkoren för tjänster via webbutvecklare.se. Poängen är enkel: tydligt upplägg,
           demo först där det passar, och mindre gråzoner senare. Fokus ligger på hemsidor och större webblösningar
           som främst byggs från grunden i kod.
         </p>
 
         <div class="hero-actions">
-          <a href="#villkor" class="btn btn-primary">Läs villkoren</a>
-          <a href="https://webutvecklare.se/#kontakt" class="btn btn-secondary">Kontakta mig</a>
+          <a href="#villkor" class="btn btn-primary" data-i18n="readTerms">Läs villkoren</a>
+          <a href="https://webutvecklare.se/#kontakt" class="btn btn-secondary" data-i18n="contactMe">Kontakta mig</a>
         </div>
       </div>
     </section>
@@ -499,173 +903,172 @@
       <div class="container">
         <div class="card">
           <div class="intro-box">
-            <h2>Kort version</h2>
-            <p>
+            <h2 data-i18n="shortVersionTitle">Kort version</h2>
+            <p data-i18n="shortVersionText">
               Du skickar in en förfrågan. Jag återkopplar. För många upplägg får du en demo först. Du köper först efter godkännande där det upplägget anges.
               För större projekt eller speciallösningar kan separat offert, timpris och särskild överenskommelse gälla.
               Jag bygger främst nya hemsidor från grunden i kod och jobbar inte främst i färdiga plattformar som WordPress och liknande.
             </p>
           </div>
 
-          <div class="toc" aria-label="Innehåll">
-            <a href="#omfattning">1. Omfattning</a>
-            <a href="#bestallning">2. Beställning och avtal</a>
-            <a href="#demo">3. Demo och utkast</a>
-            <a href="#priser">4. Priser och betalning</a>
-            <a href="#leverans">5. Leverans och ändringar</a>
-            <a href="#kundens-ansvar">6. Kundens ansvar</a>
-            <a href="#rattigheter">7. Material och rättigheter</a>
-            <a href="#ansvar">8. Ansvar</a>
-            <a href="#angerratt">9. Ångerrätt och avbokning</a>
-            <a href="#kontaktinfo">10. Kontakt</a>
-          </div>
+          <nav class="toc" aria-label="Innehåll" data-i18n-aria-label="tocAria">
+            <a href="#omfattning" data-i18n="toc1">1. Omfattning</a>
+            <a href="#bestallning" data-i18n="toc2">2. Beställning och avtal</a>
+            <a href="#demo" data-i18n="toc3">3. Demo och utkast</a>
+            <a href="#priser" data-i18n="toc4">4. Priser och betalning</a>
+            <a href="#leverans" data-i18n="toc5">5. Leverans och ändringar</a>
+            <a href="#kundens-ansvar" data-i18n="toc6">6. Kundens ansvar</a>
+            <a href="#rattigheter" data-i18n="toc7">7. Material och rättigheter</a>
+            <a href="#ansvar" data-i18n="toc8">8. Ansvar</a>
+            <a href="#angerratt" data-i18n="toc9">9. Ångerrätt och avbokning</a>
+            <a href="#kontaktinfo" data-i18n="toc10">10. Kontakt</a>
+          </nav>
 
           <div class="content">
             <section id="omfattning">
-              <h2>1. Omfattning</h2>
-              <p>
+              <h2 data-i18n="scopeTitle">1. Omfattning</h2>
+              <p data-i18n="scopeText1">
                 Dessa villkor gäller för tjänster som erbjuds via webbutvecklare.se av Nordlöf Nordic. Det gäller bland annat:
               </p>
               <ul>
-                <li><span class="check">✓</span><span>ny hemsida till fast pris</span></li>
-                <li><span class="check">✓</span><span>uppdatering av befintlig hemsida till fast pris</span></li>
-                <li><span class="check">✓</span><span>större webbprojekt, specialfunktioner och webblösningar</span></li>
-                <li><span class="check">✓</span><span>webbaserade appar och andra mer avancerade upplägg</span></li>
+                <li><span class="check">✓</span><span data-i18n="scopeList1">ny hemsida till fast pris</span></li>
+                <li><span class="check">✓</span><span data-i18n="scopeList2">uppdatering av befintlig hemsida till fast pris</span></li>
+                <li><span class="check">✓</span><span data-i18n="scopeList3">större webbprojekt, specialfunktioner och webblösningar</span></li>
+                <li><span class="check">✓</span><span data-i18n="scopeList4">webbaserade appar och andra mer avancerade upplägg</span></li>
               </ul>
-              <p>
+              <p data-i18n="scopeText2">
                 Fokus ligger främst på nya hemsidor från grunden i kod. Jag jobbar inte främst i färdiga plattformar som WordPress och liknande.
               </p>
-              <p class="note">
+              <p class="note" data-i18n="scopeNote">
                 För större projekt kan kompletterande överenskommelser, offert eller särskilda projektvillkor gälla utöver denna sida.
               </p>
             </section>
 
             <section id="bestallning">
-              <h2>2. Beställning och avtal</h2>
-              <p>
+              <h2 data-i18n="orderTitle">2. Beställning och avtal</h2>
+              <p data-i18n="orderText1">
                 En förfrågan via formulär, mejl eller annan kontakt är inte automatiskt ett bindande köp. Avtal anses ingånget först när du och jag tydligt har kommit överens om att arbetet ska starta som en betald beställning.
               </p>
-              <p>
+              <p data-i18n="orderText2">
                 För upplägg där det står att du får demo först gäller att själva demon är ett underlag för beslut. Du köper alltså först när du godkänner att vi går vidare med den betalda leveransen.
               </p>
-              <p>
+              <p data-i18n="orderText3">
                 För större projekt, löpande arbete eller timbaserade upplägg gäller avtal när offert, prisupplägg eller arbetsstart har godkänts.
               </p>
             </section>
 
             <section id="demo">
-              <h2>3. Demo och utkast</h2>
-              <p>
+              <h2 data-i18n="demoTitle">3. Demo och utkast</h2>
+              <p data-i18n="demoText1">
                 På webbutvecklare.se används upplägget “demo först” eller “utkast först” för vissa tjänster. Det betyder att du i många fall får något konkret att ta ställning till innan du köper den slutliga leveransen.
               </p>
               <ul>
-                <li><span class="check">✓</span><span>demo eller utkast är till för bedömning och dialog</span></li>
-                <li><span class="check">✓</span><span>slutleverans sker först efter att du godkänt köp</span></li>
-                <li><span class="check">✓</span><span>demo eller utkast innebär inte att full slutprodukt redan ingår</span></li>
+                <li><span class="check">✓</span><span data-i18n="demoList1">demo eller utkast är till för bedömning och dialog</span></li>
+                <li><span class="check">✓</span><span data-i18n="demoList2">slutleverans sker först efter att du godkänt köp</span></li>
+                <li><span class="check">✓</span><span data-i18n="demoList3">demo eller utkast innebär inte att full slutprodukt redan ingår</span></li>
               </ul>
-              <p>
+              <p data-i18n="demoText2">
                 Jag förbehåller mig rätten att avgöra hur omfattande en demo eller ett utkast behöver vara för att visa riktning, struktur eller idé. Det är inte samma sak som full produktion.
               </p>
             </section>
 
             <section id="priser">
-              <h2>4. Priser och betalning</h2>
-              <p>
+              <h2 data-i18n="paymentTitle">4. Priser och betalning</h2>
+              <p data-i18n="paymentText1">
                 Priser som visas på sidan är de priser som gäller om inget annat har överenskommits skriftligt. För större webbprojekt, specialfunktioner och webblösningar kan timpris eller separat offert användas i stället för fast pris.
               </p>
-              <p>
+              <p data-i18n="paymentText2">
                 Betalning sker enligt den betalningslösning, faktura eller överenskommelse som används i det enskilda uppdraget. Om inget annat uttryckligen har avtalats ska betalning göras inom den tid som anges på faktura eller betalningsunderlag.
               </p>
-              <p>
-                En <strong>.se-domän</strong> kan ingå första året när det uttryckligen ingår i upplägget. Därefter kostar en .se-domän cirka <strong>229 kr per år</strong>.
-                Om du vill ha en annan domänändelse betalar du den faktiska kostnaden för just den domänen.
+              <p data-i18n="paymentText3">
+                En .se-domän kan ingå första året när det uttryckligen ingår i upplägget. Därefter kostar en .se-domän cirka 229 kr per år. Om du vill ha en annan domänändelse betalar du den faktiska kostnaden för just den domänen.
               </p>
-              <p>
+              <p data-i18n="paymentText4">
                 Vid utebliven betalning förbehåller jag mig rätten att pausa arbete, leverans eller fortsatt support tills betalning kommit in.
               </p>
             </section>
 
             <section id="leverans">
-              <h2>5. Leverans och ändringar</h2>
-              <p>
+              <h2 data-i18n="deliveryTitle">5. Leverans och ändringar</h2>
+              <p data-i18n="deliveryText1">
                 Leveranstid beror på uppdragets typ, omfattning och hur snabbt nödvändigt material och återkoppling kommer in från dig. När sidan anger exempelvis demo inom 1 arbetsdag gäller det normalt första utkast eller första riktning, inte alltid färdig slutleverans.
               </p>
-              <p>
+              <p data-i18n="deliveryText2">
                 Rimliga ändringar ingår i den mån det följer det upplägg som kommunicerats för tjänsten. Om önskemål ändrar omfattningen tydligt, till exempel nya funktioner, större textjobb, fler sidor eller annan riktning än det som först beställdes, kan nytt pris eller tilläggsarbete behöva godkännas.
               </p>
               <ul>
-                <li><span class="check">✓</span><span>mindre justeringar hanteras normalt inom överenskommen ram</span></li>
-                <li><span class="check">✓</span><span>större ändringar kan innebära ny offert eller nytt pris</span></li>
-                <li><span class="check">✓</span><span>tidsplan påverkas om underlag eller svar drar ut på tiden</span></li>
+                <li><span class="check">✓</span><span data-i18n="deliveryList1">mindre justeringar hanteras normalt inom överenskommen ram</span></li>
+                <li><span class="check">✓</span><span data-i18n="deliveryList2">större ändringar kan innebära ny offert eller nytt pris</span></li>
+                <li><span class="check">✓</span><span data-i18n="deliveryList3">tidsplan påverkas om underlag eller svar drar ut på tiden</span></li>
               </ul>
             </section>
 
             <section id="kundens-ansvar">
-              <h2>6. Kundens ansvar</h2>
-              <p>
+              <h2 data-i18n="customerTitle">6. Kundens ansvar</h2>
+              <p data-i18n="customerText1">
                 Du ansvarar för att de uppgifter, texter, bilder, länkar och instruktioner du lämnar är korrekta och att du har rätt att använda materialet. Du ansvarar också för att lämna relevant information om verksamheten, erbjudandet och eventuella krav som påverkar uppdraget.
               </p>
-              <p>
+              <p data-i18n="customerText2">
                 Om du dröjer länge med återkoppling, inte skickar nödvändigt material eller ändrar riktning flera gånger kan det påverka leveranstid, pris eller om arbetet behöver pausas.
               </p>
             </section>
 
             <section id="rattigheter">
-              <h2>7. Material och rättigheter</h2>
-              <p>
+              <h2 data-i18n="rightsTitle">7. Material och rättigheter</h2>
+              <p data-i18n="rightsText1">
                 Du ansvarar för att du har rätt att använda material som du skickar in, till exempel bilder, texter, logotyper eller grafik.
               </p>
-              <p>
+              <p data-i18n="rightsText2">
                 När ett uppdrag är betalt får du använda slutleveransen för det ändamål vi kommit överens om. Efter köp får du också tillgång till relevant material, inloggningsuppgifter och koder om du senare vill fortsätta själv eller med någon annan.
               </p>
-              <p>
+              <p data-i18n="rightsText3">
                 Du blir alltså inte inlåst till mig för att kunna fortsätta använda eller vidareutveckla det som betalats. Arbetsmaterial, skisser, utkast, koncept och icke godkända versioner får däremot inte automatiskt användas fritt om inte det särskilt avtalats.
               </p>
-              <p>
+              <p data-i18n="rightsText4">
                 Jag förbehåller mig rätten att visa upp genomförda projekt som referens i egen marknadsföring, om inget annat har avtalats i det enskilda fallet.
               </p>
             </section>
 
             <section id="ansvar">
-              <h2>8. Ansvar</h2>
-              <p>
+              <h2 data-i18n="liabilityTitle">8. Ansvar</h2>
+              <p data-i18n="liabilityText1">
                 Jag gör mitt bästa för att leverera tydliga, fungerande och genomtänkta lösningar, men kan inte garantera specifika affärsresultat såsom ett visst antal leads, försäljning, visningar, rankingplaceringar eller annonsresultat.
               </p>
-              <p>
+              <p data-i18n="liabilityText2">
                 Jag ansvarar inte för indirekta skador, utebliven vinst, förlorad data, förlorade affärsmöjligheter eller problem som uppstår hos tredjepartstjänster, exempelvis domänleverantörer, webbhotell, betalplattformar, formulärtjänster, annonsplattformar eller sociala medier.
               </p>
-              <p>
+              <p data-i18n="liabilityText3">
                 Om du upptäcker ett konkret fel i leveransen ska du meddela det så snart som möjligt, så att det kan bedömas och i rimlig mån rättas till.
               </p>
             </section>
 
             <section id="angerratt">
-              <h2>9. Ångerrätt och avbokning</h2>
-              <p>
+              <h2 data-i18n="cancelTitle">9. Ångerrätt och avbokning</h2>
+              <p data-i18n="cancelText1">
                 Om du handlar som konsument kan regler om ångerrätt enligt distansavtalslagen bli aktuella. Samtidigt gäller särskilda undantag för tjänster som har påbörjats med ditt uttryckliga samtycke eller för anpassade digitala leveranser. Därför behöver det ibland bedömas från fall till fall vad som gäller för just ditt köp.
               </p>
-              <p>
+              <p data-i18n="cancelText2">
                 Om du vill avboka innan ett bindande köp har godkänts är det normalt inga konstigheter. Om arbete redan har startats som betald leverans, eller om anpassad produktion redan har påbörjats efter ditt godkännande, kan ersättning för utfört arbete eller redan påbörjat arbete bli aktuell.
               </p>
-              <p class="note">
+              <p class="note" data-i18n="cancelNote">
                 Det är därför smartast att du hör av dig direkt om du är osäker, vill pausa eller vill avbryta något. Ju tidigare, desto mindre administrativt gegg.
               </p>
             </section>
 
             <section id="kontaktinfo">
-              <h2>10. Kontakt</h2>
-              <p>
+              <h2 data-i18n="contactTitle">10. Kontakt</h2>
+              <p data-i18n="contactText">
                 Har du frågor om villkoren, ett pågående uppdrag eller en beställning kontaktar du mig här:
               </p>
               <div class="contact-box">
                 <h3>Nordlöf Nordic</h3>
-                <p><strong>Kontaktperson:</strong> Erica Nordlöf</p>
-                <p><strong>E-post:</strong> <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a></p>
-                <p><strong>Webbplats:</strong> <a href="https://webutvecklare.se/">webutvecklare.se</a></p>
-                <p>
+                <p><strong data-i18n="contactPersonLabel">Kontaktperson:</strong> Erica Nordlöf</p>
+                <p><strong data-i18n="emailLabel">E-post:</strong> <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a></p>
+                <p><strong data-i18n="websiteLabel">Webbplats:</strong> <a href="https://webutvecklare.se/">webutvecklare.se</a></p>
+                <p data-i18n="contactBoxText1">
                   Vid frågor om hemsidor, uppdateringar eller större webblösningar är det bäst att skriva kort och tydligt vad det gäller, så går vi rakt på sak.
                 </p>
-                <p>
+                <p data-i18n="contactBoxText2">
                   Jag arbetar vid datorn på vardagar under normal arbetstid.
                 </p>
               </div>
@@ -678,14 +1081,709 @@
 
   <footer>
     <div class="container footer-line">
-      <span>© 2026 Nordlöf Nordic</span>
-      <span>
-        Kontakt:
+      <div>
+        <strong>© 2026 Nordlöf Nordic</strong><br>
+        <span data-i18n="footerText">Hemsidor, webbfix och webbutveckling för småföretag.</span>
+      </div>
+
+      <div>
+        <span data-i18n="footerContact">Kontakt:</span>
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · webutvecklare.se
-        · Villkor
-      </span>
+        · <span data-i18n="footerTerms">Villkor</span>
+
+        <div class="footer-links">
+          <a href="/" data-i18n="footerHome">Startsida</a>
+          <a href="gratis-demo.html" data-i18n="footerDemo">Gratis demo</a>
+          <a href="webbfix.html" data-i18n="footerWebfix">Webbfix</a>
+          <a href="case.html" data-i18n="footerCase">Case</a>
+          <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+          <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        speechLang: "sv-SE",
+        languageName: "Svenska",
+        metaTitle: "Villkor | Webbutvecklare.se | Nordlöf Nordic",
+        metaDescription: "Villkor för webbutveckling, hemsidor och större webblösningar via webbutvecklare.se. Tydlig information om demo, köp, betalning, leverans och kontakt.",
+        ogTitle: "Villkor | Webbutvecklare.se | Nordlöf Nordic",
+        ogDescription: "Tydliga villkor för webbutveckling, hemsidor och större webblösningar via webbutvecklare.se.",
+        twitterTitle: "Villkor | Webbutvecklare.se | Nordlöf Nordic",
+        twitterDescription: "Villkor för hemsidor, uppdateringar och större webblösningar.",
+
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityTools: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Webbutvecklare för företag",
+        homeButton: "Till startsidan",
+        languageLabel: "Språk",
+        languageSwitch: "Välj språk",
+
+        eyebrow: "Villkor · Webbutveckling, hemsidor och större webblösningar",
+        heroTitle: "Villkor",
+        heroLead: "Här står de grundläggande villkoren för tjänster via webbutvecklare.se. Poängen är enkel: tydligt upplägg, demo först där det passar, och mindre gråzoner senare. Fokus ligger på hemsidor och större webblösningar som främst byggs från grunden i kod.",
+        readTerms: "Läs villkoren",
+        contactMe: "Kontakta mig",
+
+        shortVersionTitle: "Kort version",
+        shortVersionText: "Du skickar in en förfrågan. Jag återkopplar. För många upplägg får du en demo först. Du köper först efter godkännande där det upplägget anges. För större projekt eller speciallösningar kan separat offert, timpris och särskild överenskommelse gälla. Jag bygger främst nya hemsidor från grunden i kod och jobbar inte främst i färdiga plattformar som WordPress och liknande.",
+        tocAria: "Innehåll",
+        toc1: "1. Omfattning",
+        toc2: "2. Beställning och avtal",
+        toc3: "3. Demo och utkast",
+        toc4: "4. Priser och betalning",
+        toc5: "5. Leverans och ändringar",
+        toc6: "6. Kundens ansvar",
+        toc7: "7. Material och rättigheter",
+        toc8: "8. Ansvar",
+        toc9: "9. Ångerrätt och avbokning",
+        toc10: "10. Kontakt",
+
+        scopeTitle: "1. Omfattning",
+        scopeText1: "Dessa villkor gäller för tjänster som erbjuds via webbutvecklare.se av Nordlöf Nordic. Det gäller bland annat:",
+        scopeList1: "ny hemsida till fast pris",
+        scopeList2: "uppdatering av befintlig hemsida till fast pris",
+        scopeList3: "större webbprojekt, specialfunktioner och webblösningar",
+        scopeList4: "webbaserade appar och andra mer avancerade upplägg",
+        scopeText2: "Fokus ligger främst på nya hemsidor från grunden i kod. Jag jobbar inte främst i färdiga plattformar som WordPress och liknande.",
+        scopeNote: "För större projekt kan kompletterande överenskommelser, offert eller särskilda projektvillkor gälla utöver denna sida.",
+
+        orderTitle: "2. Beställning och avtal",
+        orderText1: "En förfrågan via formulär, mejl eller annan kontakt är inte automatiskt ett bindande köp. Avtal anses ingånget först när du och jag tydligt har kommit överens om att arbetet ska starta som en betald beställning.",
+        orderText2: "För upplägg där det står att du får demo först gäller att själva demon är ett underlag för beslut. Du köper alltså först när du godkänner att vi går vidare med den betalda leveransen.",
+        orderText3: "För större projekt, löpande arbete eller timbaserade upplägg gäller avtal när offert, prisupplägg eller arbetsstart har godkänts.",
+
+        demoTitle: "3. Demo och utkast",
+        demoText1: "På webbutvecklare.se används upplägget “demo först” eller “utkast först” för vissa tjänster. Det betyder att du i många fall får något konkret att ta ställning till innan du köper den slutliga leveransen.",
+        demoList1: "demo eller utkast är till för bedömning och dialog",
+        demoList2: "slutleverans sker först efter att du godkänt köp",
+        demoList3: "demo eller utkast innebär inte att full slutprodukt redan ingår",
+        demoText2: "Jag förbehåller mig rätten att avgöra hur omfattande en demo eller ett utkast behöver vara för att visa riktning, struktur eller idé. Det är inte samma sak som full produktion.",
+
+        paymentTitle: "4. Priser och betalning",
+        paymentText1: "Priser som visas på sidan är de priser som gäller om inget annat har överenskommits skriftligt. För större webbprojekt, specialfunktioner och webblösningar kan timpris eller separat offert användas i stället för fast pris.",
+        paymentText2: "Betalning sker enligt den betalningslösning, faktura eller överenskommelse som används i det enskilda uppdraget. Om inget annat uttryckligen har avtalats ska betalning göras inom den tid som anges på faktura eller betalningsunderlag.",
+        paymentText3: "En .se-domän kan ingå första året när det uttryckligen ingår i upplägget. Därefter kostar en .se-domän cirka 229 kr per år. Om du vill ha en annan domänändelse betalar du den faktiska kostnaden för just den domänen.",
+        paymentText4: "Vid utebliven betalning förbehåller jag mig rätten att pausa arbete, leverans eller fortsatt support tills betalning kommit in.",
+
+        deliveryTitle: "5. Leverans och ändringar",
+        deliveryText1: "Leveranstid beror på uppdragets typ, omfattning och hur snabbt nödvändigt material och återkoppling kommer in från dig. När sidan anger exempelvis demo inom 1 arbetsdag gäller det normalt första utkast eller första riktning, inte alltid färdig slutleverans.",
+        deliveryText2: "Rimliga ändringar ingår i den mån det följer det upplägg som kommunicerats för tjänsten. Om önskemål ändrar omfattningen tydligt, till exempel nya funktioner, större textjobb, fler sidor eller annan riktning än det som först beställdes, kan nytt pris eller tilläggsarbete behöva godkännas.",
+        deliveryList1: "mindre justeringar hanteras normalt inom överenskommen ram",
+        deliveryList2: "större ändringar kan innebära ny offert eller nytt pris",
+        deliveryList3: "tidsplan påverkas om underlag eller svar drar ut på tiden",
+
+        customerTitle: "6. Kundens ansvar",
+        customerText1: "Du ansvarar för att de uppgifter, texter, bilder, länkar och instruktioner du lämnar är korrekta och att du har rätt att använda materialet. Du ansvarar också för att lämna relevant information om verksamheten, erbjudandet och eventuella krav som påverkar uppdraget.",
+        customerText2: "Om du dröjer länge med återkoppling, inte skickar nödvändigt material eller ändrar riktning flera gånger kan det påverka leveranstid, pris eller om arbetet behöver pausas.",
+
+        rightsTitle: "7. Material och rättigheter",
+        rightsText1: "Du ansvarar för att du har rätt att använda material som du skickar in, till exempel bilder, texter, logotyper eller grafik.",
+        rightsText2: "När ett uppdrag är betalt får du använda slutleveransen för det ändamål vi kommit överens om. Efter köp får du också tillgång till relevant material, inloggningsuppgifter och koder om du senare vill fortsätta själv eller med någon annan.",
+        rightsText3: "Du blir alltså inte inlåst till mig för att kunna fortsätta använda eller vidareutveckla det som betalats. Arbetsmaterial, skisser, utkast, koncept och icke godkända versioner får däremot inte automatiskt användas fritt om inte det särskilt avtalats.",
+        rightsText4: "Jag förbehåller mig rätten att visa upp genomförda projekt som referens i egen marknadsföring, om inget annat har avtalats i det enskilda fallet.",
+
+        liabilityTitle: "8. Ansvar",
+        liabilityText1: "Jag gör mitt bästa för att leverera tydliga, fungerande och genomtänkta lösningar, men kan inte garantera specifika affärsresultat såsom ett visst antal leads, försäljning, visningar, rankingplaceringar eller annonsresultat.",
+        liabilityText2: "Jag ansvarar inte för indirekta skador, utebliven vinst, förlorad data, förlorade affärsmöjligheter eller problem som uppstår hos tredjepartstjänster, exempelvis domänleverantörer, webbhotell, betalplattformar, formulärtjänster, annonsplattformar eller sociala medier.",
+        liabilityText3: "Om du upptäcker ett konkret fel i leveransen ska du meddela det så snart som möjligt, så att det kan bedömas och i rimlig mån rättas till.",
+
+        cancelTitle: "9. Ångerrätt och avbokning",
+        cancelText1: "Om du handlar som konsument kan regler om ångerrätt enligt distansavtalslagen bli aktuella. Samtidigt gäller särskilda undantag för tjänster som har påbörjats med ditt uttryckliga samtycke eller för anpassade digitala leveranser. Därför behöver det ibland bedömas från fall till fall vad som gäller för just ditt köp.",
+        cancelText2: "Om du vill avboka innan ett bindande köp har godkänts är det normalt inga konstigheter. Om arbete redan har startats som betald leverans, eller om anpassad produktion redan har påbörjats efter ditt godkännande, kan ersättning för utfört arbete eller redan påbörjat arbete bli aktuell.",
+        cancelNote: "Det är därför smartast att du hör av dig direkt om du är osäker, vill pausa eller vill avbryta något. Ju tidigare, desto mindre administrativt gegg.",
+
+        contactTitle: "10. Kontakt",
+        contactText: "Har du frågor om villkoren, ett pågående uppdrag eller en beställning kontaktar du mig här:",
+        contactPersonLabel: "Kontaktperson:",
+        emailLabel: "E-post:",
+        websiteLabel: "Webbplats:",
+        contactBoxText1: "Vid frågor om hemsidor, uppdateringar eller större webblösningar är det bäst att skriva kort och tydligt vad det gäller, så går vi rakt på sak.",
+        contactBoxText2: "Jag arbetar vid datorn på vardagar under normal arbetstid.",
+
+        footerText: "Hemsidor, webbfix och webbutveckling för småföretag.",
+        footerContact: "Kontakt:",
+        footerTerms: "Villkor",
+        footerHome: "Startsida",
+        footerDemo: "Gratis demo",
+        footerWebfix: "Webbfix",
+        footerCase: "Case",
+        footerPrivacy: "Integritet",
+        footerAffiliate: "Affiliate",
+
+        speechSummary: "Det här är villkoren för webbutvecklare.se och Nordlöf Nordic. En förfrågan är inte automatiskt ett köp. Avtal uppstår först när kunden och Nordlöf Nordic tydligt har kommit överens om en betald beställning. Vid demo först får kunden ett underlag att ta ställning till innan slutleveransen köps. Priserna på sidan gäller om inget annat avtalas. Större projekt och speciallösningar kan ha offert eller timpris. Kunden ansvarar för att lämnat material får användas. Efter betalt uppdrag får kunden använda slutleveransen och kan få material, inloggningar och kod. Nordlöf Nordic garanterar inte specifika affärsresultat, rankingar eller antal leads."
+      },
+
+      en: {
+        htmlLang: "en",
+        speechLang: "en-GB",
+        languageName: "English",
+        metaTitle: "Terms | Webbutvecklare.se | Nordlöf Nordic",
+        metaDescription: "Terms for web development, websites and larger web solutions through webutvecklare.se. Clear information about demo, purchase, payment, delivery and contact.",
+        ogTitle: "Terms | Webbutvecklare.se | Nordlöf Nordic",
+        ogDescription: "Clear terms for web development, websites and larger web solutions through webutvecklare.se.",
+        twitterTitle: "Terms | Webbutvecklare.se | Nordlöf Nordic",
+        twitterDescription: "Terms for websites, updates and larger web solutions.",
+
+        skip: "Skip to main content",
+        accessibilityTools: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Web developer for businesses",
+        homeButton: "To homepage",
+        languageLabel: "Language",
+        languageSwitch: "Choose language",
+
+        eyebrow: "Terms · Web development, websites and larger web solutions",
+        heroTitle: "Terms",
+        heroLead: "These are the basic terms for services through webutvecklare.se. The point is simple: clear setup, demo first where it fits, and fewer grey areas later. The focus is on websites and larger web solutions mainly built from scratch in code.",
+        readTerms: "Read the terms",
+        contactMe: "Contact me",
+
+        shortVersionTitle: "Short version",
+        shortVersionText: "You send a request. I respond. For many setups, you get a demo first. You only buy after approval where that setup is stated. For larger projects or custom solutions, a separate quote, hourly rate and specific agreement may apply. I mainly build new websites from scratch in code and do not primarily work in ready-made platforms such as WordPress and similar systems.",
+        tocAria: "Contents",
+        toc1: "1. Scope",
+        toc2: "2. Order and agreement",
+        toc3: "3. Demo and drafts",
+        toc4: "4. Prices and payment",
+        toc5: "5. Delivery and changes",
+        toc6: "6. Customer responsibility",
+        toc7: "7. Material and rights",
+        toc8: "8. Liability",
+        toc9: "9. Cancellation and withdrawal",
+        toc10: "10. Contact",
+
+        scopeTitle: "1. Scope",
+        scopeText1: "These terms apply to services offered through webutvecklare.se by Nordlöf Nordic. This includes, among other things:",
+        scopeList1: "new website at a fixed price",
+        scopeList2: "update of an existing website at a fixed price",
+        scopeList3: "larger web projects, custom features and web solutions",
+        scopeList4: "web-based apps and other more advanced setups",
+        scopeText2: "The focus is mainly on new websites built from scratch in code. I do not primarily work in ready-made platforms such as WordPress and similar systems.",
+        scopeNote: "For larger projects, additional agreements, quotes or specific project terms may apply in addition to this page.",
+
+        orderTitle: "2. Order and agreement",
+        orderText1: "A request through a form, email or other contact is not automatically a binding purchase. An agreement is considered entered into only when you and I have clearly agreed that the work should start as a paid order.",
+        orderText2: "For setups where it says that you get a demo first, the demo itself is a decision basis. You therefore only buy when you approve that we move forward with the paid delivery.",
+        orderText3: "For larger projects, ongoing work or hourly setups, an agreement applies when a quote, pricing setup or work start has been approved.",
+
+        demoTitle: "3. Demo and drafts",
+        demoText1: "On webutvecklare.se, the setup “demo first” or “draft first” is used for certain services. This means that in many cases you get something concrete to review before buying the final delivery.",
+        demoList1: "demo or draft is for assessment and dialogue",
+        demoList2: "final delivery happens only after you approve purchase",
+        demoList3: "demo or draft does not mean that a full final product is already included",
+        demoText2: "I reserve the right to decide how extensive a demo or draft needs to be to show direction, structure or idea. It is not the same as full production.",
+
+        paymentTitle: "4. Prices and payment",
+        paymentText1: "Prices shown on the website apply unless otherwise agreed in writing. For larger web projects, custom features and web solutions, hourly pricing or a separate quote may be used instead of fixed price.",
+        paymentText2: "Payment is made according to the payment solution, invoice or agreement used for the individual assignment. Unless otherwise expressly agreed, payment must be made within the time stated on the invoice or payment document.",
+        paymentText3: "A .se domain may be included for the first year when it is expressly included in the setup. After that, a .se domain costs approximately 229 SEK per year. If you want another domain extension, you pay the actual cost of that domain.",
+        paymentText4: "In case of non-payment, I reserve the right to pause work, delivery or continued support until payment has been received.",
+
+        deliveryTitle: "5. Delivery and changes",
+        deliveryText1: "Delivery time depends on the type and scope of the assignment and how quickly necessary material and feedback arrive from you. When the page states, for example, demo within 1 business day, that normally refers to a first draft or first direction, not always finished final delivery.",
+        deliveryText2: "Reasonable changes are included to the extent that they follow the setup communicated for the service. If requests clearly change the scope, such as new features, larger text work, more pages or a different direction than first ordered, a new price or additional work may need approval.",
+        deliveryList1: "minor adjustments are normally handled within the agreed scope",
+        deliveryList2: "larger changes may require a new quote or new price",
+        deliveryList3: "the timeline is affected if material or responses are delayed",
+
+        customerTitle: "6. Customer responsibility",
+        customerText1: "You are responsible for ensuring that the information, texts, images, links and instructions you provide are correct and that you have the right to use the material. You are also responsible for providing relevant information about the business, offer and any requirements that affect the assignment.",
+        customerText2: "If you delay feedback, do not send necessary material or change direction several times, it may affect delivery time, price or whether the work needs to be paused.",
+
+        rightsTitle: "7. Material and rights",
+        rightsText1: "You are responsible for ensuring that you have the right to use material you send in, such as images, texts, logos or graphics.",
+        rightsText2: "When an assignment has been paid for, you may use the final delivery for the purpose we agreed on. After purchase, you can also get relevant material, login details and code if you later want to continue yourself or with someone else.",
+        rightsText3: "You are therefore not locked in to me in order to keep using or developing what has been paid for. Work material, sketches, drafts, concepts and non-approved versions may not automatically be used freely unless specifically agreed.",
+        rightsText4: "I reserve the right to show completed projects as references in my own marketing, unless otherwise agreed in the individual case.",
+
+        liabilityTitle: "8. Liability",
+        liabilityText1: "I do my best to deliver clear, functional and well-thought-out solutions, but I cannot guarantee specific business results such as a certain number of leads, sales, views, rankings or advertising results.",
+        liabilityText2: "I am not responsible for indirect damages, lost profit, lost data, lost business opportunities or problems arising from third-party services such as domain providers, web hosts, payment platforms, form services, advertising platforms or social media.",
+        liabilityText3: "If you discover a concrete error in the delivery, you should notify me as soon as possible so that it can be assessed and, where reasonable, corrected.",
+
+        cancelTitle: "9. Cancellation and withdrawal",
+        cancelText1: "If you purchase as a consumer, rules on withdrawal rights under distance selling legislation may become relevant. At the same time, special exceptions apply to services that have begun with your express consent or to customised digital deliveries. Therefore, what applies may sometimes need to be assessed case by case.",
+        cancelText2: "If you want to cancel before a binding purchase has been approved, that is normally straightforward. If work has already started as a paid delivery, or if customised production has already begun after your approval, compensation for completed or started work may apply.",
+        cancelNote: "That is why it is best to contact me directly if you are unsure, want to pause or want to cancel something. The earlier, the less administrative mud.",
+
+        contactTitle: "10. Contact",
+        contactText: "If you have questions about the terms, an ongoing assignment or an order, contact me here:",
+        contactPersonLabel: "Contact person:",
+        emailLabel: "Email:",
+        websiteLabel: "Website:",
+        contactBoxText1: "For questions about websites, updates or larger web solutions, it is best to write briefly and clearly what it concerns, so we can get straight to the point.",
+        contactBoxText2: "I work at the computer on weekdays during normal working hours.",
+
+        footerText: "Websites, website fixes and web development for small businesses.",
+        footerContact: "Contact:",
+        footerTerms: "Terms",
+        footerHome: "Homepage",
+        footerDemo: "Free demo",
+        footerWebfix: "Website fixes",
+        footerCase: "Cases",
+        footerPrivacy: "Privacy",
+        footerAffiliate: "Affiliate",
+
+        speechSummary: "These are the terms for webutvecklare.se and Nordlöf Nordic. A request is not automatically a purchase. An agreement begins only when the customer and Nordlöf Nordic have clearly agreed on a paid order. With demo first, the customer gets a basis for decision before buying the final delivery. Prices on the website apply unless otherwise agreed. Larger projects and custom solutions may use quotes or hourly pricing. The customer is responsible for having the right to use submitted material. After a paid assignment, the customer may use the final delivery and can receive material, logins and code. Nordlöf Nordic does not guarantee specific business results, rankings or number of leads."
+      },
+
+      da: {
+        htmlLang: "da",
+        speechLang: "da-DK",
+        languageName: "Dansk",
+        metaTitle: "Vilkår | Webbutvecklare.se | Nordlöf Nordic",
+        metaDescription: "Vilkår for webudvikling, hjemmesider og større webløsninger via webutvecklare.se. Tydelig information om demo, køb, betaling, levering og kontakt.",
+        ogTitle: "Vilkår | Webbutvecklare.se | Nordlöf Nordic",
+        ogDescription: "Tydelige vilkår for webudvikling, hjemmesider og større webløsninger via webutvecklare.se.",
+        twitterTitle: "Vilkår | Webbutvecklare.se | Nordlöf Nordic",
+        twitterDescription: "Vilkår for hjemmesider, opdateringer og større webløsninger.",
+
+        skip: "Spring til hovedindhold",
+        accessibilityTools: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        listen: "Kort oplæsning",
+        stopListen: "Stop oplæsning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webudvikler til virksomheder",
+        homeButton: "Til forsiden",
+        languageLabel: "Sprog",
+        languageSwitch: "Vælg sprog",
+
+        eyebrow: "Vilkår · Webudvikling, hjemmesider og større webløsninger",
+        heroTitle: "Vilkår",
+        heroLead: "Her står de grundlæggende vilkår for tjenester via webutvecklare.se. Pointen er enkel: tydeligt oplæg, demo først hvor det passer, og færre gråzoner senere. Fokus ligger på hjemmesider og større webløsninger, der primært bygges fra bunden i kode.",
+        readTerms: "Læs vilkårene",
+        contactMe: "Kontakt mig",
+
+        shortVersionTitle: "Kort version",
+        shortVersionText: "Du sender en forespørgsel. Jeg vender tilbage. For mange oplæg får du en demo først. Du køber først efter godkendelse, hvor det oplæg er angivet. For større projekter eller specialløsninger kan separat tilbud, timepris og særlig aftale gælde. Jeg bygger primært nye hjemmesider fra bunden i kode og arbejder ikke primært i færdige platforme som WordPress og lignende.",
+        tocAria: "Indhold",
+        toc1: "1. Omfang",
+        toc2: "2. Bestilling og aftale",
+        toc3: "3. Demo og udkast",
+        toc4: "4. Priser og betaling",
+        toc5: "5. Levering og ændringer",
+        toc6: "6. Kundens ansvar",
+        toc7: "7. Materiale og rettigheder",
+        toc8: "8. Ansvar",
+        toc9: "9. Fortrydelse og afbestilling",
+        toc10: "10. Kontakt",
+
+        scopeTitle: "1. Omfang",
+        scopeText1: "Disse vilkår gælder for tjenester, der tilbydes via webutvecklare.se af Nordlöf Nordic. Det gælder blandt andet:",
+        scopeList1: "ny hjemmeside til fast pris",
+        scopeList2: "opdatering af eksisterende hjemmeside til fast pris",
+        scopeList3: "større webprojekter, specialfunktioner og webløsninger",
+        scopeList4: "webbaserede apps og andre mere avancerede oplæg",
+        scopeText2: "Fokus ligger primært på nye hjemmesider fra bunden i kode. Jeg arbejder ikke primært i færdige platforme som WordPress og lignende.",
+        scopeNote: "For større projekter kan supplerende aftaler, tilbud eller særlige projektvilkår gælde ud over denne side.",
+
+        orderTitle: "2. Bestilling og aftale",
+        orderText1: "En forespørgsel via formular, e-mail eller anden kontakt er ikke automatisk et bindende køb. Aftale anses først for indgået, når du og jeg tydeligt har aftalt, at arbejdet skal starte som en betalt bestilling.",
+        orderText2: "For oplæg hvor der står, at du får demo først, gælder det, at selve demoen er et beslutningsgrundlag. Du køber altså først, når du godkender, at vi går videre med den betalte levering.",
+        orderText3: "For større projekter, løbende arbejde eller timebaserede oplæg gælder aftale, når tilbud, prisoplæg eller arbejdsstart er godkendt.",
+
+        demoTitle: "3. Demo og udkast",
+        demoText1: "På webutvecklare.se bruges oplægget “demo først” eller “udkast først” for visse tjenester. Det betyder, at du i mange tilfælde får noget konkret at tage stilling til, før du køber den endelige levering.",
+        demoList1: "demo eller udkast er til vurdering og dialog",
+        demoList2: "slutlevering sker først efter at du har godkendt køb",
+        demoList3: "demo eller udkast betyder ikke, at fuld slutprodukt allerede indgår",
+        demoText2: "Jeg forbeholder mig retten til at afgøre, hvor omfattende en demo eller et udkast skal være for at vise retning, struktur eller idé. Det er ikke det samme som fuld produktion.",
+
+        paymentTitle: "4. Priser og betaling",
+        paymentText1: "Priser, der vises på siden, er de priser, der gælder, hvis intet andet er skriftligt aftalt. For større webprojekter, specialfunktioner og webløsninger kan timepris eller separat tilbud bruges i stedet for fast pris.",
+        paymentText2: "Betaling sker efter den betalingsløsning, faktura eller aftale, der bruges i den enkelte opgave. Hvis intet andet udtrykkeligt er aftalt, skal betaling ske inden for den tid, der står på faktura eller betalingsgrundlag.",
+        paymentText3: "Et .se-domæne kan indgå første år, når det udtrykkeligt indgår i oplægget. Derefter koster et .se-domæne cirka 229 SEK om året. Hvis du ønsker en anden domæneendelse, betaler du den faktiske pris for netop det domæne.",
+        paymentText4: "Ved manglende betaling forbeholder jeg mig retten til at pause arbejde, levering eller fortsat support, indtil betaling er modtaget.",
+
+        deliveryTitle: "5. Levering og ændringer",
+        deliveryText1: "Leveringstid afhænger af opgavens type, omfang og hvor hurtigt nødvendigt materiale og feedback kommer fra dig. Når siden eksempelvis angiver demo inden for 1 arbejdsdag, gælder det normalt første udkast eller første retning, ikke altid færdig slutlevering.",
+        deliveryText2: "Rimelige ændringer indgår i det omfang, det følger det oplæg, der er kommunikeret for tjenesten. Hvis ønsker tydeligt ændrer omfanget, for eksempel nye funktioner, større tekstarbejde, flere sider eller anden retning end først bestilt, kan ny pris eller tillægsarbejde skulle godkendes.",
+        deliveryList1: "mindre justeringer håndteres normalt inden for aftalt ramme",
+        deliveryList2: "større ændringer kan medføre nyt tilbud eller ny pris",
+        deliveryList3: "tidsplan påvirkes, hvis materiale eller svar trækker ud",
+
+        customerTitle: "6. Kundens ansvar",
+        customerText1: "Du er ansvarlig for, at oplysninger, tekster, billeder, links og instruktioner, du sender, er korrekte, og at du har ret til at bruge materialet. Du er også ansvarlig for at give relevant information om virksomheden, tilbuddet og eventuelle krav, der påvirker opgaven.",
+        customerText2: "Hvis du venter længe med feedback, ikke sender nødvendigt materiale eller ændrer retning flere gange, kan det påvirke leveringstid, pris eller om arbejdet skal pauses.",
+
+        rightsTitle: "7. Materiale og rettigheder",
+        rightsText1: "Du er ansvarlig for, at du har ret til at bruge materiale, som du sender ind, for eksempel billeder, tekster, logoer eller grafik.",
+        rightsText2: "Når en opgave er betalt, må du bruge slutleveringen til det formål, vi har aftalt. Efter køb får du også adgang til relevant materiale, loginoplysninger og kode, hvis du senere vil fortsætte selv eller med en anden.",
+        rightsText3: "Du bliver altså ikke låst til mig for at kunne fortsætte med at bruge eller videreudvikle det, der er betalt. Arbejdsmateriale, skitser, udkast, koncepter og ikke-godkendte versioner må derimod ikke automatisk bruges frit, medmindre det er særligt aftalt.",
+        rightsText4: "Jeg forbeholder mig retten til at vise gennemførte projekter som reference i egen markedsføring, hvis intet andet er aftalt i det enkelte tilfælde.",
+
+        liabilityTitle: "8. Ansvar",
+        liabilityText1: "Jeg gør mit bedste for at levere tydelige, fungerende og gennemtænkte løsninger, men kan ikke garantere specifikke forretningsresultater såsom et bestemt antal leads, salg, visninger, placeringer i søgning eller annonceresultater.",
+        liabilityText2: "Jeg er ikke ansvarlig for indirekte skader, tabt fortjeneste, tabte data, tabte forretningsmuligheder eller problemer, der opstår hos tredjepartstjenester, eksempelvis domæneleverandører, webhoteller, betalingsplatforme, formulartjenester, annonceplatforme eller sociale medier.",
+        liabilityText3: "Hvis du opdager en konkret fejl i leveringen, skal du give besked hurtigst muligt, så den kan vurderes og i rimeligt omfang rettes.",
+
+        cancelTitle: "9. Fortrydelse og afbestilling",
+        cancelText1: "Hvis du handler som forbruger, kan regler om fortrydelsesret ved fjernsalg blive relevante. Samtidig gælder særlige undtagelser for tjenester, der er påbegyndt med dit udtrykkelige samtykke, eller for tilpassede digitale leveringer. Derfor kan det nogle gange skulle vurderes fra sag til sag, hvad der gælder for netop dit køb.",
+        cancelText2: "Hvis du vil afbestille, før et bindende køb er godkendt, er det normalt ukompliceret. Hvis arbejdet allerede er startet som betalt levering, eller hvis tilpasset produktion allerede er påbegyndt efter din godkendelse, kan betaling for udført eller påbegyndt arbejde blive aktuelt.",
+        cancelNote: "Derfor er det smartest, at du kontakter mig direkte, hvis du er usikker, vil pause eller vil afbryde noget. Jo tidligere, desto mindre administrativt mudder.",
+
+        contactTitle: "10. Kontakt",
+        contactText: "Har du spørgsmål om vilkårene, en igangværende opgave eller en bestilling, kontakter du mig her:",
+        contactPersonLabel: "Kontaktperson:",
+        emailLabel: "E-mail:",
+        websiteLabel: "Websted:",
+        contactBoxText1: "Ved spørgsmål om hjemmesider, opdateringer eller større webløsninger er det bedst at skrive kort og tydeligt, hvad det gælder, så går vi direkte til sagen.",
+        contactBoxText2: "Jeg arbejder ved computeren på hverdage i normal arbejdstid.",
+
+        footerText: "Hjemmesider, webfix og webudvikling til små virksomheder.",
+        footerContact: "Kontakt:",
+        footerTerms: "Vilkår",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerWebfix: "Webfix",
+        footerCase: "Cases",
+        footerPrivacy: "Privatliv",
+        footerAffiliate: "Affiliate",
+
+        speechSummary: "Dette er vilkårene for webutvecklare.se og Nordlöf Nordic. En forespørgsel er ikke automatisk et køb. En aftale opstår først, når kunden og Nordlöf Nordic tydeligt har aftalt en betalt bestilling. Ved demo først får kunden et beslutningsgrundlag før køb af slutleveringen. Priser på siden gælder, hvis intet andet er aftalt. Større projekter og specialløsninger kan bruge tilbud eller timepris. Kunden er ansvarlig for at have ret til at bruge indsendt materiale. Efter betalt opgave må kunden bruge slutleveringen og kan få materiale, login og kode. Nordlöf Nordic garanterer ikke specifikke forretningsresultater, placeringer eller antal leads."
+      },
+
+      no: {
+        htmlLang: "no",
+        speechLang: "no-NO",
+        languageName: "Norsk",
+        metaTitle: "Vilkår | Webbutvecklare.se | Nordlöf Nordic",
+        metaDescription: "Vilkår for webutvikling, nettsider og større webløsninger via webutvecklare.se. Tydelig informasjon om demo, kjøp, betaling, levering og kontakt.",
+        ogTitle: "Vilkår | Webbutvecklare.se | Nordlöf Nordic",
+        ogDescription: "Tydelige vilkår for webutvikling, nettsider og større webløsninger via webutvecklare.se.",
+        twitterTitle: "Vilkår | Webbutvecklare.se | Nordlöf Nordic",
+        twitterDescription: "Vilkår for nettsider, oppdateringer og større webløsninger.",
+
+        skip: "Hopp til hovedinnhold",
+        accessibilityTools: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        listen: "Kort opplesning",
+        stopListen: "Stopp opplesning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webutvikler for bedrifter",
+        homeButton: "Til forsiden",
+        languageLabel: "Språk",
+        languageSwitch: "Velg språk",
+
+        eyebrow: "Vilkår · Webutvikling, nettsider og større webløsninger",
+        heroTitle: "Vilkår",
+        heroLead: "Her står de grunnleggende vilkårene for tjenester via webutvecklare.se. Poenget er enkelt: tydelig opplegg, demo først der det passer, og færre gråsoner senere. Fokus ligger på nettsider og større webløsninger som hovedsakelig bygges fra bunnen i kode.",
+        readTerms: "Les vilkårene",
+        contactMe: "Kontakt meg",
+
+        shortVersionTitle: "Kortversjon",
+        shortVersionText: "Du sender inn en forespørsel. Jeg svarer. For mange opplegg får du en demo først. Du kjøper først etter godkjenning der det opplegget er angitt. For større prosjekter eller spesialløsninger kan separat tilbud, timepris og særskilt avtale gjelde. Jeg bygger hovedsakelig nye nettsider fra bunnen i kode og jobber ikke primært i ferdige plattformer som WordPress og lignende.",
+        tocAria: "Innhold",
+        toc1: "1. Omfang",
+        toc2: "2. Bestilling og avtale",
+        toc3: "3. Demo og utkast",
+        toc4: "4. Priser og betaling",
+        toc5: "5. Levering og endringer",
+        toc6: "6. Kundens ansvar",
+        toc7: "7. Materiale og rettigheter",
+        toc8: "8. Ansvar",
+        toc9: "9. Angrerett og avbestilling",
+        toc10: "10. Kontakt",
+
+        scopeTitle: "1. Omfang",
+        scopeText1: "Disse vilkårene gjelder for tjenester som tilbys via webutvecklare.se av Nordlöf Nordic. Det gjelder blant annet:",
+        scopeList1: "ny nettside til fast pris",
+        scopeList2: "oppdatering av eksisterende nettside til fast pris",
+        scopeList3: "større webprosjekter, spesialfunksjoner og webløsninger",
+        scopeList4: "webbaserte apper og andre mer avanserte opplegg",
+        scopeText2: "Fokus ligger hovedsakelig på nye nettsider fra bunnen i kode. Jeg jobber ikke primært i ferdige plattformer som WordPress og lignende.",
+        scopeNote: "For større prosjekter kan supplerende avtaler, tilbud eller særskilte prosjektvilkår gjelde i tillegg til denne siden.",
+
+        orderTitle: "2. Bestilling og avtale",
+        orderText1: "En forespørsel via skjema, e-post eller annen kontakt er ikke automatisk et bindende kjøp. Avtale anses inngått først når du og jeg tydelig har blitt enige om at arbeidet skal starte som en betalt bestilling.",
+        orderText2: "For opplegg der det står at du får demo først, gjelder det at selve demoen er et beslutningsgrunnlag. Du kjøper altså først når du godkjenner at vi går videre med den betalte leveransen.",
+        orderText3: "For større prosjekter, løpende arbeid eller timebaserte opplegg gjelder avtale når tilbud, prisopplegg eller arbeidsstart er godkjent.",
+
+        demoTitle: "3. Demo og utkast",
+        demoText1: "På webutvecklare.se brukes opplegget “demo først” eller “utkast først” for enkelte tjenester. Det betyr at du i mange tilfeller får noe konkret å ta stilling til før du kjøper den endelige leveransen.",
+        demoList1: "demo eller utkast er til vurdering og dialog",
+        demoList2: "sluttlevering skjer først etter at du har godkjent kjøp",
+        demoList3: "demo eller utkast betyr ikke at full sluttprodukt allerede inngår",
+        demoText2: "Jeg forbeholder meg retten til å avgjøre hvor omfattende en demo eller et utkast må være for å vise retning, struktur eller idé. Det er ikke det samme som full produksjon.",
+
+        paymentTitle: "4. Priser og betaling",
+        paymentText1: "Priser som vises på siden, er prisene som gjelder dersom ikke annet er skriftlig avtalt. For større webprosjekter, spesialfunksjoner og webløsninger kan timepris eller separat tilbud brukes i stedet for fast pris.",
+        paymentText2: "Betaling skjer etter betalingsløsningen, fakturaen eller avtalen som brukes i det enkelte oppdraget. Hvis ikke annet uttrykkelig er avtalt, skal betaling gjøres innen tiden som står på faktura eller betalingsgrunnlag.",
+        paymentText3: "Et .se-domene kan inngå første året når det uttrykkelig inngår i opplegget. Deretter koster et .se-domene cirka 229 SEK per år. Hvis du ønsker en annen domeneendelse, betaler du den faktiske kostnaden for akkurat det domenet.",
+        paymentText4: "Ved manglende betaling forbeholder jeg meg retten til å pause arbeid, levering eller videre support til betaling er mottatt.",
+
+        deliveryTitle: "5. Levering og endringer",
+        deliveryText1: "Leveringstid avhenger av oppdragets type, omfang og hvor raskt nødvendig materiale og tilbakemelding kommer inn fra deg. Når siden for eksempel angir demo innen 1 arbeidsdag, gjelder det normalt første utkast eller første retning, ikke alltid ferdig sluttlevering.",
+        deliveryText2: "Rimelige endringer inngår i den grad det følger opplegget som er kommunisert for tjenesten. Hvis ønsker tydelig endrer omfanget, for eksempel nye funksjoner, større tekstarbeid, flere sider eller annen retning enn først bestilt, kan ny pris eller tilleggsarbeid måtte godkjennes.",
+        deliveryList1: "mindre justeringer håndteres normalt innen avtalt ramme",
+        deliveryList2: "større endringer kan innebære nytt tilbud eller ny pris",
+        deliveryList3: "tidsplanen påvirkes hvis materiale eller svar trekker ut",
+
+        customerTitle: "6. Kundens ansvar",
+        customerText1: "Du er ansvarlig for at opplysninger, tekster, bilder, lenker og instruksjoner du sender, er korrekte, og at du har rett til å bruke materialet. Du er også ansvarlig for å gi relevant informasjon om virksomheten, tilbudet og eventuelle krav som påvirker oppdraget.",
+        customerText2: "Hvis du drøyer lenge med tilbakemelding, ikke sender nødvendig materiale eller endrer retning flere ganger, kan det påvirke leveringstid, pris eller om arbeidet må pauses.",
+
+        rightsTitle: "7. Materiale og rettigheter",
+        rightsText1: "Du er ansvarlig for at du har rett til å bruke materiale du sender inn, for eksempel bilder, tekster, logoer eller grafikk.",
+        rightsText2: "Når et oppdrag er betalt, kan du bruke sluttleveransen til formålet vi har blitt enige om. Etter kjøp kan du også få tilgang til relevant materiale, innloggingsopplysninger og kode hvis du senere vil fortsette selv eller med noen andre.",
+        rightsText3: "Du blir altså ikke låst til meg for å kunne fortsette å bruke eller videreutvikle det som er betalt. Arbeidsmateriale, skisser, utkast, konsepter og ikke-godkjente versjoner kan derimot ikke automatisk brukes fritt dersom det ikke er særskilt avtalt.",
+        rightsText4: "Jeg forbeholder meg retten til å vise gjennomførte prosjekter som referanse i egen markedsføring, dersom ikke annet er avtalt i det enkelte tilfellet.",
+
+        liabilityTitle: "8. Ansvar",
+        liabilityText1: "Jeg gjør mitt beste for å levere tydelige, fungerende og gjennomtenkte løsninger, men kan ikke garantere spesifikke forretningsresultater som et visst antall leads, salg, visninger, rangeringer eller annonseresultater.",
+        liabilityText2: "Jeg er ikke ansvarlig for indirekte skader, uteblitt fortjeneste, tapte data, tapte forretningsmuligheter eller problemer som oppstår hos tredjepartstjenester, for eksempel domeneleverandører, webhotell, betalingsplattformer, skjematjenester, annonseplattformer eller sosiale medier.",
+        liabilityText3: "Hvis du oppdager en konkret feil i leveransen, skal du gi beskjed så snart som mulig, slik at det kan vurderes og i rimelig grad rettes.",
+
+        cancelTitle: "9. Angrerett og avbestilling",
+        cancelText1: "Hvis du handler som forbruker, kan regler om angrerett etter fjernsalgslovgivning bli aktuelle. Samtidig gjelder særlige unntak for tjenester som er påbegynt med ditt uttrykkelige samtykke eller for tilpassede digitale leveranser. Derfor må det noen ganger vurderes fra tilfelle til tilfelle hva som gjelder for akkurat ditt kjøp.",
+        cancelText2: "Hvis du vil avbestille før et bindende kjøp er godkjent, er det normalt ukomplisert. Hvis arbeid allerede har startet som betalt levering, eller hvis tilpasset produksjon allerede er påbegynt etter din godkjenning, kan betaling for utført eller påbegynt arbeid bli aktuelt.",
+        cancelNote: "Derfor er det smartest at du tar kontakt direkte hvis du er usikker, vil pause eller vil avbryte noe. Jo tidligere, desto mindre administrativt grums.",
+
+        contactTitle: "10. Kontakt",
+        contactText: "Har du spørsmål om vilkårene, et pågående oppdrag eller en bestilling, kontakter du meg her:",
+        contactPersonLabel: "Kontaktperson:",
+        emailLabel: "E-post:",
+        websiteLabel: "Nettsted:",
+        contactBoxText1: "Ved spørsmål om nettsider, oppdateringer eller større webløsninger er det best å skrive kort og tydelig hva det gjelder, så går vi rett på sak.",
+        contactBoxText2: "Jeg jobber ved datamaskinen på hverdager i normal arbeidstid.",
+
+        footerText: "Nettsider, webfiks og webutvikling for små bedrifter.",
+        footerContact: "Kontakt:",
+        footerTerms: "Vilkår",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerWebfix: "Webfiks",
+        footerCase: "Case",
+        footerPrivacy: "Personvern",
+        footerAffiliate: "Affiliate",
+
+        speechSummary: "Dette er vilkårene for webutvecklare.se og Nordlöf Nordic. En forespørsel er ikke automatisk et kjøp. Avtale oppstår først når kunden og Nordlöf Nordic tydelig har avtalt en betalt bestilling. Ved demo først får kunden et beslutningsgrunnlag før kjøp av sluttleveransen. Prisene på siden gjelder dersom ikke annet er avtalt. Større prosjekter og spesialløsninger kan bruke tilbud eller timepris. Kunden er ansvarlig for å ha rett til å bruke innsendt materiale. Etter betalt oppdrag kan kunden bruke sluttleveransen og få materiale, innlogginger og kode. Nordlöf Nordic garanterer ikke spesifikke forretningsresultater, rangeringer eller antall leads."
+      }
+    };
+
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+    let isSpeaking = false;
+
+    const languageSelect = document.getElementById("languageSelect");
+    const listenButton = document.getElementById("listenSummary");
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
+    }
+
+    function safeGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function safeSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (error) {
+        return false;
+      }
+
+      return true;
+    }
+
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    function stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      isSpeaking = false;
+
+      if (listenButton) {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        listenButton.setAttribute("aria-pressed", "false");
+        listenButton.textContent = dictionary.listen;
+      }
+    }
+
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+
+      stopSpeaking();
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+
+      if (languageSelect) {
+        languageSelect.value = lang;
+        languageSelect.setAttribute("aria-label", dictionary.languageSwitch);
+      }
+
+      safeSet("villkorLanguage", lang);
+    }
+
+    if (languageSelect) {
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
+      });
+    }
+
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
+
+    if (savedContrast) {
+      document.body.classList.add("high-contrast");
+    }
+
+    if (savedLargeText) {
+      document.body.classList.add("large-text");
+    }
+
+    setPressed(contrastButton, savedContrast);
+    setPressed(largeTextButton, savedLargeText);
+
+    if (contrastButton) {
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
+        setPressed(contrastButton, isActive);
+      });
+    }
+
+    if (largeTextButton) {
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
+        setPressed(largeTextButton, isActive);
+      });
+    }
+
+    if (listenButton && "speechSynthesis" in window) {
+      listenButton.addEventListener("click", () => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+
+        if (isSpeaking) {
+          stopSpeaking();
+          return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(dictionary.speechSummary);
+        utterance.lang = dictionary.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        isSpeaking = true;
+        listenButton.setAttribute("aria-pressed", "true");
+        listenButton.textContent = dictionary.stopListen;
+
+        utterance.onend = () => {
+          stopSpeaking();
+        };
+
+        utterance.onerror = () => {
+          stopSpeaking();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+
+    window.addEventListener("pagehide", () => {
+      stopSpeaking();
+    });
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("villkorLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
+  </script>
 </body>
 </html>
