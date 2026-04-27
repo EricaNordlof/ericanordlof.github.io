@@ -46,6 +46,7 @@
         "name":"Webbfix från 490 kr",
         "description":"Hjälp med småfix på hemsidan: text, bilder, layout, formulär, knappar, SEO och tekniska fel.",
         "inLanguage":"sv-SE",
+        "availableLanguage":["sv-SE","en","da-DK","no-NO"],
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"}
       },
@@ -107,6 +108,17 @@
               "price":"1490",
               "priceCurrency":"SEK",
               "description":"Större förbättring av befintlig hemsida."
+            },
+            {
+              "@type":"Offer",
+              "name":"Speciallösning eller tekniskt uppdrag",
+              "priceSpecification":{
+                "@type":"UnitPriceSpecification",
+                "price":"650",
+                "priceCurrency":"SEK",
+                "unitCode":"HUR"
+              },
+              "description":"API, backend, integrationer, teknisk felsökning och specialfunktioner från 650 kr/h."
             }
           ]
         }
@@ -204,6 +216,10 @@
       line-height:1.75;
     }
 
+    body.large-text .mobile-sticky{
+      display:none;
+    }
+
     body.high-contrast{
       --bg:#fff;
       --soft:#fff;
@@ -287,20 +303,33 @@
       top:86px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      align-items:center;
       gap:8px;
+      padding:8px;
+      border-radius:22px;
+      background:rgba(251,247,244,.92);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .accessibility-btn{
-      min-height:44px;
-      padding:10px 14px;
+      min-height:42px;
+      padding:9px 13px;
       border-radius:999px;
       background:#111;
       color:#fff;
       border:2px solid #fff;
       font-weight:900;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(36,30,26,.18);
+      box-shadow:0 8px 20px rgba(36,30,26,.14);
+      white-space:nowrap;
+      font-size:13px;
+    }
+
+    .accessibility-btn:hover{
+      background:#000;
     }
 
     .accessibility-btn[aria-pressed="true"]{
@@ -363,6 +392,15 @@
       text-overflow:ellipsis;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex:0 0 auto;
+      min-width:0;
+    }
+
     .nav-links{
       display:flex;
       align-items:center;
@@ -374,6 +412,40 @@
 
     .nav-links a:hover{
       color:var(--brand-dark);
+    }
+
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .language-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .language-select{
+      min-height:42px;
+      width:auto;
+      max-width:190px;
+      padding:10px 38px 10px 14px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      outline:none;
+    }
+
+    .language-select:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
 
     .btn{
@@ -504,9 +576,14 @@
       line-height:1.35;
     }
 
+    .proof-pill strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:5px;
+    }
+
     .proof-pill span{
       display:block;
-      margin-top:5px;
       color:var(--muted);
       font-size:13px;
       font-weight:600;
@@ -845,6 +922,15 @@
       color:#111;
     }
 
+    .form-card select{
+      color:#fff;
+    }
+
+    .form-card select option{
+      color:#111;
+      background:#fff;
+    }
+
     textarea{
       min-height:120px;
       resize:vertical;
@@ -935,7 +1021,9 @@
     body.high-contrast .card,
     body.high-contrast .price-card,
     body.high-contrast .step,
-    body.high-contrast .faq details{
+    body.high-contrast .faq details,
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -975,6 +1063,11 @@
       border:3px solid #fff;
     }
 
+    body.high-contrast .language-select{
+      background:#fff;
+      color:#000;
+    }
+
     body.high-contrast a{
       text-decoration:underline;
       text-decoration-thickness:2px;
@@ -996,6 +1089,15 @@
 
       .btn:hover{
         transform:none;
+      }
+    }
+
+    @media(max-width:1100px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
       }
     }
 
@@ -1028,24 +1130,31 @@
       }
 
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
 
       .accessibility-btn{
         width:100%;
         min-height:44px;
-        padding:9px 10px;
-        font-size:14px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
         min-height:auto;
         padding:10px 0;
+        align-items:center;
+      }
+
+      .brand{
+        gap:10px;
       }
 
       .brand img{
@@ -1060,6 +1169,21 @@
 
       .brand span span{
         display:none;
+      }
+
+      .nav-right{
+        gap:8px;
+      }
+
+      .language-label{
+        display:none;
+      }
+
+      .language-select{
+        min-height:40px;
+        max-width:150px;
+        padding:9px 32px 9px 11px;
+        font-size:13px;
       }
 
       .hero{
@@ -1157,37 +1281,83 @@
         font-size:13px;
       }
     }
+
+    @media(max-width:390px){
+      .container{
+        width:min(var(--max),calc(100% - 18px));
+      }
+
+      .accessibility-tools{
+        width:min(var(--max),calc(100% - 18px));
+      }
+
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+
+      .language-select{
+        max-width:132px;
+        font-size:12px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
 
-  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
-    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityTools">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
       Hög kontrast
     </button>
-    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
+
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
       Större text
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">
+      Kort uppläsning
     </button>
   </div>
 
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+      <a class="brand" href="/" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" data-i18n-alt="logoAlt">
         <span>
           <strong>Nordlöf Nordic</strong>
-          <span>Webbfix för småföretag</span>
+          <span data-i18n="brandSub">Webbfix för småföretag</span>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Huvudnavigering">
-        <a href="#vanliga-fixar">Vanliga fixar</a>
-        <a href="#priser">Priser</a>
-        <a href="#sa-funkar-det">Så funkar det</a>
-        <a href="#kontakt">Skicka fix</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Huvudnavigering" data-i18n-aria-label="mainNav">
+          <a href="#vanliga-fixar" data-i18n="navFixes">Vanliga fixar</a>
+          <a href="#priser" data-i18n="navPrices">Priser</a>
+          <a href="#sa-funkar-det" data-i18n="navHow">Så funkar det</a>
+          <a href="#kontakt" data-i18n="navContact">Skicka fix</a>
+        </nav>
+
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select
+            id="languageSelect"
+            class="language-select"
+            aria-label="Välj språk"
+            data-i18n-aria-label="languageSwitch"
+          >
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1195,50 +1365,53 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Webbfix från 490 kr · Text · Bilder · Knappar · Formulär · SEO</span>
+          <span class="eyebrow" data-i18n="eyebrow">Webbfix från 490 kr · Text · Bilder · Knappar · Formulär · SEO</span>
 
-          <h1 id="hero-title">Behöver du bara fixa något på hemsidan?</h1>
+          <h1 id="hero-title" data-i18n="heroTitle">Behöver du bara fixa något på hemsidan?</h1>
 
-          <p class="lead">
-            Jag hjälper småföretag med enkla ändringar på befintliga hemsidor.
-            Text som ska bytas, bilder som strular, knappar som leder fel, formulär som behöver ses över eller en sida som bara känns lite trött.
+          <p class="lead" data-i18n="heroLead">
+            Webbfix är hjälp med mindre eller större ändringar på en befintlig hemsida, till exempel text, bilder, knappar, länkar, mobilanpassning, formulär eller SEO-grund.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Skicka vad som ska fixas</a>
-            <a class="btn btn-secondary" href="#priser">Se pris</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="heroCta">Skicka vad som ska fixas</a>
+            <a class="btn btn-secondary" href="#priser" data-i18n="heroPriceCta">Se pris</a>
           </div>
 
-          <div class="proof-row" aria-label="Fördelar">
+          <div class="proof-row" aria-label="Fördelar" data-i18n-aria-label="benefitsAria">
             <div class="proof-pill">
-              Från 490 kr
-              <span>För mindre ändringar.</span>
+              <strong data-i18n="proof1Title">Från 490 kr</strong>
+              <span data-i18n="proof1Text">För mindre ändringar.</span>
             </div>
+
             <div class="proof-pill">
-              Snabbt och konkret
-              <span>Du skickar vad som ska ändras.</span>
+              <strong data-i18n="proof2Title">Snabbt och konkret</strong>
+              <span data-i18n="proof2Text">Du skickar vad som ska ändras.</span>
             </div>
+
             <div class="proof-pill">
-              Ingen stor process
-              <span>Småfix ska inte bli styrelsemöte.</span>
+              <strong data-i18n="proof3Title">Ingen stor process</strong>
+              <span data-i18n="proof3Text">Småfix ska inte bli styrelsemöte.</span>
             </div>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Kort sammanfattning">
+        <aside class="hero-card" aria-label="Kort sammanfattning" data-i18n-aria-label="summaryAria">
           <img src="nordlof-nordic-logo.png" alt="">
           <ul class="mini-list">
             <li>
-              <strong>1. Skicka länken</strong>
-              Skicka din hemsida och skriv vad som behöver fixas.
+              <strong data-i18n="mini1Title">1. Skicka länken</strong>
+              <span data-i18n="mini1Text">Skicka din hemsida och skriv vad som behöver fixas.</span>
             </li>
+
             <li>
-              <strong>2. Jag bedömer jobbet</strong>
-              Du får veta om det passar liten, normal eller större webbfix.
+              <strong data-i18n="mini2Title">2. Jag bedömer jobbet</strong>
+              <span data-i18n="mini2Text">Du får veta om det passar liten, normal eller större webbfix.</span>
             </li>
+
             <li>
-              <strong>3. Jag fixar efter godkännande</strong>
-              Inget arbete startar utan att du vet pris eller upplägg.
+              <strong data-i18n="mini3Title">3. Jag fixar efter godkännande</strong>
+              <span data-i18n="mini3Text">Inget arbete startar utan att du vet pris eller upplägg.</span>
             </li>
           </ul>
         </aside>
@@ -1248,88 +1421,88 @@
     <section class="section" id="vanliga-fixar">
       <div class="container">
         <div class="section-head">
-          <h2>Vanliga saker jag kan fixa.</h2>
-          <p>
+          <h2 data-i18n="fixesTitle">Vanliga saker jag kan fixa.</h2>
+          <p data-i18n="fixesLead">
             Perfekt när hemsidan redan finns, men något behöver rättas, förbättras eller snyggas till.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <span class="tag">Text och innehåll</span>
-            <h3>Ändra text, rubriker och sektioner</h3>
-            <p>
+            <span class="tag" data-i18n="fix1Tag">Text och innehåll</span>
+            <h3 data-i18n="fix1Title">Ändra text, rubriker och sektioner</h3>
+            <p data-i18n="fix1Text">
               Jag kan byta texter, skriva om rubriker, lägga till nya sektioner eller göra sidan tydligare för kunden.
             </p>
             <ul class="list">
-              <li>Textbyte</li>
-              <li>Nya rubriker</li>
-              <li>Mer säljande struktur</li>
+              <li data-i18n="fix1List1">Textbyte</li>
+              <li data-i18n="fix1List2">Nya rubriker</li>
+              <li data-i18n="fix1List3">Mer säljande struktur</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Bild och layout</span>
-            <h3>Byta bilder och städa designen</h3>
-            <p>
+            <span class="tag" data-i18n="fix2Tag">Bild och layout</span>
+            <h3 data-i18n="fix2Title">Byta bilder och städa designen</h3>
+            <p data-i18n="fix2Text">
               Bilder, avstånd, mobilkänsla och layout kan göra stor skillnad. Ibland behövs inte ny hemsida, bara ordning.
             </p>
             <ul class="list">
-              <li>Bildbyte</li>
-              <li>Mobilanpassning</li>
-              <li>Snyggare sektioner</li>
+              <li data-i18n="fix2List1">Bildbyte</li>
+              <li data-i18n="fix2List2">Mobilanpassning</li>
+              <li data-i18n="fix2List3">Snyggare sektioner</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Knappar och länkar</span>
-            <h3>Fixa vägen till kontakt</h3>
-            <p>
+            <span class="tag" data-i18n="fix3Tag">Knappar och länkar</span>
+            <h3 data-i18n="fix3Title">Fixa vägen till kontakt</h3>
+            <p data-i18n="fix3Text">
               Knappar, länkar och kontaktvägar ska fungera. Annars är hemsidan mest en digital anslagstavla med punktering.
             </p>
             <ul class="list">
-              <li>CTA-knappar</li>
-              <li>Kontaktlänkar</li>
-              <li>Trasiga länkar</li>
+              <li data-i18n="fix3List1">CTA-knappar</li>
+              <li data-i18n="fix3List2">Kontaktlänkar</li>
+              <li data-i18n="fix3List3">Trasiga länkar</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Formulär</span>
-            <h3>Formulär som faktiskt går att använda</h3>
-            <p>
+            <span class="tag" data-i18n="fix4Tag">Formulär</span>
+            <h3 data-i18n="fix4Title">Formulär som faktiskt går att använda</h3>
+            <p data-i18n="fix4Text">
               Jag kan se över formulär, fält, ämnesrad, tack-sida och flöde så att kunden enklare kan skicka förfrågan.
             </p>
             <ul class="list">
-              <li>Kontaktformulär</li>
-              <li>Förfrågningsformulär</li>
-              <li>Tack-sida</li>
+              <li data-i18n="fix4List1">Kontaktformulär</li>
+              <li data-i18n="fix4List2">Förfrågningsformulär</li>
+              <li data-i18n="fix4List3">Tack-sida</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">SEO-grund</span>
-            <h3>Metadata och tydligare sökstruktur</h3>
-            <p>
+            <span class="tag" data-i18n="fix5Tag">SEO-grund</span>
+            <h3 data-i18n="fix5Title">Metadata och tydligare sökstruktur</h3>
+            <p data-i18n="fix5Text">
               Jag kan fixa title, meta description, rubrikstruktur, interna länkar och enklare SEO-grund.
             </p>
             <ul class="list">
-              <li>SEO-title</li>
-              <li>Meta description</li>
-              <li>H1/H2-struktur</li>
+              <li data-i18n="fix5List1">SEO-title</li>
+              <li data-i18n="fix5List2">Meta description</li>
+              <li data-i18n="fix5List3">H1/H2-struktur</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Tekniskt</span>
-            <h3>Små tekniska fel</h3>
-            <p>
+            <span class="tag" data-i18n="fix6Tag">Tekniskt</span>
+            <h3 data-i18n="fix6Title">Små tekniska fel</h3>
+            <p data-i18n="fix6Text">
               Små kodfel, konstig mobilvy, formulärstrul eller saker som inte beter sig som de ska.
             </p>
             <ul class="list">
-              <li>HTML/CSS-fix</li>
-              <li>Mobilproblem</li>
-              <li>Enklare felsökning</li>
+              <li data-i18n="fix6List1">HTML/CSS-fix</li>
+              <li data-i18n="fix6List2">Mobilproblem</li>
+              <li data-i18n="fix6List3">Enklare felsökning</li>
             </ul>
           </article>
         </div>
@@ -1339,46 +1512,45 @@
     <section class="section" id="priser">
       <div class="container">
         <div class="section-head">
-          <h2>Pris för webbfix.</h2>
-          <p>
+          <h2 data-i18n="pricesTitle">Pris för webbfix.</h2>
+          <p data-i18n="pricesLead">
             Skicka vad du vill ändra, så bedömer jag vilken nivå det passar. Hellre tydligt pris än offert-teater.
           </p>
         </div>
 
         <div class="price-grid">
           <article class="price-card">
-            <span class="tag">Liten</span>
-            <h3>Liten webbfix</h3>
-            <div class="price">490 kr</div>
-            <p>
+            <span class="tag" data-i18n="price1Tag">Liten</span>
+            <h3 data-i18n="price1Title">Liten webbfix</h3>
+            <div class="price" data-i18n="price1Amount">490 kr</div>
+            <p data-i18n="price1Text">
               En mindre ändring, till exempel text, bild, knapp, länk eller enkel justering.
             </p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Normal</span>
-            <h3>Normal webbfix</h3>
-            <div class="price">990 kr</div>
-            <p>
+            <span class="tag" data-i18n="price2Tag">Normal</span>
+            <h3 data-i18n="price2Title">Normal webbfix</h3>
+            <div class="price" data-i18n="price2Amount">990 kr</div>
+            <p data-i18n="price2Text">
               Flera mindre ändringar, enklare uppfräschning eller justering av flera delar på sidan.
             </p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Större</span>
-            <h3>Större webbfix</h3>
-            <div class="price">1 490 kr</div>
-            <p>
+            <span class="tag" data-i18n="price3Tag">Större</span>
+            <h3 data-i18n="price3Title">Större webbfix</h3>
+            <div class="price" data-i18n="price3Amount">1 490 kr</div>
+            <p data-i18n="price3Text">
               Mer omfattande förbättring, ny sektion, tydligare struktur eller större genomgång.
             </p>
           </article>
         </div>
 
         <div class="card" style="margin-top:18px;">
-          <h3>När det blir mer tekniskt</h3>
-          <p>
-            API, backend, integrationer, specialfunktioner, större felsökning eller mer avancerade ändringar görs från
-            <strong>650 kr/h</strong>. Jag säger till innan, så en liten webbfix inte smyger in på gym och blir systemprojekt.
+          <h3 data-i18n="techTitle">När det blir mer tekniskt</h3>
+          <p data-i18n="techText">
+            API, backend, integrationer, specialfunktioner, större felsökning eller mer avancerade ändringar görs från 650 kr/h. Jag säger till innan, så en liten webbfix inte smyger in på gym och blir systemprojekt.
           </p>
         </div>
       </div>
@@ -1387,31 +1559,31 @@
     <section class="section" id="sa-funkar-det">
       <div class="container">
         <div class="section-head">
-          <h2>Så funkar det.</h2>
-          <p>
+          <h2 data-i18n="howTitle">Så funkar det.</h2>
+          <p data-i18n="howLead">
             Enkelt upplägg. Du skickar problemet, jag säger vad som krävs.
           </p>
         </div>
 
         <div class="steps">
           <div class="step">
-            <strong>Du skickar länk och beskrivning</strong>
-            <span>Skriv vad som ska ändras. Gärna punktlista, bild eller skärmdump om något ser konstigt ut.</span>
+            <strong data-i18n="step1Title">Du skickar länk och beskrivning</strong>
+            <span data-i18n="step1Text">Skriv vad som ska ändras. Gärna punktlista, bild eller skärmdump om något ser konstigt ut.</span>
           </div>
 
           <div class="step">
-            <strong>Jag bedömer omfattningen</strong>
-            <span>Jag säger om det passar liten, normal, större webbfix eller timpris.</span>
+            <strong data-i18n="step2Title">Jag bedömer omfattningen</strong>
+            <span data-i18n="step2Text">Jag säger om det passar liten, normal, större webbfix eller timpris.</span>
           </div>
 
           <div class="step">
-            <strong>Du godkänner innan start</strong>
-            <span>Jag börjar inte jobba utan att du vet pris eller upplägg.</span>
+            <strong data-i18n="step3Title">Du godkänner innan start</strong>
+            <span data-i18n="step3Text">Jag börjar inte jobba utan att du vet pris eller upplägg.</span>
           </div>
 
           <div class="step">
-            <strong>Jag fixar och återkopplar</strong>
-            <span>När ändringen är klar får du veta vad som gjorts och om något mer behöver kollas.</span>
+            <strong data-i18n="step4Title">Jag fixar och återkopplar</strong>
+            <span data-i18n="step4Text">När ändringen är klar får du veta vad som gjorts och om något mer behöver kollas.</span>
           </div>
         </div>
       </div>
@@ -1420,29 +1592,29 @@
     <section class="section">
       <div class="container grid-2">
         <article class="card">
-          <span class="tag">Bra att veta</span>
-          <h2>Jag behöver tillgång till sidan.</h2>
-          <p>
+          <span class="tag" data-i18n="accessTag">Bra att veta</span>
+          <h2 data-i18n="accessTitle">Jag behöver tillgång till sidan.</h2>
+          <p data-i18n="accessText">
             För att kunna fixa hemsidan behöver jag rätt typ av åtkomst. Det kan vara inloggning, kod, webbhotell, GitHub, CMS eller annan relevant tillgång.
           </p>
           <ul class="list">
-            <li>Länk till hemsidan</li>
-            <li>Beskrivning av vad som ska ändras</li>
-            <li>Inloggning eller åtkomst om jobbet ska göras direkt</li>
-            <li>Eventuella bilder, texter eller nya uppgifter</li>
+            <li data-i18n="accessList1">Länk till hemsidan</li>
+            <li data-i18n="accessList2">Beskrivning av vad som ska ändras</li>
+            <li data-i18n="accessList3">Inloggning eller åtkomst om jobbet ska göras direkt</li>
+            <li data-i18n="accessList4">Eventuella bilder, texter eller nya uppgifter</li>
           </ul>
         </article>
 
         <article class="card">
-          <span class="tag">Passar inte alltid</span>
-          <h2>Ibland är ny sida smartare.</h2>
-          <p>
+          <span class="tag" data-i18n="newSiteTag">Passar inte alltid</span>
+          <h2 data-i18n="newSiteTitle">Ibland är ny sida smartare.</h2>
+          <p data-i18n="newSiteText">
             Om sidan är väldigt rörig, gammal eller svår att rädda kan jag säga det rakt. Då kan en ny enkel sida vara billigare än att laga ett digitalt lapptäcke från 2011.
           </p>
           <ul class="list">
-            <li>Webbfix när grunden är okej</li>
-            <li>Ny hemsida när allt ändå måste byggas om</li>
-            <li>Demo först om du vill se ny riktning</li>
+            <li data-i18n="newSiteList1">Webbfix när grunden är okej</li>
+            <li data-i18n="newSiteList2">Ny hemsida när allt ändå måste byggas om</li>
+            <li data-i18n="newSiteList3">Demo först om du vill se ny riktning</li>
           </ul>
         </article>
       </div>
@@ -1452,19 +1624,18 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Skicka det som stör dig på hemsidan.</h2>
-            <p>
-              En knapp som leder fel, en text som skaver, en bild som ser konstig ut eller ett formulär som inte gör sitt jobb.
-              Skicka länken och vad som ska fixas.
+            <h2 data-i18n="ctaTitle">Skicka det som stör dig på hemsidan.</h2>
+            <p data-i18n="ctaText">
+              En knapp som leder fel, en text som skaver, en bild som ser konstig ut eller ett formulär som inte gör sitt jobb. Skicka länken och vad som ska fixas.
             </p>
           </div>
 
           <div class="cta-panel">
-            <strong>Från 490 kr</strong>
-            <p>
+            <strong data-i18n="ctaPrice">Från 490 kr</strong>
+            <p data-i18n="ctaPanelText">
               Småfix ska vara enkelt. Skicka problemet, få pris, kör om det känns rätt.
             </p>
-            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;">
+            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;" data-i18n="ctaButton">
               Skicka webbfix
             </a>
           </div>
@@ -1475,50 +1646,50 @@
     <section class="section faq" id="fragor">
       <div class="container">
         <div class="section-head">
-          <h2>Vanliga frågor.</h2>
-          <p>
+          <h2 data-i18n="faqTitle">Vanliga frågor.</h2>
+          <p data-i18n="faqLead">
             Det viktigaste innan du skickar in.
           </p>
         </div>
 
         <details>
-          <summary>Vad räknas som liten webbfix?</summary>
-          <p>
+          <summary data-i18n="faq1Q">Vad räknas som liten webbfix?</summary>
+          <p data-i18n="faq1A">
             En mindre ändring, till exempel textbyte, bildbyte, knapp, länk, enklare layoutjustering eller liten SEO-ändring.
           </p>
         </details>
 
         <details>
-          <summary>Kan du fixa min befintliga hemsida?</summary>
-          <p>
+          <summary data-i18n="faq2Q">Kan du fixa min befintliga hemsida?</summary>
+          <p data-i18n="faq2A">
             Ja, om jag får rätt åtkomst till sidan eller koden. Skicka länken och berätta vilket system sidan ligger i om du vet det.
           </p>
         </details>
 
         <details>
-          <summary>Jobbar du i WordPress?</summary>
-          <p>
+          <summary data-i18n="faq3Q">Jobbar du i WordPress?</summary>
+          <p data-i18n="faq3A">
             Jag bygger främst nya sidor i kod, men enklare text-, bild- och innehållsändringar kan ofta göras i befintliga system om åtkomsten finns.
           </p>
         </details>
 
         <details>
-          <summary>Kan du fixa SEO?</summary>
-          <p>
+          <summary data-i18n="faq4Q">Kan du fixa SEO?</summary>
+          <p data-i18n="faq4A">
             Ja, enklare SEO-grund som title, meta description, rubriker, internlänkar och tydligare struktur. Större SEO-arbete bedöms separat.
           </p>
         </details>
 
         <details>
-          <summary>Kan du säga pris innan du börjar?</summary>
-          <p>
+          <summary data-i18n="faq5Q">Kan du säga pris innan du börjar?</summary>
+          <p data-i18n="faq5A">
             Ja. Skicka vad som ska göras, så bedömer jag om det passar 490 kr, 990 kr, 1490 kr eller timpris.
           </p>
         </details>
 
         <details>
-          <summary>Vad händer om sidan är för rörig?</summary>
-          <p>
+          <summary data-i18n="faq6Q">Vad händer om sidan är för rörig?</summary>
+          <p data-i18n="faq6A">
             Då säger jag det. Ibland är det bättre att bygga nytt än att lägga pengar på att laga en sida som egentligen behöver börja om.
           </p>
         </details>
@@ -1528,103 +1699,119 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
-          <h2>Skicka vad som ska fixas.</h2>
-          <p>
+          <h2 data-i18n="formTitle">Skicka vad som ska fixas.</h2>
+          <p data-i18n="formLead">
             Fyll i länken till sidan och skriv konkret vad du vill ändra. Ju tydligare du är, desto snabbare kan jag bedöma pris.
           </p>
 
-          <div class="contact-row" aria-label="Kontaktuppgifter">
+          <div class="contact-row" aria-label="Kontaktuppgifter" data-i18n-aria-label="contactAria">
             <div class="contact-mini">
-              <strong>E-post</strong>
+              <strong data-i18n="contactEmail">E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
+
             <div class="contact-mini">
-              <strong>Telefon</strong>
+              <strong data-i18n="contactPhone">Telefon</strong>
               <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
+
             <div class="contact-mini">
-              <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              <strong data-i18n="contactCompany">Företag</strong>
+              <span data-i18n="companyType">Nordlöf Nordic · Enskild firma</span>
             </div>
           </div>
 
           <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
-            <input type="hidden" name="_subject" value="Ny webbfix-förfrågan från webbfix.html" />
+            <input id="subjectField" type="hidden" name="_subject" value="Ny webbfix-förfrågan från webbfix.html" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
-            <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din webbfix-förfrågan och återkommer så snart jag kan." />
+            <input id="autoResponseField" type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din webbfix-förfrågan och återkommer så snart jag kan." />
+            <input id="languageField" type="hidden" name="Valt språk" value="Svenska" />
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
             <div class="form-status" aria-live="polite"></div>
 
             <div class="form-grid">
               <div>
-                <label for="namn">Namn</label>
+                <label for="namn" data-i18n="labelName">Namn</label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
 
               <div>
-                <label for="email">E-post</label>
+                <label for="email" data-i18n="labelEmail">E-post</label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
 
               <div>
-                <label for="telefon">Telefon</label>
+                <label for="telefon" data-i18n="labelPhone">Telefon</label>
                 <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
 
               <div>
-                <label for="foretag">Företag</label>
+                <label for="foretag" data-i18n="labelCompany">Företag</label>
                 <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
 
               <div class="full">
-                <label for="hemsida">Länk till hemsidan</label>
+                <label for="hemsida" data-i18n="labelWebsite">Länk till hemsidan</label>
                 <input id="hemsida" name="Hemsida" type="url" inputmode="url" placeholder="https://..." required>
               </div>
 
               <div>
-                <label for="typ">Vad behöver fixas?</label>
+                <label for="typ" data-i18n="labelType">Vad behöver fixas?</label>
                 <select id="typ" name="Typ av webbfix">
-                  <option value="Text / rubriker">Text / rubriker</option>
-                  <option value="Bilder / layout">Bilder / layout</option>
-                  <option value="Knappar / länkar">Knappar / länkar</option>
-                  <option value="Formulär">Formulär</option>
-                  <option value="SEO / metadata">SEO / metadata</option>
-                  <option value="Tekniskt fel">Tekniskt fel</option>
-                  <option value="Vet inte än">Vet inte än</option>
+                  <option value="Text / rubriker" data-i18n="optionText">Text / rubriker</option>
+                  <option value="Bilder / layout" data-i18n="optionImages">Bilder / layout</option>
+                  <option value="Knappar / länkar" data-i18n="optionButtons">Knappar / länkar</option>
+                  <option value="Formulär" data-i18n="optionForms">Formulär</option>
+                  <option value="SEO / metadata" data-i18n="optionSeo">SEO / metadata</option>
+                  <option value="Tekniskt fel" data-i18n="optionTech">Tekniskt fel</option>
+                  <option value="Vet inte än" data-i18n="optionNotSure">Vet inte än</option>
                 </select>
               </div>
 
               <div>
-                <label for="budget">Trolig nivå</label>
+                <label for="budget" data-i18n="labelLevel">Trolig nivå</label>
                 <select id="budget" name="Trolig nivå">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Liten webbfix 490 kr">Liten webbfix 490 kr</option>
-                  <option value="Normal webbfix 990 kr">Normal webbfix 990 kr</option>
-                  <option value="Större webbfix 1490 kr">Större webbfix 1490 kr</option>
-                  <option value="Timpris 650 kr/h">Timpris 650 kr/h</option>
+                  <option value="Vet inte än" data-i18n="levelNotSure">Vet inte än</option>
+                  <option value="Liten webbfix 490 kr" data-i18n="levelSmall">Liten webbfix 490 kr</option>
+                  <option value="Normal webbfix 990 kr" data-i18n="levelNormal">Normal webbfix 990 kr</option>
+                  <option value="Större webbfix 1490 kr" data-i18n="levelLarge">Större webbfix 1490 kr</option>
+                  <option value="Timpris 650 kr/h" data-i18n="levelHourly">Timpris 650 kr/h</option>
                 </select>
               </div>
 
               <div class="full">
-                <label for="beskrivning">Beskriv vad som ska fixas</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Skriv till exempel: byt text på startsidan, lägg till knapp, fixa mobilvy, uppdatera priser, ändra bild, kontrollera formulär..." required></textarea>
+                <label for="beskrivning" data-i18n="labelDescription">Beskriv vad som ska fixas</label>
+                <textarea
+                  id="beskrivning"
+                  name="Beskrivning"
+                  placeholder="Skriv till exempel: byt text på startsidan, lägg till knapp, fixa mobilvy, uppdatera priser, ändra bild, kontrollera formulär..."
+                  data-i18n-placeholder="placeholderDescription"
+                  required
+                ></textarea>
               </div>
 
               <div class="full">
-                <label for="material">Nya texter, bilder eller instruktioner</label>
-                <textarea id="material" name="Material / instruktioner" placeholder="Klistra in ny text, länkar till bilder eller annan viktig information."></textarea>
+                <label for="material" data-i18n="labelMaterial">Nya texter, bilder eller instruktioner</label>
+                <textarea
+                  id="material"
+                  name="Material / instruktioner"
+                  placeholder="Klistra in ny text, länkar till bilder eller annan viktig information."
+                  data-i18n-placeholder="placeholderMaterial"
+                ></textarea>
               </div>
             </div>
 
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
-              <a href="integritet.html">integritetspolicyn</a>.
+              <span data-i18n="privacyText">Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt</span>
+              <a href="integritet.html" data-i18n="privacyLink">integritetspolicyn</a>.
             </span>
 
-            <button class="btn btn-light" type="submit" style="width:100%;">Skicka webbfix-förfrågan</button>
+            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">
+              Skicka webbfix-förfrågan
+            </button>
           </form>
         </div>
       </div>
@@ -1636,23 +1823,23 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Webbfix, hemsidor, landningssidor och webbutveckling för småföretag.<br>
-          Webbfix från 490 kr · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h
+          <span data-i18n="footerText1">Webbfix, hemsidor, landningssidor och webbutveckling för småföretag.</span><br>
+          <span data-i18n="footerText2">Webbfix från 490 kr · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h</span>
         </div>
 
         <div>
-          Kontakt:
+          <span data-i18n="footerContact">Kontakt:</span>
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
 
           <div class="footer-links">
-            <a href="/">Startsida</a>
-            <a href="gratis-demo.html">Gratis demo</a>
-            <a href="case.html">Case</a>
-            <a href="villkor.html">Villkor</a>
-            <a href="integritet.html">Integritet</a>
-            <a href="affiliate.html">Affiliate</a>
+            <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="gratis-demo.html" data-i18n="footerDemo">Gratis demo</a>
+            <a href="case.html" data-i18n="footerCase">Case</a>
+            <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
+            <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+            <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
             <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
@@ -1661,58 +1848,849 @@
     </div>
   </footer>
 
-  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Priser</a>
-    <a class="btn btn-primary" href="#kontakt">Skicka fix</a>
+  <nav class="mobile-sticky" aria-label="Snabbval på mobil" data-i18n-aria-label="mobileStickyAria">
+    <a class="btn btn-secondary" href="#priser" data-i18n="mobilePrices">Priser</a>
+    <a class="btn btn-primary" href="#kontakt" data-i18n="mobileFix">Skicka fix</a>
   </nav>
 
   <script>
-    document.querySelectorAll('form').forEach((form) => {
-      const submitButton = form.querySelector('button[type="submit"]');
-      const statusBox = form.querySelector('.form-status');
-      const originalButtonText = submitButton ? submitButton.textContent : '';
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        speechLang: "sv-SE",
+        languageName: "Svenska",
+        metaTitle: "Webbfix från 490 kr | Fixa hemsida snabbt | Nordlöf Nordic",
+        metaDescription: "Behöver du fixa text, bilder, knappar, formulär, layout eller SEO på din hemsida? Webbfix från 490 kr. Skicka vad som ska ändras så återkommer Nordlöf Nordic.",
+        ogTitle: "Webbfix från 490 kr | Nordlöf Nordic",
+        ogDescription: "Få hjälp med småfix på hemsidan: text, bilder, knappar, formulär, layout, SEO och tekniska fel.",
+        twitterTitle: "Webbfix från 490 kr | Nordlöf Nordic",
+        twitterDescription: "Snabb hjälp med småfix på hemsidan. Text, bilder, layout, knappar, formulär och SEO.",
+        subject: "Ny webbfix-förfrågan från webbfix.html",
+        autoresponse: "Tack! Jag har tagit emot din webbfix-förfrågan och återkommer så snart jag kan.",
+        validationRequired: "Fyll i de obligatoriska fälten först.",
+        sending: "Skickar...",
+        sendingStatus: "Skickar formuläret...",
 
-      form.addEventListener('submit', (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityTools: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Webbfix för småföretag",
+        mainNav: "Huvudnavigering",
+        navFixes: "Vanliga fixar",
+        navPrices: "Priser",
+        navHow: "Så funkar det",
+        navContact: "Skicka fix",
+        languageLabel: "Språk",
+        languageSwitch: "Välj språk",
 
-          if (statusBox) {
-            statusBox.className = 'form-status is-visible';
-            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
-          }
+        eyebrow: "Webbfix från 490 kr · Text · Bilder · Knappar · Formulär · SEO",
+        heroTitle: "Behöver du bara fixa något på hemsidan?",
+        heroLead: "Webbfix är hjälp med mindre eller större ändringar på en befintlig hemsida, till exempel text, bilder, knappar, länkar, mobilanpassning, formulär eller SEO-grund.",
+        heroCta: "Skicka vad som ska fixas",
+        heroPriceCta: "Se pris",
+        benefitsAria: "Fördelar",
+        proof1Title: "Från 490 kr",
+        proof1Text: "För mindre ändringar.",
+        proof2Title: "Snabbt och konkret",
+        proof2Text: "Du skickar vad som ska ändras.",
+        proof3Title: "Ingen stor process",
+        proof3Text: "Småfix ska inte bli styrelsemöte.",
+        summaryAria: "Kort sammanfattning",
+        mini1Title: "1. Skicka länken",
+        mini1Text: "Skicka din hemsida och skriv vad som behöver fixas.",
+        mini2Title: "2. Jag bedömer jobbet",
+        mini2Text: "Du får veta om det passar liten, normal eller större webbfix.",
+        mini3Title: "3. Jag fixar efter godkännande",
+        mini3Text: "Inget arbete startar utan att du vet pris eller upplägg.",
 
-          form.reportValidity();
-          return;
-        }
+        fixesTitle: "Vanliga saker jag kan fixa.",
+        fixesLead: "Perfekt när hemsidan redan finns, men något behöver rättas, förbättras eller snyggas till.",
+        fix1Tag: "Text och innehåll",
+        fix1Title: "Ändra text, rubriker och sektioner",
+        fix1Text: "Jag kan byta texter, skriva om rubriker, lägga till nya sektioner eller göra sidan tydligare för kunden.",
+        fix1List1: "Textbyte",
+        fix1List2: "Nya rubriker",
+        fix1List3: "Mer säljande struktur",
+        fix2Tag: "Bild och layout",
+        fix2Title: "Byta bilder och städa designen",
+        fix2Text: "Bilder, avstånd, mobilkänsla och layout kan göra stor skillnad. Ibland behövs inte ny hemsida, bara ordning.",
+        fix2List1: "Bildbyte",
+        fix2List2: "Mobilanpassning",
+        fix2List3: "Snyggare sektioner",
+        fix3Tag: "Knappar och länkar",
+        fix3Title: "Fixa vägen till kontakt",
+        fix3Text: "Knappar, länkar och kontaktvägar ska fungera. Annars är hemsidan mest en digital anslagstavla med punktering.",
+        fix3List1: "CTA-knappar",
+        fix3List2: "Kontaktlänkar",
+        fix3List3: "Trasiga länkar",
+        fix4Tag: "Formulär",
+        fix4Title: "Formulär som faktiskt går att använda",
+        fix4Text: "Jag kan se över formulär, fält, ämnesrad, tack-sida och flöde så att kunden enklare kan skicka förfrågan.",
+        fix4List1: "Kontaktformulär",
+        fix4List2: "Förfrågningsformulär",
+        fix4List3: "Tack-sida",
+        fix5Tag: "SEO-grund",
+        fix5Title: "Metadata och tydligare sökstruktur",
+        fix5Text: "Jag kan fixa title, meta description, rubrikstruktur, interna länkar och enklare SEO-grund.",
+        fix5List1: "SEO-title",
+        fix5List2: "Meta description",
+        fix5List3: "H1/H2-struktur",
+        fix6Tag: "Tekniskt",
+        fix6Title: "Små tekniska fel",
+        fix6Text: "Små kodfel, konstig mobilvy, formulärstrul eller saker som inte beter sig som de ska.",
+        fix6List1: "HTML/CSS-fix",
+        fix6List2: "Mobilproblem",
+        fix6List3: "Enklare felsökning",
 
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = 'Skickar...';
-          submitButton.setAttribute('aria-busy', 'true');
-        }
+        pricesTitle: "Pris för webbfix.",
+        pricesLead: "Skicka vad du vill ändra, så bedömer jag vilken nivå det passar. Hellre tydligt pris än offert-teater.",
+        price1Tag: "Liten",
+        price1Title: "Liten webbfix",
+        price1Amount: "490 kr",
+        price1Text: "En mindre ändring, till exempel text, bild, knapp, länk eller enkel justering.",
+        price2Tag: "Normal",
+        price2Title: "Normal webbfix",
+        price2Amount: "990 kr",
+        price2Text: "Flera mindre ändringar, enklare uppfräschning eller justering av flera delar på sidan.",
+        price3Tag: "Större",
+        price3Title: "Större webbfix",
+        price3Amount: "1 490 kr",
+        price3Text: "Mer omfattande förbättring, ny sektion, tydligare struktur eller större genomgång.",
+        techTitle: "När det blir mer tekniskt",
+        techText: "API, backend, integrationer, specialfunktioner, större felsökning eller mer avancerade ändringar görs från 650 kr/h. Jag säger till innan, så en liten webbfix inte smyger in på gym och blir systemprojekt.",
 
-        if (statusBox) {
-          statusBox.className = 'form-status is-visible';
-          statusBox.textContent = 'Skickar formuläret...';
-        }
+        howTitle: "Så funkar det.",
+        howLead: "Enkelt upplägg. Du skickar problemet, jag säger vad som krävs.",
+        step1Title: "Du skickar länk och beskrivning",
+        step1Text: "Skriv vad som ska ändras. Gärna punktlista, bild eller skärmdump om något ser konstigt ut.",
+        step2Title: "Jag bedömer omfattningen",
+        step2Text: "Jag säger om det passar liten, normal, större webbfix eller timpris.",
+        step3Title: "Du godkänner innan start",
+        step3Text: "Jag börjar inte jobba utan att du vet pris eller upplägg.",
+        step4Title: "Jag fixar och återkopplar",
+        step4Text: "När ändringen är klar får du veta vad som gjorts och om något mer behöver kollas.",
 
-        setTimeout(() => {
-          if (submitButton && submitButton.disabled) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            submitButton.removeAttribute('aria-busy');
-          }
-        }, 15000);
-      });
-    });
+        accessTag: "Bra att veta",
+        accessTitle: "Jag behöver tillgång till sidan.",
+        accessText: "För att kunna fixa hemsidan behöver jag rätt typ av åtkomst. Det kan vara inloggning, kod, webbhotell, GitHub, CMS eller annan relevant tillgång.",
+        accessList1: "Länk till hemsidan",
+        accessList2: "Beskrivning av vad som ska ändras",
+        accessList3: "Inloggning eller åtkomst om jobbet ska göras direkt",
+        accessList4: "Eventuella bilder, texter eller nya uppgifter",
+        newSiteTag: "Passar inte alltid",
+        newSiteTitle: "Ibland är ny sida smartare.",
+        newSiteText: "Om sidan är väldigt rörig, gammal eller svår att rädda kan jag säga det rakt. Då kan en ny enkel sida vara billigare än att laga ett digitalt lapptäcke från 2011.",
+        newSiteList1: "Webbfix när grunden är okej",
+        newSiteList2: "Ny hemsida när allt ändå måste byggas om",
+        newSiteList3: "Demo först om du vill se ny riktning",
 
-    const contrastButton = document.getElementById('toggleContrast');
-    const largeTextButton = document.getElementById('toggleLargeText');
+        ctaTitle: "Skicka det som stör dig på hemsidan.",
+        ctaText: "En knapp som leder fel, en text som skaver, en bild som ser konstig ut eller ett formulär som inte gör sitt jobb. Skicka länken och vad som ska fixas.",
+        ctaPrice: "Från 490 kr",
+        ctaPanelText: "Småfix ska vara enkelt. Skicka problemet, få pris, kör om det känns rätt.",
+        ctaButton: "Skicka webbfix",
 
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
+        faqTitle: "Vanliga frågor.",
+        faqLead: "Det viktigaste innan du skickar in.",
+        faq1Q: "Vad räknas som liten webbfix?",
+        faq1A: "En mindre ändring, till exempel textbyte, bildbyte, knapp, länk, enklare layoutjustering eller liten SEO-ändring.",
+        faq2Q: "Kan du fixa min befintliga hemsida?",
+        faq2A: "Ja, om jag får rätt åtkomst till sidan eller koden. Skicka länken och berätta vilket system sidan ligger i om du vet det.",
+        faq3Q: "Jobbar du i WordPress?",
+        faq3A: "Jag bygger främst nya sidor i kod, men enklare text-, bild- och innehållsändringar kan ofta göras i befintliga system om åtkomsten finns.",
+        faq4Q: "Kan du fixa SEO?",
+        faq4A: "Ja, enklare SEO-grund som title, meta description, rubriker, internlänkar och tydligare struktur. Större SEO-arbete bedöms separat.",
+        faq5Q: "Kan du säga pris innan du börjar?",
+        faq5A: "Ja. Skicka vad som ska göras, så bedömer jag om det passar 490 kr, 990 kr, 1490 kr eller timpris.",
+        faq6Q: "Vad händer om sidan är för rörig?",
+        faq6A: "Då säger jag det. Ibland är det bättre att bygga nytt än att lägga pengar på att laga en sida som egentligen behöver börja om.",
+
+        formTitle: "Skicka vad som ska fixas.",
+        formLead: "Fyll i länken till sidan och skriv konkret vad du vill ändra. Ju tydligare du är, desto snabbare kan jag bedöma pris.",
+        contactAria: "Kontaktuppgifter",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Företag",
+        companyType: "Nordlöf Nordic · Enskild firma",
+        labelName: "Namn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Företag",
+        labelWebsite: "Länk till hemsidan",
+        labelType: "Vad behöver fixas?",
+        optionText: "Text / rubriker",
+        optionImages: "Bilder / layout",
+        optionButtons: "Knappar / länkar",
+        optionForms: "Formulär",
+        optionSeo: "SEO / metadata",
+        optionTech: "Tekniskt fel",
+        optionNotSure: "Vet inte än",
+        labelLevel: "Trolig nivå",
+        levelNotSure: "Vet inte än",
+        levelSmall: "Liten webbfix 490 kr",
+        levelNormal: "Normal webbfix 990 kr",
+        levelLarge: "Större webbfix 1490 kr",
+        levelHourly: "Timpris 650 kr/h",
+        labelDescription: "Beskriv vad som ska fixas",
+        placeholderDescription: "Skriv till exempel: byt text på startsidan, lägg till knapp, fixa mobilvy, uppdatera priser, ändra bild, kontrollera formulär...",
+        labelMaterial: "Nya texter, bilder eller instruktioner",
+        placeholderMaterial: "Klistra in ny text, länkar till bilder eller annan viktig information.",
+        privacyText: "Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt",
+        privacyLink: "integritetspolicyn",
+        submitButton: "Skicka webbfix-förfrågan",
+
+        footerText1: "Webbfix, hemsidor, landningssidor och webbutveckling för småföretag.",
+        footerText2: "Webbfix från 490 kr · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h",
+        footerContact: "Kontakt:",
+        footerHome: "Startsida",
+        footerDemo: "Gratis demo",
+        footerCase: "Case",
+        footerTerms: "Villkor",
+        footerPrivacy: "Integritet",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Snabbval på mobil",
+        mobilePrices: "Priser",
+        mobileFix: "Skicka fix",
+
+        speechSummary: "Nordlöf Nordic hjälper småföretag med webbfix på befintliga hemsidor. Webbfix kan vara text, bilder, knappar, länkar, formulär, mobilanpassning, metadata, enklare SEO eller tekniska småfel. Liten webbfix kostar från fyra hundra nittio kronor, normal webbfix från nio hundra nittio kronor och större webbfix från ett tusen fyra hundra nittio kronor. Mer tekniska uppdrag görs från sex hundra femtio kronor per timme. Skicka länken till hemsidan och skriv vad som ska fixas, så får du pris eller upplägg innan arbetet startar."
+      },
+
+      en: {
+        htmlLang: "en",
+        speechLang: "en-GB",
+        languageName: "English",
+        metaTitle: "Website fixes from 490 SEK | Nordlöf Nordic",
+        metaDescription: "Need help fixing text, images, buttons, forms, layout or SEO on your website? Website fixes from 490 SEK. Send what should be changed.",
+        ogTitle: "Website fixes from 490 SEK | Nordlöf Nordic",
+        ogDescription: "Help with small website fixes: text, images, buttons, forms, layout, SEO and technical issues.",
+        twitterTitle: "Website fixes from 490 SEK | Nordlöf Nordic",
+        twitterDescription: "Fast help with small website fixes. Text, images, layout, buttons, forms and SEO.",
+        subject: "New website fix request from webbfix.html - English",
+        autoresponse: "Thank you! I have received your website fix request and will get back to you as soon as I can.",
+        validationRequired: "Please fill in the required fields first.",
+        sending: "Sending...",
+        sendingStatus: "Sending the form...",
+
+        skip: "Skip to main content",
+        accessibilityTools: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Website fixes for small businesses",
+        mainNav: "Main navigation",
+        navFixes: "Common fixes",
+        navPrices: "Prices",
+        navHow: "How it works",
+        navContact: "Send fix",
+        languageLabel: "Language",
+        languageSwitch: "Choose language",
+
+        eyebrow: "Website fixes from 490 SEK · Text · Images · Buttons · Forms · SEO",
+        heroTitle: "Need to fix something on your website?",
+        heroLead: "Website fixes are help with small or larger changes on an existing website, such as text, images, buttons, links, mobile layout, forms or basic SEO.",
+        heroCta: "Send what needs fixing",
+        heroPriceCta: "See prices",
+        benefitsAria: "Benefits",
+        proof1Title: "From 490 SEK",
+        proof1Text: "For smaller changes.",
+        proof2Title: "Fast and concrete",
+        proof2Text: "You send what should be changed.",
+        proof3Title: "No big process",
+        proof3Text: "Small fixes should not become a board meeting.",
+        summaryAria: "Short summary",
+        mini1Title: "1. Send the link",
+        mini1Text: "Send your website and write what needs to be fixed.",
+        mini2Title: "2. I assess the work",
+        mini2Text: "You find out if it fits a small, normal or larger website fix.",
+        mini3Title: "3. I fix it after approval",
+        mini3Text: "No work starts before you know the price or setup.",
+
+        fixesTitle: "Common things I can fix.",
+        fixesLead: "Perfect when the website already exists, but something needs to be corrected, improved or cleaned up.",
+        fix1Tag: "Text and content",
+        fix1Title: "Change text, headlines and sections",
+        fix1Text: "I can replace text, rewrite headlines, add new sections or make the page clearer for the customer.",
+        fix1List1: "Text changes",
+        fix1List2: "New headlines",
+        fix1List3: "Clearer sales structure",
+        fix2Tag: "Images and layout",
+        fix2Title: "Replace images and clean up the design",
+        fix2Text: "Images, spacing, mobile feel and layout can make a big difference. Sometimes you do not need a new website, just order.",
+        fix2List1: "Image replacement",
+        fix2List2: "Mobile adjustment",
+        fix2List3: "Cleaner sections",
+        fix3Tag: "Buttons and links",
+        fix3Title: "Fix the path to contact",
+        fix3Text: "Buttons, links and contact paths should work. Otherwise the website is mostly a digital notice board with a flat tire.",
+        fix3List1: "CTA buttons",
+        fix3List2: "Contact links",
+        fix3List3: "Broken links",
+        fix4Tag: "Forms",
+        fix4Title: "Forms people can actually use",
+        fix4Text: "I can review forms, fields, subject lines, thank-you pages and flows so customers can send requests more easily.",
+        fix4List1: "Contact forms",
+        fix4List2: "Request forms",
+        fix4List3: "Thank-you page",
+        fix5Tag: "Basic SEO",
+        fix5Title: "Metadata and clearer search structure",
+        fix5Text: "I can fix title, meta description, heading structure, internal links and basic SEO.",
+        fix5List1: "SEO title",
+        fix5List2: "Meta description",
+        fix5List3: "H1/H2 structure",
+        fix6Tag: "Technical",
+        fix6Title: "Small technical issues",
+        fix6Text: "Small code errors, strange mobile views, form issues or things that do not behave as they should.",
+        fix6List1: "HTML/CSS fixes",
+        fix6List2: "Mobile issues",
+        fix6List3: "Basic troubleshooting",
+
+        pricesTitle: "Website fix prices.",
+        pricesLead: "Send what you want changed and I will assess which level fits. Clear price beats quote theatre.",
+        price1Tag: "Small",
+        price1Title: "Small website fix",
+        price1Amount: "490 SEK",
+        price1Text: "One smaller change, for example text, image, button, link or a simple adjustment.",
+        price2Tag: "Normal",
+        price2Title: "Normal website fix",
+        price2Amount: "990 SEK",
+        price2Text: "Several smaller changes, a simple refresh or adjustments across several parts of the page.",
+        price3Tag: "Larger",
+        price3Title: "Larger website fix",
+        price3Amount: "1,490 SEK",
+        price3Text: "A more extensive improvement, new section, clearer structure or larger review.",
+        techTitle: "When it gets more technical",
+        techText: "API, backend, integrations, custom features, larger troubleshooting or more advanced changes start from 650 SEK/hour. I will tell you before a small website fix sneaks into the gym and becomes a system project.",
+
+        howTitle: "How it works.",
+        howLead: "Simple setup. You send the problem, I say what is needed.",
+        step1Title: "You send a link and description",
+        step1Text: "Write what should be changed. A bullet list, image or screenshot helps if something looks strange.",
+        step2Title: "I assess the scope",
+        step2Text: "I say whether it fits small, normal, larger website fix or hourly price.",
+        step3Title: "You approve before start",
+        step3Text: "I do not start work before you know the price or setup.",
+        step4Title: "I fix it and report back",
+        step4Text: "When the change is done, you get a summary of what was done and if anything else should be checked.",
+
+        accessTag: "Good to know",
+        accessTitle: "I need access to the website.",
+        accessText: "To fix the website, I need the right type of access. That can be login, code, hosting, GitHub, CMS or other relevant access.",
+        accessList1: "Link to the website",
+        accessList2: "Description of what should be changed",
+        accessList3: "Login or access if the work should be done directly",
+        accessList4: "Any images, texts or new details",
+        newSiteTag: "Not always the right fit",
+        newSiteTitle: "Sometimes a new website is smarter.",
+        newSiteText: "If the page is very messy, old or hard to save, I will say that directly. Then a simple new website can be cheaper than repairing a digital patchwork from 2011.",
+        newSiteList1: "Website fix when the foundation is okay",
+        newSiteList2: "New website when everything needs rebuilding anyway",
+        newSiteList3: "Demo first if you want to see a new direction",
+
+        ctaTitle: "Send what annoys you on the website.",
+        ctaText: "A button that goes wrong, text that feels off, an image that looks strange or a form that does not do its job. Send the link and what should be fixed.",
+        ctaPrice: "From 490 SEK",
+        ctaPanelText: "Small fixes should be simple. Send the problem, get a price, continue if it feels right.",
+        ctaButton: "Send website fix",
+
+        faqTitle: "Frequently asked questions.",
+        faqLead: "The essentials before you send a request.",
+        faq1Q: "What counts as a small website fix?",
+        faq1A: "A smaller change, for example text replacement, image replacement, button, link, simple layout adjustment or small SEO change.",
+        faq2Q: "Can you fix my existing website?",
+        faq2A: "Yes, if I get the right access to the page or code. Send the link and tell me which system the website uses if you know it.",
+        faq3Q: "Do you work in WordPress?",
+        faq3A: "I mainly build new websites in code, but simpler text, image and content changes can often be done in existing systems if access exists.",
+        faq4Q: "Can you fix SEO?",
+        faq4A: "Yes, basic SEO such as title, meta description, headings, internal links and clearer structure. Larger SEO work is assessed separately.",
+        faq5Q: "Can you give a price before starting?",
+        faq5A: "Yes. Send what needs to be done and I will assess if it fits 490 SEK, 990 SEK, 1,490 SEK or hourly pricing.",
+        faq6Q: "What if the website is too messy?",
+        faq6A: "Then I will say so. Sometimes it is better to build new than spend money repairing a website that really needs a fresh start.",
+
+        formTitle: "Send what should be fixed.",
+        formLead: "Fill in the page link and write clearly what you want changed. The clearer you are, the faster I can assess the price.",
+        contactAria: "Contact details",
+        contactEmail: "Email",
+        contactPhone: "Phone",
+        contactCompany: "Company",
+        companyType: "Nordlöf Nordic · Sole proprietorship",
+        labelName: "Name",
+        labelEmail: "Email",
+        labelPhone: "Phone",
+        labelCompany: "Company",
+        labelWebsite: "Link to the website",
+        labelType: "What needs fixing?",
+        optionText: "Text / headlines",
+        optionImages: "Images / layout",
+        optionButtons: "Buttons / links",
+        optionForms: "Forms",
+        optionSeo: "SEO / metadata",
+        optionTech: "Technical issue",
+        optionNotSure: "Not sure yet",
+        labelLevel: "Likely level",
+        levelNotSure: "Not sure yet",
+        levelSmall: "Small website fix 490 SEK",
+        levelNormal: "Normal website fix 990 SEK",
+        levelLarge: "Larger website fix 1,490 SEK",
+        levelHourly: "Hourly 650 SEK/hour",
+        labelDescription: "Describe what should be fixed",
+        placeholderDescription: "For example: change text on the homepage, add a button, fix mobile view, update prices, change image, check the form...",
+        labelMaterial: "New text, images or instructions",
+        placeholderMaterial: "Paste new text, links to images or other important information.",
+        privacyText: "By sending the form, you agree that your information is handled according to the",
+        privacyLink: "privacy policy",
+        submitButton: "Send website fix request",
+
+        footerText1: "Website fixes, websites, landing pages and web development for small businesses.",
+        footerText2: "Website fixes from 490 SEK · New website from 2,900 SEK · Custom solutions from 650 SEK/hour",
+        footerContact: "Contact:",
+        footerHome: "Homepage",
+        footerDemo: "Free demo",
+        footerCase: "Cases",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Quick options on mobile",
+        mobilePrices: "Prices",
+        mobileFix: "Send fix",
+
+        speechSummary: "Nordlöf Nordic helps small businesses with fixes on existing websites. Website fixes can include text, images, buttons, links, forms, mobile layout, metadata, basic SEO or small technical issues. A small website fix starts from four hundred and ninety Swedish kronor, a normal website fix from nine hundred and ninety Swedish kronor and a larger website fix from one thousand four hundred and ninety Swedish kronor. More technical work starts from six hundred and fifty Swedish kronor per hour. Send the website link and what needs fixing, and you get a price or setup before the work starts."
+      },
+
+      da: {
+        htmlLang: "da",
+        speechLang: "da-DK",
+        languageName: "Dansk",
+        metaTitle: "Webfix fra 490 SEK | Få rettet hjemmeside hurtigt | Nordlöf Nordic",
+        metaDescription: "Har du brug for at rette tekst, billeder, knapper, formularer, layout eller SEO på din hjemmeside? Webfix fra 490 SEK.",
+        ogTitle: "Webfix fra 490 SEK | Nordlöf Nordic",
+        ogDescription: "Få hjælp med smårettelser på hjemmesiden: tekst, billeder, knapper, formularer, layout, SEO og tekniske fejl.",
+        twitterTitle: "Webfix fra 490 SEK | Nordlöf Nordic",
+        twitterDescription: "Hurtig hjælp med smårettelser på hjemmesiden. Tekst, billeder, layout, knapper, formularer og SEO.",
+        subject: "Ny webfix-forespørgsel fra webbfix.html - Dansk",
+        autoresponse: "Tak! Jeg har modtaget din webfix-forespørgsel og vender tilbage så snart jeg kan.",
+        validationRequired: "Udfyld de obligatoriske felter først.",
+        sending: "Sender...",
+        sendingStatus: "Sender formularen...",
+
+        skip: "Spring til hovedindhold",
+        accessibilityTools: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        listen: "Kort oplæsning",
+        stopListen: "Stop oplæsning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webfix til små virksomheder",
+        mainNav: "Hovednavigation",
+        navFixes: "Typiske rettelser",
+        navPrices: "Priser",
+        navHow: "Sådan fungerer det",
+        navContact: "Send fix",
+        languageLabel: "Sprog",
+        languageSwitch: "Vælg sprog",
+
+        eyebrow: "Webfix fra 490 SEK · Tekst · Billeder · Knapper · Formularer · SEO",
+        heroTitle: "Skal du bare have rettet noget på hjemmesiden?",
+        heroLead: "Webfix er hjælp med små eller større ændringer på en eksisterende hjemmeside, for eksempel tekst, billeder, knapper, links, mobiltilpasning, formularer eller SEO-grundlag.",
+        heroCta: "Send det der skal rettes",
+        heroPriceCta: "Se pris",
+        benefitsAria: "Fordele",
+        proof1Title: "Fra 490 SEK",
+        proof1Text: "Til mindre ændringer.",
+        proof2Title: "Hurtigt og konkret",
+        proof2Text: "Du sender det, der skal ændres.",
+        proof3Title: "Ingen stor proces",
+        proof3Text: "Småfix skal ikke blive et bestyrelsesmøde.",
+        summaryAria: "Kort opsummering",
+        mini1Title: "1. Send linket",
+        mini1Text: "Send din hjemmeside og skriv, hvad der skal rettes.",
+        mini2Title: "2. Jeg vurderer opgaven",
+        mini2Text: "Du får at vide, om det passer som lille, normal eller større webfix.",
+        mini3Title: "3. Jeg retter efter godkendelse",
+        mini3Text: "Intet arbejde starter, før du kender pris eller oplæg.",
+
+        fixesTitle: "Typiske ting jeg kan rette.",
+        fixesLead: "Perfekt når hjemmesiden allerede findes, men noget skal rettes, forbedres eller ryddes op.",
+        fix1Tag: "Tekst og indhold",
+        fix1Title: "Ændre tekst, overskrifter og sektioner",
+        fix1Text: "Jeg kan udskifte tekster, omskrive overskrifter, tilføje nye sektioner eller gøre siden tydeligere for kunden.",
+        fix1List1: "Tekstændring",
+        fix1List2: "Nye overskrifter",
+        fix1List3: "Mere salgsvenlig struktur",
+        fix2Tag: "Billeder og layout",
+        fix2Title: "Skifte billeder og rydde op i designet",
+        fix2Text: "Billeder, afstand, mobilfølelse og layout kan gøre stor forskel. Nogle gange behøves ikke ny hjemmeside, bare orden.",
+        fix2List1: "Billedskift",
+        fix2List2: "Mobiltilpasning",
+        fix2List3: "Pænere sektioner",
+        fix3Tag: "Knapper og links",
+        fix3Title: "Fix vejen til kontakt",
+        fix3Text: "Knapper, links og kontaktveje skal fungere. Ellers er hjemmesiden mest en digital opslagstavle med punktering.",
+        fix3List1: "CTA-knapper",
+        fix3List2: "Kontaktlinks",
+        fix3List3: "Ødelagte links",
+        fix4Tag: "Formularer",
+        fix4Title: "Formularer der faktisk kan bruges",
+        fix4Text: "Jeg kan gennemgå formularer, felter, emnelinje, takkeside og flow, så kunden lettere kan sende en forespørgsel.",
+        fix4List1: "Kontaktformularer",
+        fix4List2: "Forespørgselsformularer",
+        fix4List3: "Takkeside",
+        fix5Tag: "SEO-grundlag",
+        fix5Title: "Metadata og tydeligere søgestruktur",
+        fix5Text: "Jeg kan rette title, meta description, overskriftsstruktur, interne links og enklere SEO-grundlag.",
+        fix5List1: "SEO-title",
+        fix5List2: "Meta description",
+        fix5List3: "H1/H2-struktur",
+        fix6Tag: "Teknisk",
+        fix6Title: "Små tekniske fejl",
+        fix6Text: "Små kodefejl, mærkelig mobilvisning, formularproblemer eller ting der ikke opfører sig som de skal.",
+        fix6List1: "HTML/CSS-fix",
+        fix6List2: "Mobilproblemer",
+        fix6List3: "Enkel fejlsøgning",
+
+        pricesTitle: "Pris for webfix.",
+        pricesLead: "Send hvad du vil ændre, så vurderer jeg hvilket niveau det passer til. Tydelig pris slår tilbudsteater.",
+        price1Tag: "Lille",
+        price1Title: "Lille webfix",
+        price1Amount: "490 SEK",
+        price1Text: "En mindre ændring, for eksempel tekst, billede, knap, link eller enkel justering.",
+        price2Tag: "Normal",
+        price2Title: "Normal webfix",
+        price2Amount: "990 SEK",
+        price2Text: "Flere mindre ændringer, enkel opfriskning eller justering af flere dele på siden.",
+        price3Tag: "Større",
+        price3Title: "Større webfix",
+        price3Amount: "1 490 SEK",
+        price3Text: "Mere omfattende forbedring, ny sektion, tydeligere struktur eller større gennemgang.",
+        techTitle: "Når det bliver mere teknisk",
+        techText: "API, backend, integrationer, specialfunktioner, større fejlsøgning eller mere avancerede ændringer laves fra 650 SEK/time. Jeg siger til før en lille webfix sniger sig i fitnesscenter og bliver et systemprojekt.",
+
+        howTitle: "Sådan fungerer det.",
+        howLead: "Enkelt oplæg. Du sender problemet, jeg siger hvad der kræves.",
+        step1Title: "Du sender link og beskrivelse",
+        step1Text: "Skriv hvad der skal ændres. Gerne punktliste, billede eller screenshot hvis noget ser forkert ud.",
+        step2Title: "Jeg vurderer omfanget",
+        step2Text: "Jeg siger om det passer som lille, normal, større webfix eller timepris.",
+        step3Title: "Du godkender før start",
+        step3Text: "Jeg begynder ikke uden at du kender pris eller oplæg.",
+        step4Title: "Jeg retter og vender tilbage",
+        step4Text: "Når ændringen er klar, får du at vide hvad der er gjort, og om noget mere bør tjekkes.",
+
+        accessTag: "Godt at vide",
+        accessTitle: "Jeg skal have adgang til siden.",
+        accessText: "For at kunne rette hjemmesiden skal jeg bruge den rigtige adgang. Det kan være login, kode, webhotel, GitHub, CMS eller anden relevant adgang.",
+        accessList1: "Link til hjemmesiden",
+        accessList2: "Beskrivelse af hvad der skal ændres",
+        accessList3: "Login eller adgang hvis jobbet skal udføres direkte",
+        accessList4: "Eventuelle billeder, tekster eller nye oplysninger",
+        newSiteTag: "Passer ikke altid",
+        newSiteTitle: "Nogle gange er ny side smartere.",
+        newSiteText: "Hvis siden er meget rodet, gammel eller svær at redde, siger jeg det direkte. Så kan en ny enkel side være billigere end at reparere et digitalt kludetæppe fra 2011.",
+        newSiteList1: "Webfix når grundlaget er okay",
+        newSiteList2: "Ny hjemmeside når alt alligevel skal bygges om",
+        newSiteList3: "Demo først hvis du vil se ny retning",
+
+        ctaTitle: "Send det der irriterer dig på hjemmesiden.",
+        ctaText: "En knap der leder forkert, tekst der skurrer, et billede der ser mærkeligt ud eller en formular der ikke gør sit job. Send linket og hvad der skal rettes.",
+        ctaPrice: "Fra 490 SEK",
+        ctaPanelText: "Småfix skal være enkelt. Send problemet, få pris, fortsæt hvis det føles rigtigt.",
+        ctaButton: "Send webfix",
+
+        faqTitle: "Ofte stillede spørgsmål.",
+        faqLead: "Det vigtigste før du sender ind.",
+        faq1Q: "Hvad tæller som lille webfix?",
+        faq1A: "En mindre ændring, for eksempel tekstskift, billedskift, knap, link, enkel layoutjustering eller lille SEO-ændring.",
+        faq2Q: "Kan du rette min eksisterende hjemmeside?",
+        faq2A: "Ja, hvis jeg får den rigtige adgang til siden eller koden. Send linket og fortæl hvilket system siden ligger i, hvis du ved det.",
+        faq3Q: "Arbejder du i WordPress?",
+        faq3A: "Jeg bygger primært nye sider i kode, men enklere tekst-, billed- og indholdsændringer kan ofte laves i eksisterende systemer, hvis adgangen findes.",
+        faq4Q: "Kan du rette SEO?",
+        faq4A: "Ja, enklere SEO-grundlag som title, meta description, overskrifter, interne links og tydeligere struktur. Større SEO-arbejde vurderes separat.",
+        faq5Q: "Kan du sige pris før du starter?",
+        faq5A: "Ja. Send hvad der skal laves, så vurderer jeg om det passer 490 SEK, 990 SEK, 1490 SEK eller timepris.",
+        faq6Q: "Hvad sker der hvis siden er for rodet?",
+        faq6A: "Så siger jeg det. Nogle gange er det bedre at bygge nyt end at bruge penge på at reparere en side, der egentlig skal begynde forfra.",
+
+        formTitle: "Send det der skal rettes.",
+        formLead: "Udfyld linket til siden og skriv konkret hvad du vil ændre. Jo tydeligere du er, desto hurtigere kan jeg vurdere pris.",
+        contactAria: "Kontaktoplysninger",
+        contactEmail: "E-mail",
+        contactPhone: "Telefon",
+        contactCompany: "Virksomhed",
+        companyType: "Nordlöf Nordic · Enkeltmandsvirksomhed",
+        labelName: "Navn",
+        labelEmail: "E-mail",
+        labelPhone: "Telefon",
+        labelCompany: "Virksomhed",
+        labelWebsite: "Link til hjemmesiden",
+        labelType: "Hvad skal rettes?",
+        optionText: "Tekst / overskrifter",
+        optionImages: "Billeder / layout",
+        optionButtons: "Knapper / links",
+        optionForms: "Formularer",
+        optionSeo: "SEO / metadata",
+        optionTech: "Teknisk fejl",
+        optionNotSure: "Ved ikke endnu",
+        labelLevel: "Sandsynligt niveau",
+        levelNotSure: "Ved ikke endnu",
+        levelSmall: "Lille webfix 490 SEK",
+        levelNormal: "Normal webfix 990 SEK",
+        levelLarge: "Større webfix 1490 SEK",
+        levelHourly: "Timepris 650 SEK/time",
+        labelDescription: "Beskriv hvad der skal rettes",
+        placeholderDescription: "Skriv for eksempel: skift tekst på forsiden, tilføj knap, ret mobilvisning, opdater priser, skift billede, tjek formular...",
+        labelMaterial: "Nye tekster, billeder eller instruktioner",
+        placeholderMaterial: "Indsæt ny tekst, links til billeder eller anden vigtig information.",
+        privacyText: "Ved at sende formularen accepterer du, at dine oplysninger behandles i henhold til",
+        privacyLink: "privatlivspolitikken",
+        submitButton: "Send webfix-forespørgsel",
+
+        footerText1: "Webfix, hjemmesider, landingssider og webudvikling til små virksomheder.",
+        footerText2: "Webfix fra 490 SEK · Ny hjemmeside fra 2 900 SEK · Specialløsninger fra 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerCase: "Cases",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Privatliv",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileFix: "Send fix",
+
+        speechSummary: "Nordlöf Nordic hjælper små virksomheder med webfix på eksisterende hjemmesider. Webfix kan være tekst, billeder, knapper, links, formularer, mobiltilpasning, metadata, enklere SEO eller små tekniske fejl. Lille webfix starter fra fire hundrede halvfems svenske kroner, normal webfix fra ni hundrede halvfems svenske kroner og større webfix fra et tusind fire hundrede halvfems svenske kroner. Mere tekniske opgaver laves fra seks hundrede halvtreds svenske kroner per time. Send linket til hjemmesiden og hvad der skal rettes, så får du pris eller oplæg før arbejdet starter."
+      },
+
+      no: {
+        htmlLang: "no",
+        speechLang: "no-NO",
+        languageName: "Norsk",
+        metaTitle: "Webfiks fra 490 SEK | Fiks nettside raskt | Nordlöf Nordic",
+        metaDescription: "Trenger du å fikse tekst, bilder, knapper, skjema, layout eller SEO på nettsiden? Webfiks fra 490 SEK.",
+        ogTitle: "Webfiks fra 490 SEK | Nordlöf Nordic",
+        ogDescription: "Få hjelp med småfiks på nettsiden: tekst, bilder, knapper, skjema, layout, SEO og tekniske feil.",
+        twitterTitle: "Webfiks fra 490 SEK | Nordlöf Nordic",
+        twitterDescription: "Rask hjelp med småfiks på nettsiden. Tekst, bilder, layout, knapper, skjema og SEO.",
+        subject: "Ny webfiks-forespørsel fra webbfix.html - Norsk",
+        autoresponse: "Takk! Jeg har mottatt webfiks-forespørselen din og kommer tilbake så snart jeg kan.",
+        validationRequired: "Fyll ut de obligatoriske feltene først.",
+        sending: "Sender...",
+        sendingStatus: "Sender skjemaet...",
+
+        skip: "Hopp til hovedinnhold",
+        accessibilityTools: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        listen: "Kort opplesning",
+        stopListen: "Stopp opplesning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webfiks for små bedrifter",
+        mainNav: "Hovednavigasjon",
+        navFixes: "Vanlige fikser",
+        navPrices: "Priser",
+        navHow: "Slik fungerer det",
+        navContact: "Send fiks",
+        languageLabel: "Språk",
+        languageSwitch: "Velg språk",
+
+        eyebrow: "Webfiks fra 490 SEK · Tekst · Bilder · Knapper · Skjema · SEO",
+        heroTitle: "Trenger du bare å fikse noe på nettsiden?",
+        heroLead: "Webfiks er hjelp med mindre eller større endringer på en eksisterende nettside, for eksempel tekst, bilder, knapper, lenker, mobiltilpasning, skjema eller SEO-grunnlag.",
+        heroCta: "Send det som skal fikses",
+        heroPriceCta: "Se pris",
+        benefitsAria: "Fordeler",
+        proof1Title: "Fra 490 SEK",
+        proof1Text: "For mindre endringer.",
+        proof2Title: "Raskt og konkret",
+        proof2Text: "Du sender det som skal endres.",
+        proof3Title: "Ingen stor prosess",
+        proof3Text: "Småfiks skal ikke bli styremøte.",
+        summaryAria: "Kort oppsummering",
+        mini1Title: "1. Send lenken",
+        mini1Text: "Send nettsiden din og skriv hva som må fikses.",
+        mini2Title: "2. Jeg vurderer jobben",
+        mini2Text: "Du får vite om det passer liten, normal eller større webfiks.",
+        mini3Title: "3. Jeg fikser etter godkjenning",
+        mini3Text: "Ingen arbeid starter uten at du vet pris eller opplegg.",
+
+        fixesTitle: "Vanlige ting jeg kan fikse.",
+        fixesLead: "Perfekt når nettsiden allerede finnes, men noe må rettes, forbedres eller ryddes opp.",
+        fix1Tag: "Tekst og innhold",
+        fix1Title: "Endre tekst, overskrifter og seksjoner",
+        fix1Text: "Jeg kan bytte tekster, skrive om overskrifter, legge til nye seksjoner eller gjøre siden tydeligere for kunden.",
+        fix1List1: "Tekstbytte",
+        fix1List2: "Nye overskrifter",
+        fix1List3: "Mer selgende struktur",
+        fix2Tag: "Bilder og layout",
+        fix2Title: "Bytte bilder og rydde designen",
+        fix2Text: "Bilder, avstand, mobilfølelse og layout kan gjøre stor forskjell. Noen ganger trengs ikke ny nettside, bare orden.",
+        fix2List1: "Bildebytte",
+        fix2List2: "Mobiltilpasning",
+        fix2List3: "Penere seksjoner",
+        fix3Tag: "Knapper og lenker",
+        fix3Title: "Fikse veien til kontakt",
+        fix3Text: "Knapper, lenker og kontaktveier skal fungere. Ellers er nettsiden mest en digital oppslagstavle med punktering.",
+        fix3List1: "CTA-knapper",
+        fix3List2: "Kontaktlenker",
+        fix3List3: "Ødelagte lenker",
+        fix4Tag: "Skjema",
+        fix4Title: "Skjema som faktisk kan brukes",
+        fix4Text: "Jeg kan se over skjema, felt, emnelinje, takkeside og flyt slik at kunden enklere kan sende forespørsel.",
+        fix4List1: "Kontaktskjema",
+        fix4List2: "Forespørselsskjema",
+        fix4List3: "Takkeside",
+        fix5Tag: "SEO-grunnlag",
+        fix5Title: "Metadata og tydeligere søkestruktur",
+        fix5Text: "Jeg kan fikse title, meta description, overskriftsstruktur, internlenker og enklere SEO-grunnlag.",
+        fix5List1: "SEO-title",
+        fix5List2: "Meta description",
+        fix5List3: "H1/H2-struktur",
+        fix6Tag: "Teknisk",
+        fix6Title: "Små tekniske feil",
+        fix6Text: "Små kodefeil, rar mobilvisning, skjemaproblemer eller ting som ikke oppfører seg som de skal.",
+        fix6List1: "HTML/CSS-fiks",
+        fix6List2: "Mobilproblemer",
+        fix6List3: "Enkel feilsøking",
+
+        pricesTitle: "Pris for webfiks.",
+        pricesLead: "Send hva du vil endre, så vurderer jeg hvilket nivå det passer. Tydelig pris slår tilbudsteater.",
+        price1Tag: "Liten",
+        price1Title: "Liten webfiks",
+        price1Amount: "490 SEK",
+        price1Text: "En mindre endring, for eksempel tekst, bilde, knapp, lenke eller enkel justering.",
+        price2Tag: "Normal",
+        price2Title: "Normal webfiks",
+        price2Amount: "990 SEK",
+        price2Text: "Flere mindre endringer, enkel oppfriskning eller justering av flere deler på siden.",
+        price3Tag: "Større",
+        price3Title: "Større webfiks",
+        price3Amount: "1 490 SEK",
+        price3Text: "Mer omfattende forbedring, ny seksjon, tydeligere struktur eller større gjennomgang.",
+        techTitle: "Når det blir mer teknisk",
+        techText: "API, backend, integrasjoner, spesialfunksjoner, større feilsøking eller mer avanserte endringer gjøres fra 650 SEK/time. Jeg sier fra før en liten webfiks sniker seg på treningssenter og blir systemprosjekt.",
+
+        howTitle: "Slik fungerer det.",
+        howLead: "Enkelt opplegg. Du sender problemet, jeg sier hva som kreves.",
+        step1Title: "Du sender lenke og beskrivelse",
+        step1Text: "Skriv hva som skal endres. Gjerne punktliste, bilde eller skjermbilde hvis noe ser rart ut.",
+        step2Title: "Jeg vurderer omfanget",
+        step2Text: "Jeg sier om det passer liten, normal, større webfiks eller timepris.",
+        step3Title: "Du godkjenner før start",
+        step3Text: "Jeg begynner ikke å jobbe uten at du vet pris eller opplegg.",
+        step4Title: "Jeg fikser og gir tilbakemelding",
+        step4Text: "Når endringen er klar, får du vite hva som er gjort og om noe mer bør sjekkes.",
+
+        accessTag: "Bra å vite",
+        accessTitle: "Jeg trenger tilgang til siden.",
+        accessText: "For å kunne fikse nettsiden trenger jeg riktig type tilgang. Det kan være innlogging, kode, webhotell, GitHub, CMS eller annen relevant tilgang.",
+        accessList1: "Lenke til nettsiden",
+        accessList2: "Beskrivelse av hva som skal endres",
+        accessList3: "Innlogging eller tilgang hvis jobben skal gjøres direkte",
+        accessList4: "Eventuelle bilder, tekster eller nye opplysninger",
+        newSiteTag: "Passer ikke alltid",
+        newSiteTitle: "Noen ganger er ny side smartere.",
+        newSiteText: "Hvis siden er veldig rotete, gammel eller vanskelig å redde, sier jeg det rett ut. Da kan en ny enkel side være billigere enn å reparere et digitalt lappeteppe fra 2011.",
+        newSiteList1: "Webfiks når grunnlaget er ok",
+        newSiteList2: "Ny nettside når alt uansett må bygges om",
+        newSiteList3: "Demo først hvis du vil se ny retning",
+
+        ctaTitle: "Send det som irriterer deg på nettsiden.",
+        ctaText: "En knapp som leder feil, en tekst som skurrer, et bilde som ser rart ut eller et skjema som ikke gjør jobben sin. Send lenken og hva som skal fikses.",
+        ctaPrice: "Fra 490 SEK",
+        ctaPanelText: "Småfiks skal være enkelt. Send problemet, få pris, kjør hvis det føles riktig.",
+        ctaButton: "Send webfiks",
+
+        faqTitle: "Vanlige spørsmål.",
+        faqLead: "Det viktigste før du sender inn.",
+        faq1Q: "Hva regnes som liten webfiks?",
+        faq1A: "En mindre endring, for eksempel tekstbytte, bildebytte, knapp, lenke, enkel layoutjustering eller liten SEO-endring.",
+        faq2Q: "Kan du fikse min eksisterende nettside?",
+        faq2A: "Ja, hvis jeg får riktig tilgang til siden eller koden. Send lenken og fortell hvilket system siden ligger i hvis du vet det.",
+        faq3Q: "Jobber du i WordPress?",
+        faq3A: "Jeg bygger først og fremst nye sider i kode, men enklere tekst-, bilde- og innholdsendringer kan ofte gjøres i eksisterende systemer hvis tilgangen finnes.",
+        faq4Q: "Kan du fikse SEO?",
+        faq4A: "Ja, enklere SEO-grunnlag som title, meta description, overskrifter, internlenker og tydeligere struktur. Større SEO-arbeid vurderes separat.",
+        faq5Q: "Kan du si pris før du begynner?",
+        faq5A: "Ja. Send hva som skal gjøres, så vurderer jeg om det passer 490 SEK, 990 SEK, 1490 SEK eller timepris.",
+        faq6Q: "Hva skjer hvis siden er for rotete?",
+        faq6A: "Da sier jeg det. Noen ganger er det bedre å bygge nytt enn å bruke penger på å reparere en side som egentlig må begynne på nytt.",
+
+        formTitle: "Send det som skal fikses.",
+        formLead: "Fyll inn lenken til siden og skriv konkret hva du vil endre. Jo tydeligere du er, desto raskere kan jeg vurdere pris.",
+        contactAria: "Kontaktopplysninger",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Bedrift",
+        companyType: "Nordlöf Nordic · Enkeltpersonforetak",
+        labelName: "Navn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Bedrift",
+        labelWebsite: "Lenke til nettsiden",
+        labelType: "Hva må fikses?",
+        optionText: "Tekst / overskrifter",
+        optionImages: "Bilder / layout",
+        optionButtons: "Knapper / lenker",
+        optionForms: "Skjema",
+        optionSeo: "SEO / metadata",
+        optionTech: "Teknisk feil",
+        optionNotSure: "Vet ikke ennå",
+        labelLevel: "Trolig nivå",
+        levelNotSure: "Vet ikke ennå",
+        levelSmall: "Liten webfiks 490 SEK",
+        levelNormal: "Normal webfiks 990 SEK",
+        levelLarge: "Større webfiks 1490 SEK",
+        levelHourly: "Timepris 650 SEK/time",
+        labelDescription: "Beskriv hva som skal fikses",
+        placeholderDescription: "Skriv for eksempel: bytt tekst på forsiden, legg til knapp, fiks mobilvisning, oppdater priser, endre bilde, kontroller skjema...",
+        labelMaterial: "Nye tekster, bilder eller instruksjoner",
+        placeholderMaterial: "Lim inn ny tekst, lenker til bilder eller annen viktig informasjon.",
+        privacyText: "Ved å sende skjemaet godtar du at opplysningene dine behandles i henhold til",
+        privacyLink: "personvernerklæringen",
+        submitButton: "Send webfiks-forespørsel",
+
+        footerText1: "Webfiks, nettsider, landingssider og webutvikling for små bedrifter.",
+        footerText2: "Webfiks fra 490 SEK · Ny nettside fra 2 900 SEK · Spesialløsninger fra 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerCase: "Case",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Personvern",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileFix: "Send fiks",
+
+        speechSummary: "Nordlöf Nordic hjelper små bedrifter med webfiks på eksisterende nettsider. Webfiks kan være tekst, bilder, knapper, lenker, skjema, mobiltilpasning, metadata, enklere SEO eller små tekniske feil. Liten webfiks starter fra fire hundre og nitti svenske kroner, normal webfiks fra ni hundre og nitti svenske kroner og større webfiks fra ett tusen fire hundre og nitti svenske kroner. Mer tekniske oppdrag gjøres fra seks hundre og femti svenske kroner per time. Send lenken til nettsiden og hva som skal fikses, så får du pris eller opplegg før arbeidet starter."
       }
+    };
+
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+    let isSpeaking = false;
+
+    const languageSelect = document.getElementById("languageSelect");
+    const listenButton = document.getElementById("listenSummary");
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
     }
 
     function safeGet(key) {
@@ -1733,35 +2711,235 @@
       return true;
     }
 
-    const savedContrast = safeGet('highContrast') === 'true';
-    const savedLargeText = safeGet('largeText') === 'true';
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    function stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      isSpeaking = false;
+
+      if (listenButton) {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        listenButton.setAttribute("aria-pressed", "false");
+        listenButton.textContent = dictionary.listen;
+      }
+    }
+
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+
+      stopSpeaking();
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (dictionary[key]) {
+          element.setAttribute("placeholder", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+
+      if (languageSelect) {
+        languageSelect.value = lang;
+        languageSelect.setAttribute("aria-label", dictionary.languageSwitch);
+      }
+
+      const subjectField = document.getElementById("subjectField");
+      if (subjectField) {
+        subjectField.value = dictionary.subject;
+      }
+
+      const autoResponseField = document.getElementById("autoResponseField");
+      if (autoResponseField) {
+        autoResponseField.value = dictionary.autoresponse;
+      }
+
+      const languageField = document.getElementById("languageField");
+      if (languageField) {
+        languageField.value = dictionary.languageName;
+      }
+
+      safeSet("webbfixLanguage", lang);
+    }
+
+    if (languageSelect) {
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
+      });
+    }
+
+    document.querySelectorAll("form").forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector(".form-status");
+
+      form.addEventListener("submit", (event) => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        const originalButtonText = dictionary.submitButton;
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = "form-status is-visible";
+            statusBox.textContent = dictionary.validationRequired;
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = dictionary.sending;
+          submitButton.setAttribute("aria-busy", "true");
+        }
+
+        if (statusBox) {
+          statusBox.className = "form-status is-visible";
+          statusBox.textContent = dictionary.sendingStatus;
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute("aria-busy");
+          }
+        }, 15000);
+      });
+    });
+
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
 
     if (savedContrast) {
-      document.body.classList.add('high-contrast');
+      document.body.classList.add("high-contrast");
     }
 
     if (savedLargeText) {
-      document.body.classList.add('large-text');
+      document.body.classList.add("large-text");
     }
 
     setPressed(contrastButton, savedContrast);
     setPressed(largeTextButton, savedLargeText);
 
     if (contrastButton) {
-      contrastButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('high-contrast');
-        safeSet('highContrast', String(isActive));
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
         setPressed(contrastButton, isActive);
       });
     }
 
     if (largeTextButton) {
-      largeTextButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('large-text');
-        safeSet('largeText', String(isActive));
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
         setPressed(largeTextButton, isActive);
       });
     }
+
+    if (listenButton && "speechSynthesis" in window) {
+      listenButton.addEventListener("click", () => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+
+        if (isSpeaking) {
+          stopSpeaking();
+          return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(dictionary.speechSummary);
+        utterance.lang = dictionary.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        isSpeaking = true;
+        listenButton.setAttribute("aria-pressed", "true");
+        listenButton.textContent = dictionary.stopListen;
+
+        utterance.onend = () => {
+          stopSpeaking();
+        };
+
+        utterance.onerror = () => {
+          stopSpeaking();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+
+    window.addEventListener("pagehide", () => {
+      stopSpeaking();
+    });
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("webbfixLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
   </script>
 </body>
 </html>
