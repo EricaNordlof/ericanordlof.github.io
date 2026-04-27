@@ -454,8 +454,17 @@
       top:88px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      flex-direction:row;
+      align-items:center;
       gap:8px;
+      max-width:calc(100vw - 24px);
+      padding:8px;
+      border-radius:999px;
+      background:rgba(251,247,244,.94);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .accessibility-btn{
@@ -468,6 +477,8 @@
       font-weight:900;
       cursor:pointer;
       box-shadow:0 12px 30px rgba(36,30,26,.18);
+      white-space:nowrap;
+      font-size:13px;
     }
 
     .accessibility-btn:hover{
@@ -557,6 +568,39 @@
       align-items:center;
       gap:10px;
       flex:0 0 auto;
+    }
+
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .language-label{
+      font-size:13px;
+      font-weight:900;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .language-select{
+      width:auto;
+      min-height:48px;
+      padding:12px 42px 12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      max-width:190px;
+    }
+
+    .language-select:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
 
     .btn,
@@ -1419,7 +1463,9 @@
     body.high-contrast .compare-card,
     body.high-contrast .truth-box,
     body.high-contrast .faq details,
-    body.high-contrast .price-note{
+    body.high-contrast .price-note,
+    body.high-contrast .accessibility-tools,
+    body.high-contrast .language-select{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1606,6 +1652,14 @@
       .contact-row{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
+
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+        border-radius:22px;
+      }
     }
 
     @media(max-width:760px){
@@ -1622,19 +1676,21 @@
       }
 
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
 
       .accessibility-btn{
         width:100%;
         min-height:44px;
-        padding:9px 10px;
-        font-size:14px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
@@ -1676,25 +1732,18 @@
         border-bottom:1px solid rgba(36,30,26,.08);
       }
 
-      .mobile-lang-scroll{
-        display:flex;
-        gap:8px;
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-        scrollbar-width:none;
-        padding:9px 11px;
+      .mobile-lang-inner{
+        width:min(var(--max),calc(100% - 22px));
+        margin:auto;
+        padding:9px 0;
       }
 
-      .mobile-lang-scroll::-webkit-scrollbar{
-        display:none;
-      }
-
-      .mobile-lang .lang-link{
-        flex:0 0 auto;
-        min-height:40px;
-        padding:10px 13px;
-        font-size:13px;
-        box-shadow:0 6px 16px rgba(36,30,26,.04);
+      .mobile-lang .language-select{
+        width:100%;
+        max-width:none;
+        min-height:42px;
+        padding:10px 14px;
+        font-size:14px;
       }
 
       .hero{
@@ -2028,6 +2077,11 @@
         font-size:13px;
       }
 
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+
       .mobile-sticky{
         grid-template-columns:1fr 1fr 1fr;
       }
@@ -2044,6 +2098,9 @@
     </button>
     <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
       Større tekst
+    </button>
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false">
+      Kort oplæsning
     </button>
   </div>
 
@@ -2067,21 +2124,28 @@
       </nav>
 
       <div class="nav-actions" aria-label="Sprog og kontakt">
-        <a class="lang-link" href="/" hreflang="sv-SE">SV</a>
-        <a class="lang-link" href="en.html" hreflang="en">EN</a>
-        <a class="lang-link" href="da.html" hreflang="da" aria-current="page">DA</a>
-        <a class="lang-link" href="no.html" hreflang="no">NO</a>
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect">Sprog</label>
+          <select id="languageSelect" class="language-select" aria-label="Vælg sprog">
+            <option value="https://webutvecklare.se/">🇸🇪 Svenska</option>
+            <option value="https://webutvecklare.se/en.html">🇬🇧 English</option>
+            <option value="https://webutvecklare.se/da.html">🇩🇰 Dansk</option>
+            <option value="https://webutvecklare.se/no.html">🇳🇴 Norsk</option>
+          </select>
+        </div>
         <a class="btn btn-primary" href="#kontakt">Få demo</a>
       </div>
     </div>
   </header>
 
   <nav class="mobile-lang" aria-label="Sprogvalg">
-    <div class="mobile-lang-scroll">
-      <a class="lang-link" href="/" hreflang="sv-SE">Svenska</a>
-      <a class="lang-link" href="en.html" hreflang="en">English</a>
-      <a class="lang-link" href="da.html" hreflang="da" aria-current="page">Dansk</a>
-      <a class="lang-link" href="no.html" hreflang="no">Norsk</a>
+    <div class="mobile-lang-inner">
+      <select id="mobileLanguageSelect" class="language-select" aria-label="Vælg sprog">
+        <option value="https://webutvecklare.se/">🇸🇪 Svenska</option>
+        <option value="https://webutvecklare.se/en.html">🇬🇧 English</option>
+        <option value="https://webutvecklare.se/da.html">🇩🇰 Dansk</option>
+        <option value="https://webutvecklare.se/no.html">🇳🇴 Norsk</option>
+      </select>
     </div>
   </nav>
 
@@ -2631,14 +2695,8 @@
           </h2>
           <p>
             Denne side understøtter tastaturnavigation, tydelige fokusmarkeringer, større tekst, høj kontrast og skærmlæsere.
-            Du kan også lytte til en kort opsummering her.
+            Du kan også lytte til en kort opsummering med knappen Kort oplæsning ved siden af Høj kontrast og Større tekst.
           </p>
-
-          <div class="hero-actions">
-            <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
-              Lyt til kort opsummering
-            </button>
-          </div>
 
           <p class="micro-note" id="speechNote">
             Knappen bruger browserens indbyggede tale-funktion. Siden fungerer også med almindelige skærmlæsere.
@@ -2967,6 +3025,8 @@
 
     const contrastButton = document.getElementById('toggleContrast');
     const largeTextButton = document.getElementById('toggleLargeText');
+    const listenButton = document.getElementById('listenSummary');
+    const languageSelects = document.querySelectorAll('.language-select');
 
     function setPressed(button, isPressed) {
       if (button) {
@@ -3022,13 +3082,55 @@
       });
     }
 
-    const listenButton = document.getElementById('listenSummary');
+    function getCurrentLanguageUrl() {
+      const path = window.location.pathname.replace(/^\/+/, '');
+
+      if (path === 'en.html') {
+        return 'https://webutvecklare.se/en.html';
+      }
+
+      if (path === 'da.html') {
+        return 'https://webutvecklare.se/da.html';
+      }
+
+      if (path === 'no.html') {
+        return 'https://webutvecklare.se/no.html';
+      }
+
+      return 'https://webutvecklare.se/';
+    }
+
+    function syncLanguageSelects(value) {
+      languageSelects.forEach((select) => {
+        select.value = value;
+      });
+    }
+
+    const currentLanguageUrl = getCurrentLanguageUrl();
+    syncLanguageSelects(currentLanguageUrl);
+
+    languageSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        const targetUrl = select.value;
+
+        if (!targetUrl) {
+          return;
+        }
+
+        syncLanguageSelects(targetUrl);
+
+        if (targetUrl !== window.location.href) {
+          window.location.href = targetUrl;
+        }
+      });
+    });
+
     let isSpeaking = false;
 
     function resetListenButton() {
       if (listenButton) {
         listenButton.setAttribute('aria-pressed', 'false');
-        listenButton.textContent = 'Lyt til kort opsummering';
+        listenButton.textContent = 'Kort oplæsning';
       }
 
       isSpeaking = false;
