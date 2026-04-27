@@ -47,6 +47,7 @@
         "name":"Case och exempel på hemsidor",
         "description":"Exempel på hemsidor, webblösningar och digitala projekt byggda av Nordlöf Nordic.",
         "inLanguage":"sv-SE",
+        "availableLanguage":["sv-SE","en","da-DK","no-NO"],
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"}
       },
@@ -91,6 +92,7 @@
           "Webbutveckling",
           "Hemsidor för småföretag",
           "Landningssidor",
+          "Webbfix",
           "Frontendutveckling",
           "Backendutveckling",
           "API",
@@ -139,6 +141,23 @@
             "url":"https://mini-api-sp7z.onrender.com/swagger-ui/index.html"
           }
         ]
+      },
+      {
+        "@type":"CreativeWork",
+        "@id":"https://webutvecklare.se/case.html#github",
+        "name":"Publika projekt på GitHub",
+        "url":"https://github.com/EricaNordlof",
+        "creator":{"@type":"Person","name":"Erica Nordlöf"},
+        "about":["Java","Spring Boot","PostgreSQL","Swagger","Docker","API"]
+      },
+      {
+        "@type":"SoftwareSourceCode",
+        "@id":"https://webutvecklare.se/case.html#mini-api",
+        "name":"Mini API med Swagger",
+        "url":"https://mini-api-sp7z.onrender.com/swagger-ui/index.html",
+        "programmingLanguage":["Java"],
+        "runtimePlatform":"Spring Boot",
+        "creator":{"@type":"Person","name":"Erica Nordlöf"}
       },
       {
         "@type":"FAQPage",
@@ -384,6 +403,14 @@
       text-overflow:ellipsis;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     .nav-links{
       display:flex;
       align-items:center;
@@ -395,6 +422,54 @@
 
     .nav-links a:hover{
       color:var(--brand-dark);
+    }
+
+    .language-select-wrap{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:5px 12px;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+    }
+
+    .language-select-wrap label{
+      font-size:13px;
+      font-weight:900;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .language-select{
+      appearance:none;
+      -webkit-appearance:none;
+      min-height:38px;
+      padding:8px 30px 8px 10px;
+      border:0;
+      background:transparent;
+      color:var(--text);
+      font-weight:900;
+      cursor:pointer;
+      outline:none;
+    }
+
+    .language-select-wrap:after{
+      content:"⌄";
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      pointer-events:none;
+      font-weight:900;
+      color:var(--muted);
+    }
+
+    .language-select option{
+      color:#111;
+      background:#fff;
     }
 
     .btn{
@@ -587,7 +662,7 @@
     }
 
     .section-head{
-      max-width:780px;
+      max-width:820px;
       margin-bottom:22px;
     }
 
@@ -990,7 +1065,8 @@
     body.high-contrast .card,
     body.high-contrast .case-card,
     body.high-contrast .case-part,
-    body.high-contrast .faq details{
+    body.high-contrast .faq details,
+    body.high-contrast .language-select-wrap{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1110,6 +1186,7 @@
       .nav{
         min-height:auto;
         padding:10px 0;
+        align-items:flex-start;
       }
 
       .brand img{
@@ -1124,6 +1201,24 @@
 
       .brand span span{
         display:none;
+      }
+
+      .nav-right{
+        justify-content:flex-end;
+      }
+
+      .language-select-wrap label{
+        display:none;
+      }
+
+      .language-select-wrap{
+        padding:4px 10px;
+      }
+
+      .language-select{
+        min-height:34px;
+        font-size:13px;
+        padding:6px 26px 6px 8px;
       }
 
       .hero{
@@ -1213,33 +1308,45 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
 
-  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
-    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityAria">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
       Hög kontrast
     </button>
-    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
       Större text
     </button>
   </div>
 
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+      <a class="brand" href="/" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" data-i18n-alt="logoAlt">
         <span>
           <strong>Nordlöf Nordic</strong>
-          <span>Case och webblösningar</span>
+          <span data-i18n="brandSub">Case och webblösningar</span>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Huvudnavigering">
-        <a href="#case">Case</a>
-        <a href="#teknik">Teknik</a>
-        <a href="#fragor">Frågor</a>
-        <a href="#kontakt">Få demo</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Huvudnavigering" data-i18n-aria-label="mainNavAria">
+          <a href="#case" data-i18n="navCases">Case</a>
+          <a href="#teknik" data-i18n="navTech">Teknik</a>
+          <a href="#fragor" data-i18n="navFaq">Frågor</a>
+          <a href="#kontakt" data-i18n="navDemo">Få demo</a>
+        </nav>
+
+        <div class="language-select-wrap">
+          <label for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select id="languageSelect" class="language-select" aria-label="Välj språk" data-i18n-aria-label="languageAria">
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1247,49 +1354,49 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Riktiga exempel · Hemsidor · Webbappar · Bokningsflöden · API</span>
+          <span class="eyebrow" data-i18n="eyebrow">Case · Hemsidor · Webbappar · Bokningsflöden · API</span>
 
-          <h1 id="hero-title">Case, projekt och exempel på saker jag har byggt.</h1>
+          <h1 id="hero-title" data-i18n="heroTitle">Case och exempel på hemsidor för småföretag.</h1>
 
-          <p class="lead">
-            Jag är ny som egenföretagare, men inte tomhänt. Här är egna projekt, kundnära exempel och tekniska portfolioprojekt som visar hur jag bygger hemsidor, struktur, flöden och webblösningar.
+          <p class="lead" data-i18n="heroLead">
+            Nordlöf Nordic bygger hemsidor, landningssidor, webbfix och speciallösningar för småföretag. Här ser du egna projekt, kundnära exempel och tekniska portfolioprojekt med problem, lösning och resultat.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Få demo för ditt företag</a>
-            <a class="btn btn-secondary" href="#case">Se case</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="heroCta">Få demo för ditt företag</a>
+            <a class="btn btn-secondary" href="#case" data-i18n="heroSecondary">Se case</a>
           </div>
 
-          <div class="proof-row" aria-label="Sammanfattning">
+          <div class="proof-row" aria-label="Sammanfattning" data-i18n-aria-label="proofAria">
             <div class="proof-pill">
-              Hemsidor
-              <span>Struktur, text, design och kontaktväg.</span>
+              <span data-i18n="proof1Title">Demo först</span>
+              <span data-i18n="proof1Text">Du ser riktningen innan du köper.</span>
             </div>
             <div class="proof-pill">
-              Flöden
-              <span>Bokning, formulär, villkor och rabattkoder.</span>
+              <span data-i18n="proof2Title">Pris från 2 900 kr</span>
+              <span data-i18n="proof2Text">Fast pris när det går.</span>
             </div>
             <div class="proof-pill">
-              Teknik
-              <span>API, backend, databas och Swagger.</span>
+              <span data-i18n="proof3Title">Teknik också</span>
+              <span data-i18n="proof3Text">API, backend, formulär och flöden.</span>
             </div>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Kort sammanfattning">
+        <aside class="hero-card" aria-label="Kort sammanfattning" data-i18n-aria-label="heroCardAria">
           <img src="nordlof-nordic-logo.png" alt="">
           <ul class="mini-list">
             <li>
-              <strong>Problem först</strong>
-              Varje case börjar med vad som behövde lösas.
+              <strong data-i18n="mini1Title">Problem först</strong>
+              <span data-i18n="mini1Text">Varje case visar vad som behövde lösas. Inget fluff för fluffets skull.</span>
             </li>
             <li>
-              <strong>Lösning</strong>
-              Sedan visar jag vad jag byggde och varför.
+              <strong data-i18n="mini2Title">Lösning</strong>
+              <span data-i18n="mini2Text">Sedan visar jag vad jag byggde och varför.</span>
             </li>
             <li>
-              <strong>Resultat</strong>
-              Målet är inte bara en snygg sida, utan en tydligare väg till kontakt, köp eller bokning.
+              <strong data-i18n="mini3Title">Resultat</strong>
+              <span data-i18n="mini3Text">Målet är tydligare väg till kontakt, köp, bokning eller förståelse.</span>
             </li>
           </ul>
         </aside>
@@ -1299,150 +1406,150 @@
     <section class="section" id="case">
       <div class="container">
         <div class="section-head">
-          <h2>Case.</h2>
-          <p>
-            Här är exempel på projekt där jag byggt allt från enkel företagssida till bokningsstruktur, villkor, landningssidor och tekniska flöden.
+          <h2 data-i18n="casesTitle">Case.</h2>
+          <p data-i18n="casesIntro">
+            Exempel på projekt där jag byggt hemsidor, bokningsstruktur, villkor, landningssidor, rabattkodssidor och tekniska flöden.
           </p>
         </div>
 
         <article class="case-card">
           <div class="case-top">
             <div>
-              <span class="tag">Eget projekt</span>
+              <span class="tag" data-i18n="offroadTag">Eget projekt</span>
               <h3>Offroad Bumpis</h3>
-              <p>
+              <p data-i18n="offroadIntro">
                 En lokal uthyrningsverksamhet i Skåne behövde en tydlig digital grund: hemsida, bokningsväg, villkor, lokal SEO och information som kunder faktiskt förstår.
               </p>
             </div>
 
-            <a class="btn btn-secondary case-link" href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-secondary case-link" href="https://offroadbumpis.se" target="_blank" rel="noopener noreferrer" data-i18n="visitSite">
               Besök sidan
             </a>
           </div>
 
           <div class="case-grid">
             <div class="case-part">
-              <strong>Problem</strong>
-              <p>
+              <strong data-i18n="problem">Problem</strong>
+              <p data-i18n="offroadProblem">
                 Kunder behövde snabbt förstå vad bumperballs är, vad som ingår, var det går att hyra och hur bokningen fungerar.
               </p>
             </div>
 
             <div class="case-part">
-              <strong>Lösning</strong>
-              <p>
+              <strong data-i18n="solution">Lösning</strong>
+              <p data-i18n="offroadSolution">
                 Jag byggde hemsida, bokningsflöde, villkor, rabattkodssidor, affiliateupplägg och tydlig kundinformation.
               </p>
             </div>
 
             <div class="case-part">
-              <strong>Resultat</strong>
-              <p>
+              <strong data-i18n="result">Resultat</strong>
+              <p data-i18n="offroadResult">
                 En komplett digital grund för en lokal uthyrningsverksamhet med tydlig väg från intresse till bokning.
               </p>
             </div>
           </div>
 
-          <div class="meta">
-            <span class="chip">Hemsida</span>
-            <span class="chip">Bokningsflöde</span>
-            <span class="chip">Villkor</span>
-            <span class="chip">Lokal SEO</span>
-            <span class="chip">Rabattkodssidor</span>
+          <div class="meta" aria-label="Teknik och innehåll">
+            <span class="chip" data-i18n="chipWebsite">Hemsida</span>
+            <span class="chip" data-i18n="chipBooking">Bokningsflöde</span>
+            <span class="chip" data-i18n="chipTerms">Villkor</span>
+            <span class="chip" data-i18n="chipLocalSeo">Lokal SEO</span>
+            <span class="chip" data-i18n="chipDiscount">Rabattkodssidor</span>
           </div>
         </article>
 
         <article class="case-card">
           <div class="case-top">
             <div>
-              <span class="tag">Eget projekt</span>
+              <span class="tag" data-i18n="safeTag">Eget projekt</span>
               <h3>Safe Standard</h3>
-              <p>
+              <p data-i18n="safeIntro">
                 Ett digitalt produktkoncept för personer och företag som hyr ut direkt utan plattform och behöver bättre struktur kring avtal, villkor, överlämning och skadedokumentation.
               </p>
             </div>
 
-            <a class="btn btn-secondary case-link" href="https://safestandard.se" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-secondary case-link" href="https://safestandard.se" target="_blank" rel="noopener noreferrer" data-i18n="visitSite">
               Besök sidan
             </a>
           </div>
 
           <div class="case-grid">
             <div class="case-part">
-              <strong>Problem</strong>
-              <p>
+              <strong data-i18n="problem">Problem</strong>
+              <p data-i18n="safeProblem">
                 Direktuthyrare riskerar otydliga överenskommelser, spridda sms, missade villkor och svag dokumentation om något händer.
               </p>
             </div>
 
             <div class="case-part">
-              <strong>Lösning</strong>
-              <p>
+              <strong data-i18n="solution">Lösning</strong>
+              <p data-i18n="safeSolution">
                 Jag byggde ett tydligt produktupplägg med licens, dokumentationsflöde, köpresa och landningssidor för olika uthyrningsfall.
               </p>
             </div>
 
             <div class="case-part">
-              <strong>Resultat</strong>
-              <p>
+              <strong data-i18n="result">Resultat</strong>
+              <p data-i18n="safeResult">
                 Ett eget systemtänk för direktuthyrning där avtal, villkor, överlämning och skador får en tydligare struktur.
               </p>
             </div>
           </div>
 
-          <div class="meta">
-            <span class="chip">Webbapp</span>
-            <span class="chip">Licensflöde</span>
-            <span class="chip">Produktstruktur</span>
-            <span class="chip">Landningssidor</span>
-            <span class="chip">Direktuthyrning</span>
+          <div class="meta" aria-label="Teknik och innehåll">
+            <span class="chip" data-i18n="chipWebapp">Webbapp</span>
+            <span class="chip" data-i18n="chipLicense">Licensflöde</span>
+            <span class="chip" data-i18n="chipProduct">Produktstruktur</span>
+            <span class="chip" data-i18n="chipLanding">Landningssidor</span>
+            <span class="chip" data-i18n="chipRental">Direktuthyrning</span>
           </div>
         </article>
 
         <article class="case-card">
           <div class="case-top">
             <div>
-              <span class="tag">Kundnära exempel</span>
+              <span class="tag" data-i18n="hansenTag">Kundnära exempel</span>
               <h3>Hansen Bygg & Grönt</h3>
-              <p>
-                En enkel och tydlig one page-sida byggd åt min syster och hennes sambo. Det är alltså ett exempelprojekt åt familj/närstående, inte mitt eget bolag.
+              <p data-i18n="hansenIntro">
+                En enkel och tydlig one page-sida byggd åt min syster och hennes sambo. Det är ett exempelprojekt åt familj/närstående, inte mitt eget bolag.
               </p>
             </div>
 
-            <a class="btn btn-secondary case-link" href="https://hansen-byggochgront.se" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-secondary case-link" href="https://hansen-byggochgront.se" target="_blank" rel="noopener noreferrer" data-i18n="visitSite">
               Besök sidan
             </a>
           </div>
 
           <div class="case-grid">
             <div class="case-part">
-              <strong>Problem</strong>
-              <p>
+              <strong data-i18n="problem">Problem</strong>
+              <p data-i18n="hansenProblem">
                 Bygg, snickeri och trädgård behövde presenteras tydligt utan att besökaren behövde leta sig igenom en rörig sida.
               </p>
             </div>
 
             <div class="case-part">
-              <strong>Lösning</strong>
-              <p>
+              <strong data-i18n="solution">Lösning</strong>
+              <p data-i18n="hansenSolution">
                 Jag byggde en one page-sida med tydlig uppdelning mellan bygg och grönt, enkel kontaktväg och lokalt fokus.
               </p>
             </div>
 
             <div class="case-part">
-              <strong>Resultat</strong>
-              <p>
+              <strong data-i18n="result">Resultat</strong>
+              <p data-i18n="hansenResult">
                 Besökaren förstår snabbt vad de gör, var de finns och hur man tar kontakt. En rak sida utan onödigt lull.
               </p>
             </div>
           </div>
 
-          <div class="meta">
-            <span class="chip">One page</span>
-            <span class="chip">Lokalt företag</span>
-            <span class="chip">Bygg</span>
-            <span class="chip">Trädgård</span>
-            <span class="chip">Mobilanpassad</span>
+          <div class="meta" aria-label="Teknik och innehåll">
+            <span class="chip" data-i18n="chipOnePage">One page</span>
+            <span class="chip" data-i18n="chipLocalBusiness">Lokalt företag</span>
+            <span class="chip" data-i18n="chipBuilding">Bygg</span>
+            <span class="chip" data-i18n="chipGarden">Trädgård</span>
+            <span class="chip" data-i18n="chipMobile">Mobilanpassad</span>
           </div>
         </article>
       </div>
@@ -1451,8 +1558,8 @@
     <section class="section" id="teknik">
       <div class="container">
         <div class="section-head">
-          <h2>Tekniska exempel.</h2>
-          <p>
+          <h2 data-i18n="techTitle">Tekniska exempel.</h2>
+          <p data-i18n="techIntro">
             Jag bygger inte bara yta. Här är exempel som visar backend, API, databas, dokumentation och teknisk struktur.
           </p>
         </div>
@@ -1461,42 +1568,42 @@
           <article class="card highlight">
             <span class="tag dark">GitHub</span>
             <h3>
-              <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer" data-i18n="githubTitle">
                 Publika projekt på GitHub
               </a>
             </h3>
-            <p>
+            <p data-i18n="githubText">
               Här finns publika projekt som visar kod, struktur och tekniskt arbete bakom kulisserna. Bland annat backend/API med Java, Spring Boot, PostgreSQL, Swagger, Docker och integrationstester.
             </p>
             <ul class="list">
-              <li>Java och Spring Boot</li>
-              <li>PostgreSQL och Flyway</li>
-              <li>Swagger/OpenAPI</li>
-              <li>Docker och Testcontainers</li>
+              <li data-i18n="githubList1">Java och Spring Boot</li>
+              <li data-i18n="githubList2">PostgreSQL och Flyway</li>
+              <li data-i18n="githubList3">Swagger/OpenAPI</li>
+              <li data-i18n="githubList4">Docker och Testcontainers</li>
             </ul>
             <div class="meta" style="margin-top:18px;">
               <span class="chip">Backend</span>
               <span class="chip">API</span>
-              <span class="chip">Databas</span>
+              <span class="chip" data-i18n="chipDatabase">Databas</span>
               <span class="chip">Portfolio</span>
             </div>
           </article>
 
           <article class="card">
-            <span class="tag">API-exempel</span>
+            <span class="tag" data-i18n="apiTag">API-exempel</span>
             <h3>
-              <a href="https://mini-api-sp7z.onrender.com/swagger-ui/index.html" target="_blank" rel="noopener noreferrer">
+              <a href="https://mini-api-sp7z.onrender.com/swagger-ui/index.html" target="_blank" rel="noopener noreferrer" data-i18n="apiTitle">
                 Mini API med Swagger
               </a>
             </h3>
-            <p>
+            <p data-i18n="apiText">
               Ett backendprojekt som visar API-struktur, dokumentation och teknisk grund. Render kan vara långsamt i gratisläge, men projektet visar arbetet bakom.
             </p>
             <ul class="list">
-              <li>API-dokumentation</li>
-              <li>Databasstruktur</li>
-              <li>Felhantering</li>
-              <li>Driftsatt demo</li>
+              <li data-i18n="apiList1">API-dokumentation</li>
+              <li data-i18n="apiList2">Databasstruktur</li>
+              <li data-i18n="apiList3">Felhantering</li>
+              <li data-i18n="apiList4">Driftsatt demo</li>
             </ul>
             <div class="meta" style="margin-top:18px;">
               <span class="chip">Swagger</span>
@@ -1512,25 +1619,25 @@
     <section class="section">
       <div class="container grid-3">
         <article class="card">
-          <span class="tag">Det jag ofta löser</span>
-          <h3>Otydlig hemsida</h3>
-          <p>
+          <span class="tag" data-i18n="value1Tag">Det jag ofta löser</span>
+          <h3 data-i18n="value1Title">Otydlig hemsida</h3>
+          <p data-i18n="value1Text">
             Företaget finns, men sidan förklarar inte snabbt nog vad kunden får, varför det är värt att höra av sig och hur nästa steg ser ut.
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">Det jag bygger</span>
-          <h3>Rak struktur</h3>
-          <p>
+          <span class="tag" data-i18n="value2Tag">Det jag bygger</span>
+          <h3 data-i18n="value2Title">Rak struktur</h3>
+          <p data-i18n="value2Text">
             Tydlig hero, konkreta sektioner, FAQ, priser när det passar, kontaktväg och innehåll som låter som en människa.
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">Det du får</span>
-          <h3>Något att använda</h3>
-          <p>
+          <span class="tag" data-i18n="value3Tag">Det du får</span>
+          <h3 data-i18n="value3Title">Något att använda</h3>
+          <p data-i18n="value3Text">
             En sida eller lösning som kan sälja, boka, samla leads, visa villkor eller hjälpa kunden förstå nästa steg.
           </p>
         </article>
@@ -1541,18 +1648,18 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Vill du ha något liknande för ditt företag?</h2>
-            <p>
+            <h2 data-i18n="ctaTitle">Vill du ha något liknande för ditt företag?</h2>
+            <p data-i18n="ctaText">
               Skicka in vad du behöver. Jag bygger en första demo så du får se riktningen innan du bestämmer dig.
             </p>
           </div>
 
           <div class="cta-panel">
-            <strong>Demo först</strong>
-            <p>
+            <strong data-i18n="ctaPanelTitle">Demo först</strong>
+            <p data-i18n="ctaPanelText">
               Du köper bara om du gillar upplägget. Inget köp i blindo, ingen byråteater.
             </p>
-            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;">
+            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;" data-i18n="ctaPanelButton">
               Få demo
             </a>
           </div>
@@ -1563,44 +1670,51 @@
     <section class="section faq" id="fragor">
       <div class="container">
         <div class="section-head">
-          <h2>Vanliga frågor.</h2>
-          <p>
+          <h2 data-i18n="faqTitle">Vanliga frågor.</h2>
+          <p data-i18n="faqIntro">
             Kort svar innan du skickar in.
           </p>
         </div>
 
         <details>
-          <summary>Är alla case kundprojekt?</summary>
-          <p>
+          <summary data-i18n="faq1Q">Är alla case kundprojekt?</summary>
+          <p data-i18n="faq1A">
             Nej. Några är egna projekt, ett är ett exempelprojekt åt familj/närstående och några visar tekniska portfolioprojekt.
           </p>
         </details>
 
         <details>
-          <summary>Kan jag få en liknande hemsida?</summary>
-          <p>
+          <summary data-i18n="faq2Q">Kan jag få en liknande hemsida?</summary>
+          <p data-i18n="faq2A">
             Ja. Skicka in vad företaget gör och vad du behöver, så kan jag ta fram en första demo.
           </p>
         </details>
 
         <details>
-          <summary>Bygger du bara vanliga hemsidor?</summary>
-          <p>
+          <summary data-i18n="faq3Q">Bygger du bara vanliga hemsidor?</summary>
+          <p data-i18n="faq3A">
             Nej. Jag bygger även landningssidor, formulärflöden, rabattkodssidor, API, backend, integrationer och enklare webbappar.
           </p>
         </details>
 
         <details>
-          <summary>Hur snabbt kan jag få en demo?</summary>
-          <p>
+          <summary data-i18n="faq4Q">Hur snabbt kan jag få en demo?</summary>
+          <p data-i18n="faq4A">
             Normalt inom 1 arbetsdag efter att du skickat in tillräcklig information.
           </p>
         </details>
 
         <details>
-          <summary>Måste jag köpa efter demon?</summary>
-          <p>
+          <summary data-i18n="faq5Q">Måste jag köpa efter demon?</summary>
+          <p data-i18n="faq5A">
             Nej. Du köper bara om du gillar upplägget och vill gå vidare.
+          </p>
+        </details>
+
+        <details>
+          <summary data-i18n="faq6Q">Blir jag låst till Nordlöf Nordic?</summary>
+          <p data-i18n="faq6A">
+            Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.
           </p>
         </details>
       </div>
@@ -1609,113 +1723,114 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
-          <h2>Få demo eller fråga om ett uppdrag.</h2>
-          <p>
+          <h2 data-i18n="formTitle">Få demo eller fråga om ett uppdrag.</h2>
+          <p data-i18n="formIntro">
             Fyll i det viktigaste. Skriv gärna om du såg ett case här som liknar det du vill bygga.
           </p>
 
-          <div class="contact-row" aria-label="Kontaktuppgifter">
+          <div class="contact-row" aria-label="Kontaktuppgifter" data-i18n-aria-label="contactAria">
             <div class="contact-mini">
-              <strong>E-post</strong>
+              <strong data-i18n="contactEmail">E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
             <div class="contact-mini">
-              <strong>Telefon</strong>
+              <strong data-i18n="contactPhone">Telefon</strong>
               <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
             <div class="contact-mini">
-              <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              <strong data-i18n="contactCompany">Företag</strong>
+              <span data-i18n="companyType">Nordlöf Nordic · Enskild firma</span>
             </div>
           </div>
 
           <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
-            <input type="hidden" name="_subject" value="Ny förfrågan från case.html" />
+            <input id="subjectField" type="hidden" name="_subject" value="Ny förfrågan från case.html" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
-            <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="autoResponseField" type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="languageField" type="hidden" name="Valt språk" value="Svenska" />
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
             <div class="form-status" aria-live="polite"></div>
 
             <div class="form-grid">
               <div>
-                <label for="namn">Namn</label>
+                <label for="namn" data-i18n="labelName">Namn</label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
 
               <div>
-                <label for="email">E-post</label>
+                <label for="email" data-i18n="labelEmail">E-post</label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
 
               <div>
-                <label for="telefon">Telefon</label>
+                <label for="telefon" data-i18n="labelPhone">Telefon</label>
                 <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
 
               <div>
-                <label for="foretag">Företag</label>
+                <label for="foretag" data-i18n="labelCompany">Företag</label>
                 <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
 
               <div>
-                <label for="typ">Vad behöver du?</label>
+                <label for="typ" data-i18n="labelType">Vad behöver du?</label>
                 <select id="typ" name="Typ av uppdrag">
-                  <option value="Ny hemsida">Ny hemsida</option>
-                  <option value="Uppdatera befintlig hemsida">Uppdatera befintlig hemsida</option>
-                  <option value="Landningssida">Landningssida</option>
-                  <option value="API / backend / specialfunktion">API / backend / specialfunktion</option>
-                  <option value="Vet inte än">Vet inte än</option>
+                  <option value="Ny hemsida" data-i18n="optionNew">Ny hemsida</option>
+                  <option value="Uppdatera befintlig hemsida" data-i18n="optionUpdate">Uppdatera befintlig hemsida</option>
+                  <option value="Landningssida" data-i18n="optionLanding">Landningssida</option>
+                  <option value="API / backend / specialfunktion" data-i18n="optionApi">API / backend / specialfunktion</option>
+                  <option value="Vet inte än" data-i18n="optionNotSure">Vet inte än</option>
                 </select>
               </div>
 
               <div>
-                <label for="budget">Budget / paket</label>
+                <label for="budget" data-i18n="labelBudget">Budget / paket</label>
                 <select id="budget" name="Budget">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Start 2 900 kr">Start 2 900 kr</option>
-                  <option value="Proffs 4 900 kr">Proffs 4 900 kr</option>
-                  <option value="Utökad 7 900 kr">Utökad 7 900 kr</option>
-                  <option value="Uppdatering från 490 kr">Uppdatering från 490 kr</option>
-                  <option value="Timpris 650 kr/h">Timpris 650 kr/h</option>
+                  <option value="Vet inte än" data-i18n="budgetNotSure">Vet inte än</option>
+                  <option value="Start 2 900 kr" data-i18n="budgetStart">Start 2 900 kr</option>
+                  <option value="Proffs 4 900 kr" data-i18n="budgetPro">Proffs 4 900 kr</option>
+                  <option value="Utökad 7 900 kr" data-i18n="budgetExtended">Utökad 7 900 kr</option>
+                  <option value="Uppdatering från 490 kr" data-i18n="budgetUpdate">Uppdatering från 490 kr</option>
+                  <option value="Timpris 650 kr/h" data-i18n="budgetHourly">Timpris 650 kr/h</option>
                 </select>
               </div>
 
               <div class="full">
-                <label for="nuvarande">Nuvarande hemsida, om du har en</label>
+                <label for="nuvarande" data-i18n="labelCurrent">Nuvarande hemsida, om du har en</label>
                 <input id="nuvarande" name="Nuvarande hemsida" type="url" inputmode="url" placeholder="https://..." />
               </div>
 
               <div class="full">
-                <label for="case-inspo">Vilket case liknar ditt behov?</label>
+                <label for="case-inspo" data-i18n="labelCase">Vilket case liknar ditt behov?</label>
                 <select id="case-inspo" name="Case som liknar behovet">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Offroad Bumpis">Offroad Bumpis - bokning, villkor, lokal tjänst</option>
-                  <option value="Safe Standard">Safe Standard - webbapp, licens, dokumentflöde</option>
-                  <option value="Hansen Bygg & Grönt">Hansen Bygg & Grönt - enkel företagssida</option>
-                  <option value="Mini API">Mini API - backend/API/specialfunktion</option>
+                  <option value="Vet inte än" data-i18n="caseNotSure">Vet inte än</option>
+                  <option value="Offroad Bumpis" data-i18n="caseOffroad">Offroad Bumpis - bokning, villkor, lokal tjänst</option>
+                  <option value="Safe Standard" data-i18n="caseSafe">Safe Standard - webbapp, licens, dokumentflöde</option>
+                  <option value="Hansen Bygg & Grönt" data-i18n="caseHansen">Hansen Bygg & Grönt - enkel företagssida</option>
+                  <option value="Mini API" data-i18n="caseMini">Mini API - backend/API/specialfunktion</option>
                 </select>
               </div>
 
               <div class="full">
-                <label for="beskrivning">Beskriv kort vad du vill ha hjälp med</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad gör företaget? Vad ska sidan eller lösningen hjälpa dig med? Vad vill du att kunden ska göra?" required></textarea>
+                <label for="beskrivning" data-i18n="labelDescription">Beskriv kort vad du vill ha hjälp med</label>
+                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad gör företaget? Vad ska sidan eller lösningen hjälpa dig med? Vad vill du att kunden ska göra?" data-i18n-placeholder="placeholderDescription" required></textarea>
               </div>
 
               <div class="full">
-                <label for="inspo">Länkar eller inspiration</label>
-                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration."></textarea>
+                <label for="inspo" data-i18n="labelInspo">Länkar eller inspiration</label>
+                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration." data-i18n-placeholder="placeholderInspo"></textarea>
               </div>
             </div>
 
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
-              <a href="integritet.html">integritetspolicyn</a>.
+              <span data-i18n="privacyText">Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt</span>
+              <a href="integritet.html" data-i18n="privacyLink">integritetspolicyn</a>.
             </span>
 
-            <button class="btn btn-light" type="submit" style="width:100%;">Skicka förfrågan</button>
+            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">Skicka förfrågan</button>
           </form>
         </div>
       </div>
@@ -1727,22 +1842,24 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Hemsidor, landningssidor, webbfix och webbutveckling för småföretag.<br>
-          Demo inom 1 arbetsdag · Fast pris eller 650 kr/h
+          <span data-i18n="footerText1">Hemsidor, landningssidor, webbfix och webbutveckling för småföretag.</span><br>
+          <span data-i18n="footerText2">Demo inom 1 arbetsdag · Fast pris eller 650 kr/h · Ingen inlåsning</span>
         </div>
 
         <div>
-          Kontakt:
+          <span data-i18n="footerContact">Kontakt:</span>
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
 
           <div class="footer-links">
-            <a href="/">Startsida</a>
-            <a href="gratis-demo.html">Gratis demo</a>
-            <a href="villkor.html">Villkor</a>
-            <a href="integritet.html">Integritet</a>
-            <a href="affiliate.html">Affiliate</a>
+            <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="gratis-demo.html" data-i18n="footerDemo">Gratis demo</a>
+            <a href="webbfix.html" data-i18n="footerFix">Webbfix</a>
+            <a href="landningssida-kampanj.html" data-i18n="footerLanding">Landningssida</a>
+            <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
+            <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+            <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
             <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
@@ -1751,58 +1868,795 @@
     </div>
   </footer>
 
-  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#case">Case</a>
-    <a class="btn btn-primary" href="#kontakt">Få demo</a>
+  <nav class="mobile-sticky" aria-label="Snabbval på mobil" data-i18n-aria-label="mobileStickyAria">
+    <a class="btn btn-secondary" href="#case" data-i18n="mobileCases">Case</a>
+    <a class="btn btn-primary" href="#kontakt" data-i18n="mobileDemo">Få demo</a>
   </nav>
 
   <script>
-    document.querySelectorAll('form').forEach((form) => {
-      const submitButton = form.querySelector('button[type="submit"]');
-      const statusBox = form.querySelector('.form-status');
-      const originalButtonText = submitButton ? submitButton.textContent : '';
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        languageName: "Svenska",
+        metaTitle: "Case och exempel på hemsidor | Nordlöf Nordic",
+        metaDescription: "Se exempel på hemsidor, webblösningar och digitala projekt byggda av Nordlöf Nordic. Case med problem, lösning och resultat för småföretag.",
+        ogTitle: "Case och exempel på hemsidor | Nordlöf Nordic",
+        ogDescription: "Riktiga exempel på hemsidor, bokningsflöden, webbappar och digitala lösningar byggda av Nordlöf Nordic.",
+        twitterTitle: "Case och exempel på hemsidor | Nordlöf Nordic",
+        twitterDescription: "Se exempel på hemsidor och webblösningar byggda av Nordlöf Nordic.",
+        subject: "Ny förfrågan från case.html",
+        autoresponse: "Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan.",
+        validationRequired: "Fyll i de obligatoriska fälten först.",
+        sending: "Skickar...",
+        sendingStatus: "Skickar formuläret...",
 
-      form.addEventListener('submit', (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityAria: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Case och webblösningar",
+        mainNavAria: "Huvudnavigering",
+        navCases: "Case",
+        navTech: "Teknik",
+        navFaq: "Frågor",
+        navDemo: "Få demo",
+        languageLabel: "Språk",
+        languageAria: "Välj språk",
 
-          if (statusBox) {
-            statusBox.className = 'form-status is-visible';
-            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
-          }
+        eyebrow: "Case · Hemsidor · Webbappar · Bokningsflöden · API",
+        heroTitle: "Case och exempel på hemsidor för småföretag.",
+        heroLead: "Nordlöf Nordic bygger hemsidor, landningssidor, webbfix och speciallösningar för småföretag. Här ser du egna projekt, kundnära exempel och tekniska portfolioprojekt med problem, lösning och resultat.",
+        heroCta: "Få demo för ditt företag",
+        heroSecondary: "Se case",
+        proofAria: "Sammanfattning",
+        proof1Title: "Demo först",
+        proof1Text: "Du ser riktningen innan du köper.",
+        proof2Title: "Pris från 2 900 kr",
+        proof2Text: "Fast pris när det går.",
+        proof3Title: "Teknik också",
+        proof3Text: "API, backend, formulär och flöden.",
+        heroCardAria: "Kort sammanfattning",
+        mini1Title: "Problem först",
+        mini1Text: "Varje case visar vad som behövde lösas. Inget fluff för fluffets skull.",
+        mini2Title: "Lösning",
+        mini2Text: "Sedan visar jag vad jag byggde och varför.",
+        mini3Title: "Resultat",
+        mini3Text: "Målet är tydligare väg till kontakt, köp, bokning eller förståelse.",
 
-          form.reportValidity();
-          return;
-        }
+        casesTitle: "Case.",
+        casesIntro: "Exempel på projekt där jag byggt hemsidor, bokningsstruktur, villkor, landningssidor, rabattkodssidor och tekniska flöden.",
+        visitSite: "Besök sidan",
+        problem: "Problem",
+        solution: "Lösning",
+        result: "Resultat",
 
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = 'Skickar...';
-          submitButton.setAttribute('aria-busy', 'true');
-        }
+        offroadTag: "Eget projekt",
+        offroadIntro: "En lokal uthyrningsverksamhet i Skåne behövde en tydlig digital grund: hemsida, bokningsväg, villkor, lokal SEO och information som kunder faktiskt förstår.",
+        offroadProblem: "Kunder behövde snabbt förstå vad bumperballs är, vad som ingår, var det går att hyra och hur bokningen fungerar.",
+        offroadSolution: "Jag byggde hemsida, bokningsflöde, villkor, rabattkodssidor, affiliateupplägg och tydlig kundinformation.",
+        offroadResult: "En komplett digital grund för en lokal uthyrningsverksamhet med tydlig väg från intresse till bokning.",
 
-        if (statusBox) {
-          statusBox.className = 'form-status is-visible';
-          statusBox.textContent = 'Skickar formuläret...';
-        }
+        safeTag: "Eget projekt",
+        safeIntro: "Ett digitalt produktkoncept för personer och företag som hyr ut direkt utan plattform och behöver bättre struktur kring avtal, villkor, överlämning och skadedokumentation.",
+        safeProblem: "Direktuthyrare riskerar otydliga överenskommelser, spridda sms, missade villkor och svag dokumentation om något händer.",
+        safeSolution: "Jag byggde ett tydligt produktupplägg med licens, dokumentationsflöde, köpresa och landningssidor för olika uthyrningsfall.",
+        safeResult: "Ett eget systemtänk för direktuthyrning där avtal, villkor, överlämning och skador får en tydligare struktur.",
 
-        setTimeout(() => {
-          if (submitButton && submitButton.disabled) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            submitButton.removeAttribute('aria-busy');
-          }
-        }, 15000);
-      });
-    });
+        hansenTag: "Kundnära exempel",
+        hansenIntro: "En enkel och tydlig one page-sida byggd åt min syster och hennes sambo. Det är ett exempelprojekt åt familj/närstående, inte mitt eget bolag.",
+        hansenProblem: "Bygg, snickeri och trädgård behövde presenteras tydligt utan att besökaren behövde leta sig igenom en rörig sida.",
+        hansenSolution: "Jag byggde en one page-sida med tydlig uppdelning mellan bygg och grönt, enkel kontaktväg och lokalt fokus.",
+        hansenResult: "Besökaren förstår snabbt vad de gör, var de finns och hur man tar kontakt. En rak sida utan onödigt lull.",
 
-    const contrastButton = document.getElementById('toggleContrast');
-    const largeTextButton = document.getElementById('toggleLargeText');
+        chipWebsite: "Hemsida",
+        chipBooking: "Bokningsflöde",
+        chipTerms: "Villkor",
+        chipLocalSeo: "Lokal SEO",
+        chipDiscount: "Rabattkodssidor",
+        chipWebapp: "Webbapp",
+        chipLicense: "Licensflöde",
+        chipProduct: "Produktstruktur",
+        chipLanding: "Landningssidor",
+        chipRental: "Direktuthyrning",
+        chipOnePage: "One page",
+        chipLocalBusiness: "Lokalt företag",
+        chipBuilding: "Bygg",
+        chipGarden: "Trädgård",
+        chipMobile: "Mobilanpassad",
+        chipDatabase: "Databas",
 
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
+        techTitle: "Tekniska exempel.",
+        techIntro: "Jag bygger inte bara yta. Här är exempel som visar backend, API, databas, dokumentation och teknisk struktur.",
+        githubTitle: "Publika projekt på GitHub",
+        githubText: "Här finns publika projekt som visar kod, struktur och tekniskt arbete bakom kulisserna. Bland annat backend/API med Java, Spring Boot, PostgreSQL, Swagger, Docker och integrationstester.",
+        githubList1: "Java och Spring Boot",
+        githubList2: "PostgreSQL och Flyway",
+        githubList3: "Swagger/OpenAPI",
+        githubList4: "Docker och Testcontainers",
+        apiTag: "API-exempel",
+        apiTitle: "Mini API med Swagger",
+        apiText: "Ett backendprojekt som visar API-struktur, dokumentation och teknisk grund. Render kan vara långsamt i gratisläge, men projektet visar arbetet bakom.",
+        apiList1: "API-dokumentation",
+        apiList2: "Databasstruktur",
+        apiList3: "Felhantering",
+        apiList4: "Driftsatt demo",
+
+        value1Tag: "Det jag ofta löser",
+        value1Title: "Otydlig hemsida",
+        value1Text: "Företaget finns, men sidan förklarar inte snabbt nog vad kunden får, varför det är värt att höra av sig och hur nästa steg ser ut.",
+        value2Tag: "Det jag bygger",
+        value2Title: "Rak struktur",
+        value2Text: "Tydlig hero, konkreta sektioner, FAQ, priser när det passar, kontaktväg och innehåll som låter som en människa.",
+        value3Tag: "Det du får",
+        value3Title: "Något att använda",
+        value3Text: "En sida eller lösning som kan sälja, boka, samla leads, visa villkor eller hjälpa kunden förstå nästa steg.",
+
+        ctaTitle: "Vill du ha något liknande för ditt företag?",
+        ctaText: "Skicka in vad du behöver. Jag bygger en första demo så du får se riktningen innan du bestämmer dig.",
+        ctaPanelTitle: "Demo först",
+        ctaPanelText: "Du köper bara om du gillar upplägget. Inget köp i blindo, ingen byråteater.",
+        ctaPanelButton: "Få demo",
+
+        faqTitle: "Vanliga frågor.",
+        faqIntro: "Kort svar innan du skickar in.",
+        faq1Q: "Är alla case kundprojekt?",
+        faq1A: "Nej. Några är egna projekt, ett är ett exempelprojekt åt familj/närstående och några visar tekniska portfolioprojekt.",
+        faq2Q: "Kan jag få en liknande hemsida?",
+        faq2A: "Ja. Skicka in vad företaget gör och vad du behöver, så kan jag ta fram en första demo.",
+        faq3Q: "Bygger du bara vanliga hemsidor?",
+        faq3A: "Nej. Jag bygger även landningssidor, formulärflöden, rabattkodssidor, API, backend, integrationer och enklare webbappar.",
+        faq4Q: "Hur snabbt kan jag få en demo?",
+        faq4A: "Normalt inom 1 arbetsdag efter att du skickat in tillräcklig information.",
+        faq5Q: "Måste jag köpa efter demon?",
+        faq5A: "Nej. Du köper bara om du gillar upplägget och vill gå vidare.",
+        faq6Q: "Blir jag låst till Nordlöf Nordic?",
+        faq6A: "Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.",
+
+        formTitle: "Få demo eller fråga om ett uppdrag.",
+        formIntro: "Fyll i det viktigaste. Skriv gärna om du såg ett case här som liknar det du vill bygga.",
+        contactAria: "Kontaktuppgifter",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Företag",
+        companyType: "Nordlöf Nordic · Enskild firma",
+        labelName: "Namn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Företag",
+        labelType: "Vad behöver du?",
+        optionNew: "Ny hemsida",
+        optionUpdate: "Uppdatera befintlig hemsida",
+        optionLanding: "Landningssida",
+        optionApi: "API / backend / specialfunktion",
+        optionNotSure: "Vet inte än",
+        labelBudget: "Budget / paket",
+        budgetNotSure: "Vet inte än",
+        budgetStart: "Start 2 900 kr",
+        budgetPro: "Proffs 4 900 kr",
+        budgetExtended: "Utökad 7 900 kr",
+        budgetUpdate: "Uppdatering från 490 kr",
+        budgetHourly: "Timpris 650 kr/h",
+        labelCurrent: "Nuvarande hemsida, om du har en",
+        labelCase: "Vilket case liknar ditt behov?",
+        caseNotSure: "Vet inte än",
+        caseOffroad: "Offroad Bumpis - bokning, villkor, lokal tjänst",
+        caseSafe: "Safe Standard - webbapp, licens, dokumentflöde",
+        caseHansen: "Hansen Bygg & Grönt - enkel företagssida",
+        caseMini: "Mini API - backend/API/specialfunktion",
+        labelDescription: "Beskriv kort vad du vill ha hjälp med",
+        placeholderDescription: "Vad gör företaget? Vad ska sidan eller lösningen hjälpa dig med? Vad vill du att kunden ska göra?",
+        labelInspo: "Länkar eller inspiration",
+        placeholderInspo: "Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration.",
+        privacyText: "Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt",
+        privacyLink: "integritetspolicyn",
+        submitButton: "Skicka förfrågan",
+
+        footerText1: "Hemsidor, landningssidor, webbfix och webbutveckling för småföretag.",
+        footerText2: "Demo inom 1 arbetsdag · Fast pris eller 650 kr/h · Ingen inlåsning",
+        footerContact: "Kontakt:",
+        footerHome: "Startsida",
+        footerDemo: "Gratis demo",
+        footerFix: "Webbfix",
+        footerLanding: "Landningssida",
+        footerTerms: "Villkor",
+        footerPrivacy: "Integritet",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Snabbval på mobil",
+        mobileCases: "Case",
+        mobileDemo: "Få demo"
+      },
+
+      en: {
+        htmlLang: "en",
+        languageName: "English",
+        metaTitle: "Cases and website examples | Nordlöf Nordic",
+        metaDescription: "See examples of websites, web solutions and digital projects built by Nordlöf Nordic. Cases with problem, solution and result for small businesses.",
+        ogTitle: "Cases and website examples | Nordlöf Nordic",
+        ogDescription: "Real examples of websites, booking flows, web apps and digital solutions built by Nordlöf Nordic.",
+        twitterTitle: "Cases and website examples | Nordlöf Nordic",
+        twitterDescription: "See examples of websites and web solutions built by Nordlöf Nordic.",
+        subject: "New request from case.html - English",
+        autoresponse: "Thank you! I have received your request and will get back to you as soon as I can.",
+        validationRequired: "Please fill in the required fields first.",
+        sending: "Sending...",
+        sendingStatus: "Sending the form...",
+
+        skip: "Skip to main content",
+        accessibilityAria: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Cases and web solutions",
+        mainNavAria: "Main navigation",
+        navCases: "Cases",
+        navTech: "Tech",
+        navFaq: "Questions",
+        navDemo: "Get demo",
+        languageLabel: "Language",
+        languageAria: "Choose language",
+
+        eyebrow: "Cases · Websites · Web apps · Booking flows · API",
+        heroTitle: "Cases and website examples for small businesses.",
+        heroLead: "Nordlöf Nordic builds websites, landing pages, website fixes and custom solutions for small businesses. Here you can see own projects, client-style examples and technical portfolio projects with problem, solution and result.",
+        heroCta: "Get a demo for your business",
+        heroSecondary: "See cases",
+        proofAria: "Summary",
+        proof1Title: "Demo first",
+        proof1Text: "You see the direction before buying.",
+        proof2Title: "From 2,900 SEK",
+        proof2Text: "Fixed price when possible.",
+        proof3Title: "Technical too",
+        proof3Text: "API, backend, forms and flows.",
+        heroCardAria: "Short summary",
+        mini1Title: "Problem first",
+        mini1Text: "Each case shows what needed to be solved. No decoration for decoration’s sake.",
+        mini2Title: "Solution",
+        mini2Text: "Then I show what I built and why.",
+        mini3Title: "Result",
+        mini3Text: "The goal is a clearer path to contact, purchase, booking or understanding.",
+
+        casesTitle: "Cases.",
+        casesIntro: "Examples of projects where I built websites, booking structure, terms, landing pages, discount-code pages and technical flows.",
+        visitSite: "Visit site",
+        problem: "Problem",
+        solution: "Solution",
+        result: "Result",
+
+        offroadTag: "Own project",
+        offroadIntro: "A local rental business in Skåne needed a clear digital base: website, booking path, terms, local SEO and information customers can actually understand.",
+        offroadProblem: "Customers needed to quickly understand what bumperballs are, what is included, where they can rent and how booking works.",
+        offroadSolution: "I built the website, booking flow, terms, discount-code pages, affiliate setup and clear customer information.",
+        offroadResult: "A complete digital base for a local rental business with a clear path from interest to booking.",
+
+        safeTag: "Own project",
+        safeIntro: "A digital product concept for people and businesses renting out directly without a platform and needing better structure around agreements, terms, handover and damage documentation.",
+        safeProblem: "Direct rental operators risk unclear agreements, scattered messages, missed terms and weak documentation if something happens.",
+        safeSolution: "I built a clear product setup with license, documentation flow, buyer journey and landing pages for different rental cases.",
+        safeResult: "A structured system idea for direct rentals where agreements, terms, handover and damage handling become clearer.",
+
+        hansenTag: "Client-style example",
+        hansenIntro: "A simple and clear one-page website built for my sister and her partner. It is a family/close-contact example project, not my own business.",
+        hansenProblem: "Construction, carpentry and garden services needed to be presented clearly without making the visitor dig through a messy site.",
+        hansenSolution: "I built a one-page site with clear split between construction and garden, simple contact path and local focus.",
+        hansenResult: "Visitors quickly understand what they do, where they work and how to contact them. Straight page, no circus.",
+
+        chipWebsite: "Website",
+        chipBooking: "Booking flow",
+        chipTerms: "Terms",
+        chipLocalSeo: "Local SEO",
+        chipDiscount: "Discount-code pages",
+        chipWebapp: "Web app",
+        chipLicense: "License flow",
+        chipProduct: "Product structure",
+        chipLanding: "Landing pages",
+        chipRental: "Direct rental",
+        chipOnePage: "One page",
+        chipLocalBusiness: "Local business",
+        chipBuilding: "Construction",
+        chipGarden: "Garden",
+        chipMobile: "Mobile-friendly",
+        chipDatabase: "Database",
+
+        techTitle: "Technical examples.",
+        techIntro: "I do not only build the surface. These examples show backend, API, database, documentation and technical structure.",
+        githubTitle: "Public projects on GitHub",
+        githubText: "Public projects showing code, structure and technical work behind the scenes. Including backend/API with Java, Spring Boot, PostgreSQL, Swagger, Docker and integration tests.",
+        githubList1: "Java and Spring Boot",
+        githubList2: "PostgreSQL and Flyway",
+        githubList3: "Swagger/OpenAPI",
+        githubList4: "Docker and Testcontainers",
+        apiTag: "API example",
+        apiTitle: "Mini API with Swagger",
+        apiText: "A backend project showing API structure, documentation and technical foundation. Render can be slow on the free plan, but the project shows the work behind it.",
+        apiList1: "API documentation",
+        apiList2: "Database structure",
+        apiList3: "Error handling",
+        apiList4: "Deployed demo",
+
+        value1Tag: "What I often solve",
+        value1Title: "Unclear website",
+        value1Text: "The business exists, but the site does not explain fast enough what the customer gets, why they should make contact and what the next step is.",
+        value2Tag: "What I build",
+        value2Title: "Straight structure",
+        value2Text: "Clear hero, concrete sections, FAQ, prices when useful, contact path and content that sounds like a human wrote it.",
+        value3Tag: "What you get",
+        value3Title: "Something usable",
+        value3Text: "A page or solution that can sell, book, collect leads, show terms or help the customer understand the next step.",
+
+        ctaTitle: "Want something similar for your business?",
+        ctaText: "Send what you need. I build a first demo so you can see the direction before deciding.",
+        ctaPanelTitle: "Demo first",
+        ctaPanelText: "You only buy if you like the setup. No blind purchase, no agency theatre.",
+        ctaPanelButton: "Get demo",
+
+        faqTitle: "Frequently asked questions.",
+        faqIntro: "Short answers before you send a request.",
+        faq1Q: "Are all cases client projects?",
+        faq1A: "No. Some are my own projects, one is an example project for family/close contacts and some show technical portfolio projects.",
+        faq2Q: "Can I get a similar website?",
+        faq2A: "Yes. Send what your business does and what you need, and I can create a first demo.",
+        faq3Q: "Do you only build normal websites?",
+        faq3A: "No. I also build landing pages, form flows, discount-code pages, API, backend, integrations and simpler web apps.",
+        faq4Q: "How fast can I get a demo?",
+        faq4A: "Usually within 1 business day after you have sent enough information.",
+        faq5Q: "Do I have to buy after the demo?",
+        faq5A: "No. You only buy if you like the setup and want to move forward.",
+        faq6Q: "Will I be locked in to Nordlöf Nordic?",
+        faq6A: "No. After purchase, you can get material, code and logins if you want to continue yourself or with someone else.",
+
+        formTitle: "Get a demo or ask about a project.",
+        formIntro: "Fill in the essentials. Feel free to mention if you saw a case here that looks like what you want to build.",
+        contactAria: "Contact details",
+        contactEmail: "Email",
+        contactPhone: "Phone",
+        contactCompany: "Company",
+        companyType: "Nordlöf Nordic · Sole proprietorship",
+        labelName: "Name",
+        labelEmail: "Email",
+        labelPhone: "Phone",
+        labelCompany: "Company",
+        labelType: "What do you need?",
+        optionNew: "New website",
+        optionUpdate: "Update existing website",
+        optionLanding: "Landing page",
+        optionApi: "API / backend / custom feature",
+        optionNotSure: "Not sure yet",
+        labelBudget: "Budget / package",
+        budgetNotSure: "Not sure yet",
+        budgetStart: "Start 2,900 SEK",
+        budgetPro: "Pro 4,900 SEK",
+        budgetExtended: "Extended 7,900 SEK",
+        budgetUpdate: "Update from 490 SEK",
+        budgetHourly: "Hourly 650 SEK/hour",
+        labelCurrent: "Current website, if you have one",
+        labelCase: "Which case is closest to your need?",
+        caseNotSure: "Not sure yet",
+        caseOffroad: "Offroad Bumpis - booking, terms, local service",
+        caseSafe: "Safe Standard - web app, license, document flow",
+        caseHansen: "Hansen Bygg & Grönt - simple business website",
+        caseMini: "Mini API - backend/API/custom feature",
+        labelDescription: "Briefly describe what you need help with",
+        placeholderDescription: "What does the business do? What should the page or solution help with? What should the customer do?",
+        labelInspo: "Links or inspiration",
+        placeholderInspo: "Paste websites you like, competitors or other inspiration.",
+        privacyText: "By sending the form, you agree that your information is handled according to the",
+        privacyLink: "privacy policy",
+        submitButton: "Send request",
+
+        footerText1: "Websites, landing pages, website fixes and web development for small businesses.",
+        footerText2: "Demo within 1 business day · Fixed price or 650 SEK/hour · No lock-in",
+        footerContact: "Contact:",
+        footerHome: "Homepage",
+        footerDemo: "Free demo",
+        footerFix: "Website fixes",
+        footerLanding: "Landing page",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Quick options on mobile",
+        mobileCases: "Cases",
+        mobileDemo: "Get demo"
+      },
+
+      da: {
+        htmlLang: "da",
+        languageName: "Dansk",
+        metaTitle: "Cases og eksempler på hjemmesider | Nordlöf Nordic",
+        metaDescription: "Se eksempler på hjemmesider, webløsninger og digitale projekter bygget af Nordlöf Nordic. Cases med problem, løsning og resultat for små virksomheder.",
+        ogTitle: "Cases og eksempler på hjemmesider | Nordlöf Nordic",
+        ogDescription: "Rigtige eksempler på hjemmesider, bookingflows, webapps og digitale løsninger bygget af Nordlöf Nordic.",
+        twitterTitle: "Cases og eksempler på hjemmesider | Nordlöf Nordic",
+        twitterDescription: "Se eksempler på hjemmesider og webløsninger bygget af Nordlöf Nordic.",
+        subject: "Ny forespørgsel fra case.html - Dansk",
+        autoresponse: "Tak! Jeg har modtaget din forespørgsel og vender tilbage så snart jeg kan.",
+        validationRequired: "Udfyld de obligatoriske felter først.",
+        sending: "Sender...",
+        sendingStatus: "Sender formularen...",
+
+        skip: "Spring til hovedindhold",
+        accessibilityAria: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Cases og webløsninger",
+        mainNavAria: "Hovednavigation",
+        navCases: "Cases",
+        navTech: "Teknik",
+        navFaq: "Spørgsmål",
+        navDemo: "Få demo",
+        languageLabel: "Sprog",
+        languageAria: "Vælg sprog",
+
+        eyebrow: "Cases · Hjemmesider · Webapps · Bookingflows · API",
+        heroTitle: "Cases og eksempler på hjemmesider til små virksomheder.",
+        heroLead: "Nordlöf Nordic bygger hjemmesider, landingssider, webfix og specialløsninger til små virksomheder. Her ser du egne projekter, kundenære eksempler og tekniske portfolioprojekter med problem, løsning og resultat.",
+        heroCta: "Få demo til din virksomhed",
+        heroSecondary: "Se cases",
+        proofAria: "Opsummering",
+        proof1Title: "Demo først",
+        proof1Text: "Du ser retningen før du køber.",
+        proof2Title: "Fra 2 900 SEK",
+        proof2Text: "Fast pris når det giver mening.",
+        proof3Title: "Også teknik",
+        proof3Text: "API, backend, formularer og flows.",
+        heroCardAria: "Kort opsummering",
+        mini1Title: "Problem først",
+        mini1Text: "Hver case viser, hvad der skulle løses. Ikke pynt for pyntens skyld.",
+        mini2Title: "Løsning",
+        mini2Text: "Derefter viser jeg, hvad jeg byggede og hvorfor.",
+        mini3Title: "Resultat",
+        mini3Text: "Målet er en tydeligere vej til kontakt, køb, booking eller forståelse.",
+
+        casesTitle: "Cases.",
+        casesIntro: "Eksempler på projekter hvor jeg har bygget hjemmesider, bookingstruktur, vilkår, landingssider, rabatkodesider og tekniske flows.",
+        visitSite: "Besøg siden",
+        problem: "Problem",
+        solution: "Løsning",
+        result: "Resultat",
+
+        offroadTag: "Eget projekt",
+        offroadIntro: "En lokal udlejningsvirksomhed i Skåne havde brug for et tydeligt digitalt grundlag: hjemmeside, bookingvej, vilkår, lokal SEO og information som kunder faktisk forstår.",
+        offroadProblem: "Kunder skulle hurtigt forstå hvad bumperballs er, hvad der indgår, hvor de kan leje, og hvordan booking fungerer.",
+        offroadSolution: "Jeg byggede hjemmeside, bookingflow, vilkår, rabatkodesider, affiliate-setup og tydelig kundeinformation.",
+        offroadResult: "Et komplet digitalt grundlag for en lokal udlejningsvirksomhed med tydelig vej fra interesse til booking.",
+
+        safeTag: "Eget projekt",
+        safeIntro: "Et digitalt produktkoncept til personer og virksomheder, der udlejer direkte uden platform og har brug for bedre struktur omkring aftaler, vilkår, overlevering og skadedokumentation.",
+        safeProblem: "Direkte udlejere risikerer uklare aftaler, spredte beskeder, missede vilkår og svag dokumentation, hvis noget sker.",
+        safeSolution: "Jeg byggede et tydeligt produktoplæg med licens, dokumentationsflow, købsrejse og landingssider for forskellige udlejningscases.",
+        safeResult: "Et eget systemtænk for direkte udlejning, hvor aftaler, vilkår, overlevering og skader får tydeligere struktur.",
+
+        hansenTag: "Kundenært eksempel",
+        hansenIntro: "En enkel og tydelig one page-side bygget til min søster og hendes sambo. Det er et eksempelprojekt til familie/nærtstående, ikke min egen virksomhed.",
+        hansenProblem: "Byggeri, snedkeri og have skulle præsenteres tydeligt uden at besøgeren skulle lede rundt på en rodet side.",
+        hansenSolution: "Jeg byggede en one page-side med tydelig opdeling mellem byggeri og have, enkel kontaktvej og lokalt fokus.",
+        hansenResult: "Besøgeren forstår hurtigt, hvad de laver, hvor de findes, og hvordan man tager kontakt. En lige-ud-ad-landevejen-side uden unødigt bøvl.",
+
+        chipWebsite: "Hjemmeside",
+        chipBooking: "Bookingflow",
+        chipTerms: "Vilkår",
+        chipLocalSeo: "Lokal SEO",
+        chipDiscount: "Rabatkodesider",
+        chipWebapp: "Webapp",
+        chipLicense: "Licensflow",
+        chipProduct: "Produktstruktur",
+        chipLanding: "Landingssider",
+        chipRental: "Direkte udlejning",
+        chipOnePage: "One page",
+        chipLocalBusiness: "Lokal virksomhed",
+        chipBuilding: "Byggeri",
+        chipGarden: "Have",
+        chipMobile: "Mobiltilpasset",
+        chipDatabase: "Database",
+
+        techTitle: "Tekniske eksempler.",
+        techIntro: "Jeg bygger ikke kun overflade. Her er eksempler, der viser backend, API, database, dokumentation og teknisk struktur.",
+        githubTitle: "Offentlige projekter på GitHub",
+        githubText: "Her findes offentlige projekter, som viser kode, struktur og teknisk arbejde bag kulisserne. Blandt andet backend/API med Java, Spring Boot, PostgreSQL, Swagger, Docker og integrationstests.",
+        githubList1: "Java og Spring Boot",
+        githubList2: "PostgreSQL og Flyway",
+        githubList3: "Swagger/OpenAPI",
+        githubList4: "Docker og Testcontainers",
+        apiTag: "API-eksempel",
+        apiTitle: "Mini API med Swagger",
+        apiText: "Et backendprojekt der viser API-struktur, dokumentation og teknisk grundlag. Render kan være langsom i gratisversion, men projektet viser arbejdet bag.",
+        apiList1: "API-dokumentation",
+        apiList2: "Databasestruktur",
+        apiList3: "Fejlhåndtering",
+        apiList4: "Driftsat demo",
+
+        value1Tag: "Det jeg ofte løser",
+        value1Title: "Utydelig hjemmeside",
+        value1Text: "Virksomheden findes, men siden forklarer ikke hurtigt nok, hvad kunden får, hvorfor det er værd at kontakte jer, og hvad næste skridt er.",
+        value2Tag: "Det jeg bygger",
+        value2Title: "Rak struktur",
+        value2Text: "Tydelig hero, konkrete sektioner, FAQ, priser når det passer, kontaktvej og indhold der lyder som et menneske.",
+        value3Tag: "Det du får",
+        value3Title: "Noget du kan bruge",
+        value3Text: "En side eller løsning, der kan sælge, booke, samle leads, vise vilkår eller hjælpe kunden med at forstå næste skridt.",
+
+        ctaTitle: "Vil du have noget lignende til din virksomhed?",
+        ctaText: "Send det, du har brug for. Jeg bygger en første demo, så du kan se retningen, før du beslutter dig.",
+        ctaPanelTitle: "Demo først",
+        ctaPanelText: "Du køber kun, hvis du kan lide oplægget. Intet køb i blinde, intet bureau-teater.",
+        ctaPanelButton: "Få demo",
+
+        faqTitle: "Ofte stillede spørgsmål.",
+        faqIntro: "Korte svar før du sender ind.",
+        faq1Q: "Er alle cases kundeprojekter?",
+        faq1A: "Nej. Nogle er egne projekter, ét er et eksempelprojekt til familie/nærtstående, og nogle viser tekniske portfolioprojekter.",
+        faq2Q: "Kan jeg få en lignende hjemmeside?",
+        faq2A: "Ja. Send hvad virksomheden laver og hvad du har brug for, så kan jeg lave en første demo.",
+        faq3Q: "Bygger du kun almindelige hjemmesider?",
+        faq3A: "Nej. Jeg bygger også landingssider, formularflows, rabatkodesider, API, backend, integrationer og enklere webapps.",
+        faq4Q: "Hvor hurtigt kan jeg få en demo?",
+        faq4A: "Normalt inden for 1 arbejdsdag efter at du har sendt nok information.",
+        faq5Q: "Skal jeg købe efter demoen?",
+        faq5A: "Nej. Du køber kun, hvis du kan lide oplægget og vil gå videre.",
+        faq6Q: "Bliver jeg låst til Nordlöf Nordic?",
+        faq6A: "Nej. Efter køb kan du få materiale, kode og login, hvis du vil fortsætte selv eller med en anden.",
+
+        formTitle: "Få demo eller spørg om en opgave.",
+        formIntro: "Udfyld det vigtigste. Skriv gerne, hvis du så en case her, der ligner det du vil bygge.",
+        contactAria: "Kontaktoplysninger",
+        contactEmail: "E-mail",
+        contactPhone: "Telefon",
+        contactCompany: "Virksomhed",
+        companyType: "Nordlöf Nordic · Enkeltmandsvirksomhed",
+        labelName: "Navn",
+        labelEmail: "E-mail",
+        labelPhone: "Telefon",
+        labelCompany: "Virksomhed",
+        labelType: "Hvad har du brug for?",
+        optionNew: "Ny hjemmeside",
+        optionUpdate: "Opdater eksisterende hjemmeside",
+        optionLanding: "Landingsside",
+        optionApi: "API / backend / specialfunktion",
+        optionNotSure: "Ved ikke endnu",
+        labelBudget: "Budget / pakke",
+        budgetNotSure: "Ved ikke endnu",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Udvidet 7 900 SEK",
+        budgetUpdate: "Opdatering fra 490 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nuværende hjemmeside, hvis du har en",
+        labelCase: "Hvilken case ligner dit behov?",
+        caseNotSure: "Ved ikke endnu",
+        caseOffroad: "Offroad Bumpis - booking, vilkår, lokal ydelse",
+        caseSafe: "Safe Standard - webapp, licens, dokumentflow",
+        caseHansen: "Hansen Bygg & Grönt - enkel virksomhedsside",
+        caseMini: "Mini API - backend/API/specialfunktion",
+        labelDescription: "Beskriv kort hvad du vil have hjælp med",
+        placeholderDescription: "Hvad laver virksomheden? Hvad skal siden eller løsningen hjælpe med? Hvad skal kunden gøre?",
+        labelInspo: "Links eller inspiration",
+        placeholderInspo: "Indsæt gerne sider du kan lide, konkurrenter eller anden inspiration.",
+        privacyText: "Ved at sende formularen accepterer du, at dine oplysninger behandles i henhold til",
+        privacyLink: "privatlivspolitikken",
+        submitButton: "Send forespørgsel",
+
+        footerText1: "Hjemmesider, landingssider, webfix og webudvikling til små virksomheder.",
+        footerText2: "Demo inden for 1 arbejdsdag · Fast pris eller 650 SEK/time · Ingen indlåsning",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerFix: "Webfix",
+        footerLanding: "Landingsside",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Privatliv",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobileCases: "Cases",
+        mobileDemo: "Få demo"
+      },
+
+      no: {
+        htmlLang: "no",
+        languageName: "Norsk",
+        metaTitle: "Case og eksempler på nettsider | Nordlöf Nordic",
+        metaDescription: "Se eksempler på nettsider, webløsninger og digitale prosjekter bygget av Nordlöf Nordic. Case med problem, løsning og resultat for små bedrifter.",
+        ogTitle: "Case og eksempler på nettsider | Nordlöf Nordic",
+        ogDescription: "Ekte eksempler på nettsider, bookingflyt, webapper og digitale løsninger bygget av Nordlöf Nordic.",
+        twitterTitle: "Case og eksempler på nettsider | Nordlöf Nordic",
+        twitterDescription: "Se eksempler på nettsider og webløsninger bygget av Nordlöf Nordic.",
+        subject: "Ny forespørsel fra case.html - Norsk",
+        autoresponse: "Takk! Jeg har mottatt forespørselen din og kommer tilbake så snart jeg kan.",
+        validationRequired: "Fyll ut de obligatoriske feltene først.",
+        sending: "Sender...",
+        sendingStatus: "Sender skjemaet...",
+
+        skip: "Hopp til hovedinnhold",
+        accessibilityAria: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Case og webløsninger",
+        mainNavAria: "Hovednavigasjon",
+        navCases: "Case",
+        navTech: "Teknikk",
+        navFaq: "Spørsmål",
+        navDemo: "Få demo",
+        languageLabel: "Språk",
+        languageAria: "Velg språk",
+
+        eyebrow: "Case · Nettsider · Webapper · Bookingflyt · API",
+        heroTitle: "Case og eksempler på nettsider for små bedrifter.",
+        heroLead: "Nordlöf Nordic bygger nettsider, landingssider, webfiks og spesialløsninger for små bedrifter. Her ser du egne prosjekter, kundenære eksempler og tekniske porteføljeprosjekter med problem, løsning og resultat.",
+        heroCta: "Få demo for din bedrift",
+        heroSecondary: "Se case",
+        proofAria: "Oppsummering",
+        proof1Title: "Demo først",
+        proof1Text: "Du ser retningen før du kjøper.",
+        proof2Title: "Fra 2 900 SEK",
+        proof2Text: "Fast pris når det går.",
+        proof3Title: "Teknikk også",
+        proof3Text: "API, backend, skjemaer og flyt.",
+        heroCardAria: "Kort oppsummering",
+        mini1Title: "Problem først",
+        mini1Text: "Hvert case viser hva som måtte løses. Ikke pynt for pyntens skyld.",
+        mini2Title: "Løsning",
+        mini2Text: "Deretter viser jeg hva jeg bygget og hvorfor.",
+        mini3Title: "Resultat",
+        mini3Text: "Målet er en tydeligere vei til kontakt, kjøp, booking eller forståelse.",
+
+        casesTitle: "Case.",
+        casesIntro: "Eksempler på prosjekter der jeg har bygget nettsider, bookingstruktur, vilkår, landingssider, rabattkodesider og teknisk flyt.",
+        visitSite: "Besøk siden",
+        problem: "Problem",
+        solution: "Løsning",
+        result: "Resultat",
+
+        offroadTag: "Eget prosjekt",
+        offroadIntro: "En lokal utleievirksomhet i Skåne trengte et tydelig digitalt grunnlag: nettside, bookingvei, vilkår, lokal SEO og informasjon kunder faktisk forstår.",
+        offroadProblem: "Kunder måtte raskt forstå hva bumperballs er, hva som inngår, hvor man kan leie, og hvordan booking fungerer.",
+        offroadSolution: "Jeg bygget nettside, bookingflyt, vilkår, rabattkodesider, affiliateopplegg og tydelig kundeinformasjon.",
+        offroadResult: "Et komplett digitalt grunnlag for en lokal utleievirksomhet med tydelig vei fra interesse til booking.",
+
+        safeTag: "Eget prosjekt",
+        safeIntro: "Et digitalt produktkonsept for personer og bedrifter som leier ut direkte uten plattform og trenger bedre struktur rundt avtaler, vilkår, overlevering og skadedokumentasjon.",
+        safeProblem: "Direkteutleiere risikerer uklare avtaler, spredte meldinger, glemte vilkår og svak dokumentasjon hvis noe skjer.",
+        safeSolution: "Jeg bygget et tydelig produktopplegg med lisens, dokumentasjonsflyt, kjøpsreise og landingssider for ulike utleietilfeller.",
+        safeResult: "Et eget systemtankesett for direkteutleie der avtaler, vilkår, overlevering og skader får tydeligere struktur.",
+
+        hansenTag: "Kundenært eksempel",
+        hansenIntro: "En enkel og tydelig one page-side bygget for min søster og hennes sambo. Det er et eksempelprosjekt for familie/nærstående, ikke mitt eget selskap.",
+        hansenProblem: "Bygg, snekring og hage måtte presenteres tydelig uten at besøkeren måtte lete rundt på en rotete side.",
+        hansenSolution: "Jeg bygget en one page-side med tydelig oppdeling mellom bygg og grønt, enkel kontaktvei og lokalt fokus.",
+        hansenResult: "Besøkeren forstår raskt hva de gjør, hvor de finnes, og hvordan man tar kontakt. En rett-fram-side uten unødvendig krøll.",
+
+        chipWebsite: "Nettside",
+        chipBooking: "Bookingflyt",
+        chipTerms: "Vilkår",
+        chipLocalSeo: "Lokal SEO",
+        chipDiscount: "Rabattkodesider",
+        chipWebapp: "Webapp",
+        chipLicense: "Lisensflyt",
+        chipProduct: "Produktstruktur",
+        chipLanding: "Landingssider",
+        chipRental: "Direkteutleie",
+        chipOnePage: "One page",
+        chipLocalBusiness: "Lokal bedrift",
+        chipBuilding: "Bygg",
+        chipGarden: "Hage",
+        chipMobile: "Mobiltilpasset",
+        chipDatabase: "Database",
+
+        techTitle: "Tekniske eksempler.",
+        techIntro: "Jeg bygger ikke bare overflate. Her er eksempler som viser backend, API, database, dokumentasjon og teknisk struktur.",
+        githubTitle: "Offentlige prosjekter på GitHub",
+        githubText: "Her finnes offentlige prosjekter som viser kode, struktur og teknisk arbeid bak kulissene. Blant annet backend/API med Java, Spring Boot, PostgreSQL, Swagger, Docker og integrasjonstester.",
+        githubList1: "Java og Spring Boot",
+        githubList2: "PostgreSQL og Flyway",
+        githubList3: "Swagger/OpenAPI",
+        githubList4: "Docker og Testcontainers",
+        apiTag: "API-eksempel",
+        apiTitle: "Mini API med Swagger",
+        apiText: "Et backendprosjekt som viser API-struktur, dokumentasjon og teknisk grunnlag. Render kan være treg i gratisversjon, men prosjektet viser arbeidet bak.",
+        apiList1: "API-dokumentasjon",
+        apiList2: "Databasestruktur",
+        apiList3: "Feilhåndtering",
+        apiList4: "Driftsatt demo",
+
+        value1Tag: "Det jeg ofte løser",
+        value1Title: "Utydelig nettside",
+        value1Text: "Bedriften finnes, men siden forklarer ikke raskt nok hva kunden får, hvorfor det er verdt å ta kontakt, og hva neste steg er.",
+        value2Tag: "Det jeg bygger",
+        value2Title: "Rett struktur",
+        value2Text: "Tydelig hero, konkrete seksjoner, FAQ, priser når det passer, kontaktvei og innhold som høres ut som et menneske.",
+        value3Tag: "Det du får",
+        value3Title: "Noe å bruke",
+        value3Text: "En side eller løsning som kan selge, booke, samle leads, vise vilkår eller hjelpe kunden å forstå neste steg.",
+
+        ctaTitle: "Vil du ha noe lignende for din bedrift?",
+        ctaText: "Send inn det du trenger. Jeg bygger en første demo slik at du får se retningen før du bestemmer deg.",
+        ctaPanelTitle: "Demo først",
+        ctaPanelText: "Du kjøper bare hvis du liker opplegget. Ikke kjøp i blinde, ikke byråteater.",
+        ctaPanelButton: "Få demo",
+
+        faqTitle: "Vanlige spørsmål.",
+        faqIntro: "Korte svar før du sender inn.",
+        faq1Q: "Er alle case kundeprosjekter?",
+        faq1A: "Nei. Noen er egne prosjekter, ett er et eksempelprosjekt for familie/nærstående, og noen viser tekniske porteføljeprosjekter.",
+        faq2Q: "Kan jeg få en lignende nettside?",
+        faq2A: "Ja. Send inn hva bedriften gjør og hva du trenger, så kan jeg lage en første demo.",
+        faq3Q: "Bygger du bare vanlige nettsider?",
+        faq3A: "Nei. Jeg bygger også landingssider, skjemaflyt, rabattkodesider, API, backend, integrasjoner og enklere webapper.",
+        faq4Q: "Hvor raskt kan jeg få en demo?",
+        faq4A: "Normalt innen 1 arbeidsdag etter at du har sendt inn nok informasjon.",
+        faq5Q: "Må jeg kjøpe etter demoen?",
+        faq5A: "Nei. Du kjøper bare hvis du liker opplegget og vil gå videre.",
+        faq6Q: "Blir jeg låst til Nordlöf Nordic?",
+        faq6A: "Nei. Etter kjøp kan du få materiale, kode og innlogginger hvis du vil fortsette selv eller med noen andre.",
+
+        formTitle: "Få demo eller spør om et oppdrag.",
+        formIntro: "Fyll inn det viktigste. Skriv gjerne hvis du så et case her som ligner det du vil bygge.",
+        contactAria: "Kontaktopplysninger",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Bedrift",
+        companyType: "Nordlöf Nordic · Enkeltpersonforetak",
+        labelName: "Navn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Bedrift",
+        labelType: "Hva trenger du?",
+        optionNew: "Ny nettside",
+        optionUpdate: "Oppdatere eksisterende nettside",
+        optionLanding: "Landingsside",
+        optionApi: "API / backend / spesialfunksjon",
+        optionNotSure: "Vet ikke ennå",
+        labelBudget: "Budsjett / pakke",
+        budgetNotSure: "Vet ikke ennå",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Utvidet 7 900 SEK",
+        budgetUpdate: "Oppdatering fra 490 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nåværende nettside, hvis du har en",
+        labelCase: "Hvilket case ligner behovet ditt?",
+        caseNotSure: "Vet ikke ennå",
+        caseOffroad: "Offroad Bumpis - booking, vilkår, lokal tjeneste",
+        caseSafe: "Safe Standard - webapp, lisens, dokumentflyt",
+        caseHansen: "Hansen Bygg & Grönt - enkel bedriftsside",
+        caseMini: "Mini API - backend/API/spesialfunksjon",
+        labelDescription: "Beskriv kort hva du vil ha hjelp med",
+        placeholderDescription: "Hva gjør bedriften? Hva skal siden eller løsningen hjelpe med? Hva vil du at kunden skal gjøre?",
+        labelInspo: "Lenker eller inspirasjon",
+        placeholderInspo: "Lim gjerne inn sider du liker, konkurrenter eller annen inspirasjon.",
+        privacyText: "Ved å sende skjemaet godtar du at opplysningene dine behandles i henhold til",
+        privacyLink: "personvernerklæringen",
+        submitButton: "Send forespørsel",
+
+        footerText1: "Nettsider, landingssider, webfiks og webutvikling for små bedrifter.",
+        footerText2: "Demo innen 1 arbeidsdag · Fast pris eller 650 SEK/time · Ingen binding",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerFix: "Webfiks",
+        footerLanding: "Landingsside",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Personvern",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobileCases: "Case",
+        mobileDemo: "Få demo"
       }
+    };
+
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
     }
 
     function safeGet(key) {
@@ -1823,32 +2677,182 @@
       return true;
     }
 
-    const savedContrast = safeGet('highContrast') === 'true';
-    const savedLargeText = safeGet('largeText') === 'true';
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (dictionary[key]) {
+          element.setAttribute("placeholder", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+
+      const languageSelect = document.getElementById("languageSelect");
+      if (languageSelect) {
+        languageSelect.value = lang;
+      }
+
+      const subjectField = document.getElementById("subjectField");
+      if (subjectField) {
+        subjectField.value = dictionary.subject;
+      }
+
+      const autoResponseField = document.getElementById("autoResponseField");
+      if (autoResponseField) {
+        autoResponseField.value = dictionary.autoresponse;
+      }
+
+      const languageField = document.getElementById("languageField");
+      if (languageField) {
+        languageField.value = dictionary.languageName;
+      }
+
+      safeSet("casePageLanguage", lang);
+    }
+
+    const languageSelect = document.getElementById("languageSelect");
+    if (languageSelect) {
+      languageSelect.addEventListener("change", (event) => {
+        applyLanguage(event.target.value);
+      });
+    }
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("casePageLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
+
+    document.querySelectorAll("form").forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector(".form-status");
+
+      form.addEventListener("submit", (event) => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        const originalButtonText = dictionary.submitButton;
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = "form-status is-visible";
+            statusBox.textContent = dictionary.validationRequired;
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = dictionary.sending;
+          submitButton.setAttribute("aria-busy", "true");
+        }
+
+        if (statusBox) {
+          statusBox.className = "form-status is-visible";
+          statusBox.textContent = dictionary.sendingStatus;
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute("aria-busy");
+          }
+        }, 15000);
+      });
+    });
+
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
 
     if (savedContrast) {
-      document.body.classList.add('high-contrast');
+      document.body.classList.add("high-contrast");
     }
 
     if (savedLargeText) {
-      document.body.classList.add('large-text');
+      document.body.classList.add("large-text");
     }
 
     setPressed(contrastButton, savedContrast);
     setPressed(largeTextButton, savedLargeText);
 
     if (contrastButton) {
-      contrastButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('high-contrast');
-        safeSet('highContrast', String(isActive));
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
         setPressed(contrastButton, isActive);
       });
     }
 
     if (largeTextButton) {
-      largeTextButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('large-text');
-        safeSet('largeText', String(isActive));
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
         setPressed(largeTextButton, isActive);
       });
     }
