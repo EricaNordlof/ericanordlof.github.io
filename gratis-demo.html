@@ -108,6 +108,24 @@
               "price":"7900",
               "priceCurrency":"SEK",
               "description":"Större hemsida med fler undersidor och mer innehåll."
+            },
+            {
+              "@type":"Offer",
+              "name":"Webbfix",
+              "price":"490",
+              "priceCurrency":"SEK",
+              "description":"Mindre uppdateringar och ändringar på befintlig hemsida från 490 kr."
+            },
+            {
+              "@type":"Offer",
+              "name":"Speciallösningar/API/backend",
+              "priceSpecification":{
+                "@type":"UnitPriceSpecification",
+                "price":"650",
+                "priceCurrency":"SEK",
+                "unitCode":"HUR"
+              },
+              "description":"API, backend, integrationer, formulärflöden och speciallösningar från 650 kr/h."
             }
           ]
         }
@@ -147,6 +165,14 @@
               "@type":"Answer",
               "text":"Nej. Du köper bara om du gillar upplägget och vill gå vidare."
             }
+          },
+          {
+            "@type":"Question",
+            "name":"Blir jag låst till Nordlöf Nordic?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan."
+            }
           }
         ]
       }
@@ -171,7 +197,9 @@
       --max:1080px;
     }
 
-    *{box-sizing:border-box;}
+    *{
+      box-sizing:border-box;
+    }
 
     html{
       scroll-behavior:smooth;
@@ -189,7 +217,9 @@
       overflow-x:hidden;
     }
 
-    body.large-text{font-size:118%;}
+    body.large-text{
+      font-size:118%;
+    }
 
     body.large-text p,
     body.large-text li,
@@ -199,6 +229,10 @@
     body.large-text textarea,
     body.large-text button{
       line-height:1.75;
+    }
+
+    body.large-text .mobile-sticky{
+      display:none;
     }
 
     body.high-contrast{
@@ -234,7 +268,9 @@
       font:inherit;
     }
 
-    button{border:0;}
+    button{
+      border:0;
+    }
 
     :target{
       scroll-margin-top:92px;
@@ -282,20 +318,33 @@
       top:86px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      align-items:center;
       gap:8px;
+      padding:8px;
+      border-radius:22px;
+      background:rgba(251,247,244,.92);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .accessibility-btn{
-      min-height:44px;
-      padding:10px 14px;
+      min-height:42px;
+      padding:9px 13px;
       border-radius:999px;
       background:#111;
       color:#fff;
       border:2px solid #fff;
       font-weight:900;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(36,30,26,.18);
+      box-shadow:0 8px 20px rgba(36,30,26,.14);
+      white-space:nowrap;
+      font-size:13px;
+    }
+
+    .accessibility-btn:hover{
+      background:#000;
     }
 
     .accessibility-btn[aria-pressed="true"]{
@@ -361,9 +410,10 @@
     .nav-right{
       display:flex;
       align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
       justify-content:flex-end;
+      gap:12px;
+      flex:0 0 auto;
+      min-width:0;
     }
 
     .nav-links{
@@ -379,33 +429,38 @@
       color:var(--brand-dark);
     }
 
-    .lang-switch{
+    .language-wrap{
       display:flex;
       align-items:center;
-      gap:6px;
-      padding:5px;
+      gap:8px;
+    }
+
+    .language-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .language-select{
+      min-height:42px;
+      width:auto;
+      max-width:190px;
+      padding:10px 38px 10px 14px;
       border-radius:999px;
       background:#fff;
+      color:var(--text);
       border:1px solid var(--line);
-      box-shadow:0 10px 24px rgba(36,30,26,.05);
-    }
-
-    .lang-btn{
-      min-height:36px;
-      padding:8px 11px;
-      border-radius:999px;
-      background:transparent;
-      color:var(--muted);
       font-weight:900;
       cursor:pointer;
-      border:1px solid transparent;
-      line-height:1;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      outline:none;
     }
 
-    .lang-btn[aria-pressed="true"]{
-      background:#f4e5dc;
-      color:var(--brand-deep);
-      border-color:rgba(143,77,69,.18);
+    .language-select:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
 
     .btn{
@@ -500,7 +555,9 @@
       line-height:1.15;
     }
 
-    p{margin:0;}
+    p{
+      margin:0;
+    }
 
     .lead{
       max-width:760px;
@@ -534,9 +591,14 @@
       line-height:1.35;
     }
 
+    .proof-pill strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:5px;
+    }
+
     .proof-pill span{
       display:block;
-      margin-top:5px;
       color:var(--muted);
       font-size:13px;
       font-weight:600;
@@ -842,6 +904,15 @@
       color:#111;
     }
 
+    .form-card select{
+      color:#fff;
+    }
+
+    .form-card select option{
+      color:#111;
+      background:#fff;
+    }
+
     textarea{
       min-height:120px;
       resize:vertical;
@@ -933,7 +1004,8 @@
     body.high-contrast .step,
     body.high-contrast .price-card,
     body.high-contrast .faq details,
-    body.high-contrast .lang-switch{
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -972,6 +1044,17 @@
       border:3px solid #fff;
     }
 
+    body.high-contrast .language-select{
+      background:#fff;
+      color:#000;
+    }
+
+    body.high-contrast a{
+      text-decoration:underline;
+      text-decoration-thickness:2px;
+      text-underline-offset:4px;
+    }
+
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
@@ -987,6 +1070,15 @@
 
       .btn:hover{
         transform:none;
+      }
+    }
+
+    @media(max-width:1100px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
       }
     }
 
@@ -1018,25 +1110,31 @@
       }
 
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
 
       .accessibility-btn{
         width:100%;
         min-height:44px;
-        padding:9px 10px;
-        font-size:14px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
         min-height:auto;
         padding:10px 0;
-        align-items:flex-start;
+        align-items:center;
+      }
+
+      .brand{
+        gap:10px;
       }
 
       .brand img{
@@ -1054,18 +1152,18 @@
       }
 
       .nav-right{
-        align-items:flex-end;
+        gap:8px;
       }
 
-      .lang-switch{
-        gap:4px;
-        padding:4px;
+      .language-label{
+        display:none;
       }
 
-      .lang-btn{
-        min-height:34px;
-        padding:7px 9px;
-        font-size:12px;
+      .language-select{
+        min-height:40px;
+        max-width:150px;
+        padding:9px 32px 9px 11px;
+        font-size:13px;
       }
 
       .hero{
@@ -1163,6 +1261,30 @@
         font-size:13px;
       }
     }
+
+    @media(max-width:390px){
+      .container{
+        width:min(var(--max),calc(100% - 18px));
+      }
+
+      .accessibility-tools{
+        width:min(var(--max),calc(100% - 18px));
+      }
+
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+
+      .language-select{
+        max-width:132px;
+        font-size:12px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+    }
   </style>
 </head>
 
@@ -1173,8 +1295,13 @@
     <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
       Hög kontrast
     </button>
+
     <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
       Större text
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">
+      Kort uppläsning
     </button>
   </div>
 
@@ -1196,11 +1323,19 @@
           <a href="#kontakt" data-i18n="navDemo">Få demo</a>
         </nav>
 
-        <div class="lang-switch" aria-label="Välj språk" data-i18n-aria-label="languageSwitch">
-          <button class="lang-btn" type="button" data-lang="sv" aria-pressed="true">SV</button>
-          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-          <button class="lang-btn" type="button" data-lang="da" aria-pressed="false">DA</button>
-          <button class="lang-btn" type="button" data-lang="no" aria-pressed="false">NO</button>
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select
+            id="languageSelect"
+            class="language-select"
+            aria-label="Välj språk"
+            data-i18n-aria-label="languageSwitch"
+          >
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
         </div>
       </div>
     </div>
@@ -1226,15 +1361,17 @@
 
           <div class="proof-row" aria-label="Fördelar" data-i18n-aria-label="benefitsAria">
             <div class="proof-pill">
-              <span data-i18n="proof1Title">Ingen gissning</span>
+              <strong data-i18n="proof1Title">Ingen gissning</strong>
               <span data-i18n="proof1Text">Du får se ett konkret förslag först.</span>
             </div>
+
             <div class="proof-pill">
-              <span data-i18n="proof2Title">Ingen bindning</span>
+              <strong data-i18n="proof2Title">Ingen bindning</strong>
               <span data-i18n="proof2Text">Du går bara vidare om det känns rätt.</span>
             </div>
+
             <div class="proof-pill">
-              <span data-i18n="proof3Title">Tydligt pris</span>
+              <strong data-i18n="proof3Title">Tydligt pris</strong>
               <span data-i18n="proof3Text">Ny hemsida från 2 900 kr.</span>
             </div>
           </div>
@@ -1247,10 +1384,12 @@
               <strong data-i18n="mini1Title">1. Du skickar info</strong>
               <span data-i18n="mini1Text">Skriv vad företaget gör, vad du behöver och om du har en hemsida idag.</span>
             </li>
+
             <li>
               <strong data-i18n="mini2Title">2. Jag bygger demo</strong>
               <span data-i18n="mini2Text">Du får ett första förslag, normalt inom 1 arbetsdag.</span>
             </li>
+
             <li>
               <strong data-i18n="mini3Title">3. Du bestämmer</strong>
               <span data-i18n="mini3Text">Vill du gå vidare färdigställer vi sidan. Annars är det stopp där.</span>
@@ -1465,10 +1604,12 @@
               <strong data-i18n="contactEmail">E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
+
             <div class="contact-mini">
               <strong data-i18n="contactPhone">Telefon</strong>
               <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
+
             <div class="contact-mini">
               <strong data-i18n="contactCompany">Företag</strong>
               <span data-i18n="companyType">Nordlöf Nordic · Enskild firma</span>
@@ -1537,12 +1678,23 @@
 
               <div class="full">
                 <label for="beskrivning" data-i18n="labelDescription">Beskriv kort vad du vill ha hjälp med</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad gör företaget? Vad ska sidan hjälpa dig med? Vad vill du att kunden ska göra?" data-i18n-placeholder="placeholderDescription" required></textarea>
+                <textarea
+                  id="beskrivning"
+                  name="Beskrivning"
+                  placeholder="Vad gör företaget? Vad ska sidan hjälpa dig med? Vad vill du att kunden ska göra?"
+                  data-i18n-placeholder="placeholderDescription"
+                  required
+                ></textarea>
               </div>
 
               <div class="full">
                 <label for="inspo" data-i18n="labelInspo">Länkar eller inspiration</label>
-                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration." data-i18n-placeholder="placeholderInspo"></textarea>
+                <textarea
+                  id="inspo"
+                  name="Inspiration"
+                  placeholder="Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration."
+                  data-i18n-placeholder="placeholderInspo"
+                ></textarea>
               </div>
             </div>
 
@@ -1551,7 +1703,9 @@
               <a href="integritet.html" data-i18n="privacyLink">integritetspolicyn</a>.
             </span>
 
-            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">Skicka och få demo</button>
+            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">
+              Skicka och få demo
+            </button>
           </form>
         </div>
       </div>
@@ -1575,6 +1729,8 @@
 
           <div class="footer-links">
             <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="case.html" data-i18n="footerCase">Case</a>
+            <a href="webbfix.html" data-i18n="footerWebfix">Webbfix</a>
             <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
             <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
             <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
@@ -1595,6 +1751,7 @@
     const translations = {
       sv: {
         htmlLang: "sv",
+        speechLang: "sv-SE",
         languageName: "Svenska",
         metaTitle: "Gratis demo på hemsida innan köp | Nordlöf Nordic",
         metaDescription: "Få en första demo på din nya hemsida innan du bestämmer dig. Du betalar bara om du vill gå vidare. Hemsidor för småföretag från 2 900 kr.",
@@ -1612,6 +1769,8 @@
         accessibilityTools: "Tillgänglighetsinställningar",
         contrast: "Hög kontrast",
         largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
         brandAria: "Gå till startsidan",
         logoAlt: "Nordlöf Nordic logga",
         brandSub: "Webbutvecklare för småföretag",
@@ -1620,6 +1779,7 @@
         navPrices: "Priser",
         navFaq: "Frågor",
         navDemo: "Få demo",
+        languageLabel: "Språk",
         languageSwitch: "Välj språk",
 
         eyebrow: "Gratis första demo · Normalt inom 1 arbetsdag · Ingen bindning",
@@ -1751,16 +1911,21 @@
         footerText2: "Demo inom 1 arbetsdag · Fast pris eller 650 kr/h",
         footerContact: "Kontakt:",
         footerHome: "Startsida",
+        footerCase: "Case",
+        footerWebfix: "Webbfix",
         footerTerms: "Villkor",
         footerPrivacy: "Integritet",
         footerAffiliate: "Affiliate",
         mobileStickyAria: "Snabbval på mobil",
         mobilePrices: "Priser",
-        mobileDemo: "Få demo"
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic bygger hemsidor, landningssidor, webbfix och speciallösningar för småföretag. På den här sidan kan du få en gratis första demo innan köp. Du skickar in vad du behöver, får ett första förslag normalt inom en arbetsdag och betalar bara om du vill gå vidare. En ny hemsida kostar från två tusen nio hundra kronor. Webbfix startar från fyra hundra nittio kronor och speciallösningar kostar från sex hundra femtio kronor per timme. Du blir inte låst, och efter köp kan du få material, kod och inloggningar."
       },
 
       en: {
         htmlLang: "en",
+        speechLang: "en-GB",
         languageName: "English",
         metaTitle: "Free website demo before purchase | Nordlöf Nordic",
         metaDescription: "Get a first demo of your new website before you decide. You only pay if you want to move forward. Websites for small businesses from 2,900 SEK.",
@@ -1778,6 +1943,8 @@
         accessibilityTools: "Accessibility settings",
         contrast: "High contrast",
         largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
         brandAria: "Go to homepage",
         logoAlt: "Nordlöf Nordic logo",
         brandSub: "Web developer for small businesses",
@@ -1786,6 +1953,7 @@
         navPrices: "Prices",
         navFaq: "Questions",
         navDemo: "Get demo",
+        languageLabel: "Language",
         languageSwitch: "Choose language",
 
         eyebrow: "Free first demo · Usually within 1 business day · No lock-in",
@@ -1917,16 +2085,21 @@
         footerText2: "Demo within 1 business day · Fixed price or 650 SEK/hour",
         footerContact: "Contact:",
         footerHome: "Homepage",
+        footerCase: "Cases",
+        footerWebfix: "Website fixes",
         footerTerms: "Terms",
         footerPrivacy: "Privacy",
         footerAffiliate: "Affiliate",
         mobileStickyAria: "Quick options on mobile",
         mobilePrices: "Prices",
-        mobileDemo: "Get demo"
+        mobileDemo: "Get demo",
+
+        speechSummary: "Nordlöf Nordic builds websites, landing pages, website fixes and custom web solutions for small businesses. On this page, you can get a free first demo before purchase. You send what you need, get a first proposal usually within one business day and only pay if you want to move forward. A new website starts from two thousand nine hundred Swedish kronor. Website fixes start from four hundred and ninety Swedish kronor, and custom solutions start from six hundred and fifty Swedish kronor per hour. You are not locked in, and after purchase you can get material, code and logins."
       },
 
       da: {
         htmlLang: "da",
+        speechLang: "da-DK",
         languageName: "Dansk",
         metaTitle: "Gratis demo på hjemmeside før køb | Nordlöf Nordic",
         metaDescription: "Få en første demo på din nye hjemmeside, før du beslutter dig. Du betaler kun, hvis du vil gå videre. Hjemmesider til små virksomheder fra 2 900 SEK.",
@@ -1944,6 +2117,8 @@
         accessibilityTools: "Tilgængelighedsindstillinger",
         contrast: "Høj kontrast",
         largeText: "Større tekst",
+        listen: "Kort oplæsning",
+        stopListen: "Stop oplæsning",
         brandAria: "Gå til forsiden",
         logoAlt: "Nordlöf Nordic logo",
         brandSub: "Webudvikler til små virksomheder",
@@ -1952,6 +2127,7 @@
         navPrices: "Priser",
         navFaq: "Spørgsmål",
         navDemo: "Få demo",
+        languageLabel: "Sprog",
         languageSwitch: "Vælg sprog",
 
         eyebrow: "Gratis første demo · Normalt inden for 1 arbejdsdag · Ingen binding",
@@ -2083,16 +2259,21 @@
         footerText2: "Demo inden for 1 arbejdsdag · Fast pris eller 650 SEK/time",
         footerContact: "Kontakt:",
         footerHome: "Forside",
+        footerCase: "Cases",
+        footerWebfix: "Webfix",
         footerTerms: "Vilkår",
         footerPrivacy: "Privatliv",
         footerAffiliate: "Affiliate",
         mobileStickyAria: "Hurtigvalg på mobil",
         mobilePrices: "Priser",
-        mobileDemo: "Få demo"
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic hjælper små virksomheder med hjemmesider, landingssider, webfix og specialløsninger. På denne side kan du få en gratis første demo før køb. Du sender det, du har brug for, får et første forslag normalt inden for en arbejdsdag og betaler kun, hvis du vil gå videre. En ny hjemmeside koster fra to tusind ni hundrede svenske kroner. Webfix starter fra fire hundrede halvfems svenske kroner, og specialløsninger starter fra seks hundrede halvtreds svenske kroner per time. Du bliver ikke låst, og efter køb kan du få materiale, kode og login."
       },
 
       no: {
         htmlLang: "no",
+        speechLang: "no-NO",
         languageName: "Norsk",
         metaTitle: "Gratis demo på nettside før kjøp | Nordlöf Nordic",
         metaDescription: "Få en første demo på din nye nettside før du bestemmer deg. Du betaler bare hvis du vil gå videre. Nettsider for små bedrifter fra 2 900 SEK.",
@@ -2110,6 +2291,8 @@
         accessibilityTools: "Tilgjengelighetsinnstillinger",
         contrast: "Høy kontrast",
         largeText: "Større tekst",
+        listen: "Kort opplesning",
+        stopListen: "Stopp opplesning",
         brandAria: "Gå til forsiden",
         logoAlt: "Nordlöf Nordic logo",
         brandSub: "Webutvikler for små bedrifter",
@@ -2118,6 +2301,7 @@
         navPrices: "Priser",
         navFaq: "Spørsmål",
         navDemo: "Få demo",
+        languageLabel: "Språk",
         languageSwitch: "Velg språk",
 
         eyebrow: "Gratis første demo · Normalt innen 1 arbeidsdag · Ingen binding",
@@ -2249,17 +2433,27 @@
         footerText2: "Demo innen 1 arbeidsdag · Fast pris eller 650 SEK/time",
         footerContact: "Kontakt:",
         footerHome: "Forside",
+        footerCase: "Case",
+        footerWebfix: "Webfiks",
         footerTerms: "Vilkår",
         footerPrivacy: "Personvern",
         footerAffiliate: "Affiliate",
         mobileStickyAria: "Hurtigvalg på mobil",
         mobilePrices: "Priser",
-        mobileDemo: "Få demo"
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic hjelper små bedrifter med nettsider, landingssider, webfiks og spesialløsninger. På denne siden kan du få en gratis første demo før kjøp. Du sender inn det du trenger, får et første forslag normalt innen én arbeidsdag og betaler bare hvis du vil gå videre. En ny nettside koster fra to tusen ni hundre svenske kroner. Webfiks starter fra fire hundre og nitti svenske kroner, og spesialløsninger starter fra seks hundre og femti svenske kroner per time. Du blir ikke låst, og etter kjøp kan du få materiale, kode og innlogginger."
       }
     };
 
     const defaultLang = "sv";
     let currentLanguage = defaultLang;
+    let isSpeaking = false;
+
+    const languageSelect = document.getElementById("languageSelect");
+    const listenButton = document.getElementById("listenSummary");
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
 
     function getMeta(name) {
       return document.querySelector(`meta[name="${name}"]`);
@@ -2287,9 +2481,31 @@
       return true;
     }
 
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    function stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      isSpeaking = false;
+
+      if (listenButton) {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        listenButton.setAttribute("aria-pressed", "false");
+        listenButton.textContent = dictionary.listen;
+      }
+    }
+
     function applyLanguage(lang) {
       const dictionary = translations[lang] || translations[defaultLang];
       currentLanguage = lang;
+
+      stopSpeaking();
 
       document.documentElement.lang = dictionary.htmlLang;
       document.title = dictionary.metaTitle;
@@ -2347,10 +2563,10 @@
         }
       });
 
-      document.querySelectorAll(".lang-btn").forEach((button) => {
-        const isActive = button.getAttribute("data-lang") === lang;
-        button.setAttribute("aria-pressed", String(isActive));
-      });
+      if (languageSelect) {
+        languageSelect.value = lang;
+        languageSelect.setAttribute("aria-label", dictionary.languageSwitch);
+      }
 
       const subjectField = document.getElementById("subjectField");
       if (subjectField) {
@@ -2370,22 +2586,11 @@
       safeSet("gratisDemoLanguage", lang);
     }
 
-    document.querySelectorAll(".lang-btn").forEach((button) => {
-      button.addEventListener("click", () => {
-        const lang = button.getAttribute("data-lang");
-        applyLanguage(lang);
+    if (languageSelect) {
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
       });
-    });
-
-    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
-    const savedLanguage = safeGet("gratisDemoLanguage");
-    const initialLanguage = translations[savedLanguage]
-      ? savedLanguage
-      : translations[browserLang]
-        ? browserLang
-        : defaultLang;
-
-    applyLanguage(initialLanguage);
+    }
 
     document.querySelectorAll("form").forEach((form) => {
       const submitButton = form.querySelector('button[type="submit"]');
@@ -2428,15 +2633,6 @@
       });
     });
 
-    const contrastButton = document.getElementById("toggleContrast");
-    const largeTextButton = document.getElementById("toggleLargeText");
-
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute("aria-pressed", String(isPressed));
-      }
-    }
-
     const savedContrast = safeGet("highContrast") === "true";
     const savedLargeText = safeGet("largeText") === "true";
 
@@ -2466,6 +2662,54 @@
         setPressed(largeTextButton, isActive);
       });
     }
+
+    if (listenButton && "speechSynthesis" in window) {
+      listenButton.addEventListener("click", () => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+
+        if (isSpeaking) {
+          stopSpeaking();
+          return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(dictionary.speechSummary);
+        utterance.lang = dictionary.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        isSpeaking = true;
+        listenButton.setAttribute("aria-pressed", "true");
+        listenButton.textContent = dictionary.stopListen;
+
+        utterance.onend = () => {
+          stopSpeaking();
+        };
+
+        utterance.onerror = () => {
+          stopSpeaking();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+
+    window.addEventListener("pagehide", () => {
+      stopSpeaking();
+    });
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("gratisDemoLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
   </script>
 </body>
 </html>
