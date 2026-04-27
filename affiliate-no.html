@@ -64,6 +64,30 @@
         "publisher":{"@id":"https://webutvecklare.se/#business"}
       },
       {
+        "@type":"Person",
+        "@id":"https://webutvecklare.se/#person",
+        "name":"Erica Nordlöf",
+        "url":"https://github.com/EricaNordlof",
+        "sameAs":[
+          "https://github.com/EricaNordlof",
+          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+        ],
+        "knowsAbout":[
+          "Webutvikling",
+          "Frontendutvikling",
+          "Backendutvikling",
+          "API",
+          "Java",
+          "Spring Boot",
+          "PostgreSQL",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "SEO for små bedrifter",
+          "Tilgjengelighet på webben"
+        ]
+      },
+      {
         "@type":"ProfessionalService",
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
@@ -80,11 +104,7 @@
           {"@type":"Country","name":"Norge"}
         ],
         "availableLanguage":["sv","en","da","no"],
-        "founder":{
-          "@type":"Person",
-          "name":"Erica Nordlöf",
-          "url":"https://github.com/EricaNordlof"
-        },
+        "founder":{"@id":"https://webutvecklare.se/#person"},
         "brand":{"@type":"Brand","name":"Nordlöf Nordic"},
         "sameAs":[
           "https://github.com/EricaNordlof",
@@ -136,10 +156,24 @@
             },
             {
               "@type":"Offer",
-              "name":"Liten nettsideoppdatering",
+              "name":"Liten webfiks",
               "price":"490",
               "priceCurrency":"SEK",
               "description":"En mindre endring på en eksisterende nettside."
+            },
+            {
+              "@type":"Offer",
+              "name":"Normal webfiks",
+              "price":"990",
+              "priceCurrency":"SEK",
+              "description":"Flere endringer eller en tydeligere oppdatering av en eksisterende nettside."
+            },
+            {
+              "@type":"Offer",
+              "name":"Større webfiks",
+              "price":"1490",
+              "priceCurrency":"SEK",
+              "description":"En større forbedring av en eksisterende nettside."
             },
             {
               "@type":"Offer",
@@ -153,7 +187,29 @@
               "description":"API, backend, integrasjoner, skjemaflyter og spesialfunksjoner."
             }
           ]
-        }
+        },
+        "makesOffer":[
+          {
+            "@type":"Service",
+            "name":"Nettside til små bedrifter",
+            "description":"Mobiltilpasset nettside til små bedrifter med tydelig struktur, kontaktvei og SEO-grunnlag."
+          },
+          {
+            "@type":"Service",
+            "name":"Webfiks",
+            "description":"Endringer og forbedringer på eksisterende nettsider, som tekst, bilder, knapper, lenker, skjemaer og mobiltilpasning."
+          },
+          {
+            "@type":"Service",
+            "name":"Landingsside",
+            "description":"Fokusert kampanje- eller salgsside til tilbud, rabattkoder, skjemaer eller booking."
+          },
+          {
+            "@type":"Service",
+            "name":"API, backend og spesialløsninger",
+            "description":"Tekniske løsninger som skjemaflyter, integrasjoner, databasekoblinger, innlogging og spesialfunksjoner."
+          }
+        ]
       },
       {
         "@type":"FAQPage",
@@ -216,6 +272,18 @@
             }
           }
         ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://webutvecklare.se/affiliate-no.html#breadcrumb",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Tipsprovisjon",
+            "item":"https://webutvecklare.se/affiliate-no.html"
+          }
+        ]
       }
     ]
   }
@@ -242,9 +310,7 @@
       --max:1140px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box;}
 
     html{
       scroll-behavior:smooth;
@@ -262,9 +328,7 @@
       overflow-x:hidden;
     }
 
-    body.large-text{
-      font-size:120%;
-    }
+    body.large-text{font-size:120%;}
 
     body.large-text .lead{
       font-size:clamp(20px,2.4vw,24px);
@@ -285,6 +349,10 @@
     body.large-text .btn{
       min-height:56px;
       padding:16px 24px;
+    }
+
+    body.large-text .mobile-sticky{
+      display:none;
     }
 
     body.high-contrast{
@@ -324,9 +392,7 @@
       font:inherit;
     }
 
-    button{
-      border:0;
-    }
+    button{border:0;}
 
     :target{
       scroll-margin-top:96px;
@@ -381,8 +447,17 @@
       top:88px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      flex-direction:row;
+      align-items:center;
       gap:8px;
+      max-width:calc(100vw - 24px);
+      padding:8px;
+      border-radius:999px;
+      background:rgba(251,247,244,.94);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .accessibility-btn{
@@ -395,6 +470,8 @@
       font-weight:900;
       cursor:pointer;
       box-shadow:0 12px 30px rgba(36,30,26,.18);
+      white-space:nowrap;
+      font-size:13px;
     }
 
     .accessibility-btn:hover{
@@ -490,14 +567,38 @@
       flex:0 0 auto;
     }
 
-    .language-desktop{
+    .language-wrap{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:8px;
     }
 
-    .btn,
-    .lang-link{
+    .language-label{
+      font-size:13px;
+      font-weight:900;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .language-select{
+      width:auto;
+      min-height:48px;
+      padding:12px 42px 12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 12px 28px rgba(36,30,26,.05);
+      max-width:190px;
+    }
+
+    .mobile-language{
+      display:none;
+    }
+
+    .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -513,8 +614,7 @@
       white-space:nowrap;
     }
 
-    .btn:hover,
-    .lang-link:hover{
+    .btn:hover{
       transform:translateY(-1px);
     }
 
@@ -524,8 +624,7 @@
       box-shadow:0 16px 34px rgba(185,111,97,.25);
     }
 
-    .btn-secondary,
-    .lang-link{
+    .btn-secondary{
       background:#fff;
       border-color:var(--line);
       color:var(--text);
@@ -536,12 +635,6 @@
       background:#fff;
       color:var(--brand-deep);
       box-shadow:0 16px 34px rgba(36,30,26,.08);
-    }
-
-    .lang-link[aria-current="page"]{
-      background:#f4e5dc;
-      color:var(--brand-deep);
-      border-color:rgba(143,77,69,.22);
     }
 
     .hero{
@@ -583,9 +676,7 @@
       text-wrap:balance;
     }
 
-    h2{
-      margin:0;
-    }
+    h2{margin:0;}
 
     .lead{
       margin:0;
@@ -604,13 +695,6 @@
       flex-wrap:wrap;
       gap:12px;
       margin-top:28px;
-    }
-
-    .speech-note{
-      margin:12px 0 0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
     }
 
     .proof-row{
@@ -956,12 +1040,6 @@
       z-index:1;
     }
 
-    .compare{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-
     .commission-box{
       border-radius:32px;
       padding:clamp(24px,4vw,36px);
@@ -1181,8 +1259,18 @@
     }
 
     input,
-    select,
     textarea{
+      width:100%;
+      min-height:50px;
+      padding:14px 15px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      outline:none;
+    }
+
+    form select{
       width:100%;
       min-height:50px;
       padding:14px 15px;
@@ -1198,7 +1286,7 @@
       color:rgba(255,255,255,.75);
     }
 
-    select option{
+    form select option{
       background:#fff;
       color:#111;
     }
@@ -1209,7 +1297,7 @@
     }
 
     input:focus,
-    select:focus,
+    form select:focus,
     textarea:focus{
       border-color:rgba(255,255,255,.58);
       box-shadow:0 0 0 3px rgba(255,255,255,.14);
@@ -1389,7 +1477,9 @@
     body.high-contrast .truth-box,
     body.high-contrast .faq details,
     body.high-contrast .quote-box,
-    body.high-contrast .script-box{
+    body.high-contrast .script-box,
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1417,23 +1507,21 @@
 
     body.high-contrast .btn-primary,
     body.high-contrast .btn-secondary,
-    body.high-contrast .btn-light,
-    body.high-contrast .lang-link{
+    body.high-contrast .btn-light{
       background:#000;
       color:#fff;
       border:3px solid #000;
       box-shadow:none;
     }
 
-    body.high-contrast .form-card .btn-light,
-    body.high-contrast .commission-panel .btn-light{
+    body.high-contrast .form-card .btn-light{
       background:#fff;
       color:#000;
       border:3px solid #fff;
     }
 
     body.high-contrast input,
-    body.high-contrast select,
+    body.high-contrast form select,
     body.high-contrast textarea{
       background:#fff;
       color:#000;
@@ -1490,9 +1578,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){
-      html{
-        scroll-behavior:auto;
-      }
+      html{scroll-behavior:auto;}
 
       *,
       *::before,
@@ -1502,10 +1588,7 @@
         transition-duration:.01ms !important;
       }
 
-      .btn:hover,
-      .lang-link:hover{
-        transform:none;
-      }
+      .btn:hover{transform:none;}
     }
 
     @media (prefers-contrast: more){
@@ -1522,18 +1605,13 @@
         border-color:rgba(0,0,0,.35);
       }
 
-      a{
-        text-decoration-thickness:2px;
-      }
+      a{text-decoration-thickness:2px;}
     }
 
     @media (forced-colors: active){
-      *{
-        forced-color-adjust:auto;
-      }
+      *{forced-color-adjust:auto;}
 
       .btn,
-      .lang-link,
       .card,
       .quick-item,
       .commission-box,
@@ -1552,14 +1630,11 @@
     }
 
     @media(max-width:1080px){
-      .nav-links{
-        display:none;
-      }
+      .nav-links{display:none;}
 
       .hero-grid,
       .commission-box,
       .grid-2,
-      .compare,
       .footer-box{
         grid-template-columns:1fr;
       }
@@ -1573,6 +1648,14 @@
 
       .hero-card{
         order:-1;
+      }
+
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+        border-radius:22px;
       }
     }
 
@@ -1590,20 +1673,21 @@
       }
 
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 20px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
 
       .accessibility-btn{
         width:100%;
-        min-height:48px;
-      }
-
-      body.large-text .mobile-sticky{
-        display:none;
+        min-height:46px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
@@ -1611,7 +1695,7 @@
       }
 
       .brand{
-        max-width:calc(100% - 92px);
+        max-width:calc(100% - 112px);
       }
 
       .brand img{
@@ -1624,7 +1708,7 @@
         display:none;
       }
 
-      .language-desktop{
+      .language-wrap{
         display:none;
       }
 
@@ -1636,6 +1720,29 @@
         min-height:44px;
         padding:11px 14px;
         font-size:14px;
+      }
+
+      .mobile-language{
+        display:block;
+        position:sticky;
+        top:64px;
+        z-index:45;
+        background:rgba(251,247,244,.96);
+        border-bottom:1px solid rgba(36,30,26,.08);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+      }
+
+      .mobile-language-inner{
+        width:min(var(--max),calc(100% - 20px));
+        margin:auto;
+        padding:9px 0;
+      }
+
+      .mobile-language .language-select{
+        width:100%;
+        max-width:none;
+        min-height:44px;
       }
 
       .hero{
@@ -1764,6 +1871,11 @@
       .brand strong{
         font-size:14px;
       }
+
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
     }
   </style>
 </head>
@@ -1778,6 +1890,10 @@
 
     <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
       Større tekst
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false">
+      Kort oppsummering
     </button>
   </div>
 
@@ -1805,16 +1921,31 @@
       </nav>
 
       <div class="nav-actions" aria-label="Språk og søknad">
-        <div class="language-desktop" aria-label="Språkvalg">
-          <a class="lang-link" href="affiliate.html" hreflang="sv-SE">SV</a>
-          <a class="lang-link" href="affiliate-en.html" hreflang="en">EN</a>
-          <a class="lang-link" href="affiliate-da.html" hreflang="da">DA</a>
-          <a class="lang-link" href="affiliate-no.html" hreflang="no" aria-current="page">NO</a>
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect">Språk</label>
+          <select id="languageSelect" class="language-select" aria-label="Velg språk">
+            <option value="https://webutvecklare.se/affiliate.html">🇸🇪 Svenska</option>
+            <option value="https://webutvecklare.se/affiliate-en.html">🇬🇧 English</option>
+            <option value="https://webutvecklare.se/affiliate-da.html">🇩🇰 Dansk</option>
+            <option value="https://webutvecklare.se/affiliate-no.html">🇳🇴 Norsk</option>
+          </select>
         </div>
+
         <a class="btn btn-primary" href="#apply">Få tipskode</a>
       </div>
     </div>
   </header>
+
+  <nav class="mobile-language" aria-label="Språkvalg">
+    <div class="mobile-language-inner">
+      <select id="mobileLanguageSelect" class="language-select" aria-label="Velg språk">
+        <option value="https://webutvecklare.se/affiliate.html">🇸🇪 Svenska</option>
+        <option value="https://webutvecklare.se/affiliate-en.html">🇬🇧 English</option>
+        <option value="https://webutvecklare.se/affiliate-da.html">🇩🇰 Dansk</option>
+        <option value="https://webutvecklare.se/affiliate-no.html">🇳🇴 Norsk</option>
+      </select>
+    </div>
+  </nav>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
@@ -1835,14 +1966,7 @@
             <a class="btn btn-primary" href="#apply">Søk om personlig tipskode</a>
             <a class="btn btn-secondary" href="#trust">Se hvordan det fungerer</a>
             <a class="btn btn-secondary" href="no.html" hreflang="no">Norsk forside</a>
-            <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
-              Lytt til kort oppsummering
-            </button>
           </div>
-
-          <p class="speech-note" id="speechNote">
-            Knappen leser en kort oppsummering høyt. Det er en ekstra støttefunksjon, og siden fungerer også med vanlige skjermlesere.
-          </p>
 
           <div class="proof-row" aria-label="Kort oppsummering">
             <div class="proof-pill">
@@ -2691,6 +2815,9 @@
           <a href="en.html">English homepage</a>
           <a href="da.html">Dansk forside</a>
           <a href="no.html">Norsk forside</a>
+          <a href="/gratis-demo.html">Gratis demo</a>
+          <a href="/case.html">Cases og eksempler</a>
+          <a href="/webbfix.html">Webfiks</a>
           <a href="/ny-hemsida-foretag.html">Ny nettside til bedrifter</a>
           <a href="/uppdatera-hemsida.html">Oppdater nettside</a>
           <a href="/skapa-hemsida.html">Lag nettside</a>
@@ -2698,7 +2825,9 @@
           <a href="/sokmotoroptimering.html">SEO</a>
           <a href="/hemsida-smaforetag.html">Nettside til små bedrifter</a>
           <a href="/hemsida-hantverkare.html">Nettside til håndverkere</a>
+          <a href="/hemsida-byggforetag.html">Nettside til byggefirma</a>
           <a href="/hemsida-konsult.html">Nettside til konsulenter</a>
+          <a href="/landningssida-kampanj.html">Landingsside til kampanje</a>
           <a href="/webbutveckling-malmo.html">Webutvikling Malmö</a>
           <a href="/anlita-webbutvecklare.html">Ansett webutvikler</a>
         </div>
@@ -2707,9 +2836,8 @@
   </footer>
 
   <nav class="mobile-sticky" aria-label="Rask mobilnavigasjon">
-    <a class="btn btn-secondary" href="affiliate.html" hreflang="sv-SE">SV</a>
-    <a class="btn btn-secondary" href="affiliate-en.html" hreflang="en">EN</a>
-    <a class="btn btn-secondary" href="affiliate-da.html" hreflang="da">DA</a>
+    <a class="btn btn-secondary" href="#how">Slik virker det</a>
+    <a class="btn btn-secondary" href="#commission">Provisjon</a>
     <a class="btn btn-primary" href="#apply">Kode</a>
   </nav>
 
@@ -2756,6 +2884,8 @@
     const statusBox = document.getElementById('accessibilityStatus');
     const contrastButton = document.getElementById('toggleContrast');
     const largeTextButton = document.getElementById('toggleLargeText');
+    const listenButton = document.getElementById('listenSummary');
+    const languageSelects = document.querySelectorAll('.language-select');
 
     function announce(message) {
       if (statusBox) {
@@ -2818,14 +2948,62 @@
       });
     }
 
-    const listenButton = document.getElementById('listenSummary');
+    function getCurrentLanguageUrl() {
+      const path = window.location.pathname.replace(/^\/+/, '');
+
+      if (path === 'affiliate.html') {
+        return 'https://webutvecklare.se/affiliate.html';
+      }
+
+      if (path === 'affiliate-en.html') {
+        return 'https://webutvecklare.se/affiliate-en.html';
+      }
+
+      if (path === 'affiliate-da.html') {
+        return 'https://webutvecklare.se/affiliate-da.html';
+      }
+
+      return 'https://webutvecklare.se/affiliate-no.html';
+    }
+
+    function syncLanguageSelects(value) {
+      languageSelects.forEach((select) => {
+        select.value = value;
+      });
+    }
+
+    const currentLanguageUrl = getCurrentLanguageUrl();
+    syncLanguageSelects(currentLanguageUrl);
+
+    languageSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        const targetUrl = select.value;
+
+        if (!targetUrl) {
+          return;
+        }
+
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+
+        safeStorageSet('preferredAffiliateLanguageUrl', targetUrl);
+        syncLanguageSelects(targetUrl);
+
+        if (targetUrl !== currentLanguageUrl) {
+          window.location.href = targetUrl;
+        }
+      });
+    });
+
     let isSpeaking = false;
 
     function resetListenButton() {
       if (listenButton) {
         listenButton.setAttribute('aria-pressed', 'false');
-        listenButton.textContent = 'Lytt til kort oppsummering';
+        listenButton.textContent = 'Kort oppsummering';
       }
+
       isSpeaking = false;
     }
 
@@ -2846,8 +3024,9 @@
           Kunden får ti prosent rabatt via din personlige tipskode eller tipslenke.
           Hvis henvisningen fører til et godkjent og betalt oppdrag, får du tjue prosent provisjon.
           Du håndterer ikke kundekontakt, tilbud, prosjektarbeid, levering, support eller oppfølging.
-          Direkte kundekontakt er fortsatt hovedsporet. Tipsopplegget er et sidespor for relevante introduksjoner.
-          Det koster ingenting å søke, men spam og falske løfter aksepteres ikke.
+          Direkte kundekontakt er fortsatt hovedsporet.
+          Tipsopplegget er et sidespor for relevante introduksjoner.
+          Det koster ingenting å søke, men spam, falske leads og falske løfter aksepteres ikke.
         `;
 
         const utterance = new SpeechSynthesisUtterance(summaryText);
@@ -2857,7 +3036,7 @@
 
         isSpeaking = true;
         listenButton.setAttribute('aria-pressed', 'true');
-        listenButton.textContent = 'Stopp oppsummering';
+        listenButton.textContent = 'Stopp opplesning';
         announce('Opplesningen startet.');
 
         utterance.onend = () => {
