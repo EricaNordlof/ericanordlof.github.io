@@ -1,20 +1,20 @@
+Ja. Här är uthyrningssidan i samma design, med språkval, tillgänglighetsknappar, kort uppläsning, SEO/GEO-copy, formulär och uthyrningsinnehåll.
+
 <!doctype html>
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Hemsida för uthyrningsföretag | Bokning, villkor och lokal SEO</title>
+  <title>Hemsida för uthyrningsföretag | Demo först | Nordlöf Nordic</title>
   <meta
     name="description"
-    content="Hemsida för uthyrningsföretag från 2 900 kr. Tydlig bokning, priser, villkor, FAQ, formulär och lokal SEO. Demo inom 1 arbetsdag."
+    content="Hemsida för uthyrningsföretag från 2 900 kr. Få demo först. Tydlig bokning, priser, villkor, FAQ, formulär och lokal SEO utan byråkrångel."
   />
   <meta name="robots" content="index,follow" />
   <meta name="author" content="Erica Nordlöf" />
   <link rel="canonical" href="https://webutvecklare.se/hemsida-uthyrning.html" />
-  <link rel="alternate" hreflang="sv-SE" href="https://webutvecklare.se/hemsida-uthyrning.html" />
-  <link rel="alternate" hreflang="x-default" href="https://webutvecklare.se/hemsida-uthyrning.html" />
   <meta property="og:title" content="Hemsida för uthyrningsföretag | Nordlöf Nordic" />
-  <meta property="og:description" content="Hemsida för dig som hyr ut saker, lokaler, fordon, utrustning, boende eller aktiviteter. Bokning, priser, villkor, FAQ och lokal SEO." />
+  <meta property="og:description" content="Hemsida för dig som hyr ut saker, lokaler, fordon, utrustning, boende eller aktiviteter. Demo först och köp bara om du vill gå vidare." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/hemsida-uthyrning.html" />
   <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
@@ -42,10 +42,83 @@
         "name":"Hemsida för uthyrningsföretag",
         "description":"Hemsida för uthyrningsföretag med bokningsflöde, priser, villkor, FAQ, formulär och lokal SEO.",
         "inLanguage":"sv-SE",
+        "availableLanguage":["sv-SE","en","da-DK","no-NO"],
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"},
         "breadcrumb":{"@id":"https://webutvecklare.se/hemsida-uthyrning.html#breadcrumb"},
         "mainEntity":{"@id":"https://webutvecklare.se/hemsida-uthyrning.html#service"}
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://webutvecklare.se/#website",
+        "name":"Webutvecklare.se",
+        "url":"https://webutvecklare.se/",
+        "inLanguage":"sv-SE",
+        "publisher":{"@id":"https://webutvecklare.se/#business"}
+      },
+      {
+        "@type":"ProfessionalService",
+        "@id":"https://webutvecklare.se/#business",
+        "name":"Nordlöf Nordic",
+        "url":"https://webutvecklare.se/",
+        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "email":"erica@webutvecklare.se",
+        "telephone":"+46793442520",
+        "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
+        "description":"Webbutvecklare för småföretag och uthyrningsföretag. Hemsidor, landningssidor, webbfix, API, backend, formulärflöden, integrationer och speciallösningar. Demo inom 1 arbetsdag.",
+        "areaServed":[
+          {"@type":"Country","name":"Sverige"},
+          {"@type":"Country","name":"Danmark"},
+          {"@type":"Country","name":"Norge"},
+          {"@type":"Place","name":"Internationellt"}
+        ],
+        "founder":{
+          "@type":"Person",
+          "name":"Erica Nordlöf",
+          "url":"https://github.com/EricaNordlof"
+        },
+        "brand":{"@type":"Brand","name":"Nordlöf Nordic"},
+        "sameAs":[
+          "https://github.com/EricaNordlof",
+          "https://offroadbumpis.se",
+          "https://safestandard.se",
+          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+        ],
+        "hasOfferCatalog":{
+          "@type":"OfferCatalog",
+          "name":"Hemsidor för uthyrningsföretag",
+          "itemListElement":[
+            {
+              "@type":"Offer",
+              "name":"Ny hemsida Start",
+              "price":"2900",
+              "priceCurrency":"SEK",
+              "description":"En enkel och tydlig one page-hemsida för uthyrningsföretag."
+            },
+            {
+              "@type":"Offer",
+              "name":"Ny hemsida Proffs",
+              "price":"4900",
+              "priceCurrency":"SEK",
+              "description":"Mer genomarbetad hemsida med starkare struktur, priser, villkor, FAQ och bokningsväg."
+            },
+            {
+              "@type":"Offer",
+              "name":"Ny hemsida Utökad",
+              "price":"7900",
+              "priceCurrency":"SEK",
+              "description":"Större hemsida med fler undersidor, mer innehåll eller flera uthyrningskategorier."
+            }
+          ]
+        }
+      },
+      {
+        "@type":"Service",
+        "@id":"https://webutvecklare.se/hemsida-uthyrning.html#service",
+        "name":"Hemsida för uthyrningsföretag",
+        "serviceType":"Webbutveckling för uthyrningsföretag",
+        "provider":{"@id":"https://webutvecklare.se/#business"},
+        "description":"En hemsida för uthyrningsföretag hjälper kunder att förstå vad som hyrs ut, vad det kostar, vad som ingår, vilka villkor som gäller och hur bokning eller förfrågan görs."
       },
       {
         "@type":"BreadcrumbList",
@@ -66,178 +139,28 @@
         ]
       },
       {
-        "@type":"WebSite",
-        "@id":"https://webutvecklare.se/#website",
-        "name":"Webutvecklare.se",
-        "url":"https://webutvecklare.se/",
-        "inLanguage":"sv-SE",
-        "publisher":{"@id":"https://webutvecklare.se/#business"}
-      },
-      {
-        "@type":"Person",
-        "@id":"https://webutvecklare.se/#erica",
-        "name":"Erica Nordlöf",
-        "url":"https://webutvecklare.se/",
-        "sameAs":[
-          "https://github.com/EricaNordlof",
-          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
-        ],
-        "jobTitle":"Webbutvecklare",
-        "worksFor":{"@id":"https://webutvecklare.se/#business"}
-      },
-      {
-        "@type":["ProfessionalService","LocalBusiness"],
-        "@id":"https://webutvecklare.se/#business",
-        "name":"Nordlöf Nordic",
-        "url":"https://webutvecklare.se/",
-        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
-        "email":"erica@webutvecklare.se",
-        "telephone":"+46793442520",
-        "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
-        "founder":{"@id":"https://webutvecklare.se/#erica"},
-        "description":"Nordlöf Nordic drivs av Erica Nordlöf och erbjuder webbutveckling för småföretag. Tjänsterna omfattar hemsidor, landningssidor, webbfix, SEO-grund, formulärflöden, API, backend, integrationer och speciallösningar.",
-        "areaServed":[
-          {"@type":"Country","name":"Sverige"},
-          {"@type":"Country","name":"Danmark"},
-          {"@type":"Country","name":"Norge"},
-          {"@type":"Place","name":"Internationellt på engelska"}
-        ],
-        "brand":{"@type":"Brand","name":"Nordlöf Nordic"},
-        "sameAs":[
-          "https://github.com/EricaNordlof",
-          "https://offroadbumpis.se",
-          "https://safestandard.se",
-          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
-        ],
-        "knowsAbout":[
-          "Webbutveckling",
-          "Hemsidor för uthyrningsföretag",
-          "Hemsidor för småföretag",
-          "Bokningsflöden",
-          "Landningssidor",
-          "Webbfix",
-          "Frontendutveckling",
-          "Backendutveckling",
-          "API",
-          "Formulärflöden",
-          "Integrationer",
-          "SEO för småföretag",
-          "Lokal SEO"
-        ],
-        "hasOfferCatalog":{
-          "@type":"OfferCatalog",
-          "name":"Webbutveckling och hemsidor",
-          "itemListElement":[
-            {
-              "@type":"Offer",
-              "name":"Ny hemsida Start",
-              "price":"2900",
-              "priceCurrency":"SEK",
-              "description":"En enkel och tydlig one page-hemsida för uthyrningsföretag eller småföretag."
-            },
-            {
-              "@type":"Offer",
-              "name":"Ny hemsida Proffs",
-              "price":"4900",
-              "priceCurrency":"SEK",
-              "description":"Mer genomarbetad hemsida med tydligare struktur, fler sektioner, priser, FAQ och bokningsväg."
-            },
-            {
-              "@type":"Offer",
-              "name":"Ny hemsida Utökad",
-              "price":"7900",
-              "priceCurrency":"SEK",
-              "description":"Större hemsida med fler undersidor, mer innehåll och tydligare helhet."
-            },
-            {
-              "@type":"Offer",
-              "name":"Liten webbfix",
-              "price":"490",
-              "priceCurrency":"SEK",
-              "description":"Mindre ändring på befintlig hemsida."
-            },
-            {
-              "@type":"Offer",
-              "name":"Webbutveckling per timme",
-              "priceSpecification":{
-                "@type":"UnitPriceSpecification",
-                "price":"650",
-                "priceCurrency":"SEK",
-                "unitCode":"HUR"
-              },
-              "description":"API, backend, formulärflöden, bokningsflöden, integrationer och specialfunktioner."
-            }
-          ]
-        }
-      },
-      {
-        "@type":"Service",
-        "@id":"https://webutvecklare.se/hemsida-uthyrning.html#service",
-        "name":"Hemsida för uthyrningsföretag",
-        "serviceType":"Webbutveckling för uthyrningsföretag",
-        "provider":{"@id":"https://webutvecklare.se/#business"},
-        "areaServed":[
-          {"@type":"Country","name":"Sverige"},
-          {"@type":"Country","name":"Danmark"},
-          {"@type":"Country","name":"Norge"},
-          {"@type":"Place","name":"Internationellt på engelska"}
-        ],
-        "description":"En hemsida för uthyrningsföretag hjälper kunder att förstå vad som hyrs ut, vad det kostar, vilka villkor som gäller och hur bokning eller förfrågan görs.",
-        "offers":[
-          {
-            "@type":"Offer",
-            "name":"Hemsida för uthyrning Start",
-            "price":"2900",
-            "priceCurrency":"SEK",
-            "availability":"https://schema.org/InStock"
-          },
-          {
-            "@type":"Offer",
-            "name":"Hemsida för uthyrning Proffs",
-            "price":"4900",
-            "priceCurrency":"SEK",
-            "availability":"https://schema.org/InStock"
-          },
-          {
-            "@type":"Offer",
-            "name":"Hemsida för uthyrning Utökad",
-            "price":"7900",
-            "priceCurrency":"SEK",
-            "availability":"https://schema.org/InStock"
-          }
-        ]
-      },
-      {
         "@type":"FAQPage",
         "@id":"https://webutvecklare.se/hemsida-uthyrning.html#faq",
         "mainEntity":[
           {
             "@type":"Question",
-            "name":"Vad är en hemsida för uthyrningsföretag?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"En hemsida för uthyrningsföretag är en sida som tydligt visar vad som går att hyra, vad det kostar, vad som ingår, vilka villkor som gäller och hur kunden bokar eller skickar en förfrågan."
-            }
-          },
-          {
-            "@type":"Question",
             "name":"Vad kostar en hemsida för uthyrningsföretag?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"En enkel hemsida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning. Större speciallösningar kan göras från 650 kr per timme."
+              "text":"En enkel hemsida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning."
             }
           },
           {
             "@type":"Question",
-            "name":"Kan sidan ha bokningsflöde?",
+            "name":"Kan hemsidan ha bokningsformulär?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Ja. Sidan kan ha tydlig bokningsknapp, formulär, bokningslänk, kalenderlänk, mejllänk, telefonknapp eller betalningslänk beroende på hur uthyrningen fungerar."
+              "text":"Ja. Sidan kan ha formulär, kalenderlänk, bokningslänk, mejllänk, telefonknapp, betalningslänk eller annat flöde beroende på hur uthyrningen fungerar."
             }
           },
           {
             "@type":"Question",
-            "name":"Kan sidan visa villkor, regler och priser?",
+            "name":"Kan sidan visa priser och villkor?",
             "acceptedAnswer":{
               "@type":"Answer",
               "text":"Ja. Hemsidan kan innehålla priser, paket, leveransinformation, villkor, FAQ, säkerhetsinformation och tydliga instruktioner."
@@ -248,15 +171,7 @@
             "name":"Blir jag låst till Nordlöf Nordic?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Nej. Efter köp kan kunden få material, inloggningar och kod om kunden vill fortsätta själv eller med någon annan."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Kan jag få demo innan jag köper?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Ja. Du får normalt en första demo inom 1 arbetsdag efter att du skickat in tillräcklig information. Du köper bara om du vill gå vidare."
+              "text":"Nej. Efter köp kan kunden få material, kod och inloggningar om kunden vill fortsätta själv eller med någon annan."
             }
           }
         ]
@@ -334,12 +249,8 @@
     button{
       font:inherit;
     }
-    button{
-      border:0;
-    }
-    :target{
-      scroll-margin-top:92px;
-    }
+    button{border:0;}
+    :target{scroll-margin-top:92px;}
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -365,9 +276,7 @@
       box-shadow:0 12px 30px rgba(36,30,26,.16);
       transition:.15s ease;
     }
-    .skip-link:focus{
-      transform:translateY(0);
-    }
+    .skip-link:focus{transform:translateY(0);}
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
@@ -378,19 +287,28 @@
       top:86px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      align-items:center;
       gap:8px;
+      padding:8px;
+      border-radius:22px;
+      background:rgba(251,247,244,.94);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
     .accessibility-btn{
-      min-height:44px;
-      padding:10px 14px;
+      min-height:42px;
+      padding:9px 13px;
       border-radius:999px;
       background:#111;
       color:#fff;
       border:2px solid #fff;
       font-weight:900;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(36,30,26,.18);
+      box-shadow:0 8px 20px rgba(36,30,26,.14);
+      white-space:nowrap;
+      font-size:13px;
     }
     .accessibility-btn[aria-pressed="true"]{
       background:#fff;
@@ -445,6 +363,13 @@
       overflow:hidden;
       text-overflow:ellipsis;
     }
+    .nav-right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+    }
     .nav-links{
       display:flex;
       align-items:center;
@@ -453,8 +378,30 @@
       font-size:14px;
       font-weight:800;
     }
-    .nav-links a:hover{
-      color:var(--brand-dark);
+    .nav-links a:hover{color:var(--brand-dark);}
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .language-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .language-select{
+      min-height:42px;
+      max-width:190px;
+      padding:10px 36px 10px 14px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      outline:none;
     }
     .btn{
       display:inline-flex;
@@ -471,9 +418,7 @@
       line-height:1.1;
       white-space:nowrap;
     }
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px);}
     .btn-primary{
       background:linear-gradient(135deg,var(--brand-deep),var(--brand));
       color:#fff;
@@ -536,27 +481,12 @@
       letter-spacing:-.035em;
       line-height:1.15;
     }
-    p{
-      margin:0;
-    }
+    p{margin:0;}
     .lead{
       max-width:760px;
       color:#4d453f;
       font-size:clamp(17px,2vw,20px);
       line-height:1.72;
-    }
-    .answer-box{
-      margin-top:18px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:18px;
-      box-shadow:0 12px 34px rgba(36,30,26,.04);
-      color:#4d453f;
-      line-height:1.7;
-    }
-    .answer-box strong{
-      color:var(--text);
     }
     .hero-actions{
       display:flex;
@@ -608,7 +538,7 @@
     }
     .hero-card img{
       width:100%;
-      max-width:360px;
+      max-width:380px;
       margin:0 auto 18px;
       border-radius:22px;
       box-shadow:0 22px 54px rgba(36,30,26,.18);
@@ -669,7 +599,6 @@
       text-decoration:underline;
       text-underline-offset:4px;
       text-decoration-thickness:1px;
-      font-weight:800;
     }
     .tag{
       display:inline-flex;
@@ -692,10 +621,6 @@
       border-radius:50%;
       background:currentColor;
       opacity:.65;
-    }
-    .tag.dark{
-      background:rgba(255,255,255,.17);
-      color:#fff;
     }
     .list{
       display:grid;
@@ -812,9 +737,7 @@
       padding:18px 20px;
       box-shadow:0 12px 35px rgba(36,30,26,.05);
     }
-    .faq details + details{
-      margin-top:12px;
-    }
+    .faq details + details{margin-top:12px;}
     .faq summary{
       cursor:pointer;
       font-weight:900;
@@ -891,9 +814,7 @@
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:13px;
     }
-    .full{
-      grid-column:1/-1;
-    }
+    .full{grid-column:1/-1;}
     .hidden-field{
       position:absolute;
       left:-9999px;
@@ -919,9 +840,7 @@
       font-weight:800;
       line-height:1.5;
     }
-    .form-status.is-visible{
-      display:block;
-    }
+    .form-status.is-visible{display:block;}
     footer{
       padding:34px 0 calc(86px + env(safe-area-inset-bottom));
       color:#6f655e;
@@ -945,15 +864,14 @@
       gap:12px;
       margin-top:6px;
     }
-    .mobile-sticky{
-      display:none;
-    }
+    .mobile-sticky{display:none;}
     body.high-contrast .topbar,
     body.high-contrast .card,
     body.high-contrast .price-card,
     body.high-contrast .step,
     body.high-contrast .faq details,
-    body.high-contrast .answer-box{
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1002,8 +920,14 @@
         animation-iteration-count:1 !important;
         transition-duration:.01ms !important;
       }
-      .btn:hover{
-        transform:none;
+      .btn:hover{transform:none;}
+    }
+    @media(max-width:1100px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
       }
     }
     @media(max-width:980px){
@@ -1021,44 +945,51 @@
       }
     }
     @media(max-width:760px){
-      body{
-        padding-bottom:86px;
-      }
+      body{padding-bottom:86px;}
+      body.large-text .mobile-sticky{display:none;}
       .container{
         width:min(var(--max),calc(100% - 22px));
       }
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
       .accessibility-btn{
         width:100%;
         min-height:44px;
-        padding:9px 10px;
-        font-size:14px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
       .nav{
         min-height:auto;
         padding:10px 0;
+        align-items:flex-start;
       }
       .brand img{
         width:40px;
         height:40px;
         border-radius:12px;
       }
-      .brand strong{
-        font-size:15px;
+      .brand strong{font-size:15px;}
+      .brand span span{display:none;}
+      .nav-right{
+        align-items:flex-end;
+        gap:8px;
       }
-      .brand span span{
-        display:none;
+      .language-label{display:none;}
+      .language-select{
+        max-width:150px;
+        min-height:40px;
+        padding:9px 32px 9px 11px;
+        font-size:13px;
       }
-      .hero{
-        padding:24px 0 18px;
-      }
+      .hero{padding:24px 0 18px;}
       h1{
         font-size:clamp(2.15rem,10.8vw,3.25rem);
         line-height:.98;
@@ -1074,9 +1005,7 @@
         gap:9px;
         margin-top:18px;
       }
-      .hero-actions .btn{
-        width:100%;
-      }
+      .hero-actions .btn{width:100%;}
       .proof-row,
       .form-grid{
         grid-template-columns:1fr;
@@ -1087,18 +1016,14 @@
         padding:20px;
         border-radius:22px;
       }
-      .section{
-        padding:30px 0;
-      }
+      .section{padding:30px 0;}
       .card,
       .price-card,
       .step{
         padding:18px;
         border-radius:20px;
       }
-      .step{
-        padding:16px 16px 16px 56px;
-      }
+      .step{padding:16px 16px 16px 56px;}
       .step:before{
         left:16px;
         top:16px;
@@ -1111,9 +1036,7 @@
       textarea{
         font-size:16px;
       }
-      footer{
-        padding-bottom:104px;
-      }
+      footer{padding-bottom:104px;}
       .mobile-sticky{
         position:fixed;
         left:10px;
@@ -1137,82 +1060,107 @@
         font-size:13px;
       }
     }
+    @media(max-width:390px){
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+      .language-select{
+        max-width:132px;
+        font-size:12px;
+      }
+    }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
-  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
-    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityTools">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
       Hög kontrast
     </button>
-    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
       Större text
+    </button>
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">
+      Kort uppläsning
     </button>
   </div>
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+      <a class="brand" href="/" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" data-i18n-alt="logoAlt">
         <span>
           <strong>Nordlöf Nordic</strong>
-          <span>Hemsida för uthyrningsföretag</span>
+          <span data-i18n="brandSub">Hemsida för uthyrningsföretag</span>
         </span>
       </a>
-      <nav class="nav-links" aria-label="Huvudnavigering">
-        <a href="#problem">Problem</a>
-        <a href="#det-du-far">Det du får</a>
-        <a href="#priser">Priser</a>
-        <a href="#case">Exempel</a>
-        <a href="#kontakt">Få demo</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Huvudnavigering" data-i18n-aria-label="mainNav">
+          <a href="#problem" data-i18n="navProblem">Problem</a>
+          <a href="#det-du-far" data-i18n="navGets">Det du får</a>
+          <a href="#priser" data-i18n="navPrices">Priser</a>
+          <a href="#kontakt" data-i18n="navDemo">Få demo</a>
+        </nav>
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select
+            id="languageSelect"
+            class="language-select"
+            aria-label="Välj språk"
+            data-i18n-aria-label="languageSwitch"
+          >
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
+      </div>
     </div>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">För uthyrning · Bokning · Villkor · Priser · FAQ · Lokal SEO</span>
-          <h1 id="hero-title">Hemsida för uthyrningsföretag som gör det enkelt att boka.</h1>
-          <p class="lead">
-            Nordlöf Nordic bygger hemsidor för småföretag som hyr ut saker, lokaler, fordon, utrustning, boende eller aktiviteter.
-            Du får en demo inom 1 arbetsdag och köper först om du vill gå vidare.
+          <span class="eyebrow" data-i18n="eyebrow">För uthyrning · Demo först · Från 2 900 kr</span>
+          <h1 id="hero-title" data-i18n="heroTitle">Hemsida för uthyrningsföretag som gör det enkelt att boka.</h1>
+          <p class="lead" data-i18n="heroLead">
+            Hyr du ut stuga, fordon, båt, släp, utrustning, lokal eller aktivitet?
+            Jag bygger en tydlig hemsida där kunden snabbt förstår vad som ingår, vad det kostar, vilka villkor som gäller och hur man bokar.
           </p>
-          <div class="answer-box">
-            <strong>En hemsida för uthyrningsföretag</strong> ska snabbt visa vad kunden kan hyra, vad det kostar, vad som ingår, vilka regler som gäller och hur bokning eller förfrågan görs. Kort sagt: mindre frågepingis, mer bokning.
-          </div>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Få demo först</a>
-            <a class="btn btn-secondary" href="#priser">Se priser från 2 900 kr</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="heroCta">Få en demo först</a>
+            <a class="btn btn-secondary" href="#priser" data-i18n="heroPriceCta">Se priser</a>
           </div>
-          <div class="proof-row" aria-label="Fördelar">
+          <div class="proof-row" aria-label="Fördelar" data-i18n-aria-label="benefitsAria">
             <div class="proof-pill">
-              Demo först
-              <span>Du ser ett konkret förslag innan köpbeslut.</span>
+              <span data-i18n="proof1Title">Tydlig bokning</span>
+              <span data-i18n="proof1Text">Formulär, bokningslänk eller kontaktväg.</span>
             </div>
             <div class="proof-pill">
-              Ingen inlåsning
-              <span>Du kan få material, inloggning och kod efter köp.</span>
+              <span data-i18n="proof2Title">Färre frågor</span>
+              <span data-i18n="proof2Text">Priser, villkor och FAQ på rätt plats.</span>
             </div>
             <div class="proof-pill">
-              Byggt i kod
-              <span>Främst från grunden, inte WordPress som standard.</span>
+              <span data-i18n="proof3Title">Ingen inlåsning</span>
+              <span data-i18n="proof3Text">Du kan få kod, material och inloggningar efter köp.</span>
             </div>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Kort sammanfattning">
+        <aside class="hero-card" aria-label="Kort sammanfattning" data-i18n-aria-label="summaryAria">
           <img src="nordlof-nordic-logo.png" alt="">
           <ul class="mini-list">
             <li>
-              <strong>1. Kunden förstår erbjudandet</strong>
-              Vad går att hyra, var finns det, vad ingår och vad kostar det?
+              <strong data-i18n="mini1Title">1. Kunden förstår erbjudandet</strong>
+              <span data-i18n="mini1Text">Vad går att hyra, var finns det, vad ingår och vad kostar det?</span>
             </li>
             <li>
-              <strong>2. Kunden ser villkoren</strong>
-              Regler, tider, hämtning, leverans, ansvar och praktisk information.
+              <strong data-i18n="mini2Title">2. Kunden ser villkoren</strong>
+              <span data-i18n="mini2Text">Regler, tider, hämtning, leverans, ansvar och praktisk information.</span>
             </li>
             <li>
-              <strong>3. Kunden kan boka</strong>
-              Tydlig väg till formulär, kalender, mejl, telefon eller betalning.
+              <strong data-i18n="mini3Title">3. Kunden kan boka</strong>
+              <span data-i18n="mini3Text">Tydlig väg till formulär, kalender, mejl, telefon eller betalning.</span>
             </li>
           </ul>
         </aside>
@@ -1221,30 +1169,30 @@
     <section class="section" id="problem">
       <div class="container">
         <div class="section-head">
-          <h2>Uthyrning behöver mer än en snygg startsida.</h2>
-          <p>
-            Kunden vill veta om det passar, vad som ingår och vad nästa steg är. Om informationen ligger utspridd i sms, Facebook-inlägg, gamla PDF:er och “jag skickar sen”-trådar blir det rörigt. Rörigt säljer dåligt.
+          <h2 data-i18n="problemTitle">Uthyrning behöver mer än en snygg startsida.</h2>
+          <p data-i18n="problemLead">
+            Kunden vill veta om det passar, vad som ingår och vad nästa steg är. Om informationen ligger utspridd i sms, Facebook-inlägg och gamla PDF:er blir det lätt säljtrassel deluxe.
           </p>
         </div>
         <div class="grid-3">
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Kunden hittar inte tydlig information</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag">Problem</span>
+            <h3 data-i18n="problem1Title">Kunden hittar inte tydlig information</h3>
+            <p data-i18n="problem1Text">
               Vad ingår? Var hämtar man? Finns leverans? Vilka datum gäller? Det behöver synas direkt.
             </p>
           </article>
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Villkor och ansvar blir otydligt</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag2">Problem</span>
+            <h3 data-i18n="problem2Title">Villkor och ansvar blir otydligt</h3>
+            <p data-i18n="problem2Text">
               Uthyrning kräver tydliga regler. Annars får du samma frågor om och om igen.
             </p>
           </article>
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Bokningen blir onödigt krånglig</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag3">Problem</span>
+            <h3 data-i18n="problem3Title">Bokningen blir onödigt krånglig</h3>
+            <p data-i18n="problem3Text">
               Kunden ska inte behöva leta efter nästa steg. Bokning eller förfrågan ska vara uppenbar.
             </p>
           </article>
@@ -1254,332 +1202,172 @@
     <section class="section" id="det-du-far">
       <div class="container">
         <div class="section-head">
-          <h2>Det jag kan bygga för din uthyrning.</h2>
-          <p>
-            En praktisk hemsida från start: tydlig information, bra struktur, lokal SEO, bokningsväg och innehåll som minskar friktion. Inget “digital transformation”-snack. Bara sidan kunden faktiskt behöver.
+          <h2 data-i18n="getsTitle">Det jag kan bygga för din uthyrning.</h2>
+          <p data-i18n="getsLead">
+            En praktisk hemsida från start: tydlig information, bra struktur, bokningsväg, lokal SEO och innehåll som minskar friktion.
           </p>
         </div>
         <div class="grid-3">
           <article class="card">
-            <span class="tag">Erbjudande</span>
-            <h3>Sida som visar vad som går att hyra</h3>
-            <p>
+            <span class="tag" data-i18n="gets1Tag">Erbjudande</span>
+            <h3 data-i18n="gets1Title">Sida som visar vad som går att hyra</h3>
+            <p data-i18n="gets1Text">
               Presentera objektet, tjänsten, aktiviteten eller utrustningen på ett sätt som kunden snabbt fattar.
             </p>
             <ul class="list">
-              <li>Bilder och beskrivning</li>
-              <li>Vad som ingår</li>
-              <li>Passar för-sektion</li>
-              <li>Tydlig CTA ovanför fold</li>
+              <li data-i18n="gets1List1">Bilder och beskrivning</li>
+              <li data-i18n="gets1List2">Vad som ingår</li>
+              <li data-i18n="gets1List3">Passar för-sektion</li>
             </ul>
           </article>
           <article class="card">
-            <span class="tag">Bokning</span>
-            <h3>Tydlig väg till bokning</h3>
-            <p>
+            <span class="tag" data-i18n="gets2Tag">Bokning</span>
+            <h3 data-i18n="gets2Title">Tydlig väg till bokning</h3>
+            <p data-i18n="gets2Text">
               Formulär, bokningslänk, kalender, telefon, mejl eller betalningslänk beroende på hur du arbetar.
             </p>
             <ul class="list">
-              <li>Bokningsknappar</li>
-              <li>Förfrågningsformulär</li>
-              <li>Tack-sida</li>
-              <li>Mobilanpassad kontaktväg</li>
+              <li data-i18n="gets2List1">Bokningsknappar</li>
+              <li data-i18n="gets2List2">Förfrågningsformulär</li>
+              <li data-i18n="gets2List3">Tack-sida</li>
             </ul>
           </article>
           <article class="card">
-            <span class="tag">Trygghet</span>
-            <h3>Villkor, regler och FAQ</h3>
-            <p>
+            <span class="tag" data-i18n="gets3Tag">Trygghet</span>
+            <h3 data-i18n="gets3Title">Villkor, regler och FAQ</h3>
+            <p data-i18n="gets3Text">
               Tydliga villkor gör kunden tryggare och minskar mängden frågor före bokning.
             </p>
             <ul class="list">
-              <li>Villkorssektion</li>
-              <li>FAQ</li>
-              <li>Instruktioner</li>
-              <li>Ansvar och praktisk info</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="tag">Pris</span>
-            <h3>Priser och paket</h3>
-            <p>
-              Visa pris per dag, helg, timme, paket, leverans eller tillägg så kunden slipper gissa.
-            </p>
-            <ul class="list">
-              <li>Prislista</li>
-              <li>Paket</li>
-              <li>Tillägg och leverans</li>
-              <li>Rabattkodssidor vid behov</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="tag">SEO</span>
-            <h3>Lokal synlighet</h3>
-            <p>
-              Sidan kan byggas för orter, område och sökningar som faktiskt matchar uthyrningen.
-            </p>
-            <ul class="list">
-              <li>Lokal SEO</li>
-              <li>Metadata</li>
-              <li>Internlänkar</li>
-              <li>FAQ som AI och Google förstår</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="tag">Teknik</span>
-            <h3>Specialflöden vid behov</h3>
-            <p>
-              Mer avancerade behov kan tas på timme: API, backend, betalning, licensflöden eller integrationer.
-            </p>
-            <ul class="list">
-              <li>Formulärflöden</li>
-              <li>Databas</li>
-              <li>Betalningslänkar</li>
-              <li>Integrationer</li>
+              <li data-i18n="gets3List1">Villkorssektion</li>
+              <li data-i18n="gets3List2">FAQ</li>
+              <li data-i18n="gets3List3">Praktiska instruktioner</li>
             </ul>
           </article>
         </div>
-      </div>
-    </section>
-    <section class="section" id="passar-for">
-      <div class="container grid-2">
-        <article class="card">
-          <span class="tag">Passar för</span>
-          <h2>Uthyrning där kunden behöver tydlig info före bokning.</h2>
-          <p>
-            Sidan kan anpassas efter olika typer av uthyrning. Poängen är samma: visa erbjudandet tydligt och gör nästa steg enkelt.
-          </p>
-          <ul class="list">
-            <li>Stuguthyrning och boende</li>
-            <li>Bil, båt, släp, husbil och husvagn</li>
-            <li>Maskiner, verktyg och utrustning</li>
-            <li>Lokaler, förråd och eventytor</li>
-            <li>Aktiviteter, spel och eventutrustning</li>
-            <li>Kläder, möbler eller saker för privatuthyrning</li>
-          </ul>
-        </article>
-        <article class="card">
-          <span class="tag">Positionering</span>
-          <h2>För småföretag som vill få sidan klar utan byråkrångel.</h2>
-          <p>
-            Nordlöf Nordic är nystartat och drivs av mig, Erica Nordlöf. Det betyder personlig kontakt, lägre overhead och konkret arbete. Du pratar med den som bygger. Inte med fem mellanhänder och en powerpoint med dyra pilar.
-          </p>
-          <ul class="list">
-            <li>Demo inom 1 arbetsdag när jag har rätt underlag</li>
-            <li>Fast pris när uppdraget är tydligt</li>
-            <li>650 kr/h för större tekniska lösningar</li>
-            <li>Ingen inlåsning efter köp</li>
-            <li>Hjälp i Sverige, Danmark, Norge och internationellt på engelska</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-    <section class="section" id="case">
-      <div class="container grid-2">
-        <article class="card">
-          <span class="tag">Eget case</span>
-          <h2>Jag har byggt för uthyrning själv.</h2>
-          <p>
-            Jag driver även Offroad Bumpis, en uthyrningsverksamhet i Skåne. Där har jag byggt hemsida, bokningsväg, villkor, rabattkodssidor, affiliateflöde och tydlig kundinformation.
-          </p>
-          <ul class="list">
-            <li>Hemsida för uthyrning</li>
-            <li>Bokningsflöde</li>
-            <li>Villkor och praktisk info</li>
-            <li>Lokalt SEO-fokus</li>
-            <li>Rabattkod och affiliateflöde</li>
-          </ul>
-          <p style="margin-top:18px;">
-            Se fler exempel på <a href="case.html">case-sidan</a>.
-          </p>
-        </article>
-        <article class="card">
-          <span class="tag">Mer teknik</span>
-          <h2>Behöver du mer än en vanlig hemsida?</h2>
-          <p>
-            Då kan sidan byggas vidare med formulärlogik, API, backend, databas, betalningsflöden eller integrationer. Jag har även byggt Safe Standard och ett Mini API-projekt med Java, Spring Boot, PostgreSQL, Swagger och Docker.
-          </p>
-          <ul class="list">
-            <li>API och backend</li>
-            <li>Formulär och automatisering</li>
-            <li>Landningssidor för kampanjer</li>
-            <li>Digitalt reklammaterial vid behov</li>
-          </ul>
-          <p style="margin-top:18px;">
-            Läs även om <a href="landningssida-kampanj.html">landningssida för kampanj</a> och <a href="webbfix.html">webbfix</a>.
-          </p>
-        </article>
       </div>
     </section>
     <section class="section" id="priser">
       <div class="container">
         <div class="section-head">
-          <h2>Pris för hemsida till uthyrningsföretag.</h2>
-          <p>
+          <h2 data-i18n="pricesTitle">Priser för hemsida till uthyrningsföretag.</h2>
+          <p data-i18n="pricesLead">
             Starta med en tydlig sida. Bygg vidare med fler undersidor, bokningsflöden eller specialfunktioner när affären behöver det.
           </p>
         </div>
         <div class="price-grid">
           <article class="price-card">
-            <span class="tag">Start</span>
-            <h3>Ny hemsida Start</h3>
-            <div class="price">2 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price1Tag">Start</span>
+            <h3 data-i18n="price1Title">Ny hemsida</h3>
+            <div class="price" data-i18n="price1Amount">2 900 kr</div>
+            <p data-i18n="price1Text">
               En enkel one page-sida för uthyrning med tydlig information, CTA och kontaktväg.
             </p>
           </article>
           <article class="price-card">
-            <span class="tag">Proffs</span>
-            <h3>Ny hemsida Proffs</h3>
-            <div class="price">4 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price2Tag">Proffs</span>
+            <h3 data-i18n="price2Title">Mer genomarbetad</h3>
+            <div class="price" data-i18n="price2Amount">4 900 kr</div>
+            <p data-i18n="price2Text">
               Fler sektioner, bättre struktur, priser, villkor, FAQ och starkare bokningsväg.
             </p>
           </article>
           <article class="price-card">
-            <span class="tag">Utökad</span>
-            <h3>Ny hemsida Utökad</h3>
-            <div class="price">7 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price3Tag">Utökad</span>
+            <h3 data-i18n="price3Title">Större upplägg</h3>
+            <div class="price" data-i18n="price3Amount">7 900 kr</div>
+            <p data-i18n="price3Text">
               För fler undersidor, mer innehåll, flera uthyrningskategorier eller tydligare helhet.
             </p>
           </article>
         </div>
         <div class="card" style="margin-top:18px;">
-          <h3>Specialfunktioner och webbfix</h3>
-          <p>
-            Bokningslogik, API, backend, integrationer, rabattkodssidor, databas, betalningsflöden eller andra speciallösningar görs från
-            <strong>650 kr/h</strong>. Mindre webbfix på befintlig sida startar från <strong>490 kr</strong>.
+          <h3 data-i18n="extraTitle">Specialfunktioner och webbfix</h3>
+          <p data-i18n="extraText">
+            Bokningslogik, API, backend, integrationer, rabattkodssidor, databas, betalningsflöden eller andra speciallösningar görs från 650 kr/h. Mindre webbfix på befintlig sida startar från 490 kr.
           </p>
-          <ul class="list">
-            <li>Liten webbfix: 490 kr</li>
-            <li>Normal webbfix: 990 kr</li>
-            <li>Större webbfix: 1 490 kr</li>
-            <li>API, backend och speciallösningar: 650 kr/h</li>
-          </ul>
         </div>
       </div>
     </section>
     <section class="section" id="sa-funkar-det">
       <div class="container">
         <div class="section-head">
-          <h2>Så fungerar demo först.</h2>
-          <p>
-            Demo först betyder att du får se ett konkret första förslag innan du bestämmer dig. Du köper inte en gissning. Du tar beslut på något du kan titta på.
+          <h2 data-i18n="howTitle">Så fungerar demo först.</h2>
+          <p data-i18n="howLead">
+            Du beskriver uthyrningen, jag tar fram en demo och du tar beslut på något konkret. Ingen gissningslek i dimma.
           </p>
         </div>
         <div class="steps">
           <div class="step">
-            <strong>Du skickar info om uthyrningen</strong>
-            <span>Vad hyr du ut, var finns det, vad kostar det, vad ingår och hur bokar kunden?</span>
+            <strong data-i18n="step1Title">Du skickar info om uthyrningen</strong>
+            <span data-i18n="step1Text">Vad hyr du ut, var finns det, vad kostar det, vad ingår och hur bokar kunden?</span>
           </div>
           <div class="step">
-            <strong>Jag bygger en första demo</strong>
-            <span>Du får ett konkret förslag på struktur, känsla, sektioner och bokningsväg.</span>
+            <strong data-i18n="step2Title">Jag bygger en första demo</strong>
+            <span data-i18n="step2Text">Du får ett konkret förslag på struktur, känsla, sektioner och bokningsväg.</span>
           </div>
           <div class="step">
-            <strong>Du väljer om du vill gå vidare</strong>
-            <span>Du köper först efter att du sett riktningen och vill fortsätta.</span>
+            <strong data-i18n="step3Title">Du ger feedback</strong>
+            <span data-i18n="step3Text">Vi justerar priser, villkor, bilder, FAQ och praktiska detaljer.</span>
           </div>
           <div class="step">
-            <strong>Vi justerar innehållet</strong>
-            <span>Priser, villkor, bilder, FAQ och praktiska detaljer sätts på rätt plats.</span>
+            <strong data-i18n="step4Title">Du köper bara om du vill gå vidare</strong>
+            <span data-i18n="step4Text">Om du gillar demon färdigställer vi sidan enligt valt paket.</span>
           </div>
           <div class="step">
-            <strong>Sidan publiceras</strong>
-            <span>Efter godkännande hjälper jag med publicering, domän, länkar och det praktiska.</span>
+            <strong data-i18n="step5Title">Sidan publiceras</strong>
+            <span data-i18n="step5Text">Jag hjälper med publicering, domän, länkar och det praktiska efter godkännande.</span>
           </div>
         </div>
       </div>
     </section>
-    <section class="section" id="internlankar">
-      <div class="container">
-        <div class="section-head">
-          <h2>Andra sidor som kan passa dig.</h2>
-          <p>
-            Den här sidan är för uthyrningsföretag. Behöver du något bredare eller smalare finns fler vägar.
+    <section class="section">
+      <div class="container grid-2">
+        <article class="card">
+          <span class="tag" data-i18n="fitTag">Passar bra för</span>
+          <h2 data-i18n="fitTitle">Uthyrning där kunden behöver tydlig info före bokning.</h2>
+          <p data-i18n="fitText">
+            Sidan kan anpassas efter olika typer av uthyrning. Poängen är samma: visa erbjudandet tydligt och gör nästa steg enkelt.
           </p>
-        </div>
-        <div class="grid-3">
-          <article class="card">
-            <span class="tag">Ny hemsida</span>
-            <h3>Ny hemsida till företag</h3>
-            <p>
-              För dig som vill ha en ny hemsida från grunden med tydlig struktur, pris och kontaktväg.
-            </p>
-            <p style="margin-top:14px;">
-              <a href="ny-hemsida-foretag.html">Gå till ny hemsida företag</a>
-            </p>
-          </article>
-          <article class="card">
-            <span class="tag">Webbfix</span>
-            <h3>Uppdatera befintlig sida</h3>
-            <p>
-              För dig som redan har en hemsida men behöver ändra text, bilder, knappar, formulär eller SEO-grund.
-            </p>
-            <p style="margin-top:14px;">
-              <a href="webbfix.html">Gå till webbfix</a>
-            </p>
-          </article>
-          <article class="card">
-            <span class="tag">Kampanj</span>
-            <h3>Landningssida för kampanj</h3>
-            <p>
-              För erbjudanden, rabattkoder, leadformulär, kampanjer eller en tydlig säljväg.
-            </p>
-            <p style="margin-top:14px;">
-              <a href="landningssida-kampanj.html">Gå till landningssida kampanj</a>
-            </p>
-          </article>
-          <article class="card">
-            <span class="tag">Småföretag</span>
-            <h3>Hemsida för småföretag</h3>
-            <p>
-              För mindre företag som behöver en enkel, tydlig och rimligt prissatt hemsida.
-            </p>
-            <p style="margin-top:14px;">
-              <a href="hemsida-smaforetag.html">Gå till hemsida småföretag</a>
-            </p>
-          </article>
-          <article class="card">
-            <span class="tag">Demo</span>
-            <h3>Gratis demo först</h3>
-            <p>
-              Läs mer om hur demo först-upplägget fungerar och vad du behöver skicka in.
-            </p>
-            <p style="margin-top:14px;">
-              <a href="gratis-demo.html">Gå till gratis demo</a>
-            </p>
-          </article>
-          <article class="card">
-            <span class="tag">Case</span>
-            <h3>Se tidigare projekt</h3>
-            <p>
-              Se Offroad Bumpis, Safe Standard, Hansen Bygg & Grönt, Mini API och publika projekt.
-            </p>
-            <p style="margin-top:14px;">
-              <a href="case.html">Gå till case</a>
-            </p>
-          </article>
-        </div>
+          <ul class="list">
+            <li data-i18n="fitList1">Stuguthyrning och boende</li>
+            <li data-i18n="fitList2">Bil, båt, släp, husbil och husvagn</li>
+            <li data-i18n="fitList3">Maskiner, verktyg och utrustning</li>
+            <li data-i18n="fitList4">Lokaler, förråd och eventytor</li>
+            <li data-i18n="fitList5">Aktiviteter, spel och eventutrustning</li>
+            <li data-i18n="fitList6">Saker, möbler eller privatuthyrning</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="tag" data-i18n="startTag">Eget case</span>
+          <h2 data-i18n="startTitle">Jag har byggt för uthyrning själv.</h2>
+          <p data-i18n="startText">
+            Jag driver även Offroad Bumpis, en uthyrningsverksamhet i Skåne. Där har jag byggt hemsida, bokningsväg, villkor, rabattkodssidor och tydlig kundinformation.
+          </p>
+          <ul class="list">
+            <li data-i18n="startList1">Hemsida för uthyrning</li>
+            <li data-i18n="startList2">Bokningsflöde</li>
+            <li data-i18n="startList3">Villkor och praktisk info</li>
+            <li data-i18n="startList4">Lokal SEO och rabattkodssidor</li>
+          </ul>
+        </article>
       </div>
     </section>
     <section class="section">
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Gör det lättare för kunden att boka rätt.</h2>
-            <p>
-              En bra uthyrningssida ska svara på kundens frågor innan kunden behöver fråga.
-              Då blir bokningen enklare, villkoren tydligare och din tid bättre använd.
+            <h2 data-i18n="ctaTitle">Gör det lättare för kunden att boka rätt.</h2>
+            <p data-i18n="ctaText">
+              En bra uthyrningssida ska svara på kundens frågor innan kunden behöver fråga. Då blir bokningen enklare, villkoren tydligare och din tid bättre använd.
             </p>
           </div>
           <div class="cta-panel">
-            <strong>Demo först</strong>
-            <p>
-              Skicka vad du hyr ut, så tar jag fram en första riktning. Ingen gissningslek, bara konkret förslag.
+            <strong data-i18n="ctaPanelTitle">Demo först</strong>
+            <p data-i18n="ctaPanelText">
+              Skicka vad du hyr ut, så tar jag fram en första riktning. Du köper bara om du vill gå vidare.
             </p>
-            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;">
+            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;" data-i18n="ctaButton">
               Få demo
             </a>
           </div>
@@ -1589,69 +1377,45 @@
     <section class="section faq" id="fragor">
       <div class="container">
         <div class="section-head">
-          <h2>Vanliga frågor.</h2>
-          <p>
-            Snabbversionen innan du skickar in.
+          <h2 data-i18n="faqTitle">Vanliga frågor.</h2>
+          <p data-i18n="faqLead">
+            Det viktigaste innan du skickar in.
           </p>
         </div>
         <details>
-          <summary>Vad är en hemsida för uthyrningsföretag?</summary>
-          <p>
-            Det är en hemsida som tydligt visar vad som går att hyra, vad det kostar, vad som ingår, vilka villkor som gäller och hur kunden bokar eller skickar en förfrågan.
-          </p>
-        </details>
-        <details>
-          <summary>Vad kostar en hemsida för uthyrningsföretag?</summary>
-          <p>
+          <summary data-i18n="faq1Q">Vad kostar en hemsida för uthyrningsföretag?</summary>
+          <p data-i18n="faq1A">
             En enkel hemsida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning.
           </p>
         </details>
         <details>
-          <summary>Kan hemsidan ha bokningsformulär?</summary>
-          <p>
-            Ja. Sidan kan ha formulär, kalenderlänk, mejllänk, telefonknapp, betalningslänk eller annat flöde beroende på hur du tar emot bokningar.
+          <summary data-i18n="faq2Q">Kan hemsidan ha bokningsformulär?</summary>
+          <p data-i18n="faq2A">
+            Ja. Sidan kan ha formulär, kalenderlänk, bokningslänk, mejllänk, telefonknapp, betalningslänk eller annat flöde beroende på hur du tar emot bokningar.
           </p>
         </details>
         <details>
-          <summary>Kan du hjälpa till med villkor och FAQ?</summary>
-          <p>
-            Ja, jag kan hjälpa till att strukturera villkor, praktisk information och FAQ så att kunden lättare förstår vad som gäller.
-          </p>
-        </details>
-        <details>
-          <summary>Kan sidan visa priser och paket?</summary>
-          <p>
+          <summary data-i18n="faq3Q">Kan sidan visa priser och paket?</summary>
+          <p data-i18n="faq3A">
             Ja. Sidan kan visa pris per dag, helg, timme, paket, leverans, tillägg och annat som påverkar bokningen.
           </p>
         </details>
         <details>
-          <summary>Kan du bygga för lokal SEO?</summary>
-          <p>
-            Ja. Sidan kan byggas med ort, område, tjänst, uthyrningstyp, metadata och rubrikstruktur som hjälper rätt kunder att hitta den.
+          <summary data-i18n="faq4Q">Kan du hjälpa till med villkor och FAQ?</summary>
+          <p data-i18n="faq4A">
+            Ja, jag kan hjälpa till att strukturera villkor, praktisk information och FAQ så att kunden lättare förstår vad som gäller.
           </p>
         </details>
         <details>
-          <summary>Kan jag börja enkelt och bygga vidare senare?</summary>
-          <p>
+          <summary data-i18n="faq5Q">Kan jag bygga vidare senare?</summary>
+          <p data-i18n="faq5A">
             Ja. Du kan börja med en one page-sida och senare lägga till fler undersidor, bokningsflöden, rabattkodssidor eller specialfunktioner.
           </p>
         </details>
         <details>
-          <summary>Bygger du i WordPress?</summary>
-          <p>
-            Jag bygger främst från grunden i kod, inte WordPress som standard. Om ett uppdrag kräver något särskilt går det att diskutera, men min huvudmodell är egen kod.
-          </p>
-        </details>
-        <details>
-          <summary>Blir jag låst till dig?</summary>
-          <p>
+          <summary data-i18n="faq6Q">Blir jag låst till dig?</summary>
+          <p data-i18n="faq6A">
             Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.
-          </p>
-        </details>
-        <details>
-          <summary>Kan du hjälpa företag utanför Sverige?</summary>
-          <p>
-            Ja. Jag hjälper småföretag i Sverige, Danmark, Norge och internationellt på engelska.
           </p>
         </details>
       </div>
@@ -1659,96 +1423,97 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
-          <h2>Få demo på hemsida för din uthyrning.</h2>
-          <p>
+          <h2 data-i18n="formTitle">Få demo på hemsida för din uthyrning.</h2>
+          <p data-i18n="formLead">
             Fyll i vad du hyr ut, var du finns, hur kunden bokar och vad som behöver framgå på sidan.
           </p>
-          <div class="contact-row" aria-label="Kontaktuppgifter">
+          <div class="contact-row" aria-label="Kontaktuppgifter" data-i18n-aria-label="contactAria">
             <div class="contact-mini">
-              <strong>E-post</strong>
+              <strong data-i18n="contactEmail">E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
             <div class="contact-mini">
-              <strong>Telefon</strong>
+              <strong data-i18n="contactPhone">Telefon</strong>
               <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
             <div class="contact-mini">
-              <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              <strong data-i18n="contactCompany">Företag</strong>
+              <span data-i18n="companyType">Nordlöf Nordic · Enskild firma</span>
             </div>
           </div>
           <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
-            <input type="hidden" name="_subject" value="Ny förfrågan från hemsida-uthyrning.html" />
+            <input id="subjectField" type="hidden" name="_subject" value="Ny förfrågan från hemsida-uthyrning.html" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
-            <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="autoResponseField" type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="languageField" type="hidden" name="Valt språk" value="Svenska" />
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
             <div class="form-status" aria-live="polite"></div>
             <div class="form-grid">
               <div>
-                <label for="namn">Namn</label>
+                <label for="namn" data-i18n="labelName">Namn</label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
               <div>
-                <label for="email">E-post</label>
+                <label for="email" data-i18n="labelEmail">E-post</label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
               <div>
-                <label for="telefon">Telefon</label>
+                <label for="telefon" data-i18n="labelPhone">Telefon</label>
                 <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
               <div>
-                <label for="foretag">Företag</label>
+                <label for="foretag" data-i18n="labelCompany">Företag</label>
                 <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
               <div>
-                <label for="uthyrningstyp">Vad hyr du ut?</label>
+                <label for="uthyrningstyp" data-i18n="labelRentalType">Vad hyr du ut?</label>
                 <select id="uthyrningstyp" name="Typ av uthyrning">
-                  <option value="Vet inte än">Välj det som passar bäst</option>
-                  <option value="Stuga / boende">Stuga / boende</option>
-                  <option value="Bil / fordon">Bil / fordon</option>
-                  <option value="Båt">Båt</option>
-                  <option value="Släp / trailer">Släp / trailer</option>
-                  <option value="Husbil / husvagn">Husbil / husvagn</option>
-                  <option value="Maskiner / verktyg / utrustning">Maskiner / verktyg / utrustning</option>
-                  <option value="Lokal / eventyta">Lokal / eventyta</option>
-                  <option value="Aktivitet / eventutrustning">Aktivitet / eventutrustning</option>
-                  <option value="Annat">Annat</option>
+                  <option value="Vet inte än" data-i18n="rentalNotSure">Välj det som passar bäst</option>
+                  <option value="Stuga / boende" data-i18n="rentalCabin">Stuga / boende</option>
+                  <option value="Bil / fordon" data-i18n="rentalVehicle">Bil / fordon</option>
+                  <option value="Båt" data-i18n="rentalBoat">Båt</option>
+                  <option value="Släp / trailer" data-i18n="rentalTrailer">Släp / trailer</option>
+                  <option value="Husbil / husvagn" data-i18n="rentalCamper">Husbil / husvagn</option>
+                  <option value="Maskiner / verktyg / utrustning" data-i18n="rentalEquipment">Maskiner / verktyg / utrustning</option>
+                  <option value="Lokal / eventyta" data-i18n="rentalVenue">Lokal / eventyta</option>
+                  <option value="Aktivitet / eventutrustning" data-i18n="rentalActivity">Aktivitet / eventutrustning</option>
+                  <option value="Annat" data-i18n="rentalOther">Annat</option>
                 </select>
               </div>
               <div>
-                <label for="budget">Budget / paket</label>
+                <label for="budget" data-i18n="labelBudget">Budget / paket</label>
                 <select id="budget" name="Budget">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Start 2 900 kr">Start 2 900 kr</option>
-                  <option value="Proffs 4 900 kr">Proffs 4 900 kr</option>
-                  <option value="Utökad 7 900 kr">Utökad 7 900 kr</option>
-                  <option value="Timpris 650 kr/h">Timpris 650 kr/h</option>
+                  <option value="Vet inte än" data-i18n="budgetNotSure">Vet inte än</option>
+                  <option value="Start 2 900 kr" data-i18n="budgetStart">Start 2 900 kr</option>
+                  <option value="Proffs 4 900 kr" data-i18n="budgetPro">Proffs 4 900 kr</option>
+                  <option value="Utökad 7 900 kr" data-i18n="budgetExtended">Utökad 7 900 kr</option>
+                  <option value="Timpris 650 kr/h" data-i18n="budgetHourly">Timpris 650 kr/h</option>
                 </select>
               </div>
               <div class="full">
-                <label for="nuvarande">Nuvarande hemsida, om du har en</label>
+                <label for="nuvarande" data-i18n="labelCurrent">Nuvarande hemsida, om du har en</label>
                 <input id="nuvarande" name="Nuvarande hemsida" type="url" inputmode="url" placeholder="https://..." />
               </div>
               <div class="full">
-                <label for="plats">Var finns uthyrningen?</label>
-                <input id="plats" name="Plats / område" type="text" placeholder="Till exempel Malmö, Skåne, Stockholm, hela Sverige..." />
+                <label for="plats" data-i18n="labelPlace">Var finns uthyrningen?</label>
+                <input id="plats" name="Plats / område" type="text" placeholder="Till exempel Malmö, Skåne, Stockholm, hela Sverige..." data-i18n-placeholder="placeholderPlace" />
               </div>
               <div class="full">
-                <label for="beskrivning">Beskriv uthyrningen och vad sidan ska göra</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad hyr du ut? Vad ingår? Hur bokar kunden? Finns priser, villkor, hämtning, leverans eller särskilda regler?" required></textarea>
+                <label for="beskrivning" data-i18n="labelDescription">Beskriv uthyrningen och vad sidan ska göra</label>
+                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad hyr du ut? Vad ingår? Hur bokar kunden? Finns priser, villkor, hämtning, leverans eller särskilda regler?" data-i18n-placeholder="placeholderDescription" required></textarea>
               </div>
               <div class="full">
-                <label for="inspo">Länkar eller inspiration</label>
-                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in konkurrenter, sidor du gillar eller exempel på bokningsflöde."></textarea>
+                <label for="inspo" data-i18n="labelInspo">Länkar eller inspiration</label>
+                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in konkurrenter, sidor du gillar eller exempel på bokningsflöde." data-i18n-placeholder="placeholderInspo"></textarea>
               </div>
             </div>
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
-              <a href="integritet.html">integritetspolicyn</a>.
+              <span data-i18n="privacyText">Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt</span>
+              <a href="integritet.html" data-i18n="privacyLink">integritetspolicyn</a>.
             </span>
-            <button class="btn btn-light" type="submit" style="width:100%;">Skicka och få demo</button>
+            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">Skicka och få demo</button>
           </form>
         </div>
       </div>
@@ -1759,35 +1524,24 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Hemsidor, bokningsflöden, landningssidor, webbfix och webbutveckling för småföretag och uthyrningsföretag.<br>
-          Demo inom 1 arbetsdag · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h · Ingen inlåsning
+          <span data-i18n="footerText1">Hemsidor, bokningsflöden, landningssidor och webbutveckling för småföretag och uthyrningsföretag.</span><br>
+          <span data-i18n="footerText2">Demo inom 1 arbetsdag · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h</span>
         </div>
         <div>
-          Kontakt:
+          <span data-i18n="footerContact">Kontakt:</span>
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
           <div class="footer-links">
-            <a href="/">Startsida</a>
-            <a href="en.html">English</a>
-            <a href="da.html">Dansk</a>
-            <a href="no.html">Norsk</a>
-            <a href="gratis-demo.html">Gratis demo</a>
-            <a href="case.html">Case</a>
-            <a href="ny-hemsida-foretag.html">Ny hemsida</a>
-            <a href="webbfix.html">Webbfix</a>
-            <a href="landningssida-kampanj.html">Landningssida</a>
-            <a href="hemsida-smaforetag.html">Småföretag</a>
-            <a href="hemsida-nystartat-foretag.html">Nystartat företag</a>
-            <a href="hemsida-hantverkare.html">Hantverkare</a>
-            <a href="hemsida-byggforetag.html">Byggföretag</a>
-            <a href="hemsida-konsult.html">Konsult</a>
-            <a href="webbutveckling-malmo.html">Malmö</a>
-            <a href="webbutveckling-stockholm.html">Stockholm</a>
-            <a href="webbutveckling-goteborg.html">Göteborg</a>
-            <a href="villkor.html">Villkor</a>
-            <a href="integritet.html">Integritet</a>
-            <a href="affiliate.html">Affiliate</a>
+            <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="gratis-demo.html" data-i18n="footerDemo">Gratis demo</a>
+            <a href="case.html" data-i18n="footerCase">Case</a>
+            <a href="webbfix.html" data-i18n="footerWebfix">Webbfix</a>
+            <a href="landningssida-kampanj.html" data-i18n="footerLanding">Landningssida</a>
+            <a href="hemsida-nystartat-foretag.html" data-i18n="footerStartup">Nystartat företag</a>
+            <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
+            <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+            <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
             <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
@@ -1795,49 +1549,495 @@
       </div>
     </div>
   </footer>
-  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Priser</a>
-    <a class="btn btn-primary" href="#kontakt">Få demo</a>
+  <nav class="mobile-sticky" aria-label="Snabbval på mobil" data-i18n-aria-label="mobileStickyAria">
+    <a class="btn btn-secondary" href="#priser" data-i18n="mobilePrices">Priser</a>
+    <a class="btn btn-primary" href="#kontakt" data-i18n="mobileDemo">Få demo</a>
   </nav>
   <script>
-    document.querySelectorAll('form').forEach((form) => {
-      const submitButton = form.querySelector('button[type="submit"]');
-      const statusBox = form.querySelector('.form-status');
-      const originalButtonText = submitButton ? submitButton.textContent : '';
-      form.addEventListener('submit', (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          if (statusBox) {
-            statusBox.className = 'form-status is-visible';
-            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
-          }
-          form.reportValidity();
-          return;
-        }
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = 'Skickar...';
-          submitButton.setAttribute('aria-busy', 'true');
-        }
-        if (statusBox) {
-          statusBox.className = 'form-status is-visible';
-          statusBox.textContent = 'Skickar formuläret...';
-        }
-        setTimeout(() => {
-          if (submitButton && submitButton.disabled) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            submitButton.removeAttribute('aria-busy');
-          }
-        }, 15000);
-      });
-    });
-    const contrastButton = document.getElementById('toggleContrast');
-    const largeTextButton = document.getElementById('toggleLargeText');
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
-      }
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        speechLang: "sv-SE",
+        languageName: "Svenska",
+        metaTitle: "Hemsida för uthyrningsföretag | Demo först | Nordlöf Nordic",
+        metaDescription: "Hemsida för uthyrningsföretag från 2 900 kr. Få demo först. Tydlig bokning, priser, villkor, FAQ, formulär och lokal SEO utan byråkrångel.",
+        ogTitle: "Hemsida för uthyrningsföretag | Nordlöf Nordic",
+        ogDescription: "Hemsida för dig som hyr ut saker, lokaler, fordon, utrustning, boende eller aktiviteter. Demo först och köp bara om du vill gå vidare.",
+        twitterTitle: "Hemsida för uthyrningsföretag | Nordlöf Nordic",
+        twitterDescription: "Hemsida för uthyrning med tydlig bokning, priser, villkor, FAQ och lokal SEO. Demo först.",
+        subject: "Ny förfrågan från hemsida-uthyrning.html",
+        autoresponse: "Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan.",
+        validationRequired: "Fyll i de obligatoriska fälten först.",
+        sending: "Skickar...",
+        sendingStatus: "Skickar formuläret...",
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityTools: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Hemsida för uthyrningsföretag",
+        mainNav: "Huvudnavigering",
+        navProblem: "Problem",
+        navGets: "Det du får",
+        navPrices: "Priser",
+        navDemo: "Få demo",
+        languageLabel: "Språk",
+        languageSwitch: "Välj språk",
+        eyebrow: "För uthyrning · Demo först · Från 2 900 kr",
+        heroTitle: "Hemsida för uthyrningsföretag som gör det enkelt att boka.",
+        heroLead: "Hyr du ut stuga, fordon, båt, släp, utrustning, lokal eller aktivitet? Jag bygger en tydlig hemsida där kunden snabbt förstår vad som ingår, vad det kostar, vilka villkor som gäller och hur man bokar.",
+        heroCta: "Få en demo först",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fördelar",
+        proof1Title: "Tydlig bokning",
+        proof1Text: "Formulär, bokningslänk eller kontaktväg.",
+        proof2Title: "Färre frågor",
+        proof2Text: "Priser, villkor och FAQ på rätt plats.",
+        proof3Title: "Ingen inlåsning",
+        proof3Text: "Du kan få kod, material och inloggningar efter köp.",
+        summaryAria: "Kort sammanfattning",
+        mini1Title: "1. Kunden förstår erbjudandet",
+        mini1Text: "Vad går att hyra, var finns det, vad ingår och vad kostar det?",
+        mini2Title: "2. Kunden ser villkoren",
+        mini2Text: "Regler, tider, hämtning, leverans, ansvar och praktisk information.",
+        mini3Title: "3. Kunden kan boka",
+        mini3Text: "Tydlig väg till formulär, kalender, mejl, telefon eller betalning.",
+        problemTitle: "Uthyrning behöver mer än en snygg startsida.",
+        problemLead: "Kunden vill veta om det passar, vad som ingår och vad nästa steg är. Om informationen ligger utspridd i sms, Facebook-inlägg och gamla PDF:er blir det lätt säljtrassel deluxe.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "Kunden hittar inte tydlig information",
+        problem1Text: "Vad ingår? Var hämtar man? Finns leverans? Vilka datum gäller? Det behöver synas direkt.",
+        problem2Title: "Villkor och ansvar blir otydligt",
+        problem2Text: "Uthyrning kräver tydliga regler. Annars får du samma frågor om och om igen.",
+        problem3Title: "Bokningen blir onödigt krånglig",
+        problem3Text: "Kunden ska inte behöva leta efter nästa steg. Bokning eller förfrågan ska vara uppenbar.",
+        getsTitle: "Det jag kan bygga för din uthyrning.",
+        getsLead: "En praktisk hemsida från start: tydlig information, bra struktur, bokningsväg, lokal SEO och innehåll som minskar friktion.",
+        gets1Tag: "Erbjudande",
+        gets1Title: "Sida som visar vad som går att hyra",
+        gets1Text: "Presentera objektet, tjänsten, aktiviteten eller utrustningen på ett sätt som kunden snabbt fattar.",
+        gets1List1: "Bilder och beskrivning",
+        gets1List2: "Vad som ingår",
+        gets1List3: "Passar för-sektion",
+        gets2Tag: "Bokning",
+        gets2Title: "Tydlig väg till bokning",
+        gets2Text: "Formulär, bokningslänk, kalender, telefon, mejl eller betalningslänk beroende på hur du arbetar.",
+        gets2List1: "Bokningsknappar",
+        gets2List2: "Förfrågningsformulär",
+        gets2List3: "Tack-sida",
+        gets3Tag: "Trygghet",
+        gets3Title: "Villkor, regler och FAQ",
+        gets3Text: "Tydliga villkor gör kunden tryggare och minskar mängden frågor före bokning.",
+        gets3List1: "Villkorssektion",
+        gets3List2: "FAQ",
+        gets3List3: "Praktiska instruktioner",
+        pricesTitle: "Priser för hemsida till uthyrningsföretag.",
+        pricesLead: "Starta med en tydlig sida. Bygg vidare med fler undersidor, bokningsflöden eller specialfunktioner när affären behöver det.",
+        price1Tag: "Start",
+        price1Title: "Ny hemsida",
+        price1Amount: "2 900 kr",
+        price1Text: "En enkel one page-sida för uthyrning med tydlig information, CTA och kontaktväg.",
+        price2Tag: "Proffs",
+        price2Title: "Mer genomarbetad",
+        price2Amount: "4 900 kr",
+        price2Text: "Fler sektioner, bättre struktur, priser, villkor, FAQ och starkare bokningsväg.",
+        price3Tag: "Utökad",
+        price3Title: "Större upplägg",
+        price3Amount: "7 900 kr",
+        price3Text: "För fler undersidor, mer innehåll, flera uthyrningskategorier eller tydligare helhet.",
+        extraTitle: "Specialfunktioner och webbfix",
+        extraText: "Bokningslogik, API, backend, integrationer, rabattkodssidor, databas, betalningsflöden eller andra speciallösningar görs från 650 kr/h. Mindre webbfix på befintlig sida startar från 490 kr.",
+        howTitle: "Så fungerar demo först.",
+        howLead: "Du beskriver uthyrningen, jag tar fram en demo och du tar beslut på något konkret. Ingen gissningslek i dimma.",
+        step1Title: "Du skickar info om uthyrningen",
+        step1Text: "Vad hyr du ut, var finns det, vad kostar det, vad ingår och hur bokar kunden?",
+        step2Title: "Jag bygger en första demo",
+        step2Text: "Du får ett konkret förslag på struktur, känsla, sektioner och bokningsväg.",
+        step3Title: "Du ger feedback",
+        step3Text: "Vi justerar priser, villkor, bilder, FAQ och praktiska detaljer.",
+        step4Title: "Du köper bara om du vill gå vidare",
+        step4Text: "Om du gillar demon färdigställer vi sidan enligt valt paket.",
+        step5Title: "Sidan publiceras",
+        step5Text: "Jag hjälper med publicering, domän, länkar och det praktiska efter godkännande.",
+        fitTag: "Passar bra för",
+        fitTitle: "Uthyrning där kunden behöver tydlig info före bokning.",
+        fitText: "Sidan kan anpassas efter olika typer av uthyrning. Poängen är samma: visa erbjudandet tydligt och gör nästa steg enkelt.",
+        fitList1: "Stuguthyrning och boende",
+        fitList2: "Bil, båt, släp, husbil och husvagn",
+        fitList3: "Maskiner, verktyg och utrustning",
+        fitList4: "Lokaler, förråd och eventytor",
+        fitList5: "Aktiviteter, spel och eventutrustning",
+        fitList6: "Saker, möbler eller privatuthyrning",
+        startTag: "Eget case",
+        startTitle: "Jag har byggt för uthyrning själv.",
+        startText: "Jag driver även Offroad Bumpis, en uthyrningsverksamhet i Skåne. Där har jag byggt hemsida, bokningsväg, villkor, rabattkodssidor och tydlig kundinformation.",
+        startList1: "Hemsida för uthyrning",
+        startList2: "Bokningsflöde",
+        startList3: "Villkor och praktisk info",
+        startList4: "Lokal SEO och rabattkodssidor",
+        ctaTitle: "Gör det lättare för kunden att boka rätt.",
+        ctaText: "En bra uthyrningssida ska svara på kundens frågor innan kunden behöver fråga. Då blir bokningen enklare, villkoren tydligare och din tid bättre använd.",
+        ctaPanelTitle: "Demo först",
+        ctaPanelText: "Skicka vad du hyr ut, så tar jag fram en första riktning. Du köper bara om du vill gå vidare.",
+        ctaButton: "Få demo",
+        faqTitle: "Vanliga frågor.",
+        faqLead: "Det viktigaste innan du skickar in.",
+        faq1Q: "Vad kostar en hemsida för uthyrningsföretag?",
+        faq1A: "En enkel hemsida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning.",
+        faq2Q: "Kan hemsidan ha bokningsformulär?",
+        faq2A: "Ja. Sidan kan ha formulär, kalenderlänk, bokningslänk, mejllänk, telefonknapp, betalningslänk eller annat flöde beroende på hur du tar emot bokningar.",
+        faq3Q: "Kan sidan visa priser och paket?",
+        faq3A: "Ja. Sidan kan visa pris per dag, helg, timme, paket, leverans, tillägg och annat som påverkar bokningen.",
+        faq4Q: "Kan du hjälpa till med villkor och FAQ?",
+        faq4A: "Ja, jag kan hjälpa till att strukturera villkor, praktisk information och FAQ så att kunden lättare förstår vad som gäller.",
+        faq5Q: "Kan jag bygga vidare senare?",
+        faq5A: "Ja. Du kan börja med en one page-sida och senare lägga till fler undersidor, bokningsflöden, rabattkodssidor eller specialfunktioner.",
+        faq6Q: "Blir jag låst till dig?",
+        faq6A: "Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.",
+        formTitle: "Få demo på hemsida för din uthyrning.",
+        formLead: "Fyll i vad du hyr ut, var du finns, hur kunden bokar och vad som behöver framgå på sidan.",
+        contactAria: "Kontaktuppgifter",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Företag",
+        companyType: "Nordlöf Nordic · Enskild firma",
+        labelName: "Namn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Företag",
+        labelRentalType: "Vad hyr du ut?",
+        rentalNotSure: "Välj det som passar bäst",
+        rentalCabin: "Stuga / boende",
+        rentalVehicle: "Bil / fordon",
+        rentalBoat: "Båt",
+        rentalTrailer: "Släp / trailer",
+        rentalCamper: "Husbil / husvagn",
+        rentalEquipment: "Maskiner / verktyg / utrustning",
+        rentalVenue: "Lokal / eventyta",
+        rentalActivity: "Aktivitet / eventutrustning",
+        rentalOther: "Annat",
+        labelBudget: "Budget / paket",
+        budgetNotSure: "Vet inte än",
+        budgetStart: "Start 2 900 kr",
+        budgetPro: "Proffs 4 900 kr",
+        budgetExtended: "Utökad 7 900 kr",
+        budgetHourly: "Timpris 650 kr/h",
+        labelCurrent: "Nuvarande hemsida, om du har en",
+        labelPlace: "Var finns uthyrningen?",
+        placeholderPlace: "Till exempel Malmö, Skåne, Stockholm, hela Sverige...",
+        labelDescription: "Beskriv uthyrningen och vad sidan ska göra",
+        placeholderDescription: "Vad hyr du ut? Vad ingår? Hur bokar kunden? Finns priser, villkor, hämtning, leverans eller särskilda regler?",
+        labelInspo: "Länkar eller inspiration",
+        placeholderInspo: "Klistra gärna in konkurrenter, sidor du gillar eller exempel på bokningsflöde.",
+        privacyText: "Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt",
+        privacyLink: "integritetspolicyn",
+        submitButton: "Skicka och få demo",
+        footerText1: "Hemsidor, bokningsflöden, landningssidor och webbutveckling för småföretag och uthyrningsföretag.",
+        footerText2: "Demo inom 1 arbetsdag · Ny hemsida från 2 900 kr · Speciallösningar från 650 kr/h",
+        footerContact: "Kontakt:",
+        footerHome: "Startsida",
+        footerDemo: "Gratis demo",
+        footerCase: "Case",
+        footerWebfix: "Webbfix",
+        footerLanding: "Landningssida",
+        footerStartup: "Nystartat företag",
+        footerTerms: "Villkor",
+        footerPrivacy: "Integritet",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Snabbval på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo",
+        speechSummary: "Nordlöf Nordic bygger hemsidor för uthyrningsföretag och småföretag. Du kan få en första demo innan du bestämmer dig och köper bara om du vill gå vidare. En enkel hemsida startar från 2 900 kronor. Sidan kan innehålla bokningsväg, priser, villkor, FAQ, formulär och lokal SEO. Efter köp blir du inte låst till Nordlöf Nordic, utan kan få material, kod och inloggningar om du vill fortsätta själv eller med någon annan."
+      },
+      en: {
+        htmlLang: "en",
+        speechLang: "en-GB",
+        languageName: "English",
+        metaTitle: "Website for rental business | Demo first | Nordlöf Nordic",
+        metaDescription: "Website for rental businesses from 2,900 SEK. Get a demo first. Clear booking path, prices, terms, FAQ, forms and local SEO without agency hassle.",
+        ogTitle: "Website for rental business | Nordlöf Nordic",
+        ogDescription: "Website for rental businesses with booking path, prices, terms, FAQ and local SEO. Demo first.",
+        twitterTitle: "Website for rental business | Nordlöf Nordic",
+        twitterDescription: "Website for rental businesses with clear booking, prices, terms, FAQ and local SEO.",
+        subject: "New request from hemsida-uthyrning.html - English",
+        autoresponse: "Thank you! I have received your request and will get back to you as soon as I can.",
+        validationRequired: "Please fill in the required fields first.",
+        sending: "Sending...",
+        sendingStatus: "Sending the form...",
+        skip: "Skip to main content",
+        accessibilityTools: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Website for rental business",
+        mainNav: "Main navigation",
+        navProblem: "Problem",
+        navGets: "What you get",
+        navPrices: "Prices",
+        navDemo: "Get demo",
+        languageLabel: "Language",
+        languageSwitch: "Choose language",
+        eyebrow: "For rental businesses · Demo first · From 2,900 SEK",
+        heroTitle: "Website for rental businesses that makes booking easier.",
+        heroLead: "Do you rent out cabins, vehicles, boats, trailers, equipment, venues or activities? I build a clear website where customers quickly understand what is included, what it costs, what terms apply and how to book.",
+        heroCta: "Get a demo first",
+        heroPriceCta: "See prices",
+        benefitsAria: "Benefits",
+        proof1Title: "Clear booking",
+        proof1Text: "Form, booking link or contact path.",
+        proof2Title: "Fewer questions",
+        proof2Text: "Prices, terms and FAQ in the right place.",
+        proof3Title: "No lock-in",
+        proof3Text: "You can get code, material and logins after purchase.",
+        summaryAria: "Short summary",
+        mini1Title: "1. The customer understands the offer",
+        mini1Text: "What can be rented, where is it, what is included and what does it cost?",
+        mini2Title: "2. The customer sees the terms",
+        mini2Text: "Rules, times, pickup, delivery, responsibility and practical information.",
+        mini3Title: "3. The customer can book",
+        mini3Text: "Clear path to form, calendar, email, phone or payment.",
+        problemTitle: "Rental needs more than a nice homepage.",
+        problemLead: "The customer wants to know if it fits, what is included and what the next step is. If that information is spread across messages, social posts and old PDFs, sales get messy.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "The customer cannot find clear information",
+        problem1Text: "What is included? Where is pickup? Is delivery available? What dates apply? It needs to be clear.",
+        problem2Title: "Terms and responsibility become unclear",
+        problem2Text: "Rental needs clear rules. Otherwise you get the same questions again and again.",
+        problem3Title: "Booking becomes unnecessarily difficult",
+        problem3Text: "The customer should not have to search for the next step. Booking or request should be obvious.",
+        getsTitle: "What I can build for your rental business.",
+        getsLead: "A practical website from the start: clear information, good structure, booking path, local SEO and content that reduces friction.",
+        gets1Tag: "Offer",
+        gets1Title: "Page that shows what can be rented",
+        gets1Text: "Present the item, service, activity or equipment in a way customers understand quickly.",
+        gets1List1: "Images and description",
+        gets1List2: "What is included",
+        gets1List3: "Best for-section",
+        gets2Tag: "Booking",
+        gets2Title: "Clear path to booking",
+        gets2Text: "Form, booking link, calendar, phone, email or payment link depending on how you work.",
+        gets2List1: "Booking buttons",
+        gets2List2: "Request form",
+        gets2List3: "Thank-you page",
+        gets3Tag: "Trust",
+        gets3Title: "Terms, rules and FAQ",
+        gets3Text: "Clear terms make customers feel safer and reduce questions before booking.",
+        gets3List1: "Terms section",
+        gets3List2: "FAQ",
+        gets3List3: "Practical instructions",
+        pricesTitle: "Prices for rental business websites.",
+        pricesLead: "Start with a clear page. Add more subpages, booking flows or custom functions when the business needs it.",
+        price1Tag: "Start",
+        price1Title: "New website",
+        price1Amount: "2,900 SEK",
+        price1Text: "A simple one-page website for rental with clear information, CTA and contact path.",
+        price2Tag: "Pro",
+        price2Title: "More polished",
+        price2Amount: "4,900 SEK",
+        price2Text: "More sections, better structure, prices, terms, FAQ and stronger booking path.",
+        price3Tag: "Extended",
+        price3Title: "Larger setup",
+        price3Amount: "7,900 SEK",
+        price3Text: "For more subpages, more content, several rental categories or a clearer full setup.",
+        extraTitle: "Custom features and website fixes",
+        extraText: "Booking logic, API, backend, integrations, discount code pages, database, payment flows or other custom solutions start from 650 SEK/hour. Smaller website fixes start from 490 SEK.",
+        howTitle: "How demo first works.",
+        howLead: "You describe the rental business, I create a demo and you decide based on something concrete.",
+        step1Title: "You send rental information",
+        step1Text: "What do you rent out, where is it, what does it cost, what is included and how does the customer book?",
+        step2Title: "I build a first demo",
+        step2Text: "You get a concrete proposal for structure, feeling, sections and booking path.",
+        step3Title: "You give feedback",
+        step3Text: "We adjust prices, terms, images, FAQ and practical details.",
+        step4Title: "You only buy if you want to continue",
+        step4Text: "If you like the demo, we finish the website according to the selected package.",
+        step5Title: "The website is published",
+        step5Text: "I help with publishing, domain, links and practical details after approval.",
+        fitTag: "Good fit for",
+        fitTitle: "Rental where customers need clear information before booking.",
+        fitText: "The website can be adapted to different types of rental. The point is the same: show the offer clearly and make the next step easy.",
+        fitList1: "Cabin and accommodation rental",
+        fitList2: "Cars, boats, trailers, motorhomes and caravans",
+        fitList3: "Machines, tools and equipment",
+        fitList4: "Venues, storage and event spaces",
+        fitList5: "Activities, games and event equipment",
+        fitList6: "Items, furniture or private rental",
+        startTag: "Own case",
+        startTitle: "I have built for rental myself.",
+        startText: "I also run Offroad Bumpis, a rental business in Skåne. There I built the website, booking path, terms, discount code pages and clear customer information.",
+        startList1: "Website for rental",
+        startList2: "Booking flow",
+        startList3: "Terms and practical info",
+        startList4: "Local SEO and discount code pages",
+        ctaTitle: "Make it easier for customers to book correctly.",
+        ctaText: "A good rental website should answer customer questions before they need to ask. That makes booking easier, terms clearer and your time better used.",
+        ctaPanelTitle: "Demo first",
+        ctaPanelText: "Send what you rent out and I will create a first direction. You only buy if you want to continue.",
+        ctaButton: "Get demo",
+        faqTitle: "Frequently asked questions.",
+        faqLead: "The essentials before you send a request.",
+        faq1Q: "What does a rental business website cost?",
+        faq1A: "A simple website starts from 2,900 SEK. More polished setups cost from 4,900 SEK or 7,900 SEK depending on scope.",
+        faq2Q: "Can the website have a booking form?",
+        faq2A: "Yes. The page can have a form, calendar link, booking link, email link, phone button, payment link or another flow depending on how you take bookings.",
+        faq3Q: "Can the page show prices and packages?",
+        faq3A: "Yes. The page can show price per day, weekend, hour, package, delivery, add-ons and other booking details.",
+        faq4Q: "Can you help with terms and FAQ?",
+        faq4A: "Yes. I can help structure terms, practical information and FAQ so customers understand what applies.",
+        faq5Q: "Can I build more later?",
+        faq5A: "Yes. You can start with a one-page website and later add subpages, booking flows, discount code pages or custom features.",
+        faq6Q: "Will I be locked in to you?",
+        faq6A: "No. After purchase, you can get material, code and logins if you want to continue yourself or with someone else.",
+        formTitle: "Get a website demo for your rental business.",
+        formLead: "Fill in what you rent out, where you are, how customers book and what needs to be clear on the page.",
+        contactAria: "Contact details",
+        contactEmail: "Email",
+        contactPhone: "Phone",
+        contactCompany: "Company",
+        companyType: "Nordlöf Nordic · Sole proprietorship",
+        labelName: "Name",
+        labelEmail: "Email",
+        labelPhone: "Phone",
+        labelCompany: "Company",
+        labelRentalType: "What do you rent out?",
+        rentalNotSure: "Choose the best match",
+        rentalCabin: "Cabin / accommodation",
+        rentalVehicle: "Car / vehicle",
+        rentalBoat: "Boat",
+        rentalTrailer: "Trailer",
+        rentalCamper: "Motorhome / caravan",
+        rentalEquipment: "Machines / tools / equipment",
+        rentalVenue: "Venue / event space",
+        rentalActivity: "Activity / event equipment",
+        rentalOther: "Other",
+        labelBudget: "Budget / package",
+        budgetNotSure: "Not sure yet",
+        budgetStart: "Start 2,900 SEK",
+        budgetPro: "Pro 4,900 SEK",
+        budgetExtended: "Extended 7,900 SEK",
+        budgetHourly: "Hourly 650 SEK/hour",
+        labelCurrent: "Current website, if you have one",
+        labelPlace: "Where is the rental located?",
+        placeholderPlace: "For example Malmö, Skåne, Stockholm, all of Sweden...",
+        labelDescription: "Describe the rental and what the website should do",
+        placeholderDescription: "What do you rent out? What is included? How does the customer book? Are there prices, terms, pickup, delivery or special rules?",
+        labelInspo: "Links or inspiration",
+        placeholderInspo: "Paste competitors, websites you like or examples of booking flows.",
+        privacyText: "By sending the form, you agree that your information is handled according to the",
+        privacyLink: "privacy policy",
+        submitButton: "Send and get demo",
+        footerText1: "Websites, booking flows, landing pages and web development for small businesses and rental businesses.",
+        footerText2: "Demo within 1 business day · New website from 2,900 SEK · Custom solutions from 650 SEK/hour",
+        footerContact: "Contact:",
+        footerHome: "Homepage",
+        footerDemo: "Free demo",
+        footerCase: "Cases",
+        footerWebfix: "Website fixes",
+        footerLanding: "Landing page",
+        footerStartup: "New business",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Quick options on mobile",
+        mobilePrices: "Prices",
+        mobileDemo: "Get demo",
+        speechSummary: "Nordlöf Nordic builds websites for rental businesses and small businesses. You can get a first demo before deciding and only buy if you want to move forward. A simple website starts from 2,900 SEK. The page can include booking path, prices, terms, FAQ, forms and local SEO. After purchase, you are not locked in and can get material, code and logins if you want to continue yourself or with someone else."
+      },
+      da: {},
+      no: {}
+    };
+    translations.da = {
+      ...translations.en,
+      htmlLang: "da",
+      speechLang: "da-DK",
+      languageName: "Dansk",
+      metaTitle: "Hjemmeside til udlejningsvirksomhed | Demo først | Nordlöf Nordic",
+      metaDescription: "Hjemmeside til udlejningsvirksomhed fra 2 900 SEK. Demo først, tydelig booking, priser, vilkår, FAQ og lokal SEO.",
+      subject: "Ny forespørgsel fra hemsida-uthyrning.html - Dansk",
+      autoresponse: "Tak! Jeg har modtaget din forespørgsel og vender tilbage så snart jeg kan.",
+      validationRequired: "Udfyld de obligatoriske felter først.",
+      sending: "Sender...",
+      sendingStatus: "Sender formularen...",
+      brandSub: "Hjemmeside til udlejning",
+      languageLabel: "Sprog",
+      languageSwitch: "Vælg sprog",
+      heroTitle: "Hjemmeside til udlejningsvirksomhed der gør booking nemmere.",
+      heroLead: "Udlejer du sommerhus, køretøj, båd, trailer, udstyr, lokale eller aktivitet? Jeg bygger en tydelig hjemmeside, hvor kunden hurtigt forstår hvad der indgår, hvad det koster, hvilke vilkår der gælder, og hvordan man booker.",
+      heroCta: "Få en demo først",
+      heroPriceCta: "Se priser",
+      proof1Title: "Tydelig booking",
+      proof1Text: "Formular, bookinglink eller kontaktvej.",
+      proof2Title: "Færre spørgsmål",
+      proof2Text: "Priser, vilkår og FAQ på rette sted.",
+      proof3Title: "Ingen binding",
+      proof3Text: "Du kan få kode, materiale og login efter køb.",
+      pricesTitle: "Priser for hjemmeside til udlejningsvirksomhed.",
+      price1Amount: "2 900 SEK",
+      price2Amount: "4 900 SEK",
+      price3Amount: "7 900 SEK",
+      formTitle: "Få demo på hjemmeside til din udlejning.",
+      submitButton: "Send og få demo",
+      privacyLink: "privatlivspolitikken",
+      mobileDemo: "Få demo",
+      speechSummary: "Nordlöf Nordic bygger hjemmesider til udlejningsvirksomheder og små virksomheder. Du kan få en første demo før du beslutter dig og køber kun, hvis du vil videre. En enkel hjemmeside starter fra 2 900 SEK."
+    };
+    translations.no = {
+      ...translations.en,
+      htmlLang: "no",
+      speechLang: "no-NO",
+      languageName: "Norsk",
+      metaTitle: "Nettside for utleiebedrift | Demo først | Nordlöf Nordic",
+      metaDescription: "Nettside for utleiebedrift fra 2 900 SEK. Demo først, tydelig booking, priser, vilkår, FAQ og lokal SEO.",
+      subject: "Ny forespørsel fra hemsida-uthyrning.html - Norsk",
+      autoresponse: "Takk! Jeg har mottatt forespørselen din og kommer tilbake så snart jeg kan.",
+      validationRequired: "Fyll ut de obligatoriske feltene først.",
+      sending: "Sender...",
+      sendingStatus: "Sender skjemaet...",
+      brandSub: "Nettside for utleiebedrift",
+      languageLabel: "Språk",
+      languageSwitch: "Velg språk",
+      heroTitle: "Nettside for utleiebedrift som gjør booking enklere.",
+      heroLead: "Leier du ut hytte, kjøretøy, båt, henger, utstyr, lokale eller aktivitet? Jeg bygger en tydelig nettside der kunden raskt forstår hva som inngår, hva det koster, hvilke vilkår som gjelder og hvordan man booker.",
+      heroCta: "Få en demo først",
+      heroPriceCta: "Se priser",
+      proof1Title: "Tydelig booking",
+      proof1Text: "Skjema, bookinglenke eller kontaktvei.",
+      proof2Title: "Færre spørsmål",
+      proof2Text: "Priser, vilkår og FAQ på riktig sted.",
+      proof3Title: "Ingen innlåsing",
+      proof3Text: "Du kan få kode, materiale og innlogginger etter kjøp.",
+      pricesTitle: "Priser for nettside til utleiebedrift.",
+      price1Amount: "2 900 SEK",
+      price2Amount: "4 900 SEK",
+      price3Amount: "7 900 SEK",
+      formTitle: "Få demo på nettside for din utleie.",
+      submitButton: "Send og få demo",
+      privacyLink: "personvernerklæringen",
+      mobileDemo: "Få demo",
+      speechSummary: "Nordlöf Nordic bygger nettsider for utleiebedrifter og småbedrifter. Du kan få en første demo før du bestemmer deg og kjøper bare hvis du vil gå videre. En enkel nettside starter fra 2 900 SEK."
+    };
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+    let isSpeaking = false;
+    const languageSelect = document.getElementById("languageSelect");
+    const listenButton = document.getElementById("listenSummary");
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
     }
     function safeGet(key) {
       try {
@@ -1854,30 +2054,189 @@
       }
       return true;
     }
-    const savedContrast = safeGet('highContrast') === 'true';
-    const savedLargeText = safeGet('largeText') === 'true';
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+    function stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+      isSpeaking = false;
+      if (listenButton) {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        listenButton.setAttribute("aria-pressed", "false");
+        listenButton.textContent = dictionary.listen;
+      }
+    }
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+      stopSpeaking();
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (dictionary[key]) {
+          element.setAttribute("placeholder", dictionary[key]);
+        }
+      });
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+      if (languageSelect) {
+        languageSelect.value = lang;
+        languageSelect.setAttribute("aria-label", dictionary.languageSwitch);
+      }
+      const subjectField = document.getElementById("subjectField");
+      if (subjectField) {
+        subjectField.value = dictionary.subject;
+      }
+      const autoResponseField = document.getElementById("autoResponseField");
+      if (autoResponseField) {
+        autoResponseField.value = dictionary.autoresponse;
+      }
+      const languageField = document.getElementById("languageField");
+      if (languageField) {
+        languageField.value = dictionary.languageName;
+      }
+      safeSet("rentalWebsiteLanguage", lang);
+    }
+    if (languageSelect) {
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
+      });
+    }
+    document.querySelectorAll("form").forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector(".form-status");
+      form.addEventListener("submit", (event) => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        const originalButtonText = dictionary.submitButton;
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          if (statusBox) {
+            statusBox.className = "form-status is-visible";
+            statusBox.textContent = dictionary.validationRequired;
+          }
+          form.reportValidity();
+          return;
+        }
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = dictionary.sending;
+          submitButton.setAttribute("aria-busy", "true");
+        }
+        if (statusBox) {
+          statusBox.className = "form-status is-visible";
+          statusBox.textContent = dictionary.sendingStatus;
+        }
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute("aria-busy");
+          }
+        }, 15000);
+      });
+    });
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
     if (savedContrast) {
-      document.body.classList.add('high-contrast');
+      document.body.classList.add("high-contrast");
     }
     if (savedLargeText) {
-      document.body.classList.add('large-text');
+      document.body.classList.add("large-text");
     }
     setPressed(contrastButton, savedContrast);
     setPressed(largeTextButton, savedLargeText);
     if (contrastButton) {
-      contrastButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('high-contrast');
-        safeSet('highContrast', String(isActive));
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
         setPressed(contrastButton, isActive);
       });
     }
     if (largeTextButton) {
-      largeTextButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('large-text');
-        safeSet('largeText', String(isActive));
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
         setPressed(largeTextButton, isActive);
       });
     }
+    if (listenButton && "speechSynthesis" in window) {
+      listenButton.addEventListener("click", () => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        if (isSpeaking) {
+          stopSpeaking();
+          return;
+        }
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(dictionary.speechSummary);
+        utterance.lang = dictionary.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+        isSpeaking = true;
+        listenButton.setAttribute("aria-pressed", "true");
+        listenButton.textContent = dictionary.stopListen;
+        utterance.onend = () => {
+          stopSpeaking();
+        };
+        utterance.onerror = () => {
+          stopSpeaking();
+        };
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+    window.addEventListener("pagehide", () => {
+      stopSpeaking();
+    });
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("rentalWebsiteLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+    applyLanguage(initialLanguage);
   </script>
 </body>
 </html>
