@@ -46,6 +46,7 @@
         "name":"Landningssida för kampanj",
         "description":"Landningssida för kampanj, erbjudande, rabattkod, bokning, köp eller leadformulär.",
         "inLanguage":"sv-SE",
+        "availableLanguage":["sv-SE","en","da-DK","no-NO"],
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"}
       },
@@ -66,7 +67,7 @@
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
-        "description":"Webbutvecklare för småföretag. Hemsidor, landningssidor, kampanjsidor, webbfix, API, backend och speciallösningar. Demo inom 1 arbetsdag.",
+        "description":"Webbutvecklare för småföretag. Hemsidor, landningssidor, kampanjsidor, webbfix, API, backend, formulärflöden, integrationer och speciallösningar. Demo inom 1 arbetsdag.",
         "areaServed":[
           {"@type":"Country","name":"Sverige"},
           {"@type":"Country","name":"Danmark"},
@@ -91,7 +92,10 @@
           "Rabattkodssidor",
           "Bokningsflöden",
           "Frontendutveckling",
-          "SEO för småföretag"
+          "SEO för småföretag",
+          "API",
+          "Backendutveckling",
+          "Integrationer"
         ],
         "hasOfferCatalog":{
           "@type":"OfferCatalog",
@@ -131,6 +135,24 @@
             }
           ]
         }
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://webutvecklare.se/landningssida-kampanj.html#breadcrumb",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Startsida",
+            "item":"https://webutvecklare.se/"
+          },
+          {
+            "@type":"ListItem",
+            "position":2,
+            "name":"Landningssida för kampanj",
+            "item":"https://webutvecklare.se/landningssida-kampanj.html"
+          }
+        ]
       },
       {
         "@type":"FAQPage",
@@ -191,9 +213,7 @@
       --max:1080px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box;}
 
     html{
       scroll-behavior:smooth;
@@ -211,9 +231,7 @@
       overflow-x:hidden;
     }
 
-    body.large-text{
-      font-size:118%;
-    }
+    body.large-text{font-size:118%;}
 
     body.large-text p,
     body.large-text li,
@@ -258,9 +276,7 @@
       font:inherit;
     }
 
-    button{
-      border:0;
-    }
+    button{border:0;}
 
     :target{
       scroll-margin-top:92px;
@@ -308,20 +324,29 @@
       top:86px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      align-items:center;
       gap:8px;
+      padding:8px;
+      border-radius:22px;
+      background:rgba(251,247,244,.94);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .accessibility-btn{
-      min-height:44px;
-      padding:10px 14px;
+      min-height:42px;
+      padding:9px 13px;
       border-radius:999px;
       background:#111;
       color:#fff;
       border:2px solid #fff;
       font-weight:900;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(36,30,26,.18);
+      box-shadow:0 8px 20px rgba(36,30,26,.14);
+      white-space:nowrap;
+      font-size:13px;
     }
 
     .accessibility-btn[aria-pressed="true"]{
@@ -384,6 +409,14 @@
       text-overflow:ellipsis;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
     .nav-links{
       display:flex;
       align-items:center;
@@ -395,6 +428,33 @@
 
     .nav-links a:hover{
       color:var(--brand-dark);
+    }
+
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .language-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .language-select{
+      min-height:42px;
+      max-width:190px;
+      padding:10px 36px 10px 14px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      outline:none;
     }
 
     .btn{
@@ -489,9 +549,7 @@
       line-height:1.15;
     }
 
-    p{
-      margin:0;
-    }
+    p{margin:0;}
 
     .lead{
       max-width:760px;
@@ -956,7 +1014,9 @@
     body.high-contrast .card,
     body.high-contrast .price-card,
     body.high-contrast .step,
-    body.high-contrast .faq details{
+    body.high-contrast .faq details,
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1020,6 +1080,15 @@
       }
     }
 
+    @media(max-width:1100px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+      }
+    }
+
     @media(max-width:980px){
       .nav-links{
         display:none;
@@ -1044,29 +1113,36 @@
         padding-bottom:86px;
       }
 
+      body.large-text .mobile-sticky{
+        display:none;
+      }
+
       .container{
         width:min(var(--max),calc(100% - 22px));
       }
 
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
 
       .accessibility-btn{
         width:100%;
         min-height:44px;
-        padding:9px 10px;
-        font-size:14px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
         min-height:auto;
         padding:10px 0;
+        align-items:flex-start;
       }
 
       .brand img{
@@ -1081,6 +1157,22 @@
 
       .brand span span{
         display:none;
+      }
+
+      .nav-right{
+        align-items:flex-end;
+        gap:8px;
+      }
+
+      .language-label{
+        display:none;
+      }
+
+      .language-select{
+        max-width:150px;
+        min-height:40px;
+        padding:9px 32px 9px 11px;
+        font-size:13px;
       }
 
       .hero{
@@ -1178,37 +1270,71 @@
         font-size:13px;
       }
     }
+
+    @media(max-width:390px){
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+
+      .language-select{
+        max-width:132px;
+        font-size:12px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
 
-  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
-    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityTools">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
       Hög kontrast
     </button>
-    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
+
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
       Större text
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">
+      Kort uppläsning
     </button>
   </div>
 
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+      <a class="brand" href="/" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" data-i18n-alt="logoAlt">
         <span>
           <strong>Nordlöf Nordic</strong>
-          <span>Landningssida för kampanj</span>
+          <span data-i18n="brandSub">Landningssida för kampanj</span>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Huvudnavigering">
-        <a href="#problem">Problem</a>
-        <a href="#det-du-far">Det du får</a>
-        <a href="#priser">Priser</a>
-        <a href="#kontakt">Få demo</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Huvudnavigering" data-i18n-aria-label="mainNav">
+          <a href="#problem" data-i18n="navProblem">Problem</a>
+          <a href="#det-du-far" data-i18n="navGets">Det du får</a>
+          <a href="#priser" data-i18n="navPrices">Priser</a>
+          <a href="#kontakt" data-i18n="navDemo">Få demo</a>
+        </nav>
+
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select
+            id="languageSelect"
+            class="language-select"
+            aria-label="Välj språk"
+            data-i18n-aria-label="languageSwitch"
+          >
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1216,50 +1342,50 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Kampanj · Erbjudande · Rabattkod · Bokning · Leads</span>
+          <span class="eyebrow" data-i18n="eyebrow">Kampanj · Erbjudande · Rabattkod · Bokning · Leads</span>
 
-          <h1 id="hero-title">Landningssida för kampanj som har ett tydligt jobb.</h1>
+          <h1 id="hero-title" data-i18n="heroTitle">Landningssida för kampanj som har ett tydligt jobb.</h1>
 
-          <p class="lead">
+          <p class="lead" data-i18n="heroLead">
             Ska du sälja ett erbjudande, samla leads, få bokningar, lansera något nytt eller driva trafik från Facebook, Google, LinkedIn eller mejl?
             Jag bygger en landningssida med tydlig rubrik, tydligt erbjudande och ett nästa steg.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Få demo först</a>
-            <a class="btn btn-secondary" href="#priser">Se priser</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="heroCta">Få demo först</a>
+            <a class="btn btn-secondary" href="#priser" data-i18n="heroPriceCta">Se priser</a>
           </div>
 
-          <div class="proof-row" aria-label="Fördelar">
+          <div class="proof-row" aria-label="Fördelar" data-i18n-aria-label="benefitsAria">
             <div class="proof-pill">
-              Ett mål
-              <span>Köp, bokning, formulär eller kontakt.</span>
+              <span data-i18n="proof1Title">Ett mål</span>
+              <span data-i18n="proof1Text">Köp, bokning, formulär eller kontakt.</span>
             </div>
             <div class="proof-pill">
-              Demo först
-              <span>Du ser riktningen innan du köper.</span>
+              <span data-i18n="proof2Title">Demo först</span>
+              <span data-i18n="proof2Text">Du ser riktningen innan du köper.</span>
             </div>
             <div class="proof-pill">
-              Från 2 900 kr
-              <span>Fast pris när uppdraget är tydligt.</span>
+              <span data-i18n="proof3Title">Från 2 900 kr</span>
+              <span data-i18n="proof3Text">Fast pris när uppdraget är tydligt.</span>
             </div>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Kort sammanfattning">
+        <aside class="hero-card" aria-label="Kort sammanfattning" data-i18n-aria-label="summaryAria">
           <img src="nordlof-nordic-logo.png" alt="">
           <ul class="mini-list">
             <li>
-              <strong>1. Ett erbjudande</strong>
-              Vad ska kunden förstå, vilja ha eller boka?
+              <strong data-i18n="mini1Title">1. Ett erbjudande</strong>
+              <span data-i18n="mini1Text">Vad ska kunden förstå, vilja ha eller boka?</span>
             </li>
             <li>
-              <strong>2. En tydlig sida</strong>
-              Rubrik, nytta, innehåll, bevis, FAQ och CTA i rätt ordning.
+              <strong data-i18n="mini2Title">2. En tydlig sida</strong>
+              <span data-i18n="mini2Text">Rubrik, nytta, innehåll, bevis, FAQ och CTA i rätt ordning.</span>
             </li>
             <li>
-              <strong>3. Ett nästa steg</strong>
-              Formulär, bokning, köp, rabattkod eller kontakt. Inte fem knappar som slåss.
+              <strong data-i18n="mini3Title">3. Ett nästa steg</strong>
+              <span data-i18n="mini3Text">Formulär, bokning, köp, rabattkod eller kontakt. Inte fem knappar som slåss.</span>
             </li>
           </ul>
         </aside>
@@ -1269,33 +1395,34 @@
     <section class="section" id="problem">
       <div class="container">
         <div class="section-head">
-          <h2>En kampanj behöver en egen sida.</h2>
-          <p>
-            Att skicka kampanjtrafik till en vanlig startsida är som att släppa in kunden i ett varuhus och ropa “lycka till”. En landningssida visar exakt vad kunden ska förstå och göra.
+          <h2 data-i18n="problemTitle">En kampanj behöver en egen sida.</h2>
+          <p data-i18n="problemLead">
+            Att skicka kampanjtrafik till en vanlig startsida är som att släppa in kunden i ett varuhus och ropa “lycka till”.
+            En landningssida visar exakt vad kunden ska förstå och göra.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Startsidan har för många val</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag">Problem</span>
+            <h3 data-i18n="problem1Title">Startsidan har för många val</h3>
+            <p data-i18n="problem1Text">
               En vanlig hemsida ska visa hela företaget. En kampanj ska sälja ett tydligt erbjudande.
             </p>
           </article>
 
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Erbjudandet blir otydligt</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag2">Problem</span>
+            <h3 data-i18n="problem2Title">Erbjudandet blir otydligt</h3>
+            <p data-i18n="problem2Text">
               Kunden behöver snabbt förstå vad som erbjuds, varför det är relevant och vad nästa steg är.
             </p>
           </article>
 
           <article class="card">
-            <span class="tag">Problem</span>
-            <h3>Trafiken läcker</h3>
-            <p>
+            <span class="tag" data-i18n="problemCardTag3">Problem</span>
+            <h3 data-i18n="problem3Title">Trafiken läcker</h3>
+            <p data-i18n="problem3Text">
               Om sidan saknar tydlig CTA tappar du folk som annars kunde ha skickat formulär, bokat eller köpt.
             </p>
           </article>
@@ -1306,88 +1433,88 @@
     <section class="section" id="det-du-far">
       <div class="container">
         <div class="section-head">
-          <h2>Det jag kan bygga.</h2>
-          <p>
+          <h2 data-i18n="getsTitle">Det jag kan bygga.</h2>
+          <p data-i18n="getsLead">
             En landningssida som är byggd för ett specifikt mål. Inte en hel hemsida i miniformat, utan en sida som gör jobbet.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <span class="tag">Erbjudande</span>
-            <h3>Kampanjsida för erbjudande</h3>
-            <p>
+            <span class="tag" data-i18n="gets1Tag">Erbjudande</span>
+            <h3 data-i18n="gets1Title">Kampanjsida för erbjudande</h3>
+            <p data-i18n="gets1Text">
               För rabatt, paket, säsongskampanj, öppningserbjudande eller särskild tjänst.
             </p>
             <ul class="list">
-              <li>Tydlig rubrik</li>
-              <li>Erbjudande och nytta</li>
-              <li>Stark CTA</li>
+              <li data-i18n="gets1List1">Tydlig rubrik</li>
+              <li data-i18n="gets1List2">Erbjudande och nytta</li>
+              <li data-i18n="gets1List3">Stark CTA</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Leads</span>
-            <h3>Landningssida med formulär</h3>
-            <p>
+            <span class="tag" data-i18n="gets2Tag">Leads</span>
+            <h3 data-i18n="gets2Title">Landningssida med formulär</h3>
+            <p data-i18n="gets2Text">
               För dig som vill samla offertförfrågningar, intresseanmälningar eller kundkontakter.
             </p>
             <ul class="list">
-              <li>Leadformulär</li>
-              <li>Tack-sida</li>
-              <li>Rätt frågor i formuläret</li>
+              <li data-i18n="gets2List1">Leadformulär</li>
+              <li data-i18n="gets2List2">Tack-sida</li>
+              <li data-i18n="gets2List3">Rätt frågor i formuläret</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Bokning</span>
-            <h3>Sida som leder till bokning</h3>
-            <p>
+            <span class="tag" data-i18n="gets3Tag">Bokning</span>
+            <h3 data-i18n="gets3Title">Sida som leder till bokning</h3>
+            <p data-i18n="gets3Text">
               För tjänster, aktiviteter, konsultationer, hyrprodukter eller tidsbokade uppdrag.
             </p>
             <ul class="list">
-              <li>Bokningsknapp</li>
-              <li>Kalenderlänk</li>
-              <li>Praktisk information</li>
+              <li data-i18n="gets3List1">Bokningsknapp</li>
+              <li data-i18n="gets3List2">Kalenderlänk</li>
+              <li data-i18n="gets3List3">Praktisk information</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Rabattkod</span>
-            <h3>Rabattkodssida</h3>
-            <p>
+            <span class="tag" data-i18n="gets4Tag">Rabattkod</span>
+            <h3 data-i18n="gets4Title">Rabattkodssida</h3>
+            <p data-i18n="gets4Text">
               För kampanjer, affiliates, partners eller riktade erbjudanden där kunden ska använda en kod.
             </p>
             <ul class="list">
-              <li>Kod synligt på sidan</li>
-              <li>Kopiera-knapp om du vill</li>
-              <li>Formulär eller köplänk</li>
+              <li data-i18n="gets4List1">Kod synligt på sidan</li>
+              <li data-i18n="gets4List2">Kopiera-knapp om du vill</li>
+              <li data-i18n="gets4List3">Formulär eller köplänk</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Produkt</span>
-            <h3>Sida för lansering</h3>
-            <p>
+            <span class="tag" data-i18n="gets5Tag">Produkt</span>
+            <h3 data-i18n="gets5Title">Sida för lansering</h3>
+            <p data-i18n="gets5Text">
               För ny tjänst, nytt paket, ny digital produkt eller test av affärsidé.
             </p>
             <ul class="list">
-              <li>Problem och lösning</li>
-              <li>Pris eller frånpris</li>
-              <li>FAQ och trygghet</li>
+              <li data-i18n="gets5List1">Problem och lösning</li>
+              <li data-i18n="gets5List2">Pris eller frånpris</li>
+              <li data-i18n="gets5List3">FAQ och trygghet</li>
             </ul>
           </article>
 
           <article class="card">
-            <span class="tag">Teknik</span>
-            <h3>Specialflöden</h3>
-            <p>
+            <span class="tag" data-i18n="gets6Tag">Teknik</span>
+            <h3 data-i18n="gets6Title">Specialflöden</h3>
+            <p data-i18n="gets6Text">
               För dig som behöver mer än en vanlig sida: integrationer, API, backend, tracking eller anpassade formulär.
             </p>
             <ul class="list">
-              <li>Formulärlogik</li>
-              <li>API och backend</li>
-              <li>Integrationer</li>
+              <li data-i18n="gets6List1">Formulärlogik</li>
+              <li data-i18n="gets6List2">API och backend</li>
+              <li data-i18n="gets6List3">Integrationer</li>
             </ul>
           </article>
         </div>
@@ -1397,33 +1524,33 @@
     <section class="section">
       <div class="container grid-2">
         <article class="card">
-          <span class="tag">Passar för</span>
-          <h2>När du vill skicka trafik till ett konkret erbjudande.</h2>
-          <p>
+          <span class="tag" data-i18n="fitTag">Passar för</span>
+          <h2 data-i18n="fitTitle">När du vill skicka trafik till ett konkret erbjudande.</h2>
+          <p data-i18n="fitText">
             En landningssida passar när du har ett tydligt mål och inte vill att besökaren ska vandra runt bland tio andra val.
           </p>
           <ul class="list">
-            <li>Facebook- eller Google-kampanj</li>
-            <li>LinkedIn-inlägg eller DM-trafik</li>
-            <li>Rabattkod eller affiliateerbjudande</li>
-            <li>Bokningskampanj</li>
-            <li>Offertförfrågan</li>
-            <li>Lansering av ny tjänst eller produkt</li>
+            <li data-i18n="fitList1">Facebook- eller Google-kampanj</li>
+            <li data-i18n="fitList2">LinkedIn-inlägg eller DM-trafik</li>
+            <li data-i18n="fitList3">Rabattkod eller affiliateerbjudande</li>
+            <li data-i18n="fitList4">Bokningskampanj</li>
+            <li data-i18n="fitList5">Offertförfrågan</li>
+            <li data-i18n="fitList6">Lansering av ny tjänst eller produkt</li>
           </ul>
         </article>
 
         <article class="card">
-          <span class="tag">Inte krångligare än nödvändigt</span>
-          <h2>En sida. Ett budskap. Ett nästa steg.</h2>
-          <p>
+          <span class="tag" data-i18n="focusTag">Inte krångligare än nödvändigt</span>
+          <h2 data-i18n="focusTitle">En sida. Ett budskap. Ett nästa steg.</h2>
+          <p data-i18n="focusText">
             Det är hela poängen. En bra landningssida ska inte presentera hela livsverket.
             Den ska få rätt person att förstå erbjudandet och ta nästa steg.
           </p>
           <ul class="list">
-            <li>Vad är erbjudandet?</li>
-            <li>Vem är det för?</li>
-            <li>Varför ska kunden bry sig?</li>
-            <li>Vad ska kunden göra nu?</li>
+            <li data-i18n="focusList1">Vad är erbjudandet?</li>
+            <li data-i18n="focusList2">Vem är det för?</li>
+            <li data-i18n="focusList3">Varför ska kunden bry sig?</li>
+            <li data-i18n="focusList4">Vad ska kunden göra nu?</li>
           </ul>
         </article>
       </div>
@@ -1432,46 +1559,45 @@
     <section class="section" id="priser">
       <div class="container">
         <div class="section-head">
-          <h2>Pris för landningssida.</h2>
-          <p>
+          <h2 data-i18n="pricesTitle">Pris för landningssida.</h2>
+          <p data-i18n="pricesLead">
             Fast pris när kampanjen är tydlig. Timpris när det krävs specialflöden, integrationer eller mer teknik.
           </p>
         </div>
 
         <div class="price-grid">
           <article class="price-card">
-            <span class="tag">Start</span>
-            <h3>Enkel landningssida</h3>
-            <div class="price">2 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price1Tag">Start</span>
+            <h3 data-i18n="price1Title">Enkel landningssida</h3>
+            <div class="price" data-i18n="price1Amount">2 900 kr</div>
+            <p data-i18n="price1Text">
               För ett enkelt erbjudande, formulär, bokning eller kampanjsida med tydlig CTA.
             </p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Proffs</span>
-            <h3>Mer genomarbetad</h3>
-            <div class="price">4 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price2Tag">Proffs</span>
+            <h3 data-i18n="price2Title">Mer genomarbetad</h3>
+            <div class="price" data-i18n="price2Amount">4 900 kr</div>
+            <p data-i18n="price2Text">
               Fler sektioner, bättre säljstruktur, FAQ, trygghet, tydligare innehåll och starkare konverteringsfokus.
             </p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Utökad</span>
-            <h3>Större kampanjupplevelse</h3>
-            <div class="price">7 900 kr</div>
-            <p>
+            <span class="tag" data-i18n="price3Tag">Utökad</span>
+            <h3 data-i18n="price3Title">Större kampanjupplevelse</h3>
+            <div class="price" data-i18n="price3Amount">7 900 kr</div>
+            <p data-i18n="price3Text">
               För större kampanjer, mer innehåll, flera varianter, flera målgrupper eller mer avancerat upplägg.
             </p>
           </article>
         </div>
 
         <div class="card" style="margin-top:18px;">
-          <h3>Specialfunktioner</h3>
-          <p>
-            API, backend, formulärlogik, rabattkodskopplingar, integrationer, tracking, betalningslänkar eller andra speciallösningar görs från
-            <strong>650 kr/h</strong>. Mindre webbfix startar från <strong>490 kr</strong>.
+          <h3 data-i18n="extraTitle">Specialfunktioner</h3>
+          <p data-i18n="extraText">
+            API, backend, formulärlogik, rabattkodskopplingar, integrationer, tracking, betalningslänkar eller andra speciallösningar görs från 650 kr/h. Mindre webbfix startar från 490 kr.
           </p>
         </div>
       </div>
@@ -1480,36 +1606,36 @@
     <section class="section" id="sa-funkar-det">
       <div class="container">
         <div class="section-head">
-          <h2>Så går det till.</h2>
-          <p>
+          <h2 data-i18n="howTitle">Så går det till.</h2>
+          <p data-i18n="howLead">
             Du kommer med kampanjen. Jag gör sidan tydlig.
           </p>
         </div>
 
         <div class="steps">
           <div class="step">
-            <strong>Du skickar mål och erbjudande</strong>
-            <span>Vad ska sidan sälja, boka, samla in eller förklara? Vem är målgruppen?</span>
+            <strong data-i18n="step1Title">Du skickar mål och erbjudande</strong>
+            <span data-i18n="step1Text">Vad ska sidan sälja, boka, samla in eller förklara? Vem är målgruppen?</span>
           </div>
 
           <div class="step">
-            <strong>Jag bygger en första demo</strong>
-            <span>Du får ett första förslag på rubrik, struktur, design, innehåll och CTA.</span>
+            <strong data-i18n="step2Title">Jag bygger en första demo</strong>
+            <span data-i18n="step2Text">Du får ett första förslag på rubrik, struktur, design, innehåll och CTA.</span>
           </div>
 
           <div class="step">
-            <strong>Vi justerar budskapet</strong>
-            <span>Text, bilder, erbjudande, formulär och nästa steg sätts på rätt plats.</span>
+            <strong data-i18n="step3Title">Vi justerar budskapet</strong>
+            <span data-i18n="step3Text">Text, bilder, erbjudande, formulär och nästa steg sätts på rätt plats.</span>
           </div>
 
           <div class="step">
-            <strong>Du godkänner innan färdigställande</strong>
-            <span>Du köper bara om du gillar riktningen och vill gå vidare.</span>
+            <strong data-i18n="step4Title">Du godkänner innan färdigställande</strong>
+            <span data-i18n="step4Text">Du köper bara om du gillar riktningen och vill gå vidare.</span>
           </div>
 
           <div class="step">
-            <strong>Sidan publiceras</strong>
-            <span>Efter godkännande hjälper jag med publicering, länk, domän eller undersida.</span>
+            <strong data-i18n="step5Title">Sidan publiceras</strong>
+            <span data-i18n="step5Text">Efter godkännande hjälper jag med publicering, länk, domän eller undersida.</span>
           </div>
         </div>
       </div>
@@ -1519,19 +1645,19 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Skicka inte kampanjtrafik till en sida som inte vet vad den vill.</h2>
-            <p>
+            <h2 data-i18n="ctaTitle">Skicka inte kampanjtrafik till en sida som inte vet vad den vill.</h2>
+            <p data-i18n="ctaText">
               En bra landningssida ska vara rak: här är erbjudandet, här är nyttan, här är nästa steg.
               Resten är möblering.
             </p>
           </div>
 
           <div class="cta-panel">
-            <strong>Demo först</strong>
-            <p>
+            <strong data-i18n="ctaPanelTitle">Demo först</strong>
+            <p data-i18n="ctaPanelText">
               Du får se ett första förslag innan du bestämmer dig.
             </p>
-            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;">
+            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;" data-i18n="ctaButton">
               Få demo
             </a>
           </div>
@@ -1542,57 +1668,57 @@
     <section class="section faq" id="fragor">
       <div class="container">
         <div class="section-head">
-          <h2>Vanliga frågor.</h2>
-          <p>
+          <h2 data-i18n="faqTitle">Vanliga frågor.</h2>
+          <p data-i18n="faqLead">
             Det viktigaste innan du skickar in.
           </p>
         </div>
 
         <details>
-          <summary>Vad är en landningssida?</summary>
-          <p>
+          <summary data-i18n="faq1Q">Vad är en landningssida?</summary>
+          <p data-i18n="faq1A">
             En landningssida är en sida byggd för ett tydligt mål, till exempel kampanj, erbjudande, bokning, köp, rabattkod eller formulär.
           </p>
         </details>
 
         <details>
-          <summary>Vad kostar en landningssida?</summary>
-          <p>
+          <summary data-i18n="faq2Q">Vad kostar en landningssida?</summary>
+          <p data-i18n="faq2A">
             En enkel landningssida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning.
           </p>
         </details>
 
         <details>
-          <summary>Kan jag få demo innan jag köper?</summary>
-          <p>
+          <summary data-i18n="faq3Q">Kan jag få demo innan jag köper?</summary>
+          <p data-i18n="faq3A">
             Ja. Du får normalt en första demo inom 1 arbetsdag efter att du skickat in tillräcklig information. Du köper bara om du vill gå vidare.
           </p>
         </details>
 
         <details>
-          <summary>Kan sidan ha formulär?</summary>
-          <p>
+          <summary data-i18n="faq4Q">Kan sidan ha formulär?</summary>
+          <p data-i18n="faq4A">
             Ja. Sidan kan ha kontaktformulär, offertformulär, intresseformulär, bokningslänk, tack-sida och tydlig ämnesrad i mejlet.
           </p>
         </details>
 
         <details>
-          <summary>Kan sidan användas för rabattkod eller affiliate?</summary>
-          <p>
+          <summary data-i18n="faq5Q">Kan sidan användas för rabattkod eller affiliate?</summary>
+          <p data-i18n="faq5A">
             Ja. En landningssida kan byggas för rabattkod, partner, affiliate, kampanjkod eller riktat erbjudande.
           </p>
         </details>
 
         <details>
-          <summary>Kan du koppla sidan till betalning eller bokning?</summary>
-          <p>
+          <summary data-i18n="faq6Q">Kan du koppla sidan till betalning eller bokning?</summary>
+          <p data-i18n="faq6A">
             Ja, ofta via länk till bokningssystem, betalningslänk eller formulär. Mer avancerade kopplingar bedöms separat och görs från 650 kr/h.
           </p>
         </details>
 
         <details>
-          <summary>Behöver jag ha färdig text?</summary>
-          <p>
+          <summary data-i18n="faq7Q">Behöver jag ha färdig text?</summary>
+          <p data-i18n="faq7A">
             Nej. Det räcker att du beskriver erbjudandet, målgruppen och vad kunden ska göra. Jag kan hjälpa till att strukturera texten.
           </p>
         </details>
@@ -1602,117 +1728,118 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
-          <h2>Få demo på landningssida.</h2>
-          <p>
+          <h2 data-i18n="formTitle">Få demo på landningssida.</h2>
+          <p data-i18n="formLead">
             Fyll i vad kampanjen gäller, vem den riktar sig till och vad besökaren ska göra.
           </p>
 
-          <div class="contact-row" aria-label="Kontaktuppgifter">
+          <div class="contact-row" aria-label="Kontaktuppgifter" data-i18n-aria-label="contactAria">
             <div class="contact-mini">
-              <strong>E-post</strong>
+              <strong data-i18n="contactEmail">E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
             <div class="contact-mini">
-              <strong>Telefon</strong>
+              <strong data-i18n="contactPhone">Telefon</strong>
               <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
             <div class="contact-mini">
-              <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              <strong data-i18n="contactCompany">Företag</strong>
+              <span data-i18n="companyType">Nordlöf Nordic · Enskild firma</span>
             </div>
           </div>
 
           <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
-            <input type="hidden" name="_subject" value="Ny förfrågan från landningssida-kampanj.html" />
+            <input id="subjectField" type="hidden" name="_subject" value="Ny förfrågan från landningssida-kampanj.html" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
-            <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="autoResponseField" type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan." />
+            <input id="languageField" type="hidden" name="Valt språk" value="Svenska" />
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
             <div class="form-status" aria-live="polite"></div>
 
             <div class="form-grid">
               <div>
-                <label for="namn">Namn</label>
+                <label for="namn" data-i18n="labelName">Namn</label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
 
               <div>
-                <label for="email">E-post</label>
+                <label for="email" data-i18n="labelEmail">E-post</label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
 
               <div>
-                <label for="telefon">Telefon</label>
+                <label for="telefon" data-i18n="labelPhone">Telefon</label>
                 <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
 
               <div>
-                <label for="foretag">Företag</label>
+                <label for="foretag" data-i18n="labelCompany">Företag</label>
                 <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
 
               <div>
-                <label for="kampanjtyp">Typ av landningssida</label>
+                <label for="kampanjtyp" data-i18n="labelCampaignType">Typ av landningssida</label>
                 <select id="kampanjtyp" name="Typ av landningssida">
-                  <option value="Erbjudande / kampanj">Erbjudande / kampanj</option>
-                  <option value="Leadformulär">Leadformulär</option>
-                  <option value="Bokning">Bokning</option>
-                  <option value="Rabattkod">Rabattkod</option>
-                  <option value="Affiliate / partner">Affiliate / partner</option>
-                  <option value="Produktlansering">Produktlansering</option>
-                  <option value="Event">Event</option>
-                  <option value="Vet inte än">Vet inte än</option>
+                  <option value="Erbjudande / kampanj" data-i18n="optionOffer">Erbjudande / kampanj</option>
+                  <option value="Leadformulär" data-i18n="optionLead">Leadformulär</option>
+                  <option value="Bokning" data-i18n="optionBooking">Bokning</option>
+                  <option value="Rabattkod" data-i18n="optionDiscount">Rabattkod</option>
+                  <option value="Affiliate / partner" data-i18n="optionAffiliate">Affiliate / partner</option>
+                  <option value="Produktlansering" data-i18n="optionLaunch">Produktlansering</option>
+                  <option value="Event" data-i18n="optionEvent">Event</option>
+                  <option value="Vet inte än" data-i18n="optionNotSure">Vet inte än</option>
                 </select>
               </div>
 
               <div>
-                <label for="budget">Budget / paket</label>
+                <label for="budget" data-i18n="labelBudget">Budget / paket</label>
                 <select id="budget" name="Budget">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Start 2 900 kr">Start 2 900 kr</option>
-                  <option value="Proffs 4 900 kr">Proffs 4 900 kr</option>
-                  <option value="Utökad 7 900 kr">Utökad 7 900 kr</option>
-                  <option value="Timpris 650 kr/h">Timpris 650 kr/h</option>
+                  <option value="Vet inte än" data-i18n="budgetNotSure">Vet inte än</option>
+                  <option value="Start 2 900 kr" data-i18n="budgetStart">Start 2 900 kr</option>
+                  <option value="Proffs 4 900 kr" data-i18n="budgetPro">Proffs 4 900 kr</option>
+                  <option value="Utökad 7 900 kr" data-i18n="budgetExtended">Utökad 7 900 kr</option>
+                  <option value="Timpris 650 kr/h" data-i18n="budgetHourly">Timpris 650 kr/h</option>
                 </select>
               </div>
 
               <div class="full">
-                <label for="nuvarande">Nuvarande hemsida, om du har en</label>
+                <label for="nuvarande" data-i18n="labelCurrent">Nuvarande hemsida, om du har en</label>
                 <input id="nuvarande" name="Nuvarande hemsida" type="url" inputmode="url" placeholder="https://..." />
               </div>
 
               <div class="full">
-                <label for="mal">Vad är målet med sidan?</label>
+                <label for="mal" data-i18n="labelGoal">Vad är målet med sidan?</label>
                 <select id="mal" name="Mål med sidan">
-                  <option value="Få bokningar">Få bokningar</option>
-                  <option value="Få offertförfrågningar">Få offertförfrågningar</option>
-                  <option value="Få köp">Få köp</option>
-                  <option value="Samla leads">Samla leads</option>
-                  <option value="Förklara erbjudande">Förklara erbjudande</option>
-                  <option value="Driva trafik till annan sida">Driva trafik till annan sida</option>
-                  <option value="Vet inte än">Vet inte än</option>
+                  <option value="Få bokningar" data-i18n="goalBookings">Få bokningar</option>
+                  <option value="Få offertförfrågningar" data-i18n="goalQuotes">Få offertförfrågningar</option>
+                  <option value="Få köp" data-i18n="goalSales">Få köp</option>
+                  <option value="Samla leads" data-i18n="goalLeads">Samla leads</option>
+                  <option value="Förklara erbjudande" data-i18n="goalExplain">Förklara erbjudande</option>
+                  <option value="Driva trafik till annan sida" data-i18n="goalTraffic">Driva trafik till annan sida</option>
+                  <option value="Vet inte än" data-i18n="goalNotSure">Vet inte än</option>
                 </select>
               </div>
 
               <div class="full">
-                <label for="beskrivning">Beskriv kampanjen eller erbjudandet</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad ska sidan handla om? Vem är målgruppen? Vad är erbjudandet? Vad ska besökaren göra: boka, köpa, skicka formulär, använda rabattkod eller något annat?" required></textarea>
+                <label for="beskrivning" data-i18n="labelDescription">Beskriv kampanjen eller erbjudandet</label>
+                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad ska sidan handla om? Vem är målgruppen? Vad är erbjudandet? Vad ska besökaren göra: boka, köpa, skicka formulär, använda rabattkod eller något annat?" data-i18n-placeholder="placeholderDescription" required></textarea>
               </div>
 
               <div class="full">
-                <label for="inspo">Länkar, inspiration eller kampanjmaterial</label>
-                <textarea id="inspo" name="Inspiration" placeholder="Klistra in konkurrenter, exempel, annonsutkast, kampanjtext, rabattkod, bokningslänk eller annan viktig information."></textarea>
+                <label for="inspo" data-i18n="labelInspo">Länkar, inspiration eller kampanjmaterial</label>
+                <textarea id="inspo" name="Inspiration" placeholder="Klistra in konkurrenter, exempel, annonsutkast, kampanjtext, rabattkod, bokningslänk eller annan viktig information." data-i18n-placeholder="placeholderInspo"></textarea>
               </div>
             </div>
 
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
-              <a href="integritet.html">integritetspolicyn</a>.
+              <span data-i18n="privacyText">Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt</span>
+              <a href="integritet.html" data-i18n="privacyLink">integritetspolicyn</a>.
             </span>
 
-            <button class="btn btn-light" type="submit" style="width:100%;">Skicka och få demo</button>
+            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">Skicka och få demo</button>
           </form>
         </div>
       </div>
@@ -1724,26 +1851,26 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Landningssidor, kampanjsidor, hemsidor och webbutveckling för småföretag.<br>
-          Demo inom 1 arbetsdag · Landningssida från 2 900 kr · Speciallösningar från 650 kr/h
+          <span data-i18n="footerText1">Landningssidor, kampanjsidor, hemsidor och webbutveckling för småföretag.</span><br>
+          <span data-i18n="footerText2">Demo inom 1 arbetsdag · Landningssida från 2 900 kr · Speciallösningar från 650 kr/h</span>
         </div>
 
         <div>
-          Kontakt:
+          <span data-i18n="footerContact">Kontakt:</span>
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
 
           <div class="footer-links">
-            <a href="/">Startsida</a>
-            <a href="gratis-demo.html">Gratis demo</a>
-            <a href="case.html">Case</a>
-            <a href="webbfix.html">Webbfix</a>
-            <a href="hemsida-nystartat-foretag.html">Nystartat företag</a>
-            <a href="hemsida-uthyrning.html">Uthyrning</a>
-            <a href="villkor.html">Villkor</a>
-            <a href="integritet.html">Integritet</a>
-            <a href="affiliate.html">Affiliate</a>
+            <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="gratis-demo.html" data-i18n="footerDemo">Gratis demo</a>
+            <a href="case.html" data-i18n="footerCase">Case</a>
+            <a href="webbfix.html" data-i18n="footerWebfix">Webbfix</a>
+            <a href="hemsida-nystartat-foretag.html" data-i18n="footerStartup">Nystartat företag</a>
+            <a href="hemsida-uthyrning.html" data-i18n="footerRental">Uthyrning</a>
+            <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
+            <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+            <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
             <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
@@ -1752,58 +1879,973 @@
     </div>
   </footer>
 
-  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Priser</a>
-    <a class="btn btn-primary" href="#kontakt">Få demo</a>
+  <nav class="mobile-sticky" aria-label="Snabbval på mobil" data-i18n-aria-label="mobileStickyAria">
+    <a class="btn btn-secondary" href="#priser" data-i18n="mobilePrices">Priser</a>
+    <a class="btn btn-primary" href="#kontakt" data-i18n="mobileDemo">Få demo</a>
   </nav>
 
   <script>
-    document.querySelectorAll('form').forEach((form) => {
-      const submitButton = form.querySelector('button[type="submit"]');
-      const statusBox = form.querySelector('.form-status');
-      const originalButtonText = submitButton ? submitButton.textContent : '';
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        speechLang: "sv-SE",
+        languageName: "Svenska",
+        metaTitle: "Landningssida för kampanj | Erbjudande, rabattkod och leads",
+        metaDescription: "Landningssida för kampanj, erbjudande, rabattkod, bokning eller leadformulär. Få en demo först. Landningssida från 2 900 kr eller speciallösning från 650 kr/h.",
+        ogTitle: "Landningssida för kampanj | Nordlöf Nordic",
+        ogDescription: "Få en tydlig landningssida för kampanj, erbjudande, rabattkod, bokning eller leadformulär. Demo först.",
+        twitterTitle: "Landningssida för kampanj | Nordlöf Nordic",
+        twitterDescription: "Landningssida för erbjudande, rabattkod, bokning eller leads. Demo först.",
+        subject: "Ny förfrågan från landningssida-kampanj.html",
+        autoresponse: "Tack! Jag har tagit emot din förfrågan och återkommer så snart jag kan.",
+        validationRequired: "Fyll i de obligatoriska fälten först.",
+        sending: "Skickar...",
+        sendingStatus: "Skickar formuläret...",
 
-      form.addEventListener('submit', (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityTools: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Landningssida för kampanj",
+        mainNav: "Huvudnavigering",
+        navProblem: "Problem",
+        navGets: "Det du får",
+        navPrices: "Priser",
+        navDemo: "Få demo",
+        languageLabel: "Språk",
+        languageSwitch: "Välj språk",
 
-          if (statusBox) {
-            statusBox.className = 'form-status is-visible';
-            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
-          }
+        eyebrow: "Kampanj · Erbjudande · Rabattkod · Bokning · Leads",
+        heroTitle: "Landningssida för kampanj som har ett tydligt jobb.",
+        heroLead: "Ska du sälja ett erbjudande, samla leads, få bokningar, lansera något nytt eller driva trafik från Facebook, Google, LinkedIn eller mejl? Jag bygger en landningssida med tydlig rubrik, tydligt erbjudande och ett nästa steg.",
+        heroCta: "Få demo först",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fördelar",
+        proof1Title: "Ett mål",
+        proof1Text: "Köp, bokning, formulär eller kontakt.",
+        proof2Title: "Demo först",
+        proof2Text: "Du ser riktningen innan du köper.",
+        proof3Title: "Från 2 900 kr",
+        proof3Text: "Fast pris när uppdraget är tydligt.",
+        summaryAria: "Kort sammanfattning",
+        mini1Title: "1. Ett erbjudande",
+        mini1Text: "Vad ska kunden förstå, vilja ha eller boka?",
+        mini2Title: "2. En tydlig sida",
+        mini2Text: "Rubrik, nytta, innehåll, bevis, FAQ och CTA i rätt ordning.",
+        mini3Title: "3. Ett nästa steg",
+        mini3Text: "Formulär, bokning, köp, rabattkod eller kontakt. Inte fem knappar som slåss.",
 
-          form.reportValidity();
-          return;
-        }
+        problemTitle: "En kampanj behöver en egen sida.",
+        problemLead: "Att skicka kampanjtrafik till en vanlig startsida är som att släppa in kunden i ett varuhus och ropa “lycka till”. En landningssida visar exakt vad kunden ska förstå och göra.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "Startsidan har för många val",
+        problem1Text: "En vanlig hemsida ska visa hela företaget. En kampanj ska sälja ett tydligt erbjudande.",
+        problem2Title: "Erbjudandet blir otydligt",
+        problem2Text: "Kunden behöver snabbt förstå vad som erbjuds, varför det är relevant och vad nästa steg är.",
+        problem3Title: "Trafiken läcker",
+        problem3Text: "Om sidan saknar tydlig CTA tappar du folk som annars kunde ha skickat formulär, bokat eller köpt.",
 
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = 'Skickar...';
-          submitButton.setAttribute('aria-busy', 'true');
-        }
+        getsTitle: "Det jag kan bygga.",
+        getsLead: "En landningssida som är byggd för ett specifikt mål. Inte en hel hemsida i miniformat, utan en sida som gör jobbet.",
+        gets1Tag: "Erbjudande",
+        gets1Title: "Kampanjsida för erbjudande",
+        gets1Text: "För rabatt, paket, säsongskampanj, öppningserbjudande eller särskild tjänst.",
+        gets1List1: "Tydlig rubrik",
+        gets1List2: "Erbjudande och nytta",
+        gets1List3: "Stark CTA",
+        gets2Tag: "Leads",
+        gets2Title: "Landningssida med formulär",
+        gets2Text: "För dig som vill samla offertförfrågningar, intresseanmälningar eller kundkontakter.",
+        gets2List1: "Leadformulär",
+        gets2List2: "Tack-sida",
+        gets2List3: "Rätt frågor i formuläret",
+        gets3Tag: "Bokning",
+        gets3Title: "Sida som leder till bokning",
+        gets3Text: "För tjänster, aktiviteter, konsultationer, hyrprodukter eller tidsbokade uppdrag.",
+        gets3List1: "Bokningsknapp",
+        gets3List2: "Kalenderlänk",
+        gets3List3: "Praktisk information",
+        gets4Tag: "Rabattkod",
+        gets4Title: "Rabattkodssida",
+        gets4Text: "För kampanjer, affiliates, partners eller riktade erbjudanden där kunden ska använda en kod.",
+        gets4List1: "Kod synligt på sidan",
+        gets4List2: "Kopiera-knapp om du vill",
+        gets4List3: "Formulär eller köplänk",
+        gets5Tag: "Produkt",
+        gets5Title: "Sida för lansering",
+        gets5Text: "För ny tjänst, nytt paket, ny digital produkt eller test av affärsidé.",
+        gets5List1: "Problem och lösning",
+        gets5List2: "Pris eller frånpris",
+        gets5List3: "FAQ och trygghet",
+        gets6Tag: "Teknik",
+        gets6Title: "Specialflöden",
+        gets6Text: "För dig som behöver mer än en vanlig sida: integrationer, API, backend, tracking eller anpassade formulär.",
+        gets6List1: "Formulärlogik",
+        gets6List2: "API och backend",
+        gets6List3: "Integrationer",
 
-        if (statusBox) {
-          statusBox.className = 'form-status is-visible';
-          statusBox.textContent = 'Skickar formuläret...';
-        }
+        fitTag: "Passar för",
+        fitTitle: "När du vill skicka trafik till ett konkret erbjudande.",
+        fitText: "En landningssida passar när du har ett tydligt mål och inte vill att besökaren ska vandra runt bland tio andra val.",
+        fitList1: "Facebook- eller Google-kampanj",
+        fitList2: "LinkedIn-inlägg eller DM-trafik",
+        fitList3: "Rabattkod eller affiliateerbjudande",
+        fitList4: "Bokningskampanj",
+        fitList5: "Offertförfrågan",
+        fitList6: "Lansering av ny tjänst eller produkt",
+        focusTag: "Inte krångligare än nödvändigt",
+        focusTitle: "En sida. Ett budskap. Ett nästa steg.",
+        focusText: "Det är hela poängen. En bra landningssida ska inte presentera hela livsverket. Den ska få rätt person att förstå erbjudandet och ta nästa steg.",
+        focusList1: "Vad är erbjudandet?",
+        focusList2: "Vem är det för?",
+        focusList3: "Varför ska kunden bry sig?",
+        focusList4: "Vad ska kunden göra nu?",
 
-        setTimeout(() => {
-          if (submitButton && submitButton.disabled) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            submitButton.removeAttribute('aria-busy');
-          }
-        }, 15000);
-      });
-    });
+        pricesTitle: "Pris för landningssida.",
+        pricesLead: "Fast pris när kampanjen är tydlig. Timpris när det krävs specialflöden, integrationer eller mer teknik.",
+        price1Tag: "Start",
+        price1Title: "Enkel landningssida",
+        price1Amount: "2 900 kr",
+        price1Text: "För ett enkelt erbjudande, formulär, bokning eller kampanjsida med tydlig CTA.",
+        price2Tag: "Proffs",
+        price2Title: "Mer genomarbetad",
+        price2Amount: "4 900 kr",
+        price2Text: "Fler sektioner, bättre säljstruktur, FAQ, trygghet, tydligare innehåll och starkare konverteringsfokus.",
+        price3Tag: "Utökad",
+        price3Title: "Större kampanjupplevelse",
+        price3Amount: "7 900 kr",
+        price3Text: "För större kampanjer, mer innehåll, flera varianter, flera målgrupper eller mer avancerat upplägg.",
+        extraTitle: "Specialfunktioner",
+        extraText: "API, backend, formulärlogik, rabattkodskopplingar, integrationer, tracking, betalningslänkar eller andra speciallösningar görs från 650 kr/h. Mindre webbfix startar från 490 kr.",
 
-    const contrastButton = document.getElementById('toggleContrast');
-    const largeTextButton = document.getElementById('toggleLargeText');
+        howTitle: "Så går det till.",
+        howLead: "Du kommer med kampanjen. Jag gör sidan tydlig.",
+        step1Title: "Du skickar mål och erbjudande",
+        step1Text: "Vad ska sidan sälja, boka, samla in eller förklara? Vem är målgruppen?",
+        step2Title: "Jag bygger en första demo",
+        step2Text: "Du får ett första förslag på rubrik, struktur, design, innehåll och CTA.",
+        step3Title: "Vi justerar budskapet",
+        step3Text: "Text, bilder, erbjudande, formulär och nästa steg sätts på rätt plats.",
+        step4Title: "Du godkänner innan färdigställande",
+        step4Text: "Du köper bara om du gillar riktningen och vill gå vidare.",
+        step5Title: "Sidan publiceras",
+        step5Text: "Efter godkännande hjälper jag med publicering, länk, domän eller undersida.",
 
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
+        ctaTitle: "Skicka inte kampanjtrafik till en sida som inte vet vad den vill.",
+        ctaText: "En bra landningssida ska vara rak: här är erbjudandet, här är nyttan, här är nästa steg. Resten är möblering.",
+        ctaPanelTitle: "Demo först",
+        ctaPanelText: "Du får se ett första förslag innan du bestämmer dig.",
+        ctaButton: "Få demo",
+
+        faqTitle: "Vanliga frågor.",
+        faqLead: "Det viktigaste innan du skickar in.",
+        faq1Q: "Vad är en landningssida?",
+        faq1A: "En landningssida är en sida byggd för ett tydligt mål, till exempel kampanj, erbjudande, bokning, köp, rabattkod eller formulär.",
+        faq2Q: "Vad kostar en landningssida?",
+        faq2A: "En enkel landningssida startar från 2 900 kr. Mer genomarbetade upplägg kostar från 4 900 kr eller 7 900 kr beroende på omfattning.",
+        faq3Q: "Kan jag få demo innan jag köper?",
+        faq3A: "Ja. Du får normalt en första demo inom 1 arbetsdag efter att du skickat in tillräcklig information. Du köper bara om du vill gå vidare.",
+        faq4Q: "Kan sidan ha formulär?",
+        faq4A: "Ja. Sidan kan ha kontaktformulär, offertformulär, intresseformulär, bokningslänk, tack-sida och tydlig ämnesrad i mejlet.",
+        faq5Q: "Kan sidan användas för rabattkod eller affiliate?",
+        faq5A: "Ja. En landningssida kan byggas för rabattkod, partner, affiliate, kampanjkod eller riktat erbjudande.",
+        faq6Q: "Kan du koppla sidan till betalning eller bokning?",
+        faq6A: "Ja, ofta via länk till bokningssystem, betalningslänk eller formulär. Mer avancerade kopplingar bedöms separat och görs från 650 kr/h.",
+        faq7Q: "Behöver jag ha färdig text?",
+        faq7A: "Nej. Det räcker att du beskriver erbjudandet, målgruppen och vad kunden ska göra. Jag kan hjälpa till att strukturera texten.",
+
+        formTitle: "Få demo på landningssida.",
+        formLead: "Fyll i vad kampanjen gäller, vem den riktar sig till och vad besökaren ska göra.",
+        contactAria: "Kontaktuppgifter",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Företag",
+        companyType: "Nordlöf Nordic · Enskild firma",
+        labelName: "Namn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Företag",
+        labelCampaignType: "Typ av landningssida",
+        optionOffer: "Erbjudande / kampanj",
+        optionLead: "Leadformulär",
+        optionBooking: "Bokning",
+        optionDiscount: "Rabattkod",
+        optionAffiliate: "Affiliate / partner",
+        optionLaunch: "Produktlansering",
+        optionEvent: "Event",
+        optionNotSure: "Vet inte än",
+        labelBudget: "Budget / paket",
+        budgetNotSure: "Vet inte än",
+        budgetStart: "Start 2 900 kr",
+        budgetPro: "Proffs 4 900 kr",
+        budgetExtended: "Utökad 7 900 kr",
+        budgetHourly: "Timpris 650 kr/h",
+        labelCurrent: "Nuvarande hemsida, om du har en",
+        labelGoal: "Vad är målet med sidan?",
+        goalBookings: "Få bokningar",
+        goalQuotes: "Få offertförfrågningar",
+        goalSales: "Få köp",
+        goalLeads: "Samla leads",
+        goalExplain: "Förklara erbjudande",
+        goalTraffic: "Driva trafik till annan sida",
+        goalNotSure: "Vet inte än",
+        labelDescription: "Beskriv kampanjen eller erbjudandet",
+        placeholderDescription: "Vad ska sidan handla om? Vem är målgruppen? Vad är erbjudandet? Vad ska besökaren göra: boka, köpa, skicka formulär, använda rabattkod eller något annat?",
+        labelInspo: "Länkar, inspiration eller kampanjmaterial",
+        placeholderInspo: "Klistra in konkurrenter, exempel, annonsutkast, kampanjtext, rabattkod, bokningslänk eller annan viktig information.",
+        privacyText: "Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt",
+        privacyLink: "integritetspolicyn",
+        submitButton: "Skicka och få demo",
+
+        footerText1: "Landningssidor, kampanjsidor, hemsidor och webbutveckling för småföretag.",
+        footerText2: "Demo inom 1 arbetsdag · Landningssida från 2 900 kr · Speciallösningar från 650 kr/h",
+        footerContact: "Kontakt:",
+        footerHome: "Startsida",
+        footerDemo: "Gratis demo",
+        footerCase: "Case",
+        footerWebfix: "Webbfix",
+        footerStartup: "Nystartat företag",
+        footerRental: "Uthyrning",
+        footerTerms: "Villkor",
+        footerPrivacy: "Integritet",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Snabbval på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic bygger landningssidor för kampanjer, erbjudanden, rabattkoder, bokningar och leadformulär. En landningssida har ett tydligt mål: köp, bokning, formulär eller kontakt. Du får en första demo innan du bestämmer dig och köper bara om du vill gå vidare. En enkel landningssida startar från 2 900 kronor. Mer genomarbetade upplägg finns från 4 900 kronor och 7 900 kronor. Specialfunktioner som formulärlogik, rabattkoder, API, backend och integrationer görs från 650 kronor per timme."
+      },
+
+      en: {
+        htmlLang: "en",
+        speechLang: "en-GB",
+        languageName: "English",
+        metaTitle: "Landing page for campaign | Offers, discount codes and leads",
+        metaDescription: "Landing page for campaign, offer, discount code, booking or lead form. Get a demo first. Landing page from 2,900 SEK or custom solution from 650 SEK/hour.",
+        ogTitle: "Landing page for campaign | Nordlöf Nordic",
+        ogDescription: "Get a clear landing page for a campaign, offer, discount code, booking or lead form. Demo first.",
+        twitterTitle: "Landing page for campaign | Nordlöf Nordic",
+        twitterDescription: "Landing page for offer, discount code, booking or leads. Demo first.",
+        subject: "New request from landningssida-kampanj.html - English",
+        autoresponse: "Thank you! I have received your request and will get back to you as soon as I can.",
+        validationRequired: "Please fill in the required fields first.",
+        sending: "Sending...",
+        sendingStatus: "Sending the form...",
+
+        skip: "Skip to main content",
+        accessibilityTools: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Landing page for campaign",
+        mainNav: "Main navigation",
+        navProblem: "Problem",
+        navGets: "What you get",
+        navPrices: "Prices",
+        navDemo: "Get demo",
+        languageLabel: "Language",
+        languageSwitch: "Choose language",
+
+        eyebrow: "Campaign · Offer · Discount code · Booking · Leads",
+        heroTitle: "Landing page for a campaign with one clear job.",
+        heroLead: "Do you want to sell an offer, collect leads, get bookings, launch something new or drive traffic from Facebook, Google, LinkedIn or email? I build a landing page with a clear headline, clear offer and one next step.",
+        heroCta: "Get demo first",
+        heroPriceCta: "See prices",
+        benefitsAria: "Benefits",
+        proof1Title: "One goal",
+        proof1Text: "Purchase, booking, form or contact.",
+        proof2Title: "Demo first",
+        proof2Text: "You see the direction before buying.",
+        proof3Title: "From 2,900 SEK",
+        proof3Text: "Fixed price when the task is clear.",
+        summaryAria: "Short summary",
+        mini1Title: "1. One offer",
+        mini1Text: "What should the customer understand, want or book?",
+        mini2Title: "2. One clear page",
+        mini2Text: "Headline, value, content, proof, FAQ and CTA in the right order.",
+        mini3Title: "3. One next step",
+        mini3Text: "Form, booking, purchase, discount code or contact. Not five buttons fighting each other.",
+
+        problemTitle: "A campaign needs its own page.",
+        problemLead: "Sending campaign traffic to a normal homepage is like letting the customer into a department store and shouting “good luck”. A landing page shows exactly what the customer should understand and do.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "The homepage has too many choices",
+        problem1Text: "A normal website should present the whole business. A campaign should sell one clear offer.",
+        problem2Title: "The offer becomes unclear",
+        problem2Text: "The customer needs to quickly understand what is offered, why it matters and what the next step is.",
+        problem3Title: "Traffic leaks",
+        problem3Text: "Without a clear CTA, you lose people who could otherwise have submitted a form, booked or bought.",
+
+        getsTitle: "What I can build.",
+        getsLead: "A landing page built for one specific goal. Not a full website in mini format, but a page that does the job.",
+        gets1Tag: "Offer",
+        gets1Title: "Campaign page for an offer",
+        gets1Text: "For a discount, package, seasonal campaign, opening offer or specific service.",
+        gets1List1: "Clear headline",
+        gets1List2: "Offer and value",
+        gets1List3: "Strong CTA",
+        gets2Tag: "Leads",
+        gets2Title: "Landing page with form",
+        gets2Text: "For collecting quote requests, interest registrations or customer contacts.",
+        gets2List1: "Lead form",
+        gets2List2: "Thank-you page",
+        gets2List3: "The right form questions",
+        gets3Tag: "Booking",
+        gets3Title: "Page that leads to booking",
+        gets3Text: "For services, activities, consultations, rental products or appointment-based work.",
+        gets3List1: "Booking button",
+        gets3List2: "Calendar link",
+        gets3List3: "Practical information",
+        gets4Tag: "Discount code",
+        gets4Title: "Discount code page",
+        gets4Text: "For campaigns, affiliates, partners or targeted offers where the customer should use a code.",
+        gets4List1: "Code visible on page",
+        gets4List2: "Copy button if wanted",
+        gets4List3: "Form or purchase link",
+        gets5Tag: "Product",
+        gets5Title: "Page for launch",
+        gets5Text: "For a new service, new package, digital product or business idea test.",
+        gets5List1: "Problem and solution",
+        gets5List2: "Price or starting price",
+        gets5List3: "FAQ and trust",
+        gets6Tag: "Tech",
+        gets6Title: "Custom flows",
+        gets6Text: "For when you need more than a standard page: integrations, API, backend, tracking or custom forms.",
+        gets6List1: "Form logic",
+        gets6List2: "API and backend",
+        gets6List3: "Integrations",
+
+        fitTag: "Fits",
+        fitTitle: "When you want to send traffic to one concrete offer.",
+        fitText: "A landing page fits when you have a clear goal and do not want visitors wandering around ten other options.",
+        fitList1: "Facebook or Google campaign",
+        fitList2: "LinkedIn post or DM traffic",
+        fitList3: "Discount code or affiliate offer",
+        fitList4: "Booking campaign",
+        fitList5: "Quote request",
+        fitList6: "Launch of new service or product",
+        focusTag: "No more complicated than needed",
+        focusTitle: "One page. One message. One next step.",
+        focusText: "That is the point. A good landing page should not present your entire life’s work. It should make the right person understand the offer and take the next step.",
+        focusList1: "What is the offer?",
+        focusList2: "Who is it for?",
+        focusList3: "Why should the customer care?",
+        focusList4: "What should the customer do now?",
+
+        pricesTitle: "Price for landing page.",
+        pricesLead: "Fixed price when the campaign is clear. Hourly price when custom flows, integrations or more technical work are needed.",
+        price1Tag: "Start",
+        price1Title: "Simple landing page",
+        price1Amount: "2,900 SEK",
+        price1Text: "For a simple offer, form, booking or campaign page with a clear CTA.",
+        price2Tag: "Pro",
+        price2Title: "More polished",
+        price2Amount: "4,900 SEK",
+        price2Text: "More sections, better sales structure, FAQ, trust, clearer content and stronger conversion focus.",
+        price3Tag: "Extended",
+        price3Title: "Larger campaign setup",
+        price3Amount: "7,900 SEK",
+        price3Text: "For larger campaigns, more content, several variants, several target groups or a more advanced setup.",
+        extraTitle: "Custom features",
+        extraText: "API, backend, form logic, discount-code connections, integrations, tracking, payment links or other custom solutions start from 650 SEK/hour. Smaller website fixes start from 490 SEK.",
+
+        howTitle: "How it works.",
+        howLead: "You bring the campaign. I make the page clear.",
+        step1Title: "You send goal and offer",
+        step1Text: "What should the page sell, book, collect or explain? Who is the target group?",
+        step2Title: "I build a first demo",
+        step2Text: "You get a first proposal for headline, structure, design, content and CTA.",
+        step3Title: "We adjust the message",
+        step3Text: "Text, images, offer, form and next step are put in the right place.",
+        step4Title: "You approve before completion",
+        step4Text: "You only buy if you like the direction and want to move forward.",
+        step5Title: "The page is published",
+        step5Text: "After approval, I help with publishing, link, domain or subpage.",
+
+        ctaTitle: "Do not send campaign traffic to a page that does not know what it wants.",
+        ctaText: "A good landing page should be direct: here is the offer, here is the value, here is the next step. The rest is furniture.",
+        ctaPanelTitle: "Demo first",
+        ctaPanelText: "You get to see a first proposal before deciding.",
+        ctaButton: "Get demo",
+
+        faqTitle: "Frequently asked questions.",
+        faqLead: "The essentials before you send a request.",
+        faq1Q: "What is a landing page?",
+        faq1A: "A landing page is a page built for one clear goal, such as a campaign, offer, booking, purchase, discount code or form.",
+        faq2Q: "What does a landing page cost?",
+        faq2A: "A simple landing page starts from 2,900 SEK. More polished setups cost from 4,900 SEK or 7,900 SEK depending on scope.",
+        faq3Q: "Can I get a demo before buying?",
+        faq3A: "Yes. You normally get a first demo within 1 business day after sending enough information. You only buy if you want to continue.",
+        faq4Q: "Can the page have a form?",
+        faq4A: "Yes. The page can have a contact form, quote form, interest form, booking link, thank-you page and clear email subject line.",
+        faq5Q: "Can the page be used for a discount code or affiliate?",
+        faq5A: "Yes. A landing page can be built for a discount code, partner, affiliate, campaign code or targeted offer.",
+        faq6Q: "Can you connect the page to payment or booking?",
+        faq6A: "Yes, often through a booking system link, payment link or form. More advanced connections are estimated separately and start from 650 SEK/hour.",
+        faq7Q: "Do I need finished text?",
+        faq7A: "No. It is enough to describe the offer, target group and what the customer should do. I can help structure the text.",
+
+        formTitle: "Get a landing page demo.",
+        formLead: "Fill in what the campaign is about, who it is for and what the visitor should do.",
+        contactAria: "Contact details",
+        contactEmail: "Email",
+        contactPhone: "Phone",
+        contactCompany: "Company",
+        companyType: "Nordlöf Nordic · Sole proprietorship",
+        labelName: "Name",
+        labelEmail: "Email",
+        labelPhone: "Phone",
+        labelCompany: "Company",
+        labelCampaignType: "Type of landing page",
+        optionOffer: "Offer / campaign",
+        optionLead: "Lead form",
+        optionBooking: "Booking",
+        optionDiscount: "Discount code",
+        optionAffiliate: "Affiliate / partner",
+        optionLaunch: "Product launch",
+        optionEvent: "Event",
+        optionNotSure: "Not sure yet",
+        labelBudget: "Budget / package",
+        budgetNotSure: "Not sure yet",
+        budgetStart: "Start 2,900 SEK",
+        budgetPro: "Pro 4,900 SEK",
+        budgetExtended: "Extended 7,900 SEK",
+        budgetHourly: "Hourly 650 SEK/hour",
+        labelCurrent: "Current website, if you have one",
+        labelGoal: "What is the goal of the page?",
+        goalBookings: "Get bookings",
+        goalQuotes: "Get quote requests",
+        goalSales: "Get purchases",
+        goalLeads: "Collect leads",
+        goalExplain: "Explain offer",
+        goalTraffic: "Drive traffic to another page",
+        goalNotSure: "Not sure yet",
+        labelDescription: "Describe the campaign or offer",
+        placeholderDescription: "What should the page be about? Who is the target group? What is the offer? What should the visitor do: book, buy, submit a form, use a discount code or something else?",
+        labelInspo: "Links, inspiration or campaign material",
+        placeholderInspo: "Paste competitors, examples, ad drafts, campaign text, discount code, booking link or other important information.",
+        privacyText: "By sending the form, you agree that your information is handled according to the",
+        privacyLink: "privacy policy",
+        submitButton: "Send and get demo",
+
+        footerText1: "Landing pages, campaign pages, websites and web development for small businesses.",
+        footerText2: "Demo within 1 business day · Landing page from 2,900 SEK · Custom solutions from 650 SEK/hour",
+        footerContact: "Contact:",
+        footerHome: "Homepage",
+        footerDemo: "Free demo",
+        footerCase: "Cases",
+        footerWebfix: "Website fixes",
+        footerStartup: "New business",
+        footerRental: "Rental business",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Quick options on mobile",
+        mobilePrices: "Prices",
+        mobileDemo: "Get demo",
+
+        speechSummary: "Nordlöf Nordic builds landing pages for campaigns, offers, discount codes, bookings and lead forms. A landing page has one clear goal: purchase, booking, form or contact. You get a first demo before deciding and only buy if you want to move forward. A simple landing page starts from 2,900 SEK. More polished setups start from 4,900 SEK and 7,900 SEK. Custom features such as form logic, discount codes, API, backend and integrations start from 650 SEK per hour."
+      },
+
+      da: {
+        htmlLang: "da",
+        speechLang: "da-DK",
+        languageName: "Dansk",
+        metaTitle: "Landingsside til kampagne | Tilbud, rabatkode og leads",
+        metaDescription: "Landingsside til kampagne, tilbud, rabatkode, booking eller leadformular. Få en demo først. Landingsside fra 2 900 SEK eller specialløsning fra 650 SEK/time.",
+        ogTitle: "Landingsside til kampagne | Nordlöf Nordic",
+        ogDescription: "Få en tydelig landingsside til kampagne, tilbud, rabatkode, booking eller leadformular. Demo først.",
+        twitterTitle: "Landingsside til kampagne | Nordlöf Nordic",
+        twitterDescription: "Landingsside til tilbud, rabatkode, booking eller leads. Demo først.",
+        subject: "Ny forespørgsel fra landningssida-kampanj.html - Dansk",
+        autoresponse: "Tak! Jeg har modtaget din forespørgsel og vender tilbage så snart jeg kan.",
+        validationRequired: "Udfyld de obligatoriske felter først.",
+        sending: "Sender...",
+        sendingStatus: "Sender formularen...",
+
+        skip: "Spring til hovedindhold",
+        accessibilityTools: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        listen: "Kort oplæsning",
+        stopListen: "Stop oplæsning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Landingsside til kampagne",
+        mainNav: "Hovednavigation",
+        navProblem: "Problem",
+        navGets: "Det du får",
+        navPrices: "Priser",
+        navDemo: "Få demo",
+        languageLabel: "Sprog",
+        languageSwitch: "Vælg sprog",
+
+        eyebrow: "Kampagne · Tilbud · Rabatkode · Booking · Leads",
+        heroTitle: "Landingsside til kampagne med ét tydeligt job.",
+        heroLead: "Skal du sælge et tilbud, samle leads, få bookinger, lancere noget nyt eller drive trafik fra Facebook, Google, LinkedIn eller mail? Jeg bygger en landingsside med tydelig overskrift, tydeligt tilbud og ét næste trin.",
+        heroCta: "Få demo først",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fordele",
+        proof1Title: "Ét mål",
+        proof1Text: "Køb, booking, formular eller kontakt.",
+        proof2Title: "Demo først",
+        proof2Text: "Du ser retningen før du køber.",
+        proof3Title: "Fra 2 900 SEK",
+        proof3Text: "Fast pris når opgaven er tydelig.",
+        summaryAria: "Kort opsummering",
+        mini1Title: "1. Ét tilbud",
+        mini1Text: "Hvad skal kunden forstå, ønske eller booke?",
+        mini2Title: "2. Én tydelig side",
+        mini2Text: "Overskrift, nytte, indhold, bevis, FAQ og CTA i rigtig rækkefølge.",
+        mini3Title: "3. Ét næste trin",
+        mini3Text: "Formular, booking, køb, rabatkode eller kontakt. Ikke fem knapper der slås.",
+
+        problemTitle: "En kampagne har brug for sin egen side.",
+        problemLead: "At sende kampagnetrafik til en almindelig forside er som at slippe kunden ind i et varehus og råbe “held og lykke”. En landingsside viser præcis, hvad kunden skal forstå og gøre.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "Forsiden har for mange valg",
+        problem1Text: "En almindelig hjemmeside skal vise hele virksomheden. En kampagne skal sælge ét tydeligt tilbud.",
+        problem2Title: "Tilbuddet bliver uklart",
+        problem2Text: "Kunden skal hurtigt forstå, hvad der tilbydes, hvorfor det er relevant, og hvad næste trin er.",
+        problem3Title: "Trafikken lækker",
+        problem3Text: "Hvis siden mangler tydelig CTA, mister du folk, som ellers kunne have sendt formular, booket eller købt.",
+
+        getsTitle: "Det jeg kan bygge.",
+        getsLead: "En landingsside bygget til ét specifikt mål. Ikke en hel hjemmeside i miniformat, men en side der gør jobbet.",
+        gets1Tag: "Tilbud",
+        gets1Title: "Kampagneside til tilbud",
+        gets1Text: "Til rabat, pakke, sæsonkampagne, åbningstilbud eller særlig ydelse.",
+        gets1List1: "Tydelig overskrift",
+        gets1List2: "Tilbud og nytte",
+        gets1List3: "Stærk CTA",
+        gets2Tag: "Leads",
+        gets2Title: "Landingsside med formular",
+        gets2Text: "Til dig der vil samle tilbudsforespørgsler, interessetilkendegivelser eller kundekontakter.",
+        gets2List1: "Leadformular",
+        gets2List2: "Tak-side",
+        gets2List3: "De rigtige spørgsmål i formularen",
+        gets3Tag: "Booking",
+        gets3Title: "Side der leder til booking",
+        gets3Text: "Til ydelser, aktiviteter, konsultationer, udlejningsprodukter eller tidsbestilte opgaver.",
+        gets3List1: "Bookingknap",
+        gets3List2: "Kalenderlink",
+        gets3List3: "Praktisk information",
+        gets4Tag: "Rabatkode",
+        gets4Title: "Rabatkodeside",
+        gets4Text: "Til kampagner, affiliates, partnere eller målrettede tilbud, hvor kunden skal bruge en kode.",
+        gets4List1: "Kode synlig på siden",
+        gets4List2: "Kopier-knap hvis du vil",
+        gets4List3: "Formular eller købslink",
+        gets5Tag: "Produkt",
+        gets5Title: "Side til lancering",
+        gets5Text: "Til ny ydelse, ny pakke, digitalt produkt eller test af forretningsidé.",
+        gets5List1: "Problem og løsning",
+        gets5List2: "Pris eller fra-pris",
+        gets5List3: "FAQ og tryghed",
+        gets6Tag: "Teknik",
+        gets6Title: "Specialflows",
+        gets6Text: "Til dig der har brug for mere end en almindelig side: integrationer, API, backend, tracking eller tilpassede formularer.",
+        gets6List1: "Formularlogik",
+        gets6List2: "API og backend",
+        gets6List3: "Integrationer",
+
+        fitTag: "Passer til",
+        fitTitle: "Når du vil sende trafik til ét konkret tilbud.",
+        fitText: "En landingsside passer, når du har et tydeligt mål og ikke vil have, at besøgeren vandrer rundt mellem ti andre valg.",
+        fitList1: "Facebook- eller Google-kampagne",
+        fitList2: "LinkedIn-opslag eller DM-trafik",
+        fitList3: "Rabatkode eller affiliatetilbud",
+        fitList4: "Bookingkampagne",
+        fitList5: "Tilbudsforespørgsel",
+        fitList6: "Lancering af ny ydelse eller produkt",
+        focusTag: "Ikke mere bøvlet end nødvendigt",
+        focusTitle: "Én side. Ét budskab. Ét næste trin.",
+        focusText: "Det er hele pointen. En god landingsside skal ikke præsentere hele livsværket. Den skal få den rigtige person til at forstå tilbuddet og tage næste trin.",
+        focusList1: "Hvad er tilbuddet?",
+        focusList2: "Hvem er det til?",
+        focusList3: "Hvorfor skal kunden interessere sig?",
+        focusList4: "Hvad skal kunden gøre nu?",
+
+        pricesTitle: "Pris for landingsside.",
+        pricesLead: "Fast pris når kampagnen er tydelig. Timepris når der kræves specialflows, integrationer eller mere teknik.",
+        price1Tag: "Start",
+        price1Title: "Enkel landingsside",
+        price1Amount: "2 900 SEK",
+        price1Text: "Til et enkelt tilbud, formular, booking eller kampagneside med tydelig CTA.",
+        price2Tag: "Pro",
+        price2Title: "Mere gennemarbejdet",
+        price2Amount: "4 900 SEK",
+        price2Text: "Flere sektioner, bedre salgsstruktur, FAQ, tryghed, tydeligere indhold og stærkere konverteringsfokus.",
+        price3Tag: "Udvidet",
+        price3Title: "Større kampagneoplevelse",
+        price3Amount: "7 900 SEK",
+        price3Text: "Til større kampagner, mere indhold, flere varianter, flere målgrupper eller mere avanceret oplæg.",
+        extraTitle: "Specialfunktioner",
+        extraText: "API, backend, formularlogik, rabatkodekoblinger, integrationer, tracking, betalingslinks eller andre specialløsninger laves fra 650 SEK/time. Mindre webfix starter fra 490 SEK.",
+
+        howTitle: "Sådan foregår det.",
+        howLead: "Du kommer med kampagnen. Jeg gør siden tydelig.",
+        step1Title: "Du sender mål og tilbud",
+        step1Text: "Hvad skal siden sælge, booke, indsamle eller forklare? Hvem er målgruppen?",
+        step2Title: "Jeg bygger en første demo",
+        step2Text: "Du får et første forslag til overskrift, struktur, design, indhold og CTA.",
+        step3Title: "Vi justerer budskabet",
+        step3Text: "Tekst, billeder, tilbud, formular og næste trin sættes på rette plads.",
+        step4Title: "Du godkender før færdiggørelse",
+        step4Text: "Du køber kun, hvis du kan lide retningen og vil videre.",
+        step5Title: "Siden publiceres",
+        step5Text: "Efter godkendelse hjælper jeg med publicering, link, domæne eller underside.",
+
+        ctaTitle: "Send ikke kampagnetrafik til en side, der ikke ved hvad den vil.",
+        ctaText: "En god landingsside skal være direkte: her er tilbuddet, her er nytten, her er næste trin. Resten er møblering.",
+        ctaPanelTitle: "Demo først",
+        ctaPanelText: "Du får se et første forslag, før du beslutter dig.",
+        ctaButton: "Få demo",
+
+        faqTitle: "Ofte stillede spørgsmål.",
+        faqLead: "Det vigtigste før du sender ind.",
+        faq1Q: "Hvad er en landingsside?",
+        faq1A: "En landingsside er en side bygget til ét tydeligt mål, for eksempel kampagne, tilbud, booking, køb, rabatkode eller formular.",
+        faq2Q: "Hvad koster en landingsside?",
+        faq2A: "En enkel landingsside starter fra 2 900 SEK. Mere gennemarbejdede oplæg koster fra 4 900 SEK eller 7 900 SEK afhængigt af omfang.",
+        faq3Q: "Kan jeg få demo før jeg køber?",
+        faq3A: "Ja. Du får normalt en første demo inden for 1 arbejdsdag efter at du har sendt nok information. Du køber kun, hvis du vil videre.",
+        faq4Q: "Kan siden have formular?",
+        faq4A: "Ja. Siden kan have kontaktformular, tilbudsformular, interesseformular, bookinglink, tak-side og tydelig emnelinje i mailen.",
+        faq5Q: "Kan siden bruges til rabatkode eller affiliate?",
+        faq5A: "Ja. En landingsside kan bygges til rabatkode, partner, affiliate, kampagnekode eller målrettet tilbud.",
+        faq6Q: "Kan du koble siden til betaling eller booking?",
+        faq6A: "Ja, ofte via link til bookingsystem, betalingslink eller formular. Mere avancerede koblinger vurderes separat og laves fra 650 SEK/time.",
+        faq7Q: "Skal jeg have færdig tekst?",
+        faq7A: "Nej. Det er nok, at du beskriver tilbuddet, målgruppen og hvad kunden skal gøre. Jeg kan hjælpe med at strukturere teksten.",
+
+        formTitle: "Få demo på landingsside.",
+        formLead: "Udfyld hvad kampagnen handler om, hvem den retter sig mod, og hvad besøgeren skal gøre.",
+        contactAria: "Kontaktoplysninger",
+        contactEmail: "E-mail",
+        contactPhone: "Telefon",
+        contactCompany: "Virksomhed",
+        companyType: "Nordlöf Nordic · Enkeltmandsvirksomhed",
+        labelName: "Navn",
+        labelEmail: "E-mail",
+        labelPhone: "Telefon",
+        labelCompany: "Virksomhed",
+        labelCampaignType: "Type landingsside",
+        optionOffer: "Tilbud / kampagne",
+        optionLead: "Leadformular",
+        optionBooking: "Booking",
+        optionDiscount: "Rabatkode",
+        optionAffiliate: "Affiliate / partner",
+        optionLaunch: "Produktlancering",
+        optionEvent: "Event",
+        optionNotSure: "Ved ikke endnu",
+        labelBudget: "Budget / pakke",
+        budgetNotSure: "Ved ikke endnu",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Udvidet 7 900 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nuværende hjemmeside, hvis du har en",
+        labelGoal: "Hvad er målet med siden?",
+        goalBookings: "Få bookinger",
+        goalQuotes: "Få tilbudsforespørgsler",
+        goalSales: "Få køb",
+        goalLeads: "Samle leads",
+        goalExplain: "Forklare tilbud",
+        goalTraffic: "Drive trafik til anden side",
+        goalNotSure: "Ved ikke endnu",
+        labelDescription: "Beskriv kampagnen eller tilbuddet",
+        placeholderDescription: "Hvad skal siden handle om? Hvem er målgruppen? Hvad er tilbuddet? Hvad skal besøgeren gøre: booke, købe, sende formular, bruge rabatkode eller noget andet?",
+        labelInspo: "Links, inspiration eller kampagnemateriale",
+        placeholderInspo: "Indsæt konkurrenter, eksempler, annonceudkast, kampagnetekst, rabatkode, bookinglink eller anden vigtig information.",
+        privacyText: "Ved at sende formularen accepterer du, at dine oplysninger behandles i henhold til",
+        privacyLink: "privatlivspolitikken",
+        submitButton: "Send og få demo",
+
+        footerText1: "Landingssider, kampagnesider, hjemmesider og webudvikling til små virksomheder.",
+        footerText2: "Demo inden for 1 arbejdsdag · Landingsside fra 2 900 SEK · Specialløsninger fra 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerCase: "Cases",
+        footerWebfix: "Webfix",
+        footerStartup: "Nystartet virksomhed",
+        footerRental: "Udlejning",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Privatliv",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic bygger landingssider til kampagner, tilbud, rabatkoder, bookinger og leadformularer. En landingsside har ét tydeligt mål: køb, booking, formular eller kontakt. Du får en første demo, før du beslutter dig, og køber kun hvis du vil videre. En enkel landingsside starter fra 2 900 SEK. Mere gennemarbejdede oplæg findes fra 4 900 SEK og 7 900 SEK. Specialfunktioner som formularlogik, rabatkoder, API, backend og integrationer laves fra 650 SEK i timen."
+      },
+
+      no: {
+        htmlLang: "no",
+        speechLang: "no-NO",
+        languageName: "Norsk",
+        metaTitle: "Landingsside for kampanje | Tilbud, rabattkode og leads",
+        metaDescription: "Landingsside for kampanje, tilbud, rabattkode, booking eller leadskjema. Få en demo først. Landingsside fra 2 900 SEK eller spesialløsning fra 650 SEK/time.",
+        ogTitle: "Landingsside for kampanje | Nordlöf Nordic",
+        ogDescription: "Få en tydelig landingsside for kampanje, tilbud, rabattkode, booking eller leadskjema. Demo først.",
+        twitterTitle: "Landingsside for kampanje | Nordlöf Nordic",
+        twitterDescription: "Landingsside for tilbud, rabattkode, booking eller leads. Demo først.",
+        subject: "Ny forespørsel fra landningssida-kampanj.html - Norsk",
+        autoresponse: "Takk! Jeg har mottatt forespørselen din og kommer tilbake så snart jeg kan.",
+        validationRequired: "Fyll ut de obligatoriske feltene først.",
+        sending: "Sender...",
+        sendingStatus: "Sender skjemaet...",
+
+        skip: "Hopp til hovedinnhold",
+        accessibilityTools: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        listen: "Kort opplesning",
+        stopListen: "Stopp opplesning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Landingsside for kampanje",
+        mainNav: "Hovednavigasjon",
+        navProblem: "Problem",
+        navGets: "Det du får",
+        navPrices: "Priser",
+        navDemo: "Få demo",
+        languageLabel: "Språk",
+        languageSwitch: "Velg språk",
+
+        eyebrow: "Kampanje · Tilbud · Rabattkode · Booking · Leads",
+        heroTitle: "Landingsside for kampanje med én tydelig jobb.",
+        heroLead: "Skal du selge et tilbud, samle leads, få bookinger, lansere noe nytt eller drive trafikk fra Facebook, Google, LinkedIn eller e-post? Jeg bygger en landingsside med tydelig overskrift, tydelig tilbud og ett neste steg.",
+        heroCta: "Få demo først",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fordeler",
+        proof1Title: "Ett mål",
+        proof1Text: "Kjøp, booking, skjema eller kontakt.",
+        proof2Title: "Demo først",
+        proof2Text: "Du ser retningen før du kjøper.",
+        proof3Title: "Fra 2 900 SEK",
+        proof3Text: "Fast pris når oppdraget er tydelig.",
+        summaryAria: "Kort oppsummering",
+        mini1Title: "1. Ett tilbud",
+        mini1Text: "Hva skal kunden forstå, ønske eller booke?",
+        mini2Title: "2. Én tydelig side",
+        mini2Text: "Overskrift, nytte, innhold, bevis, FAQ og CTA i riktig rekkefølge.",
+        mini3Title: "3. Ett neste steg",
+        mini3Text: "Skjema, booking, kjøp, rabattkode eller kontakt. Ikke fem knapper som slåss.",
+
+        problemTitle: "En kampanje trenger sin egen side.",
+        problemLead: "Å sende kampanjetrafikk til en vanlig forside er som å slippe kunden inn i et varehus og rope “lykke til”. En landingsside viser nøyaktig hva kunden skal forstå og gjøre.",
+        problemCardTag: "Problem",
+        problemCardTag2: "Problem",
+        problemCardTag3: "Problem",
+        problem1Title: "Forsiden har for mange valg",
+        problem1Text: "En vanlig nettside skal vise hele bedriften. En kampanje skal selge ett tydelig tilbud.",
+        problem2Title: "Tilbudet blir utydelig",
+        problem2Text: "Kunden må raskt forstå hva som tilbys, hvorfor det er relevant og hva neste steg er.",
+        problem3Title: "Trafikken lekker",
+        problem3Text: "Hvis siden mangler tydelig CTA, mister du folk som ellers kunne sendt skjema, booket eller kjøpt.",
+
+        getsTitle: "Det jeg kan bygge.",
+        getsLead: "En landingsside som er bygget for ett spesifikt mål. Ikke en hel nettside i miniformat, men en side som gjør jobben.",
+        gets1Tag: "Tilbud",
+        gets1Title: "Kampanjeside for tilbud",
+        gets1Text: "For rabatt, pakke, sesongkampanje, åpningstilbud eller spesiell tjeneste.",
+        gets1List1: "Tydelig overskrift",
+        gets1List2: "Tilbud og nytte",
+        gets1List3: "Sterk CTA",
+        gets2Tag: "Leads",
+        gets2Title: "Landingsside med skjema",
+        gets2Text: "For deg som vil samle tilbudsforespørsler, interessepåmeldinger eller kundekontakter.",
+        gets2List1: "Leadskjema",
+        gets2List2: "Takk-side",
+        gets2List3: "Riktige spørsmål i skjemaet",
+        gets3Tag: "Booking",
+        gets3Title: "Side som leder til booking",
+        gets3Text: "For tjenester, aktiviteter, konsultasjoner, utleieprodukter eller timebaserte oppdrag.",
+        gets3List1: "Bookingknapp",
+        gets3List2: "Kalenderlenke",
+        gets3List3: "Praktisk informasjon",
+        gets4Tag: "Rabattkode",
+        gets4Title: "Rabattkodeside",
+        gets4Text: "For kampanjer, affiliates, partnere eller målrettede tilbud der kunden skal bruke en kode.",
+        gets4List1: "Kode synlig på siden",
+        gets4List2: "Kopier-knapp hvis du vil",
+        gets4List3: "Skjema eller kjøpslenke",
+        gets5Tag: "Produkt",
+        gets5Title: "Side for lansering",
+        gets5Text: "For ny tjeneste, ny pakke, digitalt produkt eller test av forretningsidé.",
+        gets5List1: "Problem og løsning",
+        gets5List2: "Pris eller fra-pris",
+        gets5List3: "FAQ og trygghet",
+        gets6Tag: "Teknikk",
+        gets6Title: "Spesialflyter",
+        gets6Text: "For deg som trenger mer enn en vanlig side: integrasjoner, API, backend, tracking eller tilpassede skjemaer.",
+        gets6List1: "Skjemalogikk",
+        gets6List2: "API og backend",
+        gets6List3: "Integrasjoner",
+
+        fitTag: "Passer for",
+        fitTitle: "Når du vil sende trafikk til ett konkret tilbud.",
+        fitText: "En landingsside passer når du har et tydelig mål og ikke vil at besøkeren skal vandre rundt blant ti andre valg.",
+        fitList1: "Facebook- eller Google-kampanje",
+        fitList2: "LinkedIn-innlegg eller DM-trafikk",
+        fitList3: "Rabattkode eller affiliatetilbud",
+        fitList4: "Bookingkampanje",
+        fitList5: "Tilbudsforespørsel",
+        fitList6: "Lansering av ny tjeneste eller produkt",
+        focusTag: "Ikke mer kronglete enn nødvendig",
+        focusTitle: "Én side. Ett budskap. Ett neste steg.",
+        focusText: "Det er hele poenget. En god landingsside skal ikke presentere hele livsverket. Den skal få riktig person til å forstå tilbudet og ta neste steg.",
+        focusList1: "Hva er tilbudet?",
+        focusList2: "Hvem er det for?",
+        focusList3: "Hvorfor skal kunden bry seg?",
+        focusList4: "Hva skal kunden gjøre nå?",
+
+        pricesTitle: "Pris for landingsside.",
+        pricesLead: "Fast pris når kampanjen er tydelig. Timepris når det kreves spesialflyter, integrasjoner eller mer teknikk.",
+        price1Tag: "Start",
+        price1Title: "Enkel landingsside",
+        price1Amount: "2 900 SEK",
+        price1Text: "For et enkelt tilbud, skjema, booking eller kampanjeside med tydelig CTA.",
+        price2Tag: "Pro",
+        price2Title: "Mer gjennomarbeidet",
+        price2Amount: "4 900 SEK",
+        price2Text: "Flere seksjoner, bedre salgsstruktur, FAQ, trygghet, tydeligere innhold og sterkere konverteringsfokus.",
+        price3Tag: "Utvidet",
+        price3Title: "Større kampanjeopplevelse",
+        price3Amount: "7 900 SEK",
+        price3Text: "For større kampanjer, mer innhold, flere varianter, flere målgrupper eller mer avansert opplegg.",
+        extraTitle: "Spesialfunksjoner",
+        extraText: "API, backend, skjemalogikk, rabattkodekoblinger, integrasjoner, tracking, betalingslenker eller andre spesialløsninger gjøres fra 650 SEK/time. Mindre webfiks starter fra 490 SEK.",
+
+        howTitle: "Slik går det til.",
+        howLead: "Du kommer med kampanjen. Jeg gjør siden tydelig.",
+        step1Title: "Du sender mål og tilbud",
+        step1Text: "Hva skal siden selge, booke, samle inn eller forklare? Hvem er målgruppen?",
+        step2Title: "Jeg bygger en første demo",
+        step2Text: "Du får et første forslag til overskrift, struktur, design, innhold og CTA.",
+        step3Title: "Vi justerer budskapet",
+        step3Text: "Tekst, bilder, tilbud, skjema og neste steg settes på riktig plass.",
+        step4Title: "Du godkjenner før ferdigstilling",
+        step4Text: "Du kjøper bare hvis du liker retningen og vil gå videre.",
+        step5Title: "Siden publiseres",
+        step5Text: "Etter godkjenning hjelper jeg med publisering, lenke, domene eller underside.",
+
+        ctaTitle: "Ikke send kampanjetrafikk til en side som ikke vet hva den vil.",
+        ctaText: "En god landingsside skal være rett fram: her er tilbudet, her er nytten, her er neste steg. Resten er møblering.",
+        ctaPanelTitle: "Demo først",
+        ctaPanelText: "Du får se et første forslag før du bestemmer deg.",
+        ctaButton: "Få demo",
+
+        faqTitle: "Vanlige spørsmål.",
+        faqLead: "Det viktigste før du sender inn.",
+        faq1Q: "Hva er en landingsside?",
+        faq1A: "En landingsside er en side bygget for ett tydelig mål, for eksempel kampanje, tilbud, booking, kjøp, rabattkode eller skjema.",
+        faq2Q: "Hva koster en landingsside?",
+        faq2A: "En enkel landingsside starter fra 2 900 SEK. Mer gjennomarbeidede opplegg koster fra 4 900 SEK eller 7 900 SEK avhengig av omfang.",
+        faq3Q: "Kan jeg få demo før jeg kjøper?",
+        faq3A: "Ja. Du får normalt en første demo innen 1 arbeidsdag etter at du har sendt nok informasjon. Du kjøper bare hvis du vil gå videre.",
+        faq4Q: "Kan siden ha skjema?",
+        faq4A: "Ja. Siden kan ha kontaktskjema, tilbudsskjema, interesseskjema, bookinglenke, takk-side og tydelig emnelinje i e-posten.",
+        faq5Q: "Kan siden brukes for rabattkode eller affiliate?",
+        faq5A: "Ja. En landingsside kan bygges for rabattkode, partner, affiliate, kampanjekode eller målrettet tilbud.",
+        faq6Q: "Kan du koble siden til betaling eller booking?",
+        faq6A: "Ja, ofte via lenke til bookingsystem, betalingslenke eller skjema. Mer avanserte koblinger vurderes separat og gjøres fra 650 SEK/time.",
+        faq7Q: "Må jeg ha ferdig tekst?",
+        faq7A: "Nei. Det holder at du beskriver tilbudet, målgruppen og hva kunden skal gjøre. Jeg kan hjelpe med å strukturere teksten.",
+
+        formTitle: "Få demo på landingsside.",
+        formLead: "Fyll inn hva kampanjen gjelder, hvem den retter seg mot og hva besøkeren skal gjøre.",
+        contactAria: "Kontaktopplysninger",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Bedrift",
+        companyType: "Nordlöf Nordic · Enkeltpersonforetak",
+        labelName: "Navn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Bedrift",
+        labelCampaignType: "Type landingsside",
+        optionOffer: "Tilbud / kampanje",
+        optionLead: "Leadskjema",
+        optionBooking: "Booking",
+        optionDiscount: "Rabattkode",
+        optionAffiliate: "Affiliate / partner",
+        optionLaunch: "Produktlansering",
+        optionEvent: "Event",
+        optionNotSure: "Vet ikke ennå",
+        labelBudget: "Budsjett / pakke",
+        budgetNotSure: "Vet ikke ennå",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Utvidet 7 900 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nåværende nettside, hvis du har en",
+        labelGoal: "Hva er målet med siden?",
+        goalBookings: "Få bookinger",
+        goalQuotes: "Få tilbudsforespørsler",
+        goalSales: "Få kjøp",
+        goalLeads: "Samle leads",
+        goalExplain: "Forklare tilbud",
+        goalTraffic: "Drive trafikk til annen side",
+        goalNotSure: "Vet ikke ennå",
+        labelDescription: "Beskriv kampanjen eller tilbudet",
+        placeholderDescription: "Hva skal siden handle om? Hvem er målgruppen? Hva er tilbudet? Hva skal besøkeren gjøre: booke, kjøpe, sende skjema, bruke rabattkode eller noe annet?",
+        labelInspo: "Lenker, inspirasjon eller kampanjemateriale",
+        placeholderInspo: "Lim inn konkurrenter, eksempler, annonseutkast, kampanjetekst, rabattkode, bookinglenke eller annen viktig informasjon.",
+        privacyText: "Ved å sende skjemaet godtar du at opplysningene dine behandles i henhold til",
+        privacyLink: "personvernerklæringen",
+        submitButton: "Send og få demo",
+
+        footerText1: "Landingssider, kampanjesider, nettsider og webutvikling for småbedrifter.",
+        footerText2: "Demo innen 1 arbeidsdag · Landingsside fra 2 900 SEK · Spesialløsninger fra 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerCase: "Case",
+        footerWebfix: "Webfiks",
+        footerStartup: "Nyoppstartet bedrift",
+        footerRental: "Utleie",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Personvern",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo",
+
+        speechSummary: "Nordlöf Nordic bygger landingssider for kampanjer, tilbud, rabattkoder, bookinger og leadskjemaer. En landingsside har ett tydelig mål: kjøp, booking, skjema eller kontakt. Du får en første demo før du bestemmer deg, og kjøper bare hvis du vil gå videre. En enkel landingsside starter fra 2 900 SEK. Mer gjennomarbeidede opplegg finnes fra 4 900 SEK og 7 900 SEK. Spesialfunksjoner som skjemalogikk, rabattkoder, API, backend og integrasjoner gjøres fra 650 SEK per time."
       }
+    };
+
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+    let isSpeaking = false;
+
+    const languageSelect = document.getElementById("languageSelect");
+    const listenButton = document.getElementById("listenSummary");
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
     }
 
     function safeGet(key) {
@@ -1824,35 +2866,235 @@
       return true;
     }
 
-    const savedContrast = safeGet('highContrast') === 'true';
-    const savedLargeText = safeGet('largeText') === 'true';
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    function stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      isSpeaking = false;
+
+      if (listenButton) {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        listenButton.setAttribute("aria-pressed", "false");
+        listenButton.textContent = dictionary.listen;
+      }
+    }
+
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+
+      stopSpeaking();
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (dictionary[key]) {
+          element.setAttribute("placeholder", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+
+      if (languageSelect) {
+        languageSelect.value = lang;
+        languageSelect.setAttribute("aria-label", dictionary.languageSwitch);
+      }
+
+      const subjectField = document.getElementById("subjectField");
+      if (subjectField) {
+        subjectField.value = dictionary.subject;
+      }
+
+      const autoResponseField = document.getElementById("autoResponseField");
+      if (autoResponseField) {
+        autoResponseField.value = dictionary.autoresponse;
+      }
+
+      const languageField = document.getElementById("languageField");
+      if (languageField) {
+        languageField.value = dictionary.languageName;
+      }
+
+      safeSet("landingCampaignLanguage", lang);
+    }
+
+    if (languageSelect) {
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
+      });
+    }
+
+    document.querySelectorAll("form").forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector(".form-status");
+
+      form.addEventListener("submit", (event) => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        const originalButtonText = dictionary.submitButton;
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = "form-status is-visible";
+            statusBox.textContent = dictionary.validationRequired;
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = dictionary.sending;
+          submitButton.setAttribute("aria-busy", "true");
+        }
+
+        if (statusBox) {
+          statusBox.className = "form-status is-visible";
+          statusBox.textContent = dictionary.sendingStatus;
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute("aria-busy");
+          }
+        }, 15000);
+      });
+    });
+
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
 
     if (savedContrast) {
-      document.body.classList.add('high-contrast');
+      document.body.classList.add("high-contrast");
     }
 
     if (savedLargeText) {
-      document.body.classList.add('large-text');
+      document.body.classList.add("large-text");
     }
 
     setPressed(contrastButton, savedContrast);
     setPressed(largeTextButton, savedLargeText);
 
     if (contrastButton) {
-      contrastButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('high-contrast');
-        safeSet('highContrast', String(isActive));
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
         setPressed(contrastButton, isActive);
       });
     }
 
     if (largeTextButton) {
-      largeTextButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('large-text');
-        safeSet('largeText', String(isActive));
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
         setPressed(largeTextButton, isActive);
       });
     }
+
+    if (listenButton && "speechSynthesis" in window) {
+      listenButton.addEventListener("click", () => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+
+        if (isSpeaking) {
+          stopSpeaking();
+          return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(dictionary.speechSummary);
+        utterance.lang = dictionary.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        isSpeaking = true;
+        listenButton.setAttribute("aria-pressed", "true");
+        listenButton.textContent = dictionary.stopListen;
+
+        utterance.onend = () => {
+          stopSpeaking();
+        };
+
+        utterance.onerror = () => {
+          stopSpeaking();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+
+    window.addEventListener("pagehide", () => {
+      stopSpeaking();
+    });
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("landingCampaignLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
   </script>
 </body>
 </html>
