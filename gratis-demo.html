@@ -46,6 +46,7 @@
         "name":"Gratis demo på hemsida innan köp",
         "description":"Få en första demo på din nya hemsida innan du bestämmer dig. Du betalar bara om du vill gå vidare.",
         "inLanguage":"sv-SE",
+        "availableLanguage":["sv-SE","en","da-DK","no-NO"],
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"}
       },
@@ -170,9 +171,7 @@
       --max:1080px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box;}
 
     html{
       scroll-behavior:smooth;
@@ -190,9 +189,7 @@
       overflow-x:hidden;
     }
 
-    body.large-text{
-      font-size:118%;
-    }
+    body.large-text{font-size:118%;}
 
     body.large-text p,
     body.large-text li,
@@ -237,9 +234,7 @@
       font:inherit;
     }
 
-    button{
-      border:0;
-    }
+    button{border:0;}
 
     :target{
       scroll-margin-top:92px;
@@ -363,6 +358,14 @@
       text-overflow:ellipsis;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     .nav-links{
       display:flex;
       align-items:center;
@@ -374,6 +377,35 @@
 
     .nav-links a:hover{
       color:var(--brand-dark);
+    }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:5px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+    }
+
+    .lang-btn{
+      min-height:36px;
+      padding:8px 11px;
+      border-radius:999px;
+      background:transparent;
+      color:var(--muted);
+      font-weight:900;
+      cursor:pointer;
+      border:1px solid transparent;
+      line-height:1;
+    }
+
+    .lang-btn[aria-pressed="true"]{
+      background:#f4e5dc;
+      color:var(--brand-deep);
+      border-color:rgba(143,77,69,.18);
     }
 
     .btn{
@@ -468,9 +500,7 @@
       line-height:1.15;
     }
 
-    p{
-      margin:0;
-    }
+    p{margin:0;}
 
     .lead{
       max-width:760px;
@@ -902,7 +932,8 @@
     body.high-contrast .card,
     body.high-contrast .step,
     body.high-contrast .price-card,
-    body.high-contrast .faq details{
+    body.high-contrast .faq details,
+    body.high-contrast .lang-switch{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1005,6 +1036,7 @@
       .nav{
         min-height:auto;
         padding:10px 0;
+        align-items:flex-start;
       }
 
       .brand img{
@@ -1019,6 +1051,21 @@
 
       .brand span span{
         display:none;
+      }
+
+      .nav-right{
+        align-items:flex-end;
+      }
+
+      .lang-switch{
+        gap:4px;
+        padding:4px;
+      }
+
+      .lang-btn{
+        min-height:34px;
+        padding:7px 9px;
+        font-size:12px;
       }
 
       .hero{
@@ -1120,33 +1167,42 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
 
-  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
-    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityTools">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
       Hög kontrast
     </button>
-    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
       Större text
     </button>
   </div>
 
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+      <a class="brand" href="/" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" data-i18n-alt="logoAlt">
         <span>
           <strong>Nordlöf Nordic</strong>
-          <span>Webbutvecklare för småföretag</span>
+          <span data-i18n="brandSub">Webbutvecklare för småföretag</span>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Huvudnavigering">
-        <a href="#sa-funkar-det">Så funkar det</a>
-        <a href="#priser">Priser</a>
-        <a href="#fragor">Frågor</a>
-        <a href="#kontakt">Få demo</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Huvudnavigering" data-i18n-aria-label="mainNav">
+          <a href="#sa-funkar-det" data-i18n="navHow">Så funkar det</a>
+          <a href="#priser" data-i18n="navPrices">Priser</a>
+          <a href="#fragor" data-i18n="navFaq">Frågor</a>
+          <a href="#kontakt" data-i18n="navDemo">Få demo</a>
+        </nav>
+
+        <div class="lang-switch" aria-label="Välj språk" data-i18n-aria-label="languageSwitch">
+          <button class="lang-btn" type="button" data-lang="sv" aria-pressed="true">SV</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" type="button" data-lang="da" aria-pressed="false">DA</button>
+          <button class="lang-btn" type="button" data-lang="no" aria-pressed="false">NO</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1154,50 +1210,50 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Gratis första demo · Normalt inom 1 arbetsdag · Ingen bindning</span>
+          <span class="eyebrow" data-i18n="eyebrow">Gratis första demo · Normalt inom 1 arbetsdag · Ingen bindning</span>
 
-          <h1 id="hero-title">Se din nya hemsida innan du bestämmer dig.</h1>
+          <h1 id="hero-title" data-i18n="heroTitle">Se din nya hemsida innan du bestämmer dig.</h1>
 
-          <p class="lead">
+          <p class="lead" data-i18n="heroLead">
             Skicka in vad du behöver. Jag bygger ett första utkast så du får se riktning, struktur och känsla innan du köper.
             Du betalar bara om du vill gå vidare.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Få en demo först</a>
-            <a class="btn btn-secondary" href="#priser">Se priser</a>
+            <a class="btn btn-primary" href="#kontakt" data-i18n="heroCta">Få en demo först</a>
+            <a class="btn btn-secondary" href="#priser" data-i18n="heroPriceCta">Se priser</a>
           </div>
 
-          <div class="proof-row" aria-label="Fördelar">
+          <div class="proof-row" aria-label="Fördelar" data-i18n-aria-label="benefitsAria">
             <div class="proof-pill">
-              Ingen gissning
-              <span>Du får se ett konkret förslag först.</span>
+              <span data-i18n="proof1Title">Ingen gissning</span>
+              <span data-i18n="proof1Text">Du får se ett konkret förslag först.</span>
             </div>
             <div class="proof-pill">
-              Ingen bindning
-              <span>Du går bara vidare om det känns rätt.</span>
+              <span data-i18n="proof2Title">Ingen bindning</span>
+              <span data-i18n="proof2Text">Du går bara vidare om det känns rätt.</span>
             </div>
             <div class="proof-pill">
-              Tydligt pris
-              <span>Ny hemsida från 2 900 kr.</span>
+              <span data-i18n="proof3Title">Tydligt pris</span>
+              <span data-i18n="proof3Text">Ny hemsida från 2 900 kr.</span>
             </div>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Kort sammanfattning">
+        <aside class="hero-card" aria-label="Kort sammanfattning" data-i18n-aria-label="summaryAria">
           <img src="nordlof-nordic-logo.png" alt="">
           <ul class="mini-list">
             <li>
-              <strong>1. Du skickar info</strong>
-              Skriv vad företaget gör, vad du behöver och om du har en hemsida idag.
+              <strong data-i18n="mini1Title">1. Du skickar info</strong>
+              <span data-i18n="mini1Text">Skriv vad företaget gör, vad du behöver och om du har en hemsida idag.</span>
             </li>
             <li>
-              <strong>2. Jag bygger demo</strong>
-              Du får ett första förslag, normalt inom 1 arbetsdag.
+              <strong data-i18n="mini2Title">2. Jag bygger demo</strong>
+              <span data-i18n="mini2Text">Du får ett första förslag, normalt inom 1 arbetsdag.</span>
             </li>
             <li>
-              <strong>3. Du bestämmer</strong>
-              Vill du gå vidare färdigställer vi sidan. Annars är det stopp där.
+              <strong data-i18n="mini3Title">3. Du bestämmer</strong>
+              <span data-i18n="mini3Text">Vill du gå vidare färdigställer vi sidan. Annars är det stopp där.</span>
             </li>
           </ul>
         </aside>
@@ -1207,25 +1263,25 @@
     <section class="section">
       <div class="container grid-3">
         <article class="card">
-          <span class="tag">Problemet</span>
-          <h3>Det är svårt att köpa hemsida i blindo.</h3>
-          <p>
+          <span class="tag" data-i18n="card1Tag">Problemet</span>
+          <h3 data-i18n="card1Title">Det är svårt att köpa hemsida i blindo.</h3>
+          <p data-i18n="card1Text">
             Många företag vill inte betala för något de inte kan se. Rimligt. En hemsida är inte en påse skruv.
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">Lösningen</span>
-          <h3>Jag visar riktningen först.</h3>
-          <p>
+          <span class="tag" data-i18n="card2Tag">Lösningen</span>
+          <h3 data-i18n="card2Title">Jag visar riktningen först.</h3>
+          <p data-i18n="card2Text">
             Du får ett första utkast med rubrik, struktur, känsla och upplägg innan du bestämmer dig.
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">Resultatet</span>
-          <h3>Du tar beslut på något konkret.</h3>
-          <p>
+          <span class="tag" data-i18n="card3Tag">Resultatet</span>
+          <h3 data-i18n="card3Title">Du tar beslut på något konkret.</h3>
+          <p data-i18n="card3Text">
             Om du gillar demon går vi vidare. Om inte, så har du inte köpt ett helt projekt i blindo.
           </p>
         </article>
@@ -1235,31 +1291,31 @@
     <section class="section" id="sa-funkar-det">
       <div class="container">
         <div class="section-head">
-          <h2>Så funkar gratis demo.</h2>
-          <p>
+          <h2 data-i18n="howTitle">Så funkar gratis demo.</h2>
+          <p data-i18n="howLead">
             Kort process. Inga långa möten innan du ens vet om stilen passar.
           </p>
         </div>
 
         <div class="steps">
           <div class="step">
-            <strong>Du fyller i formuläret</strong>
-            <span>Berätta vad företaget gör, vad du vill ha hjälp med och länka gärna inspiration.</span>
+            <strong data-i18n="step1Title">Du fyller i formuläret</strong>
+            <span data-i18n="step1Text">Berätta vad företaget gör, vad du vill ha hjälp med och länka gärna inspiration.</span>
           </div>
 
           <div class="step">
-            <strong>Jag gör ett första utkast</strong>
-            <span>Demon visar riktning, struktur och känsla. Den är inte en färdig leverans.</span>
+            <strong data-i18n="step2Title">Jag gör ett första utkast</strong>
+            <span data-i18n="step2Text">Demon visar riktning, struktur och känsla. Den är inte en färdig leverans.</span>
           </div>
 
           <div class="step">
-            <strong>Du tittar och återkopplar</strong>
-            <span>Du säger vad som känns rätt och vad som behöver ändras.</span>
+            <strong data-i18n="step3Title">Du tittar och återkopplar</strong>
+            <span data-i18n="step3Text">Du säger vad som känns rätt och vad som behöver ändras.</span>
           </div>
 
           <div class="step">
-            <strong>Du köper bara om du vill gå vidare</strong>
-            <span>Vill du färdigställa sidan väljer vi paket eller timpris beroende på uppdraget.</span>
+            <strong data-i18n="step4Title">Du köper bara om du vill gå vidare</strong>
+            <span data-i18n="step4Text">Vill du färdigställa sidan väljer vi paket eller timpris beroende på uppdraget.</span>
           </div>
         </div>
       </div>
@@ -1268,31 +1324,31 @@
     <section class="section">
       <div class="container grid-2">
         <article class="card">
-          <span class="tag">Det här är demon</span>
-          <h2>Ett första förslag.</h2>
-          <p>
+          <span class="tag" data-i18n="demoIsTag">Det här är demon</span>
+          <h2 data-i18n="demoIsTitle">Ett första förslag.</h2>
+          <p data-i18n="demoIsText">
             Demon är till för att visa om jag förstår företaget, målgruppen och riktningen.
             Den kan innehålla layout, rubriker, sektioner och första känslan för sidan.
           </p>
           <ul class="list">
-            <li>Förslag på struktur</li>
-            <li>Första designkänsla</li>
-            <li>Rubriker och sektioner</li>
-            <li>Tydlig väg till köp, bokning eller kontakt</li>
+            <li data-i18n="demoIsList1">Förslag på struktur</li>
+            <li data-i18n="demoIsList2">Första designkänsla</li>
+            <li data-i18n="demoIsList3">Rubriker och sektioner</li>
+            <li data-i18n="demoIsList4">Tydlig väg till köp, bokning eller kontakt</li>
           </ul>
         </article>
 
         <article class="card">
-          <span class="tag">Det här är den inte</span>
-          <h2>Inte en färdig hemsida.</h2>
-          <p>
+          <span class="tag" data-i18n="demoNotTag">Det här är den inte</span>
+          <h2 data-i18n="demoNotTitle">Inte en färdig hemsida.</h2>
+          <p data-i18n="demoNotText">
             Demon är inte slutleveransen. Publicering, full finputsning, allt innehåll och tekniskt färdigställande görs när du valt att gå vidare.
           </p>
           <ul class="list">
-            <li>Ingen bindning</li>
-            <li>Ingen publicering innan köp</li>
-            <li>Ingen färdig leverans utan godkännande</li>
-            <li>Inget krångel. Bara tydliga steg.</li>
+            <li data-i18n="demoNotList1">Ingen bindning</li>
+            <li data-i18n="demoNotList2">Ingen publicering innan köp</li>
+            <li data-i18n="demoNotList3">Ingen färdig leverans utan godkännande</li>
+            <li data-i18n="demoNotList4">Inget krångel. Bara tydliga steg.</li>
           </ul>
         </article>
       </div>
@@ -1301,40 +1357,39 @@
     <section class="section" id="priser">
       <div class="container">
         <div class="section-head">
-          <h2>Pris om du vill gå vidare.</h2>
-          <p>
+          <h2 data-i18n="pricesTitle">Pris om du vill gå vidare.</h2>
+          <p data-i18n="pricesLead">
             Du får demon först. Sedan väljer du om sidan ska färdigställas.
           </p>
         </div>
 
         <div class="price-grid">
           <article class="price-card">
-            <span class="tag">Start</span>
-            <h3>Ny hemsida</h3>
-            <div class="price">2 900 kr</div>
-            <p>En enkel och tydlig one page-sida för småföretag som vill komma igång snabbt.</p>
+            <span class="tag" data-i18n="price1Tag">Start</span>
+            <h3 data-i18n="price1Title">Ny hemsida</h3>
+            <div class="price" data-i18n="price1Amount">2 900 kr</div>
+            <p data-i18n="price1Text">En enkel och tydlig one page-sida för småföretag som vill komma igång snabbt.</p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Proffs</span>
-            <h3>Mer genomarbetad</h3>
-            <div class="price">4 900 kr</div>
-            <p>För dig som vill ha fler sektioner, starkare struktur och mer genomarbetat uttryck.</p>
+            <span class="tag" data-i18n="price2Tag">Proffs</span>
+            <h3 data-i18n="price2Title">Mer genomarbetad</h3>
+            <div class="price" data-i18n="price2Amount">4 900 kr</div>
+            <p data-i18n="price2Text">För dig som vill ha fler sektioner, starkare struktur och mer genomarbetat uttryck.</p>
           </article>
 
           <article class="price-card">
-            <span class="tag">Utökad</span>
-            <h3>Större upplägg</h3>
-            <div class="price">7 900 kr</div>
-            <p>För fler undersidor, mer innehåll och tydligare helhet från start.</p>
+            <span class="tag" data-i18n="price3Tag">Utökad</span>
+            <h3 data-i18n="price3Title">Större upplägg</h3>
+            <div class="price" data-i18n="price3Amount">7 900 kr</div>
+            <p data-i18n="price3Text">För fler undersidor, mer innehåll och tydligare helhet från start.</p>
           </article>
         </div>
 
         <div class="card" style="margin-top:18px;">
-          <h3>Webbfix och speciallösningar</h3>
-          <p>
-            Mindre uppdateringar startar från <strong>490 kr</strong>.
-            API, backend, integrationer, formulärflöden och större speciallösningar görs från <strong>650 kr/h</strong>.
+          <h3 data-i18n="extraTitle">Webbfix och speciallösningar</h3>
+          <p data-i18n="extraText">
+            Mindre uppdateringar startar från 490 kr. API, backend, integrationer, formulärflöden och större speciallösningar görs från 650 kr/h.
           </p>
         </div>
       </div>
@@ -1344,13 +1399,13 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Du ska inte behöva gissa om jag kan bygga rätt sida åt dig.</h2>
-            <p>
+            <h2 data-i18n="ctaTitle">Du ska inte behöva gissa om jag kan bygga rätt sida åt dig.</h2>
+            <p data-i18n="ctaText">
               Du ska få se det först. Skicka in dina uppgifter så tar jag fram ett första förslag.
             </p>
           </div>
           <div style="margin-top:18px;">
-            <a class="btn btn-light" href="#kontakt">Skicka in och få demo</a>
+            <a class="btn btn-light" href="#kontakt" data-i18n="ctaButton">Skicka in och få demo</a>
           </div>
         </div>
       </div>
@@ -1359,40 +1414,40 @@
     <section class="section faq" id="fragor">
       <div class="container">
         <div class="section-head">
-          <h2>Vanliga frågor.</h2>
-          <p>
+          <h2 data-i18n="faqTitle">Vanliga frågor.</h2>
+          <p data-i18n="faqLead">
             Det viktigaste innan du skickar in.
           </p>
         </div>
 
         <details>
-          <summary>Är demon gratis?</summary>
-          <p>Ja. Du får ett första förslag innan du bestämmer dig. Du betalar först om du vill gå vidare.</p>
+          <summary data-i18n="faq1Q">Är demon gratis?</summary>
+          <p data-i18n="faq1A">Ja. Du får ett första förslag innan du bestämmer dig. Du betalar först om du vill gå vidare.</p>
         </details>
 
         <details>
-          <summary>Är demon en färdig hemsida?</summary>
-          <p>Nej. Demon är ett första utkast som visar riktning, struktur och känsla. Färdigställande sker efter godkännande.</p>
+          <summary data-i18n="faq2Q">Är demon en färdig hemsida?</summary>
+          <p data-i18n="faq2A">Nej. Demon är ett första utkast som visar riktning, struktur och känsla. Färdigställande sker efter godkännande.</p>
         </details>
 
         <details>
-          <summary>Hur snabbt får jag demon?</summary>
-          <p>Normalt inom 1 arbetsdag efter att du skickat in tillräcklig information.</p>
+          <summary data-i18n="faq3Q">Hur snabbt får jag demon?</summary>
+          <p data-i18n="faq3A">Normalt inom 1 arbetsdag efter att du skickat in tillräcklig information.</p>
         </details>
 
         <details>
-          <summary>Måste jag köpa efter demon?</summary>
-          <p>Nej. Du köper bara om du gillar upplägget och vill gå vidare.</p>
+          <summary data-i18n="faq4Q">Måste jag köpa efter demon?</summary>
+          <p data-i18n="faq4A">Nej. Du köper bara om du gillar upplägget och vill gå vidare.</p>
         </details>
 
         <details>
-          <summary>Vad kan du bygga?</summary>
-          <p>Hemsidor, landningssidor, webbfix, formulär, API, backend, integrationer och enklare speciallösningar.</p>
+          <summary data-i18n="faq5Q">Vad kan du bygga?</summary>
+          <p data-i18n="faq5A">Hemsidor, landningssidor, webbfix, formulär, API, backend, integrationer och enklare speciallösningar.</p>
         </details>
 
         <details>
-          <summary>Blir jag låst till dig?</summary>
-          <p>Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.</p>
+          <summary data-i18n="faq6Q">Blir jag låst till dig?</summary>
+          <p data-i18n="faq6A">Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.</p>
         </details>
       </div>
     </section>
@@ -1400,102 +1455,103 @@
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
-          <h2>Få en första demo.</h2>
-          <p>
+          <h2 data-i18n="formTitle">Få en första demo.</h2>
+          <p data-i18n="formLead">
             Fyll i det viktigaste. Ju tydligare du beskriver företaget och behovet, desto bättre demo kan jag ta fram.
           </p>
 
-          <div class="contact-row" aria-label="Kontaktuppgifter">
+          <div class="contact-row" aria-label="Kontaktuppgifter" data-i18n-aria-label="contactAria">
             <div class="contact-mini">
-              <strong>E-post</strong>
+              <strong data-i18n="contactEmail">E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
             <div class="contact-mini">
-              <strong>Telefon</strong>
+              <strong data-i18n="contactPhone">Telefon</strong>
               <a href="tel:+46793442520">+46 79-344 25 20</a>
             </div>
             <div class="contact-mini">
-              <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              <strong data-i18n="contactCompany">Företag</strong>
+              <span data-i18n="companyType">Nordlöf Nordic · Enskild firma</span>
             </div>
           </div>
 
           <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" accept-charset="UTF-8" autocomplete="on">
-            <input type="hidden" name="_subject" value="Ny demoförfrågan från gratis-demo.html" />
+            <input id="subjectField" type="hidden" name="_subject" value="Ny demoförfrågan från gratis-demo.html" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
-            <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan om demo och återkommer så snart jag kan." />
+            <input id="autoResponseField" type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din förfrågan om demo och återkommer så snart jag kan." />
+            <input id="languageField" type="hidden" name="Valt språk" value="Svenska" />
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
             <div class="form-status" aria-live="polite"></div>
 
             <div class="form-grid">
               <div>
-                <label for="namn">Namn</label>
+                <label for="namn" data-i18n="labelName">Namn</label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
 
               <div>
-                <label for="email">E-post</label>
+                <label for="email" data-i18n="labelEmail">E-post</label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
 
               <div>
-                <label for="telefon">Telefon</label>
+                <label for="telefon" data-i18n="labelPhone">Telefon</label>
                 <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
 
               <div>
-                <label for="foretag">Företag</label>
+                <label for="foretag" data-i18n="labelCompany">Företag</label>
                 <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
 
               <div>
-                <label for="typ">Vad behöver du?</label>
+                <label for="typ" data-i18n="labelType">Vad behöver du?</label>
                 <select id="typ" name="Typ av uppdrag">
-                  <option value="Ny hemsida">Ny hemsida</option>
-                  <option value="Uppdatera befintlig hemsida">Uppdatera befintlig hemsida</option>
-                  <option value="Landningssida">Landningssida</option>
-                  <option value="API / backend / specialfunktion">API / backend / specialfunktion</option>
-                  <option value="Vet inte än">Vet inte än</option>
+                  <option value="Ny hemsida" data-i18n="optionNewWebsite">Ny hemsida</option>
+                  <option value="Uppdatera befintlig hemsida" data-i18n="optionUpdate">Uppdatera befintlig hemsida</option>
+                  <option value="Landningssida" data-i18n="optionLanding">Landningssida</option>
+                  <option value="API / backend / specialfunktion" data-i18n="optionApi">API / backend / specialfunktion</option>
+                  <option value="Vet inte än" data-i18n="optionNotSure">Vet inte än</option>
                 </select>
               </div>
 
               <div>
-                <label for="budget">Budget / paket</label>
+                <label for="budget" data-i18n="labelBudget">Budget / paket</label>
                 <select id="budget" name="Budget">
-                  <option value="Vet inte än">Vet inte än</option>
-                  <option value="Start 2 900 kr">Start 2 900 kr</option>
-                  <option value="Proffs 4 900 kr">Proffs 4 900 kr</option>
-                  <option value="Utökad 7 900 kr">Utökad 7 900 kr</option>
-                  <option value="Uppdatering från 490 kr">Uppdatering från 490 kr</option>
-                  <option value="Timpris 650 kr/h">Timpris 650 kr/h</option>
+                  <option value="Vet inte än" data-i18n="budgetNotSure">Vet inte än</option>
+                  <option value="Start 2 900 kr" data-i18n="budgetStart">Start 2 900 kr</option>
+                  <option value="Proffs 4 900 kr" data-i18n="budgetPro">Proffs 4 900 kr</option>
+                  <option value="Utökad 7 900 kr" data-i18n="budgetExtended">Utökad 7 900 kr</option>
+                  <option value="Uppdatering från 490 kr" data-i18n="budgetUpdate">Uppdatering från 490 kr</option>
+                  <option value="Timpris 650 kr/h" data-i18n="budgetHourly">Timpris 650 kr/h</option>
                 </select>
               </div>
 
               <div class="full">
-                <label for="nuvarande">Nuvarande hemsida, om du har en</label>
+                <label for="nuvarande" data-i18n="labelCurrent">Nuvarande hemsida, om du har en</label>
                 <input id="nuvarande" name="Nuvarande hemsida" type="url" inputmode="url" placeholder="https://..." />
               </div>
 
               <div class="full">
-                <label for="beskrivning">Beskriv kort vad du vill ha hjälp med</label>
-                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad gör företaget? Vad ska sidan hjälpa dig med? Vad vill du att kunden ska göra?" required></textarea>
+                <label for="beskrivning" data-i18n="labelDescription">Beskriv kort vad du vill ha hjälp med</label>
+                <textarea id="beskrivning" name="Beskrivning" placeholder="Vad gör företaget? Vad ska sidan hjälpa dig med? Vad vill du att kunden ska göra?" data-i18n-placeholder="placeholderDescription" required></textarea>
               </div>
 
               <div class="full">
-                <label for="inspo">Länkar eller inspiration</label>
-                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration."></textarea>
+                <label for="inspo" data-i18n="labelInspo">Länkar eller inspiration</label>
+                <textarea id="inspo" name="Inspiration" placeholder="Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration." data-i18n-placeholder="placeholderInspo"></textarea>
               </div>
             </div>
 
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
-              <a href="integritet.html">integritetspolicyn</a>.
+              <span data-i18n="privacyText">Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt</span>
+              <a href="integritet.html" data-i18n="privacyLink">integritetspolicyn</a>.
             </span>
 
-            <button class="btn btn-light" type="submit" style="width:100%;">Skicka och få demo</button>
+            <button class="btn btn-light" type="submit" style="width:100%;" data-i18n="submitButton">Skicka och få demo</button>
           </form>
         </div>
       </div>
@@ -1507,21 +1563,21 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Hemsidor, landningssidor och webbutveckling för småföretag.<br>
-          Demo inom 1 arbetsdag · Fast pris eller 650 kr/h
+          <span data-i18n="footerText1">Hemsidor, landningssidor och webbutveckling för småföretag.</span><br>
+          <span data-i18n="footerText2">Demo inom 1 arbetsdag · Fast pris eller 650 kr/h</span>
         </div>
 
         <div>
-          Kontakt:
+          <span data-i18n="footerContact">Kontakt:</span>
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
 
           <div class="footer-links">
-            <a href="/">Startsida</a>
-            <a href="villkor.html">Villkor</a>
-            <a href="integritet.html">Integritet</a>
-            <a href="affiliate.html">Affiliate</a>
+            <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
+            <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+            <a href="affiliate.html" data-i18n="footerAffiliate">Affiliate</a>
             <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
@@ -1530,58 +1586,687 @@
     </div>
   </footer>
 
-  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Priser</a>
-    <a class="btn btn-primary" href="#kontakt">Få demo</a>
+  <nav class="mobile-sticky" aria-label="Snabbval på mobil" data-i18n-aria-label="mobileStickyAria">
+    <a class="btn btn-secondary" href="#priser" data-i18n="mobilePrices">Priser</a>
+    <a class="btn btn-primary" href="#kontakt" data-i18n="mobileDemo">Få demo</a>
   </nav>
 
   <script>
-    document.querySelectorAll('form').forEach((form) => {
-      const submitButton = form.querySelector('button[type="submit"]');
-      const statusBox = form.querySelector('.form-status');
-      const originalButtonText = submitButton ? submitButton.textContent : '';
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        languageName: "Svenska",
+        metaTitle: "Gratis demo på hemsida innan köp | Nordlöf Nordic",
+        metaDescription: "Få en första demo på din nya hemsida innan du bestämmer dig. Du betalar bara om du vill gå vidare. Hemsidor för småföretag från 2 900 kr.",
+        ogTitle: "Gratis demo på hemsida innan köp | Nordlöf Nordic",
+        ogDescription: "Se ett första förslag innan du köper. Demo inom 1 arbetsdag. Du betalar bara om du vill gå vidare.",
+        twitterTitle: "Gratis demo på hemsida innan köp | Nordlöf Nordic",
+        twitterDescription: "Få en första demo på din hemsida innan du bestämmer dig. Ingen bindning. Betala först om du vill gå vidare.",
+        subject: "Ny demoförfrågan från gratis-demo.html",
+        autoresponse: "Tack! Jag har tagit emot din förfrågan om demo och återkommer så snart jag kan.",
+        validationRequired: "Fyll i de obligatoriska fälten först.",
+        sending: "Skickar...",
+        sendingStatus: "Skickar formuläret...",
 
-      form.addEventListener('submit', (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityTools: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Webbutvecklare för småföretag",
+        mainNav: "Huvudnavigering",
+        navHow: "Så funkar det",
+        navPrices: "Priser",
+        navFaq: "Frågor",
+        navDemo: "Få demo",
+        languageSwitch: "Välj språk",
 
-          if (statusBox) {
-            statusBox.className = 'form-status is-visible';
-            statusBox.textContent = 'Fyll i de obligatoriska fälten först.';
-          }
+        eyebrow: "Gratis första demo · Normalt inom 1 arbetsdag · Ingen bindning",
+        heroTitle: "Se din nya hemsida innan du bestämmer dig.",
+        heroLead: "Skicka in vad du behöver. Jag bygger ett första utkast så du får se riktning, struktur och känsla innan du köper. Du betalar bara om du vill gå vidare.",
+        heroCta: "Få en demo först",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fördelar",
+        proof1Title: "Ingen gissning",
+        proof1Text: "Du får se ett konkret förslag först.",
+        proof2Title: "Ingen bindning",
+        proof2Text: "Du går bara vidare om det känns rätt.",
+        proof3Title: "Tydligt pris",
+        proof3Text: "Ny hemsida från 2 900 kr.",
+        summaryAria: "Kort sammanfattning",
+        mini1Title: "1. Du skickar info",
+        mini1Text: "Skriv vad företaget gör, vad du behöver och om du har en hemsida idag.",
+        mini2Title: "2. Jag bygger demo",
+        mini2Text: "Du får ett första förslag, normalt inom 1 arbetsdag.",
+        mini3Title: "3. Du bestämmer",
+        mini3Text: "Vill du gå vidare färdigställer vi sidan. Annars är det stopp där.",
 
-          form.reportValidity();
-          return;
-        }
+        card1Tag: "Problemet",
+        card1Title: "Det är svårt att köpa hemsida i blindo.",
+        card1Text: "Många företag vill inte betala för något de inte kan se. Rimligt. En hemsida är inte en påse skruv.",
+        card2Tag: "Lösningen",
+        card2Title: "Jag visar riktningen först.",
+        card2Text: "Du får ett första utkast med rubrik, struktur, känsla och upplägg innan du bestämmer dig.",
+        card3Tag: "Resultatet",
+        card3Title: "Du tar beslut på något konkret.",
+        card3Text: "Om du gillar demon går vi vidare. Om inte, så har du inte köpt ett helt projekt i blindo.",
 
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = 'Skickar...';
-          submitButton.setAttribute('aria-busy', 'true');
-        }
+        howTitle: "Så funkar gratis demo.",
+        howLead: "Kort process. Inga långa möten innan du ens vet om stilen passar.",
+        step1Title: "Du fyller i formuläret",
+        step1Text: "Berätta vad företaget gör, vad du vill ha hjälp med och länka gärna inspiration.",
+        step2Title: "Jag gör ett första utkast",
+        step2Text: "Demon visar riktning, struktur och känsla. Den är inte en färdig leverans.",
+        step3Title: "Du tittar och återkopplar",
+        step3Text: "Du säger vad som känns rätt och vad som behöver ändras.",
+        step4Title: "Du köper bara om du vill gå vidare",
+        step4Text: "Vill du färdigställa sidan väljer vi paket eller timpris beroende på uppdraget.",
 
-        if (statusBox) {
-          statusBox.className = 'form-status is-visible';
-          statusBox.textContent = 'Skickar formuläret...';
-        }
+        demoIsTag: "Det här är demon",
+        demoIsTitle: "Ett första förslag.",
+        demoIsText: "Demon är till för att visa om jag förstår företaget, målgruppen och riktningen. Den kan innehålla layout, rubriker, sektioner och första känslan för sidan.",
+        demoIsList1: "Förslag på struktur",
+        demoIsList2: "Första designkänsla",
+        demoIsList3: "Rubriker och sektioner",
+        demoIsList4: "Tydlig väg till köp, bokning eller kontakt",
+        demoNotTag: "Det här är den inte",
+        demoNotTitle: "Inte en färdig hemsida.",
+        demoNotText: "Demon är inte slutleveransen. Publicering, full finputsning, allt innehåll och tekniskt färdigställande görs när du valt att gå vidare.",
+        demoNotList1: "Ingen bindning",
+        demoNotList2: "Ingen publicering innan köp",
+        demoNotList3: "Ingen färdig leverans utan godkännande",
+        demoNotList4: "Inget krångel. Bara tydliga steg.",
 
-        setTimeout(() => {
-          if (submitButton && submitButton.disabled) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            submitButton.removeAttribute('aria-busy');
-          }
-        }, 15000);
-      });
-    });
+        pricesTitle: "Pris om du vill gå vidare.",
+        pricesLead: "Du får demon först. Sedan väljer du om sidan ska färdigställas.",
+        price1Tag: "Start",
+        price1Title: "Ny hemsida",
+        price1Amount: "2 900 kr",
+        price1Text: "En enkel och tydlig one page-sida för småföretag som vill komma igång snabbt.",
+        price2Tag: "Proffs",
+        price2Title: "Mer genomarbetad",
+        price2Amount: "4 900 kr",
+        price2Text: "För dig som vill ha fler sektioner, starkare struktur och mer genomarbetat uttryck.",
+        price3Tag: "Utökad",
+        price3Title: "Större upplägg",
+        price3Amount: "7 900 kr",
+        price3Text: "För fler undersidor, mer innehåll och tydligare helhet från start.",
+        extraTitle: "Webbfix och speciallösningar",
+        extraText: "Mindre uppdateringar startar från 490 kr. API, backend, integrationer, formulärflöden och större speciallösningar görs från 650 kr/h.",
 
-    const contrastButton = document.getElementById('toggleContrast');
-    const largeTextButton = document.getElementById('toggleLargeText');
+        ctaTitle: "Du ska inte behöva gissa om jag kan bygga rätt sida åt dig.",
+        ctaText: "Du ska få se det först. Skicka in dina uppgifter så tar jag fram ett första förslag.",
+        ctaButton: "Skicka in och få demo",
 
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
+        faqTitle: "Vanliga frågor.",
+        faqLead: "Det viktigaste innan du skickar in.",
+        faq1Q: "Är demon gratis?",
+        faq1A: "Ja. Du får ett första förslag innan du bestämmer dig. Du betalar först om du vill gå vidare.",
+        faq2Q: "Är demon en färdig hemsida?",
+        faq2A: "Nej. Demon är ett första utkast som visar riktning, struktur och känsla. Färdigställande sker efter godkännande.",
+        faq3Q: "Hur snabbt får jag demon?",
+        faq3A: "Normalt inom 1 arbetsdag efter att du skickat in tillräcklig information.",
+        faq4Q: "Måste jag köpa efter demon?",
+        faq4A: "Nej. Du köper bara om du gillar upplägget och vill gå vidare.",
+        faq5Q: "Vad kan du bygga?",
+        faq5A: "Hemsidor, landningssidor, webbfix, formulär, API, backend, integrationer och enklare speciallösningar.",
+        faq6Q: "Blir jag låst till dig?",
+        faq6A: "Nej. Efter köp kan du få material, kod och inloggningar om du vill fortsätta själv eller med någon annan.",
+
+        formTitle: "Få en första demo.",
+        formLead: "Fyll i det viktigaste. Ju tydligare du beskriver företaget och behovet, desto bättre demo kan jag ta fram.",
+        contactAria: "Kontaktuppgifter",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Företag",
+        companyType: "Nordlöf Nordic · Enskild firma",
+        labelName: "Namn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Företag",
+        labelType: "Vad behöver du?",
+        optionNewWebsite: "Ny hemsida",
+        optionUpdate: "Uppdatera befintlig hemsida",
+        optionLanding: "Landningssida",
+        optionApi: "API / backend / specialfunktion",
+        optionNotSure: "Vet inte än",
+        labelBudget: "Budget / paket",
+        budgetNotSure: "Vet inte än",
+        budgetStart: "Start 2 900 kr",
+        budgetPro: "Proffs 4 900 kr",
+        budgetExtended: "Utökad 7 900 kr",
+        budgetUpdate: "Uppdatering från 490 kr",
+        budgetHourly: "Timpris 650 kr/h",
+        labelCurrent: "Nuvarande hemsida, om du har en",
+        labelDescription: "Beskriv kort vad du vill ha hjälp med",
+        placeholderDescription: "Vad gör företaget? Vad ska sidan hjälpa dig med? Vad vill du att kunden ska göra?",
+        labelInspo: "Länkar eller inspiration",
+        placeholderInspo: "Klistra gärna in sidor du gillar, konkurrenter eller annan inspiration.",
+        privacyText: "Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt",
+        privacyLink: "integritetspolicyn",
+        submitButton: "Skicka och få demo",
+
+        footerText1: "Hemsidor, landningssidor och webbutveckling för småföretag.",
+        footerText2: "Demo inom 1 arbetsdag · Fast pris eller 650 kr/h",
+        footerContact: "Kontakt:",
+        footerHome: "Startsida",
+        footerTerms: "Villkor",
+        footerPrivacy: "Integritet",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Snabbval på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo"
+      },
+
+      en: {
+        htmlLang: "en",
+        languageName: "English",
+        metaTitle: "Free website demo before purchase | Nordlöf Nordic",
+        metaDescription: "Get a first demo of your new website before you decide. You only pay if you want to move forward. Websites for small businesses from 2,900 SEK.",
+        ogTitle: "Free website demo before purchase | Nordlöf Nordic",
+        ogDescription: "See a first proposal before buying. Demo within 1 business day. You only pay if you want to move forward.",
+        twitterTitle: "Free website demo before purchase | Nordlöf Nordic",
+        twitterDescription: "Get a first website demo before you decide. No lock-in. Pay only if you want to move forward.",
+        subject: "New demo request from gratis-demo.html - English",
+        autoresponse: "Thank you! I have received your demo request and will get back to you as soon as I can.",
+        validationRequired: "Please fill in the required fields first.",
+        sending: "Sending...",
+        sendingStatus: "Sending the form...",
+
+        skip: "Skip to main content",
+        accessibilityTools: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Web developer for small businesses",
+        mainNav: "Main navigation",
+        navHow: "How it works",
+        navPrices: "Prices",
+        navFaq: "Questions",
+        navDemo: "Get demo",
+        languageSwitch: "Choose language",
+
+        eyebrow: "Free first demo · Usually within 1 business day · No lock-in",
+        heroTitle: "See your new website before you decide.",
+        heroLead: "Send what you need. I build a first draft so you can see the direction, structure and feeling before you buy. You only pay if you want to move forward.",
+        heroCta: "Get a demo first",
+        heroPriceCta: "See prices",
+        benefitsAria: "Benefits",
+        proof1Title: "No guessing",
+        proof1Text: "You see a concrete proposal first.",
+        proof2Title: "No lock-in",
+        proof2Text: "You only move forward if it feels right.",
+        proof3Title: "Clear price",
+        proof3Text: "New website from 2,900 SEK.",
+        summaryAria: "Short summary",
+        mini1Title: "1. You send info",
+        mini1Text: "Write what your business does, what you need and if you already have a website.",
+        mini2Title: "2. I build a demo",
+        mini2Text: "You get a first proposal, usually within 1 business day.",
+        mini3Title: "3. You decide",
+        mini3Text: "If you want to continue, we finish the website. If not, we stop there.",
+
+        card1Tag: "Problem",
+        card1Title: "Buying a website blindly is hard.",
+        card1Text: "Many businesses do not want to pay for something they cannot see. Fair. A website is not a bag of screws.",
+        card2Tag: "Solution",
+        card2Title: "I show the direction first.",
+        card2Text: "You get a first draft with headline, structure, feeling and setup before deciding.",
+        card3Tag: "Result",
+        card3Title: "You decide based on something concrete.",
+        card3Text: "If you like the demo, we continue. If not, you have not bought a full project blindly.",
+
+        howTitle: "How the free demo works.",
+        howLead: "Simple process. No long meetings before you even know if the style fits.",
+        step1Title: "You fill in the form",
+        step1Text: "Tell me what the business does, what you need help with and feel free to link inspiration.",
+        step2Title: "I create a first draft",
+        step2Text: "The demo shows direction, structure and feeling. It is not a finished delivery.",
+        step3Title: "You review and respond",
+        step3Text: "You say what feels right and what needs to change.",
+        step4Title: "You only buy if you want to continue",
+        step4Text: "If you want the website finished, we choose a package or hourly price depending on the project.",
+
+        demoIsTag: "What the demo is",
+        demoIsTitle: "A first proposal.",
+        demoIsText: "The demo is there to show whether I understand the business, target audience and direction. It can include layout, headlines, sections and the first feeling of the page.",
+        demoIsList1: "Suggested structure",
+        demoIsList2: "First design direction",
+        demoIsList3: "Headlines and sections",
+        demoIsList4: "Clear path to purchase, booking or contact",
+        demoNotTag: "What it is not",
+        demoNotTitle: "Not a finished website.",
+        demoNotText: "The demo is not the final delivery. Publishing, full polish, all content and technical finishing are done when you choose to move forward.",
+        demoNotList1: "No lock-in",
+        demoNotList2: "No publishing before purchase",
+        demoNotList3: "No finished delivery without approval",
+        demoNotList4: "No chaos. Just clear steps.",
+
+        pricesTitle: "Price if you want to continue.",
+        pricesLead: "You get the demo first. Then you choose if the website should be completed.",
+        price1Tag: "Start",
+        price1Title: "New website",
+        price1Amount: "2,900 SEK",
+        price1Text: "A simple and clear one-page website for small businesses that want to get started quickly.",
+        price2Tag: "Pro",
+        price2Title: "More polished",
+        price2Amount: "4,900 SEK",
+        price2Text: "For businesses that want more sections, stronger structure and a more polished look.",
+        price3Tag: "Extended",
+        price3Title: "Larger setup",
+        price3Amount: "7,900 SEK",
+        price3Text: "For more subpages, more content and a clearer full setup from the start.",
+        extraTitle: "Website fixes and custom solutions",
+        extraText: "Smaller updates start from 490 SEK. API, backend, integrations, form flows and larger custom solutions start from 650 SEK/hour.",
+
+        ctaTitle: "You should not have to guess if I can build the right website for you.",
+        ctaText: "You should see it first. Send your details and I will create a first proposal.",
+        ctaButton: "Send request and get demo",
+
+        faqTitle: "Frequently asked questions.",
+        faqLead: "The essentials before you send a request.",
+        faq1Q: "Is the demo free?",
+        faq1A: "Yes. You get a first proposal before deciding. You only pay if you want to move forward.",
+        faq2Q: "Is the demo a finished website?",
+        faq2A: "No. The demo is a first draft showing direction, structure and feeling. Completion happens after approval.",
+        faq3Q: "How fast do I get the demo?",
+        faq3A: "Usually within 1 business day after you have sent enough information.",
+        faq4Q: "Do I have to buy after the demo?",
+        faq4A: "No. You only buy if you like the setup and want to move forward.",
+        faq5Q: "What can you build?",
+        faq5A: "Websites, landing pages, website fixes, forms, API, backend, integrations and simpler custom solutions.",
+        faq6Q: "Will I be locked in to you?",
+        faq6A: "No. After purchase, you can get material, code and logins if you want to continue yourself or with someone else.",
+
+        formTitle: "Get a first demo.",
+        formLead: "Fill in the essentials. The clearer you describe your business and need, the better demo I can create.",
+        contactAria: "Contact details",
+        contactEmail: "Email",
+        contactPhone: "Phone",
+        contactCompany: "Company",
+        companyType: "Nordlöf Nordic · Sole proprietorship",
+        labelName: "Name",
+        labelEmail: "Email",
+        labelPhone: "Phone",
+        labelCompany: "Company",
+        labelType: "What do you need?",
+        optionNewWebsite: "New website",
+        optionUpdate: "Update existing website",
+        optionLanding: "Landing page",
+        optionApi: "API / backend / custom feature",
+        optionNotSure: "Not sure yet",
+        labelBudget: "Budget / package",
+        budgetNotSure: "Not sure yet",
+        budgetStart: "Start 2,900 SEK",
+        budgetPro: "Pro 4,900 SEK",
+        budgetExtended: "Extended 7,900 SEK",
+        budgetUpdate: "Update from 490 SEK",
+        budgetHourly: "Hourly 650 SEK/hour",
+        labelCurrent: "Current website, if you have one",
+        labelDescription: "Briefly describe what you need help with",
+        placeholderDescription: "What does the business do? What should the website help with? What should the customer do?",
+        labelInspo: "Links or inspiration",
+        placeholderInspo: "Paste websites you like, competitors or other inspiration.",
+        privacyText: "By sending the form, you agree that your information is handled according to the",
+        privacyLink: "privacy policy",
+        submitButton: "Send and get demo",
+
+        footerText1: "Websites, landing pages and web development for small businesses.",
+        footerText2: "Demo within 1 business day · Fixed price or 650 SEK/hour",
+        footerContact: "Contact:",
+        footerHome: "Homepage",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Quick options on mobile",
+        mobilePrices: "Prices",
+        mobileDemo: "Get demo"
+      },
+
+      da: {
+        htmlLang: "da",
+        languageName: "Dansk",
+        metaTitle: "Gratis demo på hjemmeside før køb | Nordlöf Nordic",
+        metaDescription: "Få en første demo på din nye hjemmeside, før du beslutter dig. Du betaler kun, hvis du vil gå videre. Hjemmesider til små virksomheder fra 2 900 SEK.",
+        ogTitle: "Gratis demo på hjemmeside før køb | Nordlöf Nordic",
+        ogDescription: "Se et første forslag før du køber. Demo inden for 1 arbejdsdag. Du betaler kun, hvis du vil gå videre.",
+        twitterTitle: "Gratis demo på hjemmeside før køb | Nordlöf Nordic",
+        twitterDescription: "Få en første demo på din hjemmeside, før du beslutter dig. Ingen binding. Betal først, hvis du vil gå videre.",
+        subject: "Ny demoforespørgsel fra gratis-demo.html - Dansk",
+        autoresponse: "Tak! Jeg har modtaget din forespørgsel om demo og vender tilbage så snart jeg kan.",
+        validationRequired: "Udfyld de obligatoriske felter først.",
+        sending: "Sender...",
+        sendingStatus: "Sender formularen...",
+
+        skip: "Spring til hovedindhold",
+        accessibilityTools: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webudvikler til små virksomheder",
+        mainNav: "Hovednavigation",
+        navHow: "Sådan fungerer det",
+        navPrices: "Priser",
+        navFaq: "Spørgsmål",
+        navDemo: "Få demo",
+        languageSwitch: "Vælg sprog",
+
+        eyebrow: "Gratis første demo · Normalt inden for 1 arbejdsdag · Ingen binding",
+        heroTitle: "Se din nye hjemmeside, før du beslutter dig.",
+        heroLead: "Send det, du har brug for. Jeg bygger et første udkast, så du kan se retning, struktur og følelse, før du køber. Du betaler kun, hvis du vil gå videre.",
+        heroCta: "Få en demo først",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fordele",
+        proof1Title: "Ingen gæt",
+        proof1Text: "Du får et konkret forslag først.",
+        proof2Title: "Ingen binding",
+        proof2Text: "Du går kun videre, hvis det føles rigtigt.",
+        proof3Title: "Tydelig pris",
+        proof3Text: "Ny hjemmeside fra 2 900 SEK.",
+        summaryAria: "Kort opsummering",
+        mini1Title: "1. Du sender info",
+        mini1Text: "Skriv hvad virksomheden laver, hvad du har brug for, og om du har en hjemmeside i dag.",
+        mini2Title: "2. Jeg bygger demo",
+        mini2Text: "Du får et første forslag, normalt inden for 1 arbejdsdag.",
+        mini3Title: "3. Du beslutter",
+        mini3Text: "Hvis du vil videre, færdiggør vi siden. Ellers stopper vi der.",
+
+        card1Tag: "Problemet",
+        card1Title: "Det er svært at købe hjemmeside i blinde.",
+        card1Text: "Mange virksomheder vil ikke betale for noget, de ikke kan se. Rimeligt. En hjemmeside er ikke en pose skruer.",
+        card2Tag: "Løsningen",
+        card2Title: "Jeg viser retningen først.",
+        card2Text: "Du får et første udkast med overskrift, struktur, følelse og oplæg, før du beslutter dig.",
+        card3Tag: "Resultatet",
+        card3Title: "Du beslutter ud fra noget konkret.",
+        card3Text: "Hvis du kan lide demoen, går vi videre. Hvis ikke, har du ikke købt et helt projekt i blinde.",
+
+        howTitle: "Sådan fungerer gratis demo.",
+        howLead: "Kort proces. Ingen lange møder før du overhovedet ved, om stilen passer.",
+        step1Title: "Du udfylder formularen",
+        step1Text: "Fortæl hvad virksomheden laver, hvad du vil have hjælp med, og link gerne inspiration.",
+        step2Title: "Jeg laver et første udkast",
+        step2Text: "Demoen viser retning, struktur og følelse. Den er ikke en færdig levering.",
+        step3Title: "Du kigger og giver feedback",
+        step3Text: "Du siger hvad der føles rigtigt, og hvad der skal ændres.",
+        step4Title: "Du køber kun, hvis du vil videre",
+        step4Text: "Hvis du vil færdiggøre siden, vælger vi pakke eller timepris afhængigt af opgaven.",
+
+        demoIsTag: "Det her er demoen",
+        demoIsTitle: "Et første forslag.",
+        demoIsText: "Demoen skal vise, om jeg forstår virksomheden, målgruppen og retningen. Den kan indeholde layout, overskrifter, sektioner og første følelse for siden.",
+        demoIsList1: "Forslag til struktur",
+        demoIsList2: "Første designretning",
+        demoIsList3: "Overskrifter og sektioner",
+        demoIsList4: "Tydelig vej til køb, booking eller kontakt",
+        demoNotTag: "Det her er den ikke",
+        demoNotTitle: "Ikke en færdig hjemmeside.",
+        demoNotText: "Demoen er ikke slutleveringen. Publicering, fuld finpudsning, alt indhold og teknisk færdiggørelse sker, når du vælger at gå videre.",
+        demoNotList1: "Ingen binding",
+        demoNotList2: "Ingen publicering før køb",
+        demoNotList3: "Ingen færdig levering uden godkendelse",
+        demoNotList4: "Intet bøvl. Kun tydelige trin.",
+
+        pricesTitle: "Pris hvis du vil gå videre.",
+        pricesLead: "Du får demoen først. Derefter vælger du, om siden skal færdiggøres.",
+        price1Tag: "Start",
+        price1Title: "Ny hjemmeside",
+        price1Amount: "2 900 SEK",
+        price1Text: "En enkel og tydelig one page-side til små virksomheder, der vil hurtigt i gang.",
+        price2Tag: "Pro",
+        price2Title: "Mere gennemarbejdet",
+        price2Amount: "4 900 SEK",
+        price2Text: "Til dig der vil have flere sektioner, stærkere struktur og mere gennemarbejdet udtryk.",
+        price3Tag: "Udvidet",
+        price3Title: "Større oplæg",
+        price3Amount: "7 900 SEK",
+        price3Text: "Til flere undersider, mere indhold og tydeligere helhed fra start.",
+        extraTitle: "Webfix og specialløsninger",
+        extraText: "Mindre opdateringer starter fra 490 SEK. API, backend, integrationer, formularflows og større specialløsninger laves fra 650 SEK/time.",
+
+        ctaTitle: "Du skal ikke gætte, om jeg kan bygge den rigtige side til dig.",
+        ctaText: "Du skal se det først. Send dine oplysninger, så laver jeg et første forslag.",
+        ctaButton: "Send ind og få demo",
+
+        faqTitle: "Ofte stillede spørgsmål.",
+        faqLead: "Det vigtigste før du sender ind.",
+        faq1Q: "Er demoen gratis?",
+        faq1A: "Ja. Du får et første forslag, før du beslutter dig. Du betaler først, hvis du vil gå videre.",
+        faq2Q: "Er demoen en færdig hjemmeside?",
+        faq2A: "Nej. Demoen er et første udkast, der viser retning, struktur og følelse. Færdiggørelse sker efter godkendelse.",
+        faq3Q: "Hvor hurtigt får jeg demoen?",
+        faq3A: "Normalt inden for 1 arbejdsdag efter at du har sendt nok information.",
+        faq4Q: "Skal jeg købe efter demoen?",
+        faq4A: "Nej. Du køber kun, hvis du kan lide oplægget og vil gå videre.",
+        faq5Q: "Hvad kan du bygge?",
+        faq5A: "Hjemmesider, landingssider, webfix, formularer, API, backend, integrationer og enklere specialløsninger.",
+        faq6Q: "Bliver jeg låst til dig?",
+        faq6A: "Nej. Efter køb kan du få materiale, kode og login, hvis du vil fortsætte selv eller med en anden.",
+
+        formTitle: "Få en første demo.",
+        formLead: "Udfyld det vigtigste. Jo tydeligere du beskriver virksomheden og behovet, desto bedre demo kan jeg lave.",
+        contactAria: "Kontaktoplysninger",
+        contactEmail: "E-mail",
+        contactPhone: "Telefon",
+        contactCompany: "Virksomhed",
+        companyType: "Nordlöf Nordic · Enkeltmandsvirksomhed",
+        labelName: "Navn",
+        labelEmail: "E-mail",
+        labelPhone: "Telefon",
+        labelCompany: "Virksomhed",
+        labelType: "Hvad har du brug for?",
+        optionNewWebsite: "Ny hjemmeside",
+        optionUpdate: "Opdater eksisterende hjemmeside",
+        optionLanding: "Landingsside",
+        optionApi: "API / backend / specialfunktion",
+        optionNotSure: "Ved ikke endnu",
+        labelBudget: "Budget / pakke",
+        budgetNotSure: "Ved ikke endnu",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Udvidet 7 900 SEK",
+        budgetUpdate: "Opdatering fra 490 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nuværende hjemmeside, hvis du har en",
+        labelDescription: "Beskriv kort hvad du vil have hjælp med",
+        placeholderDescription: "Hvad laver virksomheden? Hvad skal siden hjælpe med? Hvad skal kunden gøre?",
+        labelInspo: "Links eller inspiration",
+        placeholderInspo: "Indsæt gerne sider du kan lide, konkurrenter eller anden inspiration.",
+        privacyText: "Ved at sende formularen accepterer du, at dine oplysninger behandles i henhold til",
+        privacyLink: "privatlivspolitikken",
+        submitButton: "Send og få demo",
+
+        footerText1: "Hjemmesider, landingssider og webudvikling til små virksomheder.",
+        footerText2: "Demo inden for 1 arbejdsdag · Fast pris eller 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Privatliv",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo"
+      },
+
+      no: {
+        htmlLang: "no",
+        languageName: "Norsk",
+        metaTitle: "Gratis demo på nettside før kjøp | Nordlöf Nordic",
+        metaDescription: "Få en første demo på din nye nettside før du bestemmer deg. Du betaler bare hvis du vil gå videre. Nettsider for små bedrifter fra 2 900 SEK.",
+        ogTitle: "Gratis demo på nettside før kjøp | Nordlöf Nordic",
+        ogDescription: "Se et første forslag før du kjøper. Demo innen 1 arbeidsdag. Du betaler bare hvis du vil gå videre.",
+        twitterTitle: "Gratis demo på nettside før kjøp | Nordlöf Nordic",
+        twitterDescription: "Få en første demo på nettsiden før du bestemmer deg. Ingen binding. Betal først hvis du vil gå videre.",
+        subject: "Ny demoforespørsel fra gratis-demo.html - Norsk",
+        autoresponse: "Takk! Jeg har mottatt forespørselen din om demo og kommer tilbake så snart jeg kan.",
+        validationRequired: "Fyll ut de obligatoriske feltene først.",
+        sending: "Sender...",
+        sendingStatus: "Sender skjemaet...",
+
+        skip: "Hopp til hovedinnhold",
+        accessibilityTools: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webutvikler for små bedrifter",
+        mainNav: "Hovednavigasjon",
+        navHow: "Slik fungerer det",
+        navPrices: "Priser",
+        navFaq: "Spørsmål",
+        navDemo: "Få demo",
+        languageSwitch: "Velg språk",
+
+        eyebrow: "Gratis første demo · Normalt innen 1 arbeidsdag · Ingen binding",
+        heroTitle: "Se din nye nettside før du bestemmer deg.",
+        heroLead: "Send inn det du trenger. Jeg bygger et første utkast slik at du får se retning, struktur og følelse før du kjøper. Du betaler bare hvis du vil gå videre.",
+        heroCta: "Få en demo først",
+        heroPriceCta: "Se priser",
+        benefitsAria: "Fordeler",
+        proof1Title: "Ingen gjetting",
+        proof1Text: "Du får se et konkret forslag først.",
+        proof2Title: "Ingen binding",
+        proof2Text: "Du går bare videre hvis det føles riktig.",
+        proof3Title: "Tydelig pris",
+        proof3Text: "Ny nettside fra 2 900 SEK.",
+        summaryAria: "Kort oppsummering",
+        mini1Title: "1. Du sender info",
+        mini1Text: "Skriv hva bedriften gjør, hva du trenger, og om du har en nettside i dag.",
+        mini2Title: "2. Jeg bygger demo",
+        mini2Text: "Du får et første forslag, normalt innen 1 arbeidsdag.",
+        mini3Title: "3. Du bestemmer",
+        mini3Text: "Hvis du vil gå videre, ferdigstiller vi siden. Ellers stopper vi der.",
+
+        card1Tag: "Problemet",
+        card1Title: "Det er vanskelig å kjøpe nettside i blinde.",
+        card1Text: "Mange bedrifter vil ikke betale for noe de ikke kan se. Rimelig. En nettside er ikke en pose skruer.",
+        card2Tag: "Løsningen",
+        card2Title: "Jeg viser retningen først.",
+        card2Text: "Du får et første utkast med overskrift, struktur, følelse og opplegg før du bestemmer deg.",
+        card3Tag: "Resultatet",
+        card3Title: "Du bestemmer ut fra noe konkret.",
+        card3Text: "Hvis du liker demoen, går vi videre. Hvis ikke, har du ikke kjøpt et helt prosjekt i blinde.",
+
+        howTitle: "Slik fungerer gratis demo.",
+        howLead: "Kort prosess. Ingen lange møter før du engang vet om stilen passer.",
+        step1Title: "Du fyller ut skjemaet",
+        step1Text: "Fortell hva bedriften gjør, hva du vil ha hjelp med, og lenk gjerne inspirasjon.",
+        step2Title: "Jeg lager et første utkast",
+        step2Text: "Demoen viser retning, struktur og følelse. Den er ikke en ferdig levering.",
+        step3Title: "Du ser gjennom og gir tilbakemelding",
+        step3Text: "Du sier hva som føles riktig og hva som må endres.",
+        step4Title: "Du kjøper bare hvis du vil gå videre",
+        step4Text: "Hvis du vil ferdigstille siden, velger vi pakke eller timepris avhengig av oppdraget.",
+
+        demoIsTag: "Dette er demoen",
+        demoIsTitle: "Et første forslag.",
+        demoIsText: "Demoen skal vise om jeg forstår bedriften, målgruppen og retningen. Den kan inneholde layout, overskrifter, seksjoner og første følelse for siden.",
+        demoIsList1: "Forslag til struktur",
+        demoIsList2: "Første designretning",
+        demoIsList3: "Overskrifter og seksjoner",
+        demoIsList4: "Tydelig vei til kjøp, booking eller kontakt",
+        demoNotTag: "Dette er den ikke",
+        demoNotTitle: "Ikke en ferdig nettside.",
+        demoNotText: "Demoen er ikke sluttleveringen. Publisering, full finpuss, alt innhold og teknisk ferdigstilling gjøres når du velger å gå videre.",
+        demoNotList1: "Ingen binding",
+        demoNotList2: "Ingen publisering før kjøp",
+        demoNotList3: "Ingen ferdig levering uten godkjenning",
+        demoNotList4: "Ikke noe krøll. Bare tydelige steg.",
+
+        pricesTitle: "Pris hvis du vil gå videre.",
+        pricesLead: "Du får demoen først. Deretter velger du om siden skal ferdigstilles.",
+        price1Tag: "Start",
+        price1Title: "Ny nettside",
+        price1Amount: "2 900 SEK",
+        price1Text: "En enkel og tydelig one page-side for små bedrifter som vil komme raskt i gang.",
+        price2Tag: "Pro",
+        price2Title: "Mer gjennomarbeidet",
+        price2Amount: "4 900 SEK",
+        price2Text: "For deg som vil ha flere seksjoner, sterkere struktur og mer gjennomarbeidet uttrykk.",
+        price3Tag: "Utvidet",
+        price3Title: "Større opplegg",
+        price3Amount: "7 900 SEK",
+        price3Text: "For flere undersider, mer innhold og tydeligere helhet fra start.",
+        extraTitle: "Webfiks og spesialløsninger",
+        extraText: "Mindre oppdateringer starter fra 490 SEK. API, backend, integrasjoner, skjemaflyt og større spesialløsninger gjøres fra 650 SEK/time.",
+
+        ctaTitle: "Du skal ikke trenge å gjette om jeg kan bygge riktig side for deg.",
+        ctaText: "Du skal få se det først. Send inn opplysningene dine, så lager jeg et første forslag.",
+        ctaButton: "Send inn og få demo",
+
+        faqTitle: "Vanlige spørsmål.",
+        faqLead: "Det viktigste før du sender inn.",
+        faq1Q: "Er demoen gratis?",
+        faq1A: "Ja. Du får et første forslag før du bestemmer deg. Du betaler først hvis du vil gå videre.",
+        faq2Q: "Er demoen en ferdig nettside?",
+        faq2A: "Nei. Demoen er et første utkast som viser retning, struktur og følelse. Ferdigstilling skjer etter godkjenning.",
+        faq3Q: "Hvor raskt får jeg demoen?",
+        faq3A: "Normalt innen 1 arbeidsdag etter at du har sendt inn nok informasjon.",
+        faq4Q: "Må jeg kjøpe etter demoen?",
+        faq4A: "Nei. Du kjøper bare hvis du liker opplegget og vil gå videre.",
+        faq5Q: "Hva kan du bygge?",
+        faq5A: "Nettsider, landingssider, webfiks, skjemaer, API, backend, integrasjoner og enklere spesialløsninger.",
+        faq6Q: "Blir jeg låst til deg?",
+        faq6A: "Nei. Etter kjøp kan du få materiale, kode og innlogginger hvis du vil fortsette selv eller med noen andre.",
+
+        formTitle: "Få en første demo.",
+        formLead: "Fyll inn det viktigste. Jo tydeligere du beskriver bedriften og behovet, desto bedre demo kan jeg lage.",
+        contactAria: "Kontaktopplysninger",
+        contactEmail: "E-post",
+        contactPhone: "Telefon",
+        contactCompany: "Bedrift",
+        companyType: "Nordlöf Nordic · Enkeltpersonforetak",
+        labelName: "Navn",
+        labelEmail: "E-post",
+        labelPhone: "Telefon",
+        labelCompany: "Bedrift",
+        labelType: "Hva trenger du?",
+        optionNewWebsite: "Ny nettside",
+        optionUpdate: "Oppdatere eksisterende nettside",
+        optionLanding: "Landingsside",
+        optionApi: "API / backend / spesialfunksjon",
+        optionNotSure: "Vet ikke ennå",
+        labelBudget: "Budsjett / pakke",
+        budgetNotSure: "Vet ikke ennå",
+        budgetStart: "Start 2 900 SEK",
+        budgetPro: "Pro 4 900 SEK",
+        budgetExtended: "Utvidet 7 900 SEK",
+        budgetUpdate: "Oppdatering fra 490 SEK",
+        budgetHourly: "Timepris 650 SEK/time",
+        labelCurrent: "Nåværende nettside, hvis du har en",
+        labelDescription: "Beskriv kort hva du vil ha hjelp med",
+        placeholderDescription: "Hva gjør bedriften? Hva skal siden hjelpe med? Hva vil du at kunden skal gjøre?",
+        labelInspo: "Lenker eller inspirasjon",
+        placeholderInspo: "Lim gjerne inn sider du liker, konkurrenter eller annen inspirasjon.",
+        privacyText: "Ved å sende skjemaet godtar du at opplysningene dine behandles i henhold til",
+        privacyLink: "personvernerklæringen",
+        submitButton: "Send og få demo",
+
+        footerText1: "Nettsider, landingssider og webutvikling for små bedrifter.",
+        footerText2: "Demo innen 1 arbeidsdag · Fast pris eller 650 SEK/time",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Personvern",
+        footerAffiliate: "Affiliate",
+        mobileStickyAria: "Hurtigvalg på mobil",
+        mobilePrices: "Priser",
+        mobileDemo: "Få demo"
       }
+    };
+
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
     }
 
     function safeGet(key) {
@@ -1602,32 +2287,182 @@
       return true;
     }
 
-    const savedContrast = safeGet('highContrast') === 'true';
-    const savedLargeText = safeGet('largeText') === 'true';
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (dictionary[key]) {
+          element.setAttribute("placeholder", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        const isActive = button.getAttribute("data-lang") === lang;
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      const subjectField = document.getElementById("subjectField");
+      if (subjectField) {
+        subjectField.value = dictionary.subject;
+      }
+
+      const autoResponseField = document.getElementById("autoResponseField");
+      if (autoResponseField) {
+        autoResponseField.value = dictionary.autoresponse;
+      }
+
+      const languageField = document.getElementById("languageField");
+      if (languageField) {
+        languageField.value = dictionary.languageName;
+      }
+
+      safeSet("gratisDemoLanguage", lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const lang = button.getAttribute("data-lang");
+        applyLanguage(lang);
+      });
+    });
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("gratisDemoLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
+
+    document.querySelectorAll("form").forEach((form) => {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const statusBox = form.querySelector(".form-status");
+
+      form.addEventListener("submit", (event) => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        const originalButtonText = dictionary.submitButton;
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+
+          if (statusBox) {
+            statusBox.className = "form-status is-visible";
+            statusBox.textContent = dictionary.validationRequired;
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = dictionary.sending;
+          submitButton.setAttribute("aria-busy", "true");
+        }
+
+        if (statusBox) {
+          statusBox.className = "form-status is-visible";
+          statusBox.textContent = dictionary.sendingStatus;
+        }
+
+        setTimeout(() => {
+          if (submitButton && submitButton.disabled) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            submitButton.removeAttribute("aria-busy");
+          }
+        }, 15000);
+      });
+    });
+
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
 
     if (savedContrast) {
-      document.body.classList.add('high-contrast');
+      document.body.classList.add("high-contrast");
     }
 
     if (savedLargeText) {
-      document.body.classList.add('large-text');
+      document.body.classList.add("large-text");
     }
 
     setPressed(contrastButton, savedContrast);
     setPressed(largeTextButton, savedLargeText);
 
     if (contrastButton) {
-      contrastButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('high-contrast');
-        safeSet('highContrast', String(isActive));
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
         setPressed(contrastButton, isActive);
       });
     }
 
     if (largeTextButton) {
-      largeTextButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('large-text');
-        safeSet('largeText', String(isActive));
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
         setPressed(largeTextButton, isActive);
       });
     }
