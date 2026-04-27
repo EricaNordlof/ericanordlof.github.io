@@ -64,6 +64,30 @@
         "publisher":{"@id":"https://webutvecklare.se/#business"}
       },
       {
+        "@type":"Person",
+        "@id":"https://webutvecklare.se/#person",
+        "name":"Erica Nordlöf",
+        "url":"https://github.com/EricaNordlof",
+        "sameAs":[
+          "https://github.com/EricaNordlof",
+          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+        ],
+        "knowsAbout":[
+          "Web development",
+          "Frontend development",
+          "Backend development",
+          "API",
+          "Java",
+          "Spring Boot",
+          "PostgreSQL",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "SEO for small businesses",
+          "Web accessibility"
+        ]
+      },
+      {
         "@type":"ProfessionalService",
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
@@ -80,11 +104,7 @@
           {"@type":"Country","name":"Norway"}
         ],
         "availableLanguage":["sv","en","da","no"],
-        "founder":{
-          "@type":"Person",
-          "name":"Erica Nordlöf",
-          "url":"https://github.com/EricaNordlof"
-        },
+        "founder":{"@id":"https://webutvecklare.se/#person"},
         "brand":{"@type":"Brand","name":"Nordlöf Nordic"},
         "sameAs":[
           "https://github.com/EricaNordlof",
@@ -136,10 +156,24 @@
             },
             {
               "@type":"Offer",
-              "name":"Small website update",
+              "name":"Small web fix",
               "price":"490",
               "priceCurrency":"SEK",
               "description":"A smaller change on an existing website."
+            },
+            {
+              "@type":"Offer",
+              "name":"Normal web fix",
+              "price":"990",
+              "priceCurrency":"SEK",
+              "description":"Several changes or a clearer update of an existing website."
+            },
+            {
+              "@type":"Offer",
+              "name":"Larger web fix",
+              "price":"1490",
+              "priceCurrency":"SEK",
+              "description":"A larger improvement of an existing website."
             },
             {
               "@type":"Offer",
@@ -153,7 +187,29 @@
               "description":"API, backend, integrations, form flows and custom functions."
             }
           ]
-        }
+        },
+        "makesOffer":[
+          {
+            "@type":"Service",
+            "name":"Website for small businesses",
+            "description":"Mobile-friendly website for small businesses with clear structure, contact path and SEO foundation."
+          },
+          {
+            "@type":"Service",
+            "name":"Web fix",
+            "description":"Changes and improvements on existing websites, such as text, images, buttons, links, forms and mobile adaptation."
+          },
+          {
+            "@type":"Service",
+            "name":"Landing page",
+            "description":"Focused campaign or sales page for offers, discount codes, forms or booking."
+          },
+          {
+            "@type":"Service",
+            "name":"API, backend and custom web solutions",
+            "description":"Technical solutions such as form flows, integrations, database connections, login and custom functions."
+          }
+        ]
       },
       {
         "@type":"FAQPage",
@@ -214,6 +270,18 @@
               "@type":"Answer",
               "text":"Commission is paid after the customer has paid and the project is approved. Spam, fake enquiries and misleading marketing are not accepted."
             }
+          }
+        ]
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://webutvecklare.se/affiliate-en.html#breadcrumb",
+        "itemListElement":[
+          {
+            "@type":"ListItem",
+            "position":1,
+            "name":"Referral commission",
+            "item":"https://webutvecklare.se/affiliate-en.html"
           }
         ]
       }
@@ -285,6 +353,10 @@
     body.large-text .btn{
       min-height:56px;
       padding:16px 24px;
+    }
+
+    body.large-text .mobile-sticky{
+      display:none;
     }
 
     body.high-contrast{
@@ -381,8 +453,17 @@
       top:88px;
       z-index:70;
       display:flex;
-      flex-direction:column;
+      flex-direction:row;
+      align-items:center;
       gap:8px;
+      max-width:calc(100vw - 24px);
+      padding:8px;
+      border-radius:999px;
+      background:rgba(251,247,244,.94);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .accessibility-btn{
@@ -395,6 +476,8 @@
       font-weight:900;
       cursor:pointer;
       box-shadow:0 12px 30px rgba(36,30,26,.18);
+      white-space:nowrap;
+      font-size:13px;
     }
 
     .accessibility-btn:hover{
@@ -490,14 +573,38 @@
       flex:0 0 auto;
     }
 
-    .language-desktop{
+    .language-wrap{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:8px;
     }
 
-    .btn,
-    .lang-link{
+    .language-label{
+      font-size:13px;
+      font-weight:900;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .language-select{
+      width:auto;
+      min-height:48px;
+      padding:12px 42px 12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 12px 28px rgba(36,30,26,.05);
+      max-width:190px;
+    }
+
+    .mobile-language{
+      display:none;
+    }
+
+    .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -513,8 +620,7 @@
       white-space:nowrap;
     }
 
-    .btn:hover,
-    .lang-link:hover{
+    .btn:hover{
       transform:translateY(-1px);
     }
 
@@ -524,8 +630,7 @@
       box-shadow:0 16px 34px rgba(185,111,97,.25);
     }
 
-    .btn-secondary,
-    .lang-link{
+    .btn-secondary{
       background:#fff;
       border-color:var(--line);
       color:var(--text);
@@ -536,12 +641,6 @@
       background:#fff;
       color:var(--brand-deep);
       box-shadow:0 16px 34px rgba(36,30,26,.08);
-    }
-
-    .lang-link[aria-current="page"]{
-      background:#f4e5dc;
-      color:var(--brand-deep);
-      border-color:rgba(143,77,69,.22);
     }
 
     .hero{
@@ -604,13 +703,6 @@
       flex-wrap:wrap;
       gap:12px;
       margin-top:28px;
-    }
-
-    .speech-note{
-      margin:12px 0 0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
     }
 
     .proof-row{
@@ -1181,8 +1273,18 @@
     }
 
     input,
-    select,
     textarea{
+      width:100%;
+      min-height:50px;
+      padding:14px 15px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      outline:none;
+    }
+
+    form select{
       width:100%;
       min-height:50px;
       padding:14px 15px;
@@ -1198,7 +1300,7 @@
       color:rgba(255,255,255,.75);
     }
 
-    select option{
+    form select option{
       background:#fff;
       color:#111;
     }
@@ -1209,7 +1311,7 @@
     }
 
     input:focus,
-    select:focus,
+    form select:focus,
     textarea:focus{
       border-color:rgba(255,255,255,.58);
       box-shadow:0 0 0 3px rgba(255,255,255,.14);
@@ -1389,7 +1491,9 @@
     body.high-contrast .truth-box,
     body.high-contrast .faq details,
     body.high-contrast .quote-box,
-    body.high-contrast .script-box{
+    body.high-contrast .script-box,
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -1417,8 +1521,7 @@
 
     body.high-contrast .btn-primary,
     body.high-contrast .btn-secondary,
-    body.high-contrast .btn-light,
-    body.high-contrast .lang-link{
+    body.high-contrast .btn-light{
       background:#000;
       color:#fff;
       border:3px solid #000;
@@ -1433,7 +1536,7 @@
     }
 
     body.high-contrast input,
-    body.high-contrast select,
+    body.high-contrast form select,
     body.high-contrast textarea{
       background:#fff;
       color:#000;
@@ -1502,8 +1605,7 @@
         transition-duration:.01ms !important;
       }
 
-      .btn:hover,
-      .lang-link:hover{
+      .btn:hover{
         transform:none;
       }
     }
@@ -1533,7 +1635,6 @@
       }
 
       .btn,
-      .lang-link,
       .card,
       .quick-item,
       .commission-box,
@@ -1574,6 +1675,14 @@
       .hero-card{
         order:-1;
       }
+
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+        border-radius:22px;
+      }
     }
 
     @media(max-width:760px){
@@ -1590,20 +1699,21 @@
       }
 
       .accessibility-tools{
-        position:static;
         width:min(var(--max),calc(100% - 20px));
         margin:10px auto 0;
         display:grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:8px;
+        padding:8px;
+        border-radius:18px;
       }
 
       .accessibility-btn{
         width:100%;
-        min-height:48px;
-      }
-
-      body.large-text .mobile-sticky{
-        display:none;
+        min-height:46px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
@@ -1611,7 +1721,7 @@
       }
 
       .brand{
-        max-width:calc(100% - 92px);
+        max-width:calc(100% - 112px);
       }
 
       .brand img{
@@ -1624,7 +1734,7 @@
         display:none;
       }
 
-      .language-desktop{
+      .language-wrap{
         display:none;
       }
 
@@ -1636,6 +1746,29 @@
         min-height:44px;
         padding:11px 14px;
         font-size:14px;
+      }
+
+      .mobile-language{
+        display:block;
+        position:sticky;
+        top:64px;
+        z-index:45;
+        background:rgba(251,247,244,.96);
+        border-bottom:1px solid rgba(36,30,26,.08);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+      }
+
+      .mobile-language-inner{
+        width:min(var(--max),calc(100% - 20px));
+        margin:auto;
+        padding:9px 0;
+      }
+
+      .mobile-language .language-select{
+        width:100%;
+        max-width:none;
+        min-height:44px;
       }
 
       .hero{
@@ -1764,6 +1897,11 @@
       .brand strong{
         font-size:14px;
       }
+
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
     }
   </style>
 </head>
@@ -1778,6 +1916,10 @@
 
     <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
       Larger text
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false">
+      Short summary
     </button>
   </div>
 
@@ -1805,16 +1947,31 @@
       </nav>
 
       <div class="nav-actions" aria-label="Language and application">
-        <div class="language-desktop" aria-label="Language selection">
-          <a class="lang-link" href="affiliate.html" hreflang="sv-SE">SV</a>
-          <a class="lang-link" href="affiliate-en.html" hreflang="en" aria-current="page">EN</a>
-          <a class="lang-link" href="affiliate-da.html" hreflang="da">DA</a>
-          <a class="lang-link" href="affiliate-no.html" hreflang="no">NO</a>
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect">Language</label>
+          <select id="languageSelect" class="language-select" aria-label="Choose language">
+            <option value="https://webutvecklare.se/affiliate.html">🇸🇪 Svenska</option>
+            <option value="https://webutvecklare.se/affiliate-en.html">🇬🇧 English</option>
+            <option value="https://webutvecklare.se/affiliate-da.html">🇩🇰 Dansk</option>
+            <option value="https://webutvecklare.se/affiliate-no.html">🇳🇴 Norsk</option>
+          </select>
         </div>
+
         <a class="btn btn-primary" href="#apply">Get referral code</a>
       </div>
     </div>
   </header>
+
+  <nav class="mobile-language" aria-label="Language selection">
+    <div class="mobile-language-inner">
+      <select id="mobileLanguageSelect" class="language-select" aria-label="Choose language">
+        <option value="https://webutvecklare.se/affiliate.html">🇸🇪 Svenska</option>
+        <option value="https://webutvecklare.se/affiliate-en.html">🇬🇧 English</option>
+        <option value="https://webutvecklare.se/affiliate-da.html">🇩🇰 Dansk</option>
+        <option value="https://webutvecklare.se/affiliate-no.html">🇳🇴 Norsk</option>
+      </select>
+    </div>
+  </nav>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
@@ -1835,14 +1992,7 @@
             <a class="btn btn-primary" href="#apply">Apply for a personal referral code</a>
             <a class="btn btn-secondary" href="#trust">See how it works</a>
             <a class="btn btn-secondary" href="en.html" hreflang="en">English homepage</a>
-            <button class="btn btn-secondary" type="button" id="listenSummary" aria-pressed="false">
-              Listen to short summary
-            </button>
           </div>
-
-          <p class="speech-note" id="speechNote">
-            The button reads a short summary aloud. It is an extra support feature, and the page also works with regular screen readers.
-          </p>
 
           <div class="proof-row" aria-label="Short summary">
             <div class="proof-pill">
@@ -2043,7 +2193,7 @@
             <span class="tag">Example case</span>
             <h3><a href="https://hansen-byggochgront.se/" target="_blank" rel="noopener noreferrer">Hansen Bygg & Grönt</a></h3>
             <p>
-              A clear one-page website for construction, carpentry and garden services. A practical example of a local business website.
+              A clear one-page website for construction, carpentry and garden services in Skåne. Built for my sister and her partner as a practical example of a local business website.
             </p>
             <div class="meta">
               <span class="chip">One page</span>
@@ -2691,6 +2841,9 @@
           <a href="en.html">English homepage</a>
           <a href="da.html">Danish homepage</a>
           <a href="no.html">Norwegian homepage</a>
+          <a href="/gratis-demo.html">Free demo</a>
+          <a href="/case.html">Cases and examples</a>
+          <a href="/webbfix.html">Web fix</a>
           <a href="/ny-hemsida-foretag.html">New website for businesses</a>
           <a href="/uppdatera-hemsida.html">Update website</a>
           <a href="/skapa-hemsida.html">Create website</a>
@@ -2698,7 +2851,9 @@
           <a href="/sokmotoroptimering.html">SEO</a>
           <a href="/hemsida-smaforetag.html">Website for small businesses</a>
           <a href="/hemsida-hantverkare.html">Website for tradespeople</a>
+          <a href="/hemsida-byggforetag.html">Website for construction companies</a>
           <a href="/hemsida-konsult.html">Website for consultants</a>
+          <a href="/landningssida-kampanj.html">Landing page for campaign</a>
           <a href="/webbutveckling-malmo.html">Web development Malmö</a>
           <a href="/anlita-webbutvecklare.html">Hire a web developer</a>
         </div>
@@ -2707,9 +2862,8 @@
   </footer>
 
   <nav class="mobile-sticky" aria-label="Quick mobile navigation">
-    <a class="btn btn-secondary" href="affiliate.html" hreflang="sv-SE">SV</a>
-    <a class="btn btn-secondary" href="affiliate-da.html" hreflang="da">DA</a>
-    <a class="btn btn-secondary" href="affiliate-no.html" hreflang="no">NO</a>
+    <a class="btn btn-secondary" href="#how">How it works</a>
+    <a class="btn btn-secondary" href="#commission">Commission</a>
     <a class="btn btn-primary" href="#apply">Code</a>
   </nav>
 
@@ -2756,6 +2910,8 @@
     const statusBox = document.getElementById('accessibilityStatus');
     const contrastButton = document.getElementById('toggleContrast');
     const largeTextButton = document.getElementById('toggleLargeText');
+    const listenButton = document.getElementById('listenSummary');
+    const languageSelects = document.querySelectorAll('.language-select');
 
     function announce(message) {
       if (statusBox) {
@@ -2818,14 +2974,62 @@
       });
     }
 
-    const listenButton = document.getElementById('listenSummary');
+    function getCurrentLanguageUrl() {
+      const path = window.location.pathname.replace(/^\/+/, '');
+
+      if (path === 'affiliate.html') {
+        return 'https://webutvecklare.se/affiliate.html';
+      }
+
+      if (path === 'affiliate-da.html') {
+        return 'https://webutvecklare.se/affiliate-da.html';
+      }
+
+      if (path === 'affiliate-no.html') {
+        return 'https://webutvecklare.se/affiliate-no.html';
+      }
+
+      return 'https://webutvecklare.se/affiliate-en.html';
+    }
+
+    function syncLanguageSelects(value) {
+      languageSelects.forEach((select) => {
+        select.value = value;
+      });
+    }
+
+    const currentLanguageUrl = getCurrentLanguageUrl();
+    syncLanguageSelects(currentLanguageUrl);
+
+    languageSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        const targetUrl = select.value;
+
+        if (!targetUrl) {
+          return;
+        }
+
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+
+        safeStorageSet('preferredAffiliateLanguageUrl', targetUrl);
+        syncLanguageSelects(targetUrl);
+
+        if (targetUrl !== currentLanguageUrl) {
+          window.location.href = targetUrl;
+        }
+      });
+    });
+
     let isSpeaking = false;
 
     function resetListenButton() {
       if (listenButton) {
         listenButton.setAttribute('aria-pressed', 'false');
-        listenButton.textContent = 'Listen to short summary';
+        listenButton.textContent = 'Short summary';
       }
+
       isSpeaking = false;
     }
 
@@ -2846,8 +3050,9 @@
           The customer gets ten percent discount through your personal referral code or referral link.
           If the referral leads to an approved and paid project, you get twenty percent commission.
           You do not handle customer contact, quotes, project work, delivery, support or follow-up.
-          Direct customer contact is still the main track. The referral setup is a side track for relevant introductions.
-          It costs nothing to apply, but spam and false promises are not accepted.
+          Direct customer contact is still the main track.
+          The referral setup is a side track for relevant introductions.
+          It costs nothing to apply, but spam, fake leads and false promises are not accepted.
         `;
 
         const utterance = new SpeechSynthesisUtterance(summaryText);
@@ -2857,7 +3062,7 @@
 
         isSpeaking = true;
         listenButton.setAttribute('aria-pressed', 'true');
-        listenButton.textContent = 'Stop summary';
+        listenButton.textContent = 'Stop reading';
         announce('Reading started.');
 
         utterance.onend = () => {
