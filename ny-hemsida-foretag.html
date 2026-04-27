@@ -27,6 +27,12 @@
   <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
 
   <link rel="canonical" href="https://webutvecklare.se/ny-hemsida-foretag.html" />
+  <link rel="alternate" hreflang="sv-SE" href="https://webutvecklare.se/ny-hemsida-foretag.html" />
+  <link rel="alternate" hreflang="en" href="https://webutvecklare.se/en.html" />
+  <link rel="alternate" hreflang="da" href="https://webutvecklare.se/da.html" />
+  <link rel="alternate" hreflang="no" href="https://webutvecklare.se/no.html" />
+  <link rel="alternate" hreflang="x-default" href="https://webutvecklare.se/" />
+
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
@@ -50,7 +56,11 @@
         "url":"https://webutvecklare.se/ny-hemsida-foretag.html",
         "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
         "email":"mailto:erica@webutvecklare.se",
-        "areaServed":{"@type":"Country","name":"Sverige"},
+        "areaServed":[
+          {"@type":"Country","name":"Sverige"},
+          {"@type":"Country","name":"Danmark"},
+          {"@type":"Country","name":"Norge"}
+        ],
         "provider":{"@type":"Person","name":"Erica Nordlöf"},
         "brand":{"@type":"Organization","name":"Nordlöf Nordic"},
         "serviceType":[
@@ -128,7 +138,7 @@
       --max:1180px;
       --section-pad:clamp(34px, 5vw, 64px);
       --tap:48px;
-      --header-offset:96px;
+      --header-offset:104px;
     }
 
     *{box-sizing:border-box}
@@ -148,6 +158,28 @@
     input,select,textarea,button{font:inherit}
     :target{scroll-margin-top:var(--header-offset)}
 
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      transform:translateY(-140%);
+      z-index:100;
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--accent);
+      border-radius:999px;
+      padding:12px 16px;
+      font-weight:800;
+      box-shadow:var(--shadow);
+      transition:.18s ease;
+    }
+
+    .skip-link:focus{
+      transform:translateY(0);
+      outline:3px solid rgba(217,134,114,0.45);
+      outline-offset:3px;
+    }
+
     .container{
       width:min(var(--max), calc(100% - 28px));
       margin:0 auto;
@@ -159,7 +191,7 @@
       z-index:30;
       backdrop-filter:blur(12px);
       -webkit-backdrop-filter:blur(12px);
-      background:rgba(250,246,243,0.86);
+      background:rgba(250,246,243,0.88);
       border-bottom:1px solid var(--line-soft);
     }
 
@@ -169,7 +201,7 @@
       justify-content:space-between;
       gap:16px;
       padding:14px 0;
-      min-height:72px;
+      min-height:76px;
     }
 
     .brand{
@@ -230,6 +262,76 @@
     }
 
     .nav-links a:hover{color:var(--accent)}
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:0 0 auto;
+    }
+
+    .utility-controls{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:5px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,0.78);
+      box-shadow:0 10px 26px rgba(35,29,26,0.05);
+    }
+
+    .language-label{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    .language-select{
+      min-height:40px;
+      max-width:148px;
+      border:0;
+      border-radius:999px;
+      background:transparent;
+      color:#3f3733;
+      font-weight:800;
+      padding:0 28px 0 10px;
+      cursor:pointer;
+      outline:none;
+    }
+
+    .language-select:focus-visible,
+    .listen-btn:focus-visible,
+    .nav-cta:focus-visible,
+    .btn:focus-visible,
+    .trust-link:focus-visible,
+    .back-link:focus-visible{
+      outline:3px solid rgba(217,134,114,0.45);
+      outline-offset:3px;
+    }
+
+    .listen-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:7px;
+      min-height:40px;
+      border:0;
+      border-radius:999px;
+      padding:0 12px;
+      background:#fff;
+      color:var(--brand-dark);
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(35,29,26,0.04);
+      white-space:nowrap;
+    }
 
     .nav-cta{
       display:inline-flex;
@@ -1013,7 +1115,7 @@
       line-height:1.6;
     }
 
-    @media (max-width:1140px){
+    @media (max-width:1180px){
       .nav-links{display:none}
       .hero-grid,.showcase,.grid-2,.price-box{grid-template-columns:1fr}
       .grid-3,.offer-grid,.pricing,.faq-grid{grid-template-columns:1fr}
@@ -1022,11 +1124,49 @@
       .hero-card{min-height:auto}
     }
 
+    @media (max-width:860px){
+      .nav{
+        display:grid;
+        grid-template-columns:1fr;
+        align-items:stretch;
+        gap:10px;
+      }
+
+      .brand{
+        width:100%;
+      }
+
+      .nav-actions{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr auto;
+        gap:10px;
+      }
+
+      .utility-controls{
+        justify-content:space-between;
+        border-radius:20px;
+      }
+
+      .language-select{
+        max-width:none;
+        width:100%;
+      }
+
+      .listen-btn{
+        min-width:132px;
+      }
+
+      .nav-cta{
+        width:100%;
+      }
+    }
+
     @media (max-width:720px){
       :root{
         --radius:20px;
         --radius-lg:24px;
-        --header-offset:88px;
+        --header-offset:150px;
       }
 
       .container{width:min(var(--max), calc(100% - 20px))}
@@ -1048,6 +1188,22 @@
       }
 
       .brand-title{font-size:15px}
+
+      .nav-actions{
+        grid-template-columns:1fr;
+      }
+
+      .utility-controls{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr auto;
+        padding:6px;
+      }
+
+      .listen-btn{
+        min-width:auto;
+        padding:0 12px;
+      }
 
       .nav-cta{
         padding:10px 14px;
@@ -1139,9 +1295,20 @@
       .card h3,.faq-item h3{font-size:20px}
       .form-card-head h3{font-size:24px}
     }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Hoppa till innehåll</a>
+
   <div class="topbar">
     <div class="container nav">
       <a href="index.html" class="brand" aria-label="Gå till startsidan">
@@ -1160,11 +1327,33 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
 
-      <a href="#kontakt" class="nav-cta">Få min demo</a>
+      <div class="nav-actions" aria-label="Språk, uppläsning och kontakt">
+        <div class="utility-controls">
+          <label class="language-label" for="languageSelect">Välj språk</label>
+          <select id="languageSelect" class="language-select" aria-label="Välj språk">
+            <option value="ny-hemsida-foretag.html" selected>🇸🇪 Svenska</option>
+            <option value="en.html">🇬🇧 English</option>
+            <option value="da.html">🇩🇰 Dansk</option>
+            <option value="no.html">🇳🇴 Norsk</option>
+          </select>
+
+          <button
+            class="listen-btn"
+            type="button"
+            id="listenButton"
+            aria-label="Lyssna på sidan"
+            aria-pressed="false"
+          >
+            🔊 Lyssna
+          </button>
+        </div>
+
+        <a href="#kontakt" class="nav-cta">Få min demo</a>
+      </div>
     </div>
   </div>
 
-  <main>
+  <main id="main-content">
     <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -1200,7 +1389,7 @@
         <div class="hero-card">
           <div class="mockup-header">
             <span>Köp ny hemsida smartare · Se först, bestäm sen</span>
-            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
           </div>
 
           <div class="hero-logo-wrap">
@@ -1592,7 +1781,7 @@
         Kontakt:
         <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
         · webutvecklare.se
-        · Hemsidor för företag i hela Sverige
+        · Hemsidor för företag i Sverige, Norden och internationellt på engelska
         · Demo inom 1 arbetsdag
         · <a href="villkor.html">Villkor</a>
         · <a href="integritet.html">Integritet</a>
@@ -1601,6 +1790,132 @@
   </footer>
 
   <script>
+    const languageSelect = document.getElementById('languageSelect');
+
+    if (languageSelect) {
+      languageSelect.addEventListener('change', () => {
+        const target = languageSelect.value;
+
+        if (target) {
+          window.location.href = target;
+        }
+      });
+    }
+
+    const listenButton = document.getElementById('listenButton');
+    let currentUtterance = null;
+
+    function getReadablePageText() {
+      const main = document.querySelector('main');
+
+      if (!main) {
+        return document.body.innerText.trim();
+      }
+
+      const selectors = [
+        'h1',
+        'h2',
+        'h3',
+        'p',
+        'li',
+        '.eyebrow',
+        '.hero-pill',
+        '.proof strong',
+        '.proof span',
+        '.price-note'
+      ];
+
+      const nodes = main.querySelectorAll(selectors.join(','));
+      const seen = new Set();
+      const parts = [];
+
+      nodes.forEach((node) => {
+        const text = node.innerText
+          .replace(/\s+/g, ' ')
+          .replace(/✓/g, '')
+          .trim();
+
+        if (text && !seen.has(text)) {
+          seen.add(text);
+          parts.push(text);
+        }
+      });
+
+      return parts.join('. ');
+    }
+
+    function resetListenButton() {
+      if (!listenButton) return;
+
+      listenButton.textContent = '🔊 Lyssna';
+      listenButton.setAttribute('aria-label', 'Lyssna på sidan');
+      listenButton.setAttribute('aria-pressed', 'false');
+      currentUtterance = null;
+    }
+
+    function chooseSwedishVoice() {
+      const voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+
+      return (
+        voices.find((voice) => voice.lang && voice.lang.toLowerCase() === 'sv-se') ||
+        voices.find((voice) => voice.lang && voice.lang.toLowerCase().startsWith('sv')) ||
+        null
+      );
+    }
+
+    if (listenButton && 'speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        chooseSwedishVoice();
+      };
+
+      listenButton.addEventListener('click', () => {
+        if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+          window.speechSynthesis.cancel();
+          resetListenButton();
+          return;
+        }
+
+        const text = getReadablePageText();
+
+        if (!text) {
+          listenButton.textContent = 'Ingen text hittades';
+          setTimeout(resetListenButton, 1800);
+          return;
+        }
+
+        currentUtterance = new SpeechSynthesisUtterance(text);
+        currentUtterance.lang = 'sv-SE';
+        currentUtterance.rate = 0.92;
+        currentUtterance.pitch = 1;
+
+        const voice = chooseSwedishVoice();
+
+        if (voice) {
+          currentUtterance.voice = voice;
+        }
+
+        currentUtterance.onstart = () => {
+          listenButton.textContent = '⏹ Stoppa';
+          listenButton.setAttribute('aria-label', 'Stoppa uppläsning');
+          listenButton.setAttribute('aria-pressed', 'true');
+        };
+
+        currentUtterance.onend = resetListenButton;
+        currentUtterance.onerror = resetListenButton;
+
+        window.speechSynthesis.speak(currentUtterance);
+      });
+
+      window.addEventListener('beforeunload', () => {
+        window.speechSynthesis.cancel();
+      });
+    } else if (listenButton) {
+      listenButton.addEventListener('click', () => {
+        listenButton.textContent = 'Stöds inte här';
+        setTimeout(resetListenButton, 1800);
+      });
+    }
+
     document.querySelectorAll('form.contact-box').forEach((form) => {
       const submitButton = form.querySelector('button[type="submit"]');
       const statusBox = form.querySelector('.form-status');
