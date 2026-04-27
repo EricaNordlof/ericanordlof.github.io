@@ -2,102 +2,214 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Tack | Nordlöf Nordic</title>
+  <title>Tack för din jobbförfrågan | Nordlöf Nordic</title>
   <meta
     name="description"
-    content="Tack. Din förfrågan är registrerad. Jag återkommer så snart jag kan."
+    content="Tack för din jobbförfrågan. Din förfrågan är mottagen och Nordlöf Nordic återkommer så snart som möjligt."
   />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="author" content="Erica Nordlöf" />
 
-  <meta property="og:title" content="Tack | Nordlöf Nordic" />
-  <meta property="og:description" content="Din förfrågan är registrerad. Jag återkommer så snart jag kan." />
+  <meta property="og:title" content="Tack för din jobbförfrågan | Nordlöf Nordic" />
+  <meta property="og:description" content="Din förfrågan är mottagen. Nordlöf Nordic återkommer så snart som möjligt." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/tack.html" />
   <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tack | Nordlöf Nordic" />
-  <meta name="twitter:description" content="Din förfrågan är registrerad. Jag återkommer så snart jag kan." />
+  <meta name="twitter:title" content="Tack för din jobbförfrågan | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Din förfrågan är mottagen. Nordlöf Nordic återkommer så snart som möjligt." />
   <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
 
   <link rel="canonical" href="https://webutvecklare.se/tack.html" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
   <meta name="theme-color" content="#f7f0ec" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
-  />
+  >
 
   <style>
     :root{
       --bg:#f7f0ec;
-      --bg-soft:#fbf7f4;
-      --card:#ffffff;
-      --text:#231d1a;
-      --muted:#6d625c;
-      --line:rgba(35,29,26,0.08);
-      --line-soft:rgba(35,29,26,0.05);
+      --soft:#fbf7f4;
+      --card:#fff;
+      --text:#241e1a;
+      --muted:#665d57;
+      --line:rgba(36,30,26,.10);
       --brand:#d98672;
-      --brand-2:#e8b18d;
       --brand-dark:#b96f61;
-      --accent:#1f1a17;
-      --shadow:0 18px 50px rgba(35,29,26,0.08);
-      --shadow-lg:0 28px 70px rgba(35,29,26,0.10);
+      --brand-deep:#8f4d45;
+      --shadow:0 18px 50px rgba(36,30,26,.08);
+      --shadow-strong:0 26px 70px rgba(36,30,26,.13);
       --radius:24px;
-      --radius-lg:30px;
-      --max:1180px;
-      --tap:48px;
+      --max:1080px;
     }
 
-    *{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
+    }
+
     body{
       margin:0;
-      font-family:"Inter",sans-serif;
+      font-family:Inter,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(217,134,114,0.12) 0, transparent 28%),
-        linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
+        radial-gradient(circle at top left, rgba(217,134,114,.20), transparent 32%),
+        radial-gradient(circle at 80% 10%, rgba(185,111,97,.12), transparent 24%),
+        linear-gradient(180deg,#fbf7f4 0%,#f4eeea 100%);
       overflow-x:hidden;
       min-height:100vh;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    body.large-text{
+      font-size:118%;
+    }
+
+    body.large-text p,
+    body.large-text a,
+    body.large-text button,
+    body.large-text select{
+      line-height:1.75;
+    }
+
+    body.high-contrast{
+      --bg:#fff;
+      --soft:#fff;
+      --card:#fff;
+      --text:#000;
+      --muted:#111;
+      --line:#000;
+      --brand:#000;
+      --brand-dark:#000;
+      --brand-deep:#000;
+      --shadow:none;
+      --shadow-strong:none;
+      background:#fff;
+      color:#000;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    button,
+    select{
+      font:inherit;
+    }
+
+    button{
+      border:0;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    select:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
+    }
+
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      z-index:999;
+      transform:translateY(-150%);
+      background:#fff;
+      color:var(--text);
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:900;
+      border:2px solid var(--brand-deep);
+      box-shadow:0 12px 30px rgba(36,30,26,.16);
+      transition:.15s ease;
+    }
+
+    .skip-link:focus{
+      transform:translateY(0);
+    }
 
     .container{
-      width:min(var(--max), calc(100% - 28px));
-      margin:0 auto;
+      width:min(var(--max),calc(100% - 28px));
+      margin:auto;
+    }
+
+    .accessibility-tools{
+      position:fixed;
+      right:12px;
+      top:86px;
+      z-index:70;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px;
+      border-radius:22px;
+      background:rgba(251,247,244,.92);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    .accessibility-btn{
+      min-height:42px;
+      padding:9px 13px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      border:2px solid #fff;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 8px 20px rgba(36,30,26,.14);
+      white-space:nowrap;
+      font-size:13px;
+    }
+
+    .accessibility-btn:hover{
+      background:#000;
+    }
+
+    .accessibility-btn[aria-pressed="true"]{
+      background:#fff;
+      color:#111;
+      border-color:#111;
     }
 
     .topbar{
       position:sticky;
       top:0;
-      z-index:30;
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
-      background:rgba(250,246,243,0.86);
-      border-bottom:1px solid var(--line-soft);
+      z-index:60;
+      background:rgba(251,247,244,.94);
+      border-bottom:1px solid rgba(36,30,26,.08);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
     }
 
     .nav{
+      min-height:72px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding:14px 0;
-      min-height:72px;
+      padding:12px 0;
     }
 
     .brand{
@@ -107,75 +219,124 @@
       min-width:0;
     }
 
-    .brand-logo{
+    .brand img{
       width:46px;
       height:46px;
       border-radius:14px;
       object-fit:cover;
-      box-shadow:var(--shadow);
+      box-shadow:0 12px 30px rgba(36,30,26,.08);
       flex:0 0 auto;
     }
 
-    .brand-text{
+    .brand strong{
+      display:block;
+      font-size:16px;
+      letter-spacing:-.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand span span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-right{
       display:flex;
-      flex-direction:column;
-      gap:2px;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex:0 0 auto;
       min-width:0;
     }
 
-    .brand-title{
-      font-weight:800;
-      font-size:16px;
-      letter-spacing:-0.03em;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
     }
 
-    .brand-sub{
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:#7f7169;
+    .language-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
       white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
     }
 
-    .nav-link{
+    .language-select{
+      min-height:42px;
+      width:auto;
+      max-width:190px;
+      padding:10px 38px 10px 14px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      outline:none;
+    }
+
+    .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:var(--tap);
-      padding:12px 18px;
+      min-height:48px;
+      padding:14px 20px;
       border-radius:999px;
-      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
-      color:#fff;
-      font-weight:800;
-      box-shadow:0 14px 30px rgba(185,111,97,0.22);
+      font-weight:900;
+      border:1px solid transparent;
+      cursor:pointer;
+      text-align:center;
+      transition:.18s ease;
+      line-height:1.1;
       white-space:nowrap;
     }
 
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(185,111,97,.24);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--text);
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+    }
+
     .page{
-      min-height:calc(100vh - 90px);
+      min-height:calc(100vh - 72px);
       display:grid;
       place-items:center;
-      padding:32px 0 40px;
+      padding:clamp(34px,6vw,72px) 0 40px;
     }
 
     .thankyou-wrap{
       width:100%;
-      max-width:760px;
+      max-width:820px;
     }
 
     .thankyou-card{
-      background:rgba(255,255,255,0.94);
+      background:rgba(255,255,255,.96);
       border:1px solid var(--line);
-      border-radius:var(--radius-lg);
-      padding:clamp(24px, 4vw, 40px);
-      box-shadow:var(--shadow-lg);
-      overflow:hidden;
+      border-radius:34px;
+      padding:clamp(24px,4vw,42px);
+      box-shadow:var(--shadow-strong);
       position:relative;
+      overflow:hidden;
     }
 
     .thankyou-card::before{
@@ -183,9 +344,14 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at top right, rgba(217,134,114,0.10), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+        radial-gradient(circle at top right, rgba(217,134,114,.14), transparent 32%),
+        linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,0));
       pointer-events:none;
+    }
+
+    .thankyou-card > *{
+      position:relative;
+      z-index:1;
     }
 
     .eyebrow{
@@ -193,72 +359,69 @@
       align-items:center;
       gap:8px;
       padding:9px 13px;
+      border-radius:999px;
       background:#fff;
       border:1px solid var(--line);
-      border-radius:999px;
+      color:#7a5148;
       font-size:13px;
-      font-weight:800;
-      color:#7c5d53;
-      box-shadow:0 10px 30px rgba(35,29,26,0.04);
-      line-height:1.4;
-      position:relative;
-      z-index:1;
+      font-weight:900;
+      box-shadow:0 10px 30px rgba(36,30,26,.04);
+      max-width:100%;
     }
 
-    h1,h2{
+    h1,
+    h2{
       font-family:"Playfair Display",serif;
-      letter-spacing:-0.04em;
-      text-wrap:balance;
+      letter-spacing:-.045em;
     }
 
     h1{
-      margin:18px 0 14px;
-      font-size:clamp(2.2rem, 8vw, 4.6rem);
-      line-height:0.98;
-      position:relative;
-      z-index:1;
+      margin:18px 0 16px;
+      font-size:clamp(2.55rem,8vw,5.1rem);
+      line-height:.95;
+      text-wrap:balance;
+    }
+
+    h2{
+      margin:0 0 12px;
+      font-size:clamp(2rem,5vw,3.1rem);
+      line-height:1.03;
+      text-wrap:balance;
     }
 
     .lead{
+      max-width:680px;
+      color:#4d453f;
+      font-size:clamp(17px,2vw,20px);
+      line-height:1.72;
       margin:0;
-      font-size:clamp(16px, 2vw, 18px);
-      line-height:1.75;
-      color:#4f4742;
-      max-width:620px;
-      position:relative;
-      z-index:1;
     }
 
     .status-box{
       margin-top:24px;
-      background:linear-gradient(145deg, #d98672 0%, #e8b08d 100%);
+      background:
+        radial-gradient(circle at top right,rgba(255,255,255,.25),transparent 34%),
+        linear-gradient(145deg,#c56c5d 0%,#d98672 48%,#e8b08d 100%);
       color:#fff;
       border-radius:28px;
-      padding:22px;
-      box-shadow:0 24px 58px rgba(185,111,97,0.16);
-      position:relative;
-      z-index:1;
+      padding:clamp(20px,3vw,26px);
+      box-shadow:0 28px 70px rgba(185,111,97,.20);
     }
 
-    .status-box h2{
-      margin:0 0 10px;
-      font-size:clamp(1.6rem, 4vw, 2.4rem);
-      line-height:1.02;
+    .status-box h2,
+    .status-box p{
       color:#fff;
     }
 
     .status-box p{
       margin:0;
-      color:#fff;
       line-height:1.75;
     }
 
     .points{
       display:grid;
       gap:12px;
-      margin-top:24px;
-      position:relative;
-      z-index:1;
+      margin-top:22px;
     }
 
     .point{
@@ -266,9 +429,10 @@
       gap:12px;
       align-items:flex-start;
       padding:16px 18px;
-      background:#fbf7f4;
+      background:#fff;
       border:1px solid var(--line);
       border-radius:20px;
+      box-shadow:0 12px 34px rgba(36,30,26,.04);
     }
 
     .check{
@@ -278,12 +442,11 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:linear-gradient(135deg, var(--brand-dark), var(--brand-2));
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
       color:#fff;
       font-size:13px;
-      font-weight:800;
+      font-weight:900;
       margin-top:1px;
-      box-shadow:0 8px 18px rgba(185,111,97,0.15);
     }
 
     .point strong{
@@ -300,39 +463,8 @@
     .actions{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
-      margin-top:28px;
-      position:relative;
-      z-index:1;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:var(--tap);
-      padding:14px 20px;
-      border-radius:999px;
-      font-weight:800;
-      transition:.2s ease;
-      border:none;
-      cursor:pointer;
-      text-align:center;
-    }
-
-    .btn:hover{transform:translateY(-1px)}
-
-    .btn-primary{
-      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
-      color:#fff;
-      box-shadow:0 14px 30px rgba(185,111,97,0.22);
-    }
-
-    .btn-secondary{
-      background:#fff;
-      border:1px solid var(--line);
-      color:var(--accent);
+      gap:12px;
+      margin-top:26px;
     }
 
     .mini-note{
@@ -340,167 +472,779 @@
       color:#6a605a;
       line-height:1.7;
       font-size:14px;
-      position:relative;
-      z-index:1;
+    }
+
+    .mini-note a{
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
     footer{
-      padding:24px 0 calc(34px + env(safe-area-inset-bottom));
-      color:#6d6662;
+      padding:34px 0 calc(42px + env(safe-area-inset-bottom));
+      color:#6f655e;
       font-size:14px;
     }
 
-    .footer-line{
+    .footer-box{
       border-top:1px solid var(--line);
       padding-top:18px;
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      line-height:1.6;
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);
+      gap:18px;
+      line-height:1.7;
     }
 
-    @media (max-width:720px){
-      :root{
-        --radius:20px;
-        --radius-lg:24px;
+    .footer-box a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:6px;
+    }
+
+    body.high-contrast .topbar,
+    body.high-contrast .thankyou-card,
+    body.high-contrast .point,
+    body.high-contrast .language-select,
+    body.high-contrast .accessibility-tools{
+      background:#fff;
+      color:#000;
+      border:2px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .status-box{
+      background:#000;
+      color:#fff;
+      border:2px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .btn-primary,
+    body.high-contrast .btn-secondary{
+      background:#000;
+      color:#fff;
+      border:3px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast a{
+      text-decoration:underline;
+      text-decoration-thickness:2px;
+      text-underline-offset:4px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{
+        scroll-behavior:auto;
       }
 
-      .container{width:min(var(--max), calc(100% - 20px))}
-      .topbar{padding-top:env(safe-area-inset-top)}
+      *,
+      *::before,
+      *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+
+      .btn:hover{
+        transform:none;
+      }
+    }
+
+    @media(max-width:1100px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+      }
+    }
+
+    @media(max-width:760px){
+      .container{
+        width:min(var(--max),calc(100% - 22px));
+      }
+
+      .accessibility-tools{
+        width:min(var(--max),calc(100% - 22px));
+        margin:10px auto 0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:8px;
+        padding:8px;
+        border-radius:18px;
+      }
+
+      .accessibility-btn{
+        width:100%;
+        min-height:44px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
+      }
 
       .nav{
-        gap:10px;
+        min-height:auto;
         padding:10px 0;
-        min-height:64px;
+        align-items:center;
       }
 
-      .brand{gap:10px}
-      .brand-sub{display:none}
+      .brand{
+        gap:10px;
+      }
 
-      .brand-logo{
+      .brand img{
         width:40px;
         height:40px;
         border-radius:12px;
       }
 
-      .brand-title{font-size:15px}
+      .brand strong{
+        font-size:15px;
+      }
 
-      .nav-link{
-        padding:10px 14px;
-        min-height:44px;
-        font-size:14px;
+      .brand span span{
+        display:none;
+      }
+
+      .nav-right{
+        gap:8px;
+      }
+
+      .language-label{
+        display:none;
+      }
+
+      .language-select{
+        min-height:40px;
+        max-width:150px;
+        padding:9px 32px 9px 11px;
+        font-size:13px;
       }
 
       .page{
-        padding:18px 0 30px;
         align-items:start;
+        padding:22px 0 30px;
       }
 
       .thankyou-card{
         padding:22px 18px;
+        border-radius:22px;
+      }
+
+      h1{
+        font-size:clamp(2.15rem,10.8vw,3.25rem);
+        line-height:.98;
+        margin:14px 0 12px;
+      }
+
+      .lead{
+        font-size:15.5px;
+        line-height:1.65;
       }
 
       .actions{
         display:grid;
         grid-template-columns:1fr;
+        gap:9px;
       }
 
       .actions .btn{
         width:100%;
       }
 
-      footer{font-size:13px}
+      .footer-box{
+        grid-template-columns:1fr;
+      }
+
+      footer{
+        font-size:13px;
+      }
+    }
+
+    @media(max-width:390px){
+      .container{
+        width:min(var(--max),calc(100% - 18px));
+      }
+
+      .accessibility-tools{
+        width:min(var(--max),calc(100% - 18px));
+      }
+
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
+      }
+
+      .language-select{
+        max-width:132px;
+        font-size:12px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="topbar">
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
+
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-aria-label="accessibilityTools">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">
+      Hög kontrast
+    </button>
+
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">
+      Större text
+    </button>
+
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">
+      Kort uppläsning
+    </button>
+  </div>
+
+  <header class="topbar">
     <div class="container nav">
-      <a href="https://webutvecklare.se/" class="brand" aria-label="Gå till startsidan">
-        <img
-          class="brand-logo"
-          src="nordlof-nordic-logo.png"
-          alt="Nordlöf Nordic logga"
-        >
-        <span class="brand-text">
-          <span class="brand-title">Nordlöf Nordic</span>
-          <span class="brand-sub">Webbutvecklare för företag</span>
+      <a class="brand" href="/" aria-label="Gå till startsidan" data-i18n-aria-label="brandAria">
+        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga" data-i18n-alt="logoAlt">
+        <span>
+          <strong>Nordlöf Nordic</strong>
+          <span data-i18n="brandSub">Webbutvecklare för småföretag</span>
         </span>
       </a>
 
-      <a href="https://webutvecklare.se/" class="nav-link">Till startsidan</a>
-    </div>
-  </div>
+      <div class="nav-right">
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select
+            id="languageSelect"
+            class="language-select"
+            aria-label="Välj språk"
+            data-i18n-aria-label="languageSwitch"
+          >
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
 
-  <main class="page">
+        <a class="btn btn-primary" href="/" data-i18n="navHome">Startsida</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="main">
     <div class="container">
       <div class="thankyou-wrap">
         <section class="thankyou-card">
-          <span class="eyebrow">Klart · Din förfrågan är inne</span>
+          <span class="eyebrow" data-i18n="eyebrow">Klart · Din jobbförfrågan är mottagen</span>
 
-          <h1>Tack</h1>
+          <h1 data-i18n="heroTitle">Tack för din förfrågan.</h1>
 
-          <p class="lead">
-            Jag har fått din förfrågan. Jag kikar på den och återkommer så snart jag kan.
+          <p class="lead" data-i18n="heroLead">
+            Jag har fått din jobbförfrågan och går igenom den så snart jag kan. Om det gäller hemsida, webbfix, landningssida, AI-video, flyer eller en större teknisk lösning återkommer jag med nästa steg.
           </p>
 
           <div class="status-box">
-            <h2>Nästa steg</h2>
-            <p>
-  Gäller det hemsida skickar jag normalt en gratis demo inom 1 arbetsdag. Du köper först efter att du sett demon och godkänt upplägget. Gäller det AI-video, flyer eller större projekt återkommer jag med nästa steg så fort jag gått igenom allt. Gäller det affiliateansökan återkommer jag efter manuell genomgång om upplägget känns rätt.
-</p>
+            <h2 data-i18n="nextTitle">Nästa steg</h2>
+            <p data-i18n="nextText">
+              Gäller det en hemsida skickar jag normalt en demo eller första riktning inom 1 arbetsdag. Du köper först efter att du sett upplägget och vill gå vidare. Gäller det webbfix, reklamflyer, AI-video eller större projekt återkommer jag med pris, fråga eller tydligt nästa steg.
+            </p>
           </div>
 
           <div class="points">
             <div class="point">
               <span class="check">✓</span>
               <span>
-                <strong>Förfrågan mottagen</strong>
-                Din brief har gått iväg och är inne hos mig nu.
+                <strong data-i18n="point1Title">Förfrågan mottagen</strong>
+                <span data-i18n="point1Text">Din brief har skickats och är inne hos mig nu.</span>
               </span>
             </div>
 
             <div class="point">
               <span class="check">✓</span>
               <span>
-                <strong>Jag går igenom underlaget</strong>
-                Ju tydligare du skrev, desto snabbare kan jag sätta rätt riktning.
+                <strong data-i18n="point2Title">Jag går igenom underlaget</strong>
+                <span data-i18n="point2Text">Ju tydligare du skrev, desto snabbare kan jag sätta rätt riktning.</span>
               </span>
             </div>
 
             <div class="point">
               <span class="check">✓</span>
               <span>
-                <strong>Du hör från mig</strong>
-Antingen med gratis demo, återkoppling, besked om affiliate eller en följdfråga om något behöver förtydligas.
+                <strong data-i18n="point3Title">Du hör från mig</strong>
+                <span data-i18n="point3Text">Jag återkommer med demo, pris, återkoppling eller en följdfråga om något behöver förtydligas.</span>
               </span>
             </div>
           </div>
 
           <div class="actions">
-            <a href="https://webutvecklare.se/" class="btn btn-primary">Till startsidan</a>
-            <a href="https://webutvecklare.se/#priser" class="btn btn-secondary">Se priser igen</a>
+            <a href="/" class="btn btn-primary" data-i18n="buttonHome">Till startsidan</a>
+            <a href="/#priser" class="btn btn-secondary" data-i18n="buttonPrices">Se priser igen</a>
           </div>
 
           <p class="mini-note">
-  Har du redan fått en demo tidigare och nu vill gå vidare med köp, vill komplettera en affiliateansökan eller har missat något viktigt i formuläret, kan du mejla direkt till
-  <a href="mailto:erica@webutvecklare.se"><strong>erica@webutvecklare.se</strong></a>.
-</p>
+            <span data-i18n="noteText">Har du glömt något viktigt i formuläret kan du mejla direkt till</span>
+            <a href="mailto:erica@webutvecklare.se"><strong>erica@webutvecklare.se</strong></a>.
+          </p>
         </section>
       </div>
     </div>
   </main>
 
   <footer>
-    <div class="container footer-line">
-      <span>© 2026 Nordlöf Nordic</span>
-      <span>
-        Kontakt:
-        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-        · webutvecklare.se
-      </span>
+    <div class="container">
+      <div class="footer-box">
+        <div>
+          <strong>© 2026 Nordlöf Nordic</strong><br>
+          <span data-i18n="footerText1">Hemsidor, webbfix, landningssidor och webbutveckling för småföretag.</span><br>
+          <span data-i18n="footerText2">Demo inom 1 arbetsdag · Köp först efter godkänd demo · Ingen inlåsning</span>
+        </div>
+
+        <div>
+          <span data-i18n="footerContact">Kontakt:</span>
+          <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+          ·
+          <a href="tel:+46793442520">079-344 25 20</a>
+
+          <div class="footer-links">
+            <a href="/" data-i18n="footerHome">Startsida</a>
+            <a href="gratis-demo.html" data-i18n="footerDemo">Gratis demo</a>
+            <a href="ny-hemsida-foretag.html" data-i18n="footerNewWebsite">Ny hemsida</a>
+            <a href="webbfix.html" data-i18n="footerWebbfix">Webbfix</a>
+            <a href="case.html" data-i18n="footerCase">Case</a>
+            <a href="villkor.html" data-i18n="footerTerms">Villkor</a>
+            <a href="integritet.html" data-i18n="footerPrivacy">Integritet</a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        speechLang: "sv-SE",
+        languageName: "Svenska",
+        metaTitle: "Tack för din jobbförfrågan | Nordlöf Nordic",
+        metaDescription: "Tack för din jobbförfrågan. Din förfrågan är mottagen och Nordlöf Nordic återkommer så snart som möjligt.",
+        ogTitle: "Tack för din jobbförfrågan | Nordlöf Nordic",
+        ogDescription: "Din förfrågan är mottagen. Nordlöf Nordic återkommer så snart som möjligt.",
+        twitterTitle: "Tack för din jobbförfrågan | Nordlöf Nordic",
+        twitterDescription: "Din förfrågan är mottagen. Nordlöf Nordic återkommer så snart som möjligt.",
+
+        skip: "Hoppa till huvudinnehåll",
+        accessibilityTools: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
+        brandAria: "Gå till startsidan",
+        logoAlt: "Nordlöf Nordic logga",
+        brandSub: "Webbutvecklare för småföretag",
+        languageLabel: "Språk",
+        languageSwitch: "Välj språk",
+        navHome: "Startsida",
+
+        eyebrow: "Klart · Din jobbförfrågan är mottagen",
+        heroTitle: "Tack för din förfrågan.",
+        heroLead: "Jag har fått din jobbförfrågan och går igenom den så snart jag kan. Om det gäller hemsida, webbfix, landningssida, AI-video, flyer eller en större teknisk lösning återkommer jag med nästa steg.",
+        nextTitle: "Nästa steg",
+        nextText: "Gäller det en hemsida skickar jag normalt en demo eller första riktning inom 1 arbetsdag. Du köper först efter att du sett upplägget och vill gå vidare. Gäller det webbfix, reklamflyer, AI-video eller större projekt återkommer jag med pris, fråga eller tydligt nästa steg.",
+        point1Title: "Förfrågan mottagen",
+        point1Text: "Din brief har skickats och är inne hos mig nu.",
+        point2Title: "Jag går igenom underlaget",
+        point2Text: "Ju tydligare du skrev, desto snabbare kan jag sätta rätt riktning.",
+        point3Title: "Du hör från mig",
+        point3Text: "Jag återkommer med demo, pris, återkoppling eller en följdfråga om något behöver förtydligas.",
+        buttonHome: "Till startsidan",
+        buttonPrices: "Se priser igen",
+        noteText: "Har du glömt något viktigt i formuläret kan du mejla direkt till",
+
+        footerText1: "Hemsidor, webbfix, landningssidor och webbutveckling för småföretag.",
+        footerText2: "Demo inom 1 arbetsdag · Köp först efter godkänd demo · Ingen inlåsning",
+        footerContact: "Kontakt:",
+        footerHome: "Startsida",
+        footerDemo: "Gratis demo",
+        footerNewWebsite: "Ny hemsida",
+        footerWebbfix: "Webbfix",
+        footerCase: "Case",
+        footerTerms: "Villkor",
+        footerPrivacy: "Integritet",
+
+        speechSummary: "Tack för din jobbförfrågan. Nordlöf Nordic har tagit emot din förfrågan och går igenom den så snart som möjligt. Gäller det en hemsida skickas normalt en demo eller första riktning inom en arbetsdag. Du köper först efter att du sett upplägget och vill gå vidare. Gäller det webbfix, reklamflyer, AI-video eller större projekt återkommer Nordlöf Nordic med pris, fråga eller tydligt nästa steg."
+      },
+
+      en: {
+        htmlLang: "en",
+        speechLang: "en-GB",
+        languageName: "English",
+        metaTitle: "Thank you for your project request | Nordlöf Nordic",
+        metaDescription: "Thank you for your project request. Your request has been received and Nordlöf Nordic will get back to you as soon as possible.",
+        ogTitle: "Thank you for your project request | Nordlöf Nordic",
+        ogDescription: "Your request has been received. Nordlöf Nordic will get back to you as soon as possible.",
+        twitterTitle: "Thank you for your project request | Nordlöf Nordic",
+        twitterDescription: "Your request has been received. Nordlöf Nordic will get back to you as soon as possible.",
+
+        skip: "Skip to main content",
+        accessibilityTools: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
+        brandAria: "Go to homepage",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Web developer for small businesses",
+        languageLabel: "Language",
+        languageSwitch: "Choose language",
+        navHome: "Homepage",
+
+        eyebrow: "Done · Your project request has been received",
+        heroTitle: "Thank you for your request.",
+        heroLead: "I have received your project request and will review it as soon as I can. If it concerns a website, website fix, landing page, AI video, flyer or larger technical solution, I will get back to you with the next step.",
+        nextTitle: "Next step",
+        nextText: "If it concerns a website, I normally send a demo or first direction within one business day. You only buy after you have seen the setup and want to continue. If it concerns website fixes, flyers, AI video or larger projects, I will get back with a price, question or clear next step.",
+        point1Title: "Request received",
+        point1Text: "Your brief has been sent and is now with me.",
+        point2Title: "I review the details",
+        point2Text: "The clearer the brief, the faster I can set the right direction.",
+        point3Title: "You will hear from me",
+        point3Text: "I will get back with a demo, price, feedback or a follow-up question if anything needs clarification.",
+        buttonHome: "Go to homepage",
+        buttonPrices: "See prices again",
+        noteText: "If you forgot something important in the form, you can email directly to",
+
+        footerText1: "Websites, website fixes, landing pages and web development for small businesses.",
+        footerText2: "Demo within one business day · Buy only after approved demo · No lock-in",
+        footerContact: "Contact:",
+        footerHome: "Homepage",
+        footerDemo: "Free demo",
+        footerNewWebsite: "New website",
+        footerWebbfix: "Website fixes",
+        footerCase: "Cases",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy",
+
+        speechSummary: "Thank you for your project request. Nordlöf Nordic has received your request and will review it as soon as possible. If it concerns a website, a demo or first direction is normally sent within one business day. You only buy after seeing the setup and choosing to continue. If it concerns website fixes, flyers, AI video or larger projects, Nordlöf Nordic will get back with a price, question or clear next step."
+      },
+
+      da: {
+        htmlLang: "da",
+        speechLang: "da-DK",
+        languageName: "Dansk",
+        metaTitle: "Tak for din opgaveforespørgsel | Nordlöf Nordic",
+        metaDescription: "Tak for din opgaveforespørgsel. Din forespørgsel er modtaget, og Nordlöf Nordic vender tilbage så snart som muligt.",
+        ogTitle: "Tak for din opgaveforespørgsel | Nordlöf Nordic",
+        ogDescription: "Din forespørgsel er modtaget. Nordlöf Nordic vender tilbage så snart som muligt.",
+        twitterTitle: "Tak for din opgaveforespørgsel | Nordlöf Nordic",
+        twitterDescription: "Din forespørgsel er modtaget. Nordlöf Nordic vender tilbage så snart som muligt.",
+
+        skip: "Spring til hovedindhold",
+        accessibilityTools: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        listen: "Kort oplæsning",
+        stopListen: "Stop oplæsning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webudvikler til små virksomheder",
+        languageLabel: "Sprog",
+        languageSwitch: "Vælg sprog",
+        navHome: "Forside",
+
+        eyebrow: "Klart · Din opgaveforespørgsel er modtaget",
+        heroTitle: "Tak for din forespørgsel.",
+        heroLead: "Jeg har modtaget din opgaveforespørgsel og gennemgår den så snart jeg kan. Hvis det handler om hjemmeside, webfix, landingsside, AI-video, flyer eller en større teknisk løsning, vender jeg tilbage med næste skridt.",
+        nextTitle: "Næste skridt",
+        nextText: "Hvis det handler om en hjemmeside, sender jeg normalt en demo eller første retning inden for én arbejdsdag. Du køber først efter at du har set oplægget og vil gå videre. Hvis det handler om webfix, flyer, AI-video eller større projekter, vender jeg tilbage med pris, spørgsmål eller tydeligt næste skridt.",
+        point1Title: "Forespørgsel modtaget",
+        point1Text: "Din brief er sendt og ligger nu hos mig.",
+        point2Title: "Jeg gennemgår materialet",
+        point2Text: "Jo tydeligere du skrev, desto hurtigere kan jeg sætte den rigtige retning.",
+        point3Title: "Du hører fra mig",
+        point3Text: "Jeg vender tilbage med demo, pris, feedback eller et opfølgende spørgsmål hvis noget skal præciseres.",
+        buttonHome: "Til forsiden",
+        buttonPrices: "Se priser igen",
+        noteText: "Hvis du har glemt noget vigtigt i formularen, kan du sende mail direkte til",
+
+        footerText1: "Hjemmesider, webfix, landingssider og webudvikling til små virksomheder.",
+        footerText2: "Demo inden for én arbejdsdag · Køb først efter godkendt demo · Ingen fastlåsning",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerNewWebsite: "Ny hjemmeside",
+        footerWebbfix: "Webfix",
+        footerCase: "Cases",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Privatliv",
+
+        speechSummary: "Tak for din opgaveforespørgsel. Nordlöf Nordic har modtaget din forespørgsel og gennemgår den så snart som muligt. Hvis det handler om en hjemmeside, sendes normalt en demo eller første retning inden for én arbejdsdag. Du køber først efter at have set oplægget og valgt at gå videre. Hvis det handler om webfix, flyer, AI-video eller større projekter, vender Nordlöf Nordic tilbage med pris, spørgsmål eller tydeligt næste skridt."
+      },
+
+      no: {
+        htmlLang: "no",
+        speechLang: "no-NO",
+        languageName: "Norsk",
+        metaTitle: "Takk for jobbforespørselen | Nordlöf Nordic",
+        metaDescription: "Takk for jobbforespørselen. Forespørselen er mottatt, og Nordlöf Nordic kommer tilbake så snart som mulig.",
+        ogTitle: "Takk for jobbforespørselen | Nordlöf Nordic",
+        ogDescription: "Forespørselen er mottatt. Nordlöf Nordic kommer tilbake så snart som mulig.",
+        twitterTitle: "Takk for jobbforespørselen | Nordlöf Nordic",
+        twitterDescription: "Forespørselen er mottatt. Nordlöf Nordic kommer tilbake så snart som mulig.",
+
+        skip: "Hopp til hovedinnhold",
+        accessibilityTools: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        listen: "Kort opplesning",
+        stopListen: "Stopp opplesning",
+        brandAria: "Gå til forsiden",
+        logoAlt: "Nordlöf Nordic logo",
+        brandSub: "Webutvikler for små bedrifter",
+        languageLabel: "Språk",
+        languageSwitch: "Velg språk",
+        navHome: "Forside",
+
+        eyebrow: "Klart · Jobbforespørselen er mottatt",
+        heroTitle: "Takk for forespørselen.",
+        heroLead: "Jeg har mottatt jobbforespørselen din og går gjennom den så snart jeg kan. Hvis det gjelder nettside, webfiks, landingsside, AI-video, flyer eller en større teknisk løsning, kommer jeg tilbake med neste steg.",
+        nextTitle: "Neste steg",
+        nextText: "Hvis det gjelder en nettside, sender jeg normalt en demo eller første retning innen én arbeidsdag. Du kjøper først etter at du har sett opplegget og vil gå videre. Hvis det gjelder webfiks, flyer, AI-video eller større prosjekter, kommer jeg tilbake med pris, spørsmål eller tydelig neste steg.",
+        point1Title: "Forespørsel mottatt",
+        point1Text: "Briefen din er sendt og ligger hos meg nå.",
+        point2Title: "Jeg går gjennom underlaget",
+        point2Text: "Jo tydeligere du skrev, desto raskere kan jeg sette riktig retning.",
+        point3Title: "Du hører fra meg",
+        point3Text: "Jeg kommer tilbake med demo, pris, tilbakemelding eller et oppfølgingsspørsmål hvis noe må avklares.",
+        buttonHome: "Til forsiden",
+        buttonPrices: "Se priser igjen",
+        noteText: "Hvis du har glemt noe viktig i skjemaet, kan du sende e-post direkte til",
+
+        footerText1: "Nettsider, webfiks, landingssider og webutvikling for små bedrifter.",
+        footerText2: "Demo innen én arbeidsdag · Kjøp først etter godkjent demo · Ingen innlåsing",
+        footerContact: "Kontakt:",
+        footerHome: "Forside",
+        footerDemo: "Gratis demo",
+        footerNewWebsite: "Ny nettside",
+        footerWebbfix: "Webfiks",
+        footerCase: "Case",
+        footerTerms: "Vilkår",
+        footerPrivacy: "Personvern",
+
+        speechSummary: "Takk for jobbforespørselen. Nordlöf Nordic har mottatt forespørselen og går gjennom den så snart som mulig. Hvis det gjelder en nettside, sendes normalt demo eller første retning innen én arbeidsdag. Du kjøper først etter at du har sett opplegget og valgt å gå videre. Hvis det gjelder webfiks, flyer, AI-video eller større prosjekter, kommer Nordlöf Nordic tilbake med pris, spørsmål eller tydelig neste steg."
+      }
+    };
+
+    const defaultLang = "sv";
+    let currentLanguage = defaultLang;
+    let isSpeaking = false;
+
+    const languageSelect = document.getElementById("languageSelect");
+    const listenButton = document.getElementById("listenSummary");
+    const contrastButton = document.getElementById("toggleContrast");
+    const largeTextButton = document.getElementById("toggleLargeText");
+
+    function getMeta(name) {
+      return document.querySelector(`meta[name="${name}"]`);
+    }
+
+    function getPropertyMeta(property) {
+      return document.querySelector(`meta[property="${property}"]`);
+    }
+
+    function safeGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function safeSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (error) {
+        return false;
+      }
+
+      return true;
+    }
+
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isPressed));
+      }
+    }
+
+    function stopSpeaking() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      isSpeaking = false;
+
+      if (listenButton) {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+        listenButton.setAttribute("aria-pressed", "false");
+        listenButton.textContent = dictionary.listen;
+      }
+    }
+
+    function applyLanguage(lang) {
+      const dictionary = translations[lang] || translations[defaultLang];
+      currentLanguage = lang;
+
+      stopSpeaking();
+
+      document.documentElement.lang = dictionary.htmlLang;
+      document.title = dictionary.metaTitle;
+
+      const description = getMeta("description");
+      if (description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      const ogTitle = getPropertyMeta("og:title");
+      if (ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      const ogDescription = getPropertyMeta("og:description");
+      if (ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
+
+      const twitterTitle = getMeta("twitter:title");
+      if (twitterTitle) {
+        twitterTitle.setAttribute("content", dictionary.twitterTitle);
+      }
+
+      const twitterDescription = getMeta("twitter:description");
+      if (twitterDescription) {
+        twitterDescription.setAttribute("content", dictionary.twitterDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (dictionary[key]) {
+          element.setAttribute("aria-label", dictionary[key]);
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-alt");
+        if (dictionary[key]) {
+          element.setAttribute("alt", dictionary[key]);
+        }
+      });
+
+      if (languageSelect) {
+        languageSelect.value = lang;
+        languageSelect.setAttribute("aria-label", dictionary.languageSwitch);
+      }
+
+      safeSet("tackLanguage", lang);
+    }
+
+    if (languageSelect) {
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
+      });
+    }
+
+    const savedContrast = safeGet("highContrast") === "true";
+    const savedLargeText = safeGet("largeText") === "true";
+
+    if (savedContrast) {
+      document.body.classList.add("high-contrast");
+    }
+
+    if (savedLargeText) {
+      document.body.classList.add("large-text");
+    }
+
+    setPressed(contrastButton, savedContrast);
+    setPressed(largeTextButton, savedLargeText);
+
+    if (contrastButton) {
+      contrastButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("high-contrast");
+        safeSet("highContrast", String(isActive));
+        setPressed(contrastButton, isActive);
+      });
+    }
+
+    if (largeTextButton) {
+      largeTextButton.addEventListener("click", () => {
+        const isActive = document.body.classList.toggle("large-text");
+        safeSet("largeText", String(isActive));
+        setPressed(largeTextButton, isActive);
+      });
+    }
+
+    if (listenButton && "speechSynthesis" in window) {
+      listenButton.addEventListener("click", () => {
+        const dictionary = translations[currentLanguage] || translations[defaultLang];
+
+        if (isSpeaking) {
+          stopSpeaking();
+          return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(dictionary.speechSummary);
+        utterance.lang = dictionary.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        isSpeaking = true;
+        listenButton.setAttribute("aria-pressed", "true");
+        listenButton.textContent = dictionary.stopListen;
+
+        utterance.onend = () => {
+          stopSpeaking();
+        };
+
+        utterance.onerror = () => {
+          stopSpeaking();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+
+    window.addEventListener("pagehide", () => {
+      stopSpeaking();
+    });
+
+    const browserLang = (navigator.language || "").slice(0, 2).toLowerCase();
+    const savedLanguage = safeGet("tackLanguage");
+    const initialLanguage = translations[savedLanguage]
+      ? savedLanguage
+      : translations[browserLang]
+        ? browserLang
+        : defaultLang;
+
+    applyLanguage(initialLanguage);
+  </script>
 </body>
 </html>
