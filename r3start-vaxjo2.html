@@ -20,45 +20,32 @@
   <style>
     :root{
       --bg:#efe8dc;
-      --bg-soft:#f8f3eb;
       --paper:#fffaf3;
       --white:#ffffff;
-
       --ink:#16211d;
       --muted:#53615a;
-      --soft:#738078;
-
       --forest:#16382f;
       --forest-2:#24594b;
-      --forest-3:#2c6a59;
       --forest-soft:#dfeae4;
-
       --gold:#b98542;
       --gold-2:#d9aa67;
-      --gold-soft:#f8ead6;
-
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
-
       --shadow:0 28px 90px rgba(20,32,27,.16);
       --shadow-soft:0 18px 50px rgba(20,32,27,.10);
-
       --radius:28px;
-      --radius-lg:42px;
       --max:1180px;
       --focus:#b45309;
 
-      --overlay-bg:rgba(255,250,243,.42);
-      --overlay-border:rgba(255,255,255,.52);
+      --overlay-bg:rgba(255,250,243,.30);
+      --overlay-border:rgba(255,255,255,.48);
       --overlay-ink:#10201a;
       --overlay-muted:#1c4337;
 
       --header-offset:0px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
     html{
       scroll-behavior:smooth;
@@ -68,9 +55,7 @@
       overflow-x:hidden;
     }
 
-    html.large-text{
-      font-size:118%;
-    }
+    html.large-text{ font-size:118%; }
 
     body{
       margin:0;
@@ -85,14 +70,8 @@
       overflow-x:hidden;
     }
 
-    img{
-      display:block;
-      max-width:100%;
-    }
-
-    a{
-      color:inherit;
-    }
+    a{ color:inherit; }
+    img{ display:block; max-width:100%; }
 
     h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
       overflow-wrap:anywhere;
@@ -120,8 +99,8 @@
       position:absolute;
       left:12px;
       top:-90px;
-      background:#ffffff;
-      color:#000000;
+      background:#fff;
+      color:#000;
       padding:12px 16px;
       border-radius:999px;
       z-index:1200;
@@ -129,9 +108,7 @@
       transition:.2s ease;
     }
 
-    .skip-link:focus{
-      top:12px;
-    }
+    .skip-link:focus{ top:12px; }
 
     .topbar{
       background:#173128;
@@ -164,7 +141,7 @@
     .tool-btn,
     .language-select{
       border:1px solid rgba(255,255,255,.24);
-      color:#ffffff;
+      color:#fff;
       background:rgba(255,255,255,.08);
       border-radius:999px;
       padding:8px 12px;
@@ -177,7 +154,7 @@
 
     .tool-btn:hover,
     .language-select:hover{
-      background:#ffffff;
+      background:#fff;
       color:#13211c;
     }
 
@@ -199,19 +176,17 @@
       z-index:999;
     }
 
-    body.header-fixed main{
-      padding-top:var(--header-offset);
-    }
+    body.header-fixed main{ padding-top:var(--header-offset); }
 
     .nav{
       max-width:var(--max);
       margin:auto;
       padding:15px 18px;
+      min-height:80px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:18px;
-      min-height:80px;
       position:relative;
     }
 
@@ -229,7 +204,7 @@
       height:46px;
       border-radius:16px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -275,9 +250,7 @@
       white-space:nowrap;
     }
 
-    nav a:hover{
-      background:var(--forest-soft);
-    }
+    nav a:hover{ background:var(--forest-soft); }
 
     .nav-actions{
       display:flex;
@@ -289,7 +262,7 @@
     .menu-btn{
       display:none;
       border:1px solid var(--line-dark);
-      background:#ffffff;
+      background:#fff;
       color:var(--forest);
       border-radius:999px;
       padding:10px 14px;
@@ -317,13 +290,11 @@
       font-family:inherit;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{ transform:translateY(-1px); }
 
     .btn-primary{
       background:var(--forest);
-      color:#ffffff;
+      color:#fff;
       border-color:var(--forest);
       box-shadow:0 16px 38px rgba(22,56,47,.22);
     }
@@ -339,9 +310,7 @@
       border-color:var(--line-dark);
     }
 
-    .btn-secondary:hover{
-      background:#ffffff;
-    }
+    .btn-secondary:hover{ background:#fff; }
 
     .btn-gold{
       background:linear-gradient(135deg, var(--gold), var(--gold-2));
@@ -350,9 +319,7 @@
       box-shadow:0 16px 38px rgba(185,133,66,.22);
     }
 
-    main{
-      overflow:hidden;
-    }
+    main{ overflow:hidden; }
 
     section{
       padding:88px 18px;
@@ -414,9 +381,7 @@
       font-weight:650;
     }
 
-    .hero{
-      padding:72px 18px 80px;
-    }
+    .hero{ padding:72px 18px 80px; }
 
     .hero-grid{
       max-width:var(--max);
@@ -473,7 +438,7 @@
     }
 
     .hero-card{
-      background:#ffffff;
+      background:#fff;
       border:1px solid rgba(200,185,164,.8);
       border-radius:40px;
       padding:12px;
@@ -487,14 +452,13 @@
       border-radius:30px;
       background:
         linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.34)),
-        url("https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1500&q=82") center/cover;
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Cathedral%201.jpg") center/cover;
       position:relative;
       overflow:hidden;
     }
 
     .photo-caption,
     .image-panel-text,
-    .gallery-label,
     .slide-label{
       background:var(--overlay-bg);
       border:1px solid var(--overlay-border);
@@ -514,7 +478,6 @@
 
     .photo-caption strong,
     .image-panel-text strong,
-    .gallery-label,
     .slide-label strong{
       display:block;
       color:var(--overlay-ink);
@@ -524,7 +487,6 @@
 
     .photo-caption span,
     .image-panel-text span,
-    .gallery-label span,
     .slide-label span{
       display:block;
       color:var(--overlay-muted);
@@ -539,7 +501,7 @@
       top:42px;
       z-index:3;
       width:min(260px, 72%);
-      background:rgba(255,250,243,.72);
+      background:rgba(255,250,243,.62);
       border:1px solid rgba(200,185,164,.85);
       border-radius:26px;
       padding:20px;
@@ -574,7 +536,7 @@
       border:8px solid rgba(255,250,243,.88);
       box-shadow:var(--shadow);
       z-index:4;
-      background:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=82") center/cover;
+      background:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Promenadstr%C3%A5ket%20vid%20V%C3%A4xj%C3%B6sj%C3%B6n.jpg") center/cover;
     }
 
     .section-head{
@@ -638,7 +600,7 @@
     }
 
     .panel{
-      background:#ffffff;
+      background:#fff;
       color:var(--ink);
       border-radius:36px;
       padding:36px;
@@ -663,7 +625,7 @@
       position:relative;
       background:
         linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.28)),
-        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1300&q=82") center/cover;
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/LA2-vx06-vaxjosjon2.jpg") center/cover;
     }
 
     .image-panel-text{
@@ -675,9 +637,7 @@
       padding:20px;
     }
 
-    .image-strip-wrap{
-      margin-top:34px;
-    }
+    .image-strip-wrap{ margin-top:34px; }
 
     .drag-hint{
       display:flex;
@@ -688,6 +648,42 @@
       color:var(--muted);
       font-weight:750;
       font-size:.96rem;
+      flex-wrap:wrap;
+    }
+
+    .gallery-tools{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .gallery-arrow{
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:999px;
+      background:var(--forest);
+      color:#fff;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      font-size:1.3rem;
+      font-weight:900;
+      box-shadow:0 12px 26px rgba(22,56,47,.22);
+      transition:.18s ease;
+      flex:0 0 auto;
+    }
+
+    .gallery-arrow:hover{
+      transform:translateY(-1px);
+      background:var(--forest-2);
+    }
+
+    .gallery-arrow:disabled{
+      opacity:.45;
+      cursor:not-allowed;
+      transform:none;
     }
 
     .image-strip{
@@ -700,20 +696,13 @@
       cursor:grab;
       scrollbar-width:thin;
       scrollbar-color:#9aa69f transparent;
+      scroll-behavior:smooth;
     }
 
-    .image-strip:active{
-      cursor:grabbing;
-    }
+    .image-strip:active{ cursor:grabbing; }
 
-    .image-strip::-webkit-scrollbar{
-      height:10px;
-    }
-
-    .image-strip::-webkit-scrollbar-track{
-      background:transparent;
-    }
-
+    .image-strip::-webkit-scrollbar{ height:10px; }
+    .image-strip::-webkit-scrollbar-track{ background:transparent; }
     .image-strip::-webkit-scrollbar-thumb{
       background:rgba(22,56,47,.28);
       border-radius:999px;
@@ -750,7 +739,7 @@
     }
 
     .check-list li{
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       padding:19px 20px 19px 56px;
@@ -769,7 +758,7 @@
       height:27px;
       border-radius:999px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -782,7 +771,7 @@
 
     .quality-wrap{
       background:linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
-      color:#ffffff;
+      color:#fff;
       border-radius:44px;
       padding:48px;
       box-shadow:var(--shadow);
@@ -824,7 +813,7 @@
       font-size:clamp(3.8rem, 8vw, 7.1rem);
       line-height:.85;
       letter-spacing:-.08em;
-      color:#ffffff;
+      color:#fff;
     }
 
     .score span{
@@ -836,14 +825,12 @@
 
     .quality-wrap .eyebrow{
       background:rgba(255,255,255,.12);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.28);
     }
 
     .quality-wrap h2,
-    .quality-wrap p{
-      color:#ffffff;
-    }
+    .quality-wrap p{ color:#fff; }
 
     .quality-wrap p{
       color:#edf7f2;
@@ -860,7 +847,7 @@
 
     .step{
       counter-increment:step;
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:26px;
       padding:24px 24px 24px 82px;
@@ -877,7 +864,7 @@
       height:42px;
       border-radius:15px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -889,58 +876,19 @@
       font-weight:650;
     }
 
-    .manager-card{
-      background:#ffffff;
-      border:1px solid var(--line-dark);
-      border-radius:36px;
-      padding:22px;
-      box-shadow:var(--shadow-soft);
-      margin-top:24px;
-    }
-
-    .manager-card-top{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      margin-bottom:16px;
-    }
-
-    .manager-thumb{
-      width:84px;
-      height:84px;
-      border-radius:24px;
-      flex:0 0 auto;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.12)),
-        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
-      border:1px solid var(--line-dark);
-      box-shadow:var(--shadow-soft);
-    }
-
-    .manager-card h3{
-      margin-bottom:6px;
-    }
-
-    .manager-card p{
-      color:var(--muted);
-      font-weight:650;
-    }
-
     .contact{
       background:#151f1b;
-      color:#ffffff;
+      color:#fff;
       border-top:1px solid rgba(255,255,255,.10);
     }
 
     .contact h2,
     .contact h3,
-    .contact p{
-      color:#ffffff;
-    }
+    .contact p{ color:#fff; }
 
     .contact .eyebrow{
       background:rgba(255,255,255,.10);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.25);
     }
 
@@ -963,9 +911,7 @@
 
     .contact-box h2,
     .contact-box h3,
-    form h3{
-      color:var(--ink);
-    }
+    form h3{ color:var(--ink); }
 
     .contact-box p{
       color:var(--muted);
@@ -978,17 +924,23 @@
       align-items:center;
       gap:14px;
       padding:16px;
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       margin-top:24px;
       box-shadow:var(--shadow-soft);
     }
 
-    .contact-person .manager-thumb{
-      width:72px;
-      height:72px;
+    .manager-thumb{
+      width:78px;
+      height:78px;
       border-radius:20px;
+      flex:0 0 auto;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.12)),
+        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
+      border:1px solid var(--line-dark);
+      box-shadow:var(--shadow-soft);
     }
 
     .contact-links{
@@ -998,7 +950,7 @@
     }
 
     .contact-link{
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:20px;
       padding:17px;
@@ -1031,14 +983,12 @@
       padding:14px 15px;
       font:inherit;
       color:var(--ink);
-      background:#ffffff;
+      background:#fff;
       font-weight:650;
     }
 
     input::placeholder,
-    textarea::placeholder{
-      color:#66736c;
-    }
+    textarea::placeholder{ color:#66736c; }
 
     textarea{
       min-height:160px;
@@ -1051,13 +1001,8 @@
       gap:16px;
     }
 
-    .field{
-      margin-bottom:16px;
-    }
-
-    .full{
-      grid-column:1 / -1;
-    }
+    .field{ margin-bottom:16px; }
+    .full{ grid-column:1 / -1; }
 
     .form-note{
       font-size:.92rem;
@@ -1076,7 +1021,7 @@
 
     .footer{
       background:#0f1714;
-      color:#ffffff;
+      color:#fff;
       padding:34px 18px;
       border-top:1px solid rgba(255,255,255,.12);
     }
@@ -1095,9 +1040,7 @@
       font-size:.95rem;
     }
 
-    .footer-copy strong{
-      color:#ffffff;
-    }
+    .footer-copy strong{ color:#fff; }
 
     .footer-right{
       display:flex;
@@ -1115,22 +1058,21 @@
     }
 
     .social-icon{
-      width:44px;
-      height:44px;
+      width:46px;
+      height:46px;
       border-radius:999px;
       display:grid;
       place-items:center;
       text-decoration:none;
-      color:#ffffff;
-      background:rgba(255,255,255,.08);
+      color:#fff;
       border:1px solid rgba(255,255,255,.16);
       transition:.18s ease;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
     }
 
     .social-icon:hover{
-      background:#ffffff;
-      color:#13211c;
-      transform:translateY(-1px);
+      transform:translateY(-1px) scale(1.03);
+      filter:brightness(1.06);
     }
 
     .social-icon svg{
@@ -1139,14 +1081,18 @@
       fill:currentColor;
     }
 
+    .social-icon.facebook{ background:#1877f2; }
+    .social-icon.instagram{ background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4); }
+    .social-icon.linkedin{ background:#0a66c2; }
+
     .footer .btn-secondary{
       background:rgba(255,255,255,.10);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.24);
     }
 
     .footer .btn-secondary:hover{
-      background:#ffffff;
+      background:#fff;
       color:#13211c;
     }
 
@@ -1171,13 +1117,11 @@
     body.high-contrast .contact-box,
     body.high-contrast form,
     body.high-contrast .check-list li,
-    body.high-contrast .manager-card,
     body.high-contrast .contact-link,
     body.high-contrast .contact-person,
     body.high-contrast .score,
     body.high-contrast .photo-caption,
     body.high-contrast .image-panel-text,
-    body.high-contrast .gallery-label,
     body.high-contrast .slide-label,
     body.high-contrast .floating-card{
       background:#fff !important;
@@ -1212,9 +1156,7 @@
     }
 
     @media (max-width:1120px){
-      .mini-photo{
-        display:none;
-      }
+      .mini-photo{ display:none; }
     }
 
     @media (max-width:980px){
@@ -1226,26 +1168,17 @@
         grid-template-columns:1fr;
       }
 
-      .trust-row{
-        grid-template-columns:1fr;
-      }
+      .trust-row{ grid-template-columns:1fr; }
 
-      .hero-visual{
-        min-height:auto;
-      }
-
-      .hero-photo{
-        min-height:470px;
-      }
+      .hero-visual{ min-height:auto; }
+      .hero-photo{ min-height:470px; }
 
       .floating-card{
         left:18px;
         top:18px;
       }
 
-      nav{
-        display:none;
-      }
+      nav{ display:none; }
 
       nav.open{
         display:block;
@@ -1265,28 +1198,20 @@
         gap:4px;
       }
 
-      nav.open a{
-        width:100%;
-      }
+      nav.open a{ width:100%; }
 
-      .menu-btn{
-        display:inline-flex;
-      }
+      .menu-btn{ display:inline-flex; }
     }
 
     @media (max-width:760px){
-      html.large-text{
-        font-size:112%;
-      }
+      html.large-text{ font-size:112%; }
 
       section{
         padding:58px 14px;
         scroll-margin-top:96px;
       }
 
-      .hero{
-        padding:44px 14px 60px;
-      }
+      .hero{ padding:44px 14px 60px; }
 
       .topbar-inner{
         padding:10px 14px;
@@ -1343,13 +1268,9 @@
         white-space:nowrap;
       }
 
-      .logo-text span{
-        display:none;
-      }
+      .logo-text span{ display:none; }
 
-      .nav-actions .btn{
-        display:none;
-      }
+      .nav-actions .btn{ display:none; }
 
       .menu-btn{
         min-height:42px;
@@ -1376,9 +1297,7 @@
         line-height:1.03;
       }
 
-      h2{
-        font-size:clamp(1.78rem, 8vw, 2.6rem);
-      }
+      h2{ font-size:clamp(1.78rem, 8vw, 2.6rem); }
 
       h3{
         font-size:1.2rem;
@@ -1427,9 +1346,7 @@
         padding:16px;
       }
 
-      .floating-card{
-        display:none;
-      }
+      .floating-card{ display:none; }
 
       .section-head{
         display:block;
@@ -1444,8 +1361,7 @@
       .card,
       .panel,
       .contact-box,
-      form,
-      .manager-card{
+      form{
         border-radius:24px;
         padding:22px;
       }
@@ -1491,9 +1407,7 @@
         padding:23px;
       }
 
-      .score strong{
-        font-size:clamp(3rem, 24vw, 5.2rem);
-      }
+      .score strong{ font-size:clamp(3rem, 24vw, 5.2rem); }
 
       .step{
         padding:20px 18px 20px 64px;
@@ -1522,24 +1436,21 @@
         font-size:1rem;
       }
 
-      textarea{
-        min-height:135px;
-      }
+      textarea{ min-height:135px; }
 
-      .contact-person{
-        align-items:flex-start;
-      }
+      .contact-person{ align-items:flex-start; }
 
-      .footer{
-        padding:28px 14px;
-      }
+      .footer{ padding:28px 14px; }
 
       .footer-inner{
         grid-template-columns:1fr;
         gap:16px;
       }
 
-      .footer-right{
+      .footer-right{ justify-content:flex-start; }
+
+      .gallery-tools{
+        width:100%;
         justify-content:flex-start;
       }
     }
@@ -1554,13 +1465,8 @@
         padding-right:12px;
       }
 
-      h1{
-        font-size:2.02rem;
-      }
-
-      h2{
-        font-size:1.62rem;
-      }
+      h1{ font-size:2.02rem; }
+      h2{ font-size:1.62rem; }
 
       .logo-text strong{
         max-width:52vw;
@@ -1569,17 +1475,12 @@
         white-space:nowrap;
       }
 
-      .hero-photo{
-        min-height:300px;
-      }
+      .hero-photo{ min-height:300px; }
 
       .card,
       .panel,
       .contact-box,
-      form,
-      .manager-card{
-        padding:18px;
-      }
+      form{ padding:18px; }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -1615,9 +1516,11 @@
         <button class="tool-btn" type="button" id="readPage" data-label-sv="Läs kort sammanfattning" data-label-en="Read short summary">
           Läs kort sammanfattning
         </button>
+
         <button class="tool-btn" type="button" id="increaseText" aria-pressed="false" data-off-sv="Större text" data-on-sv="Normal textstorlek" data-off-en="Larger text" data-on-en="Normal text size">
           Större text
         </button>
+
         <button class="tool-btn" type="button" id="contrastToggle" aria-pressed="false" data-off-sv="Hög kontrast" data-on-sv="Normal kontrast" data-off-en="High contrast" data-on-en="Normal contrast">
           Hög kontrast
         </button>
@@ -1638,7 +1541,7 @@
       <nav id="siteNav" aria-label="Huvudmeny">
         <ul>
           <li><a href="#om" data-sv="Om oss" data-en="About">Om oss</a></li>
-          <li><a href="#bilder" data-sv="Bilder" data-en="Images">Bilder</a></li>
+          <li><a href="#bilder" data-sv="Växjöbilder" data-en="Växjö images">Växjöbilder</a></li>
           <li><a href="#placeringsformer" data-sv="Placeringsformer" data-en="Placement types">Placeringsformer</a></li>
           <li><a href="#insatser" data-sv="Insatser" data-en="Support">Insatser</a></li>
           <li><a href="#kvalitet" data-sv="Kvalitet" data-en="Quality">Kvalitet</a></li>
@@ -1648,9 +1551,9 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-secondary" type="button" id="downloadPdfHeader" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
-  Ladda ner informationsblad
-</button>
+        <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+          Ladda ner informationsblad
+        </button>
         <a class="btn btn-primary" href="#kontakt" data-sv="Kontakta oss" data-en="Contact us">Kontakta oss</a>
         <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav" data-sv="Meny" data-en="Menu">
           Meny
@@ -1677,10 +1580,10 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt" data-sv="Gör placeringsförfrågan" data-en="Submit placement enquiry">Gör placeringsförfrågan</a>
-            <a class="btn btn-secondary" href="#bilder" data-sv="Se fler bilder" data-en="See more images">Se fler bilder</a>
-            <button class="btn btn-secondary" type="button" id="downloadPdfHeader" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
-  Ladda ner informationsblad
-</button>
+            <a class="btn btn-secondary" href="#bilder" data-sv="Se Växjöbilder" data-en="See Växjö images">Se Växjöbilder</a>
+            <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+              Ladda ner informationsblad
+            </button>
           </div>
 
           <div class="trust-row" aria-label="Förtroendepunkter">
@@ -1701,7 +1604,7 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Bildmiljö">
+        <div class="hero-visual" aria-label="Bild från Växjö">
           <div class="floating-card">
             <strong>9,7</strong>
             <span data-sv="av 10 i kvalitetsindex. En signal som bör synas direkt." data-en="out of 10 in the quality index. A trust signal that should be visible immediately.">
@@ -1712,11 +1615,11 @@
           <div class="hero-card">
             <div class="hero-photo">
               <div class="photo-caption">
-                <strong data-sv="Hemlik miljö med tydlig struktur." data-en="A homelike environment with clear structure.">
-                  Hemlik miljö med tydlig struktur.
+                <strong data-sv="Lokal förankring i Växjö." data-en="Local grounding in Växjö.">
+                  Lokal förankring i Växjö.
                 </strong>
-                <span data-sv="Stöd, rutiner och kontaktmannaskap anpassas efter individens behov." data-en="Support, routines and key-worker contact are adapted to the individual’s needs.">
-                  Stöd, rutiner och kontaktmannaskap anpassas efter individens behov.
+                <span data-sv="Bilder från Växjö ger snabbare igenkänning än generiska stockbilder." data-en="Images from Växjö create stronger recognition than generic stock images.">
+                  Bilder från Växjö ger snabbare igenkänning än generiska stockbilder.
                 </span>
               </div>
             </div>
@@ -1775,20 +1678,18 @@
     <section class="editorial" id="bilder">
       <div class="wrap split">
         <div class="panel">
-          <span class="eyebrow" data-sv="Bildsektion inspirerad av mer levande verksamhetssidor" data-en="Image section inspired by more vivid organisation pages">
-            Bildsektion inspirerad av mer levande verksamhetssidor
-          </span>
+          <span class="eyebrow" data-sv="Bilder från Växjö" data-en="Images from Växjö">Bilder från Växjö</span>
 
-          <h2 data-sv="Varmare, lugnare och mer förtroende direkt." data-en="Warmer, calmer and more trust from the first view.">
-            Varmare, lugnare och mer förtroende direkt.
+          <h2 data-sv="Mer lokalt, mer trovärdigt och mindre generiskt." data-en="More local, more credible and less generic.">
+            Mer lokalt, mer trovärdigt och mindre generiskt.
           </h2>
 
-          <p data-sv="Här finns nu en horisontell bildsektion som man kan dra åt sidan både i mobil och på dator. Lägg in egna miljöbilder senare, men under tiden kan ni visa flera stockbilder utan att sidan känns tung." data-en="There is now a horizontal image section that can be dragged sideways on both mobile and desktop. Replace the stock images later with your own environment photos, but for now you can show several images without the page feeling heavy.">
-            Här finns nu en horisontell bildsektion som man kan dra åt sidan både i mobil och på dator. Lägg in egna miljöbilder senare, men under tiden kan ni visa flera stockbilder utan att sidan känns tung.
+          <p data-sv="Bilderna här är exempel från Växjö. I skarp version kan de ersättas med egna bilder från verksamheten, boendemiljön eller närområdet." data-en="The images here are examples from Växjö. In the final version, they can be replaced with your own photos from the organisation, housing environment or nearby area.">
+            Bilderna här är exempel från Växjö. I skarp version kan de ersättas med egna bilder från verksamheten, boendemiljön eller närområdet.
           </p>
 
-          <p data-sv="Textrutorna ovanpå bilderna är nu mycket mer genomskinliga så att fotot syns bättre bakom. Samtidigt har texten fått mörk kontrastfärg för att vara tydlig." data-en="The text boxes on top of the images are now much more transparent so the photo is more visible behind them. At the same time, the text uses a darker contrast colour to stay clear.">
-            Textrutorna ovanpå bilderna är nu mycket mer genomskinliga så att fotot syns bättre bakom. Samtidigt har texten fått mörk kontrastfärg för att vara tydlig.
+          <p data-sv="Lokala bilder gör sidan mer förankrad. Det blir mindre random stock och mer: här finns verksamheten på riktigt." data-en="Local images make the page feel more grounded. Less random stock, more: this organisation is actually here.">
+            Lokala bilder gör sidan mer förankrad. Det blir mindre random stock och mer: här finns verksamheten på riktigt.
           </p>
 
           <div class="hero-actions">
@@ -1798,11 +1699,11 @@
 
         <div class="image-panel">
           <div class="image-panel-text">
-            <strong data-sv="Premium utan att bli stelt." data-en="Premium without feeling stiff.">
-              Premium utan att bli stelt.
+            <strong data-sv="Växjö, vatten och grönska." data-en="Växjö, water and greenery.">
+              Växjö, vatten och grönska.
             </strong>
-            <span data-sv="Stora bildytor, lugna färger och halvtransparenta informationsrutor ger ett mjukare intryck." data-en="Large image areas, calm colours and semi-transparent information boxes create a softer impression.">
-              Stora bildytor, lugna färger och halvtransparenta informationsrutor ger ett mjukare intryck.
+            <span data-sv="En lugnare bildkänsla som passar stöd, trygghet och struktur." data-en="A calmer visual tone that fits support, safety and structure.">
+              En lugnare bildkänsla som passar stöd, trygghet och struktur.
             </span>
           </div>
         </div>
@@ -1810,81 +1711,81 @@
 
       <div class="wrap image-strip-wrap">
         <div class="drag-hint">
-          <span data-sv="Dra åt sidan för att se fler bilder" data-en="Drag sideways to see more images">
-            Dra åt sidan för att se fler bilder
+          <span data-sv="Dra åt sidan eller använd pilarna för fler Växjöbilder" data-en="Drag sideways or use the arrows for more Växjö images">
+            Dra åt sidan eller använd pilarna för fler Växjöbilder
           </span>
-          <span data-sv="Mobil och dator" data-en="Mobile and desktop">Mobil och dator</span>
+
+          <div class="gallery-tools">
+            <button class="gallery-arrow" type="button" id="galleryPrev" aria-label="Föregående bilder">←</button>
+            <button class="gallery-arrow" type="button" id="galleryNext" aria-label="Nästa bilder">→</button>
+          </div>
         </div>
 
         <div class="image-strip" id="imageStrip" aria-label="Bildgalleri">
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=82");'>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Cathedral%201.jpg");'>
             <div class="slide-label">
-              <strong data-sv="Boendemiljö" data-en="Housing environment">Boendemiljö</strong>
-              <span data-sv="Byt till egen bild på lägenhet, fasad eller gemensam yta." data-en="Replace with your own image of an apartment, facade or shared area.">
-                Byt till egen bild på lägenhet, fasad eller gemensam yta.
+              <strong data-sv="Växjö domkyrka" data-en="Växjö Cathedral">Växjö domkyrka</strong>
+              <span data-sv="Lokal igenkänning direkt." data-en="Local recognition immediately.">Lokal igenkänning direkt.</span>
+            </div>
+          </article>
+
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20domkyrka%202007.jpg");'>
+            <div class="slide-label">
+              <strong data-sv="Centrala Växjö" data-en="Central Växjö">Centrala Växjö</strong>
+              <span data-sv="Ger sidan lokal förankring." data-en="Gives the page local grounding.">Ger sidan lokal förankring.</span>
+            </div>
+          </article>
+
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Promenadstr%C3%A5ket%20vid%20V%C3%A4xj%C3%B6sj%C3%B6n.jpg");'>
+            <div class="slide-label">
+              <strong data-sv="Växjösjön" data-en="Lake Växjösjön">Växjösjön</strong>
+              <span data-sv="Lugn miljö, promenadstråk och tydlig Växjökänsla." data-en="Calm environment, lakeside path and a clear Växjö feel.">
+                Lugn miljö, promenadstråk och tydlig Växjökänsla.
               </span>
             </div>
           </article>
 
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=82");'>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/LA2-vx06-vaxjosjon2.jpg");'>
             <div class="slide-label">
-              <strong data-sv="Lägenhet" data-en="Apartment">Lägenhet</strong>
-              <span data-sv="Ljus, ordning och hemlik känsla." data-en="Light, order and a homelike feel.">
-                Ljus, ordning och hemlik känsla.
+              <strong data-sv="Sjöstadskänsla" data-en="Lake city feeling">Sjöstadskänsla</strong>
+              <span data-sv="Vatten och grönska passar sidans lugna ton." data-en="Water and greenery fit the calm tone of the page.">
+                Vatten och grönska passar sidans lugna ton.
               </span>
             </div>
           </article>
 
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=82");'>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/LA2-vx06-vaxjosjon1.jpg");'>
             <div class="slide-label">
-              <strong data-sv="Gemensamma ytor" data-en="Shared spaces">Gemensamma ytor</strong>
-              <span data-sv="Visar vardag och lugn miljö." data-en="Shows everyday life and a calm environment.">
-                Visar vardag och lugn miljö.
+              <strong data-sv="Nära naturen" data-en="Close to nature">Nära naturen</strong>
+              <span data-sv="Mjukare och mer lokalt än kontorsbilder." data-en="Softer and more local than office stock images.">
+                Mjukare och mer lokalt än kontorsbilder.
               </span>
             </div>
           </article>
 
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=82");'>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Domkyrka%2C%2020220806.jpg");'>
             <div class="slide-label">
-              <strong data-sv="Trygg känsla" data-en="Safe feeling">Trygg känsla</strong>
-              <span data-sv="Mjuka färger och lugn interiör." data-en="Soft colours and calm interior.">
-                Mjuka färger och lugn interiör.
+              <strong data-sv="Växjö centrum" data-en="Växjö city centre">Växjö centrum</strong>
+              <span data-sv="Bra för trovärdighet och igenkänning." data-en="Good for credibility and recognition.">
+                Bra för trovärdighet och igenkänning.
               </span>
             </div>
           </article>
 
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=82");'>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6sj%C3%B6n%20-%20panoramio.jpg");'>
             <div class="slide-label">
-              <strong data-sv="Samtal och stöd" data-en="Conversation and support">Samtal och stöd</strong>
-              <span data-sv="Byt till egen bild på mötesmiljö eller neutral personalbild." data-en="Replace with your own image of a meeting environment or neutral staff photo.">
-                Byt till egen bild på mötesmiljö eller neutral personalbild.
+              <strong data-sv="Växjömiljö" data-en="Växjö environment">Växjömiljö</strong>
+              <span data-sv="Passar bättre än generiska lägenhetsbilder." data-en="Works better than generic apartment images.">
+                Passar bättre än generiska lägenhetsbilder.
               </span>
             </div>
           </article>
 
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=82");'>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/00%203349%20V%C3%A4xj%C3%B6%20domkyrka%20-%20Sweden.jpg");'>
             <div class="slide-label">
-              <strong data-sv="Hemlik känsla" data-en="Homelike feel">Hemlik känsla</strong>
-              <span data-sv="Detaljbild som mjukar upp sidan." data-en="Detail image that softens the page.">
-                Detaljbild som mjukar upp sidan.
-              </span>
-            </div>
-          </article>
-
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1400&q=82");'>
-            <div class="slide-label">
-              <strong data-sv="Vardag och struktur" data-en="Everyday life and structure">Vardag och struktur</strong>
-              <span data-sv="Bra för att visa närhet utan att bli privat." data-en="Good for showing closeness without feeling too private.">
-                Bra för att visa närhet utan att bli privat.
-              </span>
-            </div>
-          </article>
-
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1400&q=82");'>
-            <div class="slide-label">
-              <strong data-sv="Detaljer" data-en="Details">Detaljer</strong>
-              <span data-sv="Fler bilder gör sidan mer levande." data-en="More images make the page feel more alive.">
-                Fler bilder gör sidan mer levande.
+              <strong data-sv="Lokal närvaro" data-en="Local presence">Lokal närvaro</strong>
+              <span data-sv="Bilder från Växjö gör sidan mer förankrad." data-en="Images from Växjö make the page feel more grounded.">
+                Bilder från Växjö gör sidan mer förankrad.
               </span>
             </div>
           </article>
@@ -2028,22 +1929,6 @@
           <p class="lead" data-sv="För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt, utan att besökaren behöver leta." data-en="For supported housing, trust is crucial. Experience, education and ways of working therefore need to be presented clearly, without forcing the visitor to search.">
             För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt, utan att besökaren behöver leta.
           </p>
-
-          <div class="manager-card">
-            <div class="manager-card-top">
-              <div class="manager-thumb" aria-hidden="true"></div>
-              <div>
-                <h3 data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</h3>
-                <p data-sv="Liten profilbild kan ligga här. Byt gärna till riktig bild senare." data-en="A small profile image can be placed here. Feel free to replace it with a real photo later.">
-                  Liten profilbild kan ligga här. Byt gärna till riktig bild senare.
-                </p>
-              </div>
-            </div>
-
-            <p data-sv="Den här lilla bildrutan gör sidan mer personlig och ger mer förtroende i kontaktsektionen och kompetensdelen." data-en="This small image card makes the page feel more personal and builds more trust in both the contact section and competence section.">
-              Den här lilla bildrutan gör sidan mer personlig och ger mer förtroende i kontaktsektionen och kompetensdelen.
-            </p>
-          </div>
         </div>
 
         <div class="steps">
@@ -2102,8 +1987,8 @@
             <div class="manager-thumb" aria-hidden="true"></div>
             <div>
               <strong style="display:block; color:var(--ink);" data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
-              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Liten profilbild även här för tydligare avsändare" data-en="Small profile image here as well for a clearer sender">
-                Liten profilbild även här för tydligare avsändare
+              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Byt till riktig bild på Simon i skarp version" data-en="Replace with a real photo of Simon in the final version">
+                Byt till riktig bild på Simon i skarp version
               </span>
             </div>
           </div>
@@ -2179,9 +2064,9 @@
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit" data-sv="Skicka förfrågan" data-en="Send enquiry">Skicka förfrågan</button>
-            <button class="btn btn-secondary" type="button" id="downloadPdfHeader" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
-  Ladda ner informationsblad
-</button>
+            <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+              Ladda ner informationsblad
+            </button>
           </div>
 
           <p class="form-note" data-sv="Demoformulär. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde." data-en="Demo form. In the final version, the form is connected to the preferred email address or a secure case flow.">
@@ -2206,20 +2091,20 @@
 
       <div class="footer-right">
         <div class="socials" aria-label="Sociala medier">
-          <a class="social-icon" href="#" aria-label="Facebook">
+          <a class="social-icon facebook" href="#" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.2 0-.9-.1-1.8-.1-2.6 0-4.2 1.5-4.2 4.3V11H7.5v3H10v7h3.5z"/></svg>
           </a>
 
-          <a class="social-icon" href="#" aria-label="Instagram">
+          <a class="social-icon instagram" href="#" aria-label="Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9zm9.6 1.5a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1zM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 1.8A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1z"/></svg>
           </a>
 
-          <a class="social-icon" href="#" aria-label="LinkedIn">
+          <a class="social-icon linkedin" href="#" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3A1.6 1.6 0 1 1 5.2 5a1.6 1.6 0 0 1 0 3.3zM3.8 9.7h2.9V20H3.8V9.7zm4.8 0h2.8v1.4h.1c.4-.8 1.4-1.7 2.8-1.7 3 0 3.5 2 3.5 4.5V20H15v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H8.6V9.7z"/></svg>
           </a>
         </div>
 
-        <button class="btn btn-secondary" type="button" id="downloadPdfFooter" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+        <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
           Ladda ner informationsblad
         </button>
       </div>
@@ -2239,13 +2124,9 @@
     const increaseText = document.getElementById("increaseText");
     const form = document.getElementById("contactForm");
     const imageStrip = document.getElementById("imageStrip");
-
-    const downloadButtons = [
-      document.getElementById("downloadPdfHero"),
-      document.getElementById("downloadPdfHeader"),
-      document.getElementById("downloadPdfForm"),
-      document.getElementById("downloadPdfFooter")
-    ].filter(Boolean);
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const downloadButtons = document.querySelectorAll(".download-brochure");
 
     const STORAGE_TEXT = "r3startDemoTextSize";
     const STORAGE_CONTRAST = "r3startDemoContrast";
@@ -2273,10 +2154,6 @@
 
     let currentLang = localStorage.getItem(STORAGE_LANG) || "sv";
 
-    function textFor(el, lang){
-      return el.dataset[lang] || el.dataset.sv || "";
-    }
-
     function updateMeta(lang){
       const meta = META[lang] || META.sv;
       document.documentElement.lang = lang;
@@ -2298,10 +2175,8 @@
           return;
         }
 
-        if(el.hasAttribute("data-sv") && el.hasAttribute("data-en") && !el.matches("input, textarea")){
-          if(el.children.length === 0){
-            el.textContent = el.dataset[lang];
-          }
+        if(!el.matches("input, textarea") && el.children.length === 0){
+          el.textContent = el.dataset[lang];
         }
       });
 
@@ -2310,34 +2185,20 @@
       });
 
       const logoLink = document.getElementById("logoLink");
-      if(logoLink){
-        logoLink.setAttribute("aria-label", lang === "en" ? "To start page" : "Till startsidan");
-      }
+      if(logoLink) logoLink.setAttribute("aria-label", lang === "en" ? "To start page" : "Till startsidan");
 
       const topbarElement = document.querySelector(".topbar");
-      if(topbarElement){
-        topbarElement.setAttribute("aria-label", lang === "en" ? "Page tools" : "Sidverktyg");
-      }
+      if(topbarElement) topbarElement.setAttribute("aria-label", lang === "en" ? "Page tools" : "Sidverktyg");
 
-      const siteNavElement = document.getElementById("siteNav");
-      if(siteNavElement){
-        siteNavElement.setAttribute("aria-label", lang === "en" ? "Main menu" : "Huvudmeny");
-      }
-
-      const imageStripElement = document.getElementById("imageStrip");
-      if(imageStripElement){
-        imageStripElement.setAttribute("aria-label", lang === "en" ? "Image gallery" : "Bildgalleri");
-      }
-
-      const formElement = document.getElementById("contactForm");
-      if(formElement){
-        formElement.setAttribute("aria-label", lang === "en" ? "Contact form" : "Kontaktformulär");
-      }
+      if(siteNav) siteNav.setAttribute("aria-label", lang === "en" ? "Main menu" : "Huvudmeny");
+      if(imageStrip) imageStrip.setAttribute("aria-label", lang === "en" ? "Image gallery" : "Bildgalleri");
+      if(form) form.setAttribute("aria-label", lang === "en" ? "Contact form" : "Kontaktformulär");
 
       const socials = document.querySelector(".socials");
-      if(socials){
-        socials.setAttribute("aria-label", lang === "en" ? "Social media" : "Sociala medier");
-      }
+      if(socials) socials.setAttribute("aria-label", lang === "en" ? "Social media" : "Sociala medier");
+
+      if(galleryPrev) galleryPrev.setAttribute("aria-label", lang === "en" ? "Previous images" : "Föregående bilder");
+      if(galleryNext) galleryNext.setAttribute("aria-label", lang === "en" ? "Next images" : "Nästa bilder");
 
       updateMeta(lang);
     }
@@ -2392,9 +2253,7 @@
     }
 
     function updateFixedHeader(){
-      if(!siteHeader){
-        return;
-      }
+      if(!siteHeader) return;
 
       const topbarHeight = topbar ? topbar.offsetHeight : 0;
       const headerHeight = siteHeader.offsetHeight;
@@ -2408,77 +2267,31 @@
       }
     }
 
-    if(languageSelect){
-      languageSelect.addEventListener("change", function(){
-        applyLanguage(this.value);
-      });
+    function getSlideWidth(){
+      const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
+      if(!firstSlide) return 320;
+      const styles = window.getComputedStyle(imageStrip);
+      const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
+      return firstSlide.getBoundingClientRect().width + gap;
     }
 
-    if(menuBtn && siteNav){
-      menuBtn.addEventListener("click", () => {
-        const isOpen = siteNav.classList.toggle("open");
-        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-
-      siteNav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          siteNav.classList.remove("open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
-      });
+    function updateGalleryButtons(){
+      if(!imageStrip || !galleryPrev || !galleryNext) return;
+      const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
+      galleryPrev.disabled = imageStrip.scrollLeft <= 8;
+      galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
     }
 
-    if(increaseText){
-      increaseText.addEventListener("click", () => {
-        const isLargeNow = !root.classList.contains("large-text");
-        setLargeText(isLargeNow);
-      });
-    }
-
-    if(contrastToggle){
-      contrastToggle.addEventListener("click", () => {
-        const isHighContrastNow = !body.classList.contains("high-contrast");
-        setHighContrast(isHighContrastNow);
-      });
-    }
-
-    if(readPage){
-      readPage.addEventListener("click", () => {
-        if(!("speechSynthesis" in window)){
-          alert(currentLang === "en" ? "Your browser does not support text-to-speech." : "Din webbläsare stödjer inte uppläsning.");
-          return;
-        }
-
-        if(window.speechSynthesis.speaking){
-          window.speechSynthesis.cancel();
-          syncToolLabels();
-          return;
-        }
-
-        const utterance = new SpeechSynthesisUtterance(SUMMARIES[currentLang] || SUMMARIES.sv);
-        utterance.lang = currentLang === "en" ? "en-GB" : "sv-SE";
-        utterance.rate = currentLang === "en" ? 0.94 : 0.92;
-
-        utterance.onend = () => syncToolLabels();
-        utterance.onerror = () => syncToolLabels();
-
-        window.speechSynthesis.speak(utterance);
-        syncToolLabels();
-      });
-    }
-
-    if(form){
-      form.addEventListener("submit", function(event){
-        event.preventDefault();
-        alert(currentLang === "en"
-          ? "Demo form. In the final version, the enquiry is sent onward."
-          : "Demoformulär. I färdig version skickas förfrågan vidare."
-        );
+    function scrollGallery(direction){
+      if(!imageStrip) return;
+      imageStrip.scrollBy({
+        left:getSlideWidth() * direction,
+        behavior:"smooth"
       });
     }
 
     function downloadBrochure(){
-  const brochureHtml = `<!doctype html>
+      const brochureHtml = `<!doctype html>
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
@@ -2496,9 +2309,7 @@
       --line:#d9cbb8;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box;}
 
     body{
       margin:0;
@@ -2516,6 +2327,13 @@
       border-radius:28px;
       overflow:hidden;
       box-shadow:0 24px 70px rgba(20,32,27,.14);
+    }
+
+    .image{
+      min-height:250px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.42)),
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Cathedral%201.jpg") center/cover;
     }
 
     .hero{
@@ -2627,19 +2445,6 @@
       font-size:13px;
     }
 
-    @media print{
-      body{
-        background:#fff;
-      }
-
-      .page{
-        box-shadow:none;
-        margin:0;
-        border-radius:0;
-        max-width:none;
-      }
-    }
-
     @media (max-width:700px){
       .page{
         margin:0;
@@ -2664,6 +2469,8 @@
 
 <body>
   <main class="page">
+    <div class="image"></div>
+
     <section class="hero">
       <span class="badge">Informationsblad</span>
       <h1>R3start Växjö – stödboende och stödlägenheter</h1>
@@ -2735,22 +2542,96 @@
 </body>
 </html>`;
 
-  const blob = new Blob([brochureHtml], { type: "text/html;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
+      const blob = new Blob([brochureHtml], { type:"text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
 
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "r3start-vaxjo-informationsblad.html";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "r3start-vaxjo-informationsblad.html";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
 
-  URL.revokeObjectURL(url);
-}
+      URL.revokeObjectURL(url);
+    }
 
-downloadButtons.forEach(btn => {
-  btn.addEventListener("click", downloadBrochure);
-});
+    if(languageSelect){
+      languageSelect.addEventListener("change", function(){
+        applyLanguage(this.value);
+      });
+    }
+
+    if(menuBtn && siteNav){
+      menuBtn.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      siteNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    if(increaseText){
+      increaseText.addEventListener("click", () => {
+        setLargeText(!root.classList.contains("large-text"));
+      });
+    }
+
+    if(contrastToggle){
+      contrastToggle.addEventListener("click", () => {
+        setHighContrast(!body.classList.contains("high-contrast"));
+      });
+    }
+
+    if(readPage){
+      readPage.addEventListener("click", () => {
+        if(!("speechSynthesis" in window)){
+          alert(currentLang === "en" ? "Your browser does not support text-to-speech." : "Din webbläsare stödjer inte uppläsning.");
+          return;
+        }
+
+        if(window.speechSynthesis.speaking){
+          window.speechSynthesis.cancel();
+          syncToolLabels();
+          return;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(SUMMARIES[currentLang] || SUMMARIES.sv);
+        utterance.lang = currentLang === "en" ? "en-GB" : "sv-SE";
+        utterance.rate = currentLang === "en" ? 0.94 : 0.92;
+        utterance.onend = () => syncToolLabels();
+        utterance.onerror = () => syncToolLabels();
+
+        window.speechSynthesis.speak(utterance);
+        syncToolLabels();
+      });
+    }
+
+    if(form){
+      form.addEventListener("submit", function(event){
+        event.preventDefault();
+        alert(currentLang === "en"
+          ? "Demo form. In the final version, the enquiry is sent onward."
+          : "Demoformulär. I färdig version skickas förfrågan vidare."
+        );
+      });
+    }
+
+    downloadButtons.forEach(btn => {
+      btn.addEventListener("click", downloadBrochure);
+    });
+
+    if(galleryPrev){
+      galleryPrev.addEventListener("click", () => scrollGallery(-1));
+    }
+
+    if(galleryNext){
+      galleryNext.addEventListener("click", () => scrollGallery(1));
+    }
 
     if(imageStrip){
       let isDown = false;
@@ -2759,20 +2640,12 @@ downloadButtons.forEach(btn => {
 
       imageStrip.addEventListener("mousedown", (e) => {
         isDown = true;
-        imageStrip.classList.add("dragging");
         startX = e.pageX - imageStrip.offsetLeft;
         scrollLeft = imageStrip.scrollLeft;
       });
 
-      imageStrip.addEventListener("mouseleave", () => {
-        isDown = false;
-        imageStrip.classList.remove("dragging");
-      });
-
-      imageStrip.addEventListener("mouseup", () => {
-        isDown = false;
-        imageStrip.classList.remove("dragging");
-      });
+      imageStrip.addEventListener("mouseleave", () => { isDown = false; });
+      imageStrip.addEventListener("mouseup", () => { isDown = false; });
 
       imageStrip.addEventListener("mousemove", (e) => {
         if(!isDown) return;
@@ -2781,16 +2654,25 @@ downloadButtons.forEach(btn => {
         const walk = (x - startX) * 1.2;
         imageStrip.scrollLeft = scrollLeft - walk;
       });
+
+      imageStrip.addEventListener("scroll", updateGalleryButtons);
     }
 
     window.addEventListener("scroll", updateFixedHeader, { passive:true });
-    window.addEventListener("resize", updateFixedHeader);
-    window.addEventListener("load", updateFixedHeader);
+    window.addEventListener("resize", () => {
+      updateFixedHeader();
+      updateGalleryButtons();
+    });
+    window.addEventListener("load", () => {
+      updateFixedHeader();
+      updateGalleryButtons();
+    });
 
     setLargeText(localStorage.getItem(STORAGE_TEXT) === "large");
     setHighContrast(localStorage.getItem(STORAGE_CONTRAST) === "high");
     applyLanguage(currentLang);
     updateFixedHeader();
+    updateGalleryButtons();
   </script>
 </body>
 </html>
