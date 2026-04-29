@@ -35,6 +35,7 @@
 
       --gold:#b98542;
       --gold-2:#d9aa67;
+      --gold-soft:#f8ead6;
 
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
@@ -47,11 +48,10 @@
       --max:1180px;
       --focus:#b45309;
 
-      /* ännu mer genomskinliga textrutor */
-      --overlay-bg:rgba(255,250,243,.28);
-      --overlay-border:rgba(255,255,255,.45);
+      --overlay-bg:rgba(255,250,243,.42);
+      --overlay-border:rgba(255,255,255,.52);
       --overlay-ink:#10201a;
-      --overlay-muted:#20463a;
+      --overlay-muted:#1c4337;
 
       --header-offset:0px;
     }
@@ -539,7 +539,7 @@
       top:42px;
       z-index:3;
       width:min(260px, 72%);
-      background:rgba(255,250,243,.58);
+      background:rgba(255,250,243,.72);
       border:1px solid rgba(200,185,164,.85);
       border-radius:26px;
       padding:20px;
@@ -688,42 +688,6 @@
       color:var(--muted);
       font-weight:750;
       font-size:.96rem;
-      flex-wrap:wrap;
-    }
-
-    .gallery-tools{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .gallery-arrow{
-      width:48px;
-      height:48px;
-      border:none;
-      border-radius:999px;
-      background:var(--forest);
-      color:#ffffff;
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      font-size:1.3rem;
-      font-weight:900;
-      box-shadow:0 12px 26px rgba(22,56,47,.22);
-      transition:.18s ease;
-      flex:0 0 auto;
-    }
-
-    .gallery-arrow:hover{
-      transform:translateY(-1px);
-      background:var(--forest-2);
-    }
-
-    .gallery-arrow:disabled{
-      opacity:.45;
-      cursor:not-allowed;
-      transform:none;
     }
 
     .image-strip{
@@ -736,7 +700,6 @@
       cursor:grab;
       scrollbar-width:thin;
       scrollbar-color:#9aa69f transparent;
-      scroll-behavior:smooth;
     }
 
     .image-strip:active{
@@ -926,6 +889,43 @@
       font-weight:650;
     }
 
+    .manager-card{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:36px;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+      margin-top:24px;
+    }
+
+    .manager-card-top{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:16px;
+    }
+
+    .manager-thumb{
+      width:84px;
+      height:84px;
+      border-radius:24px;
+      flex:0 0 auto;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.12)),
+        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
+      border:1px solid var(--line-dark);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .manager-card h3{
+      margin-bottom:6px;
+    }
+
+    .manager-card p{
+      color:var(--muted);
+      font-weight:650;
+    }
+
     .contact{
       background:#151f1b;
       color:#ffffff;
@@ -985,16 +985,10 @@
       box-shadow:var(--shadow-soft);
     }
 
-    .manager-thumb{
-      width:78px;
-      height:78px;
+    .contact-person .manager-thumb{
+      width:72px;
+      height:72px;
       border-radius:20px;
-      flex:0 0 auto;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.12)),
-        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
-      border:1px solid var(--line-dark);
-      box-shadow:var(--shadow-soft);
     }
 
     .contact-links{
@@ -1121,39 +1115,28 @@
     }
 
     .social-icon{
-      width:46px;
-      height:46px;
+      width:44px;
+      height:44px;
       border-radius:999px;
       display:grid;
       place-items:center;
       text-decoration:none;
       color:#ffffff;
+      background:rgba(255,255,255,.08);
       border:1px solid rgba(255,255,255,.16);
       transition:.18s ease;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
     }
 
     .social-icon:hover{
-      transform:translateY(-1px) scale(1.03);
-      filter:brightness(1.06);
+      background:#ffffff;
+      color:#13211c;
+      transform:translateY(-1px);
     }
 
     .social-icon svg{
       width:20px;
       height:20px;
       fill:currentColor;
-    }
-
-    .social-icon.facebook{
-      background:#1877f2;
-    }
-
-    .social-icon.instagram{
-      background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);
-    }
-
-    .social-icon.linkedin{
-      background:#0a66c2;
     }
 
     .footer .btn-secondary{
@@ -1188,6 +1171,7 @@
     body.high-contrast .contact-box,
     body.high-contrast form,
     body.high-contrast .check-list li,
+    body.high-contrast .manager-card,
     body.high-contrast .contact-link,
     body.high-contrast .contact-person,
     body.high-contrast .score,
@@ -1460,7 +1444,8 @@
       .card,
       .panel,
       .contact-box,
-      form{
+      form,
+      .manager-card{
         border-radius:24px;
         padding:22px;
       }
@@ -1557,11 +1542,6 @@
       .footer-right{
         justify-content:flex-start;
       }
-
-      .gallery-tools{
-        width:100%;
-        justify-content:flex-start;
-      }
     }
 
     @media (max-width:390px){
@@ -1596,7 +1576,8 @@
       .card,
       .panel,
       .contact-box,
-      form{
+      form,
+      .manager-card{
         padding:18px;
       }
     }
@@ -1667,9 +1648,9 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-secondary" type="button" id="downloadPdfHeader" data-sv="Ladda ner som PDF" data-en="Download as PDF">
-          Ladda ner som PDF
-        </button>
+        <button class="btn btn-secondary" type="button" id="downloadPdfHeader" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+  Ladda ner informationsblad
+</button>
         <a class="btn btn-primary" href="#kontakt" data-sv="Kontakta oss" data-en="Contact us">Kontakta oss</a>
         <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav" data-sv="Meny" data-en="Menu">
           Meny
@@ -1697,9 +1678,9 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt" data-sv="Gör placeringsförfrågan" data-en="Submit placement enquiry">Gör placeringsförfrågan</a>
             <a class="btn btn-secondary" href="#bilder" data-sv="Se fler bilder" data-en="See more images">Se fler bilder</a>
-            <button class="btn btn-secondary" type="button" id="downloadPdfHero" data-sv="Ladda ner sidan som PDF" data-en="Download page as PDF">
-              Ladda ner sidan som PDF
-            </button>
+            <button class="btn btn-secondary" type="button" id="downloadPdfHeader" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+  Ladda ner informationsblad
+</button>
           </div>
 
           <div class="trust-row" aria-label="Förtroendepunkter">
@@ -1802,12 +1783,12 @@
             Varmare, lugnare och mer förtroende direkt.
           </h2>
 
-          <p data-sv="Här finns nu en horisontell bildsektion som man kan dra åt sidan både i mobil och på dator. Nu finns även pilar så det blir enklare att bläddra mellan bilderna." data-en="There is now a horizontal image section that can be dragged sideways on both mobile and desktop. There are also arrow buttons to make it easier to move between the images.">
-            Här finns nu en horisontell bildsektion som man kan dra åt sidan både i mobil och på dator. Nu finns även pilar så det blir enklare att bläddra mellan bilderna.
+          <p data-sv="Här finns nu en horisontell bildsektion som man kan dra åt sidan både i mobil och på dator. Lägg in egna miljöbilder senare, men under tiden kan ni visa flera stockbilder utan att sidan känns tung." data-en="There is now a horizontal image section that can be dragged sideways on both mobile and desktop. Replace the stock images later with your own environment photos, but for now you can show several images without the page feeling heavy.">
+            Här finns nu en horisontell bildsektion som man kan dra åt sidan både i mobil och på dator. Lägg in egna miljöbilder senare, men under tiden kan ni visa flera stockbilder utan att sidan känns tung.
           </p>
 
-          <p data-sv="Textrutorna ovanpå bilderna är nu ännu mer genomskinliga så att fotot syns bättre bakom. Samtidigt har texten fått mörk kontrastfärg för att vara tydlig." data-en="The text boxes on top of the images are now even more transparent so the photo is more visible behind them. At the same time, the text uses a darker contrast colour to stay clear.">
-            Textrutorna ovanpå bilderna är nu ännu mer genomskinliga så att fotot syns bättre bakom. Samtidigt har texten fått mörk kontrastfärg för att vara tydlig.
+          <p data-sv="Textrutorna ovanpå bilderna är nu mycket mer genomskinliga så att fotot syns bättre bakom. Samtidigt har texten fått mörk kontrastfärg för att vara tydlig." data-en="The text boxes on top of the images are now much more transparent so the photo is more visible behind them. At the same time, the text uses a darker contrast colour to stay clear.">
+            Textrutorna ovanpå bilderna är nu mycket mer genomskinliga så att fotot syns bättre bakom. Samtidigt har texten fått mörk kontrastfärg för att vara tydlig.
           </p>
 
           <div class="hero-actions">
@@ -1832,11 +1813,7 @@
           <span data-sv="Dra åt sidan för att se fler bilder" data-en="Drag sideways to see more images">
             Dra åt sidan för att se fler bilder
           </span>
-
-          <div class="gallery-tools">
-            <button class="gallery-arrow" type="button" id="galleryPrev" aria-label="Föregående bilder">←</button>
-            <button class="gallery-arrow" type="button" id="galleryNext" aria-label="Nästa bilder">→</button>
-          </div>
+          <span data-sv="Mobil och dator" data-en="Mobile and desktop">Mobil och dator</span>
         </div>
 
         <div class="image-strip" id="imageStrip" aria-label="Bildgalleri">
@@ -2051,6 +2028,22 @@
           <p class="lead" data-sv="För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt, utan att besökaren behöver leta." data-en="For supported housing, trust is crucial. Experience, education and ways of working therefore need to be presented clearly, without forcing the visitor to search.">
             För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt, utan att besökaren behöver leta.
           </p>
+
+          <div class="manager-card">
+            <div class="manager-card-top">
+              <div class="manager-thumb" aria-hidden="true"></div>
+              <div>
+                <h3 data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</h3>
+                <p data-sv="Liten profilbild kan ligga här. Byt gärna till riktig bild senare." data-en="A small profile image can be placed here. Feel free to replace it with a real photo later.">
+                  Liten profilbild kan ligga här. Byt gärna till riktig bild senare.
+                </p>
+              </div>
+            </div>
+
+            <p data-sv="Den här lilla bildrutan gör sidan mer personlig och ger mer förtroende i kontaktsektionen och kompetensdelen." data-en="This small image card makes the page feel more personal and builds more trust in both the contact section and competence section.">
+              Den här lilla bildrutan gör sidan mer personlig och ger mer förtroende i kontaktsektionen och kompetensdelen.
+            </p>
+          </div>
         </div>
 
         <div class="steps">
@@ -2105,13 +2098,12 @@
             Kontakta R3start Växjö vid frågor om ledig plats, akutplacering, samarbete eller mer information om verksamheten.
           </p>
 
-          <!-- enda bilden på Simon längst ner -->
           <div class="contact-person">
             <div class="manager-thumb" aria-hidden="true"></div>
             <div>
               <strong style="display:block; color:var(--ink);" data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
-              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Ett foto längst ner räcker fint för personlig känsla" data-en="One photo at the bottom is enough for a personal feel">
-                Ett foto längst ner räcker fint för personlig känsla
+              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Liten profilbild även här för tydligare avsändare" data-en="Small profile image here as well for a clearer sender">
+                Liten profilbild även här för tydligare avsändare
               </span>
             </div>
           </div>
@@ -2187,7 +2179,9 @@
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit" data-sv="Skicka förfrågan" data-en="Send enquiry">Skicka förfrågan</button>
-            <button class="btn btn-secondary" type="button" id="downloadPdfForm" data-sv="Ladda ner som PDF" data-en="Download as PDF">Ladda ner som PDF</button>
+            <button class="btn btn-secondary" type="button" id="downloadPdfHeader" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+  Ladda ner informationsblad
+</button>
           </div>
 
           <p class="form-note" data-sv="Demoformulär. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde." data-en="Demo form. In the final version, the form is connected to the preferred email address or a secure case flow.">
@@ -2212,21 +2206,21 @@
 
       <div class="footer-right">
         <div class="socials" aria-label="Sociala medier">
-          <a class="social-icon facebook" href="#" aria-label="Facebook">
+          <a class="social-icon" href="#" aria-label="Facebook">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.2 0-.9-.1-1.8-.1-2.6 0-4.2 1.5-4.2 4.3V11H7.5v3H10v7h3.5z"/></svg>
           </a>
 
-          <a class="social-icon instagram" href="#" aria-label="Instagram">
+          <a class="social-icon" href="#" aria-label="Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9zm9.6 1.5a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1zM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 1.8A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1z"/></svg>
           </a>
 
-          <a class="social-icon linkedin" href="#" aria-label="LinkedIn">
+          <a class="social-icon" href="#" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3A1.6 1.6 0 1 1 5.2 5a1.6 1.6 0 0 1 0 3.3zM3.8 9.7h2.9V20H3.8V9.7zm4.8 0h2.8v1.4h.1c.4-.8 1.4-1.7 2.8-1.7 3 0 3.5 2 3.5 4.5V20H15v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H8.6V9.7z"/></svg>
           </a>
         </div>
 
-        <button class="btn btn-secondary" type="button" id="downloadPdfFooter" data-sv="Ladda ner som PDF" data-en="Download as PDF">
-          Ladda ner som PDF
+        <button class="btn btn-secondary" type="button" id="downloadPdfFooter" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+          Ladda ner informationsblad
         </button>
       </div>
     </div>
@@ -2245,8 +2239,6 @@
     const increaseText = document.getElementById("increaseText");
     const form = document.getElementById("contactForm");
     const imageStrip = document.getElementById("imageStrip");
-    const galleryPrev = document.getElementById("galleryPrev");
-    const galleryNext = document.getElementById("galleryNext");
 
     const downloadButtons = [
       document.getElementById("downloadPdfHero"),
@@ -2281,6 +2273,10 @@
 
     let currentLang = localStorage.getItem(STORAGE_LANG) || "sv";
 
+    function textFor(el, lang){
+      return el.dataset[lang] || el.dataset.sv || "";
+    }
+
     function updateMeta(lang){
       const meta = META[lang] || META.sv;
       document.documentElement.lang = lang;
@@ -2302,8 +2298,10 @@
           return;
         }
 
-        if(!el.matches("input, textarea") && el.children.length === 0){
-          el.textContent = el.dataset[lang];
+        if(el.hasAttribute("data-sv") && el.hasAttribute("data-en") && !el.matches("input, textarea")){
+          if(el.children.length === 0){
+            el.textContent = el.dataset[lang];
+          }
         }
       });
 
@@ -2339,14 +2337,6 @@
       const socials = document.querySelector(".socials");
       if(socials){
         socials.setAttribute("aria-label", lang === "en" ? "Social media" : "Sociala medier");
-      }
-
-      if(galleryPrev){
-        galleryPrev.setAttribute("aria-label", lang === "en" ? "Previous images" : "Föregående bilder");
-      }
-
-      if(galleryNext){
-        galleryNext.setAttribute("aria-label", lang === "en" ? "Next images" : "Nästa bilder");
       }
 
       updateMeta(lang);
@@ -2418,30 +2408,6 @@
       }
     }
 
-    function getSlideWidth(){
-      const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
-      if(!firstSlide) return 320;
-      const styles = window.getComputedStyle(imageStrip);
-      const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
-      return firstSlide.getBoundingClientRect().width + gap;
-    }
-
-    function updateGalleryButtons(){
-      if(!imageStrip || !galleryPrev || !galleryNext) return;
-
-      const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
-      galleryPrev.disabled = imageStrip.scrollLeft <= 8;
-      galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
-    }
-
-    function scrollGallery(direction){
-      if(!imageStrip) return;
-      imageStrip.scrollBy({
-        left: getSlideWidth() * direction,
-        behavior: "smooth"
-      });
-    }
-
     if(languageSelect){
       languageSelect.addEventListener("change", function(){
         applyLanguage(this.value);
@@ -2511,19 +2477,280 @@
       });
     }
 
-    downloadButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        window.print();
-      });
-    });
-
-    if(galleryPrev){
-      galleryPrev.addEventListener("click", () => scrollGallery(-1));
+    function downloadBrochure(){
+  const brochureHtml = `<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>R3start Växjö – Informationsblad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --forest:#16382f;
+      --forest-2:#24594b;
+      --gold:#b98542;
+      --paper:#fffaf3;
+      --bg:#f3eadc;
+      --ink:#16211d;
+      --muted:#53615a;
+      --line:#d9cbb8;
     }
 
-    if(galleryNext){
-      galleryNext.addEventListener("click", () => scrollGallery(1));
+    *{
+      box-sizing:border-box;
     }
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.55;
+    }
+
+    .page{
+      max-width:900px;
+      margin:28px auto;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 24px 70px rgba(20,32,27,.14);
+    }
+
+    .hero{
+      background:linear-gradient(135deg, var(--forest), var(--forest-2));
+      color:#fff;
+      padding:42px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:999px;
+      padding:8px 13px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0;
+      font-size:44px;
+      line-height:1;
+      letter-spacing:-1.8px;
+      max-width:720px;
+    }
+
+    .hero p{
+      max-width:660px;
+      font-size:18px;
+      color:#edf7f2;
+      margin:20px 0 0;
+    }
+
+    .content{
+      padding:34px 42px 42px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      margin:24px 0;
+    }
+
+    .box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .box strong{
+      display:block;
+      font-size:22px;
+      color:var(--forest);
+      margin-bottom:4px;
+    }
+
+    h2{
+      font-size:28px;
+      line-height:1.08;
+      letter-spacing:-1px;
+      margin:34px 0 14px;
+    }
+
+    ul{
+      margin:0;
+      padding-left:20px;
+    }
+
+    li{
+      margin:9px 0;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .quality{
+      background:#f4eadc;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      margin:26px 0;
+    }
+
+    .quality strong{
+      color:var(--forest);
+      font-size:42px;
+      display:block;
+      line-height:1;
+    }
+
+    .contact{
+      background:#14231e;
+      color:#fff;
+      border-radius:22px;
+      padding:24px;
+      margin-top:28px;
+    }
+
+    .contact p{
+      margin:7px 0;
+      color:#eaf2ee;
+      font-weight:700;
+    }
+
+    .footer{
+      margin-top:24px;
+      color:#6b756f;
+      font-size:13px;
+    }
+
+    @media print{
+      body{
+        background:#fff;
+      }
+
+      .page{
+        box-shadow:none;
+        margin:0;
+        border-radius:0;
+        max-width:none;
+      }
+    }
+
+    @media (max-width:700px){
+      .page{
+        margin:0;
+        border-radius:0;
+      }
+
+      .hero,
+      .content{
+        padding:26px;
+      }
+
+      h1{
+        font-size:34px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="badge">Informationsblad</span>
+      <h1>R3start Växjö – stödboende och stödlägenheter</h1>
+      <p>
+        Stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna som behöver
+        struktur, trygghet och professionellt stöd framåt.
+      </p>
+    </section>
+
+    <section class="content">
+      <div class="grid">
+        <div class="box">
+          <strong>10 platser</strong>
+          <span>i stödlägenheter i Växjö</span>
+        </div>
+
+        <div class="box">
+          <strong>Akut</strong>
+          <span>kontakt vid brådskande behov</span>
+        </div>
+
+        <div class="box">
+          <strong>9,7/10</strong>
+          <span>SSIL Kvalitetsindex hösten 2025</span>
+        </div>
+      </div>
+
+      <h2>Placeringsformer</h2>
+      <ul>
+        <li>Stödboende / stödlägenhet för vuxna med behov av struktur och stöd i vardagen.</li>
+        <li>Externt stöd i eget boende för personer som behöver stöd i olika omfattning.</li>
+        <li>Akutplacering vid brådskande behov, beroende på ledig plats och situation.</li>
+      </ul>
+
+      <h2>Insatser</h2>
+      <ul>
+        <li>Kontaktmannaskap, veckomöten och planerade samtal.</li>
+        <li>Stöd i vardagsrutiner, myndighetskontakt, ekonomi, studier och arbete.</li>
+        <li>Uppföljning mot placeringsmål och nästa steg mot självständighet.</li>
+      </ul>
+
+      <div class="quality">
+        <strong>9,7</strong>
+        <p>
+          R3start Växjö placerade sig som nummer 1 i SSIL Kvalitetsindex hösten 2025.
+          En stark förtroendesignal för handläggare, kommuner och samarbetspartners.
+        </p>
+      </div>
+
+      <h2>Kompetens</h2>
+      <ul>
+        <li>Simon – cirka 11 års erfarenhet från bland annat stödboende, HVB, öppenvård och ledande roll.</li>
+        <li>Pernilla – föreståndare och beteendevetare med erfarenhet av socialt arbete och verksamhetsledning.</li>
+        <li>Team med kompetens inom bland annat beroende, psykiatri, NPF och behandlingspedagogik.</li>
+      </ul>
+
+      <div class="contact">
+        <h2 style="margin-top:0;color:#fff;">Kontakt</h2>
+        <p>Simon: 0793-594686</p>
+        <p>info@r3start.se</p>
+        <p>r3start.se</p>
+      </div>
+
+      <p class="footer">
+        Informationsbladet är framtaget som demo/designförslag. Text, uppgifter och bilder justeras vid skarp publicering.
+      </p>
+    </section>
+  </main>
+</body>
+</html>`;
+
+  const blob = new Blob([brochureHtml], { type: "text/html;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "r3start-vaxjo-informationsblad.html";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  URL.revokeObjectURL(url);
+}
+
+downloadButtons.forEach(btn => {
+  btn.addEventListener("click", downloadBrochure);
+});
 
     if(imageStrip){
       let isDown = false;
@@ -2532,16 +2759,19 @@
 
       imageStrip.addEventListener("mousedown", (e) => {
         isDown = true;
+        imageStrip.classList.add("dragging");
         startX = e.pageX - imageStrip.offsetLeft;
         scrollLeft = imageStrip.scrollLeft;
       });
 
       imageStrip.addEventListener("mouseleave", () => {
         isDown = false;
+        imageStrip.classList.remove("dragging");
       });
 
       imageStrip.addEventListener("mouseup", () => {
         isDown = false;
+        imageStrip.classList.remove("dragging");
       });
 
       imageStrip.addEventListener("mousemove", (e) => {
@@ -2551,25 +2781,16 @@
         const walk = (x - startX) * 1.2;
         imageStrip.scrollLeft = scrollLeft - walk;
       });
-
-      imageStrip.addEventListener("scroll", updateGalleryButtons);
     }
 
     window.addEventListener("scroll", updateFixedHeader, { passive:true });
-    window.addEventListener("resize", () => {
-      updateFixedHeader();
-      updateGalleryButtons();
-    });
-    window.addEventListener("load", () => {
-      updateFixedHeader();
-      updateGalleryButtons();
-    });
+    window.addEventListener("resize", updateFixedHeader);
+    window.addEventListener("load", updateFixedHeader);
 
     setLargeText(localStorage.getItem(STORAGE_TEXT) === "large");
     setHighContrast(localStorage.getItem(STORAGE_CONTRAST) === "high");
     applyLanguage(currentLang);
     updateFixedHeader();
-    updateGalleryButtons();
   </script>
 </body>
 </html>
