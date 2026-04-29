@@ -1,0 +1,2258 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Demo: R3start Växjö | Stödboende och stödlägenheter</title>
+  <meta
+    name="description"
+    content="Demo på ny premium one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och kontakt för kommuner, socialtjänst och anhöriga."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#efe8dc" />
+  <meta name="author" content="Nordlöf Nordic" />
+
+  <meta property="og:title" content="Demo: R3start Växjö | Stödboende och stödlägenheter" />
+  <meta property="og:description" content="Premiumdemo för R3start Växjö med fokus på förtroende, struktur, kvalitet och tydlig kontakt." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#efe8dc;
+      --bg-soft:#f8f3eb;
+      --paper:#fffaf3;
+      --white:#ffffff;
+
+      --ink:#16211d;
+      --muted:#53615a;
+      --soft:#738078;
+
+      --forest:#16382f;
+      --forest-2:#24594b;
+      --forest-soft:#dfeae4;
+
+      --gold:#b98542;
+      --gold-2:#d9aa67;
+      --gold-soft:#f8ead6;
+
+      --line:#ddd1c0;
+      --line-dark:#c8b9a4;
+
+      --shadow:0 28px 90px rgba(20,32,27,.16);
+      --shadow-soft:0 18px 50px rgba(20,32,27,.10);
+
+      --radius:28px;
+      --radius-lg:42px;
+      --max:1180px;
+      --focus:#b45309;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      text-size-adjust:100%;
+      font-size:16px;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(185,133,66,.22), transparent 34rem),
+        radial-gradient(circle at top right, rgba(22,56,47,.16), transparent 36rem),
+        linear-gradient(180deg, #f8f1e6 0%, #ece1d3 48%, #f8f3eb 100%);
+      line-height:1.6;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    html.large-text{
+      font-size:120%;
+    }
+
+    body.high-contrast{
+      background:#000000 !important;
+      color:#ffffff !important;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    h1,h2,h3,p,li,a,button,label,input,select,textarea{
+      overflow-wrap:anywhere;
+    }
+
+    :focus-visible{
+      outline:4px solid var(--focus);
+      outline-offset:4px;
+      border-radius:10px;
+    }
+
+    body.high-contrast :focus-visible{
+      outline:4px solid #ffff00 !important;
+    }
+
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:-90px;
+      background:#ffffff;
+      color:#000000;
+      padding:12px 16px;
+      border-radius:999px;
+      z-index:999;
+      font-weight:900;
+      transition:.2s ease;
+    }
+
+    .skip-link:focus{
+      top:12px;
+    }
+
+    .topbar{
+      background:#1a2c26;
+      color:#f6efe5;
+      font-size:.9rem;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .topbar-inner{
+      max-width:var(--max);
+      margin:auto;
+      padding:10px 18px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      font-weight:750;
+    }
+
+    .tools{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .tool-btn,
+    .language-select{
+      border:1px solid rgba(255,255,255,.28);
+      color:#ffffff;
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:8px 12px;
+      cursor:pointer;
+      font-weight:850;
+      font-size:.9rem;
+      min-height:39px;
+    }
+
+    .tool-btn:hover,
+    .language-select:hover{
+      background:#ffffff;
+      color:#13211c;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,250,243,.90);
+      backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(22,33,29,.10);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:15px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      min-width:max-content;
+    }
+
+    .logo-mark{
+      width:46px;
+      height:46px;
+      border-radius:16px;
+      background:
+        linear-gradient(135deg, var(--forest), var(--forest-2));
+      color:#ffffff;
+      display:grid;
+      place-items:center;
+      font-weight:950;
+      letter-spacing:-.07em;
+      box-shadow:0 15px 32px rgba(22,56,47,.22);
+      flex:0 0 auto;
+    }
+
+    .logo-text strong{
+      display:block;
+      font-size:1.05rem;
+      letter-spacing:-.03em;
+      line-height:1.1;
+      color:var(--ink);
+    }
+
+    .logo-text span{
+      display:block;
+      font-size:.82rem;
+      color:var(--muted);
+      line-height:1.25;
+    }
+
+    nav ul{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    nav a{
+      display:inline-flex;
+      padding:9px 12px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:850;
+      color:var(--ink);
+      font-size:.92rem;
+      white-space:nowrap;
+    }
+
+    nav a:hover{
+      background:var(--forest-soft);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .menu-btn{
+      display:none;
+      border:1px solid var(--line-dark);
+      background:#ffffff;
+      color:var(--forest);
+      border-radius:999px;
+      padding:10px 13px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      padding:13px 20px;
+      font-weight:900;
+      text-decoration:none;
+      cursor:pointer;
+      line-height:1;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      white-space:nowrap;
+      border:1px solid transparent;
+      font-size:.96rem;
+      text-align:center;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:var(--forest);
+      color:#ffffff;
+      border-color:var(--forest);
+      box-shadow:0 16px 38px rgba(22,56,47,.22);
+    }
+
+    .btn-primary:hover{
+      background:var(--forest-2);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.78);
+      color:var(--forest);
+      border-color:var(--line-dark);
+    }
+
+    .btn-secondary:hover{
+      background:#ffffff;
+    }
+
+    .btn-gold{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#17120a;
+      border-color:rgba(185,133,66,.55);
+      box-shadow:0 16px 38px rgba(185,133,66,.22);
+    }
+
+    main{
+      overflow:hidden;
+    }
+
+    section{
+      padding:88px 18px;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      background:rgba(185,133,66,.14);
+      color:#80531f;
+      border:1px solid rgba(185,133,66,.30);
+      border-radius:999px;
+      font-weight:950;
+      font-size:.86rem;
+      margin-bottom:18px;
+      max-width:100%;
+    }
+
+    h1,h2,h3{
+      margin:0;
+      line-height:1.04;
+      letter-spacing:-.055em;
+      color:var(--ink);
+    }
+
+    h1{
+      font-size:clamp(2.8rem, 6.4vw, 6.35rem);
+      max-width:910px;
+    }
+
+    h2{
+      font-size:clamp(2.05rem, 4.2vw, 3.6rem);
+      max-width:850px;
+    }
+
+    h3{
+      font-size:1.32rem;
+      letter-spacing:-.035em;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .lead{
+      font-size:clamp(1.08rem, 1.6vw, 1.28rem);
+      margin-top:22px;
+      max-width:730px;
+      color:var(--muted);
+      font-weight:650;
+    }
+
+    .hero{
+      padding:72px 18px 80px;
+    }
+
+    .hero-grid{
+      max-width:var(--max);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:44px;
+      align-items:center;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:32px;
+    }
+
+    .trust-row{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:32px;
+      max-width:790px;
+    }
+
+    .trust-pill{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(200,185,164,.78);
+      border-radius:22px;
+      padding:17px;
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(14px);
+    }
+
+    .trust-pill strong{
+      display:block;
+      font-size:1.18rem;
+      color:var(--ink);
+      line-height:1.2;
+      font-weight:950;
+    }
+
+    .trust-pill span{
+      display:block;
+      color:var(--muted);
+      font-size:.93rem;
+      margin-top:5px;
+      font-weight:700;
+    }
+
+    .hero-visual{
+      position:relative;
+      min-height:610px;
+    }
+
+    .hero-card{
+      background:#ffffff;
+      border:1px solid rgba(200,185,164,.8);
+      border-radius:40px;
+      padding:12px;
+      box-shadow:var(--shadow);
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-photo{
+      min-height:560px;
+      border-radius:30px;
+
+      /* STOCKBILD 1: byt till egen bild på boendemiljö / fasad / interiör */
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.44)),
+        url("https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1500&q=82") center/cover;
+
+      position:relative;
+      overflow:hidden;
+    }
+
+    .photo-caption{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      background:rgba(255,250,243,.95);
+      border:1px solid rgba(255,255,255,.82);
+      border-radius:26px;
+      padding:22px;
+      box-shadow:0 20px 46px rgba(0,0,0,.20);
+      backdrop-filter:blur(18px);
+    }
+
+    .photo-caption strong{
+      display:block;
+      font-size:1.12rem;
+      line-height:1.25;
+      color:var(--ink);
+      font-weight:950;
+    }
+
+    .photo-caption span{
+      display:block;
+      color:var(--muted);
+      margin-top:7px;
+      font-size:.96rem;
+      font-weight:700;
+    }
+
+    .floating-card{
+      position:absolute;
+      left:-22px;
+      top:42px;
+      z-index:3;
+      width:min(260px, 70%);
+      background:#fffaf3;
+      border:1px solid rgba(200,185,164,.85);
+      border-radius:26px;
+      padding:20px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .floating-card strong{
+      display:block;
+      font-size:2.3rem;
+      line-height:.9;
+      letter-spacing:-.07em;
+      color:var(--forest);
+    }
+
+    .floating-card span{
+      display:block;
+      color:var(--muted);
+      margin-top:9px;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    .mini-photo{
+      position:absolute;
+      right:-18px;
+      bottom:46px;
+      width:230px;
+      height:165px;
+      border-radius:28px;
+      border:8px solid #fffaf3;
+      box-shadow:var(--shadow);
+      z-index:4;
+
+      /* STOCKBILD 2: byt till egen detaljbild */
+      background:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=82") center/cover;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:28px;
+      margin-bottom:36px;
+    }
+
+    .section-head p{
+      max-width:550px;
+      font-size:1.06rem;
+      color:var(--muted);
+      font-weight:650;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(200,185,164,.8);
+      border-radius:var(--radius);
+      padding:27px;
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(12px);
+    }
+
+    .card-icon{
+      width:50px;
+      height:50px;
+      border-radius:18px;
+      background:var(--forest-soft);
+      display:grid;
+      place-items:center;
+      font-size:1.35rem;
+      margin-bottom:17px;
+    }
+
+    .card p{
+      margin-top:10px;
+      color:var(--muted);
+      font-weight:650;
+    }
+
+    .editorial{
+      background:#fffaf3;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .panel{
+      background:#ffffff;
+      color:var(--ink);
+      border-radius:36px;
+      padding:36px;
+      box-shadow:var(--shadow-soft);
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line-dark);
+    }
+
+    .panel p{
+      color:var(--muted);
+      margin-top:16px;
+      font-weight:650;
+    }
+
+    .image-panel{
+      min-height:430px;
+      border-radius:36px;
+      overflow:hidden;
+      border:1px solid var(--line-dark);
+      box-shadow:var(--shadow-soft);
+      position:relative;
+
+      /* STOCKBILD 3: byt till bild på miljö, mötesrum eller verksamhet */
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.40)),
+        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1300&q=82") center/cover;
+    }
+
+    .image-panel-text{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      background:rgba(255,250,243,.94);
+      border-radius:24px;
+      padding:20px;
+      border:1px solid rgba(255,255,255,.8);
+      box-shadow:0 20px 46px rgba(0,0,0,.18);
+    }
+
+    .image-panel-text strong{
+      display:block;
+      color:var(--ink);
+      font-weight:950;
+    }
+
+    .image-panel-text span{
+      display:block;
+      color:var(--muted);
+      margin-top:5px;
+      font-weight:700;
+    }
+
+    .check-list{
+      display:grid;
+      gap:14px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .check-list li{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:22px;
+      padding:19px 20px 19px 56px;
+      position:relative;
+      color:var(--muted);
+      box-shadow:var(--shadow-soft);
+      font-weight:650;
+    }
+
+    .check-list li::before{
+      content:"✓";
+      position:absolute;
+      left:18px;
+      top:19px;
+      width:27px;
+      height:27px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--forest), var(--forest-2));
+      color:#ffffff;
+      display:grid;
+      place-items:center;
+      font-weight:950;
+    }
+
+    .check-list strong{
+      color:var(--ink);
+      font-weight:950;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .gallery-main,
+    .gallery-side{
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid var(--line-dark);
+      box-shadow:var(--shadow-soft);
+      min-height:430px;
+      position:relative;
+    }
+
+    .gallery-main{
+      /* STOCKBILD 4: byt till egen bild på boendemiljö */
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.44)),
+        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=82") center/cover;
+    }
+
+    .gallery-side{
+      display:grid;
+      gap:18px;
+      border:0;
+      box-shadow:none;
+      min-height:430px;
+    }
+
+    .gallery-small{
+      border-radius:30px;
+      border:1px solid var(--line-dark);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+      position:relative;
+      min-height:206px;
+    }
+
+    .gallery-small.one{
+      /* STOCKBILD 5: byt till egen bild på samtal / möte */
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)),
+        url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=82") center/cover;
+    }
+
+    .gallery-small.two{
+      /* STOCKBILD 6: byt till egen detaljbild */
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)),
+        url("https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1000&q=82") center/cover;
+    }
+
+    .gallery-label{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      background:rgba(255,250,243,.93);
+      border:1px solid rgba(255,255,255,.82);
+      border-radius:20px;
+      padding:15px 16px;
+      font-weight:900;
+      color:var(--ink);
+      box-shadow:0 16px 36px rgba(0,0,0,.16);
+    }
+
+    .gallery-label span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:700;
+      margin-top:3px;
+    }
+
+    .quality-wrap{
+      background:
+        linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
+      color:#ffffff;
+      border-radius:44px;
+      padding:48px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.18);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .quality-wrap::before{
+      content:"";
+      position:absolute;
+      right:-160px;
+      top:-160px;
+      width:360px;
+      height:360px;
+      border-radius:999px;
+      background:rgba(217,170,103,.18);
+    }
+
+    .quality-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:34px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .score{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:34px;
+      padding:34px;
+      backdrop-filter:blur(12px);
+    }
+
+    .score strong{
+      display:block;
+      font-size:clamp(3.8rem, 8vw, 7.1rem);
+      line-height:.85;
+      letter-spacing:-.08em;
+      color:#ffffff;
+    }
+
+    .score span{
+      display:block;
+      margin-top:16px;
+      color:#fff4e3;
+      font-weight:850;
+    }
+
+    .quality-wrap .eyebrow{
+      background:rgba(255,255,255,.12);
+      color:#ffffff;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .quality-wrap h2,
+    .quality-wrap p{
+      color:#ffffff;
+    }
+
+    .quality-wrap p{
+      color:#edf7f2;
+      margin-top:16px;
+      font-size:1.08rem;
+      font-weight:650;
+    }
+
+    .steps{
+      counter-reset:step;
+      display:grid;
+      gap:16px;
+    }
+
+    .step{
+      counter-increment:step;
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:26px;
+      padding:24px 24px 24px 82px;
+      position:relative;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .step::before{
+      content:counter(step);
+      position:absolute;
+      left:24px;
+      top:24px;
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      background:linear-gradient(135deg, var(--forest), var(--forest-2));
+      color:#ffffff;
+      display:grid;
+      place-items:center;
+      font-weight:950;
+    }
+
+    .step p{
+      margin-top:7px;
+      color:var(--muted);
+      font-weight:650;
+    }
+
+    .verification{
+      background:#f6efe5;
+      color:var(--ink);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .verification-card{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:36px;
+      padding:36px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .verification-card p{
+      margin-top:16px;
+      color:var(--muted);
+      font-weight:650;
+    }
+
+    .verification-warning{
+      background:var(--gold-soft);
+      color:#704312;
+      border:1px solid rgba(185,133,66,.30);
+      border-radius:22px;
+      padding:19px;
+      font-weight:750;
+      margin-top:24px;
+    }
+
+    .verification-warning strong{
+      display:block;
+      color:#704312;
+      margin-bottom:5px;
+    }
+
+    .team-photo{
+      min-height:520px;
+      border-radius:36px;
+      border:1px solid var(--line-dark);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+      position:sticky;
+      top:104px;
+
+      /* STOCKBILD 7: byt till egen bild på teamet */
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.42)),
+        url("https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1300&q=82") center/cover;
+    }
+
+    .team-photo .gallery-label{
+      bottom:22px;
+    }
+
+    .contact{
+      background:#151f1b;
+      color:#ffffff;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    .contact h2,
+    .contact h3,
+    .contact p{
+      color:#ffffff;
+    }
+
+    .contact .eyebrow{
+      background:rgba(255,255,255,.10);
+      color:#ffffff;
+      border-color:rgba(255,255,255,.25);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .contact-box,
+    form{
+      background:#fffaf3;
+      color:var(--ink);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:36px;
+      padding:34px;
+      box-shadow:0 28px 70px rgba(0,0,0,.20);
+    }
+
+    .contact-box h2,
+    .contact-box h3,
+    form h3{
+      color:var(--ink);
+    }
+
+    .contact-box p{
+      color:var(--muted);
+      margin-top:14px;
+      font-weight:650;
+    }
+
+    .contact-links{
+      display:grid;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .contact-link{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:20px;
+      padding:17px;
+      text-decoration:none;
+      font-weight:950;
+      color:var(--ink);
+    }
+
+    .contact-link span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:700;
+      margin-top:3px;
+    }
+
+    label{
+      display:block;
+      font-weight:900;
+      margin-bottom:7px;
+      color:var(--ink);
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      border:1px solid #b9c0bb;
+      border-radius:16px;
+      padding:14px 15px;
+      font:inherit;
+      color:var(--ink);
+      background:#ffffff;
+      font-weight:650;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:#66736c;
+    }
+
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .field{
+      margin-bottom:16px;
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
+
+    .form-note{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-top:12px;
+      font-weight:650;
+    }
+
+    .footer{
+      background:#0f1714;
+      color:#ffffff;
+      padding:34px 18px;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+
+    .footer-inner{
+      max-width:var(--max);
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      color:#d9e0dc;
+      font-size:.95rem;
+    }
+
+    .footer strong{
+      color:#ffffff;
+    }
+
+    body.high-contrast header,
+    body.high-contrast .topbar,
+    body.high-contrast .footer,
+    body.high-contrast .contact{
+      background:#000000 !important;
+      color:#ffffff !important;
+      border-color:#ffffff !important;
+    }
+
+    body.high-contrast h1,
+    body.high-contrast h2,
+    body.high-contrast h3,
+    body.high-contrast p,
+    body.high-contrast .lead,
+    body.high-contrast .section-head p,
+    body.high-contrast nav a,
+    body.high-contrast .logo-text strong,
+    body.high-contrast .logo-text span{
+      color:#ffffff !important;
+    }
+
+    body.high-contrast .card,
+    body.high-contrast .panel,
+    body.high-contrast .step,
+    body.high-contrast .trust-pill,
+    body.high-contrast .contact-box,
+    body.high-contrast form,
+    body.high-contrast .check-list li,
+    body.high-contrast .verification-card,
+    body.high-contrast .verification-warning,
+    body.high-contrast .contact-link,
+    body.high-contrast .photo-caption,
+    body.high-contrast .image-panel-text,
+    body.high-contrast .gallery-label,
+    body.high-contrast .floating-card{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+      box-shadow:none !important;
+    }
+
+    body.high-contrast .card h3,
+    body.high-contrast .card p,
+    body.high-contrast .panel h2,
+    body.high-contrast .panel p,
+    body.high-contrast .step h3,
+    body.high-contrast .step p,
+    body.high-contrast .trust-pill strong,
+    body.high-contrast .trust-pill span,
+    body.high-contrast .contact-box h2,
+    body.high-contrast .contact-box p,
+    body.high-contrast .contact-link,
+    body.high-contrast .contact-link span,
+    body.high-contrast label,
+    body.high-contrast .check-list li,
+    body.high-contrast .check-list strong,
+    body.high-contrast .verification h2,
+    body.high-contrast .verification h3,
+    body.high-contrast .verification p,
+    body.high-contrast .verification-warning,
+    body.high-contrast .verification-warning strong,
+    body.high-contrast .photo-caption strong,
+    body.high-contrast .photo-caption span,
+    body.high-contrast .image-panel-text strong,
+    body.high-contrast .image-panel-text span,
+    body.high-contrast .gallery-label,
+    body.high-contrast .gallery-label span,
+    body.high-contrast .floating-card strong,
+    body.high-contrast .floating-card span{
+      color:#000000 !important;
+    }
+
+    body.high-contrast .quality-wrap{
+      background:#000000 !important;
+      border:3px solid #ffffff !important;
+      box-shadow:none !important;
+    }
+
+    body.high-contrast .score{
+      background:#000000 !important;
+      border:3px solid #ffffff !important;
+    }
+
+    body.high-contrast .btn,
+    body.high-contrast .menu-btn,
+    body.high-contrast .tool-btn,
+    body.high-contrast .language-select{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+      box-shadow:none !important;
+    }
+
+    body.high-contrast input,
+    body.high-contrast select,
+    body.high-contrast textarea{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .split,
+      .quality-grid,
+      .contact-grid,
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .hero-visual{
+        min-height:auto;
+      }
+
+      .hero-photo{
+        min-height:460px;
+      }
+
+      .floating-card,
+      .mini-photo{
+        display:none;
+      }
+
+      .cards,
+      .trust-row{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        display:none;
+      }
+
+      nav.open{
+        display:block;
+        position:absolute;
+        top:73px;
+        left:18px;
+        right:18px;
+        background:#fffaf3;
+        border:1px solid var(--line-dark);
+        border-radius:24px;
+        padding:10px;
+        box-shadow:var(--shadow);
+      }
+
+      nav.open ul{
+        display:grid;
+        gap:4px;
+      }
+
+      nav.open a{
+        width:100%;
+      }
+
+      .menu-btn{
+        display:inline-flex;
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-head p{
+        margin-top:14px;
+      }
+
+      .team-photo{
+        position:relative;
+        top:auto;
+      }
+    }
+
+    @media (max-width: 760px){
+      html.large-text{
+        font-size:112%;
+      }
+
+      body{
+        background:linear-gradient(180deg, #f8f3eb 0%, #efe7dc 100%);
+      }
+
+      .topbar-inner{
+        padding:10px 14px;
+        gap:10px;
+      }
+
+      .topbar-inner > span{
+        font-size:.88rem;
+        line-height:1.35;
+      }
+
+      .tools{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+      }
+
+      .language-select{
+        grid-column:1 / -1;
+        width:100%;
+      }
+
+      .tool-btn,
+      .language-select{
+        min-height:44px;
+        padding:10px 12px;
+        font-size:.92rem;
+        border-radius:14px;
+        white-space:normal;
+        line-height:1.2;
+      }
+
+      .nav{
+        padding:11px 14px;
+        gap:10px;
+      }
+
+      .logo{
+        gap:9px;
+        min-width:0;
+      }
+
+      .logo-mark{
+        width:39px;
+        height:39px;
+        border-radius:13px;
+        font-size:.95rem;
+      }
+
+      .logo-text strong{
+        font-size:1rem;
+        white-space:nowrap;
+      }
+
+      .logo-text span{
+        display:none;
+      }
+
+      .nav-actions .btn{
+        display:none;
+      }
+
+      .menu-btn{
+        min-height:42px;
+        padding:10px 14px;
+        flex:0 0 auto;
+      }
+
+      nav.open{
+        top:64px;
+        left:12px;
+        right:12px;
+        padding:10px;
+        border-radius:20px;
+        max-height:72vh;
+        overflow:auto;
+      }
+
+      nav.open a{
+        padding:13px 14px;
+        font-size:1rem;
+        white-space:normal;
+      }
+
+      section{
+        padding:58px 14px;
+      }
+
+      .hero{
+        padding:44px 14px 60px;
+      }
+
+      .hero-grid,
+      .split,
+      .quality-grid,
+      .contact-grid,
+      .gallery{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      h1{
+        font-size:clamp(2.18rem, 11vw, 3.25rem);
+        line-height:1.03;
+        letter-spacing:-.06em;
+      }
+
+      h2{
+        font-size:clamp(1.78rem, 8vw, 2.6rem);
+        line-height:1.08;
+      }
+
+      h3{
+        font-size:1.2rem;
+        line-height:1.16;
+      }
+
+      p,
+      li{
+        line-height:1.65;
+      }
+
+      .lead{
+        font-size:1.03rem;
+        line-height:1.65;
+        margin-top:18px;
+      }
+
+      .eyebrow{
+        font-size:.82rem;
+        line-height:1.25;
+        padding:8px 11px;
+        margin-bottom:14px;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:24px;
+      }
+
+      .btn{
+        width:100%;
+        min-height:48px;
+        padding:14px 16px;
+        font-size:1rem;
+        white-space:normal;
+        line-height:1.2;
+      }
+
+      .trust-row{
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:24px;
+      }
+
+      .trust-pill{
+        padding:15px;
+        border-radius:18px;
+      }
+
+      .hero-card{
+        border-radius:28px;
+        padding:8px;
+      }
+
+      .hero-photo{
+        min-height:340px;
+        border-radius:22px;
+        display:flex;
+        align-items:flex-end;
+        padding:12px;
+      }
+
+      .photo-caption{
+        position:static;
+        width:100%;
+        border-radius:18px;
+        padding:16px;
+      }
+
+      .section-head{
+        display:block;
+        margin-bottom:24px;
+      }
+
+      .section-head p{
+        margin-top:14px;
+        font-size:1rem;
+        line-height:1.65;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      .card,
+      .panel,
+      .verification-card,
+      .contact-box,
+      form{
+        border-radius:24px;
+        padding:22px;
+      }
+
+      .image-panel,
+      .team-photo,
+      .gallery-main,
+      .gallery-side{
+        min-height:330px;
+        border-radius:26px;
+      }
+
+      .gallery-side{
+        min-height:0;
+      }
+
+      .gallery-small{
+        min-height:230px;
+        border-radius:24px;
+      }
+
+      .image-panel-text,
+      .gallery-label{
+        left:14px;
+        right:14px;
+        bottom:14px;
+        border-radius:18px;
+        padding:14px;
+      }
+
+      .check-list{
+        gap:12px;
+      }
+
+      .check-list li{
+        padding:16px 15px 16px 48px;
+        border-radius:18px;
+        line-height:1.55;
+      }
+
+      .check-list li::before{
+        left:15px;
+        top:16px;
+      }
+
+      .quality-wrap{
+        border-radius:28px;
+        padding:25px;
+      }
+
+      .score{
+        border-radius:22px;
+        padding:23px;
+      }
+
+      .score strong{
+        font-size:clamp(3rem, 24vw, 5.2rem);
+      }
+
+      .step{
+        padding:20px 18px 20px 64px;
+        border-radius:20px;
+      }
+
+      .step::before{
+        left:17px;
+        top:20px;
+        width:34px;
+        height:34px;
+        border-radius:12px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+      input,
+      select,
+      textarea{
+        min-height:48px;
+        border-radius:13px;
+        padding:13px 14px;
+        font-size:1rem;
+      }
+
+      textarea{
+        min-height:135px;
+      }
+
+      .footer{
+        padding:28px 14px;
+      }
+
+      .footer-inner{
+        display:grid;
+        gap:14px;
+        font-size:.92rem;
+      }
+    }
+
+    @media (max-width: 390px){
+      .topbar-inner,
+      .nav,
+      section,
+      .hero,
+      .footer{
+        padding-left:12px;
+        padding-right:12px;
+      }
+
+      h1{
+        font-size:2.05rem;
+      }
+
+      h2{
+        font-size:1.65rem;
+      }
+
+      .logo-text strong{
+        max-width:52vw;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+      }
+
+      .hero-photo{
+        min-height:300px;
+      }
+
+      .card,
+      .panel,
+      .verification-card,
+      .contact-box,
+      form{
+        padding:18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+        transition:none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+  <div class="topbar" aria-label="Sidverktyg">
+    <div class="topbar-inner">
+      <span>Demo-förslag: premium one page för stödboende och stödlägenheter</span>
+
+      <div class="tools">
+        <label for="languageSelect" class="sr-only">Välj språk</label>
+        <select class="language-select" id="languageSelect" aria-label="Välj språk">
+          <option value="/r3start-vaxjo" selected>🇸🇪 Svenska</option>
+          <option value="/r3start-vaxjo-en">🇬🇧 English</option>
+          <option value="/r3start-vaxjo-da">🇩🇰 Dansk</option>
+          <option value="/r3start-vaxjo-no">🇳🇴 Norsk</option>
+        </select>
+
+        <button class="tool-btn" type="button" id="readPage">Läs kort sammanfattning</button>
+        <button class="tool-btn" type="button" id="increaseText" aria-pressed="false">Större text</button>
+        <button class="tool-btn" type="button" id="contrastToggle" aria-pressed="false">Hög kontrast</button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav">
+      <a class="logo" href="#top" aria-label="Till startsidan">
+        <span class="logo-mark">R3</span>
+        <span class="logo-text">
+          <strong>R3start Växjö</strong>
+          <span>Stödboende & stödlägenheter</span>
+        </span>
+      </a>
+
+      <nav id="siteNav" aria-label="Huvudmeny">
+        <ul>
+          <li><a href="#om">Om oss</a></li>
+          <li><a href="#miljo">Miljö</a></li>
+          <li><a href="#placeringsformer">Placeringsformer</a></li>
+          <li><a href="#insatser">Insatser</a></li>
+          <li><a href="#kvalitet">Kvalitet</a></li>
+          <li><a href="#verifiering">Verifiering</a></li>
+          <li><a href="#kompetens">Kompetens</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#kontakt">Kontakta oss</a>
+        <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Meny</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="readSummary" class="sr-only">
+    R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet.
+    Sidan riktar sig till socialtjänst, kommuner, placerare och anhöriga som snabbt behöver förstå placeringsformer, insatser, kvalitet och kontaktvägar.
+    Verksamheten har 10 platser i Växjö och lyfter SSIL Kvalitetsindex 9,7 av 10 från hösten 2025.
+    Besökaren kan kontakta verksamheten via telefon, e-post eller formulär för placeringsförfrågan, akut placering, samarbete eller frågor.
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Stödboende i Växjö för vuxna i social utsatthet</span>
+
+          <h1>Trygga stödlägenheter med struktur, närvaro och kvalitet.</h1>
+
+          <p class="lead">
+            R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna som behöver
+            en stabil boendemiljö, tydliga rutiner och ett professionellt stöd framåt.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt">Gör placeringsförfrågan</a>
+            <a class="btn btn-secondary" href="#placeringsformer">Se placeringsformer</a>
+          </div>
+
+          <div class="trust-row" aria-label="Förtroendepunkter">
+            <div class="trust-pill">
+              <strong>10 platser</strong>
+              <span>i stödlägenheter i Växjö</span>
+            </div>
+
+            <div class="trust-pill">
+              <strong>Akutplacering</strong>
+              <span>vid behov av snabb lösning</span>
+            </div>
+
+            <div class="trust-pill">
+              <strong>9,7/10</strong>
+              <span>SSIL Kvalitetsindex hösten 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Bildmiljö">
+          <div class="floating-card">
+            <strong>9,7</strong>
+            <span>av 10 i kvalitetsindex. En signal som bör synas direkt.</span>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-photo">
+              <div class="photo-caption">
+                <strong>Hemlik miljö med tydlig struktur.</strong>
+                <span>Stöd, rutiner och kontaktmannaskap anpassas efter individens behov.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mini-photo" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="om">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">För socialtjänst, kommuner och anhöriga</span>
+            <h2>En tydlig väg till stöd, struktur och nästa steg.</h2>
+          </div>
+
+          <p>
+            En bra verksamhetssida ska snabbt svara på det viktigaste: vilken målgrupp verksamheten tar emot,
+            vilka insatser som finns, hur kvalitet följs upp och vem man kontaktar.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🏠</div>
+            <h3>Stödlägenheter</h3>
+            <p>
+              Boendeform för vuxna som behöver stöd i vardag, struktur, myndighetskontakt och social återhämtning.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3>Individuellt stöd</h3>
+            <p>
+              Kontaktmannaskap, veckomöten, planerade samtal, praktiskt stöd och uppföljning utifrån placeringsmål.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📞</div>
+            <h3>Snabb kontakt</h3>
+            <p>
+              Tydlig kontaktväg för placeringsförfrågan, akut behov, samarbete eller frågor från anhöriga.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial" id="miljo">
+      <div class="wrap split">
+        <div class="panel">
+          <span class="eyebrow">Miljö och bemötande</span>
+          <h2>Varmare, lugnare och mer förtroende direkt.</h2>
+
+          <p>
+            Bildspråket bör visa trygghet, ordning, vardagsstruktur och mänsklighet. Det behöver inte vara stelt.
+            Det ska kännas professionellt, men fortfarande nära.
+          </p>
+
+          <p>
+            Stockbilderna här är bara exempel. I skarp version kan de ersättas med egna bilder från miljö,
+            personal, entré, gemensamma ytor eller neutrala detaljbilder.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt">Prata med verksamheten</a>
+          </div>
+        </div>
+
+        <div class="image-panel">
+          <div class="image-panel-text">
+            <strong>Premium utan att bli stelt.</strong>
+            <span>Stora bildytor, lugna färger och kortare text gör sidan enklare att ta in.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="gallery" aria-label="Exempel på bildsektion">
+          <div class="gallery-main">
+            <div class="gallery-label">
+              Boendemiljö
+              <span>Byt till egen bild på lägenhet, fasad eller gemensam yta.</span>
+            </div>
+          </div>
+
+          <div class="gallery-side">
+            <div class="gallery-small one">
+              <div class="gallery-label">
+                Samtal och stöd
+                <span>Byt till egen bild på mötesmiljö eller neutral personalbild.</span>
+              </div>
+            </div>
+
+            <div class="gallery-small two">
+              <div class="gallery-label">
+                Hemlik känsla
+                <span>Byt till detaljbild från miljön för mjukare intryck.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="placeringsformer">
+      <div class="wrap split">
+        <div class="panel">
+          <span class="eyebrow">Placeringsformer</span>
+          <h2>Rätt stödform från start.</h2>
+
+          <p>
+            Vid placering är det viktigt att snabbt förstå vilken typ av stöd som passar bäst.
+            Här presenteras placeringsformerna tydligt, utan krångliga omvägar.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt">Fråga om ledig plats</a>
+          </div>
+        </div>
+
+        <ul class="check-list">
+          <li>
+            <strong>Stödboende / stödlägenhet.</strong><br />
+            För vuxna som behöver en trygg boendeform med stöd i vardag, rutiner och planering.
+          </li>
+
+          <li>
+            <strong>Externt stöd i eget boende.</strong><br />
+            Stöd kan ges till personer som redan har eget boende men behöver stöd i olika omfattning.
+          </li>
+
+          <li>
+            <strong>Akutplacering.</strong><br />
+            Vid brådskande behov kan verksamheten kontaktas för att se om snabb placering är möjlig.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="insatser">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Insatser i vardagen</span>
+            <h2>Struktur, uppföljning och praktiskt stöd.</h2>
+          </div>
+
+          <p>
+            En placering behöver vara mer än en adress. Därför tydliggörs insatserna så att placerare,
+            handläggare och anhöriga snabbt ser vilket stöd som finns.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📋</div>
+            <h3>Planering och rutiner</h3>
+            <p>
+              Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">💬</div>
+            <h3>Samtal och kontaktmannaskap</h3>
+            <p>
+              Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🧭</div>
+            <h3>Väg vidare</h3>
+            <p>
+              Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kvalitet">
+      <div class="wrap">
+        <div class="quality-wrap">
+          <div class="quality-grid">
+            <div class="score">
+              <strong>9,7</strong>
+              <span>av 10 i SSIL Kvalitetsindex hösten 2025</span>
+            </div>
+
+            <div>
+              <span class="eyebrow">Förtroende som bör synas direkt</span>
+              <h2>Kvalitet ska inte gömmas längst ner på sidan.</h2>
+
+              <p>
+                R3start Växjö placerade sig som nummer 1 i SSIL Kvalitetsindex hösten 2025.
+                Det är en stark förtroendesignal för handläggare, kommuner, placerare och samarbetspartners.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-gold" href="#kontakt">Kontakta verksamheten</a>
+                <a class="btn btn-secondary" href="https://omtanke.today/fem-i-topp-i-kvalitetsindex-hosten-2025/" target="_blank" rel="noopener">
+                  Läs artikeln i Omtanke
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="verification" id="verifiering">
+      <div class="wrap split">
+        <div class="verification-card">
+          <span class="eyebrow">Trygghet och verifiering</span>
+          <h2>Verifierad digital närvaro stärker förtroendet.</h2>
+
+          <p class="lead">
+            För verksamheter inom stöd, boende och omsorg är det viktigt att besökaren snabbt kan se
+            att hemsidan tillhör rätt verksamhet.
+          </p>
+
+          <div class="verification-warning">
+            <strong>Rekommendation:</strong>
+            Koppla hemsidan till en verifierad social kanal, officiell extern källa eller annan tydlig verksamhetsprofil
+            som länkar tillbaka till exakt samma domän. Det minskar risken för missförstånd och stärker förtroendet vid kontakt.
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Verifierad social kanal</h3>
+            <p>
+              Hemsidan kan länka till en verifierad social medieprofil eller annan officiell kanal kopplad till verksamheten.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Länk tillbaka till exakt samma domän</h3>
+            <p>
+              Den externa profilen bör länka tillbaka till exakt samma hemsideadress, exempelvis r3start.se.
+              Då kan besökaren kontrollera kopplingen åt båda håll.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Tydligare avsändare</h3>
+            <p>
+              När hemsida, kontaktuppgifter och externa profiler hänger ihop blir det enklare att se att informationen kommer från rätt verksamhet.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kompetens">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Kompetens och erfarenhet</span>
+          <h2>Människor, metod och ansvar.</h2>
+
+          <p class="lead">
+            För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt,
+            utan att besökaren behöver leta.
+          </p>
+
+          <div class="team-photo" aria-label="Exempelbild på team">
+            <div class="gallery-label">
+              Team och kompetens
+              <span>Byt till egen personalbild, kontorsbild eller neutral verksamhetsbild.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Simon – cirka 11 års erfarenhet</h3>
+            <p>
+              Erfarenhet från bland annat akutboende, stödboende, HVB, öppenvårdsbehandling,
+              kontaktperson, boendestöd, terapeut samt ledande roll.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Pernilla – föreståndare och beteendevetare</h3>
+            <p>
+              Utbildad beteendevetare med psykologi som huvudämne och erfarenhet från socialt arbete,
+              behandling, kvalitetsansvar och verksamhetsledning.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Team med relevant kompetens</h3>
+            <p>
+              Personalgruppen har bland annat kompetens inom alkohol- och drogterapi, psykiatri,
+              KSL, NPF, beroendepedagogik och behandlingspedagogik.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Daglig dokumentation</h3>
+            <p>
+              Verksamheten använder Sekoia för daglig dokumentation och arbetar som ett team kring stöd, uppföljning och kvalitet.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-box">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Har ni en placeringsförfrågan?</h2>
+
+          <p>
+            Kontakta R3start Växjö vid frågor om ledig plats, akutplacering, samarbete eller mer information om verksamheten.
+          </p>
+
+          <div class="contact-links">
+            <a class="contact-link" href="tel:+46793594686">
+              Simon: 0793-594686
+              <span>Ring vid frågor eller placeringsförfrågan</span>
+            </a>
+
+            <a class="contact-link" href="mailto:info@r3start.se">
+              info@r3start.se
+              <span>Förfrågningar och samarbete</span>
+            </a>
+
+            <a class="contact-link" href="https://r3start.se" target="_blank" rel="noopener">
+              r3start.se
+              <span>Nuvarande webbplats</span>
+            </a>
+          </div>
+        </div>
+
+        <form action="#" method="post" aria-label="Kontaktformulär">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Namn</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="role">Jag kontaktar som</label>
+              <select id="role" name="role" required>
+                <option value="">Välj alternativ</option>
+                <option>Socialtjänst / kommun</option>
+                <option>Anhörig</option>
+                <option>Samarbetspartner</option>
+                <option>Annat</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="email">E-post</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+
+            <div class="field full">
+              <label for="type">Ärende</label>
+              <select id="type" name="type">
+                <option>Placeringsförfrågan</option>
+                <option>Akut placering</option>
+                <option>Fråga om insatser</option>
+                <option>Samarbete</option>
+                <option>Övrigt</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message">Meddelande</label>
+              <textarea id="message" name="message" placeholder="Skriv kort vad ärendet gäller..."></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Skicka förfrågan</button>
+
+          <p class="form-note">
+            Demoformulär. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>R3start Växjö</strong><br />
+        Stödboende, stödlägenheter och externa insatser.
+      </div>
+
+      <div>
+        Demo framtagen som designförslag. Text, bilder, länkar och uppgifter justeras vid skarp publicering.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const root = document.documentElement;
+    const menuBtn = document.getElementById("menuBtn");
+    const siteNav = document.getElementById("siteNav");
+    const contrastToggle = document.getElementById("contrastToggle");
+    const readPage = document.getElementById("readPage");
+    const languageSelect = document.getElementById("languageSelect");
+    const increaseText = document.getElementById("increaseText");
+    const form = document.querySelector("form");
+    const readSummary = document.getElementById("readSummary");
+
+    const STORAGE_TEXT = "r3startDemoTextSize";
+    const STORAGE_CONTRAST = "r3startDemoContrast";
+
+    function setHighContrast(isHighContrast){
+      body.classList.toggle("high-contrast", isHighContrast);
+
+      if(contrastToggle){
+        contrastToggle.setAttribute("aria-pressed", isHighContrast ? "true" : "false");
+        contrastToggle.textContent = isHighContrast ? "Normal kontrast" : "Hög kontrast";
+      }
+
+      localStorage.setItem(STORAGE_CONTRAST, isHighContrast ? "high" : "normal");
+    }
+
+    function setLargeText(isLarge){
+      root.classList.toggle("large-text", isLarge);
+
+      if(increaseText){
+        increaseText.setAttribute("aria-pressed", isLarge ? "true" : "false");
+        increaseText.textContent = isLarge ? "Normal textstorlek" : "Större text";
+      }
+
+      localStorage.setItem(STORAGE_TEXT, isLarge ? "large" : "normal");
+    }
+
+    if(languageSelect){
+      languageSelect.addEventListener("change", function(){
+        const target = this.value;
+        if(target){
+          window.location.href = target;
+        }
+      });
+    }
+
+    if(menuBtn && siteNav){
+      menuBtn.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      siteNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    if(increaseText){
+      increaseText.addEventListener("click", () => {
+        const isLargeNow = !root.classList.contains("large-text");
+        setLargeText(isLargeNow);
+      });
+    }
+
+    if(contrastToggle){
+      contrastToggle.addEventListener("click", () => {
+        const isHighContrastNow = !body.classList.contains("high-contrast");
+        setHighContrast(isHighContrastNow);
+      });
+    }
+
+    setLargeText(localStorage.getItem(STORAGE_TEXT) === "large");
+    setHighContrast(localStorage.getItem(STORAGE_CONTRAST) === "high");
+
+    if(readPage){
+      readPage.addEventListener("click", () => {
+        if(!("speechSynthesis" in window)){
+          alert("Din webbläsare stödjer inte uppläsning.");
+          return;
+        }
+
+        if(window.speechSynthesis.speaking){
+          window.speechSynthesis.cancel();
+          readPage.textContent = "Läs kort sammanfattning";
+          return;
+        }
+
+        const summaryText = readSummary
+          ? readSummary.innerText.trim()
+          : "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet.";
+
+        const utterance = new SpeechSynthesisUtterance(summaryText);
+        utterance.lang = "sv-SE";
+        utterance.rate = 0.92;
+
+        utterance.onend = () => {
+          readPage.textContent = "Läs kort sammanfattning";
+        };
+
+        utterance.onerror = () => {
+          readPage.textContent = "Läs kort sammanfattning";
+        };
+
+        readPage.textContent = "Stoppa uppläsning";
+        window.speechSynthesis.speak(utterance);
+      });
+    }
+
+    if(form){
+      form.addEventListener("submit", function(event){
+        event.preventDefault();
+        alert("Demoformulär. I färdig version skickas förfrågan vidare.");
+      });
+    }
+  </script>
+</body>
+</html>
