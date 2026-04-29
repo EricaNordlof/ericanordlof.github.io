@@ -1474,6 +1474,78 @@
       border:3px solid #000000 !important;
     }
 
+    /* SLUT-FIX HÖG KONTRAST: text i vita rutor och vita knappar */
+body.high-contrast .contact-box,
+body.high-contrast .contact-box *,
+body.high-contrast form,
+body.high-contrast form *,
+body.high-contrast .contact-link,
+body.high-contrast .contact-link *,
+body.high-contrast .contact-person,
+body.high-contrast .contact-person *,
+body.high-contrast .person-row,
+body.high-contrast .person-row *{
+  color:#000000 !important;
+  text-shadow:none !important;
+}
+
+/* Kontakt-rubrik inne i vit ruta */
+body.high-contrast .contact-box h2,
+body.high-contrast .contact-box h3,
+body.high-contrast .contact-box p,
+body.high-contrast .contact-box strong,
+body.high-contrast .contact-box span{
+  color:#000000 !important;
+}
+
+/* Knappar i mörka sektioner: vit knapp, svart text */
+body.high-contrast .quality-wrap .btn,
+body.high-contrast .quality-wrap .btn *,
+body.high-contrast .footer .btn,
+body.high-contrast .footer .btn *,
+body.high-contrast .contact .btn,
+body.high-contrast .contact .btn *{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#ffffff !important;
+  text-shadow:none !important;
+}
+
+/* Knappar inne i vita formulär/kort: vit knapp, svart kant, svart text */
+body.high-contrast form .btn,
+body.high-contrast form .btn *,
+body.high-contrast .contact-box .btn,
+body.high-contrast .contact-box .btn *,
+body.high-contrast .panel .btn,
+body.high-contrast .panel .btn *{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#000000 !important;
+  text-shadow:none !important;
+}
+
+/* Om text råkar ligga direkt i knapp/länk utan span */
+body.high-contrast a.btn,
+body.high-contrast button.btn{
+  color:#000000 !important;
+}
+
+/* Kvalitetssektionen: rubriker/brödtext fortsatt vit på svart */
+body.high-contrast .quality-wrap h2,
+body.high-contrast .quality-wrap p,
+body.high-contrast .quality-wrap > *,
+body.high-contrast .quality-wrap .quality-grid > div:not(.score) *:not(.btn):not(.btn *){
+  color:#ffffff !important;
+}
+
+/* Score-kortet i kvalitet ska vara vitt med svart text */
+body.high-contrast .quality-wrap .score,
+body.high-contrast .quality-wrap .score *{
+  background:#ffffff !important;
+  color:#000000 !important;
+  text-shadow:none !important;
+}
+
     @media (max-width:1120px){
       .mini-photo{
         display:none;
