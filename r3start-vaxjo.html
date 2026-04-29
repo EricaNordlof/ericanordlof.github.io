@@ -7,27 +7,26 @@
   <title>Demo: R3start Växjö | Stödboende och stödlägenheter</title>
   <meta
     name="description"
-    content="Demo på ny one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, insatser, akutplacering, verifiering och kontakt för kommuner, socialtjänst och anhöriga."
+    content="Demo på ny one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, insatser, akutplacering, kvalitet, verifiering och kontakt för kommuner, socialtjänst och anhöriga."
   />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#f4efe6" />
+  <meta name="author" content="Nordlöf Nordic" />
+
+  <meta property="og:title" content="Demo: R3start Växjö | Stödboende och stödlägenheter" />
+  <meta property="og:description" content="Demo på tydligare one page för R3start Växjö med fokus på socialtjänst, kommuner, anhöriga och placerare." />
+  <meta property="og:type" content="website" />
 
   <style>
     :root{
       --bg:#f4efe6;
-      --bg-soft:#ebe3d6;
+      --bg-2:#efe7dc;
       --paper:#ffffff;
       --paper-soft:#faf7f1;
 
       --ink:#17211d;
       --muted:#4c5a53;
-      --muted-strong:#26342e;
-
-      --dark-text:#14201b;
-      --dark-muted:#394a42;
-
-      --line:#ded5c8;
-      --line-dark:#d8d1c7;
+      --soft-text:#65726b;
 
       --brand:#2f5d50;
       --brand-dark:#18392f;
@@ -39,6 +38,9 @@
 
       --warning:#7c3f16;
       --warning-soft:#fff4e4;
+
+      --line:#ded5c8;
+      --line-strong:#cfc5b7;
 
       --shadow:0 20px 70px rgba(20,32,27,.13);
       --shadow-soft:0 16px 46px rgba(20,32,27,.10);
@@ -81,7 +83,8 @@
     html.large-text input,
     html.large-text select,
     html.large-text textarea,
-    html.large-text .btn{
+    html.large-text .btn,
+    html.large-text nav a{
       font-size:1.08rem;
     }
 
@@ -92,7 +95,7 @@
       background:
         radial-gradient(circle at top left, rgba(47,93,80,.16), transparent 30rem),
         radial-gradient(circle at top right, rgba(197,139,76,.18), transparent 32rem),
-        linear-gradient(180deg, #f7f2ea 0%, #efe7dc 100%);
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       line-height:1.6;
     }
 
@@ -150,7 +153,7 @@
     }
 
     .topbar{
-      background:#d8d3ca;
+      background:#ded7ce;
       color:#111111;
       font-size:.92rem;
       border-bottom:1px solid rgba(0,0,0,.08);
@@ -211,7 +214,7 @@
       position:sticky;
       top:0;
       z-index:50;
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.92);
       backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(20,32,27,.12);
     }
@@ -257,13 +260,13 @@
       font-size:1.05rem;
       letter-spacing:-.03em;
       line-height:1.1;
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     .logo-text span{
       display:block;
       font-size:.82rem;
-      color:var(--dark-muted);
+      color:var(--muted);
       line-height:1.25;
     }
 
@@ -282,7 +285,7 @@
       border-radius:999px;
       text-decoration:none;
       font-weight:850;
-      color:var(--dark-text);
+      color:var(--ink);
       font-size:.92rem;
     }
 
@@ -298,7 +301,7 @@
 
     .menu-btn{
       display:none;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       background:#ffffff;
       color:var(--brand-dark);
       border-radius:999px;
@@ -342,7 +345,7 @@
     .btn-secondary{
       background:#ffffff;
       color:var(--brand-dark);
-      border-color:var(--line-dark);
+      border-color:var(--line-strong);
     }
 
     .btn-secondary:hover{
@@ -472,7 +475,7 @@
 
     .trust-pill{
       background:#ffffff;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:18px;
       padding:16px;
       box-shadow:var(--shadow-soft);
@@ -481,14 +484,14 @@
     .trust-pill strong{
       display:block;
       font-size:1.15rem;
-      color:var(--dark-text);
+      color:var(--ink);
       line-height:1.2;
       font-weight:950;
     }
 
     .trust-pill span{
       display:block;
-      color:var(--dark-muted);
+      color:var(--muted);
       font-size:.93rem;
       margin-top:5px;
       font-weight:650;
@@ -496,7 +499,7 @@
 
     .hero-card{
       background:#ffffff;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:32px;
       padding:12px;
       box-shadow:var(--shadow);
@@ -517,7 +520,7 @@
       left:20px;
       right:20px;
       bottom:20px;
-      background:rgba(255,255,255,.95);
+      background:rgba(255,255,255,.96);
       border:1px solid rgba(255,255,255,.82);
       border-radius:22px;
       padding:20px;
@@ -528,13 +531,13 @@
       display:block;
       font-size:1.08rem;
       line-height:1.25;
-      color:var(--dark-text);
+      color:var(--ink);
       font-weight:950;
     }
 
     .photo-caption span{
       display:block;
-      color:var(--dark-muted);
+      color:var(--muted);
       margin-top:6px;
       font-size:.96rem;
       font-weight:650;
@@ -563,7 +566,7 @@
 
     .card{
       background:#ffffff;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:var(--radius);
       padding:25px;
       box-shadow:var(--shadow-soft);
@@ -581,12 +584,12 @@
     }
 
     .card h3{
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     .card p{
       margin-top:10px;
-      color:var(--dark-muted);
+      color:var(--muted);
       font-weight:600;
     }
 
@@ -599,23 +602,23 @@
 
     .panel{
       background:#ffffff;
-      color:var(--dark-text);
+      color:var(--ink);
       border-radius:32px;
       padding:34px;
       box-shadow:var(--shadow-soft);
       position:relative;
       overflow:hidden;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
     }
 
     .panel h2,
     .verification-card h2{
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     .panel p,
     .verification-card p{
-      color:var(--dark-muted);
+      color:var(--muted);
       margin-top:16px;
       font-weight:600;
     }
@@ -636,11 +639,11 @@
 
     .check-list li{
       background:#ffffff;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:18px;
       padding:17px 18px 17px 52px;
       position:relative;
-      color:var(--dark-muted);
+      color:var(--muted);
       box-shadow:var(--shadow-soft);
       font-weight:600;
     }
@@ -661,7 +664,7 @@
     }
 
     .check-list strong{
-      color:var(--dark-text);
+      color:var(--ink);
       font-weight:950;
     }
 
@@ -724,23 +727,23 @@
 
     .verification{
       background:#f3f0ea;
-      color:var(--dark-text);
-      border-top:1px solid var(--line-dark);
-      border-bottom:1px solid var(--line-dark);
+      color:var(--ink);
+      border-top:1px solid var(--line-strong);
+      border-bottom:1px solid var(--line-strong);
     }
 
     .verification h2,
     .verification h3{
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     .verification .lead{
-      color:var(--dark-muted);
+      color:var(--muted);
     }
 
     .verification-card{
       background:#ffffff;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:32px;
       padding:34px;
       box-shadow:var(--shadow-soft);
@@ -771,7 +774,7 @@
     .step{
       counter-increment:step;
       background:#ffffff;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:24px;
       padding:23px 23px 23px 78px;
       position:relative;
@@ -794,24 +797,24 @@
     }
 
     .step h3{
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     .step p{
       margin-top:7px;
-      color:var(--dark-muted);
+      color:var(--muted);
       font-weight:600;
     }
 
     .contact{
       background:#f3f0ea;
-      border-top:1px solid var(--line-dark);
-      color:var(--dark-text);
+      border-top:1px solid var(--line-strong);
+      color:var(--ink);
     }
 
     .contact h2,
     .contact h3{
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     .contact-grid{
@@ -824,14 +827,14 @@
     .contact-box,
     form{
       background:#ffffff;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:32px;
       padding:32px;
       box-shadow:var(--shadow-soft);
     }
 
     .contact-box p{
-      color:var(--dark-muted);
+      color:var(--muted);
       margin-top:14px;
       font-weight:600;
     }
@@ -844,17 +847,17 @@
 
     .contact-link{
       background:#f7f4ef;
-      border:1px solid var(--line-dark);
+      border:1px solid var(--line-strong);
       border-radius:18px;
       padding:16px;
       text-decoration:none;
       font-weight:900;
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     .contact-link span{
       display:block;
-      color:var(--dark-muted);
+      color:var(--muted);
       font-size:.9rem;
       font-weight:700;
       margin-top:3px;
@@ -864,7 +867,7 @@
       display:block;
       font-weight:900;
       margin-bottom:7px;
-      color:var(--dark-text);
+      color:var(--ink);
     }
 
     input,
@@ -875,7 +878,7 @@
       border-radius:15px;
       padding:14px 15px;
       font:inherit;
-      color:var(--dark-text);
+      color:var(--ink);
       background:#ffffff;
       font-weight:600;
     }
@@ -906,7 +909,7 @@
 
     .form-note{
       font-size:.9rem;
-      color:var(--dark-muted);
+      color:var(--muted);
       margin-top:12px;
       font-weight:600;
     }
@@ -1063,7 +1066,7 @@
         left:18px;
         right:18px;
         background:#ffffff;
-        border:1px solid var(--line-dark);
+        border:1px solid var(--line-strong);
         border-radius:24px;
         padding:10px;
         box-shadow:var(--shadow);
@@ -1181,10 +1184,10 @@
       <div class="tools">
         <label for="languageSelect" class="sr-only">Välj språk</label>
         <select class="language-select" id="languageSelect" aria-label="Välj språk">
-          <option value="demo-r3start.html" selected>🇸🇪 Svenska</option>
-          <option value="demo-r3start-en.html">🇬🇧 English</option>
-          <option value="demo-r3start-da.html">🇩🇰 Dansk</option>
-          <option value="demo-r3start-no.html">🇳🇴 Norsk</option>
+          <option value="/r3start-vaxjo" selected>🇸🇪 Svenska</option>
+          <option value="/r3start-vaxjo-en">🇬🇧 English</option>
+          <option value="/r3start-vaxjo-da">🇩🇰 Dansk</option>
+          <option value="/r3start-vaxjo-no">🇳🇴 Norsk</option>
         </select>
 
         <button class="tool-btn" type="button" id="readPage">Läs upp</button>
@@ -1232,7 +1235,7 @@
           <h1>Trygga stödlägenheter med tydliga insatser och nära stöd.</h1>
 
           <p class="lead">
-            R3start Växjö erbjuder stödlägenheter, externa insatser och akutplaceringar för vuxna som behöver struktur,
+            R3start Växjö erbjuder stödlägenheter, externt stöd och akutplaceringar för vuxna som behöver struktur,
             stöd och en fungerande väg framåt.
           </p>
 
@@ -1297,7 +1300,7 @@
             <div class="card-icon" aria-hidden="true">🤝</div>
             <h3>Individuellt stöd</h3>
             <p>
-              Kontaktmannaskap, planerade samtal, praktiskt stöd och uppföljning utifrån placeringsmål.
+              Kontaktmannaskap, veckomöten, planerade samtal, praktiskt stöd och uppföljning utifrån placeringsmål.
             </p>
           </article>
 
@@ -1335,8 +1338,8 @@
           </li>
 
           <li>
-            <strong>Externa insatser.</strong><br />
-            Stöd kan ges även till personer i eget boende, exempelvis genom kontaktmannaskap och praktiskt stöd.
+            <strong>Externt stöd i eget boende.</strong><br />
+            Stöd kan ges till personer som redan har eget boende men behöver stöd i olika omfattning.
           </li>
 
           <li>
@@ -1403,12 +1406,15 @@
               <h2>Kvalitet ska inte gömmas långt ner på sidan.</h2>
 
               <p>
-                När verksamheten har starka resultat och goda omdömen ska det lyftas tydligt.
-                Det gör det enklare för handläggare, kommuner och placerare att snabbt förstå verksamhetens seriositet.
+                R3start Växjö placerade sig som nummer 1 i SSIL Kvalitetsindex hösten 2025.
+                Det är en stark förtroendesignal för handläggare, kommuner, placerare och samarbetspartners.
               </p>
 
               <div class="hero-actions">
                 <a class="btn btn-accent" href="#kontakt">Kontakta verksamheten</a>
+                <a class="btn btn-secondary" href="https://omtanke.today/fem-i-topp-i-kvalitetsindex-hosten-2025/" target="_blank" rel="noopener">
+                  Läs artikeln i Omtanke
+                </a>
               </div>
             </div>
           </div>
@@ -1420,17 +1426,18 @@
       <div class="wrap split">
         <div class="verification-card">
           <span class="eyebrow">Trygghet och verifiering</span>
-          <h2>Besökaren ska kunna kontrollera att sidan hör till rätt verksamhet.</h2>
+          <h2>Verifierad digital närvaro stärker förtroendet.</h2>
 
           <p class="lead">
-            För verksamheter inom stöd, boende och omsorg är förtroende extra viktigt.
-            Därför bör hemsidan kopplas till en verifierad person, officiell social kanal eller annan tydlig extern källa.
+            För verksamheter inom stöd, boende och omsorg är det viktigt att besökaren snabbt kan se
+            att hemsidan tillhör rätt verksamhet.
           </p>
 
           <div class="verification-warning">
-            <strong>Viktigt i dagens läge:</strong>
-            Det förekommer falska hemsidor där oseriösa aktörer tar betalt och sedan försvinner.
-            En tydlig verifiering gör det lättare för kommuner, socialtjänst, anhöriga och placerare att se att de är på rätt webbplats.
+            <strong>Rekommendation:</strong>
+            Koppla hemsidan till en verifierad social kanal, officiell extern källa eller annan tydlig verksamhetsprofil
+            som i sin tur länkar tillbaka till exakt samma domän. Det minskar risken för missförstånd och stärker
+            förtroendet vid kontakt.
           </div>
         </div>
 
@@ -1439,22 +1446,21 @@
             <h3>Verifierad social kanal</h3>
             <p>
               Hemsidan kan länka till en verifierad social medieprofil eller annan officiell kanal kopplad till verksamheten.
-              Har profilen ett verifieringsmärke blir det ännu tydligare.
             </p>
           </article>
 
           <article class="step">
             <h3>Länk tillbaka till exakt samma domän</h3>
             <p>
-              Den verifierade profilen bör länka tillbaka till exakt samma hemsideadress, exempelvis r3start.se.
+              Den externa profilen bör länka tillbaka till exakt samma hemsideadress, exempelvis r3start.se.
               Då kan besökaren kontrollera kopplingen åt båda håll.
             </p>
           </article>
 
           <article class="step">
-            <h3>Starkare förtroende vid kontakt</h3>
+            <h3>Tydligare avsändare</h3>
             <p>
-              När hemsida, kontaktuppgifter och externa profiler hänger ihop minskar risken för missförstånd och stärker förtroendet inför en placering.
+              När hemsida, kontaktuppgifter och externa profiler hänger ihop blir det enklare att se att informationen kommer från rätt verksamhet.
             </p>
           </article>
         </div>
@@ -1475,23 +1481,33 @@
 
         <div class="steps">
           <article class="step">
-            <h3>Erfaren ledning</h3>
+            <h3>Simon – cirka 11 års erfarenhet</h3>
             <p>
-              Verksamhetens ansvariga personer och deras erfarenhet lyfts fram på ett tydligt och förtroendeskapande sätt.
+              Erfarenhet från bland annat akutboende, stödboende, HVB, öppenvårdsbehandling,
+              kontaktperson, boendestöd, terapeut samt ledande roll.
             </p>
           </article>
 
           <article class="step">
-            <h3>Relevant utbildning</h3>
+            <h3>Pernilla – föreståndare och beteendevetare</h3>
             <p>
-              Kompetenser inom exempelvis socialt arbete, behandling, psykiatri, NPF och beroende kan presenteras mer strukturerat.
+              Utbildad beteendevetare med psykologi som huvudämne och erfarenhet från socialt arbete,
+              behandling, kvalitetsansvar och verksamhetsledning.
             </p>
           </article>
 
           <article class="step">
-            <h3>Tydlig arbetsmetod</h3>
+            <h3>Team med relevant kompetens</h3>
             <p>
-              Besökaren ska snabbt förstå hur stödet fungerar i praktiken: kontakt, planering, uppföljning och nästa steg.
+              Personalgruppen har bland annat kompetens inom alkohol- och drogterapi, psykiatri,
+              KSL, NPF, beroendepedagogik och behandlingspedagogik.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Daglig dokumentation</h3>
+            <p>
+              Verksamheten använder Sekoia för daglig dokumentation och arbetar som ett team kring stöd, uppföljning och kvalitet.
             </p>
           </article>
         </div>
