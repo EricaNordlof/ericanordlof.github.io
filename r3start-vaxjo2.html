@@ -24,28 +24,38 @@
       --white:#ffffff;
       --ink:#16211d;
       --muted:#53615a;
+      --soft:#6f7b74;
+
       --forest:#16382f;
       --forest-2:#24594b;
+      --forest-3:#2f6c5b;
       --forest-soft:#dfeae4;
+
       --gold:#b98542;
       --gold-2:#d9aa67;
+      --gold-soft:#f8ead6;
+
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
+
       --shadow:0 28px 90px rgba(20,32,27,.16);
       --shadow-soft:0 18px 50px rgba(20,32,27,.10);
+
       --radius:28px;
       --max:1180px;
       --focus:#b45309;
 
-      --overlay-bg:rgba(255,250,243,.30);
-      --overlay-border:rgba(255,255,255,.48);
+      --overlay-bg:rgba(255,250,243,.34);
+      --overlay-border:rgba(255,255,255,.52);
       --overlay-ink:#10201a;
       --overlay-muted:#1c4337;
 
       --header-offset:0px;
     }
 
-    *{ box-sizing:border-box; }
+    *{
+      box-sizing:border-box;
+    }
 
     html{
       scroll-behavior:smooth;
@@ -55,7 +65,9 @@
       overflow-x:hidden;
     }
 
-    html.large-text{ font-size:118%; }
+    html.large-text{
+      font-size:118%;
+    }
 
     body{
       margin:0;
@@ -70,8 +82,14 @@
       overflow-x:hidden;
     }
 
-    a{ color:inherit; }
-    img{ display:block; max-width:100%; }
+    a{
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
 
     h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
       overflow-wrap:anywhere;
@@ -99,8 +117,8 @@
       position:absolute;
       left:12px;
       top:-90px;
-      background:#fff;
-      color:#000;
+      background:#ffffff;
+      color:#000000;
       padding:12px 16px;
       border-radius:999px;
       z-index:1200;
@@ -108,7 +126,9 @@
       transition:.2s ease;
     }
 
-    .skip-link:focus{ top:12px; }
+    .skip-link:focus{
+      top:12px;
+    }
 
     .topbar{
       background:#173128;
@@ -141,7 +161,7 @@
     .tool-btn,
     .language-select{
       border:1px solid rgba(255,255,255,.24);
-      color:#fff;
+      color:#ffffff;
       background:rgba(255,255,255,.08);
       border-radius:999px;
       padding:8px 12px;
@@ -154,7 +174,7 @@
 
     .tool-btn:hover,
     .language-select:hover{
-      background:#fff;
+      background:#ffffff;
       color:#13211c;
     }
 
@@ -176,7 +196,9 @@
       z-index:999;
     }
 
-    body.header-fixed main{ padding-top:var(--header-offset); }
+    body.header-fixed main{
+      padding-top:var(--header-offset);
+    }
 
     .nav{
       max-width:var(--max);
@@ -204,7 +226,7 @@
       height:46px;
       border-radius:16px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -250,7 +272,9 @@
       white-space:nowrap;
     }
 
-    nav a:hover{ background:var(--forest-soft); }
+    nav a:hover{
+      background:var(--forest-soft);
+    }
 
     .nav-actions{
       display:flex;
@@ -262,7 +286,7 @@
     .menu-btn{
       display:none;
       border:1px solid var(--line-dark);
-      background:#fff;
+      background:#ffffff;
       color:var(--forest);
       border-radius:999px;
       padding:10px 14px;
@@ -290,11 +314,13 @@
       font-family:inherit;
     }
 
-    .btn:hover{ transform:translateY(-1px); }
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .btn-primary{
       background:var(--forest);
-      color:#fff;
+      color:#ffffff;
       border-color:var(--forest);
       box-shadow:0 16px 38px rgba(22,56,47,.22);
     }
@@ -310,7 +336,9 @@
       border-color:var(--line-dark);
     }
 
-    .btn-secondary:hover{ background:#fff; }
+    .btn-secondary:hover{
+      background:#ffffff;
+    }
 
     .btn-gold{
       background:linear-gradient(135deg, var(--gold), var(--gold-2));
@@ -319,7 +347,9 @@
       box-shadow:0 16px 38px rgba(185,133,66,.22);
     }
 
-    main{ overflow:hidden; }
+    main{
+      overflow:hidden;
+    }
 
     section{
       padding:88px 18px;
@@ -381,7 +411,9 @@
       font-weight:650;
     }
 
-    .hero{ padding:72px 18px 80px; }
+    .hero{
+      padding:72px 18px 80px;
+    }
 
     .hero-grid{
       max-width:var(--max);
@@ -408,7 +440,7 @@
     }
 
     .trust-pill{
-      background:rgba(255,255,255,.74);
+      background:rgba(255,255,255,.78);
       border:1px solid rgba(200,185,164,.78);
       border-radius:22px;
       padding:17px;
@@ -438,7 +470,7 @@
     }
 
     .hero-card{
-      background:#fff;
+      background:#ffffff;
       border:1px solid rgba(200,185,164,.8);
       border-radius:40px;
       padding:12px;
@@ -501,7 +533,7 @@
       top:42px;
       z-index:3;
       width:min(260px, 72%);
-      background:rgba(255,250,243,.62);
+      background:rgba(255,250,243,.68);
       border:1px solid rgba(200,185,164,.85);
       border-radius:26px;
       padding:20px;
@@ -561,7 +593,7 @@
     }
 
     .card{
-      background:rgba(255,255,255,.80);
+      background:rgba(255,255,255,.82);
       border:1px solid rgba(200,185,164,.8);
       border-radius:var(--radius);
       padding:27px;
@@ -586,6 +618,96 @@
       font-weight:650;
     }
 
+    .quickfacts{
+      background:#fffaf3;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .quick-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .quick-card{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:36px;
+      padding:34px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .quick-card p{
+      margin-top:14px;
+      font-weight:650;
+    }
+
+    .facts{
+      display:grid;
+      gap:12px;
+    }
+
+    .fact{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:center;
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .fact span{
+      color:var(--muted);
+      font-weight:750;
+    }
+
+    .fact strong{
+      color:var(--ink);
+      font-weight:950;
+      text-align:right;
+    }
+
+    .person-row{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:18px;
+      border-radius:24px;
+      border:1px solid var(--line-dark);
+      background:#ffffff;
+      box-shadow:var(--shadow-soft);
+      margin-top:18px;
+    }
+
+    .person-photo{
+      width:82px;
+      height:82px;
+      flex:0 0 auto;
+      border-radius:24px;
+      border:1px solid var(--line-dark);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.10)),
+        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
+    }
+
+    .person-row strong{
+      display:block;
+      color:var(--ink);
+      font-weight:950;
+    }
+
+    .person-row span{
+      display:block;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:3px;
+    }
+
     .editorial{
       background:#fffaf3;
       border-top:1px solid var(--line);
@@ -600,7 +722,7 @@
     }
 
     .panel{
-      background:#fff;
+      background:#ffffff;
       color:var(--ink);
       border-radius:36px;
       padding:36px;
@@ -637,7 +759,9 @@
       padding:20px;
     }
 
-    .image-strip-wrap{ margin-top:34px; }
+    .image-strip-wrap{
+      margin-top:34px;
+    }
 
     .drag-hint{
       display:flex;
@@ -664,7 +788,7 @@
       border:none;
       border-radius:999px;
       background:var(--forest);
-      color:#fff;
+      color:#ffffff;
       cursor:pointer;
       display:grid;
       place-items:center;
@@ -699,10 +823,18 @@
       scroll-behavior:smooth;
     }
 
-    .image-strip:active{ cursor:grabbing; }
+    .image-strip:active{
+      cursor:grabbing;
+    }
 
-    .image-strip::-webkit-scrollbar{ height:10px; }
-    .image-strip::-webkit-scrollbar-track{ background:transparent; }
+    .image-strip::-webkit-scrollbar{
+      height:10px;
+    }
+
+    .image-strip::-webkit-scrollbar-track{
+      background:transparent;
+    }
+
     .image-strip::-webkit-scrollbar-thumb{
       background:rgba(22,56,47,.28);
       border-radius:999px;
@@ -730,6 +862,54 @@
       padding:14px 15px;
     }
 
+    .text-image{
+      background:#f8f3eb;
+    }
+
+    .text-image-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    .rounded-image{
+      min-height:430px;
+      border-radius:36px;
+      border:1px solid var(--line-dark);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+
+    .image-note{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:20px;
+      background:rgba(255,250,243,.74);
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:22px;
+      padding:18px;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .image-note strong{
+      display:block;
+      color:var(--ink);
+      font-weight:950;
+    }
+
+    .image-note span{
+      display:block;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:4px;
+    }
+
     .check-list{
       display:grid;
       gap:14px;
@@ -739,7 +919,7 @@
     }
 
     .check-list li{
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       padding:19px 20px 19px 56px;
@@ -758,7 +938,7 @@
       height:27px;
       border-radius:999px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -771,7 +951,7 @@
 
     .quality-wrap{
       background:linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
-      color:#fff;
+      color:#ffffff;
       border-radius:44px;
       padding:48px;
       box-shadow:var(--shadow);
@@ -813,7 +993,7 @@
       font-size:clamp(3.8rem, 8vw, 7.1rem);
       line-height:.85;
       letter-spacing:-.08em;
-      color:#fff;
+      color:#ffffff;
     }
 
     .score span{
@@ -825,12 +1005,14 @@
 
     .quality-wrap .eyebrow{
       background:rgba(255,255,255,.12);
-      color:#fff;
+      color:#ffffff;
       border-color:rgba(255,255,255,.28);
     }
 
     .quality-wrap h2,
-    .quality-wrap p{ color:#fff; }
+    .quality-wrap p{
+      color:#ffffff;
+    }
 
     .quality-wrap p{
       color:#edf7f2;
@@ -847,7 +1029,7 @@
 
     .step{
       counter-increment:step;
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:26px;
       padding:24px 24px 24px 82px;
@@ -864,7 +1046,7 @@
       height:42px;
       border-radius:15px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -876,19 +1058,51 @@
       font-weight:650;
     }
 
+    .methods{
+      background:#fffaf3;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .method-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .method-card{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:26px;
+      padding:25px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .method-card h3{
+      font-size:1.2rem;
+    }
+
+    .method-card p{
+      margin-top:10px;
+      font-weight:650;
+    }
+
     .contact{
       background:#151f1b;
-      color:#fff;
+      color:#ffffff;
       border-top:1px solid rgba(255,255,255,.10);
     }
 
     .contact h2,
     .contact h3,
-    .contact p{ color:#fff; }
+    .contact p{
+      color:#ffffff;
+    }
 
     .contact .eyebrow{
       background:rgba(255,255,255,.10);
-      color:#fff;
+      color:#ffffff;
       border-color:rgba(255,255,255,.25);
     }
 
@@ -911,7 +1125,9 @@
 
     .contact-box h2,
     .contact-box h3,
-    form h3{ color:var(--ink); }
+    form h3{
+      color:var(--ink);
+    }
 
     .contact-box p{
       color:var(--muted);
@@ -924,22 +1140,10 @@
       align-items:center;
       gap:14px;
       padding:16px;
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       margin-top:24px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .manager-thumb{
-      width:78px;
-      height:78px;
-      border-radius:20px;
-      flex:0 0 auto;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.12)),
-        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
-      border:1px solid var(--line-dark);
       box-shadow:var(--shadow-soft);
     }
 
@@ -950,7 +1154,7 @@
     }
 
     .contact-link{
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:20px;
       padding:17px;
@@ -983,12 +1187,14 @@
       padding:14px 15px;
       font:inherit;
       color:var(--ink);
-      background:#fff;
+      background:#ffffff;
       font-weight:650;
     }
 
     input::placeholder,
-    textarea::placeholder{ color:#66736c; }
+    textarea::placeholder{
+      color:#66736c;
+    }
 
     textarea{
       min-height:160px;
@@ -1001,8 +1207,13 @@
       gap:16px;
     }
 
-    .field{ margin-bottom:16px; }
-    .full{ grid-column:1 / -1; }
+    .field{
+      margin-bottom:16px;
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
 
     .form-note{
       font-size:.92rem;
@@ -1021,7 +1232,7 @@
 
     .footer{
       background:#0f1714;
-      color:#fff;
+      color:#ffffff;
       padding:34px 18px;
       border-top:1px solid rgba(255,255,255,.12);
     }
@@ -1040,7 +1251,9 @@
       font-size:.95rem;
     }
 
-    .footer-copy strong{ color:#fff; }
+    .footer-copy strong{
+      color:#ffffff;
+    }
 
     .footer-right{
       display:flex;
@@ -1064,7 +1277,7 @@
       display:grid;
       place-items:center;
       text-decoration:none;
-      color:#fff;
+      color:#ffffff;
       border:1px solid rgba(255,255,255,.16);
       transition:.18s ease;
       box-shadow:0 10px 24px rgba(0,0,0,.18);
@@ -1081,32 +1294,40 @@
       fill:currentColor;
     }
 
-    .social-icon.facebook{ background:#1877f2; }
-    .social-icon.instagram{ background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4); }
-    .social-icon.linkedin{ background:#0a66c2; }
+    .social-icon.facebook{
+      background:#1877f2;
+    }
+
+    .social-icon.instagram{
+      background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);
+    }
+
+    .social-icon.linkedin{
+      background:#0a66c2;
+    }
 
     .footer .btn-secondary{
       background:rgba(255,255,255,.10);
-      color:#fff;
+      color:#ffffff;
       border-color:rgba(255,255,255,.24);
     }
 
     .footer .btn-secondary:hover{
-      background:#fff;
+      background:#ffffff;
       color:#13211c;
     }
 
     body.high-contrast{
-      background:#000 !important;
-      color:#fff !important;
+      background:#000000 !important;
+      color:#ffffff !important;
     }
 
     body.high-contrast .topbar,
     body.high-contrast header,
     body.high-contrast .contact,
     body.high-contrast .footer{
-      background:#000 !important;
-      border-color:#fff !important;
+      background:#000000 !important;
+      border-color:#ffffff !important;
       box-shadow:none !important;
     }
 
@@ -1123,182 +1344,140 @@
     body.high-contrast .photo-caption,
     body.high-contrast .image-panel-text,
     body.high-contrast .slide-label,
-    body.high-contrast .floating-card{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #000 !important;
+    body.high-contrast .floating-card,
+    body.high-contrast .quick-card,
+    body.high-contrast .fact,
+    body.high-contrast .person-row,
+    body.high-contrast .method-card,
+    body.high-contrast .image-note{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
       box-shadow:none !important;
       backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
+    }
+
+    body.high-contrast .card *,
+    body.high-contrast .panel *,
+    body.high-contrast .step *,
+    body.high-contrast .trust-pill *,
+    body.high-contrast .contact-box *,
+    body.high-contrast form *,
+    body.high-contrast .check-list li *,
+    body.high-contrast .contact-link *,
+    body.high-contrast .contact-person *,
+    body.high-contrast .score *,
+    body.high-contrast .photo-caption *,
+    body.high-contrast .image-panel-text *,
+    body.high-contrast .slide-label *,
+    body.high-contrast .floating-card *,
+    body.high-contrast .quick-card *,
+    body.high-contrast .fact *,
+    body.high-contrast .person-row *,
+    body.high-contrast .method-card *,
+    body.high-contrast .image-note *{
+      color:#000000 !important;
+      text-shadow:none !important;
     }
 
     body.high-contrast h1,
-    body.high-contrast h2,
-    body.high-contrast h3,
-    body.high-contrast p,
-    body.high-contrast .lead,
+    body.high-contrast section > .wrap > h2,
+    body.high-contrast .hero h1,
+    body.high-contrast .hero .lead,
+    body.high-contrast .section-head h2,
+    body.high-contrast .section-head p,
+    body.high-contrast .contact h2,
+    body.high-contrast .contact p,
+    body.high-contrast .footer,
+    body.high-contrast .footer *,
+    body.high-contrast nav a,
     body.high-contrast .logo-text strong,
-    body.high-contrast .logo-text span,
-    body.high-contrast nav a{
-      color:#fff !important;
+    body.high-contrast .logo-text span{
+      color:#ffffff !important;
     }
 
     body.high-contrast .btn,
     body.high-contrast .tool-btn,
     body.high-contrast .language-select,
-    body.high-contrast .menu-btn,
-    body.high-contrast input,
-    body.high-contrast select,
-    body.high-contrast textarea{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #000 !important;
+    body.high-contrast .menu-btn{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #ffffff !important;
       box-shadow:none !important;
     }
 
-    /* FIX: hög kontrast – text i vita rutor ska vara svart */
-body.high-contrast .card,
-body.high-contrast .panel,
-body.high-contrast .step,
-body.high-contrast .trust-pill,
-body.high-contrast .contact-box,
-body.high-contrast form,
-body.high-contrast .check-list li,
-body.high-contrast .contact-link,
-body.high-contrast .contact-person,
-body.high-contrast .score,
-body.high-contrast .photo-caption,
-body.high-contrast .image-panel-text,
-body.high-contrast .slide-label,
-body.high-contrast .floating-card{
-  background:#ffffff !important;
-  color:#000000 !important;
-  border:3px solid #000000 !important;
-  box-shadow:none !important;
-  backdrop-filter:none !important;
-  -webkit-backdrop-filter:none !important;
-}
+    body.high-contrast .card .btn,
+    body.high-contrast .panel .btn,
+    body.high-contrast form .btn,
+    body.high-contrast .contact-box .btn{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+    }
 
-/* All text inne i vita kort */
-body.high-contrast .card *,
-body.high-contrast .panel *,
-body.high-contrast .step *,
-body.high-contrast .trust-pill *,
-body.high-contrast .contact-box *,
-body.high-contrast form *,
-body.high-contrast .check-list li *,
-body.high-contrast .contact-link *,
-body.high-contrast .contact-person *,
-body.high-contrast .score *,
-body.high-contrast .photo-caption *,
-body.high-contrast .image-panel-text *,
-body.high-contrast .slide-label *,
-body.high-contrast .floating-card *{
-  color:#000000 !important;
-  text-shadow:none !important;
-}
+    body.high-contrast input,
+    body.high-contrast select,
+    body.high-contrast textarea{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+    }
 
-/* Text direkt på svart bakgrund ska vara vit */
-body.high-contrast h1,
-body.high-contrast section > .wrap > h2,
-body.high-contrast .hero h1,
-body.high-contrast .hero .lead,
-body.high-contrast .section-head h2,
-body.high-contrast .section-head p,
-body.high-contrast .contact h2,
-body.high-contrast .contact p,
-body.high-contrast .footer,
-body.high-contrast .footer *,
-body.high-contrast nav a,
-body.high-contrast .logo-text strong,
-body.high-contrast .logo-text span{
-  color:#ffffff !important;
-}
+    body.high-contrast input::placeholder,
+    body.high-contrast textarea::placeholder{
+      color:#333333 !important;
+    }
 
-/* Knappar */
-body.high-contrast .btn,
-body.high-contrast .tool-btn,
-body.high-contrast .language-select,
-body.high-contrast .menu-btn{
-  background:#ffffff !important;
-  color:#000000 !important;
-  border:3px solid #ffffff !important;
-  box-shadow:none !important;
-}
+    body.high-contrast .step::before,
+    body.high-contrast .check-list li::before{
+      background:#000000 !important;
+      color:#ffffff !important;
+      border:2px solid #000000 !important;
+    }
 
-/* Knappar inne i vita kort behöver svart kant */
-body.high-contrast .card .btn,
-body.high-contrast .panel .btn,
-body.high-contrast form .btn,
-body.high-contrast .contact-box .btn{
-  background:#ffffff !important;
-  color:#000000 !important;
-  border:3px solid #000000 !important;
-}
+    body.high-contrast .quality-wrap{
+      background:#000000 !important;
+      border:3px solid #ffffff !important;
+      box-shadow:none !important;
+    }
 
-/* Formulärfält */
-body.high-contrast input,
-body.high-contrast select,
-body.high-contrast textarea{
-  background:#ffffff !important;
-  color:#000000 !important;
-  border:3px solid #000000 !important;
-}
+    body.high-contrast .quality-wrap *,
+    body.high-contrast .quality-wrap h2,
+    body.high-contrast .quality-wrap p{
+      color:#ffffff !important;
+    }
 
-body.high-contrast input::placeholder,
-body.high-contrast textarea::placeholder{
-  color:#333333 !important;
-}
+    body.high-contrast .quality-wrap .score{
+      background:#ffffff !important;
+      border:3px solid #ffffff !important;
+    }
 
-/* Ikoner/cirklar i steg/checklistor */
-body.high-contrast .step::before,
-body.high-contrast .check-list li::before{
-  background:#000000 !important;
-  color:#ffffff !important;
-  border:2px solid #000000 !important;
-}
+    body.high-contrast .quality-wrap .score *,
+    body.high-contrast .quality-wrap .score strong,
+    body.high-contrast .quality-wrap .score span{
+      color:#000000 !important;
+    }
 
-/* Kvalitetsboxen ska vara tydlig */
-body.high-contrast .quality-wrap{
-  background:#000000 !important;
-  border:3px solid #ffffff !important;
-  box-shadow:none !important;
-}
+    body.high-contrast .eyebrow{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #ffffff !important;
+      text-shadow:none !important;
+    }
 
-body.high-contrast .quality-wrap *,
-body.high-contrast .quality-wrap h2,
-body.high-contrast .quality-wrap p{
-  color:#ffffff !important;
-}
-
-body.high-contrast .quality-wrap .score{
-  background:#ffffff !important;
-  border:3px solid #ffffff !important;
-}
-
-body.high-contrast .quality-wrap .score *,
-body.high-contrast .quality-wrap .score strong,
-body.high-contrast .quality-wrap .score span{
-  color:#000000 !important;
-}
-
-/* Eyebrows/badges */
-body.high-contrast .eyebrow{
-  background:#ffffff !important;
-  color:#000000 !important;
-  border:3px solid #ffffff !important;
-  text-shadow:none !important;
-}
-
-/* Eyebrow inne i vitt kort */
-body.high-contrast .card .eyebrow,
-body.high-contrast .panel .eyebrow,
-body.high-contrast .contact-box .eyebrow,
-body.high-contrast form .eyebrow{
-  border:3px solid #000000 !important;
-}
+    body.high-contrast .card .eyebrow,
+    body.high-contrast .panel .eyebrow,
+    body.high-contrast .contact-box .eyebrow,
+    body.high-contrast form .eyebrow,
+    body.high-contrast .quick-card .eyebrow{
+      border:3px solid #000000 !important;
+    }
 
     @media (max-width:1120px){
-      .mini-photo{ display:none; }
+      .mini-photo{
+        display:none;
+      }
     }
 
     @media (max-width:980px){
@@ -1306,21 +1485,33 @@ body.high-contrast form .eyebrow{
       .split,
       .quality-grid,
       .contact-grid,
-      .cards{
+      .cards,
+      .quick-grid,
+      .text-image-grid,
+      .method-grid{
         grid-template-columns:1fr;
       }
 
-      .trust-row{ grid-template-columns:1fr; }
+      .trust-row{
+        grid-template-columns:1fr;
+      }
 
-      .hero-visual{ min-height:auto; }
-      .hero-photo{ min-height:470px; }
+      .hero-visual{
+        min-height:auto;
+      }
+
+      .hero-photo{
+        min-height:470px;
+      }
 
       .floating-card{
         left:18px;
         top:18px;
       }
 
-      nav{ display:none; }
+      nav{
+        display:none;
+      }
 
       nav.open{
         display:block;
@@ -1340,20 +1531,28 @@ body.high-contrast form .eyebrow{
         gap:4px;
       }
 
-      nav.open a{ width:100%; }
+      nav.open a{
+        width:100%;
+      }
 
-      .menu-btn{ display:inline-flex; }
+      .menu-btn{
+        display:inline-flex;
+      }
     }
 
     @media (max-width:760px){
-      html.large-text{ font-size:112%; }
+      html.large-text{
+        font-size:112%;
+      }
 
       section{
         padding:58px 14px;
         scroll-margin-top:96px;
       }
 
-      .hero{ padding:44px 14px 60px; }
+      .hero{
+        padding:44px 14px 60px;
+      }
 
       .topbar-inner{
         padding:10px 14px;
@@ -1410,9 +1609,13 @@ body.high-contrast form .eyebrow{
         white-space:nowrap;
       }
 
-      .logo-text span{ display:none; }
+      .logo-text span{
+        display:none;
+      }
 
-      .nav-actions .btn{ display:none; }
+      .nav-actions .btn{
+        display:none;
+      }
 
       .menu-btn{
         min-height:42px;
@@ -1439,7 +1642,9 @@ body.high-contrast form .eyebrow{
         line-height:1.03;
       }
 
-      h2{ font-size:clamp(1.78rem, 8vw, 2.6rem); }
+      h2{
+        font-size:clamp(1.78rem, 8vw, 2.6rem);
+      }
 
       h3{
         font-size:1.2rem;
@@ -1488,7 +1693,9 @@ body.high-contrast form .eyebrow{
         padding:16px;
       }
 
-      .floating-card{ display:none; }
+      .floating-card{
+        display:none;
+      }
 
       .section-head{
         display:block;
@@ -1503,18 +1710,22 @@ body.high-contrast form .eyebrow{
       .card,
       .panel,
       .contact-box,
-      form{
+      form,
+      .quick-card,
+      .method-card{
         border-radius:24px;
         padding:22px;
       }
 
-      .image-panel{
+      .image-panel,
+      .rounded-image{
         min-height:330px;
         border-radius:26px;
       }
 
       .image-panel-text,
-      .slide-label{
+      .slide-label,
+      .image-note{
         left:14px;
         right:14px;
         bottom:14px;
@@ -1549,7 +1760,9 @@ body.high-contrast form .eyebrow{
         padding:23px;
       }
 
-      .score strong{ font-size:clamp(3rem, 24vw, 5.2rem); }
+      .score strong{
+        font-size:clamp(3rem, 24vw, 5.2rem);
+      }
 
       .step{
         padding:20px 18px 20px 64px;
@@ -1578,18 +1791,27 @@ body.high-contrast form .eyebrow{
         font-size:1rem;
       }
 
-      textarea{ min-height:135px; }
+      textarea{
+        min-height:135px;
+      }
 
-      .contact-person{ align-items:flex-start; }
+      .contact-person,
+      .person-row{
+        align-items:flex-start;
+      }
 
-      .footer{ padding:28px 14px; }
+      .footer{
+        padding:28px 14px;
+      }
 
       .footer-inner{
         grid-template-columns:1fr;
         gap:16px;
       }
 
-      .footer-right{ justify-content:flex-start; }
+      .footer-right{
+        justify-content:flex-start;
+      }
 
       .gallery-tools{
         width:100%;
@@ -1607,8 +1829,13 @@ body.high-contrast form .eyebrow{
         padding-right:12px;
       }
 
-      h1{ font-size:2.02rem; }
-      h2{ font-size:1.62rem; }
+      h1{
+        font-size:2.02rem;
+      }
+
+      h2{
+        font-size:1.62rem;
+      }
 
       .logo-text strong{
         max-width:52vw;
@@ -1617,12 +1844,18 @@ body.high-contrast form .eyebrow{
         white-space:nowrap;
       }
 
-      .hero-photo{ min-height:300px; }
+      .hero-photo{
+        min-height:300px;
+      }
 
       .card,
       .panel,
       .contact-box,
-      form{ padding:18px; }
+      form,
+      .quick-card,
+      .method-card{
+        padding:18px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -1683,11 +1916,11 @@ body.high-contrast form .eyebrow{
       <nav id="siteNav" aria-label="Huvudmeny">
         <ul>
           <li><a href="#om" data-sv="Om oss" data-en="About">Om oss</a></li>
-          <li><a href="#bilder" data-sv="Växjöbilder" data-en="Växjö images">Växjöbilder</a></li>
+          <li><a href="#snabbfakta" data-sv="Snabbfakta" data-en="Quick facts">Snabbfakta</a></li>
+          <li><a href="#bilder" data-sv="Bilder" data-en="Images">Bilder</a></li>
           <li><a href="#placeringsformer" data-sv="Placeringsformer" data-en="Placement types">Placeringsformer</a></li>
           <li><a href="#insatser" data-sv="Insatser" data-en="Support">Insatser</a></li>
           <li><a href="#kvalitet" data-sv="Kvalitet" data-en="Quality">Kvalitet</a></li>
-          <li><a href="#kompetens" data-sv="Kompetens" data-en="Competence">Kompetens</a></li>
           <li><a href="#kontakt" data-sv="Kontakt" data-en="Contact">Kontakt</a></li>
         </ul>
       </nav>
@@ -1722,7 +1955,7 @@ body.high-contrast form .eyebrow{
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt" data-sv="Gör placeringsförfrågan" data-en="Submit placement enquiry">Gör placeringsförfrågan</a>
-            <a class="btn btn-secondary" href="#bilder" data-sv="Se Växjöbilder" data-en="See Växjö images">Se Växjöbilder</a>
+            <a class="btn btn-secondary" href="#bilder" data-sv="Se bilder" data-en="See images">Se bilder</a>
             <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
               Ladda ner informationsblad
             </button>
@@ -1760,8 +1993,8 @@ body.high-contrast form .eyebrow{
                 <strong data-sv="Lokal förankring i Växjö." data-en="Local grounding in Växjö.">
                   Lokal förankring i Växjö.
                 </strong>
-                <span data-sv="Bilder från Växjö ger snabbare igenkänning än generiska stockbilder." data-en="Images from Växjö create stronger recognition than generic stock images.">
-                  Bilder från Växjö ger snabbare igenkänning än generiska stockbilder.
+                <span data-sv="Lokala bilder ger snabbare igenkänning än generiska stockbilder." data-en="Local images create stronger recognition than generic stock images.">
+                  Lokala bilder ger snabbare igenkänning än generiska stockbilder.
                 </span>
               </div>
             </div>
@@ -1784,8 +2017,8 @@ body.high-contrast form .eyebrow{
             </h2>
           </div>
 
-          <p data-sv="En bra verksamhetssida ska snabbt svara på det viktigaste: vilken målgrupp verksamheten tar emot, vilka insatser som finns, hur kvalitet följs upp och vem man kontaktar." data-en="A strong organisation page should quickly answer the essentials: which target group the organisation receives, what support is available, how quality is followed up and who to contact.">
-            En bra verksamhetssida ska snabbt svara på det viktigaste: vilken målgrupp verksamheten tar emot, vilka insatser som finns, hur kvalitet följs upp och vem man kontaktar.
+          <p data-sv="En bra verksamhetssida ska snabbt svara på det viktigaste: målgrupp, placeringsformer, insatser, kvalitet, kontaktvägar och vem som ansvarar för verksamheten." data-en="A strong organisation page should quickly answer the essentials: target group, placement types, support services, quality, contact options and who is responsible for the organisation.">
+            En bra verksamhetssida ska snabbt svara på det viktigaste: målgrupp, placeringsformer, insatser, kvalitet, kontaktvägar och vem som ansvarar för verksamheten.
           </p>
         </div>
 
@@ -1817,6 +2050,58 @@ body.high-contrast form .eyebrow{
       </div>
     </section>
 
+    <section class="quickfacts" id="snabbfakta">
+      <div class="wrap quick-grid">
+        <div class="quick-card">
+          <span class="eyebrow" data-sv="Snabbfakta" data-en="Quick facts">Snabbfakta</span>
+          <h2 data-sv="Det viktigaste först." data-en="The essentials first.">Det viktigaste först.</h2>
+          <p data-sv="Handläggare och placerare ska snabbt kunna se om verksamheten passar innan de behöver ringa eller mejla." data-en="Case workers and placement officers should quickly see whether the organisation is relevant before calling or emailing.">
+            Handläggare och placerare ska snabbt kunna se om verksamheten passar innan de behöver ringa eller mejla.
+          </p>
+
+          <div class="person-row">
+            <div class="person-photo" aria-hidden="true"></div>
+            <div>
+              <strong data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
+              <span data-sv="Exempelbild. Byt till riktig bild i skarp version." data-en="Example image. Replace with real photo in final version.">Exempelbild. Byt till riktig bild i skarp version.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <span data-sv="Antal platser" data-en="Number of places">Antal platser</span>
+            <strong>10</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Ort" data-en="Location">Ort</span>
+            <strong>Växjö</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Placeringsformer" data-en="Placement types">Placeringsformer</span>
+            <strong data-sv="Stödboende, stödlägenhet, externt stöd" data-en="Supported housing, supported apartment, external support">Stödboende, stödlägenhet, externt stöd</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Akutplacering" data-en="Emergency placement">Akutplacering</span>
+            <strong data-sv="Kontakta verksamheten" data-en="Contact the organisation">Kontakta verksamheten</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Kontakt" data-en="Contact">Kontakt</span>
+            <strong>0793-594686</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="E-post" data-en="Email">E-post</span>
+            <strong>info@r3start.se</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="editorial" id="bilder">
       <div class="wrap split">
         <div class="panel">
@@ -1826,12 +2111,12 @@ body.high-contrast form .eyebrow{
             Mer lokalt, mer trovärdigt och mindre generiskt.
           </h2>
 
-          <p data-sv="Bilderna här är exempel från Växjö. I skarp version kan de ersättas med egna bilder från verksamheten, boendemiljön eller närområdet." data-en="The images here are examples from Växjö. In the final version, they can be replaced with your own photos from the organisation, housing environment or nearby area.">
-            Bilderna här är exempel från Växjö. I skarp version kan de ersättas med egna bilder från verksamheten, boendemiljön eller närområdet.
+          <p data-sv="Bilderna här är exempel från Växjö. I skarp version kan de blandas med egna bilder från verksamheten, boendemiljön, entrén eller gemensamma ytor." data-en="The images here are examples from Växjö. In the final version, they can be mixed with your own photos from the organisation, housing environment, entrance or shared spaces.">
+            Bilderna här är exempel från Växjö. I skarp version kan de blandas med egna bilder från verksamheten, boendemiljön, entrén eller gemensamma ytor.
           </p>
 
-          <p data-sv="Lokala bilder gör sidan mer förankrad. Det blir mindre random stock och mer: här finns verksamheten på riktigt." data-en="Local images make the page feel more grounded. Less random stock, more: this organisation is actually here.">
-            Lokala bilder gör sidan mer förankrad. Det blir mindre random stock och mer: här finns verksamheten på riktigt.
+          <p data-sv="Det ger sidan mer verklighetskänsla. Mindre generisk webbyrå, mer faktisk verksamhet. Bra affär." data-en="This gives the page a more real feeling. Less generic agency template, more actual organisation. Good business.">
+            Det ger sidan mer verklighetskänsla. Mindre generisk webbyrå, mer faktisk verksamhet. Bra affär.
           </p>
 
           <div class="hero-actions">
@@ -1853,8 +2138,8 @@ body.high-contrast form .eyebrow{
 
       <div class="wrap image-strip-wrap">
         <div class="drag-hint">
-          <span data-sv="Dra åt sidan eller använd pilarna för fler Växjöbilder" data-en="Drag sideways or use the arrows for more Växjö images">
-            Dra åt sidan eller använd pilarna för fler Växjöbilder
+          <span data-sv="Dra åt sidan eller använd pilarna för fler bilder" data-en="Drag sideways or use the arrows for more images">
+            Dra åt sidan eller använd pilarna för fler bilder
           </span>
 
           <div class="gallery-tools">
@@ -1931,6 +2216,25 @@ body.high-contrast form .eyebrow{
               </span>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-image">
+      <div class="wrap text-image-grid">
+        <div class="rounded-image" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=82");'>
+          <div class="image-note">
+            <strong data-sv="Samtal, planering och uppföljning." data-en="Conversation, planning and follow-up.">Samtal, planering och uppföljning.</strong>
+            <span data-sv="Exempelbild. Byt till egen mötes- eller verksamhetsbild." data-en="Example image. Replace with your own meeting or organisation image.">Exempelbild. Byt till egen mötes- eller verksamhetsbild.</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow" data-sv="En trygg tillvaro" data-en="A safe everyday life">En trygg tillvaro</span>
+          <h2 data-sv="Boende behöver vara mer än en adress." data-en="Housing needs to be more than an address.">Boende behöver vara mer än en adress.</h2>
+          <p class="lead" data-sv="Stöd i vardagen handlar om rutiner, motivation, relationer, myndighetskontakt och tydliga mål. Därför behöver sidan förklara vad placeringen faktiskt innehåller." data-en="Everyday support is about routines, motivation, relationships, authority contact and clear goals. The page therefore needs to explain what the placement actually includes.">
+            Stöd i vardagen handlar om rutiner, motivation, relationer, myndighetskontakt och tydliga mål. Därför behöver sidan förklara vad placeringen faktiskt innehåller.
+          </p>
         </div>
       </div>
     </section>
@@ -2014,6 +2318,44 @@ body.high-contrast form .eyebrow{
             <h3 data-sv="Väg vidare" data-en="Way forward">Väg vidare</h3>
             <p data-sv="Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet." data-en="Support around studies, work, finances, debts, health and the next steps toward greater independence.">
               Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="methods" id="metoder">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-sv="Metod och arbetssätt" data-en="Method and approach">Metod och arbetssätt</span>
+            <h2 data-sv="Tydlighet bygger förtroende." data-en="Clarity builds trust.">Tydlighet bygger förtroende.</h2>
+          </div>
+
+          <p data-sv="Kommuner, socialtjänst och anhöriga behöver förstå hur stödet följs upp. Därför bör metoder, dokumentation och ansvar vara enkla att hitta." data-en="Municipalities, social services and relatives need to understand how the support is followed up. Methods, documentation and responsibility should therefore be easy to find.">
+            Kommuner, socialtjänst och anhöriga behöver förstå hur stödet följs upp. Därför bör metoder, dokumentation och ansvar vara enkla att hitta.
+          </p>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <h3 data-sv="Kontaktmannaskap" data-en="Key-worker support">Kontaktmannaskap</h3>
+            <p data-sv="En tydlig kontaktperson gör placeringen mer överskådlig och skapar bättre uppföljning." data-en="A clear key worker makes the placement easier to follow and improves follow-up.">
+              En tydlig kontaktperson gör placeringen mer överskådlig och skapar bättre uppföljning.
+            </p>
+          </article>
+
+          <article class="method-card">
+            <h3 data-sv="Dokumentation" data-en="Documentation">Dokumentation</h3>
+            <p data-sv="Daglig dokumentation ger struktur, spårbarhet och bättre underlag för nästa steg." data-en="Daily documentation provides structure, traceability and better material for the next step.">
+              Daglig dokumentation ger struktur, spårbarhet och bättre underlag för nästa steg.
+            </p>
+          </article>
+
+          <article class="method-card">
+            <h3 data-sv="Uppföljning" data-en="Follow-up">Uppföljning</h3>
+            <p data-sv="Mål, rutiner och insatser behöver följas upp löpande för att stödet ska vara relevant." data-en="Goals, routines and support need continuous follow-up to remain relevant.">
+              Mål, rutiner och insatser behöver följas upp löpande för att stödet ska vara relevant.
             </p>
           </article>
         </div>
@@ -2126,11 +2468,11 @@ body.high-contrast form .eyebrow{
           </p>
 
           <div class="contact-person">
-            <div class="manager-thumb" aria-hidden="true"></div>
+            <div class="person-photo" aria-hidden="true"></div>
             <div>
               <strong style="display:block; color:var(--ink);" data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
-              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Byt till riktig bild på Simon i skarp version" data-en="Replace with a real photo of Simon in the final version">
-                Byt till riktig bild på Simon i skarp version
+              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Exempelbild. Byt till riktig bild på Simon i skarp version." data-en="Example image. Replace with a real photo of Simon in the final version.">
+                Exempelbild. Byt till riktig bild på Simon i skarp version.
               </span>
             </div>
           </div>
@@ -2412,13 +2754,16 @@ body.high-contrast form .eyebrow{
     function getSlideWidth(){
       const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
       if(!firstSlide) return 320;
+
       const styles = window.getComputedStyle(imageStrip);
       const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
+
       return firstSlide.getBoundingClientRect().width + gap;
     }
 
     function updateGalleryButtons(){
       if(!imageStrip || !galleryPrev || !galleryNext) return;
+
       const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
       galleryPrev.disabled = imageStrip.scrollLeft <= 8;
       galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
@@ -2426,6 +2771,7 @@ body.high-contrast form .eyebrow{
 
     function scrollGallery(direction){
       if(!imageStrip) return;
+
       imageStrip.scrollBy({
         left:getSlideWidth() * direction,
         behavior:"smooth"
@@ -2786,8 +3132,13 @@ body.high-contrast form .eyebrow{
         scrollLeft = imageStrip.scrollLeft;
       });
 
-      imageStrip.addEventListener("mouseleave", () => { isDown = false; });
-      imageStrip.addEventListener("mouseup", () => { isDown = false; });
+      imageStrip.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+
+      imageStrip.addEventListener("mouseup", () => {
+        isDown = false;
+      });
 
       imageStrip.addEventListener("mousemove", (e) => {
         if(!isDown) return;
@@ -2805,6 +3156,7 @@ body.high-contrast form .eyebrow{
       updateFixedHeader();
       updateGalleryButtons();
     });
+
     window.addEventListener("load", () => {
       updateFixedHeader();
       updateGalleryButtons();
