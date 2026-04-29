@@ -59,6 +59,21 @@
       scroll-behavior:smooth;
       text-size-adjust:100%;
       font-size:16px;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(47,93,80,.16), transparent 30rem),
+        radial-gradient(circle at top right, rgba(197,139,76,.18), transparent 32rem),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      line-height:1.6;
+      max-width:100%;
+      overflow-x:hidden;
     }
 
     html.large-text{
@@ -88,17 +103,6 @@
       font-size:1.08rem;
     }
 
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(47,93,80,.16), transparent 30rem),
-        radial-gradient(circle at top right, rgba(197,139,76,.18), transparent 32rem),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-      line-height:1.6;
-    }
-
     body.high-contrast{
       background:#000000 !important;
       color:#ffffff !important;
@@ -111,6 +115,20 @@
     img{
       max-width:100%;
       display:block;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    li,
+    a,
+    button,
+    label,
+    input,
+    select,
+    textarea{
+      overflow-wrap:anywhere;
     }
 
     :focus-visible{
@@ -253,6 +271,11 @@
       font-weight:950;
       letter-spacing:-.07em;
       box-shadow:0 12px 30px rgba(24,57,47,.18);
+      flex:0 0 auto;
+    }
+
+    .logo-text{
+      min-width:0;
     }
 
     .logo-text strong{
@@ -287,6 +310,7 @@
       font-weight:850;
       color:var(--ink);
       font-size:.92rem;
+      white-space:nowrap;
     }
 
     nav a:hover{
@@ -325,6 +349,7 @@
       white-space:nowrap;
       border:1px solid transparent;
       font-size:.96rem;
+      text-align:center;
     }
 
     .btn:hover{
@@ -421,6 +446,7 @@
       font-weight:900;
       font-size:.88rem;
       margin-bottom:18px;
+      max-width:100%;
     }
 
     h1,h2,h3{
@@ -1099,17 +1125,71 @@
       }
     }
 
-    @media (max-width: 620px){
-      section{
-        padding:64px 16px;
+    @media (max-width: 760px){
+      html.large-text{
+        font-size:112%;
       }
 
-      .hero{
-        padding-top:42px;
+      body{
+        background:linear-gradient(180deg, #f8f3eb 0%, #efe7dc 100%);
+      }
+
+      .topbar-inner{
+        padding:10px 14px;
+        gap:10px;
+      }
+
+      .topbar-inner > span{
+        font-size:.88rem;
+        line-height:1.35;
+      }
+
+      .tools{
+        width:100%;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+      }
+
+      .language-select{
+        grid-column:1 / -1;
+        width:100%;
+      }
+
+      .tool-btn,
+      .language-select{
+        min-height:44px;
+        padding:10px 12px;
+        font-size:.92rem;
+        border-radius:14px;
+        white-space:normal;
+        line-height:1.2;
       }
 
       .nav{
-        padding:12px 16px;
+        padding:11px 14px;
+        gap:10px;
+      }
+
+      .logo{
+        gap:9px;
+        min-width:0;
+      }
+
+      .logo-mark{
+        width:39px;
+        height:39px;
+        border-radius:13px;
+        font-size:.95rem;
+      }
+
+      .logo-text{
+        min-width:0;
+      }
+
+      .logo-text strong{
+        font-size:1rem;
+        white-space:nowrap;
       }
 
       .logo-text span{
@@ -1120,46 +1200,423 @@
         display:none;
       }
 
-      .form-grid{
+      .menu-btn{
+        display:inline-flex;
+        min-height:42px;
+        padding:10px 14px;
+        flex:0 0 auto;
+      }
+
+      nav.open{
+        top:64px;
+        left:12px;
+        right:12px;
+        padding:10px;
+        border-radius:20px;
+        max-height:72vh;
+        overflow:auto;
+      }
+
+      nav.open a{
+        padding:13px 14px;
+        font-size:1rem;
+        white-space:normal;
+      }
+
+      section{
+        padding:56px 14px;
+      }
+
+      .hero{
+        padding:42px 14px 58px;
+      }
+
+      .hero-grid,
+      .split,
+      .quality-grid,
+      .contact-grid{
         grid-template-columns:1fr;
-      }
-
-      .quality,
-      .panel,
-      .contact-box,
-      .verification-card,
-      form{
-        border-radius:24px;
-        padding:24px;
-      }
-
-      .hero-photo{
-        min-height:360px;
+        gap:22px;
       }
 
       h1{
-        font-size:clamp(2.35rem, 12vw, 3.5rem);
+        font-size:clamp(2.15rem, 11vw, 3.2rem);
+        line-height:1.03;
+        letter-spacing:-.06em;
+      }
+
+      h2{
+        font-size:clamp(1.75rem, 8vw, 2.55rem);
+        line-height:1.08;
+      }
+
+      h3{
+        font-size:1.2rem;
+        line-height:1.16;
+      }
+
+      p,
+      li{
+        line-height:1.65;
+      }
+
+      .lead{
+        font-size:1.03rem;
+        line-height:1.65;
+        margin-top:18px;
+      }
+
+      .eyebrow{
+        font-size:.82rem;
+        line-height:1.25;
+        padding:8px 11px;
+        border-radius:999px;
+        margin-bottom:14px;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:24px;
       }
 
       .btn{
         width:100%;
+        min-height:48px;
+        padding:14px 16px;
+        font-size:1rem;
+        white-space:normal;
+        line-height:1.2;
       }
 
-      .hero-actions{
+      .trust-row{
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:24px;
+      }
+
+      .trust-pill{
+        padding:15px;
+        border-radius:16px;
+      }
+
+      .hero-card{
+        border-radius:24px;
+        padding:8px;
+      }
+
+      .hero-photo{
+        min-height:330px;
+        border-radius:18px;
+        display:flex;
+        align-items:flex-end;
+        padding:12px;
+      }
+
+      .photo-caption{
+        position:static;
+        left:auto;
+        right:auto;
+        bottom:auto;
         width:100%;
+        border-radius:16px;
+        padding:15px;
       }
 
-      .topbar-inner{
-        align-items:flex-start;
+      .section-head{
+        display:block;
+        margin-bottom:24px;
       }
 
-      .tools{
+      .section-head p{
+        margin-top:14px;
+        font-size:1rem;
+        line-height:1.65;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      .card,
+      .panel,
+      .verification-card,
+      .contact-box,
+      form{
+        border-radius:22px;
+        padding:21px;
+      }
+
+      .card-icon{
+        width:44px;
+        height:44px;
+        border-radius:14px;
+        margin-bottom:13px;
+      }
+
+      .check-list{
+        gap:12px;
+      }
+
+      .check-list li{
+        padding:16px 15px 16px 48px;
+        border-radius:16px;
+        line-height:1.55;
+      }
+
+      .check-list li::before{
+        left:15px;
+        top:16px;
+      }
+
+      .quality{
+        border-radius:24px;
+        padding:24px;
+      }
+
+      .score{
+        border-radius:20px;
+        padding:22px;
+      }
+
+      .score strong{
+        font-size:clamp(3rem, 24vw, 5.2rem);
+      }
+
+      .quality p{
+        font-size:1rem;
+        line-height:1.65;
+      }
+
+      .step{
+        padding:20px 18px 20px 64px;
+        border-radius:19px;
+      }
+
+      .step::before{
+        left:17px;
+        top:20px;
+        width:34px;
+        height:34px;
+        border-radius:12px;
+      }
+
+      .verification-warning{
+        padding:16px;
+        border-radius:16px;
+      }
+
+      .contact-links{
+        gap:10px;
+        margin-top:22px;
+      }
+
+      .contact-link{
+        padding:15px;
+        border-radius:15px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+      input,
+      select,
+      textarea{
+        min-height:48px;
+        border-radius:13px;
+        padding:13px 14px;
+        font-size:1rem;
+      }
+
+      textarea{
+        min-height:135px;
+      }
+
+      .footer{
+        padding:28px 14px;
+      }
+
+      .footer-inner{
+        display:grid;
+        gap:14px;
+        font-size:.92rem;
+      }
+    }
+
+    @media (max-width: 760px){
+      html.large-text .topbar-inner > span{
+        font-size:.95rem;
+      }
+
+      html.large-text .tools{
+        grid-template-columns:1fr;
+      }
+
+      html.large-text .tool-btn,
+      html.large-text .language-select{
         width:100%;
+        min-height:48px;
+        font-size:1rem;
+        padding:12px 14px;
       }
 
-      .language-select,
-      .tool-btn{
-        flex:1 1 auto;
+      html.large-text .nav{
+        align-items:center;
+      }
+
+      html.large-text .logo-mark{
+        width:38px;
+        height:38px;
+      }
+
+      html.large-text .logo-text strong{
+        font-size:.98rem;
+        max-width:58vw;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+      }
+
+      html.large-text .menu-btn{
+        min-height:44px;
+        padding:10px 13px;
+        font-size:.95rem;
+      }
+
+      html.large-text nav.open{
+        top:64px;
+        max-height:70vh;
+      }
+
+      html.large-text nav.open a{
+        font-size:1.08rem;
+        line-height:1.3;
+        padding:15px;
+      }
+
+      html.large-text h1{
+        font-size:clamp(2.05rem, 10vw, 3rem);
+        line-height:1.06;
+        letter-spacing:-.045em;
+      }
+
+      html.large-text h2{
+        font-size:clamp(1.65rem, 7.5vw, 2.35rem);
+        line-height:1.1;
+      }
+
+      html.large-text h3{
+        font-size:1.18rem;
+      }
+
+      html.large-text .lead{
+        font-size:1.08rem;
+        line-height:1.7;
+      }
+
+      html.large-text p,
+      html.large-text li{
+        font-size:1.02rem;
+        line-height:1.75;
+      }
+
+      html.large-text .eyebrow{
+        font-size:.88rem;
+        line-height:1.3;
+        white-space:normal;
+      }
+
+      html.large-text .btn{
+        font-size:1.02rem;
+        line-height:1.25;
+        min-height:52px;
+      }
+
+      html.large-text .trust-pill strong{
+        font-size:1.12rem;
+      }
+
+      html.large-text .trust-pill span{
+        font-size:.98rem;
+      }
+
+      html.large-text .hero-photo{
+        min-height:300px;
+      }
+
+      html.large-text .card,
+      html.large-text .panel,
+      html.large-text .verification-card,
+      html.large-text .contact-box,
+      html.large-text form{
+        padding:19px;
+      }
+
+      html.large-text .step{
+        padding:19px 16px 19px 58px;
+      }
+
+      html.large-text .step::before{
+        left:15px;
+        top:19px;
+        width:32px;
+        height:32px;
+      }
+
+      html.large-text .check-list li{
+        padding:16px 14px 16px 44px;
+      }
+
+      html.large-text .check-list li::before{
+        left:13px;
+      }
+
+      html.large-text input,
+      html.large-text select,
+      html.large-text textarea{
+        font-size:1.02rem;
+      }
+    }
+
+    @media (max-width: 390px){
+      .topbar-inner,
+      .nav,
+      section,
+      .hero,
+      .footer{
+        padding-left:12px;
+        padding-right:12px;
+      }
+
+      h1{
+        font-size:2.05rem;
+      }
+
+      h2{
+        font-size:1.65rem;
+      }
+
+      .logo-text strong{
+        max-width:52vw;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+      }
+
+      .hero-photo{
+        min-height:285px;
+      }
+
+      .card,
+      .panel,
+      .verification-card,
+      .contact-box,
+      form{
+        padding:18px;
       }
     }
 
@@ -1190,7 +1647,7 @@
           <option value="/r3start-vaxjo-no">🇳🇴 Norsk</option>
         </select>
 
-        <button class="tool-btn" type="button" id="readPage">Läs upp</button>
+        <button class="tool-btn" type="button" id="readPage">Läs kort sammanfattning</button>
         <button class="tool-btn" type="button" id="increaseText" aria-pressed="false">Större text</button>
         <button class="tool-btn" type="button" id="contrastToggle" aria-pressed="false">Hög kontrast</button>
       </div>
@@ -1225,6 +1682,13 @@
       </div>
     </div>
   </header>
+
+  <div id="readSummary" class="sr-only">
+    R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet.
+    Sidan riktar sig till socialtjänst, kommuner, placerare och anhöriga som snabbt behöver förstå placeringsformer, insatser, kvalitet och kontaktvägar.
+    Verksamheten har 10 platser i Växjö och lyfter SSIL Kvalitetsindex 9,7 av 10 från hösten 2025.
+    Besökaren kan kontakta verksamheten via telefon, e-post eller formulär för placeringsförfrågan, akut placering, samarbete eller frågor.
+  </div>
 
   <main id="main">
     <section class="hero" id="top">
@@ -1620,6 +2084,7 @@
     const languageSelect = document.getElementById("languageSelect");
     const increaseText = document.getElementById("increaseText");
     const form = document.querySelector("form");
+    const readSummary = document.getElementById("readSummary");
 
     const STORAGE_TEXT = "r3startDemoTextSize";
     const STORAGE_CONTRAST = "r3startDemoContrast";
@@ -1695,30 +2160,24 @@
 
         if(window.speechSynthesis.speaking){
           window.speechSynthesis.cancel();
-          readPage.textContent = "Läs upp";
+          readPage.textContent = "Läs kort sammanfattning";
           return;
         }
 
-        const visibleText = Array
-          .from(document.querySelectorAll("main h1, main h2, main h3, main p, main li, main a, main label"))
-          .filter(el => {
-            const style = window.getComputedStyle(el);
-            return style.display !== "none" && style.visibility !== "hidden";
-          })
-          .map(el => el.innerText.trim())
-          .filter(Boolean)
-          .join(". ");
+        const summaryText = readSummary
+          ? readSummary.innerText.trim()
+          : "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet.";
 
-        const utterance = new SpeechSynthesisUtterance(visibleText);
+        const utterance = new SpeechSynthesisUtterance(summaryText);
         utterance.lang = "sv-SE";
         utterance.rate = 0.92;
 
         utterance.onend = () => {
-          readPage.textContent = "Läs upp";
+          readPage.textContent = "Läs kort sammanfattning";
         };
 
         utterance.onerror = () => {
-          readPage.textContent = "Läs upp";
+          readPage.textContent = "Läs kort sammanfattning";
         };
 
         readPage.textContent = "Stoppa uppläsning";
