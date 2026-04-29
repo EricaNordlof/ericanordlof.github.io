@@ -7,7 +7,7 @@
   <title>Demo: R3start Växjö | Stödboende och stödlägenheter</title>
   <meta
     name="description"
-    content="Demo på ny one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, insatser, akutplacering och kontakt för kommuner, socialtjänst och anhöriga."
+    content="Demo på ny one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, insatser, akutplacering, verifiering och kontakt för kommuner, socialtjänst och anhöriga."
   />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#06100c" />
@@ -17,44 +17,41 @@
       --bg:#050706;
       --bg-soft:#0b130f;
       --paper:#ffffff;
+      --paper-soft:#f6f3ee;
+
       --ink:#ffffff;
       --muted:#d9e0dc;
+      --muted-strong:#f4f7f5;
+
       --dark-text:#14201b;
       --dark-muted:#394a42;
+
       --line:rgba(255,255,255,.18);
       --line-dark:#d8d1c7;
+
       --brand:#2f5d50;
       --brand-dark:#18392f;
       --brand-soft:#e5efe9;
+
       --accent:#c58b4c;
       --accent-dark:#8a5b2d;
       --accent-soft:#fbeddc;
+
+      --warning:#7c3f16;
+      --warning-soft:#fff4e4;
+
       --shadow:0 20px 70px rgba(0,0,0,.38);
+      --shadow-soft:0 16px 46px rgba(0,0,0,.25);
+
       --radius:26px;
+      --radius-lg:36px;
       --max:1180px;
       --focus:#fbbf24;
     }
 
-    body.high-contrast{
-      --bg:#000;
-      --bg-soft:#000;
-      --paper:#fff;
-      --ink:#fff;
-      --muted:#fff;
-      --dark-text:#000;
-      --dark-muted:#111;
-      --line:#fff;
-      --line-dark:#111;
-      --brand:#000;
-      --brand-dark:#000;
-      --brand-soft:#fff;
-      --accent:#fff;
-      --accent-dark:#000;
-      --accent-soft:#fff;
-      background:#000;
+    *{
+      box-sizing:border-box;
     }
-
-    *{box-sizing:border-box}
 
     html{
       scroll-behavior:smooth;
@@ -70,10 +67,55 @@
         radial-gradient(circle at top right, rgba(197,139,76,.16), transparent 30rem),
         var(--bg);
       line-height:1.6;
+      font-size:16px;
     }
 
-    a{color:inherit}
-    img{max-width:100%;display:block}
+    body.large-text{
+      font-size:118%;
+    }
+
+    body.high-contrast{
+      --bg:#000000;
+      --bg-soft:#000000;
+      --paper:#ffffff;
+      --paper-soft:#ffffff;
+
+      --ink:#ffffff;
+      --muted:#ffffff;
+      --muted-strong:#ffffff;
+
+      --dark-text:#000000;
+      --dark-muted:#000000;
+
+      --line:#ffffff;
+      --line-dark:#000000;
+
+      --brand:#000000;
+      --brand-dark:#000000;
+      --brand-soft:#ffffff;
+
+      --accent:#ffffff;
+      --accent-dark:#000000;
+      --accent-soft:#ffffff;
+
+      --warning:#000000;
+      --warning-soft:#ffffff;
+
+      --shadow:none;
+      --shadow-soft:none;
+
+      background:#000000 !important;
+      color:#ffffff !important;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
 
     :focus-visible{
       outline:4px solid var(--focus);
@@ -81,12 +123,24 @@
       border-radius:10px;
     }
 
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
     .skip-link{
       position:absolute;
       left:12px;
       top:-90px;
-      background:#fff;
-      color:#000;
+      background:#ffffff;
+      color:#000000;
       padding:12px 16px;
       border-radius:999px;
       z-index:999;
@@ -94,11 +148,13 @@
       transition:.2s ease;
     }
 
-    .skip-link:focus{top:12px}
+    .skip-link:focus{
+      top:12px;
+    }
 
     .topbar{
       background:#d8d3ca;
-      color:#111;
+      color:#111111;
       font-size:.92rem;
       border-bottom:1px solid rgba(0,0,0,.08);
     }
@@ -125,19 +181,33 @@
     .tool-btn,
     .language-select{
       border:1px solid rgba(0,0,0,.25);
-      color:#111;
-      background:#fff;
+      color:#111111;
+      background:#ffffff;
       border-radius:999px;
       padding:8px 12px;
       cursor:pointer;
       font-weight:850;
       font-size:.9rem;
+      min-height:39px;
     }
 
     .tool-btn:hover,
     .language-select:hover{
-      background:#111;
-      color:#fff;
+      background:#111111;
+      color:#ffffff;
+    }
+
+    body.high-contrast .topbar{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border-bottom:3px solid #000000 !important;
+    }
+
+    body.high-contrast .tool-btn,
+    body.high-contrast .language-select{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
     }
 
     header{
@@ -147,6 +217,11 @@
       background:rgba(7,10,8,.92);
       backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(255,255,255,.14);
+    }
+
+    body.high-contrast header{
+      background:#000000 !important;
+      border-bottom:3px solid #ffffff !important;
     }
 
     .nav{
@@ -171,7 +246,7 @@
       width:44px;
       height:44px;
       border-radius:15px;
-      background:#fff;
+      background:#ffffff;
       color:#102019;
       display:grid;
       place-items:center;
@@ -185,7 +260,7 @@
       font-size:1.05rem;
       letter-spacing:-.03em;
       line-height:1.1;
-      color:#fff;
+      color:#ffffff;
     }
 
     .logo-text span{
@@ -210,12 +285,29 @@
       border-radius:999px;
       text-decoration:none;
       font-weight:850;
-      color:#fff;
+      color:#ffffff;
       font-size:.92rem;
     }
 
     nav a:hover{
       background:rgba(255,255,255,.12);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .menu-btn{
+      display:none;
+      border:1px solid rgba(255,255,255,.26);
+      background:rgba(255,255,255,.08);
+      color:#ffffff;
+      border-radius:999px;
+      padding:10px 13px;
+      font-weight:900;
+      cursor:pointer;
     }
 
     .btn{
@@ -240,9 +332,9 @@
     }
 
     .btn-primary{
-      background:#fff;
+      background:#ffffff;
       color:#102019;
-      border-color:#fff;
+      border-color:#ffffff;
       box-shadow:0 14px 34px rgba(255,255,255,.14);
     }
 
@@ -252,7 +344,7 @@
 
     .btn-secondary{
       background:transparent;
-      color:#fff;
+      color:#ffffff;
       border-color:rgba(255,255,255,.82);
     }
 
@@ -262,20 +354,31 @@
 
     .btn-accent{
       background:var(--accent);
-      color:#111;
+      color:#111111;
       border-color:var(--accent);
       box-shadow:0 14px 34px rgba(197,139,76,.28);
     }
 
-    .menu-btn{
-      display:none;
-      border:1px solid rgba(255,255,255,.26);
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      border-radius:999px;
-      padding:10px 13px;
-      font-weight:900;
-      cursor:pointer;
+    .btn-accent:hover{
+      background:#d59a58;
+    }
+
+    body.high-contrast .btn,
+    body.high-contrast .menu-btn{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+      box-shadow:none !important;
+    }
+
+    body.high-contrast nav a,
+    body.high-contrast .logo-text strong,
+    body.high-contrast .logo-text span{
+      color:#ffffff !important;
+    }
+
+    main{
+      overflow:hidden;
     }
 
     section{
@@ -318,7 +421,7 @@
       margin:0;
       line-height:1.06;
       letter-spacing:-.055em;
-      color:#fff;
+      color:#ffffff;
     }
 
     h1{
@@ -365,7 +468,7 @@
     }
 
     .trust-pill{
-      background:#fff;
+      background:#ffffff;
       border:1px solid rgba(255,255,255,.9);
       border-radius:18px;
       padding:16px;
@@ -456,11 +559,11 @@
     }
 
     .card{
-      background:#fff;
+      background:#ffffff;
       border:1px solid rgba(255,255,255,.95);
       border-radius:var(--radius);
       padding:25px;
-      box-shadow:0 16px 46px rgba(0,0,0,.25);
+      box-shadow:var(--shadow-soft);
     }
 
     .card-icon{
@@ -492,7 +595,7 @@
     }
 
     .panel{
-      background:#fff;
+      background:#ffffff;
       color:var(--dark-text);
       border-radius:32px;
       padding:34px;
@@ -503,17 +606,20 @@
     }
 
     .panel .eyebrow,
-    .contact .eyebrow{
+    .contact .eyebrow,
+    .verification .eyebrow{
       background:var(--accent-soft);
       color:var(--accent-dark);
       border-color:rgba(197,139,76,.34);
     }
 
-    .panel h2{
+    .panel h2,
+    .verification-card h2{
       color:var(--dark-text);
     }
 
-    .panel p{
+    .panel p,
+    .verification-card p{
       color:var(--dark-muted);
       margin-top:16px;
       font-weight:600;
@@ -521,7 +627,7 @@
 
     .panel .btn-secondary{
       background:var(--brand-dark);
-      color:#fff;
+      color:#ffffff;
       border-color:var(--brand-dark);
     }
 
@@ -534,7 +640,7 @@
     }
 
     .check-list li{
-      background:#fff;
+      background:#ffffff;
       border:1px solid rgba(255,255,255,.95);
       border-radius:18px;
       padding:17px 18px 17px 52px;
@@ -553,7 +659,7 @@
       height:25px;
       border-radius:999px;
       background:var(--brand-dark);
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -567,7 +673,7 @@
     .quality{
       background:
         linear-gradient(135deg, rgba(24,57,47,.96), rgba(47,93,80,.94));
-      color:#fff;
+      color:#ffffff;
       border-radius:36px;
       padding:44px;
       box-shadow:var(--shadow);
@@ -593,19 +699,19 @@
       font-size:clamp(3.4rem, 8vw, 6.9rem);
       line-height:.9;
       letter-spacing:-.08em;
-      color:#fff;
+      color:#ffffff;
     }
 
     .score span{
       display:block;
       margin-top:14px;
-      color:#fff;
+      color:#ffffff;
       font-weight:850;
     }
 
     .quality h2,
     .quality p{
-      color:#fff;
+      color:#ffffff;
     }
 
     .quality p{
@@ -613,6 +719,46 @@
       margin-top:16px;
       font-size:1.08rem;
       font-weight:600;
+    }
+
+    .verification{
+      background:#f3f0ea;
+      color:var(--dark-text);
+      border-top:1px solid var(--line-dark);
+      border-bottom:1px solid var(--line-dark);
+    }
+
+    .verification h2,
+    .verification h3{
+      color:var(--dark-text);
+    }
+
+    .verification .lead{
+      color:var(--dark-muted);
+    }
+
+    .verification-card{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:32px;
+      padding:34px;
+      box-shadow:0 16px 46px rgba(20,32,27,.13);
+    }
+
+    .verification-warning{
+      background:var(--warning-soft);
+      color:var(--warning);
+      border:1px solid rgba(124,63,22,.22);
+      border-radius:20px;
+      padding:18px;
+      font-weight:750;
+      margin-top:22px;
+    }
+
+    .verification-warning strong{
+      display:block;
+      color:var(--warning);
+      margin-bottom:4px;
     }
 
     .steps{
@@ -623,12 +769,17 @@
 
     .step{
       counter-increment:step;
-      background:#fff;
+      background:#ffffff;
       border:1px solid rgba(255,255,255,.95);
       border-radius:24px;
       padding:23px 23px 23px 78px;
       position:relative;
       box-shadow:0 14px 40px rgba(0,0,0,.24);
+    }
+
+    .verification .step{
+      border:1px solid var(--line-dark);
+      box-shadow:0 16px 46px rgba(20,32,27,.13);
     }
 
     .step::before{
@@ -640,7 +791,7 @@
       height:39px;
       border-radius:14px;
       background:var(--brand-dark);
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -676,7 +827,7 @@
 
     .contact-box,
     form{
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:32px;
       padding:32px;
@@ -729,8 +880,13 @@
       padding:14px 15px;
       font:inherit;
       color:var(--dark-text);
-      background:#fff;
+      background:#ffffff;
       font-weight:600;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:#66736c;
     }
 
     textarea{
@@ -761,7 +917,7 @@
 
     .footer{
       background:#111b18;
-      color:#fff;
+      color:#ffffff;
       padding:34px 18px;
       border-top:1px solid rgba(255,255,255,.12);
     }
@@ -778,7 +934,93 @@
     }
 
     .footer strong{
-      color:#fff;
+      color:#ffffff;
+    }
+
+    body.high-contrast .card,
+    body.high-contrast .panel,
+    body.high-contrast .step,
+    body.high-contrast .trust-pill,
+    body.high-contrast .contact-box,
+    body.high-contrast form,
+    body.high-contrast .check-list li,
+    body.high-contrast .verification-card,
+    body.high-contrast .verification-warning,
+    body.high-contrast .contact-link{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+      box-shadow:none !important;
+    }
+
+    body.high-contrast .card h3,
+    body.high-contrast .card p,
+    body.high-contrast .panel h2,
+    body.high-contrast .panel p,
+    body.high-contrast .step h3,
+    body.high-contrast .step p,
+    body.high-contrast .trust-pill strong,
+    body.high-contrast .trust-pill span,
+    body.high-contrast .contact h2,
+    body.high-contrast .contact h3,
+    body.high-contrast .contact p,
+    body.high-contrast .contact-link,
+    body.high-contrast .contact-link span,
+    body.high-contrast label,
+    body.high-contrast .check-list li,
+    body.high-contrast .check-list strong,
+    body.high-contrast .verification h2,
+    body.high-contrast .verification h3,
+    body.high-contrast .verification p,
+    body.high-contrast .verification-warning,
+    body.high-contrast .verification-warning strong{
+      color:#000000 !important;
+    }
+
+    body.high-contrast h1,
+    body.high-contrast body > main > section:not(.contact):not(.verification) h2,
+    body.high-contrast body > main > section:not(.contact):not(.verification) p,
+    body.high-contrast .lead,
+    body.high-contrast .section-head p{
+      color:#ffffff !important;
+    }
+
+    body.high-contrast .eyebrow{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+    }
+
+    body.high-contrast .quality{
+      background:#000000 !important;
+      border:3px solid #ffffff !important;
+      box-shadow:none !important;
+    }
+
+    body.high-contrast .quality h2,
+    body.high-contrast .quality p,
+    body.high-contrast .score strong,
+    body.high-contrast .score span{
+      color:#ffffff !important;
+    }
+
+    body.high-contrast input,
+    body.high-contrast select,
+    body.high-contrast textarea{
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
+    }
+
+    body.high-contrast .footer{
+      background:#000000 !important;
+      border-top:3px solid #ffffff !important;
+    }
+
+    body.high-contrast .footer,
+    body.high-contrast .footer strong,
+    body.high-contrast .footer-inner{
+      color:#ffffff !important;
     }
 
     @media (max-width: 980px){
@@ -854,7 +1096,7 @@
         display:none;
       }
 
-      .nav .btn{
+      .nav-actions .btn{
         display:none;
       }
 
@@ -865,6 +1107,7 @@
       .quality,
       .panel,
       .contact-box,
+      .verification-card,
       form{
         border-radius:24px;
         padding:24px;
@@ -884,6 +1127,19 @@
 
       .hero-actions{
         width:100%;
+      }
+
+      .topbar-inner{
+        align-items:flex-start;
+      }
+
+      .tools{
+        width:100%;
+      }
+
+      .language-select,
+      .tool-btn{
+        flex:1 1 auto;
       }
     }
 
@@ -915,6 +1171,8 @@
         </select>
 
         <button class="tool-btn" type="button" id="readPage">Läs upp</button>
+        <button class="tool-btn" type="button" id="increaseText">Större text</button>
+        <button class="tool-btn" type="button" id="resetText">Vanlig text</button>
         <button class="tool-btn" type="button" id="contrastToggle" aria-pressed="false">Hög kontrast</button>
       </div>
     </div>
@@ -935,13 +1193,17 @@
           <li><a href="#om">Om oss</a></li>
           <li><a href="#placeringsformer">Placeringsformer</a></li>
           <li><a href="#insatser">Insatser</a></li>
+          <li><a href="#kvalitet">Kvalitet</a></li>
+          <li><a href="#verifiering">Verifiering</a></li>
           <li><a href="#kompetens">Kompetens</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
 
-      <a class="btn btn-primary" href="#kontakt">Kontakta oss</a>
-      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Meny</button>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#kontakt">Kontakta oss</a>
+        <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Meny</button>
+      </div>
     </div>
   </header>
 
@@ -1010,19 +1272,25 @@
           <article class="card">
             <div class="card-icon" aria-hidden="true">🏠</div>
             <h3>Stödlägenheter</h3>
-            <p>Boendeform för vuxna som behöver stöd i vardag, struktur, myndighetskontakt och social återhämtning.</p>
+            <p>
+              Boendeform för vuxna som behöver stöd i vardag, struktur, myndighetskontakt och social återhämtning.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">🤝</div>
             <h3>Individuellt stöd</h3>
-            <p>Kontaktmannaskap, planerade samtal, praktiskt stöd och uppföljning utifrån placeringsmål.</p>
+            <p>
+              Kontaktmannaskap, planerade samtal, praktiskt stöd och uppföljning utifrån placeringsmål.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">📞</div>
             <h3>Snabb kontakt</h3>
-            <p>Tydlig kontaktväg för placeringsförfrågan, akut behov, samarbete eller frågor från anhöriga.</p>
+            <p>
+              Tydlig kontaktväg för placeringsförfrågan, akut behov, samarbete eller frågor från anhöriga.
+            </p>
           </article>
         </div>
       </div>
@@ -1081,19 +1349,25 @@
           <article class="card">
             <div class="card-icon" aria-hidden="true">📋</div>
             <h3>Planering och rutiner</h3>
-            <p>Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner.</p>
+            <p>
+              Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">💬</div>
             <h3>Samtal och kontaktmannaskap</h3>
-            <p>Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk.</p>
+            <p>
+              Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">🧭</div>
             <h3>Väg vidare</h3>
-            <p>Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet.</p>
+            <p>
+              Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet.
+            </p>
           </article>
         </div>
       </div>
@@ -1126,6 +1400,51 @@
       </div>
     </section>
 
+    <section class="verification" id="verifiering">
+      <div class="wrap split">
+        <div class="verification-card">
+          <span class="eyebrow">Trygghet och verifiering</span>
+          <h2>Besökaren ska kunna kontrollera att sidan hör till rätt verksamhet.</h2>
+
+          <p class="lead">
+            För verksamheter inom stöd, boende och omsorg är förtroende extra viktigt.
+            Därför bör hemsidan kopplas till en verifierad person, officiell social kanal eller annan tydlig extern källa.
+          </p>
+
+          <div class="verification-warning">
+            <strong>Viktigt i dagens läge:</strong>
+            Det förekommer falska hemsidor där oseriösa aktörer tar betalt och sedan försvinner.
+            En tydlig verifiering gör det lättare för kommuner, socialtjänst, anhöriga och placerare att se att de är på rätt webbplats.
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Verifierad social kanal</h3>
+            <p>
+              Hemsidan kan länka till en verifierad social medieprofil eller annan officiell kanal kopplad till verksamheten.
+              Har profilen ett verifieringsmärke blir det ännu tydligare.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Länk tillbaka till exakt samma domän</h3>
+            <p>
+              Den verifierade profilen bör länka tillbaka till exakt samma hemsideadress, exempelvis r3start.se.
+              Då kan besökaren kontrollera kopplingen åt båda håll.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Starkare förtroende vid kontakt</h3>
+            <p>
+              När hemsida, kontaktuppgifter och externa profiler hänger ihop minskar risken för missförstånd och stärker förtroendet inför en placering.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="kompetens">
       <div class="wrap split">
         <div>
@@ -1141,17 +1460,23 @@
         <div class="steps">
           <article class="step">
             <h3>Erfaren ledning</h3>
-            <p>Verksamhetens ansvariga personer och deras erfarenhet lyfts fram på ett tydligt och förtroendeskapande sätt.</p>
+            <p>
+              Verksamhetens ansvariga personer och deras erfarenhet lyfts fram på ett tydligt och förtroendeskapande sätt.
+            </p>
           </article>
 
           <article class="step">
             <h3>Relevant utbildning</h3>
-            <p>Kompetenser inom exempelvis socialt arbete, behandling, psykiatri, NPF och beroende kan presenteras mer strukturerat.</p>
+            <p>
+              Kompetenser inom exempelvis socialt arbete, behandling, psykiatri, NPF och beroende kan presenteras mer strukturerat.
+            </p>
           </article>
 
           <article class="step">
             <h3>Tydlig arbetsmetod</h3>
-            <p>Besökaren ska snabbt förstå hur stödet fungerar i praktiken: kontakt, planering, uppföljning och nästa steg.</p>
+            <p>
+              Besökaren ska snabbt förstå hur stödet fungerar i praktiken: kontakt, planering, uppföljning och nästa steg.
+            </p>
           </article>
         </div>
       </div>
@@ -1185,7 +1510,7 @@
           </div>
         </div>
 
-        <form action="#" method="post">
+        <form action="#" method="post" aria-label="Kontaktformulär">
           <div class="form-grid">
             <div class="field">
               <label for="name">Namn</label>
@@ -1248,7 +1573,7 @@
       </div>
 
       <div>
-        Demo framtagen som designförslag. Text och uppgifter justeras vid skarp publicering.
+        Demo framtagen som designförslag. Text, bilder, länkar och uppgifter justeras vid skarp publicering.
       </div>
     </div>
   </footer>
@@ -1260,11 +1585,33 @@
     const contrastToggle = document.getElementById("contrastToggle");
     const readPage = document.getElementById("readPage");
     const languageSelect = document.getElementById("languageSelect");
+    const increaseText = document.getElementById("increaseText");
+    const resetText = document.getElementById("resetText");
+    const form = document.querySelector("form");
+
+    const STORAGE_TEXT = "r3startDemoTextSize";
+    const STORAGE_CONTRAST = "r3startDemoContrast";
+
+    function setHighContrast(isHighContrast){
+      body.classList.toggle("high-contrast", isHighContrast);
+
+      if(contrastToggle){
+        contrastToggle.setAttribute("aria-pressed", isHighContrast ? "true" : "false");
+        contrastToggle.textContent = isHighContrast ? "Normal kontrast" : "Hög kontrast";
+      }
+
+      localStorage.setItem(STORAGE_CONTRAST, isHighContrast ? "high" : "normal");
+    }
+
+    function setLargeText(isLarge){
+      body.classList.toggle("large-text", isLarge);
+      localStorage.setItem(STORAGE_TEXT, isLarge ? "large" : "normal");
+    }
 
     if(languageSelect){
       languageSelect.addEventListener("change", function(){
         const target = this.value;
-        if(target){
+        if(target && target !== window.location.pathname.split("/").pop()){
           window.location.href = target;
         }
       });
@@ -1284,13 +1631,35 @@
       });
     }
 
+    if(increaseText){
+      increaseText.addEventListener("click", () => {
+        setLargeText(true);
+      });
+    }
+
+    if(resetText){
+      resetText.addEventListener("click", () => {
+        setLargeText(false);
+      });
+    }
+
     if(contrastToggle){
       contrastToggle.addEventListener("click", () => {
-        const isHighContrast = body.classList.toggle("high-contrast");
-
-        contrastToggle.setAttribute("aria-pressed", isHighContrast ? "true" : "false");
-        contrastToggle.textContent = isHighContrast ? "Normal kontrast" : "Hög kontrast";
+        const isNowHighContrast = !body.classList.contains("high-contrast");
+        setHighContrast(isNowHighContrast);
       });
+    }
+
+    if(localStorage.getItem(STORAGE_TEXT) === "large"){
+      setLargeText(true);
+    }else{
+      setLargeText(false);
+    }
+
+    if(localStorage.getItem(STORAGE_CONTRAST) === "high"){
+      setHighContrast(true);
+    }else{
+      setHighContrast(false);
     }
 
     if(readPage){
@@ -1324,15 +1693,21 @@
           readPage.textContent = "Läs upp";
         };
 
+        utterance.onerror = () => {
+          readPage.textContent = "Läs upp";
+        };
+
         readPage.textContent = "Stoppa uppläsning";
         window.speechSynthesis.speak(utterance);
       });
     }
 
-    document.querySelector("form").addEventListener("submit", function(event){
-      event.preventDefault();
-      alert("Demoformulär. I färdig version skickas förfrågan vidare.");
-    });
+    if(form){
+      form.addEventListener("submit", function(event){
+        event.preventDefault();
+        alert("Demoformulär. I färdig version skickas förfrågan vidare.");
+      });
+    }
   </script>
 </body>
 </html>
