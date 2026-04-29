@@ -1,0 +1,1491 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Demo: R3start Växjö | Stödboende och stödlägenheter</title>
+  <meta
+    name="description"
+    content="Demo på ny one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, insatser, akutplacering och kontakt för kommuner, socialtjänst och anhöriga."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#16231f" />
+
+  <style>
+    :root{
+      --bg:#f5f1ea;
+      --bg-soft:#fffaf2;
+      --paper:#ffffff;
+      --ink:#17211d;
+      --muted:#5f6b65;
+      --line:#ded7cd;
+      --brand:#2f5d50;
+      --brand-dark:#18392f;
+      --brand-soft:#e5efe9;
+      --accent:#c58b4c;
+      --accent-soft:#fbeddc;
+      --danger:#8a3c2f;
+      --shadow:0 18px 50px rgba(21,32,28,.13);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1180px;
+      --focus:#111827;
+    }
+
+    *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+      text-size-adjust:100%;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(197,139,76,.17), transparent 28rem),
+        linear-gradient(180deg, #f7f2ea 0%, #efe7dc 100%);
+      line-height:1.6;
+    }
+
+    body.high-contrast{
+      --bg:#050505;
+      --bg-soft:#111111;
+      --paper:#000000;
+      --ink:#ffffff;
+      --muted:#e5e5e5;
+      --line:#ffffff;
+      --brand:#ffffff;
+      --brand-dark:#ffffff;
+      --brand-soft:#111111;
+      --accent:#ffffff;
+      --accent-soft:#111111;
+      background:#000;
+    }
+
+    a{color:inherit}
+    img{max-width:100%; display:block}
+
+    :focus-visible{
+      outline:4px solid var(--focus);
+      outline-offset:4px;
+      border-radius:10px;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:-80px;
+      background:#fff;
+      color:#000;
+      padding:12px 16px;
+      border-radius:999px;
+      z-index:999;
+      font-weight:800;
+      transition:.2s ease;
+    }
+
+    .skip-link:focus{top:12px}
+
+    .topbar{
+      background:var(--brand-dark);
+      color:#fff;
+      font-size:.92rem;
+    }
+
+    .topbar-inner{
+      max-width:var(--max);
+      margin:auto;
+      padding:10px 18px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .access-tools{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .tool-btn,
+    .lang-btn{
+      border:1px solid rgba(255,255,255,.35);
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:7px 11px;
+      cursor:pointer;
+      font-weight:700;
+      font-size:.86rem;
+    }
+
+    .tool-btn:hover,
+    .lang-btn:hover,
+    .lang-btn.active{
+      background:#fff;
+      color:var(--brand-dark);
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(245,241,234,.88);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(222,215,205,.8);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:15px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      min-width:max-content;
+    }
+
+    .logo-mark{
+      width:44px;
+      height:44px;
+      border-radius:15px;
+      background:linear-gradient(135deg, var(--brand-dark), var(--brand));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      letter-spacing:-.06em;
+      box-shadow:0 12px 28px rgba(47,93,80,.25);
+    }
+
+    .logo-text strong{
+      display:block;
+      font-size:1.05rem;
+      letter-spacing:-.03em;
+      line-height:1.1;
+    }
+
+    .logo-text span{
+      display:block;
+      font-size:.82rem;
+      color:var(--muted);
+      line-height:1.25;
+    }
+
+    nav ul{
+      display:flex;
+      align-items:center;
+      gap:4px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+
+    nav a{
+      display:inline-flex;
+      padding:9px 11px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:750;
+      color:var(--ink);
+      font-size:.92rem;
+    }
+
+    nav a:hover{
+      background:var(--brand-soft);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border:0;
+      border-radius:999px;
+      padding:12px 17px;
+      font-weight:850;
+      text-decoration:none;
+      cursor:pointer;
+      line-height:1;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:var(--brand-dark);
+      color:#fff;
+      box-shadow:0 14px 30px rgba(24,57,47,.22);
+    }
+
+    .btn-primary:hover{
+      background:var(--brand);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--brand-dark);
+      border:1px solid var(--line);
+    }
+
+    .btn-accent{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 14px 30px rgba(197,139,76,.25);
+    }
+
+    .menu-btn{
+      display:none;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:999px;
+      padding:10px 13px;
+      font-weight:850;
+      cursor:pointer;
+    }
+
+    main{
+      overflow:hidden;
+    }
+
+    section{
+      padding:82px 18px;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+    }
+
+    .hero{
+      padding:58px 18px 72px;
+    }
+
+    .hero-grid{
+      max-width:var(--max);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      background:var(--accent-soft);
+      color:#6f4723;
+      border:1px solid rgba(197,139,76,.28);
+      border-radius:999px;
+      font-weight:850;
+      font-size:.88rem;
+      margin-bottom:18px;
+    }
+
+    h1,h2,h3{
+      margin:0;
+      line-height:1.08;
+      letter-spacing:-.055em;
+    }
+
+    h1{
+      font-size:clamp(2.45rem, 6vw, 5.6rem);
+      max-width:900px;
+    }
+
+    h2{
+      font-size:clamp(2rem, 4vw, 3.4rem);
+      max-width:820px;
+    }
+
+    h3{
+      font-size:1.35rem;
+      letter-spacing:-.035em;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .lead{
+      font-size:clamp(1.07rem, 1.6vw, 1.28rem);
+      margin-top:22px;
+      max-width:720px;
+      color:#415049;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .trust-row{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:30px;
+      max-width:780px;
+    }
+
+    .trust-pill{
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+    }
+
+    .trust-pill strong{
+      display:block;
+      font-size:1.1rem;
+      color:var(--ink);
+      line-height:1.2;
+    }
+
+    .trust-pill span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:4px;
+    }
+
+    .hero-card{
+      background:var(--paper);
+      border:1px solid rgba(222,215,205,.9);
+      border-radius:32px;
+      padding:12px;
+      box-shadow:var(--shadow);
+      transform:rotate(1deg);
+    }
+
+    .hero-photo{
+      min-height:520px;
+      border-radius:24px;
+      background:
+        linear-gradient(180deg, rgba(22,35,31,.05), rgba(22,35,31,.75)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80") center/cover;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .photo-caption{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:20px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.55);
+      backdrop-filter:blur(12px);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 16px 36px rgba(0,0,0,.16);
+    }
+
+    .photo-caption strong{
+      display:block;
+      font-size:1.05rem;
+      line-height:1.25;
+    }
+
+    .photo-caption span{
+      display:block;
+      color:var(--muted);
+      margin-top:5px;
+      font-size:.94rem;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:32px;
+    }
+
+    .section-head p{
+      max-width:520px;
+      font-size:1.05rem;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 10px 34px rgba(21,32,28,.07);
+    }
+
+    .card-icon{
+      width:46px;
+      height:46px;
+      border-radius:16px;
+      background:var(--brand-soft);
+      display:grid;
+      place-items:center;
+      font-size:1.35rem;
+      margin-bottom:16px;
+    }
+
+    .card p{
+      margin-top:10px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .panel{
+      background:var(--brand-dark);
+      color:#fff;
+      border-radius:32px;
+      padding:32px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .panel::after{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      right:-80px;
+      bottom:-90px;
+    }
+
+    .panel h2,
+    .panel p{
+      color:#fff;
+      position:relative;
+      z-index:1;
+    }
+
+    .panel p{
+      color:rgba(255,255,255,.82);
+      margin-top:16px;
+    }
+
+    .check-list{
+      display:grid;
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .check-list li{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:15px 16px 15px 48px;
+      position:relative;
+      color:var(--muted);
+    }
+
+    .check-list li::before{
+      content:"✓";
+      position:absolute;
+      left:16px;
+      top:13px;
+      width:24px;
+      height:24px;
+      border-radius:999px;
+      background:var(--brand-soft);
+      color:var(--brand-dark);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+    }
+
+    .check-list strong{
+      color:var(--ink);
+    }
+
+    .quality{
+      background:
+        linear-gradient(135deg, rgba(24,57,47,.96), rgba(47,93,80,.95)),
+        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color:#fff;
+      border-radius:36px;
+      padding:42px;
+      box-shadow:var(--shadow);
+    }
+
+    .quality-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .score{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:28px;
+      padding:28px;
+      backdrop-filter:blur(14px);
+    }
+
+    .score strong{
+      display:block;
+      font-size:clamp(3.2rem, 8vw, 6.6rem);
+      line-height:.9;
+      letter-spacing:-.08em;
+    }
+
+    .score span{
+      display:block;
+      margin-top:14px;
+      color:rgba(255,255,255,.82);
+      font-weight:750;
+    }
+
+    .quality h2,
+    .quality p{
+      color:#fff;
+    }
+
+    .quality p{
+      color:rgba(255,255,255,.84);
+      margin-top:16px;
+      font-size:1.07rem;
+    }
+
+    .steps{
+      counter-reset:step;
+      display:grid;
+      gap:16px;
+    }
+
+    .step{
+      counter-increment:step;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px 22px 22px 76px;
+      position:relative;
+    }
+
+    .step::before{
+      content:counter(step);
+      position:absolute;
+      left:22px;
+      top:22px;
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      background:var(--brand-dark);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+    }
+
+    .step p{
+      margin-top:6px;
+    }
+
+    .contact{
+      background:var(--paper);
+      border-top:1px solid var(--line);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .contact-box{
+      background:var(--brand-dark);
+      color:#fff;
+      border-radius:32px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-box h2,
+    .contact-box p{
+      color:#fff;
+    }
+
+    .contact-box p{
+      color:rgba(255,255,255,.82);
+      margin-top:14px;
+    }
+
+    .contact-links{
+      display:grid;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .contact-link{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:18px;
+      padding:15px;
+      text-decoration:none;
+      font-weight:850;
+    }
+
+    form{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:32px;
+      padding:26px;
+      box-shadow:0 10px 34px rgba(21,32,28,.07);
+    }
+
+    label{
+      display:block;
+      font-weight:850;
+      margin-bottom:7px;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      border:1px solid #cfc7bb;
+      border-radius:15px;
+      padding:13px 14px;
+      font:inherit;
+      color:var(--ink);
+      background:#fff;
+    }
+
+    textarea{
+      min-height:130px;
+      resize:vertical;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .field{
+      margin-bottom:16px;
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
+
+    .form-note{
+      font-size:.88rem;
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    .footer{
+      background:#111b18;
+      color:#fff;
+      padding:34px 18px;
+    }
+
+    .footer-inner{
+      max-width:var(--max);
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      color:rgba(255,255,255,.76);
+      font-size:.94rem;
+    }
+
+    .footer strong{
+      color:#fff;
+    }
+
+    .mobile-only{display:none}
+
+    [data-lang="en"]{
+      display:none;
+    }
+
+    body.lang-en [data-lang="sv"]{
+      display:none;
+    }
+
+    body.lang-en [data-lang="en"]{
+      display:revert;
+    }
+
+    body.lang-en .cards[data-lang="en"],
+    body.lang-en .check-list[data-lang="en"],
+    body.lang-en .steps[data-lang="en"]{
+      display:grid;
+    }
+
+    body.lang-en .section-head[data-lang="en"],
+    body.lang-en .hero-grid[data-lang="en"],
+    body.lang-en .quality-grid[data-lang="en"],
+    body.lang-en .split[data-lang="en"],
+    body.lang-en .contact-grid[data-lang="en"]{
+      display:grid;
+    }
+
+    body.lang-en .topbar-inner[data-lang="en"],
+    body.lang-en .nav[data-lang="en"],
+    body.lang-en .footer-inner[data-lang="en"]{
+      display:flex;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .split,
+      .quality-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-photo{
+        min-height:430px;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .trust-row{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        display:none;
+      }
+
+      nav.open{
+        display:block;
+        position:absolute;
+        top:73px;
+        left:18px;
+        right:18px;
+        background:#fff;
+        border:1px solid var(--line);
+        border-radius:24px;
+        padding:10px;
+        box-shadow:var(--shadow);
+      }
+
+      nav.open ul{
+        display:grid;
+        gap:4px;
+      }
+
+      nav.open a{
+        width:100%;
+      }
+
+      .menu-btn{
+        display:inline-flex;
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-head p{
+        margin-top:14px;
+      }
+    }
+
+    @media (max-width: 620px){
+      section{
+        padding:62px 16px;
+      }
+
+      .hero{
+        padding-top:38px;
+      }
+
+      .nav{
+        padding:12px 16px;
+      }
+
+      .logo-text span{
+        display:none;
+      }
+
+      .nav-actions .btn{
+        display:none;
+      }
+
+      .mobile-only{
+        display:inline-flex;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .quality,
+      .panel,
+      .contact-box,
+      form{
+        border-radius:24px;
+        padding:24px;
+      }
+
+      .hero-card{
+        transform:none;
+      }
+
+      .hero-photo{
+        min-height:360px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+        transition:none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+  <div class="topbar" aria-label="Tillgänglighetsverktyg">
+    <div class="topbar-inner">
+      <span data-lang="sv">Demo-förslag: tydligare verksamhetssida för stödboende</span>
+      <span data-lang="en">Demo proposal: clearer website for supported housing</span>
+
+      <div class="access-tools" aria-label="Verktyg">
+        <button class="lang-btn active" type="button" data-set-lang="sv">Svenska</button>
+        <button class="lang-btn" type="button" data-set-lang="en">English</button>
+        <button class="tool-btn" type="button" id="readPage">Läs upp</button>
+        <button class="tool-btn" type="button" id="contrastToggle">Hög kontrast</button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="nav">
+      <a class="logo" href="#top" aria-label="Till startsidan">
+        <span class="logo-mark">R3</span>
+        <span class="logo-text">
+          <strong>R3start Växjö</strong>
+          <span data-lang="sv">Stödboende & stödlägenheter</span>
+          <span data-lang="en">Supported housing in Växjö</span>
+        </span>
+      </a>
+
+      <nav id="siteNav" aria-label="Huvudmeny">
+        <ul>
+          <li><a href="#om" data-lang="sv">Om oss</a><a href="#om" data-lang="en">About</a></li>
+          <li><a href="#placeringsformer" data-lang="sv">Placeringsformer</a><a href="#placeringsformer" data-lang="en">Placement options</a></li>
+          <li><a href="#insatser" data-lang="sv">Insatser</a><a href="#insatser" data-lang="en">Support</a></li>
+          <li><a href="#kompetens" data-lang="sv">Kompetens</a><a href="#kompetens" data-lang="en">Competence</a></li>
+          <li><a href="#kontakt" data-lang="sv">Kontakt</a><a href="#kontakt" data-lang="en">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#kontakt" data-lang="sv">Kontakta oss</a>
+        <a class="btn btn-primary" href="#kontakt" data-lang="en">Contact us</a>
+        <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Meny</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow" data-lang="sv">Stödboende i Växjö för vuxna i social utsatthet</span>
+          <span class="eyebrow" data-lang="en">Supported housing in Växjö for adults in social vulnerability</span>
+
+          <h1 data-lang="sv">Trygga stödlägenheter med tydliga insatser och nära stöd.</h1>
+          <h1 data-lang="en">Safe supported housing with structured support and clear routines.</h1>
+
+          <p class="lead" data-lang="sv">
+            R3start Växjö erbjuder stödlägenheter, externa insatser och akutplaceringar för vuxna som behöver struktur,
+            stöd och en fungerande väg framåt.
+          </p>
+
+          <p class="lead" data-lang="en">
+            R3start Växjö offers supported apartments, external support services and emergency placements for adults who need structure,
+            guidance and a stable path forward.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt" data-lang="sv">Gör placeringsförfrågan</a>
+            <a class="btn btn-primary" href="#kontakt" data-lang="en">Send placement inquiry</a>
+
+            <a class="btn btn-secondary" href="#placeringsformer" data-lang="sv">Se placeringsformer</a>
+            <a class="btn btn-secondary" href="#placeringsformer" data-lang="en">View placement options</a>
+          </div>
+
+          <div class="trust-row" aria-label="Förtroendepunkter">
+            <div class="trust-pill">
+              <strong>10 platser</strong>
+              <span data-lang="sv">i stödlägenheter i Växjö</span>
+              <span data-lang="en">in supported apartments in Växjö</span>
+            </div>
+
+            <div class="trust-pill">
+              <strong>Akutplacering</strong>
+              <span data-lang="sv">vid behov av snabb lösning</span>
+              <span data-lang="en">when urgent support is needed</span>
+            </div>
+
+            <div class="trust-pill">
+              <strong>9,7/10</strong>
+              <span data-lang="sv">SSIL Kvalitetsindex hösten 2025</span>
+              <span data-lang="en">SSIL Quality Index autumn 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Bild från boendemiljö">
+          <div class="hero-photo">
+            <div class="photo-caption">
+              <strong data-lang="sv">Hemlik miljö med tydlig struktur.</strong>
+              <strong data-lang="en">A home-like environment with clear structure.</strong>
+              <span data-lang="sv">Stöd, rutiner och kontaktmannaskap anpassas efter individens behov.</span>
+              <span data-lang="en">Support, routines and contact person support are adapted to individual needs.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="om">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-lang="sv">För socialtjänst, kommuner och anhöriga</span>
+            <span class="eyebrow" data-lang="en">For social services, municipalities and relatives</span>
+
+            <h2 data-lang="sv">En tydlig väg till stöd, struktur och nästa steg.</h2>
+            <h2 data-lang="en">A clear path to support, structure and the next step.</h2>
+          </div>
+
+          <p data-lang="sv">
+            Informationen ska vara lätt att förstå, lätt att följa upp och enkel att agera på.
+            Därför samlar denna sida verksamhetens viktigaste delar på ett ställe.
+          </p>
+
+          <p data-lang="en">
+            Information should be easy to understand, easy to follow up and simple to act on.
+            This page gathers the key parts of the service in one place.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🏠</div>
+            <h3 data-lang="sv">Stödlägenheter</h3>
+            <h3 data-lang="en">Supported apartments</h3>
+            <p data-lang="sv">
+              Boendeform för vuxna som behöver stöd i vardag, struktur, myndighetskontakt och social återhämtning.
+            </p>
+            <p data-lang="en">
+              Housing for adults who need support with daily routines, structure, authority contact and social recovery.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3 data-lang="sv">Individuellt stöd</h3>
+            <h3 data-lang="en">Individual support</h3>
+            <p data-lang="sv">
+              Kontaktmannaskap, planerade samtal, praktiskt stöd och uppföljning utifrån placeringsmål.
+            </p>
+            <p data-lang="en">
+              Contact person support, planned conversations, practical support and follow-up based on placement goals.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📞</div>
+            <h3 data-lang="sv">Snabb kontakt</h3>
+            <h3 data-lang="en">Fast contact</h3>
+            <p data-lang="sv">
+              Tydlig kontaktväg för placeringsförfrågan, akut behov, samarbete eller frågor från anhöriga.
+            </p>
+            <p data-lang="en">
+              Clear contact path for placement inquiries, urgent needs, collaboration or questions from relatives.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="placeringsformer">
+      <div class="wrap split">
+        <div class="panel">
+          <span class="eyebrow" data-lang="sv">Placeringsformer</span>
+          <span class="eyebrow" data-lang="en">Placement options</span>
+
+          <h2 data-lang="sv">Rätt stödform från start.</h2>
+          <h2 data-lang="en">The right support from the start.</h2>
+
+          <p data-lang="sv">
+            Vid placering är det viktigt att snabbt förstå vilken typ av stöd som passar bäst.
+            Därför presenteras placeringsformerna tydligt och utan krångliga omvägar.
+          </p>
+
+          <p data-lang="en">
+            When making a placement decision, it must be easy to understand which type of support is most suitable.
+            The placement options are therefore presented clearly.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#kontakt" data-lang="sv">Fråga om ledig plats</a>
+            <a class="btn btn-accent" href="#kontakt" data-lang="en">Ask about availability</a>
+          </div>
+        </div>
+
+        <ul class="check-list">
+          <li data-lang="sv">
+            <strong>Stödboende / stödlägenhet.</strong><br />
+            För vuxna som behöver en trygg boendeform med stöd i vardag, rutiner och planering.
+          </li>
+          <li data-lang="en">
+            <strong>Supported housing / supported apartment.</strong><br />
+            For adults who need safe housing with support in daily life, routines and planning.
+          </li>
+
+          <li data-lang="sv">
+            <strong>Externa insatser.</strong><br />
+            Stöd kan ges även till personer i eget boende, exempelvis genom kontaktmannaskap och praktiskt stöd.
+          </li>
+          <li data-lang="en">
+            <strong>External support.</strong><br />
+            Support may also be provided to people living in their own accommodation, such as contact person support and practical guidance.
+          </li>
+
+          <li data-lang="sv">
+            <strong>Akutplacering.</strong><br />
+            Vid brådskande behov kan verksamheten kontaktas för att se om snabb placering är möjlig.
+          </li>
+          <li data-lang="en">
+            <strong>Emergency placement.</strong><br />
+            In urgent situations, the service can be contacted to check whether a fast placement is possible.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="insatser">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-lang="sv">Insatser i vardagen</span>
+            <span class="eyebrow" data-lang="en">Daily support</span>
+
+            <h2 data-lang="sv">Struktur, uppföljning och praktiskt stöd.</h2>
+            <h2 data-lang="en">Structure, follow-up and practical support.</h2>
+          </div>
+
+          <p data-lang="sv">
+            En placering behöver vara mer än en adress. Därför tydliggörs insatserna så att placerare,
+            handläggare och anhöriga snabbt ser vilket stöd som finns.
+          </p>
+
+          <p data-lang="en">
+            A placement is more than an address. The support services are presented clearly so placement officers,
+            case workers and relatives can understand what support is provided.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📋</div>
+            <h3 data-lang="sv">Planering och rutiner</h3>
+            <h3 data-lang="en">Planning and routines</h3>
+            <p data-lang="sv">
+              Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner.
+            </p>
+            <p data-lang="en">
+              Weekly planning, daily structure, goals, follow-up and support to create sustainable routines.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">💬</div>
+            <h3 data-lang="sv">Samtal och kontaktmannaskap</h3>
+            <h3 data-lang="en">Conversations and contact support</h3>
+            <p data-lang="sv">
+              Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk.
+            </p>
+            <p data-lang="en">
+              Structured conversations, social training, motivation and support in contact with authorities and networks.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🧭</div>
+            <h3 data-lang="sv">Väg vidare</h3>
+            <h3 data-lang="en">Moving forward</h3>
+            <p data-lang="sv">
+              Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet.
+            </p>
+            <p data-lang="en">
+              Support around studies, work, finances, debt, health and the next step toward increased independence.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kvalitet">
+      <div class="wrap">
+        <div class="quality">
+          <div class="quality-grid">
+            <div class="score">
+              <strong>9,7</strong>
+              <span data-lang="sv">av 10 i SSIL Kvalitetsindex hösten 2025</span>
+              <span data-lang="en">out of 10 in the SSIL Quality Index, autumn 2025</span>
+            </div>
+
+            <div>
+              <span class="eyebrow" data-lang="sv">Förtroende som bör synas direkt</span>
+              <span class="eyebrow" data-lang="en">Trust signals that should be visible immediately</span>
+
+              <h2 data-lang="sv">Kvalitet ska inte gömmas långt ner på sidan.</h2>
+              <h2 data-lang="en">Quality should not be hidden far down the page.</h2>
+
+              <p data-lang="sv">
+                När verksamheten har starka resultat och goda omdömen ska det lyftas tydligt.
+                Det gör det enklare för handläggare, kommuner och placerare att snabbt förstå verksamhetens seriositet.
+              </p>
+
+              <p data-lang="en">
+                Strong results and positive evaluations should be visible. It helps case workers,
+                municipalities and placement officers quickly understand the credibility of the service.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-accent" href="#kontakt" data-lang="sv">Kontakta verksamheten</a>
+                <a class="btn btn-accent" href="#kontakt" data-lang="en">Contact the service</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kompetens">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow" data-lang="sv">Kompetens och erfarenhet</span>
+          <span class="eyebrow" data-lang="en">Competence and experience</span>
+
+          <h2 data-lang="sv">Människor, metod och ansvar.</h2>
+          <h2 data-lang="en">People, method and responsibility.</h2>
+
+          <p class="lead" data-lang="sv">
+            För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt,
+            utan att besökaren behöver leta.
+          </p>
+
+          <p class="lead" data-lang="en">
+            Trust is essential in supported housing. Experience, education and working methods should therefore be presented clearly,
+            without forcing visitors to search for key information.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <h3 data-lang="sv">Erfaren ledning</h3>
+            <h3 data-lang="en">Experienced management</h3>
+            <p data-lang="sv">
+              Verksamhetens ansvariga personer och deras erfarenhet lyfts fram på ett tydligt och förtroendeskapande sätt.
+            </p>
+            <p data-lang="en">
+              The responsible people behind the service and their experience are presented clearly and credibly.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3 data-lang="sv">Relevant utbildning</h3>
+            <h3 data-lang="en">Relevant education</h3>
+            <p data-lang="sv">
+              Kompetenser inom exempelvis socialt arbete, behandling, psykiatri, NPF och beroende kan presenteras mer strukturerat.
+            </p>
+            <p data-lang="en">
+              Competence within social work, treatment, psychiatry, neurodevelopmental conditions and addiction can be presented in a structured way.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3 data-lang="sv">Tydlig arbetsmetod</h3>
+            <h3 data-lang="en">Clear working method</h3>
+            <p data-lang="sv">
+              Besökaren ska snabbt förstå hur stödet fungerar i praktiken: kontakt, planering, uppföljning och nästa steg.
+            </p>
+            <p data-lang="en">
+              Visitors should quickly understand how the support works in practice: contact, planning, follow-up and next steps.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-box">
+          <span class="eyebrow" data-lang="sv">Kontakt</span>
+          <span class="eyebrow" data-lang="en">Contact</span>
+
+          <h2 data-lang="sv">Har ni en placeringsförfrågan?</h2>
+          <h2 data-lang="en">Do you have a placement inquiry?</h2>
+
+          <p data-lang="sv">
+            Kontakta R3start Växjö vid frågor om ledig plats, akutplacering, samarbete eller mer information om verksamheten.
+          </p>
+
+          <p data-lang="en">
+            Contact R3start Växjö for questions about availability, emergency placement, collaboration or more information about the service.
+          </p>
+
+          <div class="contact-links">
+            <a class="contact-link" href="tel:+46700000000">
+              Telefon: 070-000 00 00
+            </a>
+            <a class="contact-link" href="mailto:info@r3start.se">
+              E-post: info@r3start.se
+            </a>
+            <a class="contact-link" href="https://r3start.se" target="_blank" rel="noopener">
+              Nuvarande sida: r3start.se
+            </a>
+          </div>
+        </div>
+
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name" data-lang="sv">Namn</label>
+              <label for="name" data-lang="en">Name</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="role" data-lang="sv">Jag kontaktar som</label>
+              <label for="role" data-lang="en">I am contacting as</label>
+              <select id="role" name="role" required>
+                <option value="" data-lang="sv">Välj alternativ</option>
+                <option value="" data-lang="en">Select option</option>
+                <option data-lang="sv">Socialtjänst / kommun</option>
+                <option data-lang="en">Social services / municipality</option>
+                <option data-lang="sv">Anhörig</option>
+                <option data-lang="en">Relative</option>
+                <option data-lang="sv">Samarbetspartner</option>
+                <option data-lang="en">Collaboration partner</option>
+                <option data-lang="sv">Annat</option>
+                <option data-lang="en">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="email">E-post</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="phone" data-lang="sv">Telefon</label>
+              <label for="phone" data-lang="en">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+
+            <div class="field full">
+              <label for="type" data-lang="sv">Ärende</label>
+              <label for="type" data-lang="en">Subject</label>
+              <select id="type" name="type">
+                <option data-lang="sv">Placeringsförfrågan</option>
+                <option data-lang="en">Placement inquiry</option>
+                <option data-lang="sv">Akut placering</option>
+                <option data-lang="en">Emergency placement</option>
+                <option data-lang="sv">Fråga om insatser</option>
+                <option data-lang="en">Question about support services</option>
+                <option data-lang="sv">Samarbete</option>
+                <option data-lang="en">Collaboration</option>
+                <option data-lang="sv">Övrigt</option>
+                <option data-lang="en">Other</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message" data-lang="sv">Meddelande</label>
+              <label for="message" data-lang="en">Message</label>
+              <textarea id="message" name="message" placeholder="Skriv kort vad ärendet gäller..."></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit" data-lang="sv">Skicka förfrågan</button>
+          <button class="btn btn-primary" type="submit" data-lang="en">Send inquiry</button>
+
+          <p class="form-note" data-lang="sv">
+            Demoformulär. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde.
+          </p>
+
+          <p class="form-note" data-lang="en">
+            Demo form. In the finished version, the form can be connected to the preferred email or secure inquiry flow.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>R3start Växjö</strong><br />
+        <span data-lang="sv">Stödboende, stödlägenheter och externa insatser.</span>
+        <span data-lang="en">Supported housing, supported apartments and external support.</span>
+      </div>
+
+      <div>
+        <span data-lang="sv">Demo framtagen som designförslag. Text och uppgifter justeras vid skarp publicering.</span>
+        <span data-lang="en">Demo created as a design proposal. Text and details are adjusted before publication.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const langButtons = document.querySelectorAll("[data-set-lang]");
+    const menuBtn = document.getElementById("menuBtn");
+    const siteNav = document.getElementById("siteNav");
+    const contrastToggle = document.getElementById("contrastToggle");
+    const readPage = document.getElementById("readPage");
+
+    function setLanguage(lang){
+      body.classList.toggle("lang-en", lang === "en");
+      document.documentElement.lang = lang;
+
+      langButtons.forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.setLang === lang);
+        btn.setAttribute("aria-pressed", btn.dataset.setLang === lang ? "true" : "false");
+      });
+
+      const message = document.getElementById("message");
+      if(message){
+        message.placeholder = lang === "en"
+          ? "Briefly describe what the inquiry is about..."
+          : "Skriv kort vad ärendet gäller...";
+      }
+    }
+
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", () => setLanguage(btn.dataset.setLang));
+    });
+
+    if(menuBtn && siteNav){
+      menuBtn.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      siteNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    if(contrastToggle){
+      contrastToggle.addEventListener("click", () => {
+        body.classList.toggle("high-contrast");
+        contrastToggle.setAttribute("aria-pressed", body.classList.contains("high-contrast") ? "true" : "false");
+      });
+    }
+
+    if(readPage){
+      readPage.addEventListener("click", () => {
+        if(!("speechSynthesis" in window)){
+          alert("Din webbläsare stödjer inte uppläsning.");
+          return;
+        }
+
+        if(window.speechSynthesis.speaking){
+          window.speechSynthesis.cancel();
+          readPage.textContent = document.documentElement.lang === "en" ? "Read aloud" : "Läs upp";
+          return;
+        }
+
+        const lang = document.documentElement.lang || "sv";
+        const visibleText = Array
+          .from(document.querySelectorAll("main h1, main h2, main h3, main p, main li"))
+          .filter(el => {
+            const style = window.getComputedStyle(el);
+            return style.display !== "none" && style.visibility !== "hidden";
+          })
+          .map(el => el.innerText.trim())
+          .filter(Boolean)
+          .join(". ");
+
+        const utterance = new SpeechSynthesisUtterance(visibleText);
+        utterance.lang = lang === "en" ? "en-US" : "sv-SE";
+        utterance.rate = 0.92;
+
+        utterance.onend = () => {
+          readPage.textContent = document.documentElement.lang === "en" ? "Read aloud" : "Läs upp";
+        };
+
+        readPage.textContent = lang === "en" ? "Stop reading" : "Stoppa uppläsning";
+        window.speechSynthesis.speak(utterance);
+      });
+    }
+
+    document.querySelector("form").addEventListener("submit", function(event){
+      event.preventDefault();
+      const lang = document.documentElement.lang;
+      alert(lang === "en"
+        ? "Demo form. In the finished version, this sends the inquiry."
+        : "Demoformulär. I färdig version skickas förfrågan vidare.");
+    });
+  </script>
+</body>
+</html>
