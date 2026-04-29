@@ -1938,6 +1938,173 @@ body.high-contrast .quality-wrap .score *{
         transition:none !important;
       }
     }
+
+/* SISTA FIXEN: hög kontrast ska alltid vara läsbar */
+body.high-contrast{
+  background:#000000 !important;
+  color:#ffffff !important;
+}
+
+/* Alla vanliga sektioner blir svarta i hög kontrast */
+body.high-contrast section,
+body.high-contrast .editorial,
+body.high-contrast #om,
+body.high-contrast #bilder,
+body.high-contrast #placeringsformer,
+body.high-contrast #insatser,
+body.high-contrast #kompetens{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border-color:#ffffff !important;
+}
+
+/* Text direkt på svart bakgrund ska vara vit */
+body.high-contrast section h1,
+body.high-contrast section h2,
+body.high-contrast section h3,
+body.high-contrast section p,
+body.high-contrast section .lead,
+body.high-contrast .section-head h2,
+body.high-contrast .section-head p,
+body.high-contrast #kompetens h2,
+body.high-contrast #kompetens p,
+body.high-contrast #insatser h2,
+body.high-contrast #insatser p,
+body.high-contrast #kvalitet h2,
+body.high-contrast #kvalitet p{
+  color:#ffffff !important;
+  text-shadow:none !important;
+}
+
+/* Vita kort ska ha svart text */
+body.high-contrast .card,
+body.high-contrast .panel,
+body.high-contrast .step,
+body.high-contrast .trust-pill,
+body.high-contrast .check-list li,
+body.high-contrast .contact-box,
+body.high-contrast form,
+body.high-contrast .contact-link,
+body.high-contrast .contact-person,
+body.high-contrast .score,
+body.high-contrast .photo-caption,
+body.high-contrast .image-panel-text,
+body.high-contrast .slide-label,
+body.high-contrast .floating-card{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border:3px solid #ffffff !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+
+/* All text inne i vita kort ska vara svart */
+body.high-contrast .card *,
+body.high-contrast .panel *,
+body.high-contrast .step *,
+body.high-contrast .trust-pill *,
+body.high-contrast .check-list li *,
+body.high-contrast .contact-box *,
+body.high-contrast form *,
+body.high-contrast .contact-link *,
+body.high-contrast .contact-person *,
+body.high-contrast .score *,
+body.high-contrast .photo-caption *,
+body.high-contrast .image-panel-text *,
+body.high-contrast .slide-label *,
+body.high-contrast .floating-card *{
+  color:#000000 !important;
+  text-shadow:none !important;
+}
+
+/* Kvalitetssektionen är mörk: texten ska vara vit */
+body.high-contrast .quality-wrap{
+  background:#000000 !important;
+  border:3px solid #ffffff !important;
+  box-shadow:none !important;
+}
+
+body.high-contrast .quality-wrap h2,
+body.high-contrast .quality-wrap p,
+body.high-contrast .quality-wrap .eyebrow,
+body.high-contrast .quality-wrap .quality-grid > div:not(.score),
+body.high-contrast .quality-wrap .quality-grid > div:not(.score) *{
+  color:#ffffff !important;
+  text-shadow:none !important;
+}
+
+/* Men score-rutan i kvalitetssektionen ska vara vit med svart text */
+body.high-contrast .quality-wrap .score,
+body.high-contrast .quality-wrap .score *{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#ffffff !important;
+}
+
+/* Knappar i mörka sektioner: vit knapp, svart text */
+body.high-contrast .quality-wrap .btn,
+body.high-contrast .quality-wrap .btn *,
+body.high-contrast .contact .btn,
+body.high-contrast .contact .btn *,
+body.high-contrast .footer .btn,
+body.high-contrast .footer .btn *{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#ffffff !important;
+  text-shadow:none !important;
+}
+
+/* Knappar inne i vita kort: svart kant */
+body.high-contrast form .btn,
+body.high-contrast form .btn *,
+body.high-contrast .contact-box .btn,
+body.high-contrast .contact-box .btn *,
+body.high-contrast .panel .btn,
+body.high-contrast .panel .btn *{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#000000 !important;
+}
+
+/* Badges/eyebrows */
+body.high-contrast .eyebrow{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border:3px solid #ffffff !important;
+  text-shadow:none !important;
+}
+
+/* Eyebrow inne i vitt kort */
+body.high-contrast .panel .eyebrow,
+body.high-contrast .card .eyebrow,
+body.high-contrast .contact-box .eyebrow,
+body.high-contrast form .eyebrow{
+  border-color:#000000 !important;
+}
+
+/* Formulär */
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border:3px solid #000000 !important;
+}
+
+body.high-contrast input::placeholder,
+body.high-contrast textarea::placeholder{
+  color:#333333 !important;
+}
+
+/* Ikoner/nummer i listor */
+body.high-contrast .step::before,
+body.high-contrast .check-list li::before{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border:2px solid #000000 !important;
+}
+
   </style>
 </head>
 
