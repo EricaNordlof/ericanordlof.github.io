@@ -1,4 +1,16 @@
-Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga och behållit menyn som följer med vid scroll.
+Viljan-sidan har några bra grepp att sno med stil: bildgalleri med flera bilder, snabbfakta, kontaktperson/verksamhetschef, PDF-knapp, tydliga ankarlänkar och sociala ikoner i footern. De visar också “Ladda ner sidan (PDF)”, flera verksamhetsbilder, kontaktpersoner och sociala medier längst ner.  ￼
+
+Här är en hel mergad version med:
+
+* sidscrollande bildgalleri/swipe-carousel
+* många stockbilder
+* Simon/verksamhetschef-kort med foto
+* knapp för “Ladda ner sidan som PDF”
+* sociala medier-ikoner i footern
+* sticky meny
+* mer genomskinliga bildtexter
+* svensk/engelsk växling kvar
+
 <!doctype html>
 <html lang="sv">
 <head>
@@ -32,8 +44,8 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       --gold-soft:#f8ead6;
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
-      --glass:rgba(255,250,243,.52);
-      --glass-strong:rgba(255,250,243,.60);
+      --glass:rgba(255,250,243,.46);
+      --glass-strong:rgba(255,250,243,.56);
       --glass-border:rgba(255,255,255,.34);
       --shadow:0 28px 90px rgba(20,32,27,.16);
       --shadow-soft:0 18px 50px rgba(20,32,27,.10);
@@ -189,8 +201,7 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       width:46px;
       height:46px;
       border-radius:16px;
-      background:
-        linear-gradient(135deg, var(--forest), var(--forest-2));
+      background:linear-gradient(135deg, var(--forest), var(--forest-2));
       color:#ffffff;
       display:grid;
       place-items:center;
@@ -291,12 +302,20 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       border-color:rgba(185,133,66,.55);
       box-shadow:0 16px 38px rgba(185,133,66,.22);
     }
+    .pdf-btn{
+      background:#ffffff;
+      color:var(--forest);
+      border:1px solid var(--line-dark);
+    }
+    .pdf-btn:hover{
+      background:var(--forest-soft);
+    }
     main{
       overflow:hidden;
     }
     section{
       padding:88px 18px;
-      scroll-margin-top:150px;
+      scroll-margin-top:155px;
     }
     .wrap{
       max-width:var(--max);
@@ -347,7 +366,6 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
     }
     .hero{
       padding:72px 18px 80px;
-      scroll-margin-top:150px;
     }
     .hero-grid{
       max-width:var(--max);
@@ -418,7 +436,8 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
     .photo-caption,
     .image-panel-text,
     .gallery-label,
-    .floating-card{
+    .floating-card,
+    .slider-label{
       backdrop-filter:blur(10px) saturate(1.15);
       -webkit-backdrop-filter:blur(10px) saturate(1.15);
       box-shadow:0 16px 34px rgba(0,0,0,.12);
@@ -590,6 +609,135 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       margin-top:5px;
       font-weight:700;
     }
+    .slider-section{
+      background:#f7efe4;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .slider-top{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:22px;
+      margin-bottom:22px;
+    }
+    .slider-help{
+      color:var(--muted);
+      font-weight:750;
+      font-size:.96rem;
+    }
+    .photo-slider{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding:6px 4px 22px;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;
+    }
+    .slide{
+      flex:0 0 min(78vw, 430px);
+      height:310px;
+      border-radius:34px;
+      border:1px solid var(--line-dark);
+      overflow:hidden;
+      position:relative;
+      scroll-snap-align:start;
+      box-shadow:var(--shadow-soft);
+      background-size:cover;
+      background-position:center;
+    }
+    .slide:nth-child(1){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(2){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(3){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(4){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(5){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(6){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(7){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(8){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(9){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=82");}
+    .slide:nth-child(10){background-image:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)), url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=82");}
+    .slider-label{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      border-radius:20px;
+      padding:15px 16px;
+      font-weight:950;
+      color:var(--ink);
+    }
+    .slider-label span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:750;
+      margin-top:3px;
+    }
+    .quickfacts{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:22px;
+      margin-top:26px;
+    }
+    .manager-card{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:32px;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+      display:grid;
+      grid-template-columns:92px 1fr;
+      gap:16px;
+      align-items:center;
+    }
+    .manager-photo{
+      width:92px;
+      height:92px;
+      border-radius:24px;
+      background:url("https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=82") center/cover;
+      border:5px solid #f4eadc;
+    }
+    .manager-card strong{
+      display:block;
+      font-size:1.2rem;
+      color:var(--ink);
+      line-height:1.1;
+      font-weight:950;
+    }
+    .manager-card span{
+      display:block;
+      color:var(--muted);
+      font-weight:750;
+      margin-top:4px;
+    }
+    .quickfacts-list{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+    }
+    .fact-box{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:24px;
+      padding:18px;
+      box-shadow:var(--shadow-soft);
+    }
+    .fact-box strong{
+      display:block;
+      color:var(--forest);
+      font-size:1.35rem;
+      line-height:1.05;
+      font-weight:950;
+    }
+    .fact-box span{
+      display:block;
+      color:var(--muted);
+      font-weight:750;
+      margin-top:6px;
+    }
     .check-list{
       display:grid;
       gap:14px;
@@ -625,73 +773,8 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       color:var(--ink);
       font-weight:950;
     }
-    .gallery{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:18px;
-      margin-top:34px;
-    }
-    .gallery-main,
-    .gallery-side{
-      border-radius:34px;
-      overflow:hidden;
-      border:1px solid var(--line-dark);
-      box-shadow:var(--shadow-soft);
-      min-height:430px;
-      position:relative;
-    }
-    .gallery-main{
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.44)),
-        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=82") center/cover;
-    }
-    .gallery-side{
-      display:grid;
-      gap:18px;
-      border:0;
-      box-shadow:none;
-      min-height:430px;
-    }
-    .gallery-small{
-      border-radius:30px;
-      border:1px solid var(--line-dark);
-      box-shadow:var(--shadow-soft);
-      overflow:hidden;
-      position:relative;
-      min-height:206px;
-    }
-    .gallery-small.one{
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)),
-        url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=82") center/cover;
-    }
-    .gallery-small.two{
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.38)),
-        url("https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1000&q=82") center/cover;
-    }
-    .gallery-label{
-      position:absolute;
-      left:18px;
-      right:18px;
-      bottom:18px;
-      background:var(--glass);
-      border:1px solid var(--glass-border);
-      border-radius:20px;
-      padding:15px 16px;
-      font-weight:900;
-      color:var(--ink);
-    }
-    .gallery-label span{
-      display:block;
-      color:var(--muted);
-      font-size:.9rem;
-      font-weight:700;
-      margin-top:3px;
-    }
     .quality-wrap{
-      background:
-        linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
+      background:linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
       color:#ffffff;
       border-radius:44px;
       padding:48px;
@@ -834,6 +917,25 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
     .team-photo .gallery-label{
       bottom:22px;
     }
+    .gallery-label{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      background:var(--glass);
+      border:1px solid var(--glass-border);
+      border-radius:20px;
+      padding:15px 16px;
+      font-weight:900;
+      color:var(--ink);
+    }
+    .gallery-label span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:700;
+      margin-top:3px;
+    }
     .contact{
       background:#151f1b;
       color:#ffffff;
@@ -948,21 +1050,67 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
     .footer{
       background:#0f1714;
       color:#ffffff;
-      padding:34px 18px;
+      padding:42px 18px 30px;
       border-top:1px solid rgba(255,255,255,.12);
     }
     .footer-inner{
       max-width:var(--max);
       margin:auto;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
+      display:grid;
+      grid-template-columns:1.1fr .9fr .8fr;
+      gap:28px;
       color:#d9e0dc;
       font-size:.95rem;
     }
     .footer strong{
       color:#ffffff;
+    }
+    .footer a{
+      color:#d9e0dc;
+      text-decoration:none;
+      font-weight:750;
+    }
+    .footer a:hover{
+      color:#ffffff;
+      text-decoration:underline;
+    }
+    .footer-links{
+      display:grid;
+      gap:8px;
+    }
+    .socials{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .social{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.16);
+      display:grid;
+      place-items:center;
+      color:#ffffff;
+      text-decoration:none;
+    }
+    .social svg{
+      width:20px;
+      height:20px;
+      fill:currentColor;
+    }
+    .footer-bottom{
+      max-width:var(--max);
+      margin:28px auto 0;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.10);
+      color:#aeb8b3;
+      font-size:.88rem;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
     }
     body.high-contrast .sticky-shell,
     body.high-contrast header,
@@ -998,7 +1146,10 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
     body.high-contrast .photo-caption,
     body.high-contrast .image-panel-text,
     body.high-contrast .gallery-label,
-    body.high-contrast .floating-card{
+    body.high-contrast .floating-card,
+    body.high-contrast .manager-card,
+    body.high-contrast .fact-box,
+    body.high-contrast .slider-label{
       background:#ffffff !important;
       color:#000000 !important;
       border:3px solid #000000 !important;
@@ -1033,7 +1184,13 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
     body.high-contrast .gallery-label,
     body.high-contrast .gallery-label span,
     body.high-contrast .floating-card strong,
-    body.high-contrast .floating-card span{
+    body.high-contrast .floating-card span,
+    body.high-contrast .manager-card strong,
+    body.high-contrast .manager-card span,
+    body.high-contrast .fact-box strong,
+    body.high-contrast .fact-box span,
+    body.high-contrast .slider-label,
+    body.high-contrast .slider-label span{
       color:#000000 !important;
     }
     body.high-contrast .quality-wrap{
@@ -1070,7 +1227,8 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       .split,
       .quality-grid,
       .contact-grid,
-      .gallery{
+      .quickfacts,
+      .footer-inner{
         grid-template-columns:1fr;
       }
       .hero-visual{
@@ -1084,7 +1242,8 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         display:none;
       }
       .cards,
-      .trust-row{
+      .trust-row,
+      .quickfacts-list{
         grid-template-columns:1fr;
       }
       nav{
@@ -1114,10 +1273,12 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       .menu-btn{
         display:inline-flex;
       }
-      .section-head{
+      .section-head,
+      .slider-top{
         display:block;
       }
-      .section-head p{
+      .section-head p,
+      .slider-help{
         margin-top:14px;
       }
       .team-photo{
@@ -1215,8 +1376,7 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       .hero-grid,
       .split,
       .quality-grid,
-      .contact-grid,
-      .gallery{
+      .contact-grid{
         grid-template-columns:1fr;
         gap:22px;
       }
@@ -1310,21 +1470,18 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         padding:22px;
       }
       .image-panel,
-      .team-photo,
-      .gallery-main,
-      .gallery-side{
+      .team-photo{
         min-height:330px;
         border-radius:26px;
       }
-      .gallery-side{
-        min-height:0;
-      }
-      .gallery-small{
-        min-height:230px;
-        border-radius:24px;
+      .slide{
+        flex-basis:86vw;
+        height:300px;
+        border-radius:26px;
       }
       .image-panel-text,
-      .gallery-label{
+      .gallery-label,
+      .slider-label{
         left:14px;
         right:14px;
         bottom:14px;
@@ -1365,6 +1522,14 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         height:34px;
         border-radius:12px;
       }
+      .manager-card{
+        grid-template-columns:80px 1fr;
+      }
+      .manager-photo{
+        width:80px;
+        height:80px;
+        border-radius:20px;
+      }
       .form-grid{
         grid-template-columns:1fr;
         gap:0;
@@ -1381,12 +1546,10 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         min-height:135px;
       }
       .footer{
-        padding:28px 14px;
+        padding:32px 14px 26px;
       }
-      .footer-inner{
+      .footer-bottom{
         display:grid;
-        gap:14px;
-        font-size:.92rem;
       }
     }
     @media (max-width: 390px){
@@ -1419,6 +1582,37 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       .contact-box,
       form{
         padding:18px;
+      }
+    }
+    @media print{
+      .sticky-shell,
+      .topbar,
+      .hero-actions,
+      .nav-actions,
+      .tools,
+      .footer,
+      .contact form{
+        display:none !important;
+      }
+      body{
+        background:#ffffff !important;
+        color:#000000 !important;
+      }
+      section{
+        padding:26px 0 !important;
+        break-inside:avoid;
+      }
+      .wrap,
+      .hero-grid{
+        max-width:100%;
+      }
+      .card,
+      .panel,
+      .step,
+      .contact-box,
+      .verification-card,
+      .quality-wrap{
+        box-shadow:none !important;
       }
     }
     @media (prefers-reduced-motion: reduce){
@@ -1461,16 +1655,16 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         <nav id="siteNav" aria-label="Huvudmeny">
           <ul>
             <li><a href="#om">Om oss</a></li>
-            <li><a href="#miljo">Miljö</a></li>
+            <li><a href="#bilder">Bilder</a></li>
             <li><a href="#placeringsformer">Placeringsformer</a></li>
             <li><a href="#insatser">Insatser</a></li>
             <li><a href="#kvalitet">Kvalitet</a></li>
-            <li><a href="#verifiering">Verifiering</a></li>
             <li><a href="#kompetens">Kompetens</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
         <div class="nav-actions">
+          <button class="btn pdf-btn" type="button" id="downloadPdf">Ladda ner PDF</button>
           <a class="btn btn-primary" href="#kontakt">Kontakta oss</a>
           <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Meny</button>
         </div>
@@ -1496,6 +1690,7 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Gör placeringsförfrågan</a>
             <a class="btn btn-secondary" href="#placeringsformer">Se placeringsformer</a>
+            <button class="btn pdf-btn" type="button" id="downloadPdfHero">Ladda ner sidan som PDF</button>
           </div>
           <div class="trust-row" aria-label="Förtroendepunkter">
             <div class="trust-pill">
@@ -1564,6 +1759,105 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
             </p>
           </article>
         </div>
+        <div class="quickfacts" aria-label="Snabbfakta och kontaktperson">
+          <article class="manager-card">
+            <div class="manager-photo" aria-hidden="true"></div>
+            <div>
+              <strong>Simon</strong>
+              <span>Verksamhetschef / kontaktperson</span>
+              <span>Byt gärna bilden till riktigt foto i skarp version.</span>
+            </div>
+          </article>
+          <div class="quickfacts-list">
+            <div class="fact-box">
+              <strong>10</strong>
+              <span>platser i Växjö</span>
+            </div>
+            <div class="fact-box">
+              <strong>24/7</strong>
+              <span>tydlig kontaktväg vid akuta frågor</span>
+            </div>
+            <div class="fact-box">
+              <strong>9,7</strong>
+              <span>kvalitetsindex hösten 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slider-section" id="bilder">
+      <div class="wrap">
+        <div class="slider-top">
+          <div>
+            <span class="eyebrow">Bildgalleri</span>
+            <h2>Dra åt sidan för fler bilder.</h2>
+          </div>
+          <p class="slider-help">
+            Stockbilder som placeholder. Byt till egna bilder på lägenheter, miljö, entré, personal och gemensamma ytor.
+          </p>
+        </div>
+        <div class="photo-slider" aria-label="Bildgalleri med exempelbilder">
+          <article class="slide">
+            <div class="slider-label">
+              Boendemiljö
+              <span>Exempelbild – byt till egen lägenhetsbild.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Kök och vardagsstruktur
+              <span>Visar vardag, ordning och hemlik känsla.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Detaljbild
+              <span>Mjuka miljöbilder gör sidan mer premium.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Samtal och stöd
+              <span>Byt till egen neutral mötesbild.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Team och bemötande
+              <span>Byt till foto på verksamhetschef eller personal.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Dokumentation
+              <span>Passar för stödplanering och uppföljning.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Interiör
+              <span>Ljusa, rena bilder stärker förtroendet.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Gemensamma ytor
+              <span>Byt till egen bild från verksamheten.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Hemlik känsla
+              <span>Visar trygghet utan att bli stelt.</span>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slider-label">
+              Kontorsmiljö
+              <span>För placerare, möten och kontakt.</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
     <section class="editorial" id="miljo">
@@ -1587,30 +1881,6 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
           <div class="image-panel-text">
             <strong>Premium utan att bli stelt.</strong>
             <span>Stora bildytor, lugna färger och kortare text gör sidan enklare att ta in.</span>
-          </div>
-        </div>
-      </div>
-      <div class="wrap">
-        <div class="gallery" aria-label="Exempel på bildsektion">
-          <div class="gallery-main">
-            <div class="gallery-label">
-              Boendemiljö
-              <span>Byt till egen bild på lägenhet, fasad eller gemensam yta.</span>
-            </div>
-          </div>
-          <div class="gallery-side">
-            <div class="gallery-small one">
-              <div class="gallery-label">
-                Samtal och stöd
-                <span>Byt till egen bild på mötesmiljö eller neutral personalbild.</span>
-              </div>
-            </div>
-            <div class="gallery-small two">
-              <div class="gallery-label">
-                Hemlik känsla
-                <span>Byt till detaljbild från miljön för mjukare intryck.</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1867,10 +2137,41 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       <div>
         <strong>R3start Växjö</strong><br />
         Stödboende, stödlägenheter och externa insatser.
+        <div class="socials" aria-label="Sociala medier">
+          <a class="social" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.47h-1.25c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.24 22 17.08 22 12.06z"/>
+            </svg>
+          </a>
+          <a class="social" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zm5.25-3.05a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05z"/>
+            </svg>
+          </a>
+          <a class="social" href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.25 0h3.83v1.5h.05c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.66 4.8 6.12v5.43h-4v-4.81c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.84 1.25-1.84 2.54v4.89h-4v-11z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <strong>Snabblänkar</strong>
+        <a href="#om">Om verksamheten</a>
+        <a href="#bilder">Bildgalleri</a>
+        <a href="#placeringsformer">Placeringsformer</a>
+        <a href="#kompetens">Kompetens</a>
+        <a href="#kontakt">Kontakt</a>
       </div>
       <div>
-        Demo framtagen som designförslag. Text, bilder, länkar och uppgifter justeras vid skarp publicering.
+        <strong>Demo</strong><br />
+        Text, bilder, länkar och uppgifter justeras vid skarp publicering.
+        Sociala ikoner kan länkas till riktiga profiler när de finns.
       </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© R3start Växjö</span>
+      <span>Designförslag framtaget av Nordlöf Nordic.</span>
     </div>
   </footer>
   <script>
@@ -1883,6 +2184,8 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
     const languageSelect = document.getElementById("languageSelect");
     const increaseText = document.getElementById("increaseText");
     const form = document.querySelector("form");
+    const downloadPdf = document.getElementById("downloadPdf");
+    const downloadPdfHero = document.getElementById("downloadPdfHero");
     const STORAGE_TEXT = "r3startDemoTextSize";
     const STORAGE_CONTRAST = "r3startDemoContrast";
     const STORAGE_LANG = "r3startDemoLanguage";
@@ -1920,15 +2223,17 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         "Till startsidan": "To start page",
         "Stödboende & stödlägenheter": "Supported housing & supported apartments",
         "Om oss": "About",
+        "Bilder": "Images",
         "Miljö": "Environment",
         "Placeringsformer": "Placement types",
         "Insatser": "Support",
         "Kvalitet": "Quality",
-        "Verifiering": "Verification",
         "Kompetens": "Competence",
         "Kontakt": "Contact",
         "Kontakta oss": "Contact us",
         "Meny": "Menu",
+        "Ladda ner PDF": "Download PDF",
+        "Ladda ner sidan som PDF": "Download page as PDF",
         "Stödboende i Växjö för vuxna i social utsatthet": "Supported housing in Växjö for adults in social vulnerability",
         "Trygga stödlägenheter med struktur, närvaro och kvalitet.": "Safe supported apartments with structure, presence and quality.",
         "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna som behöver en stabil boendemiljö, tydliga rutiner och ett professionellt stöd framåt.": "R3start Växjö offers supported housing, supported apartments, external support and emergency placements for adults who need a stable living environment, clear routines and professional support moving forward.",
@@ -1951,6 +2256,35 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         "Kontaktmannaskap, veckomöten, planerade samtal, praktiskt stöd och uppföljning utifrån placeringsmål.": "Key-worker contact, weekly meetings, planned conversations, practical support and follow-up based on placement goals.",
         "Snabb kontakt": "Fast contact",
         "Tydlig kontaktväg för placeringsförfrågan, akut behov, samarbete eller frågor från anhöriga.": "A clear contact route for placement enquiries, urgent needs, collaboration or questions from relatives.",
+        "Simon": "Simon",
+        "Verksamhetschef / kontaktperson": "Manager / contact person",
+        "Byt gärna bilden till riktigt foto i skarp version.": "Replace this with a real photo in the final version.",
+        "platser i Växjö": "places in Växjö",
+        "tydlig kontaktväg vid akuta frågor": "clear contact route for urgent questions",
+        "kvalitetsindex hösten 2025": "quality index autumn 2025",
+        "Bildgalleri": "Image gallery",
+        "Dra åt sidan för fler bilder.": "Swipe sideways to see more images.",
+        "Stockbilder som placeholder. Byt till egna bilder på lägenheter, miljö, entré, personal och gemensamma ytor.": "Stock images as placeholders. Replace with your own images of apartments, environment, entrance, staff and shared spaces.",
+        "Boendemiljö": "Housing environment",
+        "Exempelbild – byt till egen lägenhetsbild.": "Example image – replace with your own apartment photo.",
+        "Kök och vardagsstruktur": "Kitchen and everyday structure",
+        "Visar vardag, ordning och hemlik känsla.": "Shows everyday life, order and a homelike feel.",
+        "Detaljbild": "Detail image",
+        "Mjuka miljöbilder gör sidan mer premium.": "Soft environmental images make the page feel more premium.",
+        "Samtal och stöd": "Conversations and support",
+        "Byt till egen neutral mötesbild.": "Replace with your own neutral meeting image.",
+        "Team och bemötande": "Team and approach",
+        "Byt till foto på verksamhetschef eller personal.": "Replace with a photo of the manager or staff.",
+        "Dokumentation": "Documentation",
+        "Passar för stödplanering och uppföljning.": "Suitable for support planning and follow-up.",
+        "Interiör": "Interior",
+        "Ljusa, rena bilder stärker förtroendet.": "Bright, clean images strengthen trust.",
+        "Gemensamma ytor": "Shared areas",
+        "Byt till egen bild från verksamheten.": "Replace with your own image from the organisation.",
+        "Hemlik känsla": "Homelike feel",
+        "Visar trygghet utan att bli stelt.": "Shows safety without feeling stiff.",
+        "Kontorsmiljö": "Office environment",
+        "För placerare, möten och kontakt.": "For placement officers, meetings and contact.",
         "Miljö och bemötande": "Environment and approach",
         "Varmare, lugnare och mer förtroende direkt.": "Warmer, calmer and more trust from the first view.",
         "Bildspråket bör visa trygghet, ordning, vardagsstruktur och mänsklighet. Det behöver inte vara stelt. Det ska kännas professionellt, men fortfarande nära.": "The visual language should show safety, order, everyday structure and humanity. It does not need to feel stiff. It should feel professional, but still close.",
@@ -1958,13 +2292,6 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         "Prata med verksamheten": "Speak with the organisation",
         "Premium utan att bli stelt.": "Premium without feeling stiff.",
         "Stora bildytor, lugna färger och kortare text gör sidan enklare att ta in.": "Large image areas, calm colours and shorter text make the page easier to absorb.",
-        "Exempel på bildsektion": "Example image section",
-        "Boendemiljö": "Housing environment",
-        "Byt till egen bild på lägenhet, fasad eller gemensam yta.": "Replace with your own image of an apartment, facade or shared area.",
-        "Samtal och stöd": "Conversations and support",
-        "Byt till egen bild på mötesmiljö eller neutral personalbild.": "Replace with your own image of a meeting environment or neutral staff photo.",
-        "Hemlik känsla": "Homelike feel",
-        "Byt till detaljbild från miljön för mjukare intryck.": "Replace with a detail image from the environment for a softer impression.",
         "Rätt stödform från start.": "The right support form from the start.",
         "Vid placering är det viktigt att snabbt förstå vilken typ av stöd som passar bäst. Här presenteras placeringsformerna tydligt, utan krångliga omvägar.": "When making a placement, it is important to quickly understand which type of support is most suitable. Here, the placement types are presented clearly and without unnecessary detours.",
         "Fråga om ledig plats": "Ask about availability",
@@ -2037,8 +2364,11 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         "Skriv kort vad ärendet gäller...": "Briefly describe what the matter concerns...",
         "Skicka förfrågan": "Send enquiry",
         "Demoformulär. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde.": "Demo form. In the final version, the form is connected to the preferred email address or a secure case flow.",
-        "Stödboende, stödlägenheter och externa insatser.": "Supported housing, supported apartments and external support services.",
-        "Demo framtagen som designförslag. Text, bilder, länkar och uppgifter justeras vid skarp publicering.": "Demo created as a design concept. Text, images, links and details are adjusted before final publication.",
+        "Sociala medier": "Social media",
+        "Snabblänkar": "Quick links",
+        "Om verksamheten": "About the organisation",
+        "Text, bilder, länkar och uppgifter justeras vid skarp publicering. Sociala ikoner kan länkas till riktiga profiler när de finns.": "Text, images, links and details are adjusted before final publication. Social icons can be linked to real profiles when available.",
+        "Designförslag framtaget av Nordlöf Nordic.": "Design concept by Nordlöf Nordic.",
         "Din webbläsare stödjer inte uppläsning.": "Your browser does not support text-to-speech.",
         "Demoformulär. I färdig version skickas förfrågan vidare.": "Demo form. In the final version, the enquiry is sent onward."
       }
@@ -2144,6 +2474,12 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       if(menuBtn){
         menuBtn.textContent = t("Meny");
       }
+      if(downloadPdf){
+        downloadPdf.textContent = t("Ladda ner PDF");
+      }
+      if(downloadPdfHero){
+        downloadPdfHero.textContent = t("Ladda ner sidan som PDF");
+      }
     }
     function applyLanguage(lang){
       currentLang = lang === "en" ? "en" : "sv";
@@ -2165,6 +2501,9 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
       root.classList.toggle("large-text", isLarge);
       localStorage.setItem(STORAGE_TEXT, isLarge ? "large" : "normal");
       syncToolLabels();
+    }
+    function downloadPageAsPdf(){
+      window.print();
     }
     if(languageSelect){
       languageSelect.addEventListener("change", function(){
@@ -2218,6 +2557,12 @@ Klistra in hela denna. Jag har gjort textrutorna på bilderna mer genomskinliga 
         window.speechSynthesis.speak(utterance);
         syncToolLabels();
       });
+    }
+    if(downloadPdf){
+      downloadPdf.addEventListener("click", downloadPageAsPdf);
+    }
+    if(downloadPdfHero){
+      downloadPdfHero.addEventListener("click", downloadPageAsPdf);
     }
     if(form){
       form.addEventListener("submit", function(event){
