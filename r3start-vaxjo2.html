@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Demo: R3start Växjö | Stödboende och stödlägenheter</title>
+  <title>Förhandsvisning: R3start Växjö | Stödboende och stödlägenheter</title>
   <meta
     name="description"
-    content="Demo på ny premium one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och kontakt för kommuner, socialtjänst och anhöriga."
+    content="Förhandsvisning av ny one page-hemsida för R3start Växjö med stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och tydlig kontakt."
   />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#efe8dc" />
   <meta name="author" content="Nordlöf Nordic" />
 
-  <meta property="og:title" content="Demo: R3start Växjö | Stödboende och stödlägenheter" />
-  <meta property="og:description" content="Premiumdemo för R3start Växjö med fokus på förtroende, struktur, kvalitet och tydlig kontakt." />
+  <meta property="og:title" content="Förhandsvisning: R3start Växjö | Stödboende och stödlägenheter" />
+  <meta property="og:description" content="Förhandsvisning av ny sida för R3start Växjö med fokus på förtroende, struktur, kvalitet och tydlig kontakt." />
   <meta property="og:type" content="website" />
 
   <style>
@@ -24,38 +24,22 @@
       --white:#ffffff;
       --ink:#16211d;
       --muted:#53615a;
-      --soft:#6f7b74;
-
       --forest:#16382f;
       --forest-2:#24594b;
-      --forest-3:#2f6c5b;
       --forest-soft:#dfeae4;
-
       --gold:#b98542;
       --gold-2:#d9aa67;
-      --gold-soft:#f8ead6;
-
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
-
       --shadow:0 28px 90px rgba(20,32,27,.16);
       --shadow-soft:0 18px 50px rgba(20,32,27,.10);
-
       --radius:28px;
       --max:1180px;
       --focus:#b45309;
-
-      --overlay-bg:rgba(255,250,243,.46);
-      --overlay-border:rgba(255,255,255,.62);
-      --overlay-ink:#10201a;
-      --overlay-muted:#1c4337;
-
       --header-offset:0px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box;}
 
     html{
       scroll-behavior:smooth;
@@ -65,9 +49,7 @@
       overflow-x:hidden;
     }
 
-    html.large-text{
-      font-size:118%;
-    }
+    html.large-text{font-size:118%;}
 
     body{
       margin:0;
@@ -78,18 +60,11 @@
         radial-gradient(circle at top right, rgba(22,56,47,.16), transparent 36rem),
         linear-gradient(180deg, #f8f1e6 0%, #ece1d3 48%, #f8f3eb 100%);
       line-height:1.6;
-      max-width:100%;
       overflow-x:hidden;
     }
 
-    a{
-      color:inherit;
-    }
-
-    img{
-      display:block;
-      max-width:100%;
-    }
+    a{color:inherit;}
+    img{display:block;max-width:100%;}
 
     h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
       overflow-wrap:anywhere;
@@ -117,8 +92,8 @@
       position:absolute;
       left:12px;
       top:-90px;
-      background:#ffffff;
-      color:#000000;
+      background:#fff;
+      color:#000;
       padding:12px 16px;
       border-radius:999px;
       z-index:1200;
@@ -126,9 +101,7 @@
       transition:.2s ease;
     }
 
-    .skip-link:focus{
-      top:12px;
-    }
+    .skip-link:focus{top:12px;}
 
     .topbar{
       background:#173128;
@@ -161,7 +134,7 @@
     .tool-btn,
     .language-select{
       border:1px solid rgba(255,255,255,.24);
-      color:#ffffff;
+      color:#fff;
       background:rgba(255,255,255,.08);
       border-radius:999px;
       padding:8px 12px;
@@ -174,7 +147,7 @@
 
     .tool-btn:hover,
     .language-select:hover{
-      background:#ffffff;
+      background:#fff;
       color:#13211c;
     }
 
@@ -196,9 +169,7 @@
       z-index:999;
     }
 
-    body.header-fixed main{
-      padding-top:var(--header-offset);
-    }
+    body.header-fixed main{padding-top:var(--header-offset);}
 
     .nav{
       max-width:var(--max);
@@ -226,7 +197,7 @@
       height:46px;
       border-radius:16px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -250,29 +221,52 @@
       line-height:1.25;
     }
 
-    nav ul{
-      display:flex;
-      align-items:center;
-      gap:5px;
+    #siteNav{
+      display:none !important;
+    }
+
+    #siteNav.open{
+      display:block !important;
+      position:absolute;
+      top:calc(100% + 12px);
+      right:18px;
+      left:auto;
+      width:min(360px, calc(100vw - 36px));
+      background:#fffaf3;
+      border:1px solid var(--line-dark);
+      border-radius:26px;
+      padding:12px;
+      box-shadow:var(--shadow);
+      z-index:1000;
+    }
+
+    #siteNav ul{
       list-style:none;
       margin:0;
       padding:0;
-      flex-wrap:wrap;
-      justify-content:center;
     }
 
-    nav a{
-      display:inline-flex;
-      padding:9px 12px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:850;
+    #siteNav.open ul{
+      display:grid;
+      gap:6px;
+    }
+
+    #siteNav.open a{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#fff;
       color:var(--ink);
-      font-size:.92rem;
-      white-space:nowrap;
+      border:1px solid rgba(200,185,164,.72);
+      font-weight:950;
+      text-decoration:none;
+      white-space:normal;
     }
 
-    nav a:hover{
+    #siteNav.open a:hover{
       background:var(--forest-soft);
     }
 
@@ -281,18 +275,22 @@
       align-items:center;
       gap:10px;
       flex:0 0 auto;
+      margin-left:auto;
     }
 
     .menu-btn{
-      display:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       border:1px solid var(--line-dark);
-      background:#ffffff;
+      background:#fff;
       color:var(--forest);
       border-radius:999px;
-      padding:10px 14px;
+      padding:13px 22px;
       font-weight:900;
       cursor:pointer;
-      min-height:44px;
+      min-height:48px;
+      font-size:1rem;
     }
 
     .btn{
@@ -306,7 +304,7 @@
       text-decoration:none;
       cursor:pointer;
       line-height:1;
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      transition:transform .18s ease, background .18s ease, border-color .18s ease;
       white-space:nowrap;
       border:1px solid transparent;
       font-size:.96rem;
@@ -314,13 +312,11 @@
       font-family:inherit;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px);}
 
     .btn-primary{
       background:var(--forest);
-      color:#ffffff;
+      color:#fff;
       border-color:var(--forest);
       box-shadow:0 16px 38px rgba(22,56,47,.22);
     }
@@ -336,9 +332,7 @@
       border-color:var(--line-dark);
     }
 
-    .btn-secondary:hover{
-      background:#ffffff;
-    }
+    .btn-secondary:hover{background:#fff;}
 
     .btn-gold{
       background:linear-gradient(135deg, var(--gold), var(--gold-2));
@@ -347,9 +341,7 @@
       box-shadow:0 16px 38px rgba(185,133,66,.22);
     }
 
-    main{
-      overflow:hidden;
-    }
+    main{overflow:hidden;}
 
     section{
       padding:88px 18px;
@@ -470,7 +462,7 @@
     }
 
     .hero-card{
-      background:#ffffff;
+      background:#fff;
       border:1px solid rgba(200,185,164,.8);
       border-radius:40px;
       padding:12px;
@@ -492,8 +484,8 @@
     .photo-caption,
     .image-panel-text,
     .slide-label{
-      background:var(--overlay-bg);
-      border:1px solid var(--overlay-border);
+      background:rgba(255,250,243,.55);
+      border:1px solid rgba(255,255,255,.68);
       box-shadow:0 18px 38px rgba(0,0,0,.14);
       backdrop-filter:blur(10px);
       -webkit-backdrop-filter:blur(10px);
@@ -512,19 +504,17 @@
     .image-panel-text strong,
     .slide-label strong{
       display:block;
-      color:var(--overlay-ink);
+      color:#10201a;
       font-weight:950;
-      text-shadow:0 1px 0 rgba(255,255,255,.16);
     }
 
     .photo-caption span,
     .image-panel-text span,
     .slide-label span{
       display:block;
-      color:var(--overlay-muted);
+      color:#1c4337;
       margin-top:6px;
       font-weight:850;
-      text-shadow:0 1px 0 rgba(255,255,255,.12);
     }
 
     .floating-card{
@@ -533,7 +523,7 @@
       top:42px;
       z-index:3;
       width:min(260px, 72%);
-      background:rgba(255,250,243,.68);
+      background:rgba(255,250,243,.74);
       border:1px solid rgba(200,185,164,.85);
       border-radius:26px;
       padding:20px;
@@ -552,7 +542,7 @@
 
     .floating-card span{
       display:block;
-      color:var(--overlay-ink);
+      color:#10201a;
       margin-top:9px;
       font-weight:800;
       line-height:1.35;
@@ -618,7 +608,9 @@
       font-weight:650;
     }
 
-    .quickfacts{
+    .quickfacts,
+    .editorial,
+    .methods{
       background:#fffaf3;
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
@@ -631,15 +623,19 @@
       align-items:start;
     }
 
-    .quick-card{
-      background:#ffffff;
+    .quick-card,
+    .panel,
+    .method-card{
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:36px;
       padding:34px;
       box-shadow:var(--shadow-soft);
     }
 
-    .quick-card p{
+    .quick-card p,
+    .panel p,
+    .method-card p{
       margin-top:14px;
       font-weight:650;
     }
@@ -651,10 +647,10 @@
 
     .fact{
       display:grid;
-      grid-template-columns:1fr auto;
+      grid-template-columns:minmax(120px, 1fr) minmax(0, 2fr);
       gap:16px;
       align-items:center;
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       padding:18px;
@@ -664,22 +660,29 @@
     .fact span{
       color:var(--muted);
       font-weight:750;
+      min-width:0;
+      overflow-wrap:normal;
+      word-break:normal;
     }
 
     .fact strong{
       color:var(--ink);
       font-weight:950;
       text-align:right;
+      min-width:0;
+      overflow-wrap:normal;
+      word-break:normal;
     }
 
-    .person-row{
+    .person-row,
+    .contact-person{
       display:flex;
       gap:16px;
       align-items:center;
       padding:18px;
       border-radius:24px;
       border:1px solid var(--line-dark);
-      background:#ffffff;
+      background:#fff;
       box-shadow:var(--shadow-soft);
       margin-top:18px;
     }
@@ -695,23 +698,19 @@
         url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
     }
 
-    .person-row strong{
+    .person-row strong,
+    .contact-person strong{
       display:block;
       color:var(--ink);
       font-weight:950;
     }
 
-    .person-row span{
+    .person-row span,
+    .contact-person span{
       display:block;
       color:var(--muted);
       font-weight:700;
       margin-top:3px;
-    }
-
-    .editorial{
-      background:#fffaf3;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
     }
 
     .split{
@@ -719,23 +718,6 @@
       grid-template-columns:.92fr 1.08fr;
       gap:30px;
       align-items:start;
-    }
-
-    .panel{
-      background:#ffffff;
-      color:var(--ink);
-      border-radius:36px;
-      padding:36px;
-      box-shadow:var(--shadow-soft);
-      position:relative;
-      overflow:hidden;
-      border:1px solid var(--line-dark);
-    }
-
-    .panel p{
-      color:var(--muted);
-      margin-top:16px;
-      font-weight:650;
     }
 
     .image-panel{
@@ -759,9 +741,7 @@
       padding:20px;
     }
 
-    .image-strip-wrap{
-      margin-top:34px;
-    }
+    .image-strip-wrap{margin-top:34px;}
 
     .drag-hint{
       display:flex;
@@ -788,7 +768,7 @@
       border:none;
       border-radius:999px;
       background:var(--forest);
-      color:#ffffff;
+      color:#fff;
       cursor:pointer;
       display:grid;
       place-items:center;
@@ -823,18 +803,10 @@
       scroll-behavior:smooth;
     }
 
-    .image-strip:active{
-      cursor:grabbing;
-    }
+    .image-strip:active{cursor:grabbing;}
 
-    .image-strip::-webkit-scrollbar{
-      height:10px;
-    }
-
-    .image-strip::-webkit-scrollbar-track{
-      background:transparent;
-    }
-
+    .image-strip::-webkit-scrollbar{height:10px;}
+    .image-strip::-webkit-scrollbar-track{background:transparent;}
     .image-strip::-webkit-scrollbar-thumb{
       background:rgba(22,56,47,.28);
       border-radius:999px;
@@ -862,9 +834,7 @@
       padding:14px 15px;
     }
 
-    .text-image{
-      background:#f8f3eb;
-    }
+    .text-image{background:#f8f3eb;}
 
     .text-image-grid{
       display:grid;
@@ -919,7 +889,7 @@
     }
 
     .check-list li{
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       padding:19px 20px 19px 56px;
@@ -938,7 +908,7 @@
       height:27px;
       border-radius:999px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -951,7 +921,7 @@
 
     .quality-wrap{
       background:linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
-      color:#ffffff;
+      color:#fff;
       border-radius:44px;
       padding:48px;
       box-shadow:var(--shadow);
@@ -993,7 +963,7 @@
       font-size:clamp(3.8rem, 8vw, 7.1rem);
       line-height:.85;
       letter-spacing:-.08em;
-      color:#ffffff;
+      color:#fff;
     }
 
     .score span{
@@ -1005,13 +975,13 @@
 
     .quality-wrap .eyebrow{
       background:rgba(255,255,255,.12);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.28);
     }
 
     .quality-wrap h2,
     .quality-wrap p{
-      color:#ffffff;
+      color:#fff;
     }
 
     .quality-wrap p{
@@ -1029,7 +999,7 @@
 
     .step{
       counter-increment:step;
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:26px;
       padding:24px 24px 24px 82px;
@@ -1046,7 +1016,7 @@
       height:42px;
       border-radius:15px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -1058,12 +1028,6 @@
       font-weight:650;
     }
 
-    .methods{
-      background:#fffaf3;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
     .method-grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -1071,38 +1035,23 @@
       margin-top:28px;
     }
 
-    .method-card{
-      background:#ffffff;
-      border:1px solid var(--line-dark);
-      border-radius:26px;
-      padding:25px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .method-card h3{
-      font-size:1.2rem;
-    }
-
-    .method-card p{
-      margin-top:10px;
-      font-weight:650;
-    }
+    .method-card h3{font-size:1.2rem;}
 
     .contact{
       background:#151f1b;
-      color:#ffffff;
+      color:#fff;
       border-top:1px solid rgba(255,255,255,.10);
     }
 
     .contact h2,
     .contact h3,
     .contact p{
-      color:#ffffff;
+      color:#fff;
     }
 
     .contact .eyebrow{
       background:rgba(255,255,255,.10);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.25);
     }
 
@@ -1135,18 +1084,6 @@
       font-weight:650;
     }
 
-    .contact-person{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding:16px;
-      background:#ffffff;
-      border:1px solid var(--line-dark);
-      border-radius:22px;
-      margin-top:24px;
-      box-shadow:var(--shadow-soft);
-    }
-
     .contact-links{
       display:grid;
       gap:12px;
@@ -1154,7 +1091,7 @@
     }
 
     .contact-link{
-      background:#ffffff;
+      background:#fff;
       border:1px solid var(--line-dark);
       border-radius:20px;
       padding:17px;
@@ -1187,7 +1124,7 @@
       padding:14px 15px;
       font:inherit;
       color:var(--ink);
-      background:#ffffff;
+      background:#fff;
       font-weight:650;
     }
 
@@ -1207,13 +1144,8 @@
       gap:16px;
     }
 
-    .field{
-      margin-bottom:16px;
-    }
-
-    .full{
-      grid-column:1 / -1;
-    }
+    .field{margin-bottom:16px;}
+    .full{grid-column:1 / -1;}
 
     .form-note{
       font-size:.92rem;
@@ -1232,7 +1164,7 @@
 
     .footer{
       background:#0f1714;
-      color:#ffffff;
+      color:#fff;
       padding:34px 18px;
       border-top:1px solid rgba(255,255,255,.12);
     }
@@ -1251,9 +1183,7 @@
       font-size:.95rem;
     }
 
-    .footer-copy strong{
-      color:#ffffff;
-    }
+    .footer-copy strong{color:#fff;}
 
     .footer-right{
       display:flex;
@@ -1277,7 +1207,7 @@
       display:grid;
       place-items:center;
       text-decoration:none;
-      color:#ffffff;
+      color:#fff;
       border:1px solid rgba(255,255,255,.16);
       transition:.18s ease;
       box-shadow:0 10px 24px rgba(0,0,0,.18);
@@ -1294,33 +1224,23 @@
       fill:currentColor;
     }
 
-    .social-icon.facebook{
-      background:#1877f2;
-    }
-
-    .social-icon.instagram{
-      background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);
-    }
-
-    .social-icon.linkedin{
-      background:#0a66c2;
-    }
+    .social-icon.facebook{background:#1877f2;}
+    .social-icon.instagram{background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);}
+    .social-icon.linkedin{background:#0a66c2;}
 
     .footer .btn-secondary{
       background:rgba(255,255,255,.10);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.24);
     }
 
     .footer .btn-secondary:hover{
-      background:#ffffff;
+      background:#fff;
       color:#13211c;
     }
 
     @media (max-width:1120px){
-      .mini-photo{
-        display:none;
-      }
+      .mini-photo{display:none;}
     }
 
     @media (max-width:980px){
@@ -1335,67 +1255,29 @@
         grid-template-columns:1fr;
       }
 
-      .trust-row{
-        grid-template-columns:1fr;
-      }
+      .trust-row{grid-template-columns:1fr;}
+      .hero-visual{min-height:auto;}
+      .hero-photo{min-height:470px;}
+      .floating-card{left:18px;top:18px;}
 
-      .hero-visual{
-        min-height:auto;
-      }
-
-      .hero-photo{
-        min-height:470px;
-      }
-
-      .floating-card{
-        left:18px;
-        top:18px;
-      }
-
-      nav{
-        display:none;
-      }
-
-      nav.open{
-        display:block;
-        position:absolute;
-        top:calc(100% + 10px);
+      #siteNav.open{
         left:18px;
         right:18px;
-        background:#fffaf3;
-        border:1px solid var(--line-dark);
-        border-radius:24px;
-        padding:10px;
-        box-shadow:var(--shadow);
-      }
-
-      nav.open ul{
-        display:grid;
-        gap:4px;
-      }
-
-      nav.open a{
-        width:100%;
-      }
-
-      .menu-btn{
-        display:inline-flex;
+        width:auto;
+        max-height:72vh;
+        overflow:auto;
       }
     }
 
     @media (max-width:760px){
-      html.large-text{
-        font-size:112%;
-      }
+      html.large-text{font-size:112%;}
 
       section{
         padding:58px 14px;
         scroll-margin-top:96px;
       }
 
-      .hero{
-        padding:44px 14px 60px;
-      }
+      .hero{padding:44px 14px 60px;}
 
       .topbar-inner{
         padding:10px 14px;
@@ -1452,13 +1334,9 @@
         white-space:nowrap;
       }
 
-      .logo-text span{
-        display:none;
-      }
+      .logo-text span{display:none;}
 
-      .nav-actions .btn{
-        display:none;
-      }
+      .nav-actions .btn{display:none;}
 
       .menu-btn{
         min-height:42px;
@@ -1466,18 +1344,15 @@
         flex:0 0 auto;
       }
 
-      nav.open{
+      #siteNav.open{
         left:12px;
         right:12px;
         border-radius:20px;
-        max-height:72vh;
-        overflow:auto;
       }
 
-      nav.open a{
+      #siteNav.open a{
         padding:13px 14px;
         font-size:1rem;
-        white-space:normal;
       }
 
       h1{
@@ -1485,9 +1360,7 @@
         line-height:1.03;
       }
 
-      h2{
-        font-size:clamp(1.78rem, 8vw, 2.6rem);
-      }
+      h2{font-size:clamp(1.78rem, 8vw, 2.6rem);}
 
       h3{
         font-size:1.2rem;
@@ -1536,9 +1409,7 @@
         padding:16px;
       }
 
-      .floating-card{
-        display:none;
-      }
+      .floating-card{display:none;}
 
       .section-head{
         display:block;
@@ -1562,11 +1433,10 @@
 
       .fact{
         grid-template-columns:1fr;
+        gap:6px;
       }
 
-      .fact strong{
-        text-align:left;
-      }
+      .fact strong{text-align:left;}
 
       .image-panel,
       .rounded-image{
@@ -1642,9 +1512,7 @@
         font-size:1rem;
       }
 
-      textarea{
-        min-height:135px;
-      }
+      textarea{min-height:135px;}
 
       .contact-person,
       .person-row{
@@ -1680,13 +1548,8 @@
         padding-right:12px;
       }
 
-      h1{
-        font-size:2.02rem;
-      }
-
-      h2{
-        font-size:1.62rem;
-      }
+      h1{font-size:2.02rem;}
+      h2{font-size:1.62rem;}
 
       .logo-text strong{
         max-width:52vw;
@@ -1695,9 +1558,7 @@
         white-space:nowrap;
       }
 
-      .hero-photo{
-        min-height:300px;
-      }
+      .hero-photo{min-height:300px;}
 
       .card,
       .panel,
@@ -1718,553 +1579,177 @@
       }
     }
 
-    /* ENKELT HÖG KONTRASTLÄGE */
-body.high-contrast{
-  background:#000 !important;
-  color:#fff !important;
-}
+    body.high-contrast{
+      background:#000 !important;
+      color:#fff !important;
+    }
 
-body.high-contrast *{
-  box-shadow:none !important;
-  text-shadow:none !important;
-}
+    body.high-contrast *{
+      box-shadow:none !important;
+      text-shadow:none !important;
+    }
 
-/* ENKELT HÖG KONTRASTLÄGE */
-body.high-contrast{
-  background:#000 !important;
-  color:#fff !important;
-}
+    body.high-contrast header,
+    body.high-contrast .topbar,
+    body.high-contrast section,
+    body.high-contrast .editorial,
+    body.high-contrast .quickfacts,
+    body.high-contrast .methods,
+    body.high-contrast .text-image,
+    body.high-contrast .contact,
+    body.high-contrast .footer,
+    body.high-contrast .quality-wrap{
+      background:#000 !important;
+      color:#fff !important;
+      border-color:#fff !important;
+    }
 
-body.high-contrast *{
-  box-shadow:none !important;
-  text-shadow:none !important;
-}
+    body.high-contrast h1,
+    body.high-contrast h2,
+    body.high-contrast h3,
+    body.high-contrast p,
+    body.high-contrast li,
+    body.high-contrast a,
+    body.high-contrast span,
+    body.high-contrast strong,
+    body.high-contrast label{
+      color:#fff !important;
+    }
 
-/* Mörka huvudytor = svart bakgrund, vit text */
-body.high-contrast header,
-body.high-contrast .topbar,
-body.high-contrast section,
-body.high-contrast .editorial,
-body.high-contrast .quickfacts,
-body.high-contrast .methods,
-body.high-contrast .text-image,
-body.high-contrast .contact,
-body.high-contrast .footer,
-body.high-contrast .quality-wrap{
-  background:#000 !important;
-  color:#fff !important;
-  border-color:#fff !important;
-}
+    body.high-contrast .card,
+    body.high-contrast .panel,
+    body.high-contrast .step,
+    body.high-contrast .trust-pill,
+    body.high-contrast .check-list li,
+    body.high-contrast .contact-box,
+    body.high-contrast form,
+    body.high-contrast .contact-link,
+    body.high-contrast .contact-person,
+    body.high-contrast .score,
+    body.high-contrast .photo-caption,
+    body.high-contrast .image-panel-text,
+    body.high-contrast .slide-label,
+    body.high-contrast .floating-card,
+    body.high-contrast .quick-card,
+    body.high-contrast .fact,
+    body.high-contrast .person-row,
+    body.high-contrast .method-card,
+    body.high-contrast .image-note,
+    body.high-contrast #siteNav.open{
+      background:#fff !important;
+      color:#000 !important;
+      border:2px solid #fff !important;
+    }
 
-/* All vanlig text på mörk bakgrund = vit */
-body.high-contrast h1,
-body.high-contrast h2,
-body.high-contrast h3,
-body.high-contrast p,
-body.high-contrast li,
-body.high-contrast a,
-body.high-contrast span,
-body.high-contrast strong,
-body.high-contrast label{
-  color:#fff !important;
-}
+    body.high-contrast .card *,
+    body.high-contrast .panel *,
+    body.high-contrast .step *,
+    body.high-contrast .trust-pill *,
+    body.high-contrast .check-list li *,
+    body.high-contrast .contact-box *,
+    body.high-contrast form *,
+    body.high-contrast .contact-link *,
+    body.high-contrast .contact-person *,
+    body.high-contrast .score *,
+    body.high-contrast .photo-caption *,
+    body.high-contrast .image-panel-text *,
+    body.high-contrast .slide-label *,
+    body.high-contrast .floating-card *,
+    body.high-contrast .quick-card *,
+    body.high-contrast .fact *,
+    body.high-contrast .person-row *,
+    body.high-contrast .method-card *,
+    body.high-contrast .image-note *,
+    body.high-contrast #siteNav.open *{
+      color:#000 !important;
+    }
 
-/* Ljusa boxar/kort = vit bakgrund, svart text */
-body.high-contrast .card,
-body.high-contrast .panel,
-body.high-contrast .step,
-body.high-contrast .trust-pill,
-body.high-contrast .check-list li,
-body.high-contrast .contact-box,
-body.high-contrast form,
-body.high-contrast .contact-link,
-body.high-contrast .contact-person,
-body.high-contrast .score,
-body.high-contrast .photo-caption,
-body.high-contrast .image-panel-text,
-body.high-contrast .slide-label,
-body.high-contrast .floating-card,
-body.high-contrast .quick-card,
-body.high-contrast .fact,
-body.high-contrast .person-row,
-body.high-contrast .method-card,
-body.high-contrast .image-note,
-body.high-contrast nav.open{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
+    body.high-contrast .btn,
+    body.high-contrast .tool-btn,
+    body.high-contrast .language-select,
+    body.high-contrast .menu-btn{
+      background:#fff !important;
+      color:#000 !important;
+      border:2px solid #fff !important;
+    }
 
-/* All text inne i ljusa boxar = svart */
-body.high-contrast .card *,
-body.high-contrast .panel *,
-body.high-contrast .step *,
-body.high-contrast .trust-pill *,
-body.high-contrast .check-list li *,
-body.high-contrast .contact-box *,
-body.high-contrast form *,
-body.high-contrast .contact-link *,
-body.high-contrast .contact-person *,
-body.high-contrast .score *,
-body.high-contrast .photo-caption *,
-body.high-contrast .image-panel-text *,
-body.high-contrast .slide-label *,
-body.high-contrast .floating-card *,
-body.high-contrast .quick-card *,
-body.high-contrast .fact *,
-body.high-contrast .person-row *,
-body.high-contrast .method-card *,
-body.high-contrast .image-note *,
-body.high-contrast nav.open *{
-  color:#000 !important;
-}
+    body.high-contrast input,
+    body.high-contrast select,
+    body.high-contrast textarea{
+      background:#fff !important;
+      color:#000 !important;
+      border:3px solid #000 !important;
+    }
 
-/* Knappar = vit bakgrund, svart text */
-body.high-contrast .btn,
-body.high-contrast .tool-btn,
-body.high-contrast .language-select,
-body.high-contrast .menu-btn{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
+    body.high-contrast input::placeholder,
+    body.high-contrast textarea::placeholder{
+      color:#333 !important;
+    }
 
-/* Formulärfält = vit bakgrund, svart text */
-body.high-contrast input,
-body.high-contrast select,
-body.high-contrast textarea{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
+    body.high-contrast .step::before,
+    body.high-contrast .check-list li::before{
+      background:#000 !important;
+      color:#fff !important;
+      border:2px solid #000 !important;
+    }
 
-body.high-contrast input::placeholder,
-body.high-contrast textarea::placeholder{
-  color:#333 !important;
-}
-
-/* Små ikoner/badges */
-body.high-contrast .step::before,
-body.high-contrast .check-list li::before{
-  background:#000 !important;
-  color:#fff !important;
-  border:2px solid #fff !important;
-}
-
-body.high-contrast .eyebrow{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
-
-body.high-contrast .panel .eyebrow,
-body.high-contrast .card .eyebrow,
-body.high-contrast .quick-card .eyebrow,
-body.high-contrast .contact-box .eyebrow,
-body.high-contrast form .eyebrow{
-  border-color:#000 !important;
-}
-
-/* VIKTIGT: foton ska fortfarande synas i hög kontrast */
-body.high-contrast .hero-photo,
-body.high-contrast .mini-photo,
-body.high-contrast .image-panel,
-body.high-contrast .rounded-image,
-body.high-contrast .photo-slide,
-body.high-contrast .person-photo{
-  background-color:transparent !important;
-  background-size:cover !important;
-  background-position:center !important;
-  background-repeat:no-repeat !important;
-  background-blend-mode:normal !important;
-  filter:contrast(1.15) brightness(.88) saturate(.95) !important;
-}
-
-/* Lägg mörk overlay över foton utan att ta bort själva bilden */
-body.high-contrast .hero-photo::before,
-body.high-contrast .image-panel::before,
-body.high-contrast .rounded-image::before,
-body.high-contrast .photo-slide::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.18);
-  pointer-events:none;
-  z-index:0;
-}
-
-/* Textkort på foton ska ligga ovanpå overlay */
-body.high-contrast .photo-caption,
-body.high-contrast .image-panel-text,
-body.high-contrast .slide-label,
-body.high-contrast .image-note{
-  position:absolute;
-  z-index:2;
-}
-
-/* Personbild ska inte bli vit ruta */
-body.high-contrast .person-photo{
-  border:2px solid #fff !important;
-}
-
-/* Mobilfix för kvalitetsdelen */
-@media (max-width:760px){
-  body.high-contrast #kvalitet{
-    padding-left:14px !important;
-    padding-right:14px !important;
-  }
-
-  body.high-contrast .quality-wrap{
-    padding:22px !important;
-    border-radius:24px !important;
-  }
-
-  body.high-contrast .quality-wrap .score{
-    padding:24px 22px !important;
-    border-radius:22px !important;
-  }
-
-  body.high-contrast .quality-wrap .hero-actions{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:12px !important;
-  }
-
-  body.high-contrast .quality-wrap .btn{
-    width:100% !important;
-    min-height:52px !important;
-  }
-}
-
-/* Mörka huvudytor = svart bakgrund, vit text */
-body.high-contrast header,
-body.high-contrast .topbar,
-body.high-contrast section,
-body.high-contrast .editorial,
-body.high-contrast .quickfacts,
-body.high-contrast .methods,
-body.high-contrast .text-image,
-body.high-contrast .contact,
-body.high-contrast .footer,
-body.high-contrast .quality-wrap{
-  background:#000 !important;
-  color:#fff !important;
-  border-color:#fff !important;
-}
-
-/* All vanlig text på mörk bakgrund = vit */
-body.high-contrast h1,
-body.high-contrast h2,
-body.high-contrast h3,
-body.high-contrast p,
-body.high-contrast li,
-body.high-contrast a,
-body.high-contrast span,
-body.high-contrast strong,
-body.high-contrast label{
-  color:#fff !important;
-}
-
-/* Ljusa boxar/kort = vit bakgrund, svart text */
-body.high-contrast .card,
-body.high-contrast .panel,
-body.high-contrast .step,
-body.high-contrast .trust-pill,
-body.high-contrast .check-list li,
-body.high-contrast .contact-box,
-body.high-contrast form,
-body.high-contrast .contact-link,
-body.high-contrast .contact-person,
-body.high-contrast .score,
-body.high-contrast .photo-caption,
-body.high-contrast .image-panel-text,
-body.high-contrast .slide-label,
-body.high-contrast .floating-card,
-body.high-contrast .quick-card,
-body.high-contrast .fact,
-body.high-contrast .person-row,
-body.high-contrast .method-card,
-body.high-contrast .image-note,
-body.high-contrast nav.open{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
-
-/* All text inne i ljusa boxar = svart */
-body.high-contrast .card *,
-body.high-contrast .panel *,
-body.high-contrast .step *,
-body.high-contrast .trust-pill *,
-body.high-contrast .check-list li *,
-body.high-contrast .contact-box *,
-body.high-contrast form *,
-body.high-contrast .contact-link *,
-body.high-contrast .contact-person *,
-body.high-contrast .score *,
-body.high-contrast .photo-caption *,
-body.high-contrast .image-panel-text *,
-body.high-contrast .slide-label *,
-body.high-contrast .floating-card *,
-body.high-contrast .quick-card *,
-body.high-contrast .fact *,
-body.high-contrast .person-row *,
-body.high-contrast .method-card *,
-body.high-contrast .image-note *,
-body.high-contrast nav.open *{
-  color:#000 !important;
-}
-
-/* Knappar = vit bakgrund, svart text */
-body.high-contrast .btn,
-body.high-contrast .tool-btn,
-body.high-contrast .language-select,
-body.high-contrast .menu-btn{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
-
-/* Formulärfält = vit bakgrund, svart text */
-body.high-contrast input,
-body.high-contrast select,
-body.high-contrast textarea{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
-
-body.high-contrast input::placeholder,
-body.high-contrast textarea::placeholder{
-  color:#333 !important;
-}
-
-/* Små ikoner/badges */
-body.high-contrast .step::before,
-body.high-contrast .check-list li::before{
-  background:#000 !important;
-  color:#fff !important;
-  border:2px solid #fff !important;
-}
-
-body.high-contrast .eyebrow{
-  background:#fff !important;
-  color:#000 !important;
-  border:2px solid #fff !important;
-}
+    body.high-contrast .eyebrow{
+      background:#fff !important;
+      color:#000 !important;
+      border:2px solid #fff !important;
+    }
 
     body.high-contrast .panel .eyebrow,
     body.high-contrast .card .eyebrow,
     body.high-contrast .quick-card .eyebrow,
     body.high-contrast .contact-box .eyebrow,
     body.high-contrast form .eyebrow{
-      border-color:#000000 !important;
+      border-color:#000 !important;
     }
 
-    body.high-contrast input,
-    body.high-contrast select,
-    body.high-contrast textarea{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:3px solid #000000 !important;
+    body.high-contrast .hero-photo,
+    body.high-contrast .mini-photo,
+    body.high-contrast .image-panel,
+    body.high-contrast .rounded-image,
+    body.high-contrast .photo-slide,
+    body.high-contrast .person-photo{
+      background-color:transparent !important;
+      background-size:cover !important;
+      background-position:center !important;
+      background-repeat:no-repeat !important;
+      background-blend-mode:normal !important;
+      filter:contrast(1.15) brightness(.88) saturate(.95) !important;
     }
 
-    body.high-contrast input::placeholder,
-    body.high-contrast textarea::placeholder{
-      color:#333333 !important;
+    body.high-contrast .hero-photo::before,
+    body.high-contrast .image-panel::before,
+    body.high-contrast .rounded-image::before,
+    body.high-contrast .photo-slide::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.18);
+      pointer-events:none;
+      z-index:0;
     }
 
-    body.high-contrast .step::before,
-    body.high-contrast .check-list li::before{
-      background:#000000 !important;
-      color:#ffffff !important;
-      border:2px solid #000000 !important;
+    body.high-contrast .photo-caption,
+    body.high-contrast .image-panel-text,
+    body.high-contrast .slide-label,
+    body.high-contrast .image-note{
+      position:absolute;
+      z-index:2;
     }
 
-    @media (max-width:760px){
-      body.high-contrast #kvalitet{
-        padding-left:14px !important;
-        padding-right:14px !important;
-      }
-
-      body.high-contrast .quality-wrap{
-        padding:22px !important;
-        border-radius:24px !important;
-      }
-
-      body.high-contrast .quality-wrap .score{
-        padding:24px 22px !important;
-        border-radius:22px !important;
-      }
-
-      body.high-contrast .quality-wrap .hero-actions{
-        display:grid !important;
-        grid-template-columns:1fr !important;
-        gap:12px !important;
-      }
-
-      body.high-contrast .quality-wrap .btn{
-        width:100% !important;
-        min-height:52px !important;
-      }
+    body.high-contrast .person-photo{
+      border:2px solid #fff !important;
     }
 
-    /* FIX: visa foton även i hög kontrastläge */
-body.high-contrast .hero-photo,
-body.high-contrast .mini-photo,
-body.high-contrast .image-panel,
-body.high-contrast .rounded-image,
-body.high-contrast .photo-slide,
-body.high-contrast .person-photo{
-  background-color:transparent !important;
-  background-blend-mode:normal !important;
-  filter:contrast(1.15) brightness(.9) !important;
-}
-
-/* Om någon tidigare regel försöker nolla bilderna */
-body.high-contrast .hero-photo,
-body.high-contrast .mini-photo,
-body.high-contrast .image-panel,
-body.high-contrast .rounded-image,
-body.high-contrast .photo-slide,
-body.high-contrast .person-photo{
-  background-size:cover !important;
-  background-position:center !important;
-  background-repeat:no-repeat !important;
-}
-
-/* FIX: låt snabbfakta-rader brytas snyggt */
-.fact{
-  grid-template-columns:minmax(120px, 1fr) minmax(0, 2fr);
-}
-
-.fact span,
-.fact strong{
-  min-width:0;
-  overflow-wrap:normal;
-  word-break:normal;
-}
-
-@media (max-width:760px){
-  .fact{
-    grid-template-columns:1fr;
-    gap:6px;
-  }
-
-  .fact strong{
-    text-align:left;
-  }
-}
-
-/* DESKTOP + MOBIL: menyn ska alltid ligga bakom Meny-knappen */
-#siteNav{
-  display:none !important;
-}
-
-.menu-btn{
-  display:inline-flex !important;
-  align-items:center;
-  justify-content:center;
-}
-
-/* Öppen meny */
-#siteNav.open{
-  display:block !important;
-  position:absolute;
-  top:calc(100% + 12px);
-  right:18px;
-  left:auto;
-  width:min(360px, calc(100vw - 36px));
-  background:#fffaf3;
-  border:1px solid var(--line-dark);
-  border-radius:26px;
-  padding:12px;
-  box-shadow:var(--shadow);
-  z-index:1000;
-}
-
-/* Menylänkar i ruta */
-#siteNav.open ul{
-  display:grid !important;
-  grid-template-columns:1fr;
-  gap:6px;
-  margin:0;
-  padding:0;
-}
-
-#siteNav.open li{
-  margin:0;
-  padding:0;
-}
-
-#siteNav.open a{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 16px;
-  border-radius:18px;
-  background:#ffffff;
-  color:var(--ink);
-  border:1px solid rgba(200,185,164,.72);
-  font-weight:950;
-  text-decoration:none;
-  white-space:normal;
-}
-
-#siteNav.open a:hover{
-  background:var(--forest-soft);
-}
-
-/* Desktop: behåll CTA-knapparna bredvid Meny */
-@media (min-width:981px){
-  .nav-actions{
-    margin-left:auto;
-  }
-
-  .menu-btn{
-    min-height:48px;
-    padding:13px 22px;
-    font-size:1rem;
-  }
-}
-
-/* Mobil */
-@media (max-width:980px){
-  #siteNav.open{
-    left:18px;
-    right:18px;
-    width:auto;
-    max-height:72vh;
-    overflow:auto;
-  }
-}
-
-@media (max-width:760px){
-  #siteNav.open{
-    left:12px;
-    right:12px;
-    border-radius:20px;
-  }
-}
-
-/* Hög kontrast: meny-rutan ska vara läsbar */
-body.high-contrast #siteNav.open{
-  background:#ffffff !important;
-  color:#000000 !important;
-  border:2px solid #ffffff !important;
-}
-
-body.high-contrast #siteNav.open *,
-body.high-contrast #siteNav.open a{
-  color:#000000 !important;
-}
-
-body.high-contrast #siteNav.open a{
-  background:#ffffff !important;
-  border:2px solid #000000 !important;
-}
-
+    body.high-contrast #siteNav.open a{
+      background:#fff !important;
+      border:2px solid #000 !important;
+      color:#000 !important;
+    }
   </style>
 </head>
 
@@ -2274,10 +1759,10 @@ body.high-contrast #siteNav.open a{
   <div class="topbar" id="topbar" aria-label="Sidverktyg">
     <div class="topbar-inner">
       <span
-        data-sv="Demo-förslag: premium one page för stödboende och stödlägenheter"
-        data-en="Demo concept: premium one-page site for supported housing and supported apartments"
+        data-sv="Förhandsvisning: nytt sidförslag för R3start Växjö"
+        data-en="Preview: new website concept for R3start Växjö"
       >
-        Demo-förslag: premium one page för stödboende och stödlägenheter
+        Förhandsvisning: nytt sidförslag för R3start Växjö
       </span>
 
       <div class="tools">
@@ -2462,7 +1947,9 @@ body.high-contrast #siteNav.open a{
             <div class="person-photo" aria-hidden="true"></div>
             <div>
               <strong data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
-              <span data-sv="Exempelbild. Byt till riktig bild i skarp version." data-en="Example image. Replace with real photo in final version.">Exempelbild. Byt till riktig bild i skarp version.</span>
+              <span data-sv="Bilden kan bytas mot riktig bild i färdig version." data-en="Image can be replaced with a real photo in the final version.">
+                Bilden kan bytas mot riktig bild i färdig version.
+              </span>
             </div>
           </div>
         </div>
@@ -2580,38 +2067,11 @@ body.high-contrast #siteNav.open a{
             </div>
           </article>
 
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/LA2-vx06-vaxjosjon1.jpg");'>
-            <div class="slide-label">
-              <strong data-sv="Nära naturen" data-en="Close to nature">Nära naturen</strong>
-              <span data-sv="Mjukare och mer lokalt än kontorsbilder." data-en="Softer and more local than office stock images.">
-                Mjukare och mer lokalt än kontorsbilder.
-              </span>
-            </div>
-          </article>
-
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Domkyrka%2C%2020220806.jpg");'>
             <div class="slide-label">
               <strong data-sv="Växjö centrum" data-en="Växjö city centre">Växjö centrum</strong>
               <span data-sv="Bra för trovärdighet och igenkänning." data-en="Good for credibility and recognition.">
                 Bra för trovärdighet och igenkänning.
-              </span>
-            </div>
-          </article>
-
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6sj%C3%B6n%20-%20panoramio.jpg");'>
-            <div class="slide-label">
-              <strong data-sv="Växjömiljö" data-en="Växjö environment">Växjömiljö</strong>
-              <span data-sv="Passar bättre än generiska lägenhetsbilder." data-en="Works better than generic apartment images.">
-                Passar bättre än generiska lägenhetsbilder.
-              </span>
-            </div>
-          </article>
-
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/00%203349%20V%C3%A4xj%C3%B6%20domkyrka%20-%20Sweden.jpg");'>
-            <div class="slide-label">
-              <strong data-sv="Lokal närvaro" data-en="Local presence">Lokal närvaro</strong>
-              <span data-sv="Bilder från Växjö gör sidan mer förankrad." data-en="Images from Växjö make the page feel more grounded.">
-                Bilder från Växjö gör sidan mer förankrad.
               </span>
             </div>
           </article>
@@ -2624,7 +2084,7 @@ body.high-contrast #siteNav.open a{
         <div class="rounded-image" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=82");'>
           <div class="image-note">
             <strong data-sv="Samtal, planering och uppföljning." data-en="Conversation, planning and follow-up.">Samtal, planering och uppföljning.</strong>
-            <span data-sv="Exempelbild. Byt till egen mötes- eller verksamhetsbild." data-en="Example image. Replace with your own meeting or organisation image.">Exempelbild. Byt till egen mötes- eller verksamhetsbild.</span>
+            <span data-sv="Bilden kan bytas mot egen mötes- eller verksamhetsbild." data-en="Image can be replaced with your own meeting or organisation image.">Bilden kan bytas mot egen mötes- eller verksamhetsbild.</span>
           </div>
         </div>
 
@@ -2869,26 +2329,26 @@ body.high-contrast #siteNav.open a{
           <div class="contact-person">
             <div class="person-photo" aria-hidden="true"></div>
             <div>
-              <strong style="display:block; color:var(--ink);" data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
-              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Exempelbild. Byt till riktig bild på Simon i skarp version." data-en="Example image. Replace with a real photo of Simon in the final version.">
-                Exempelbild. Byt till riktig bild på Simon i skarp version.
+              <strong data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
+              <span data-sv="Bilden kan bytas mot riktig bild på Simon i färdig version." data-en="Image can be replaced with a real photo of Simon in the final version.">
+                Bilden kan bytas mot riktig bild på Simon i färdig version.
               </span>
             </div>
           </div>
 
           <div class="contact-links">
             <a class="contact-link" href="tel:+46793594686">
-              <span style="font-size:1rem; font-weight:950; color:var(--ink);" data-sv="Simon: 0793-594686" data-en="Simon: 0793-594686">Simon: 0793-594686</span>
+              <span style="font-size:1rem;font-weight:950;color:var(--ink);" data-sv="Simon: 0793-594686" data-en="Simon: 0793-594686">Simon: 0793-594686</span>
               <span data-sv="Ring vid frågor eller placeringsförfrågan" data-en="Call with questions or placement enquiries">Ring vid frågor eller placeringsförfrågan</span>
             </a>
 
             <a class="contact-link" href="mailto:info@r3start.se">
-              <span style="font-size:1rem; font-weight:950; color:var(--ink);">info@r3start.se</span>
+              <span style="font-size:1rem;font-weight:950;color:var(--ink);">info@r3start.se</span>
               <span data-sv="Förfrågningar och samarbete" data-en="Enquiries and collaboration">Förfrågningar och samarbete</span>
             </a>
 
             <a class="contact-link" href="https://r3start.se" target="_blank" rel="noopener">
-              <span style="font-size:1rem; font-weight:950; color:var(--ink);">r3start.se</span>
+              <span style="font-size:1rem;font-weight:950;color:var(--ink);">r3start.se</span>
               <span data-sv="Nuvarande webbplats" data-en="Current website">Nuvarande webbplats</span>
             </a>
           </div>
@@ -2952,8 +2412,8 @@ body.high-contrast #siteNav.open a{
             </button>
           </div>
 
-          <p class="form-note" data-sv="Demoformulär. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde." data-en="Demo form. In the final version, the form is connected to the preferred email address or a secure case flow.">
-            Demoformulär. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde.
+          <p class="form-note" data-sv="Förhandsvisning. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde." data-en="Preview version. In the final version, the form is connected to the preferred email address or a secure case flow.">
+            Förhandsvisning. I färdig version kopplas formuläret till önskad e-post eller säkert ärendeflöde.
           </p>
         </form>
       </div>
@@ -2967,8 +2427,8 @@ body.high-contrast #siteNav.open a{
         <span data-sv="Stödboende, stödlägenheter och externa insatser." data-en="Supported housing, supported apartments and external support services.">
           Stödboende, stödlägenheter och externa insatser.
         </span><br /><br />
-        <span data-sv="Demo framtagen som designförslag. Text, bilder, länkar och uppgifter justeras vid skarp publicering." data-en="Demo created as a design concept. Text, images, links and details are adjusted before final publication.">
-          Demo framtagen som designförslag. Text, bilder, länkar och uppgifter justeras vid skarp publicering.
+        <span data-sv="Förhandsvisning framtagen som sidförslag. Text, bilder, länkar och uppgifter kan justeras inför publicering." data-en="Preview created as a website concept. Text, images, links and details can be adjusted before publication.">
+          Förhandsvisning framtagen som sidförslag. Text, bilder, länkar och uppgifter kan justeras inför publicering.
         </span>
       </div>
 
@@ -3011,28 +2471,28 @@ body.high-contrast #siteNav.open a{
     const galleryNext = document.getElementById("galleryNext");
     const downloadButtons = document.querySelectorAll(".download-brochure");
 
-    const STORAGE_TEXT = "r3startDemoTextSize";
-    const STORAGE_CONTRAST = "r3startDemoContrast";
-    const STORAGE_LANG = "r3startDemoLanguage";
+    const STORAGE_TEXT = "r3startPreviewTextSize";
+    const STORAGE_CONTRAST = "r3startPreviewContrast";
+    const STORAGE_LANG = "r3startPreviewLanguage";
 
     const META = {
       sv: {
-        title: "Demo: R3start Växjö | Stödboende och stödlägenheter",
-        description: "Demo på ny premium one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och kontakt för kommuner, socialtjänst och anhöriga.",
-        ogTitle: "Demo: R3start Växjö | Stödboende och stödlägenheter",
-        ogDescription: "Premiumdemo för R3start Växjö med fokus på förtroende, struktur, kvalitet och tydlig kontakt."
+        title: "Förhandsvisning: R3start Växjö | Stödboende och stödlägenheter",
+        description: "Förhandsvisning av ny one page-hemsida för R3start Växjö med stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och tydlig kontakt.",
+        ogTitle: "Förhandsvisning: R3start Växjö | Stödboende och stödlägenheter",
+        ogDescription: "Förhandsvisning av ny sida för R3start Växjö med fokus på förtroende, struktur, kvalitet och tydlig kontakt."
       },
       en: {
-        title: "Demo: R3start Växjö | Supported Housing and Apartments",
-        description: "Premium one-page demo for R3start Växjö. Supported housing, supported apartments, emergency placement, external support, quality, competence and contact for municipalities, social services and relatives.",
-        ogTitle: "Demo: R3start Växjö | Supported Housing and Apartments",
-        ogDescription: "Premium demo for R3start Växjö with focus on trust, structure, quality and clear contact."
+        title: "Preview: R3start Växjö | Supported Housing and Apartments",
+        description: "Preview of a new one-page website for R3start Växjö with supported housing, supported apartments, emergency placement, external support, quality, competence and clear contact.",
+        ogTitle: "Preview: R3start Växjö | Supported Housing and Apartments",
+        ogDescription: "Preview of a new website concept for R3start Växjö with focus on trust, structure, quality and clear contact."
       }
     };
 
     const SUMMARIES = {
-      sv: "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet. Sidan riktar sig till socialtjänst, kommuner, placerare och anhöriga som snabbt behöver förstå placeringsformer, insatser, kvalitet och kontaktvägar. Verksamheten har 10 platser i Växjö och lyfter SSIL Kvalitetsindex 9,7 av 10 från hösten 2025. Besökaren kan kontakta verksamheten via telefon, e-post eller formulär för placeringsförfrågan, akut placering, samarbete eller frågor.",
-      en: "R3start Växjö offers supported housing, supported apartments, external support and emergency placements for adults in social vulnerability. The page is aimed at social services, municipalities, placement officers and relatives who need to quickly understand placement types, support services, quality and contact options. The organisation has 10 places in Växjö and highlights an SSIL Quality Index score of 9.7 out of 10 from autumn 2025. Visitors can contact the organisation by phone, email or form for placement enquiries, emergency placement, collaboration or questions."
+      sv: "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet. Sidan riktar sig till socialtjänst, kommuner, placerare och anhöriga som snabbt behöver förstå placeringsformer, insatser, kvalitet och kontaktvägar. Verksamheten har 10 platser i Växjö och lyfter SSIL Kvalitetsindex 9,7 av 10 från hösten 2025.",
+      en: "R3start Växjö offers supported housing, supported apartments, external support and emergency placements for adults in social vulnerability. The page is aimed at social services, municipalities, placement officers and relatives who need to quickly understand placement types, support services, quality and contact options. The organisation has 10 places in Växjö and highlights an SSIL Quality Index score of 9.7 out of 10 from autumn 2025."
     };
 
     let currentLang = localStorage.getItem(STORAGE_LANG) || "sv";
@@ -3421,7 +2881,7 @@ body.high-contrast #siteNav.open a{
       </div>
 
       <p class="footer">
-        Informationsbladet är framtaget som demo/designförslag. Text, uppgifter och bilder justeras vid skarp publicering.
+        Informationsbladet är framtaget som förhandsvisning. Text, uppgifter och bilder kan justeras inför publicering.
       </p>
     </section>
   </main>
@@ -3458,6 +2918,23 @@ body.high-contrast #siteNav.open a{
           siteNav.classList.remove("open");
           menuBtn.setAttribute("aria-expanded", "false");
         });
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedInsideMenu = siteNav.contains(event.target);
+        const clickedMenuButton = menuBtn.contains(event.target);
+
+        if(!clickedInsideMenu && !clickedMenuButton){
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape"){
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
       });
     }
 
@@ -3501,8 +2978,8 @@ body.high-contrast #siteNav.open a{
       form.addEventListener("submit", function(event){
         event.preventDefault();
         alert(currentLang === "en"
-          ? "Demo form. In the final version, the enquiry is sent onward."
-          : "Demoformulär. I färdig version skickas förfrågan vidare."
+          ? "Preview form. In the final version, the enquiry is sent onward."
+          : "Förhandsvisning. I färdig version skickas förfrågan vidare."
         );
       });
     }
@@ -3550,6 +3027,7 @@ body.high-contrast #siteNav.open a{
     }
 
     window.addEventListener("scroll", updateFixedHeader, { passive:true });
+
     window.addEventListener("resize", () => {
       updateFixedHeader();
       updateGalleryButtons();
