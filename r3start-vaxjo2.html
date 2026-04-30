@@ -38,26 +38,13 @@
       --focus:#b45309;
       --header-offset:0px;
 
-      --body-gradient:
-        radial-gradient(circle at top left, rgba(185,133,66,.22), transparent 34rem),
-        radial-gradient(circle at top right, rgba(22,56,47,.16), transparent 36rem),
-        linear-gradient(180deg, #f8f1e6 0%, #ece1d3 48%, #f8f3eb 100%);
-      --topbar-bg:#173128;
-      --header-bg:rgba(255,250,243,.94);
-      --soft-section:#fffaf3;
-      --alt-section:#f8f3eb;
-      --contact-bg:#151f1b;
-      --footer-bg:#0f1714;
-      --photo-card-bg:rgba(255,250,243,.55);
-      --photo-card-border:rgba(255,255,255,.68);
-      --photo-card-ink:#10201a;
-      --photo-card-muted:#1c4337;
+      --font-main:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-heading:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body.theme-warm{
       --bg:#efe8dc;
       --paper:#fffaf3;
-      --white:#ffffff;
       --ink:#16211d;
       --muted:#53615a;
       --forest:#16382f;
@@ -67,78 +54,72 @@
       --gold-2:#d9aa67;
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
-      --body-gradient:
-        radial-gradient(circle at top left, rgba(185,133,66,.22), transparent 34rem),
-        radial-gradient(circle at top right, rgba(22,56,47,.16), transparent 36rem),
-        linear-gradient(180deg, #f8f1e6 0%, #ece1d3 48%, #f8f3eb 100%);
-      --topbar-bg:#173128;
-      --header-bg:rgba(255,250,243,.94);
-      --soft-section:#fffaf3;
-      --alt-section:#f8f3eb;
-      --contact-bg:#151f1b;
-      --footer-bg:#0f1714;
-      --photo-card-bg:rgba(255,250,243,.55);
-      --photo-card-border:rgba(255,255,255,.68);
-      --photo-card-ink:#10201a;
-      --photo-card-muted:#1c4337;
+    }
+
+    body.theme-calm{
+      --bg:#eef4f1;
+      --paper:#ffffff;
+      --ink:#10201a;
+      --muted:#51635b;
+      --forest:#12382f;
+      --forest-2:#1f5b4b;
+      --forest-soft:#dcece5;
+      --gold:#7b8f69;
+      --gold-2:#a9bd8a;
+      --line:#d7e2dc;
+      --line-dark:#b7c8bf;
     }
 
     body.theme-dark{
-      --bg:#101816;
-      --paper:#16231f;
-      --white:#20312b;
-      --ink:#f7f4ee;
-      --muted:#d4ddd8;
-      --forest:#0f2b24;
-      --forest-2:#2f6c5b;
-      --forest-soft:#233b34;
-      --gold:#d7a85f;
-      --gold-2:#efc77b;
-      --line:#2d463e;
-      --line-dark:#577067;
-      --body-gradient:
-        radial-gradient(circle at top left, rgba(215,168,95,.18), transparent 34rem),
-        radial-gradient(circle at top right, rgba(47,108,91,.22), transparent 36rem),
-        linear-gradient(180deg, #0f1714 0%, #14211d 48%, #0f1714 100%);
-      --topbar-bg:#080f0d;
-      --header-bg:rgba(18,31,27,.94);
-      --soft-section:#121f1b;
-      --alt-section:#16231f;
-      --contact-bg:#080f0d;
-      --footer-bg:#050807;
-      --photo-card-bg:rgba(18,31,27,.70);
-      --photo-card-border:rgba(255,255,255,.18);
-      --photo-card-ink:#ffffff;
-      --photo-card-muted:#edf7f2;
+      --bg:#111916;
+      --paper:#18231f;
+      --white:#1d2a25;
+      --ink:#f4fbf7;
+      --muted:#c5d3cc;
+      --forest:#244f43;
+      --forest-2:#3d7a67;
+      --forest-soft:#263b34;
+      --gold:#d7aa68;
+      --gold-2:#ecc583;
+      --line:#31463e;
+      --line-dark:#4b6459;
+      --shadow:0 28px 90px rgba(0,0,0,.32);
+      --shadow-soft:0 18px 50px rgba(0,0,0,.22);
     }
 
     body.theme-light{
-      --bg:#f8f7f2;
+      --bg:#f7f7f4;
       --paper:#ffffff;
       --white:#ffffff;
-      --ink:#14201b;
-      --muted:#51625a;
-      --forest:#24594b;
-      --forest-2:#327361;
-      --forest-soft:#e8f0eb;
-      --gold:#ad7c3e;
-      --gold-2:#d5a76a;
-      --line:#e4ded3;
-      --line-dark:#cfc5b6;
-      --body-gradient:
-        radial-gradient(circle at top left, rgba(173,124,62,.12), transparent 34rem),
-        radial-gradient(circle at top right, rgba(36,89,75,.10), transparent 36rem),
-        linear-gradient(180deg, #ffffff 0%, #f4f1ea 48%, #ffffff 100%);
-      --topbar-bg:#214b40;
-      --header-bg:rgba(255,255,255,.94);
-      --soft-section:#ffffff;
-      --alt-section:#f8f7f2;
-      --contact-bg:#16382f;
-      --footer-bg:#10231e;
-      --photo-card-bg:rgba(255,255,255,.70);
-      --photo-card-border:rgba(255,255,255,.82);
-      --photo-card-ink:#14201b;
-      --photo-card-muted:#24594b;
+      --ink:#17201c;
+      --muted:#5c6862;
+      --forest:#1f4038;
+      --forest-2:#326355;
+      --forest-soft:#edf3f0;
+      --gold:#9d7a45;
+      --gold-2:#c69a59;
+      --line:#e4e1da;
+      --line-dark:#cac4b9;
+    }
+
+    body.font-modern{
+      --font-main:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-heading:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body.font-soft{
+      --font-main:Georgia, "Times New Roman", serif;
+      --font-heading:Georgia, "Times New Roman", serif;
+    }
+
+    body.font-clear{
+      --font-main:Arial, Helvetica, sans-serif;
+      --font-heading:Arial, Helvetica, sans-serif;
+    }
+
+    body.font-authority{
+      --font-main:"Segoe UI", Arial, sans-serif;
+      --font-heading:Georgia, "Times New Roman", serif;
     }
 
     *{box-sizing:border-box;}
@@ -155,11 +136,21 @@
 
     body{
       margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:var(--font-main);
       color:var(--ink);
-      background:var(--body-gradient);
+      background:
+        radial-gradient(circle at top left, rgba(185,133,66,.22), transparent 34rem),
+        radial-gradient(circle at top right, rgba(22,56,47,.16), transparent 36rem),
+        linear-gradient(180deg, var(--bg) 0%, #f8f3eb 100%);
       line-height:1.6;
       overflow-x:hidden;
+    }
+
+    body.theme-dark{
+      background:
+        radial-gradient(circle at top left, rgba(215,170,104,.18), transparent 34rem),
+        radial-gradient(circle at top right, rgba(61,122,103,.22), transparent 36rem),
+        linear-gradient(180deg, #101815 0%, #18231f 100%);
     }
 
     a{color:inherit;}
@@ -203,12 +194,16 @@
     .skip-link:focus{top:12px;}
 
     .topbar{
-      background:var(--topbar-bg);
+      background:#173128;
       color:#f6efe5;
       font-size:.92rem;
       border-bottom:1px solid rgba(255,255,255,.10);
       position:relative;
       z-index:10;
+    }
+
+    body.theme-dark .topbar{
+      background:#0b110f;
     }
 
     .topbar-inner{
@@ -230,6 +225,21 @@
       flex-wrap:wrap;
     }
 
+    .tool-group{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .tool-label{
+      color:#fff;
+      font-size:.82rem;
+      font-weight:900;
+      opacity:.9;
+      margin-left:4px;
+    }
+
     .tool-btn,
     .language-select{
       border:1px solid rgba(255,255,255,.24);
@@ -242,12 +252,11 @@
       font-size:.9rem;
       min-height:39px;
       transition:.18s ease;
-      font-family:inherit;
     }
 
     .tool-btn:hover,
     .language-select:hover,
-    .theme-btn[aria-pressed="true"]{
+    .tool-btn[aria-pressed="true"]{
       background:#fff;
       color:#13211c;
     }
@@ -255,11 +264,16 @@
     header{
       position:relative;
       z-index:100;
-      background:var(--header-bg);
+      background:rgba(255,250,243,.94);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(22,33,29,.10);
       box-shadow:0 12px 34px rgba(20,32,27,.08);
+    }
+
+    body.theme-dark header{
+      background:rgba(24,35,31,.92);
+      border-bottom-color:rgba(255,255,255,.10);
     }
 
     body.header-fixed header{
@@ -361,7 +375,7 @@
       border-radius:18px;
       background:var(--white);
       color:var(--ink);
-      border:1px solid rgba(200,185,164,.72);
+      border:1px solid var(--line);
       font-weight:950;
       text-decoration:none;
       white-space:normal;
@@ -392,7 +406,7 @@
       cursor:pointer;
       min-height:48px;
       font-size:1rem;
-      font-family:inherit;
+      font-family:var(--font-main);
     }
 
     .btn{
@@ -411,7 +425,7 @@
       border:1px solid transparent;
       font-size:.96rem;
       text-align:center;
-      font-family:inherit;
+      font-family:var(--font-main);
     }
 
     .btn:hover{transform:translateY(-1px);}
@@ -435,8 +449,8 @@
     }
 
     body.theme-dark .btn-secondary{
-      background:rgba(255,255,255,.08);
-      color:var(--ink);
+      background:rgba(255,255,255,.10);
+      color:#fff;
       border-color:var(--line-dark);
     }
 
@@ -477,12 +491,13 @@
     }
 
     body.theme-dark .eyebrow{
-      color:#fff4e3;
-      background:rgba(215,168,95,.14);
-      border-color:rgba(215,168,95,.35);
+      color:#ffe3b2;
+      background:rgba(215,170,104,.16);
+      border-color:rgba(215,170,104,.34);
     }
 
     h1,h2,h3{
+      font-family:var(--font-heading);
       margin:0;
       line-height:1.04;
       letter-spacing:-.055em;
@@ -501,6 +516,15 @@
 
     h3{
       font-size:1.32rem;
+      letter-spacing:-.035em;
+    }
+
+    body.font-soft h1,
+    body.font-soft h2,
+    body.font-soft h3,
+    body.font-authority h1,
+    body.font-authority h2,
+    body.font-authority h3{
       letter-spacing:-.035em;
     }
 
@@ -603,8 +627,8 @@
     .photo-caption,
     .image-panel-text,
     .slide-label{
-      background:var(--photo-card-bg);
-      border:1px solid var(--photo-card-border);
+      background:rgba(255,250,243,.55);
+      border:1px solid rgba(255,255,255,.68);
       box-shadow:0 18px 38px rgba(0,0,0,.14);
       backdrop-filter:blur(10px);
       -webkit-backdrop-filter:blur(10px);
@@ -623,7 +647,7 @@
     .image-panel-text strong,
     .slide-label strong{
       display:block;
-      color:var(--photo-card-ink);
+      color:#10201a;
       font-weight:950;
     }
 
@@ -631,7 +655,7 @@
     .image-panel-text span,
     .slide-label span{
       display:block;
-      color:var(--photo-card-muted);
+      color:#1c4337;
       margin-top:6px;
       font-weight:850;
     }
@@ -642,8 +666,8 @@
       top:42px;
       z-index:3;
       width:min(260px, 72%);
-      background:var(--photo-card-bg);
-      border:1px solid var(--photo-card-border);
+      background:rgba(255,250,243,.74);
+      border:1px solid rgba(200,185,164,.85);
       border-radius:26px;
       padding:20px;
       box-shadow:var(--shadow-soft);
@@ -659,13 +683,9 @@
       color:var(--forest);
     }
 
-    body.theme-dark .floating-card strong{
-      color:var(--gold-2);
-    }
-
     .floating-card span{
       display:block;
-      color:var(--photo-card-ink);
+      color:#10201a;
       margin-top:9px;
       font-weight:800;
       line-height:1.35;
@@ -739,7 +759,7 @@
     .quickfacts,
     .editorial,
     .methods{
-      background:var(--soft-section);
+      background:var(--paper);
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
     }
@@ -905,7 +925,6 @@
       box-shadow:0 12px 26px rgba(22,56,47,.22);
       transition:.18s ease;
       flex:0 0 auto;
-      font-family:inherit;
     }
 
     .gallery-arrow:hover{
@@ -963,7 +982,8 @@
       padding:14px 15px;
     }
 
-    .text-image{background:var(--alt-section);}
+    .text-image{background:#f8f3eb;}
+    body.theme-dark .text-image{background:#121c18;}
 
     .text-image-grid{
       display:grid;
@@ -988,8 +1008,8 @@
       left:20px;
       right:20px;
       bottom:20px;
-      background:var(--photo-card-bg);
-      border:1px solid var(--photo-card-border);
+      background:rgba(255,250,243,.74);
+      border:1px solid rgba(255,255,255,.72);
       border-radius:22px;
       padding:18px;
       backdrop-filter:blur(10px);
@@ -998,13 +1018,13 @@
 
     .image-note strong{
       display:block;
-      color:var(--photo-card-ink);
+      color:var(--ink);
       font-weight:950;
     }
 
     .image-note span{
       display:block;
-      color:var(--photo-card-muted);
+      color:var(--muted);
       font-weight:700;
       margin-top:4px;
     }
@@ -1057,14 +1077,6 @@
       border:1px solid rgba(255,255,255,.18);
       position:relative;
       overflow:hidden;
-    }
-
-    body.theme-dark .quality-wrap{
-      background:linear-gradient(135deg, #07100d, #16382f);
-    }
-
-    body.theme-light .quality-wrap{
-      background:linear-gradient(135deg, #24594b, #327361);
     }
 
     .quality-wrap::before{
@@ -1175,7 +1187,7 @@
     .method-card h3{font-size:1.2rem;}
 
     .contact{
-      background:var(--contact-bg);
+      background:#151f1b;
       color:#fff;
       border-top:1px solid rgba(255,255,255,.10);
     }
@@ -1260,8 +1272,8 @@
       border-radius:16px;
       padding:14px 15px;
       font:inherit;
-      color:#16211d;
-      background:#fff;
+      color:var(--ink);
+      background:var(--white);
       font-weight:650;
     }
 
@@ -1300,7 +1312,7 @@
     }
 
     .footer{
-      background:var(--footer-bg);
+      background:#0f1714;
       color:#fff;
       padding:34px 18px;
       border-top:1px solid rgba(255,255,255,.12);
@@ -1429,12 +1441,21 @@
       .tools{
         width:100%;
         display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+
+      .tool-group{
+        display:grid;
         grid-template-columns:1fr 1fr;
         gap:8px;
       }
 
-      .language-select{
+      .tool-label{
         grid-column:1 / -1;
+      }
+
+      .language-select{
         width:100%;
       }
 
@@ -1890,7 +1911,7 @@
   </style>
 </head>
 
-<body class="theme-warm">
+<body class="theme-warm font-modern">
   <a class="skip-link" href="#main" data-sv="Hoppa till innehåll" data-en="Skip to content">Hoppa till innehåll</a>
 
   <div class="topbar" id="topbar" aria-label="Sidverktyg">
@@ -1903,23 +1924,26 @@
       </span>
 
       <div class="tools">
-        <label for="languageSelect" class="sr-only" data-sv="Välj språk" data-en="Select language">Välj språk</label>
         <select class="language-select" id="languageSelect" aria-label="Välj språk">
           <option value="sv" selected>🇸🇪 Svenska</option>
           <option value="en">🇬🇧 English</option>
         </select>
 
-        <button class="tool-btn theme-btn" type="button" data-theme="warm" aria-pressed="true" data-sv="Varm premium" data-en="Warm premium">
-          Varm premium
-        </button>
+        <div class="tool-group" aria-label="Färgtema">
+          <span class="tool-label" data-sv="Färgtema:" data-en="Colour theme:">Färgtema:</span>
+          <button class="tool-btn theme-btn" type="button" data-theme="warm" aria-pressed="true" data-sv="Varm" data-en="Warm">Varm</button>
+          <button class="tool-btn theme-btn" type="button" data-theme="calm" aria-pressed="false" data-sv="Lugn" data-en="Calm">Lugn</button>
+          <button class="tool-btn theme-btn" type="button" data-theme="light" aria-pressed="false" data-sv="Ljus" data-en="Light">Ljus</button>
+          <button class="tool-btn theme-btn" type="button" data-theme="dark" aria-pressed="false" data-sv="Mörk" data-en="Dark">Mörk</button>
+        </div>
 
-        <button class="tool-btn theme-btn" type="button" data-theme="dark" aria-pressed="false" data-sv="Mörk professionell" data-en="Dark professional">
-          Mörk professionell
-        </button>
-
-        <button class="tool-btn theme-btn" type="button" data-theme="light" aria-pressed="false" data-sv="Ljus och ren" data-en="Light and clean">
-          Ljus och ren
-        </button>
+        <div class="tool-group" aria-label="Textstil">
+          <span class="tool-label" data-sv="Textstil:" data-en="Text style:">Textstil:</span>
+          <button class="tool-btn font-btn" type="button" data-font="modern" aria-pressed="true" data-sv="Modern" data-en="Modern">Modern</button>
+          <button class="tool-btn font-btn" type="button" data-font="soft" aria-pressed="false" data-sv="Mjuk" data-en="Soft">Mjuk</button>
+          <button class="tool-btn font-btn" type="button" data-font="clear" aria-pressed="false" data-sv="Tydlig" data-en="Clear">Tydlig</button>
+          <button class="tool-btn font-btn" type="button" data-font="authority" aria-pressed="false" data-sv="Myndig" data-en="Authority">Myndig</button>
+        </div>
 
         <button class="tool-btn" type="button" id="readPage" data-label-sv="Läs kort sammanfattning" data-label-en="Read short summary">
           Läs kort sammanfattning
@@ -2620,11 +2644,13 @@
     const galleryNext = document.getElementById("galleryNext");
     const downloadButtons = document.querySelectorAll(".download-brochure");
     const themeButtons = document.querySelectorAll(".theme-btn");
+    const fontButtons = document.querySelectorAll(".font-btn");
 
     const STORAGE_TEXT = "r3startPreviewTextSize";
     const STORAGE_CONTRAST = "r3startPreviewContrast";
     const STORAGE_LANG = "r3startPreviewLanguage";
     const STORAGE_THEME = "r3startPreviewTheme";
+    const STORAGE_FONT = "r3startPreviewFont";
 
     const META = {
       sv: {
@@ -2747,15 +2773,29 @@
     }
 
     function setTheme(theme){
-      const safeTheme = ["warm", "dark", "light"].includes(theme) ? theme : "warm";
+      const safeTheme = ["warm", "calm", "light", "dark"].includes(theme) ? theme : "warm";
 
-      body.classList.remove("theme-warm", "theme-dark", "theme-light");
+      body.classList.remove("theme-warm", "theme-calm", "theme-light", "theme-dark");
       body.classList.add("theme-" + safeTheme);
 
       localStorage.setItem(STORAGE_THEME, safeTheme);
 
       themeButtons.forEach(btn => {
         const isActive = btn.dataset.theme === safeTheme;
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    function setFontStyle(font){
+      const safeFont = ["modern", "soft", "clear", "authority"].includes(font) ? font : "modern";
+
+      body.classList.remove("font-modern", "font-soft", "font-clear", "font-authority");
+      body.classList.add("font-" + safeFont);
+
+      localStorage.setItem(STORAGE_FONT, safeFont);
+
+      fontButtons.forEach(btn => {
+        const isActive = btn.dataset.font === safeFont;
         btn.setAttribute("aria-pressed", isActive ? "true" : "false");
       });
     }
@@ -3072,12 +3112,6 @@
       });
     }
 
-    themeButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        setTheme(btn.dataset.theme);
-      });
-    });
-
     if(menuBtn && siteNav){
       menuBtn.addEventListener("click", () => {
         const isOpen = siteNav.classList.toggle("open");
@@ -3108,6 +3142,18 @@
         }
       });
     }
+
+    themeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        setTheme(btn.dataset.theme);
+      });
+    });
+
+    fontButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        setFontStyle(btn.dataset.font);
+      });
+    });
 
     if(increaseText){
       increaseText.addEventListener("click", () => {
@@ -3210,6 +3256,7 @@
     });
 
     setTheme(localStorage.getItem(STORAGE_THEME) || "warm");
+    setFontStyle(localStorage.getItem(STORAGE_FONT) || "modern");
     setLargeText(localStorage.getItem(STORAGE_TEXT) === "large");
     setHighContrast(localStorage.getItem(STORAGE_CONTRAST) === "high");
     applyLanguage(currentLang);
