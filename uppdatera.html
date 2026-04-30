@@ -7,7 +7,7 @@
   <title>Feedback på förhandsvisning | R3start Växjö</title>
   <meta
     name="description"
-    content="Lämna förbättringar, ändringar och önskemål för förhandsvisningen av R3start Växjös nya hemsida."
+    content="Lämna ärlig feedback, förbättringar, ändringar och önskemål för förhandsvisningen av R3start Växjös nya hemsida."
   />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#173128" />
@@ -161,8 +161,32 @@
     .lead{
       font-size:clamp(1.02rem, 1.6vw, 1.22rem);
       margin-top:18px;
-      max-width:760px;
+      max-width:780px;
       font-weight:650;
+    }
+
+    .notice{
+      margin-top:24px;
+      background:#173128;
+      color:#fffaf3;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:26px;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .notice strong{
+      display:block;
+      color:#ffffff;
+      font-size:1.08rem;
+      line-height:1.2;
+      margin-bottom:7px;
+      font-weight:950;
+    }
+
+    .notice p{
+      color:#f4eadc;
+      font-weight:700;
     }
 
     .quick{
@@ -219,6 +243,13 @@
       margin-bottom:0;
     }
 
+    .honest-block{
+      background:
+        linear-gradient(135deg, rgba(22,56,47,.08), rgba(185,133,66,.12)),
+        #fffaf3;
+      border-color:rgba(22,56,47,.28);
+    }
+
     .form-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -241,6 +272,10 @@
       font-size:.92rem;
       font-weight:650;
       margin-top:5px;
+    }
+
+    .hint strong{
+      color:var(--ink);
     }
 
     input,
@@ -434,7 +469,7 @@
   <div class="topbar">
     <div class="topbar-inner">
       <span>Feedbackformulär för R3start Växjö</span>
-      <a href="https://webutvecklare.se/r3start-vaxjo2" target="_blank" rel="noopener">Öppna förhandsvisningen</a>
+      <a href="https://webutvecklare.se/r3start-vaxjo2" target="_blank" rel="noopener">Öppna nuvarande förhandsvisning</a>
     </div>
   </div>
 
@@ -442,25 +477,34 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-card">
-          <span class="eyebrow">Förhandsvisning / förbättringar</span>
+          <span class="eyebrow">Förhandsvisning / ärlig feedback / nästa version</span>
           <h1>Vad vill ni ändra innan sidan görs färdig?</h1>
           <p class="lead">
             Fyll gärna i synpunkter här. Det behöver inte vara perfekt formulerat.
-            Korta svar räcker. Målet är bara att få rätt innehåll, rätt känsla och rätt detaljer innan nästa version.
+            Korta svar räcker. Målet är att få rätt innehåll, rätt känsla och rätt detaljer innan nästa version.
           </p>
+
+          <div class="notice">
+            <strong>Var brutalt ärliga. Snäll feedback bygger sämre hemsidor.</strong>
+            <p>
+              Skriv hellre “det här känns fel” än att låta det passera. Jag blir inte sur om ni tycker att något är dåligt.
+              Jag bygger i kod och kan ändra text, färger, bilder, struktur och funktioner enligt era önskemål.
+              Däremot kan jag inte läsa tankar, även om det hade varit en stark tilläggstjänst.
+            </p>
+          </div>
 
           <div class="quick" aria-label="Kort information">
             <div class="quick-item">
               <strong>1. Gå igenom sidan</strong>
-              <span>Titta på text, bilder, struktur och kontaktdel.</span>
+              <span>Titta på text, bilder, struktur, känsla och kontaktdel.</span>
             </div>
             <div class="quick-item">
-              <strong>2. Skriv ändringar</strong>
-              <span>Markera vad som ska bort, läggas till eller justeras.</span>
+              <strong>2. Skriv ärligt</strong>
+              <span>Vad är bra, dåligt, fel, saknas eller ska göras om?</span>
             </div>
             <div class="quick-item">
-              <strong>3. Skicka svar</strong>
-              <span>Knappen öppnar ett färdigt mejl med era svar.</span>
+              <strong>3. Jämför nästa demo</strong>
+              <span>Nästa version läggs på en ny adress så ni kan jämföra före och efter.</span>
             </div>
           </div>
         </div>
@@ -488,6 +532,31 @@
               <div class="full">
                 <label for="role">Roll / funktion</label>
                 <input id="role" name="role" placeholder="Ex. verksamhetschef, föreståndare, administratör..." />
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block honest-block">
+            <h2>Ärlig feedback först</h2>
+            <p class="hint">
+              Här får ni gärna vara raka. <strong>Säg inte att något är bra om ni inte tycker det.</strong>
+              Det hjälper mig att bygga nästa version bättre och snabbare.
+            </p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div class="full">
+                <label for="badFeedback">Vad känns dåligt, fel eller inte rätt?</label>
+                <textarea id="badFeedback" name="badFeedback" placeholder="Ex. sidan känns för mörk, för säljig, för stel, fel typ av bilder, fel känsla, fel struktur..."></textarea>
+              </div>
+
+              <div class="full">
+                <label for="goodFeedback">Vad tycker ni faktiskt fungerar bra?</label>
+                <textarea id="goodFeedback" name="goodFeedback" placeholder="Ex. vissa rubriker, färger, upplägg, sektioner, bilder eller formuleringar..."></textarea>
+              </div>
+
+              <div class="full">
+                <label for="wishDirection">Om ni fick bestämma helt: hur ska nästa version kännas?</label>
+                <textarea id="wishDirection" name="wishDirection" placeholder="Ex. mer trygg, mer myndig, mer modern, mer varm, enklare, mer premium, mindre byråkänsla..."></textarea>
               </div>
             </div>
           </div>
@@ -630,6 +699,44 @@
           </div>
 
           <div class="section-block">
+            <h2>Nästa demo</h2>
+            <p class="hint">
+              Efter feedbacken gör jag en förbättrad demo på en ny adress.
+              Då kan ni jämföra den nuvarande versionen med nästa version utan att något försvinner.
+            </p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="compareNeed">Vill ni jämföra versionerna?</label>
+                <select id="compareNeed" name="compareNeed">
+                  <option value="">Välj alternativ</option>
+                  <option>Ja, behåll nuvarande demo och gör ny version på ny adress</option>
+                  <option>Det räcker med ny version</option>
+                  <option>Vi vill se flera olika riktningar</option>
+                  <option>Vet inte ännu</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="nextVersionFocus">Viktigast i nästa version</label>
+                <select id="nextVersionFocus" name="nextVersionFocus">
+                  <option value="">Välj alternativ</option>
+                  <option>Text och innehåll</option>
+                  <option>Design och känsla</option>
+                  <option>Bilder och visuellt uttryck</option>
+                  <option>Struktur och tydlighet</option>
+                  <option>Allt ovan</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="promptNotes">Skriv gärna fritt så jag kan bygga en bättre prompt</label>
+                <textarea id="promptNotes" name="promptNotes" placeholder="Ex. sidan ska kännas mer som X, mindre som Y. Vi vill framstå som trygga, seriösa och tillgängliga. Undvik detta. Lyft detta mer..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block">
             <h2>Nästa steg</h2>
 
             <div class="form-grid" style="margin-top:18px;">
@@ -682,6 +789,7 @@
   <script>
     const SEND_TO = "erica@webutvecklare.se";
     const PREVIEW_URL = "https://webutvecklare.se/r3start-vaxjo2";
+    const NEXT_DEMO_NOTE = "Nästa förbättrade demo görs på en ny adress så nuvarande och ny version kan jämföras.";
 
     const form = document.getElementById("feedbackForm");
     const statusBox = document.getElementById("status");
@@ -708,10 +816,23 @@
 Förhandsvisning:
 ${PREVIEW_URL}
 
+Plan för nästa demo:
+${NEXT_DEMO_NOTE}
+
 KONTAKT
 Namn: ${getValue("name") || "-"}
 E-post: ${getValue("email") || "-"}
 Roll/funktion: ${getValue("role") || "-"}
+
+ÄRLIG FEEDBACK
+Vad känns dåligt, fel eller inte rätt?
+${getValue("badFeedback") || "-"}
+
+Vad fungerar bra?
+${getValue("goodFeedback") || "-"}
+
+Önskad riktning för nästa version:
+${getValue("wishDirection") || "-"}
 
 HELHETSKÄNSLA
 Hur känns sidan totalt?
@@ -756,6 +877,16 @@ ${getCheckedValues("features") || "-"}
 
 Kommentar om funktioner:
 ${getValue("featureNotes") || "-"}
+
+NÄSTA DEMO
+Vill ni jämföra versionerna?
+${getValue("compareNeed") || "-"}
+
+Viktigast i nästa version:
+${getValue("nextVersionFocus") || "-"}
+
+Anteckningar för bättre prompt:
+${getValue("promptNotes") || "-"}
 
 NÄSTA STEG
 Hur vill ni gå vidare?
