@@ -1718,183 +1718,134 @@
       }
     }
 
-    /* HÖG KONTRAST – stabil och läsbar */
-    body.high-contrast{
-      background:#000000 !important;
-      color:#ffffff !important;
-    }
+    /* ENKELT HÖG KONTRASTLÄGE */
+body.high-contrast{
+  background:#000 !important;
+  color:#fff !important;
+}
 
-    body.high-contrast .topbar,
-    body.high-contrast header,
-    body.high-contrast section,
-    body.high-contrast .quickfacts,
-    body.high-contrast .editorial,
-    body.high-contrast .methods,
-    body.high-contrast .text-image,
-    body.high-contrast .contact,
-    body.high-contrast .footer{
-      background:#000000 !important;
-      color:#ffffff !important;
-      border-color:#ffffff !important;
-      box-shadow:none !important;
-    }
+body.high-contrast *{
+  box-shadow:none !important;
+  text-shadow:none !important;
+  background-image:none !important;
+}
 
-    body.high-contrast h1,
-    body.high-contrast h2,
-    body.high-contrast h3,
-    body.high-contrast p,
-    body.high-contrast .lead,
-    body.high-contrast .section-head p,
-    body.high-contrast nav a,
-    body.high-contrast .logo-text strong,
-    body.high-contrast .logo-text span,
-    body.high-contrast .footer *,
-    body.high-contrast .contact > *,
-    body.high-contrast .contact-grid > *:not(.contact-box):not(form){
-      color:#ffffff !important;
-      text-shadow:none !important;
-    }
+/* Mörka huvudytor = svart bakgrund, vit text */
+body.high-contrast header,
+body.high-contrast .topbar,
+body.high-contrast section,
+body.high-contrast .editorial,
+body.high-contrast .quickfacts,
+body.high-contrast .methods,
+body.high-contrast .text-image,
+body.high-contrast .contact,
+body.high-contrast .footer,
+body.high-contrast .quality-wrap{
+  background:#000 !important;
+  color:#fff !important;
+  border-color:#fff !important;
+}
 
-    body.high-contrast .card,
-    body.high-contrast .panel,
-    body.high-contrast .step,
-    body.high-contrast .trust-pill,
-    body.high-contrast .quick-card,
-    body.high-contrast .fact,
-    body.high-contrast .person-row,
-    body.high-contrast .method-card,
-    body.high-contrast .check-list li,
-    body.high-contrast .contact-box,
-    body.high-contrast form,
-    body.high-contrast .contact-link,
-    body.high-contrast .contact-person,
-    body.high-contrast .score,
-    body.high-contrast .photo-caption,
-    body.high-contrast .image-panel-text,
-    body.high-contrast .slide-label,
-    body.high-contrast .floating-card,
-    body.high-contrast .image-note{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:3px solid #ffffff !important;
-      box-shadow:none !important;
-      backdrop-filter:none !important;
-      -webkit-backdrop-filter:none !important;
-    }
+/* All vanlig text på mörk bakgrund = vit */
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast p,
+body.high-contrast li,
+body.high-contrast a,
+body.high-contrast span,
+body.high-contrast strong,
+body.high-contrast label{
+  color:#fff !important;
+}
 
-    body.high-contrast .card *,
-    body.high-contrast .panel *,
-    body.high-contrast .step *,
-    body.high-contrast .trust-pill *,
-    body.high-contrast .quick-card *,
-    body.high-contrast .fact *,
-    body.high-contrast .person-row *,
-    body.high-contrast .method-card *,
-    body.high-contrast .check-list li *,
-    body.high-contrast .contact-box *,
-    body.high-contrast form *,
-    body.high-contrast .contact-link *,
-    body.high-contrast .contact-person *,
-    body.high-contrast .score *,
-    body.high-contrast .photo-caption *,
-    body.high-contrast .image-panel-text *,
-    body.high-contrast .slide-label *,
-    body.high-contrast .floating-card *,
-    body.high-contrast .image-note *{
-      color:#000000 !important;
-      text-shadow:none !important;
-    }
+/* Ljusa boxar/kort = vit bakgrund, svart text */
+body.high-contrast .card,
+body.high-contrast .panel,
+body.high-contrast .step,
+body.high-contrast .trust-pill,
+body.high-contrast .check-list li,
+body.high-contrast .contact-box,
+body.high-contrast form,
+body.high-contrast .contact-link,
+body.high-contrast .contact-person,
+body.high-contrast .score,
+body.high-contrast .photo-caption,
+body.high-contrast .image-panel-text,
+body.high-contrast .slide-label,
+body.high-contrast .floating-card,
+body.high-contrast .quick-card,
+body.high-contrast .fact,
+body.high-contrast .person-row,
+body.high-contrast .method-card,
+body.high-contrast .image-note,
+body.high-contrast nav.open{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
 
-    body.high-contrast .quality-wrap{
-      background:#000000 !important;
-      border:3px solid #ffffff !important;
-      box-shadow:none !important;
-      border-radius:28px !important;
-      padding:28px !important;
-      overflow:hidden !important;
-    }
+/* All text inne i ljusa boxar = svart */
+body.high-contrast .card *,
+body.high-contrast .panel *,
+body.high-contrast .step *,
+body.high-contrast .trust-pill *,
+body.high-contrast .check-list li *,
+body.high-contrast .contact-box *,
+body.high-contrast form *,
+body.high-contrast .contact-link *,
+body.high-contrast .contact-person *,
+body.high-contrast .score *,
+body.high-contrast .photo-caption *,
+body.high-contrast .image-panel-text *,
+body.high-contrast .slide-label *,
+body.high-contrast .floating-card *,
+body.high-contrast .quick-card *,
+body.high-contrast .fact *,
+body.high-contrast .person-row *,
+body.high-contrast .method-card *,
+body.high-contrast .image-note *,
+body.high-contrast nav.open *{
+  color:#000 !important;
+}
 
-    body.high-contrast .quality-wrap::before{
-      display:none !important;
-    }
+/* Knappar = vit bakgrund, svart text */
+body.high-contrast .btn,
+body.high-contrast .tool-btn,
+body.high-contrast .language-select,
+body.high-contrast .menu-btn{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
 
-    body.high-contrast .quality-grid{
-      display:grid !important;
-      grid-template-columns:1fr !important;
-      gap:28px !important;
-      align-items:start !important;
-    }
+/* Formulärfält = vit bakgrund, svart text */
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
 
-    body.high-contrast .quality-wrap h2,
-    body.high-contrast .quality-wrap p,
-    body.high-contrast .quality-wrap .quality-grid > div:not(.score),
-    body.high-contrast .quality-wrap .quality-grid > div:not(.score) *:not(.btn):not(.btn *){
-      color:#ffffff !important;
-      text-shadow:none !important;
-    }
+body.high-contrast input::placeholder,
+body.high-contrast textarea::placeholder{
+  color:#333 !important;
+}
 
-    body.high-contrast .quality-wrap .score{
-      width:100% !important;
-      max-width:100% !important;
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:3px solid #ffffff !important;
-      border-radius:26px !important;
-      padding:26px !important;
-      box-shadow:none !important;
-    }
+/* Små ikoner/badges */
+body.high-contrast .step::before,
+body.high-contrast .check-list li::before{
+  background:#000 !important;
+  color:#fff !important;
+  border:2px solid #fff !important;
+}
 
-    body.high-contrast .quality-wrap .score *{
-      color:#000000 !important;
-      text-shadow:none !important;
-    }
-
-    body.high-contrast .quality-wrap .score strong{
-      display:block !important;
-      color:#000000 !important;
-      font-size:clamp(4.5rem, 28vw, 7rem) !important;
-      line-height:.85 !important;
-      letter-spacing:-.08em !important;
-    }
-
-    body.high-contrast .quality-wrap .score span{
-      display:block !important;
-      color:#000000 !important;
-      font-size:1rem !important;
-      line-height:1.45 !important;
-      margin-top:18px !important;
-      font-weight:900 !important;
-    }
-
-    body.high-contrast .quality-wrap .btn,
-    body.high-contrast .quality-wrap .btn *,
-    body.high-contrast .contact .btn,
-    body.high-contrast .contact .btn *,
-    body.high-contrast .footer .btn,
-    body.high-contrast .footer .btn *{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border-color:#ffffff !important;
-      text-shadow:none !important;
-    }
-
-    body.high-contrast form .btn,
-    body.high-contrast form .btn *,
-    body.high-contrast .contact-box .btn,
-    body.high-contrast .contact-box .btn *,
-    body.high-contrast .panel .btn,
-    body.high-contrast .panel .btn *{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border-color:#000000 !important;
-    }
-
-    body.high-contrast .eyebrow{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:3px solid #ffffff !important;
-      text-shadow:none !important;
-    }
+body.high-contrast .eyebrow{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
 
     body.high-contrast .panel .eyebrow,
     body.high-contrast .card .eyebrow,
