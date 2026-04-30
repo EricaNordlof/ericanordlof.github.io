@@ -1729,15 +1729,211 @@ body.high-contrast *{
   text-shadow:none !important;
 }
 
-/* Behåll foton även i hög kontrast */
+/* ENKELT HÖG KONTRASTLÄGE */
+body.high-contrast{
+  background:#000 !important;
+  color:#fff !important;
+}
+
+body.high-contrast *{
+  box-shadow:none !important;
+  text-shadow:none !important;
+}
+
+/* Mörka huvudytor = svart bakgrund, vit text */
+body.high-contrast header,
+body.high-contrast .topbar,
+body.high-contrast section,
+body.high-contrast .editorial,
+body.high-contrast .quickfacts,
+body.high-contrast .methods,
+body.high-contrast .text-image,
+body.high-contrast .contact,
+body.high-contrast .footer,
+body.high-contrast .quality-wrap{
+  background:#000 !important;
+  color:#fff !important;
+  border-color:#fff !important;
+}
+
+/* All vanlig text på mörk bakgrund = vit */
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast p,
+body.high-contrast li,
+body.high-contrast a,
+body.high-contrast span,
+body.high-contrast strong,
+body.high-contrast label{
+  color:#fff !important;
+}
+
+/* Ljusa boxar/kort = vit bakgrund, svart text */
+body.high-contrast .card,
+body.high-contrast .panel,
+body.high-contrast .step,
+body.high-contrast .trust-pill,
+body.high-contrast .check-list li,
+body.high-contrast .contact-box,
+body.high-contrast form,
+body.high-contrast .contact-link,
+body.high-contrast .contact-person,
+body.high-contrast .score,
+body.high-contrast .photo-caption,
+body.high-contrast .image-panel-text,
+body.high-contrast .slide-label,
+body.high-contrast .floating-card,
+body.high-contrast .quick-card,
+body.high-contrast .fact,
+body.high-contrast .person-row,
+body.high-contrast .method-card,
+body.high-contrast .image-note,
+body.high-contrast nav.open{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
+
+/* All text inne i ljusa boxar = svart */
+body.high-contrast .card *,
+body.high-contrast .panel *,
+body.high-contrast .step *,
+body.high-contrast .trust-pill *,
+body.high-contrast .check-list li *,
+body.high-contrast .contact-box *,
+body.high-contrast form *,
+body.high-contrast .contact-link *,
+body.high-contrast .contact-person *,
+body.high-contrast .score *,
+body.high-contrast .photo-caption *,
+body.high-contrast .image-panel-text *,
+body.high-contrast .slide-label *,
+body.high-contrast .floating-card *,
+body.high-contrast .quick-card *,
+body.high-contrast .fact *,
+body.high-contrast .person-row *,
+body.high-contrast .method-card *,
+body.high-contrast .image-note *,
+body.high-contrast nav.open *{
+  color:#000 !important;
+}
+
+/* Knappar = vit bakgrund, svart text */
+body.high-contrast .btn,
+body.high-contrast .tool-btn,
+body.high-contrast .language-select,
+body.high-contrast .menu-btn{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
+
+/* Formulärfält = vit bakgrund, svart text */
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
+
+body.high-contrast input::placeholder,
+body.high-contrast textarea::placeholder{
+  color:#333 !important;
+}
+
+/* Små ikoner/badges */
+body.high-contrast .step::before,
+body.high-contrast .check-list li::before{
+  background:#000 !important;
+  color:#fff !important;
+  border:2px solid #fff !important;
+}
+
+body.high-contrast .eyebrow{
+  background:#fff !important;
+  color:#000 !important;
+  border:2px solid #fff !important;
+}
+
+body.high-contrast .panel .eyebrow,
+body.high-contrast .card .eyebrow,
+body.high-contrast .quick-card .eyebrow,
+body.high-contrast .contact-box .eyebrow,
+body.high-contrast form .eyebrow{
+  border-color:#000 !important;
+}
+
+/* VIKTIGT: foton ska fortfarande synas i hög kontrast */
 body.high-contrast .hero-photo,
 body.high-contrast .mini-photo,
 body.high-contrast .image-panel,
 body.high-contrast .rounded-image,
 body.high-contrast .photo-slide,
 body.high-contrast .person-photo{
-  background-image:var(--hc-bg-image, inherit) !important;
-  filter:contrast(1.15) brightness(.9);
+  background-color:transparent !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+  background-blend-mode:normal !important;
+  filter:contrast(1.15) brightness(.88) saturate(.95) !important;
+}
+
+/* Lägg mörk overlay över foton utan att ta bort själva bilden */
+body.high-contrast .hero-photo::before,
+body.high-contrast .image-panel::before,
+body.high-contrast .rounded-image::before,
+body.high-contrast .photo-slide::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.18);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Textkort på foton ska ligga ovanpå overlay */
+body.high-contrast .photo-caption,
+body.high-contrast .image-panel-text,
+body.high-contrast .slide-label,
+body.high-contrast .image-note{
+  position:absolute;
+  z-index:2;
+}
+
+/* Personbild ska inte bli vit ruta */
+body.high-contrast .person-photo{
+  border:2px solid #fff !important;
+}
+
+/* Mobilfix för kvalitetsdelen */
+@media (max-width:760px){
+  body.high-contrast #kvalitet{
+    padding-left:14px !important;
+    padding-right:14px !important;
+  }
+
+  body.high-contrast .quality-wrap{
+    padding:22px !important;
+    border-radius:24px !important;
+  }
+
+  body.high-contrast .quality-wrap .score{
+    padding:24px 22px !important;
+    border-radius:22px !important;
+  }
+
+  body.high-contrast .quality-wrap .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+  }
+
+  body.high-contrast .quality-wrap .btn{
+    width:100% !important;
+    min-height:52px !important;
+  }
 }
 
 /* Mörka huvudytor = svart bakgrund, vit text */
