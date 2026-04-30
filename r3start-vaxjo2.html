@@ -7,11 +7,15 @@
   <title>Demo: R3start Växjö | Stödboende och stödlägenheter</title>
   <meta
     name="description"
-    content="Demo på ny premium one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och kontakt."
+    content="Demo på ny premium one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och kontakt för kommuner, socialtjänst och anhöriga."
   />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#efe8dc" />
   <meta name="author" content="Nordlöf Nordic" />
+
+  <meta property="og:title" content="Demo: R3start Växjö | Stödboende och stödlägenheter" />
+  <meta property="og:description" content="Premiumdemo för R3start Växjö med fokus på förtroende, struktur, kvalitet och tydlig kontakt." />
+  <meta property="og:type" content="website" />
 
   <style>
     :root{
@@ -20,26 +24,38 @@
       --white:#ffffff;
       --ink:#16211d;
       --muted:#53615a;
+      --soft:#6f7b74;
+
       --forest:#16382f;
       --forest-2:#24594b;
+      --forest-3:#2f6c5b;
       --forest-soft:#dfeae4;
+
       --gold:#b98542;
       --gold-2:#d9aa67;
+      --gold-soft:#f8ead6;
+
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
+
       --shadow:0 28px 90px rgba(20,32,27,.16);
       --shadow-soft:0 18px 50px rgba(20,32,27,.10);
+
       --radius:28px;
       --max:1180px;
       --focus:#b45309;
-      --overlay-bg:rgba(255,250,243,.34);
-      --overlay-border:rgba(255,255,255,.52);
+
+      --overlay-bg:rgba(255,250,243,.46);
+      --overlay-border:rgba(255,255,255,.62);
       --overlay-ink:#10201a;
       --overlay-muted:#1c4337;
+
       --header-offset:0px;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
 
     html{
       scroll-behavior:smooth;
@@ -49,7 +65,9 @@
       overflow-x:hidden;
     }
 
-    html.large-text{font-size:118%}
+    html.large-text{
+      font-size:118%;
+    }
 
     body{
       margin:0;
@@ -64,8 +82,14 @@
       overflow-x:hidden;
     }
 
-    a{color:inherit}
-    img{display:block;max-width:100%}
+    a{
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
 
     h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
       overflow-wrap:anywhere;
@@ -93,8 +117,8 @@
       position:absolute;
       left:12px;
       top:-90px;
-      background:#fff;
-      color:#000;
+      background:#ffffff;
+      color:#000000;
       padding:12px 16px;
       border-radius:999px;
       z-index:1200;
@@ -102,7 +126,9 @@
       transition:.2s ease;
     }
 
-    .skip-link:focus{top:12px}
+    .skip-link:focus{
+      top:12px;
+    }
 
     .topbar{
       background:#173128;
@@ -135,7 +161,7 @@
     .tool-btn,
     .language-select{
       border:1px solid rgba(255,255,255,.24);
-      color:#fff;
+      color:#ffffff;
       background:rgba(255,255,255,.08);
       border-radius:999px;
       padding:8px 12px;
@@ -148,7 +174,7 @@
 
     .tool-btn:hover,
     .language-select:hover{
-      background:#fff;
+      background:#ffffff;
       color:#13211c;
     }
 
@@ -170,7 +196,9 @@
       z-index:999;
     }
 
-    body.header-fixed main{padding-top:var(--header-offset)}
+    body.header-fixed main{
+      padding-top:var(--header-offset);
+    }
 
     .nav{
       max-width:var(--max);
@@ -198,7 +226,7 @@
       height:46px;
       border-radius:16px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -244,7 +272,9 @@
       white-space:nowrap;
     }
 
-    nav a:hover{background:var(--forest-soft)}
+    nav a:hover{
+      background:var(--forest-soft);
+    }
 
     .nav-actions{
       display:flex;
@@ -256,7 +286,7 @@
     .menu-btn{
       display:none;
       border:1px solid var(--line-dark);
-      background:#fff;
+      background:#ffffff;
       color:var(--forest);
       border-radius:999px;
       padding:10px 14px;
@@ -276,7 +306,7 @@
       text-decoration:none;
       cursor:pointer;
       line-height:1;
-      transition:.18s ease;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
       white-space:nowrap;
       border:1px solid transparent;
       font-size:.96rem;
@@ -284,16 +314,21 @@
       font-family:inherit;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .btn-primary{
       background:var(--forest);
-      color:#fff;
+      color:#ffffff;
       border-color:var(--forest);
       box-shadow:0 16px 38px rgba(22,56,47,.22);
     }
 
-    .btn-primary:hover{background:var(--forest-2)}
+    .btn-primary:hover{
+      background:var(--forest-2);
+      border-color:var(--forest-2);
+    }
 
     .btn-secondary{
       background:rgba(255,255,255,.82);
@@ -301,7 +336,9 @@
       border-color:var(--line-dark);
     }
 
-    .btn-secondary:hover{background:#fff}
+    .btn-secondary:hover{
+      background:#ffffff;
+    }
 
     .btn-gold{
       background:linear-gradient(135deg, var(--gold), var(--gold-2));
@@ -310,7 +347,9 @@
       box-shadow:0 16px 38px rgba(185,133,66,.22);
     }
 
-    main{overflow:hidden}
+    main{
+      overflow:hidden;
+    }
 
     section{
       padding:88px 18px;
@@ -372,7 +411,9 @@
       font-weight:650;
     }
 
-    .hero{padding:72px 18px 80px}
+    .hero{
+      padding:72px 18px 80px;
+    }
 
     .hero-grid{
       max-width:var(--max);
@@ -429,7 +470,7 @@
     }
 
     .hero-card{
-      background:#fff;
+      background:#ffffff;
       border:1px solid rgba(200,185,164,.8);
       border-radius:40px;
       padding:12px;
@@ -577,41 +618,29 @@
       font-weight:650;
     }
 
-    .quickfacts,
-    .editorial,
-    .methods{
+    .quickfacts{
       background:#fffaf3;
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
     }
 
-    .quick-grid,
-    .split,
-    .text-image-grid,
-    .quality-grid,
-    .contact-grid{
+    .quick-grid{
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:30px;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
       align-items:start;
     }
 
-    .quick-card,
-    .panel{
-      background:#fff;
-      color:var(--ink);
-      border-radius:36px;
-      padding:36px;
-      box-shadow:var(--shadow-soft);
-      position:relative;
-      overflow:hidden;
+    .quick-card{
+      background:#ffffff;
       border:1px solid var(--line-dark);
+      border-radius:36px;
+      padding:34px;
+      box-shadow:var(--shadow-soft);
     }
 
-    .quick-card p,
-    .panel p{
-      color:var(--muted);
-      margin-top:16px;
+    .quick-card p{
+      margin-top:14px;
       font-weight:650;
     }
 
@@ -625,7 +654,7 @@
       grid-template-columns:1fr auto;
       gap:16px;
       align-items:center;
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       padding:18px;
@@ -643,15 +672,14 @@
       text-align:right;
     }
 
-    .person-row,
-    .contact-person{
+    .person-row{
       display:flex;
       gap:16px;
       align-items:center;
       padding:18px;
       border-radius:24px;
       border:1px solid var(--line-dark);
-      background:#fff;
+      background:#ffffff;
       box-shadow:var(--shadow-soft);
       margin-top:18px;
     }
@@ -667,19 +695,47 @@
         url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=82") center/cover;
     }
 
-    .person-row strong,
-    .contact-person strong{
+    .person-row strong{
       display:block;
       color:var(--ink);
       font-weight:950;
     }
 
-    .person-row span,
-    .contact-person span{
+    .person-row span{
       display:block;
       color:var(--muted);
       font-weight:700;
       margin-top:3px;
+    }
+
+    .editorial{
+      background:#fffaf3;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .panel{
+      background:#ffffff;
+      color:var(--ink);
+      border-radius:36px;
+      padding:36px;
+      box-shadow:var(--shadow-soft);
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--line-dark);
+    }
+
+    .panel p{
+      color:var(--muted);
+      margin-top:16px;
+      font-weight:650;
     }
 
     .image-panel{
@@ -703,7 +759,9 @@
       padding:20px;
     }
 
-    .image-strip-wrap{margin-top:34px}
+    .image-strip-wrap{
+      margin-top:34px;
+    }
 
     .drag-hint{
       display:flex;
@@ -730,7 +788,7 @@
       border:none;
       border-radius:999px;
       background:var(--forest);
-      color:#fff;
+      color:#ffffff;
       cursor:pointer;
       display:grid;
       place-items:center;
@@ -765,10 +823,18 @@
       scroll-behavior:smooth;
     }
 
-    .image-strip:active{cursor:grabbing}
+    .image-strip:active{
+      cursor:grabbing;
+    }
 
-    .image-strip::-webkit-scrollbar{height:10px}
-    .image-strip::-webkit-scrollbar-track{background:transparent}
+    .image-strip::-webkit-scrollbar{
+      height:10px;
+    }
+
+    .image-strip::-webkit-scrollbar-track{
+      background:transparent;
+    }
+
     .image-strip::-webkit-scrollbar-thumb{
       background:rgba(22,56,47,.28);
       border-radius:999px;
@@ -796,7 +862,16 @@
       padding:14px 15px;
     }
 
-    .text-image{background:#f8f3eb}
+    .text-image{
+      background:#f8f3eb;
+    }
+
+    .text-image-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:center;
+    }
 
     .rounded-image{
       min-height:430px;
@@ -844,7 +919,7 @@
     }
 
     .check-list li{
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:22px;
       padding:19px 20px 19px 56px;
@@ -863,7 +938,7 @@
       height:27px;
       border-radius:999px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -876,7 +951,7 @@
 
     .quality-wrap{
       background:linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
-      color:#fff;
+      color:#ffffff;
       border-radius:44px;
       padding:48px;
       box-shadow:var(--shadow);
@@ -897,7 +972,9 @@
     }
 
     .quality-grid{
+      display:grid;
       grid-template-columns:.88fr 1.12fr;
+      gap:34px;
       align-items:center;
       position:relative;
       z-index:2;
@@ -916,7 +993,7 @@
       font-size:clamp(3.8rem, 8vw, 7.1rem);
       line-height:.85;
       letter-spacing:-.08em;
-      color:#fff;
+      color:#ffffff;
     }
 
     .score span{
@@ -928,12 +1005,14 @@
 
     .quality-wrap .eyebrow{
       background:rgba(255,255,255,.12);
-      color:#fff;
+      color:#ffffff;
       border-color:rgba(255,255,255,.28);
     }
 
     .quality-wrap h2,
-    .quality-wrap p{color:#fff}
+    .quality-wrap p{
+      color:#ffffff;
+    }
 
     .quality-wrap p{
       color:#edf7f2;
@@ -950,7 +1029,7 @@
 
     .step{
       counter-increment:step;
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:26px;
       padding:24px 24px 24px 82px;
@@ -967,7 +1046,7 @@
       height:42px;
       border-radius:15px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#fff;
+      color:#ffffff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -979,6 +1058,12 @@
       font-weight:650;
     }
 
+    .methods{
+      background:#fffaf3;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
     .method-grid{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -987,14 +1072,16 @@
     }
 
     .method-card{
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:26px;
       padding:25px;
       box-shadow:var(--shadow-soft);
     }
 
-    .method-card h3{font-size:1.2rem}
+    .method-card h3{
+      font-size:1.2rem;
+    }
 
     .method-card p{
       margin-top:10px;
@@ -1003,18 +1090,27 @@
 
     .contact{
       background:#151f1b;
-      color:#fff;
+      color:#ffffff;
       border-top:1px solid rgba(255,255,255,.10);
     }
 
     .contact h2,
     .contact h3,
-    .contact p{color:#fff}
+    .contact p{
+      color:#ffffff;
+    }
 
     .contact .eyebrow{
       background:rgba(255,255,255,.10);
-      color:#fff;
+      color:#ffffff;
       border-color:rgba(255,255,255,.25);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.94fr 1.06fr;
+      gap:28px;
+      align-items:start;
     }
 
     .contact-box,
@@ -1029,12 +1125,26 @@
 
     .contact-box h2,
     .contact-box h3,
-    form h3{color:var(--ink)}
+    form h3{
+      color:var(--ink);
+    }
 
     .contact-box p{
       color:var(--muted);
       margin-top:14px;
       font-weight:650;
+    }
+
+    .contact-person{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      padding:16px;
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:22px;
+      margin-top:24px;
+      box-shadow:var(--shadow-soft);
     }
 
     .contact-links{
@@ -1044,7 +1154,7 @@
     }
 
     .contact-link{
-      background:#fff;
+      background:#ffffff;
       border:1px solid var(--line-dark);
       border-radius:20px;
       padding:17px;
@@ -1077,12 +1187,14 @@
       padding:14px 15px;
       font:inherit;
       color:var(--ink);
-      background:#fff;
+      background:#ffffff;
       font-weight:650;
     }
 
     input::placeholder,
-    textarea::placeholder{color:#66736c}
+    textarea::placeholder{
+      color:#66736c;
+    }
 
     textarea{
       min-height:160px;
@@ -1095,8 +1207,13 @@
       gap:16px;
     }
 
-    .field{margin-bottom:16px}
-    .full{grid-column:1 / -1}
+    .field{
+      margin-bottom:16px;
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
 
     .form-note{
       font-size:.92rem;
@@ -1115,7 +1232,7 @@
 
     .footer{
       background:#0f1714;
-      color:#fff;
+      color:#ffffff;
       padding:34px 18px;
       border-top:1px solid rgba(255,255,255,.12);
     }
@@ -1134,7 +1251,9 @@
       font-size:.95rem;
     }
 
-    .footer-copy strong{color:#fff}
+    .footer-copy strong{
+      color:#ffffff;
+    }
 
     .footer-right{
       display:flex;
@@ -1158,7 +1277,7 @@
       display:grid;
       place-items:center;
       text-decoration:none;
-      color:#fff;
+      color:#ffffff;
       border:1px solid rgba(255,255,255,.16);
       transition:.18s ease;
       box-shadow:0 10px 24px rgba(0,0,0,.18);
@@ -1175,23 +1294,33 @@
       fill:currentColor;
     }
 
-    .social-icon.facebook{background:#1877f2}
-    .social-icon.instagram{background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4)}
-    .social-icon.linkedin{background:#0a66c2}
+    .social-icon.facebook{
+      background:#1877f2;
+    }
+
+    .social-icon.instagram{
+      background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);
+    }
+
+    .social-icon.linkedin{
+      background:#0a66c2;
+    }
 
     .footer .btn-secondary{
       background:rgba(255,255,255,.10);
-      color:#fff;
+      color:#ffffff;
       border-color:rgba(255,255,255,.24);
     }
 
     .footer .btn-secondary:hover{
-      background:#fff;
+      background:#ffffff;
       color:#13211c;
     }
 
     @media (max-width:1120px){
-      .mini-photo{display:none}
+      .mini-photo{
+        display:none;
+      }
     }
 
     @media (max-width:980px){
@@ -1206,16 +1335,26 @@
         grid-template-columns:1fr;
       }
 
-      .trust-row{grid-template-columns:1fr}
-      .hero-visual{min-height:auto}
-      .hero-photo{min-height:470px}
+      .trust-row{
+        grid-template-columns:1fr;
+      }
+
+      .hero-visual{
+        min-height:auto;
+      }
+
+      .hero-photo{
+        min-height:470px;
+      }
 
       .floating-card{
         left:18px;
         top:18px;
       }
 
-      nav{display:none}
+      nav{
+        display:none;
+      }
 
       nav.open{
         display:block;
@@ -1237,21 +1376,26 @@
 
       nav.open a{
         width:100%;
-        justify-content:center;
       }
 
-      .menu-btn{display:inline-flex}
+      .menu-btn{
+        display:inline-flex;
+      }
     }
 
     @media (max-width:760px){
-      html.large-text{font-size:112%}
+      html.large-text{
+        font-size:112%;
+      }
 
       section{
         padding:58px 14px;
         scroll-margin-top:96px;
       }
 
-      .hero{padding:44px 14px 60px}
+      .hero{
+        padding:44px 14px 60px;
+      }
 
       .topbar-inner{
         padding:10px 14px;
@@ -1308,8 +1452,13 @@
         white-space:nowrap;
       }
 
-      .logo-text span{display:none}
-      .nav-actions .btn{display:none}
+      .logo-text span{
+        display:none;
+      }
+
+      .nav-actions .btn{
+        display:none;
+      }
 
       .menu-btn{
         min-height:42px;
@@ -1336,8 +1485,14 @@
         line-height:1.03;
       }
 
-      h2{font-size:clamp(1.78rem, 8vw, 2.6rem)}
-      h3{font-size:1.2rem;line-height:1.16}
+      h2{
+        font-size:clamp(1.78rem, 8vw, 2.6rem);
+      }
+
+      h3{
+        font-size:1.2rem;
+        line-height:1.16;
+      }
 
       .lead{
         font-size:1.03rem;
@@ -1381,7 +1536,9 @@
         padding:16px;
       }
 
-      .floating-card{display:none}
+      .floating-card{
+        display:none;
+      }
 
       .section-head{
         display:block;
@@ -1401,6 +1558,14 @@
       .method-card{
         border-radius:24px;
         padding:22px;
+      }
+
+      .fact{
+        grid-template-columns:1fr;
+      }
+
+      .fact strong{
+        text-align:left;
       }
 
       .image-panel,
@@ -1446,7 +1611,9 @@
         padding:23px;
       }
 
-      .score strong{font-size:clamp(3rem, 24vw, 5.2rem)}
+      .score strong{
+        font-size:clamp(3rem, 24vw, 5.2rem);
+      }
 
       .step{
         padding:20px 18px 20px 64px;
@@ -1475,20 +1642,32 @@
         font-size:1rem;
       }
 
-      textarea{min-height:135px}
+      textarea{
+        min-height:135px;
+      }
 
       .contact-person,
-      .person-row{align-items:flex-start}
+      .person-row{
+        align-items:flex-start;
+      }
 
-      .footer{padding:28px 14px}
+      .footer{
+        padding:28px 14px;
+      }
 
       .footer-inner{
         grid-template-columns:1fr;
         gap:16px;
       }
 
-      .footer-right{justify-content:flex-start}
-      .gallery-tools{width:100%;justify-content:flex-start}
+      .footer-right{
+        justify-content:flex-start;
+      }
+
+      .gallery-tools{
+        width:100%;
+        justify-content:flex-start;
+      }
     }
 
     @media (max-width:390px){
@@ -1501,8 +1680,13 @@
         padding-right:12px;
       }
 
-      h1{font-size:2.02rem}
-      h2{font-size:1.62rem}
+      h1{
+        font-size:2.02rem;
+      }
+
+      h2{
+        font-size:1.62rem;
+      }
 
       .logo-text strong{
         max-width:52vw;
@@ -1511,7 +1695,9 @@
         white-space:nowrap;
       }
 
-      .hero-photo{min-height:300px}
+      .hero-photo{
+        min-height:300px;
+      }
 
       .card,
       .panel,
@@ -1524,46 +1710,48 @@
     }
 
     @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{
+      *,
+      *::before,
+      *::after{
         scroll-behavior:auto !important;
         transition:none !important;
       }
     }
 
-    /* HÖG KONTRAST – stabilt och läsbart */
+    /* HÖG KONTRAST – stabil och läsbar */
     body.high-contrast{
-      background:#000 !important;
-      color:#fff !important;
+      background:#000000 !important;
+      color:#ffffff !important;
     }
 
+    body.high-contrast .topbar,
+    body.high-contrast header,
     body.high-contrast section,
-    body.high-contrast .editorial,
     body.high-contrast .quickfacts,
+    body.high-contrast .editorial,
     body.high-contrast .methods,
     body.high-contrast .text-image,
     body.high-contrast .contact,
-    body.high-contrast .footer,
-    body.high-contrast header,
-    body.high-contrast .topbar{
-      background:#000 !important;
-      color:#fff !important;
-      border-color:#fff !important;
+    body.high-contrast .footer{
+      background:#000000 !important;
+      color:#ffffff !important;
+      border-color:#ffffff !important;
       box-shadow:none !important;
     }
 
-    body.high-contrast section h1,
-    body.high-contrast section h2,
-    body.high-contrast section h3,
-    body.high-contrast section p,
-    body.high-contrast section .lead,
-    body.high-contrast .section-head h2,
+    body.high-contrast h1,
+    body.high-contrast h2,
+    body.high-contrast h3,
+    body.high-contrast p,
+    body.high-contrast .lead,
     body.high-contrast .section-head p,
     body.high-contrast nav a,
     body.high-contrast .logo-text strong,
     body.high-contrast .logo-text span,
-    body.high-contrast .footer,
-    body.high-contrast .footer *{
-      color:#fff !important;
+    body.high-contrast .footer *,
+    body.high-contrast .contact > *,
+    body.high-contrast .contact-grid > *:not(.contact-box):not(form){
+      color:#ffffff !important;
       text-shadow:none !important;
     }
 
@@ -1571,6 +1759,10 @@
     body.high-contrast .panel,
     body.high-contrast .step,
     body.high-contrast .trust-pill,
+    body.high-contrast .quick-card,
+    body.high-contrast .fact,
+    body.high-contrast .person-row,
+    body.high-contrast .method-card,
     body.high-contrast .check-list li,
     body.high-contrast .contact-box,
     body.high-contrast form,
@@ -1581,14 +1773,10 @@
     body.high-contrast .image-panel-text,
     body.high-contrast .slide-label,
     body.high-contrast .floating-card,
-    body.high-contrast .quick-card,
-    body.high-contrast .fact,
-    body.high-contrast .person-row,
-    body.high-contrast .method-card,
     body.high-contrast .image-note{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #fff !important;
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #ffffff !important;
       box-shadow:none !important;
       backdrop-filter:none !important;
       -webkit-backdrop-filter:none !important;
@@ -1598,6 +1786,10 @@
     body.high-contrast .panel *,
     body.high-contrast .step *,
     body.high-contrast .trust-pill *,
+    body.high-contrast .quick-card *,
+    body.high-contrast .fact *,
+    body.high-contrast .person-row *,
+    body.high-contrast .method-card *,
     body.high-contrast .check-list li *,
     body.high-contrast .contact-box *,
     body.high-contrast form *,
@@ -1608,21 +1800,18 @@
     body.high-contrast .image-panel-text *,
     body.high-contrast .slide-label *,
     body.high-contrast .floating-card *,
-    body.high-contrast .quick-card *,
-    body.high-contrast .fact *,
-    body.high-contrast .person-row *,
-    body.high-contrast .method-card *,
     body.high-contrast .image-note *{
-      color:#000 !important;
+      color:#000000 !important;
       text-shadow:none !important;
     }
 
     body.high-contrast .quality-wrap{
-      background:#000 !important;
-      border:3px solid #fff !important;
+      background:#000000 !important;
+      border:3px solid #ffffff !important;
       box-shadow:none !important;
-      padding:24px !important;
       border-radius:28px !important;
+      padding:28px !important;
+      overflow:hidden !important;
     }
 
     body.high-contrast .quality-wrap::before{
@@ -1631,33 +1820,50 @@
 
     body.high-contrast .quality-grid{
       display:grid !important;
-      grid-template-columns:1fr 1fr !important;
+      grid-template-columns:1fr !important;
       gap:28px !important;
-      align-items:center !important;
+      align-items:start !important;
     }
 
     body.high-contrast .quality-wrap h2,
     body.high-contrast .quality-wrap p,
     body.high-contrast .quality-wrap .quality-grid > div:not(.score),
-    body.high-contrast .quality-wrap .quality-grid > div:not(.score) *{
-      color:#fff !important;
+    body.high-contrast .quality-wrap .quality-grid > div:not(.score) *:not(.btn):not(.btn *){
+      color:#ffffff !important;
       text-shadow:none !important;
     }
 
-    body.high-contrast .quality-wrap .score,
+    body.high-contrast .quality-wrap .score{
+      width:100% !important;
+      max-width:100% !important;
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #ffffff !important;
+      border-radius:26px !important;
+      padding:26px !important;
+      box-shadow:none !important;
+    }
+
     body.high-contrast .quality-wrap .score *{
-      background:#fff !important;
-      color:#000 !important;
-      border-color:#fff !important;
+      color:#000000 !important;
       text-shadow:none !important;
     }
 
-    body.high-contrast .quality-wrap .eyebrow,
-    body.high-contrast #kvalitet .eyebrow{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #fff !important;
-      text-shadow:none !important;
+    body.high-contrast .quality-wrap .score strong{
+      display:block !important;
+      color:#000000 !important;
+      font-size:clamp(4.5rem, 28vw, 7rem) !important;
+      line-height:.85 !important;
+      letter-spacing:-.08em !important;
+    }
+
+    body.high-contrast .quality-wrap .score span{
+      display:block !important;
+      color:#000000 !important;
+      font-size:1rem !important;
+      line-height:1.45 !important;
+      margin-top:18px !important;
+      font-weight:900 !important;
     }
 
     body.high-contrast .quality-wrap .btn,
@@ -1666,9 +1872,9 @@
     body.high-contrast .contact .btn *,
     body.high-contrast .footer .btn,
     body.high-contrast .footer .btn *{
-      background:#fff !important;
-      color:#000 !important;
-      border-color:#fff !important;
+      background:#ffffff !important;
+      color:#000000 !important;
+      border-color:#ffffff !important;
       text-shadow:none !important;
     }
 
@@ -1678,106 +1884,71 @@
     body.high-contrast .contact-box .btn *,
     body.high-contrast .panel .btn,
     body.high-contrast .panel .btn *{
-      background:#fff !important;
-      color:#000 !important;
-      border-color:#000 !important;
+      background:#ffffff !important;
+      color:#000000 !important;
+      border-color:#000000 !important;
     }
 
     body.high-contrast .eyebrow{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #fff !important;
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #ffffff !important;
       text-shadow:none !important;
     }
 
     body.high-contrast .panel .eyebrow,
     body.high-contrast .card .eyebrow,
+    body.high-contrast .quick-card .eyebrow,
     body.high-contrast .contact-box .eyebrow,
     body.high-contrast form .eyebrow{
-      border-color:#000 !important;
+      border-color:#000000 !important;
     }
 
     body.high-contrast input,
     body.high-contrast select,
     body.high-contrast textarea{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #000 !important;
+      background:#ffffff !important;
+      color:#000000 !important;
+      border:3px solid #000000 !important;
     }
 
     body.high-contrast input::placeholder,
     body.high-contrast textarea::placeholder{
-      color:#333 !important;
+      color:#333333 !important;
     }
 
     body.high-contrast .step::before,
     body.high-contrast .check-list li::before{
-      background:#000 !important;
-      color:#fff !important;
-      border:2px solid #000 !important;
-    }
-
-    body.high-contrast .btn,
-    body.high-contrast .tool-btn,
-    body.high-contrast .language-select,
-    body.high-contrast .menu-btn{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #fff !important;
-      box-shadow:none !important;
-    }
-
-    body.high-contrast nav.open{
-      background:#fff !important;
-      color:#000 !important;
-      border:3px solid #fff !important;
-      box-shadow:none !important;
-    }
-
-    body.high-contrast nav.open ul,
-    body.high-contrast nav.open li,
-    body.high-contrast nav.open a{
-      background:#fff !important;
-      color:#000 !important;
-      text-shadow:none !important;
-    }
-
-    body.high-contrast nav.open a{
-      display:flex !important;
-      justify-content:center !important;
-      padding:18px 16px !important;
-      border-radius:18px !important;
-      font-weight:950 !important;
-    }
-
-    body.high-contrast nav.open a:hover{
-      background:#000 !important;
-      color:#fff !important;
+      background:#000000 !important;
+      color:#ffffff !important;
+      border:2px solid #000000 !important;
     }
 
     @media (max-width:760px){
-      body.high-contrast .quality-grid{
-        grid-template-columns:1fr !important;
+      body.high-contrast #kvalitet{
+        padding-left:14px !important;
+        padding-right:14px !important;
       }
 
       body.high-contrast .quality-wrap{
-        padding:20px !important;
+        padding:22px !important;
         border-radius:24px !important;
       }
 
       body.high-contrast .quality-wrap .score{
-        padding:24px !important;
-        border-radius:24px !important;
+        padding:24px 22px !important;
+        border-radius:22px !important;
       }
 
       body.high-contrast .quality-wrap .hero-actions{
         display:grid !important;
+        grid-template-columns:1fr !important;
         gap:12px !important;
       }
 
       body.high-contrast .quality-wrap .btn{
-        min-height:54px !important;
-        border-radius:999px !important;
+        width:100% !important;
+        min-height:52px !important;
       }
     }
   </style>
@@ -1904,7 +2075,9 @@
           <div class="hero-card">
             <div class="hero-photo">
               <div class="photo-caption">
-                <strong data-sv="Lokal förankring i Växjö." data-en="Local grounding in Växjö.">Lokal förankring i Växjö.</strong>
+                <strong data-sv="Lokal förankring i Växjö." data-en="Local grounding in Växjö.">
+                  Lokal förankring i Växjö.
+                </strong>
                 <span data-sv="Lokala bilder ger snabbare igenkänning än generiska stockbilder." data-en="Local images create stronger recognition than generic stock images.">
                   Lokala bilder ger snabbare igenkänning än generiska stockbilder.
                 </span>
@@ -1975,20 +2148,41 @@
             <div class="person-photo" aria-hidden="true"></div>
             <div>
               <strong data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
-              <span data-sv="Exempelbild. Byt till riktig bild i skarp version." data-en="Example image. Replace with real photo in final version.">
-                Exempelbild. Byt till riktig bild i skarp version.
-              </span>
+              <span data-sv="Exempelbild. Byt till riktig bild i skarp version." data-en="Example image. Replace with real photo in final version.">Exempelbild. Byt till riktig bild i skarp version.</span>
             </div>
           </div>
         </div>
 
         <div class="facts">
-          <div class="fact"><span data-sv="Antal platser" data-en="Number of places">Antal platser</span><strong>10</strong></div>
-          <div class="fact"><span data-sv="Ort" data-en="Location">Ort</span><strong>Växjö</strong></div>
-          <div class="fact"><span data-sv="Placeringsformer" data-en="Placement types">Placeringsformer</span><strong data-sv="Stödboende, stödlägenhet, externt stöd" data-en="Supported housing, supported apartment, external support">Stödboende, stödlägenhet, externt stöd</strong></div>
-          <div class="fact"><span data-sv="Akutplacering" data-en="Emergency placement">Akutplacering</span><strong data-sv="Kontakta verksamheten" data-en="Contact the organisation">Kontakta verksamheten</strong></div>
-          <div class="fact"><span data-sv="Kontakt" data-en="Contact">Kontakt</span><strong>0793-594686</strong></div>
-          <div class="fact"><span data-sv="E-post" data-en="Email">E-post</span><strong>info@r3start.se</strong></div>
+          <div class="fact">
+            <span data-sv="Antal platser" data-en="Number of places">Antal platser</span>
+            <strong>10</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Ort" data-en="Location">Ort</span>
+            <strong>Växjö</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Placeringsformer" data-en="Placement types">Placeringsformer</span>
+            <strong data-sv="Stödboende, stödlägenhet, externt stöd" data-en="Supported housing, supported apartment, external support">Stödboende, stödlägenhet, externt stöd</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Akutplacering" data-en="Emergency placement">Akutplacering</span>
+            <strong data-sv="Kontakta verksamheten" data-en="Contact the organisation">Kontakta verksamheten</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="Kontakt" data-en="Contact">Kontakt</span>
+            <strong>0793-594686</strong>
+          </div>
+
+          <div class="fact">
+            <span data-sv="E-post" data-en="Email">E-post</span>
+            <strong>info@r3start.se</strong>
+          </div>
         </div>
       </div>
     </section>
@@ -2017,7 +2211,9 @@
 
         <div class="image-panel">
           <div class="image-panel-text">
-            <strong data-sv="Växjö, vatten och grönska." data-en="Växjö, water and greenery.">Växjö, vatten och grönska.</strong>
+            <strong data-sv="Växjö, vatten och grönska." data-en="Växjö, water and greenery.">
+              Växjö, vatten och grönska.
+            </strong>
             <span data-sv="En lugnare bildkänsla som passar stöd, trygghet och struktur." data-en="A calmer visual tone that fits support, safety and structure.">
               En lugnare bildkänsla som passar stöd, trygghet och struktur.
             </span>
@@ -2039,27 +2235,71 @@
 
         <div class="image-strip" id="imageStrip" aria-label="Bildgalleri">
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Cathedral%201.jpg");'>
-            <div class="slide-label"><strong data-sv="Växjö domkyrka" data-en="Växjö Cathedral">Växjö domkyrka</strong><span data-sv="Lokal igenkänning direkt." data-en="Local recognition immediately.">Lokal igenkänning direkt.</span></div>
+            <div class="slide-label">
+              <strong data-sv="Växjö domkyrka" data-en="Växjö Cathedral">Växjö domkyrka</strong>
+              <span data-sv="Lokal igenkänning direkt." data-en="Local recognition immediately.">Lokal igenkänning direkt.</span>
+            </div>
           </article>
 
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20domkyrka%202007.jpg");'>
-            <div class="slide-label"><strong data-sv="Centrala Växjö" data-en="Central Växjö">Centrala Växjö</strong><span data-sv="Ger sidan lokal förankring." data-en="Gives the page local grounding.">Ger sidan lokal förankring.</span></div>
+            <div class="slide-label">
+              <strong data-sv="Centrala Växjö" data-en="Central Växjö">Centrala Växjö</strong>
+              <span data-sv="Ger sidan lokal förankring." data-en="Gives the page local grounding.">Ger sidan lokal förankring.</span>
+            </div>
           </article>
 
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Promenadstr%C3%A5ket%20vid%20V%C3%A4xj%C3%B6sj%C3%B6n.jpg");'>
-            <div class="slide-label"><strong data-sv="Växjösjön" data-en="Lake Växjösjön">Växjösjön</strong><span data-sv="Lugn miljö, promenadstråk och tydlig Växjökänsla." data-en="Calm environment, lakeside path and a clear Växjö feel.">Lugn miljö, promenadstråk och tydlig Växjökänsla.</span></div>
+            <div class="slide-label">
+              <strong data-sv="Växjösjön" data-en="Lake Växjösjön">Växjösjön</strong>
+              <span data-sv="Lugn miljö, promenadstråk och tydlig Växjökänsla." data-en="Calm environment, lakeside path and a clear Växjö feel.">
+                Lugn miljö, promenadstråk och tydlig Växjökänsla.
+              </span>
+            </div>
           </article>
 
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/LA2-vx06-vaxjosjon2.jpg");'>
-            <div class="slide-label"><strong data-sv="Sjöstadskänsla" data-en="Lake city feeling">Sjöstadskänsla</strong><span data-sv="Vatten och grönska passar sidans lugna ton." data-en="Water and greenery fit the calm tone of the page.">Vatten och grönska passar sidans lugna ton.</span></div>
+            <div class="slide-label">
+              <strong data-sv="Sjöstadskänsla" data-en="Lake city feeling">Sjöstadskänsla</strong>
+              <span data-sv="Vatten och grönska passar sidans lugna ton." data-en="Water and greenery fit the calm tone of the page.">
+                Vatten och grönska passar sidans lugna ton.
+              </span>
+            </div>
           </article>
 
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/LA2-vx06-vaxjosjon1.jpg");'>
-            <div class="slide-label"><strong data-sv="Nära naturen" data-en="Close to nature">Nära naturen</strong><span data-sv="Mjukare och mer lokalt än kontorsbilder." data-en="Softer and more local than office stock images.">Mjukare och mer lokalt än kontorsbilder.</span></div>
+            <div class="slide-label">
+              <strong data-sv="Nära naturen" data-en="Close to nature">Nära naturen</strong>
+              <span data-sv="Mjukare och mer lokalt än kontorsbilder." data-en="Softer and more local than office stock images.">
+                Mjukare och mer lokalt än kontorsbilder.
+              </span>
+            </div>
           </article>
 
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Domkyrka%2C%2020220806.jpg");'>
-            <div class="slide-label"><strong data-sv="Växjö centrum" data-en="Växjö city centre">Växjö centrum</strong><span data-sv="Bra för trovärdighet och igenkänning." data-en="Good for credibility and recognition.">Bra för trovärdighet och igenkänning.</span></div>
+            <div class="slide-label">
+              <strong data-sv="Växjö centrum" data-en="Växjö city centre">Växjö centrum</strong>
+              <span data-sv="Bra för trovärdighet och igenkänning." data-en="Good for credibility and recognition.">
+                Bra för trovärdighet och igenkänning.
+              </span>
+            </div>
+          </article>
+
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6sj%C3%B6n%20-%20panoramio.jpg");'>
+            <div class="slide-label">
+              <strong data-sv="Växjömiljö" data-en="Växjö environment">Växjömiljö</strong>
+              <span data-sv="Passar bättre än generiska lägenhetsbilder." data-en="Works better than generic apartment images.">
+                Passar bättre än generiska lägenhetsbilder.
+              </span>
+            </div>
+          </article>
+
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/00%203349%20V%C3%A4xj%C3%B6%20domkyrka%20-%20Sweden.jpg");'>
+            <div class="slide-label">
+              <strong data-sv="Lokal närvaro" data-en="Local presence">Lokal närvaro</strong>
+              <span data-sv="Bilder från Växjö gör sidan mer förankrad." data-en="Images from Växjö make the page feel more grounded.">
+                Bilder från Växjö gör sidan mer förankrad.
+              </span>
+            </div>
           </article>
         </div>
       </div>
@@ -2088,19 +2328,40 @@
       <div class="wrap split">
         <div class="panel">
           <span class="eyebrow" data-sv="Placeringsformer" data-en="Placement types">Placeringsformer</span>
-          <h2 data-sv="Rätt stödform från start." data-en="The right support form from the start.">Rätt stödform från start.</h2>
+          <h2 data-sv="Rätt stödform från start." data-en="The right support form from the start.">
+            Rätt stödform från start.
+          </h2>
+
           <p data-sv="Vid placering är det viktigt att snabbt förstå vilken typ av stöd som passar bäst. Här presenteras placeringsformerna tydligt, utan krångliga omvägar." data-en="When making a placement, it is important to quickly understand which type of support is most suitable. Here, the placement types are presented clearly without unnecessary detours.">
             Vid placering är det viktigt att snabbt förstå vilken typ av stöd som passar bäst. Här presenteras placeringsformerna tydligt, utan krångliga omvägar.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt" data-sv="Fråga om ledig plats" data-en="Ask about availability">Fråga om ledig plats</a>
           </div>
         </div>
 
         <ul class="check-list">
-          <li><strong data-sv="Stödboende / stödlägenhet." data-en="Supported housing / supported apartment.">Stödboende / stödlägenhet.</strong><br /><span data-sv="För vuxna som behöver en trygg boendeform med stöd i vardag, rutiner och planering." data-en="For adults who need a safe housing option with support in everyday life, routines and planning.">För vuxna som behöver en trygg boendeform med stöd i vardag, rutiner och planering.</span></li>
-          <li><strong data-sv="Externt stöd i eget boende." data-en="External support in own housing.">Externt stöd i eget boende.</strong><br /><span data-sv="Stöd kan ges till personer som redan har eget boende men behöver stöd i olika omfattning." data-en="Support can be provided to people who already have their own housing but need varying levels of support.">Stöd kan ges till personer som redan har eget boende men behöver stöd i olika omfattning.</span></li>
-          <li><strong data-sv="Akutplacering." data-en="Emergency placement.">Akutplacering.</strong><br /><span data-sv="Vid brådskande behov kan verksamheten kontaktas för att se om snabb placering är möjlig." data-en="In urgent situations, the organisation can be contacted to see whether a quick placement is possible.">Vid brådskande behov kan verksamheten kontaktas för att se om snabb placering är möjlig.</span></li>
+          <li>
+            <strong data-sv="Stödboende / stödlägenhet." data-en="Supported housing / supported apartment.">Stödboende / stödlägenhet.</strong><br />
+            <span data-sv="För vuxna som behöver en trygg boendeform med stöd i vardag, rutiner och planering." data-en="For adults who need a safe housing option with support in everyday life, routines and planning.">
+              För vuxna som behöver en trygg boendeform med stöd i vardag, rutiner och planering.
+            </span>
+          </li>
+
+          <li>
+            <strong data-sv="Externt stöd i eget boende." data-en="External support in own housing.">Externt stöd i eget boende.</strong><br />
+            <span data-sv="Stöd kan ges till personer som redan har eget boende men behöver stöd i olika omfattning." data-en="Support can be provided to people who already have their own housing but need varying levels of support.">
+              Stöd kan ges till personer som redan har eget boende men behöver stöd i olika omfattning.
+            </span>
+          </li>
+
+          <li>
+            <strong data-sv="Akutplacering." data-en="Emergency placement.">Akutplacering.</strong><br />
+            <span data-sv="Vid brådskande behov kan verksamheten kontaktas för att se om snabb placering är möjlig." data-en="In urgent situations, the organisation can be contacted to see whether a quick placement is possible.">
+              Vid brådskande behov kan verksamheten kontaktas för att se om snabb placering är möjlig.
+            </span>
+          </li>
         </ul>
       </div>
     </section>
@@ -2110,7 +2371,9 @@
         <div class="section-head">
           <div>
             <span class="eyebrow" data-sv="Insatser i vardagen" data-en="Everyday support">Insatser i vardagen</span>
-            <h2 data-sv="Struktur, uppföljning och praktiskt stöd." data-en="Structure, follow-up and practical support.">Struktur, uppföljning och praktiskt stöd.</h2>
+            <h2 data-sv="Struktur, uppföljning och praktiskt stöd." data-en="Structure, follow-up and practical support.">
+              Struktur, uppföljning och praktiskt stöd.
+            </h2>
           </div>
 
           <p data-sv="En placering behöver vara mer än en adress. Därför tydliggörs insatserna så att placerare, handläggare och anhöriga snabbt ser vilket stöd som finns." data-en="A placement needs to be more than an address. The support services are therefore clearly presented so that placement officers, case workers and relatives can quickly see what support is available.">
@@ -2122,19 +2385,25 @@
           <article class="card">
             <div class="card-icon" aria-hidden="true">📋</div>
             <h3 data-sv="Planering och rutiner" data-en="Planning and routines">Planering och rutiner</h3>
-            <p data-sv="Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner." data-en="Weekly planning, everyday structure, goals, follow-up and support to create sustainable routines.">Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner.</p>
+            <p data-sv="Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner." data-en="Weekly planning, everyday structure, goals, follow-up and support to create sustainable routines.">
+              Veckoplanering, struktur i vardagen, mål, uppföljning och stöd för att skapa hållbara rutiner.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">💬</div>
             <h3 data-sv="Samtal och kontaktmannaskap" data-en="Conversations and key-worker support">Samtal och kontaktmannaskap</h3>
-            <p data-sv="Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk." data-en="Structured conversations, social training, motivation and support in contact with authorities and networks.">Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk.</p>
+            <p data-sv="Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk." data-en="Structured conversations, social training, motivation and support in contact with authorities and networks.">
+              Strukturerade samtal, social träning, motivation och stöd i kontakt med myndigheter och nätverk.
+            </p>
           </article>
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">🧭</div>
             <h3 data-sv="Väg vidare" data-en="Way forward">Väg vidare</h3>
-            <p data-sv="Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet." data-en="Support around studies, work, finances, debts, health and the next steps toward greater independence.">Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet.</p>
+            <p data-sv="Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet." data-en="Support around studies, work, finances, debts, health and the next steps toward greater independence.">
+              Stöd kring studier, arbete, ekonomi, skulder, hälsa och nästa steg mot mer självständighet.
+            </p>
           </article>
         </div>
       </div>
@@ -2156,17 +2425,23 @@
         <div class="method-grid">
           <article class="method-card">
             <h3 data-sv="Kontaktmannaskap" data-en="Key-worker support">Kontaktmannaskap</h3>
-            <p data-sv="En tydlig kontaktperson gör placeringen mer överskådlig och skapar bättre uppföljning." data-en="A clear key worker makes the placement easier to follow and improves follow-up.">En tydlig kontaktperson gör placeringen mer överskådlig och skapar bättre uppföljning.</p>
+            <p data-sv="En tydlig kontaktperson gör placeringen mer överskådlig och skapar bättre uppföljning." data-en="A clear key worker makes the placement easier to follow and improves follow-up.">
+              En tydlig kontaktperson gör placeringen mer överskådlig och skapar bättre uppföljning.
+            </p>
           </article>
 
           <article class="method-card">
             <h3 data-sv="Dokumentation" data-en="Documentation">Dokumentation</h3>
-            <p data-sv="Daglig dokumentation ger struktur, spårbarhet och bättre underlag för nästa steg." data-en="Daily documentation provides structure, traceability and better material for the next step.">Daglig dokumentation ger struktur, spårbarhet och bättre underlag för nästa steg.</p>
+            <p data-sv="Daglig dokumentation ger struktur, spårbarhet och bättre underlag för nästa steg." data-en="Daily documentation provides structure, traceability and better material for the next step.">
+              Daglig dokumentation ger struktur, spårbarhet och bättre underlag för nästa steg.
+            </p>
           </article>
 
           <article class="method-card">
             <h3 data-sv="Uppföljning" data-en="Follow-up">Uppföljning</h3>
-            <p data-sv="Mål, rutiner och insatser behöver följas upp löpande för att stödet ska vara relevant." data-en="Goals, routines and support need continuous follow-up to remain relevant.">Mål, rutiner och insatser behöver följas upp löpande för att stödet ska vara relevant.</p>
+            <p data-sv="Mål, rutiner och insatser behöver följas upp löpande för att stödet ska vara relevant." data-en="Goals, routines and support need continuous follow-up to remain relevant.">
+              Mål, rutiner och insatser behöver följas upp löpande för att stödet ska vara relevant.
+            </p>
           </article>
         </div>
       </div>
@@ -2196,8 +2471,12 @@
               </p>
 
               <div class="hero-actions">
-                <a class="btn btn-gold" href="#kontakt" data-sv="Kontakta verksamheten" data-en="Contact the organisation">Kontakta verksamheten</a>
-                <a class="btn btn-secondary" href="https://omtanke.today/fem-i-topp-i-kvalitetsindex-hosten-2025/" target="_blank" rel="noopener" data-sv="Läs artikeln i Omtanke" data-en="Read the article in Omtanke">Läs artikeln i Omtanke</a>
+                <a class="btn btn-gold" href="#kontakt" data-sv="Kontakta verksamheten" data-en="Contact the organisation">
+                  Kontakta verksamheten
+                </a>
+                <a class="btn btn-secondary" href="https://omtanke.today/fem-i-topp-i-kvalitetsindex-hosten-2025/" target="_blank" rel="noopener" data-sv="Läs artikeln i Omtanke" data-en="Read the article in Omtanke">
+                  Läs artikeln i Omtanke
+                </a>
               </div>
             </div>
           </div>
@@ -2208,18 +2487,55 @@
     <section id="kompetens">
       <div class="wrap split">
         <div>
-          <span class="eyebrow" data-sv="Kompetens och erfarenhet" data-en="Competence and experience">Kompetens och erfarenhet</span>
-          <h2 data-sv="Människor, metod och ansvar." data-en="People, method and responsibility.">Människor, metod och ansvar.</h2>
+          <span class="eyebrow" data-sv="Kompetens och erfarenhet" data-en="Competence and experience">
+            Kompetens och erfarenhet
+          </span>
+
+          <h2 data-sv="Människor, metod och ansvar." data-en="People, method and responsibility.">
+            Människor, metod och ansvar.
+          </h2>
+
           <p class="lead" data-sv="För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt, utan att besökaren behöver leta." data-en="For supported housing, trust is crucial. Experience, education and ways of working therefore need to be presented clearly, without forcing the visitor to search.">
             För stödboende är förtroende avgörande. Därför behöver erfarenhet, utbildning och arbetssätt presenteras tydligt, utan att besökaren behöver leta.
           </p>
         </div>
 
         <div class="steps">
-          <article class="step"><h3 data-sv="Simon – cirka 11 års erfarenhet" data-en="Simon – around 11 years of experience">Simon – cirka 11 års erfarenhet</h3><p data-sv="Erfarenhet från bland annat akutboende, stödboende, HVB, öppenvårdsbehandling, kontaktperson, boendestöd, terapeut samt ledande roll." data-en="Experience from emergency housing, supported housing, residential care, outpatient treatment, contact person work, housing support, therapy and leadership.">Erfarenhet från bland annat akutboende, stödboende, HVB, öppenvårdsbehandling, kontaktperson, boendestöd, terapeut samt ledande roll.</p></article>
-          <article class="step"><h3 data-sv="Pernilla – föreståndare och beteendevetare" data-en="Pernilla – manager and behavioural scientist">Pernilla – föreståndare och beteendevetare</h3><p data-sv="Utbildad beteendevetare med psykologi som huvudämne och erfarenhet från socialt arbete, behandling, kvalitetsansvar och verksamhetsledning." data-en="Educated behavioural scientist with psychology as main subject and experience from social work, treatment, quality responsibility and organisational management.">Utbildad beteendevetare med psykologi som huvudämne och erfarenhet från socialt arbete, behandling, kvalitetsansvar och verksamhetsledning.</p></article>
-          <article class="step"><h3 data-sv="Team med relevant kompetens" data-en="Team with relevant competence">Team med relevant kompetens</h3><p data-sv="Personalgruppen har bland annat kompetens inom alkohol- och drogterapi, psykiatri, KSL, NPF, beroendepedagogik och behandlingspedagogik." data-en="The staff group has competence in areas such as alcohol and drug therapy, psychiatry, KSL, NPF, addiction pedagogy and treatment pedagogy.">Personalgruppen har bland annat kompetens inom alkohol- och drogterapi, psykiatri, KSL, NPF, beroendepedagogik och behandlingspedagogik.</p></article>
-          <article class="step"><h3 data-sv="Daglig dokumentation" data-en="Daily documentation">Daglig dokumentation</h3><p data-sv="Verksamheten använder Sekoia för daglig dokumentation och arbetar som ett team kring stöd, uppföljning och kvalitet." data-en="The organisation uses Sekoia for daily documentation and works as a team around support, follow-up and quality.">Verksamheten använder Sekoia för daglig dokumentation och arbetar som ett team kring stöd, uppföljning och kvalitet.</p></article>
+          <article class="step">
+            <h3 data-sv="Simon – cirka 11 års erfarenhet" data-en="Simon – around 11 years of experience">
+              Simon – cirka 11 års erfarenhet
+            </h3>
+            <p data-sv="Erfarenhet från bland annat akutboende, stödboende, HVB, öppenvårdsbehandling, kontaktperson, boendestöd, terapeut samt ledande roll." data-en="Experience from, among other things, emergency housing, supported housing, residential care, outpatient treatment, contact person work, housing support, therapy and leadership.">
+              Erfarenhet från bland annat akutboende, stödboende, HVB, öppenvårdsbehandling, kontaktperson, boendestöd, terapeut samt ledande roll.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3 data-sv="Pernilla – föreståndare och beteendevetare" data-en="Pernilla – manager and behavioural scientist">
+              Pernilla – föreståndare och beteendevetare
+            </h3>
+            <p data-sv="Utbildad beteendevetare med psykologi som huvudämne och erfarenhet från socialt arbete, behandling, kvalitetsansvar och verksamhetsledning." data-en="Educated behavioural scientist with psychology as main subject and experience from social work, treatment, quality responsibility and organisational management.">
+              Utbildad beteendevetare med psykologi som huvudämne och erfarenhet från socialt arbete, behandling, kvalitetsansvar och verksamhetsledning.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3 data-sv="Team med relevant kompetens" data-en="Team with relevant competence">
+              Team med relevant kompetens
+            </h3>
+            <p data-sv="Personalgruppen har bland annat kompetens inom alkohol- och drogterapi, psykiatri, KSL, NPF, beroendepedagogik och behandlingspedagogik." data-en="The staff group has competence in areas such as alcohol and drug therapy, psychiatry, KSL, NPF, addiction pedagogy and treatment pedagogy.">
+              Personalgruppen har bland annat kompetens inom alkohol- och drogterapi, psykiatri, KSL, NPF, beroendepedagogik och behandlingspedagogik.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3 data-sv="Daglig dokumentation" data-en="Daily documentation">
+              Daglig dokumentation
+            </h3>
+            <p data-sv="Verksamheten använder Sekoia för daglig dokumentation och arbetar som ett team kring stöd, uppföljning och kvalitet." data-en="The organisation uses Sekoia for daily documentation and works as a team around support, follow-up and quality.">
+              Verksamheten använder Sekoia för daglig dokumentation och arbetar som ett team kring stöd, uppföljning och kvalitet.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -2228,7 +2544,9 @@
       <div class="wrap contact-grid">
         <div class="contact-box">
           <span class="eyebrow" data-sv="Kontakt" data-en="Contact">Kontakt</span>
-          <h2 data-sv="Har ni en placeringsförfrågan?" data-en="Do you have a placement enquiry?">Har ni en placeringsförfrågan?</h2>
+          <h2 data-sv="Har ni en placeringsförfrågan?" data-en="Do you have a placement enquiry?">
+            Har ni en placeringsförfrågan?
+          </h2>
 
           <p data-sv="Kontakta R3start Växjö vid frågor om ledig plats, akutplacering, samarbete eller mer information om verksamheten." data-en="Contact R3start Växjö with questions about availability, emergency placement, collaboration or more information about the organisation.">
             Kontakta R3start Växjö vid frågor om ledig plats, akutplacering, samarbete eller mer information om verksamheten.
@@ -2237,8 +2555,8 @@
           <div class="contact-person">
             <div class="person-photo" aria-hidden="true"></div>
             <div>
-              <strong data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
-              <span data-sv="Exempelbild. Byt till riktig bild på Simon i skarp version." data-en="Example image. Replace with a real photo of Simon in the final version.">
+              <strong style="display:block; color:var(--ink);" data-sv="Simon – verksamhetschef" data-en="Simon – Operations Manager">Simon – verksamhetschef</strong>
+              <span style="display:block; color:var(--muted); font-weight:700; margin-top:3px;" data-sv="Exempelbild. Byt till riktig bild på Simon i skarp version." data-en="Example image. Replace with a real photo of Simon in the final version.">
                 Exempelbild. Byt till riktig bild på Simon i skarp version.
               </span>
             </div>
@@ -2246,17 +2564,17 @@
 
           <div class="contact-links">
             <a class="contact-link" href="tel:+46793594686">
-              <span data-sv="Simon: 0793-594686" data-en="Simon: 0793-594686">Simon: 0793-594686</span>
+              <span style="font-size:1rem; font-weight:950; color:var(--ink);" data-sv="Simon: 0793-594686" data-en="Simon: 0793-594686">Simon: 0793-594686</span>
               <span data-sv="Ring vid frågor eller placeringsförfrågan" data-en="Call with questions or placement enquiries">Ring vid frågor eller placeringsförfrågan</span>
             </a>
 
             <a class="contact-link" href="mailto:info@r3start.se">
-              <span>info@r3start.se</span>
+              <span style="font-size:1rem; font-weight:950; color:var(--ink);">info@r3start.se</span>
               <span data-sv="Förfrågningar och samarbete" data-en="Enquiries and collaboration">Förfrågningar och samarbete</span>
             </a>
 
             <a class="contact-link" href="https://r3start.se" target="_blank" rel="noopener">
-              <span>r3start.se</span>
+              <span style="font-size:1rem; font-weight:950; color:var(--ink);">r3start.se</span>
               <span data-sv="Nuvarande webbplats" data-en="Current website">Nuvarande webbplats</span>
             </a>
           </div>
@@ -2303,7 +2621,13 @@
 
             <div class="field full">
               <label for="message" data-sv="Meddelande" data-en="Message">Meddelande</label>
-              <textarea id="message" name="message" data-placeholder-sv="Skriv kort vad ärendet gäller..." data-placeholder-en="Briefly describe what the matter concerns..." placeholder="Skriv kort vad ärendet gäller..."></textarea>
+              <textarea
+                id="message"
+                name="message"
+                data-placeholder-sv="Skriv kort vad ärendet gäller..."
+                data-placeholder-en="Briefly describe what the matter concerns..."
+                placeholder="Skriv kort vad ärendet gäller..."
+              ></textarea>
             </div>
           </div>
 
@@ -2380,17 +2704,21 @@
     const META = {
       sv: {
         title: "Demo: R3start Växjö | Stödboende och stödlägenheter",
-        description: "Demo på ny premium one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och kontakt."
+        description: "Demo på ny premium one page-hemsida för R3start Växjö. Stödboende, stödlägenheter, akutplacering, externt stöd, kvalitet, kompetens och kontakt för kommuner, socialtjänst och anhöriga.",
+        ogTitle: "Demo: R3start Växjö | Stödboende och stödlägenheter",
+        ogDescription: "Premiumdemo för R3start Växjö med fokus på förtroende, struktur, kvalitet och tydlig kontakt."
       },
       en: {
         title: "Demo: R3start Växjö | Supported Housing and Apartments",
-        description: "Premium one-page demo for R3start Växjö. Supported housing, supported apartments, emergency placement, external support, quality, competence and contact."
+        description: "Premium one-page demo for R3start Växjö. Supported housing, supported apartments, emergency placement, external support, quality, competence and contact for municipalities, social services and relatives.",
+        ogTitle: "Demo: R3start Växjö | Supported Housing and Apartments",
+        ogDescription: "Premium demo for R3start Växjö with focus on trust, structure, quality and clear contact."
       }
     };
 
     const SUMMARIES = {
-      sv: "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet. Sidan riktar sig till socialtjänst, kommuner, placerare och anhöriga.",
-      en: "R3start Växjö offers supported housing, supported apartments, external support and emergency placements for adults in social vulnerability."
+      sv: "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet. Sidan riktar sig till socialtjänst, kommuner, placerare och anhöriga som snabbt behöver förstå placeringsformer, insatser, kvalitet och kontaktvägar. Verksamheten har 10 platser i Växjö och lyfter SSIL Kvalitetsindex 9,7 av 10 från hösten 2025. Besökaren kan kontakta verksamheten via telefon, e-post eller formulär för placeringsförfrågan, akut placering, samarbete eller frågor.",
+      en: "R3start Växjö offers supported housing, supported apartments, external support and emergency placements for adults in social vulnerability. The page is aimed at social services, municipalities, placement officers and relatives who need to quickly understand placement types, support services, quality and contact options. The organisation has 10 places in Växjö and highlights an SSIL Quality Index score of 9.7 out of 10 from autumn 2025. Visitors can contact the organisation by phone, email or form for placement enquiries, emergency placement, collaboration or questions."
     };
 
     let currentLang = localStorage.getItem(STORAGE_LANG) || "sv";
@@ -2401,7 +2729,12 @@
       document.title = meta.title;
 
       const description = document.querySelector('meta[name="description"]');
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+
       if(description) description.setAttribute("content", meta.description);
+      if(ogTitle) ogTitle.setAttribute("content", meta.ogTitle);
+      if(ogDescription) ogDescription.setAttribute("content", meta.ogDescription);
     }
 
     function translateStaticContent(lang){
@@ -2423,9 +2756,15 @@
       const logoLink = document.getElementById("logoLink");
       if(logoLink) logoLink.setAttribute("aria-label", lang === "en" ? "To start page" : "Till startsidan");
 
+      const topbarElement = document.querySelector(".topbar");
+      if(topbarElement) topbarElement.setAttribute("aria-label", lang === "en" ? "Page tools" : "Sidverktyg");
+
       if(siteNav) siteNav.setAttribute("aria-label", lang === "en" ? "Main menu" : "Huvudmeny");
       if(imageStrip) imageStrip.setAttribute("aria-label", lang === "en" ? "Image gallery" : "Bildgalleri");
       if(form) form.setAttribute("aria-label", lang === "en" ? "Contact form" : "Kontaktformulär");
+
+      const socials = document.querySelector(".socials");
+      if(socials) socials.setAttribute("aria-label", lang === "en" ? "Social media" : "Sociala medier");
 
       if(galleryPrev) galleryPrev.setAttribute("aria-label", lang === "en" ? "Previous images" : "Föregående bilder");
       if(galleryNext) galleryNext.setAttribute("aria-label", lang === "en" ? "Next images" : "Nästa bilder");
@@ -2715,9 +3054,20 @@
 
     <section class="content">
       <div class="grid">
-        <div class="box"><strong>10 platser</strong><span>i stödlägenheter i Växjö</span></div>
-        <div class="box"><strong>Akut</strong><span>kontakt vid brådskande behov</span></div>
-        <div class="box"><strong>9,7/10</strong><span>SSIL Kvalitetsindex hösten 2025</span></div>
+        <div class="box">
+          <strong>10 platser</strong>
+          <span>i stödlägenheter i Växjö</span>
+        </div>
+
+        <div class="box">
+          <strong>Akut</strong>
+          <span>kontakt vid brådskande behov</span>
+        </div>
+
+        <div class="box">
+          <strong>9,7/10</strong>
+          <span>SSIL Kvalitetsindex hösten 2025</span>
+        </div>
       </div>
 
       <h2>Placeringsformer</h2>
