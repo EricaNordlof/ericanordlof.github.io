@@ -1727,7 +1727,17 @@ body.high-contrast{
 body.high-contrast *{
   box-shadow:none !important;
   text-shadow:none !important;
-  background-image:none !important;
+}
+
+/* Behåll foton även i hög kontrast */
+body.high-contrast .hero-photo,
+body.high-contrast .mini-photo,
+body.high-contrast .image-panel,
+body.high-contrast .rounded-image,
+body.high-contrast .photo-slide,
+body.high-contrast .person-photo{
+  background-image:var(--hc-bg-image, inherit) !important;
+  filter:contrast(1.15) brightness(.9);
 }
 
 /* Mörka huvudytor = svart bakgrund, vit text */
@@ -1902,6 +1912,30 @@ body.high-contrast .eyebrow{
         min-height:52px !important;
       }
     }
+
+/* FIX: låt snabbfakta-rader brytas snyggt */
+.fact{
+  grid-template-columns:minmax(120px, 1fr) minmax(0, 2fr);
+}
+
+.fact span,
+.fact strong{
+  min-width:0;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+
+@media (max-width:760px){
+  .fact{
+    grid-template-columns:1fr;
+    gap:6px;
+  }
+
+  .fact strong{
+    text-align:left;
+  }
+}
+
   </style>
 </head>
 
@@ -2116,7 +2150,7 @@ body.high-contrast .eyebrow{
           </div>
 
           <div class="fact">
-            <span data-sv="Placeringsformer" data-en="Placement types">Placeringsformer</span>
+            <span data-sv="Placeringsformer" data-en="Types">Placeringsformer</span>
             <strong data-sv="Stödboende, stödlägenhet, externt stöd" data-en="Supported housing, supported apartment, external support">Stödboende, stödlägenhet, externt stöd</strong>
           </div>
 
