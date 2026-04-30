@@ -1908,6 +1908,53 @@
       border:2px solid #000 !important;
       color:#000 !important;
     }
+
+/* FIX: tydligare textkort ovanpå bilder */
+.photo-caption,
+.image-panel-text,
+.slide-label,
+.image-note{
+  background:rgba(255,250,243,.88) !important;
+  border:1px solid rgba(255,255,255,.92) !important;
+  backdrop-filter:blur(14px) !important;
+  -webkit-backdrop-filter:blur(14px) !important;
+}
+
+.photo-caption strong,
+.image-panel-text strong,
+.slide-label strong,
+.image-note strong{
+  color:#10201a !important;
+  font-weight:950 !important;
+}
+
+.photo-caption span,
+.image-panel-text span,
+.slide-label span,
+.image-note span{
+  color:#173128 !important;
+  font-weight:850 !important;
+}
+
+/* Extra stöd i mörkt tema */
+body.theme-dark .photo-caption,
+body.theme-dark .image-panel-text,
+body.theme-dark .slide-label,
+body.theme-dark .image-note{
+  background:rgba(255,255,255,.92) !important;
+}
+
+body.theme-dark .photo-caption strong,
+body.theme-dark .image-panel-text strong,
+body.theme-dark .slide-label strong,
+body.theme-dark .image-note strong,
+body.theme-dark .photo-caption span,
+body.theme-dark .image-panel-text span,
+body.theme-dark .slide-label span,
+body.theme-dark .image-note span{
+  color:#08120f !important;
+}
+
   </style>
 </head>
 
