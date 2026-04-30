@@ -1913,6 +1913,30 @@ body.high-contrast .eyebrow{
       }
     }
 
+    /* FIX: visa foton även i hög kontrastläge */
+body.high-contrast .hero-photo,
+body.high-contrast .mini-photo,
+body.high-contrast .image-panel,
+body.high-contrast .rounded-image,
+body.high-contrast .photo-slide,
+body.high-contrast .person-photo{
+  background-color:transparent !important;
+  background-blend-mode:normal !important;
+  filter:contrast(1.15) brightness(.9) !important;
+}
+
+/* Om någon tidigare regel försöker nolla bilderna */
+body.high-contrast .hero-photo,
+body.high-contrast .mini-photo,
+body.high-contrast .image-panel,
+body.high-contrast .rounded-image,
+body.high-contrast .photo-slide,
+body.high-contrast .person-photo{
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+
 /* FIX: låt snabbfakta-rader brytas snyggt */
 .fact{
   grid-template-columns:minmax(120px, 1fr) minmax(0, 2fr);
