@@ -1,24 +1,1001 @@
-<div class="section-block">
-  <h2>Exempel på hemsidor ni gillar</h2>
-  <p class="hint">
-    Skicka gärna länkar till hemsidor ni vill efterlikna på något sätt.
-    Det kan vara färger, känsla, struktur, bilder, textstil eller hur sidan är uppbyggd.
-  </p>
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <div class="form-grid" style="margin-top:18px;">
-    <div class="full">
-      <label for="inspirationUrls">URL-adress till hemsida/hemsidor ni gillar</label>
-      <textarea id="inspirationUrls" name="inspirationUrls" placeholder="Ex. https://exempelsida.se/&#10;https://annanhemsida.se/"></textarea>
-    </div>
+  <title>Feedback på förhandsvisning | R3start Växjö</title>
+  <meta
+    name="description"
+    content="Lämna ärlig feedback, förbättringar, ändringar och önskemål för förhandsvisningen av R3start Växjös nya hemsida."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#173128" />
+  <meta name="author" content="Nordlöf Nordic" />
 
-    <div class="full">
-      <label for="inspirationLikes">Vad vill ni efterlikna från dessa sidor?</label>
-      <textarea id="inspirationLikes" name="inspirationLikes" placeholder="Ex. färgerna, lugnet, bildspråket, tydligheten, menyn, kontaktflödet, premiumkänslan..."></textarea>
-    </div>
+  <style>
+    :root{
+      --bg:#efe8dc;
+      --paper:#fffaf3;
+      --white:#ffffff;
+      --ink:#16211d;
+      --muted:#53615a;
+      --forest:#16382f;
+      --forest-2:#24594b;
+      --forest-soft:#dfeae4;
+      --gold:#b98542;
+      --gold-2:#d9aa67;
+      --line:#ddd1c0;
+      --line-dark:#c8b9a4;
+      --danger:#8a1f11;
+      --ok:#14532d;
+      --shadow:0 28px 90px rgba(20,32,27,.16);
+      --shadow-soft:0 18px 50px rgba(20,32,27,.10);
+      --radius:28px;
+      --max:980px;
+      --focus:#b45309;
+    }
 
-    <div class="full">
-      <label for="inspirationAvoid">Finns något ni inte vill efterlikna?</label>
-      <textarea id="inspirationAvoid" name="inspirationAvoid" placeholder="Ex. för stel känsla, för mycket text, för mörk design, för säljigt, för rörigt..."></textarea>
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      text-size-adjust:100%;
+      font-size:16px;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(185,133,66,.22), transparent 34rem),
+        radial-gradient(circle at top right, rgba(22,56,47,.16), transparent 36rem),
+        linear-gradient(180deg, #f8f1e6 0%, #ece1d3 48%, #f8f3eb 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    :focus-visible{
+      outline:4px solid var(--focus);
+      outline-offset:4px;
+      border-radius:10px;
+    }
+
+    .topbar{
+      background:#173128;
+      color:#f6efe5;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+
+    .topbar-inner{
+      max-width:var(--max);
+      margin:auto;
+      padding:12px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      font-weight:850;
+      font-size:.95rem;
+    }
+
+    .topbar a{
+      color:#ffffff;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.24);
+      background:rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:900;
+    }
+
+    .hero{
+      padding:70px 18px 34px;
+    }
+
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+    }
+
+    .hero-card{
+      background:rgba(255,250,243,.86);
+      border:1px solid rgba(200,185,164,.85);
+      border-radius:42px;
+      padding:42px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      background:rgba(185,133,66,.14);
+      color:#80531f;
+      border:1px solid rgba(185,133,66,.30);
+      border-radius:999px;
+      font-weight:950;
+      font-size:.86rem;
+      margin-bottom:18px;
+    }
+
+    h1,h2,h3{
+      margin:0;
+      line-height:1.04;
+      letter-spacing:-.055em;
+      color:var(--ink);
+    }
+
+    h1{
+      font-size:clamp(2.25rem, 6vw, 4.9rem);
+      max-width:850px;
+    }
+
+    h2{
+      font-size:clamp(1.55rem, 3.5vw, 2.4rem);
+      margin-bottom:12px;
+    }
+
+    h3{
+      font-size:1.18rem;
+      letter-spacing:-.035em;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .lead{
+      font-size:clamp(1.02rem, 1.6vw, 1.22rem);
+      margin-top:18px;
+      max-width:780px;
+      font-weight:650;
+    }
+
+    .notice{
+      margin-top:24px;
+      background:#173128;
+      color:#fffaf3;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:26px;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .notice strong{
+      display:block;
+      color:#ffffff;
+      font-size:1.08rem;
+      line-height:1.2;
+      margin-bottom:7px;
+      font-weight:950;
+    }
+
+    .notice p{
+      color:#f4eadc;
+      font-weight:700;
+    }
+
+    .quick{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .quick-item{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .quick-item strong{
+      display:block;
+      font-weight:950;
+      color:var(--ink);
+      line-height:1.2;
+    }
+
+    .quick-item span{
+      display:block;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:5px;
+      font-size:.93rem;
+    }
+
+    .section{
+      padding:34px 18px 80px;
+    }
+
+    form{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:38px;
+      padding:34px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-block{
+      border:1px solid var(--line);
+      background:#fffaf3;
+      border-radius:28px;
+      padding:26px;
+      margin-bottom:20px;
+    }
+
+    .section-block:last-child{
+      margin-bottom:0;
+    }
+
+    .honest-block{
+      background:
+        linear-gradient(135deg, rgba(22,56,47,.08), rgba(185,133,66,.12)),
+        #fffaf3;
+      border-color:rgba(22,56,47,.28);
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
+
+    label{
+      display:block;
+      color:var(--ink);
+      font-weight:950;
+      margin-bottom:7px;
+    }
+
+    .hint{
+      color:var(--muted);
+      font-size:.92rem;
+      font-weight:650;
+      margin-top:5px;
+    }
+
+    .hint strong{
+      color:var(--ink);
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      border:1px solid #b9c0bb;
+      border-radius:16px;
+      padding:14px 15px;
+      font:inherit;
+      color:var(--ink);
+      background:#ffffff;
+      font-weight:650;
+    }
+
+    textarea{
+      min-height:128px;
+      resize:vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder{
+      color:#66736c;
+    }
+
+    .checks{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:18px;
+      padding:13px;
+      color:var(--ink);
+      font-weight:750;
+      cursor:pointer;
+    }
+
+    .check input{
+      width:auto;
+      margin-top:4px;
+      flex:0 0 auto;
+      accent-color:var(--forest);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      padding:14px 20px;
+      font-weight:950;
+      text-decoration:none;
+      cursor:pointer;
+      line-height:1.1;
+      transition:.18s ease;
+      white-space:normal;
+      border:1px solid transparent;
+      font-size:1rem;
+      text-align:center;
+      font-family:inherit;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:var(--forest);
+      color:#ffffff;
+      border-color:var(--forest);
+      box-shadow:0 16px 38px rgba(22,56,47,.22);
+    }
+
+    .btn-secondary{
+      background:#ffffff;
+      color:var(--forest);
+      border-color:var(--line-dark);
+    }
+
+    .btn-gold{
+      background:linear-gradient(135deg, var(--gold), var(--gold-2));
+      color:#17120a;
+      border-color:rgba(185,133,66,.55);
+      box-shadow:0 16px 38px rgba(185,133,66,.18);
+    }
+
+    .status{
+      display:none;
+      margin-top:16px;
+      border-radius:18px;
+      padding:14px 16px;
+      font-weight:800;
+    }
+
+    .status.ok{
+      display:block;
+      background:#dcfce7;
+      color:var(--ok);
+      border:1px solid #86efac;
+    }
+
+    .status.warn{
+      display:block;
+      background:#fff7ed;
+      color:#9a3412;
+      border:1px solid #fdba74;
+    }
+
+    .preview-box{
+      display:none;
+      margin-top:18px;
+      background:#0f1714;
+      color:#f6efe5;
+      border-radius:24px;
+      padding:22px;
+      white-space:pre-wrap;
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:.92rem;
+      line-height:1.55;
+      overflow:auto;
+      max-height:420px;
+    }
+
+    .footer{
+      padding:34px 18px;
+      color:#6b756f;
+      text-align:center;
+      font-size:.94rem;
+      font-weight:650;
+    }
+
+    @media (max-width:760px){
+      .hero{
+        padding:44px 14px 24px;
+      }
+
+      .hero-card,
+      form{
+        border-radius:28px;
+        padding:24px;
+      }
+
+      .section{
+        padding:24px 14px 58px;
+      }
+
+      .section-block{
+        border-radius:22px;
+        padding:20px;
+      }
+
+      .quick,
+      .form-grid,
+      .checks{
+        grid-template-columns:1fr;
+      }
+
+      .full{
+        grid-column:auto;
+      }
+
+      .actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>Feedbackformulär för R3start Växjö</span>
+      <a href="https://webutvecklare.se/r3start-vaxjo2" target="_blank" rel="noopener">Öppna nuvarande förhandsvisning</a>
     </div>
   </div>
-</div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <span class="eyebrow">Förhandsvisning / ärlig feedback / nästa version</span>
+          <h1>Vad vill ni ändra innan sidan görs färdig?</h1>
+          <p class="lead">
+            Fyll gärna i synpunkter här. Det behöver inte vara perfekt formulerat.
+            Korta svar räcker. Målet är att få rätt innehåll, rätt känsla och rätt detaljer innan nästa version.
+          </p>
+
+          <div class="notice">
+            <strong>Var brutalt ärliga. Snäll feedback bygger sämre hemsidor.</strong>
+            <p>
+              Skriv hellre “det här känns fel” än att låta det passera. Jag blir inte sur om ni tycker att något är dåligt.
+              Jag bygger i kod och kan ändra text, färger, bilder, struktur och funktioner enligt era önskemål.
+              Däremot kan jag inte läsa tankar, även om det hade varit en stark tilläggstjänst.
+            </p>
+          </div>
+
+          <div class="quick" aria-label="Kort information">
+            <div class="quick-item">
+              <strong>1. Gå igenom sidan</strong>
+              <span>Titta på text, bilder, struktur, känsla och kontaktdel.</span>
+            </div>
+            <div class="quick-item">
+              <strong>2. Skriv ärligt</strong>
+              <span>Vad är bra, dåligt, fel, saknas eller ska göras om?</span>
+            </div>
+            <div class="quick-item">
+              <strong>3. Jämför nästa demo</strong>
+              <span>Nästa version läggs på en ny adress så ni kan jämföra före och efter.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <form id="feedbackForm">
+          <div class="section-block">
+            <h2>Kontakt</h2>
+            <p class="hint">Så jag vet vem svaren kommer från.</p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="name">Namn</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Ex. Simon" />
+              </div>
+
+              <div>
+                <label for="email">E-post</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="Ex. info@r3start.se" />
+              </div>
+
+              <div class="full">
+                <label for="role">Roll / funktion</label>
+                <input id="role" name="role" placeholder="Ex. verksamhetschef, föreståndare, administratör..." />
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block honest-block">
+            <h2>Ärlig feedback först</h2>
+            <p class="hint">
+              Här får ni gärna vara raka. <strong>Säg inte att något är bra om ni inte tycker det.</strong>
+              Det hjälper mig att bygga nästa version bättre och snabbare.
+            </p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div class="full">
+                <label for="badFeedback">Vad känns dåligt, fel eller inte rätt?</label>
+                <textarea id="badFeedback" name="badFeedback" placeholder="Ex. sidan känns för mörk, för säljig, för stel, fel typ av bilder, fel känsla, fel struktur..."></textarea>
+              </div>
+
+              <div class="full">
+                <label for="goodFeedback">Vad tycker ni faktiskt fungerar bra?</label>
+                <textarea id="goodFeedback" name="goodFeedback" placeholder="Ex. vissa rubriker, färger, upplägg, sektioner, bilder eller formuleringar..."></textarea>
+              </div>
+
+              <div class="full">
+                <label for="wishDirection">Om ni fick bestämma helt: hur ska nästa version kännas?</label>
+                <textarea id="wishDirection" name="wishDirection" placeholder="Ex. mer trygg, mer myndig, mer modern, mer varm, enklare, mer premium, mindre byråkänsla..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Helhetskänsla</h2>
+            <p class="hint">Första magkänslan. Inga akademiska romaner behövs.</p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="overall">Hur känns sidan totalt?</label>
+                <select id="overall" name="overall">
+                  <option value="">Välj alternativ</option>
+                  <option>Mycket bra riktning</option>
+                  <option>Bra, men behöver några ändringar</option>
+                  <option>Okej, men känslan behöver ändras</option>
+                  <option>Inte rätt riktning ännu</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="style">Vilken stil passar bäst?</label>
+                <select id="style" name="style">
+                  <option value="">Välj alternativ</option>
+                  <option>Varm och mänsklig</option>
+                  <option>Myndig och seriös</option>
+                  <option>Modern och premium</option>
+                  <option>Enkel och rak</option>
+                  <option>Lugn och trygg</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="firstThoughts">Första tankar</label>
+                <textarea id="firstThoughts" name="firstThoughts" placeholder="Vad känns bra? Vad känns fel? Vad ska absolut ändras?"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Vad ska ändras?</h2>
+            <p class="hint">Kryssa i det som behöver justeras.</p>
+
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="changeAreas" value="Text"> Text</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Bilder"> Bilder</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Färger"> Färger</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Textstil"> Textstil</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Kontaktuppgifter"> Kontaktuppgifter</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Formulär"> Formulär</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Målgrupp"> Målgrupp</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Placeringar/insatser"> Placeringar / insatser</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Kompetens/personal"> Kompetens / personal</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Annat"> Annat</label>
+            </div>
+
+            <div style="margin-top:18px;">
+              <label for="specificChanges">Beskriv ändringarna</label>
+              <textarea id="specificChanges" name="specificChanges" placeholder="Ex. byt rubrik, ta bort formulering, lägg till mer om målgrupp, ändra färger, byt bilder..."></textarea>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Text och innehåll</h2>
+            <p class="hint">Här kan ni skriva fakta som måste bli rätt.</p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div class="full">
+                <label for="wrongInfo">Finns något som är felaktigt?</label>
+                <textarea id="wrongInfo" name="wrongInfo" placeholder="Ex. antal platser, roller, arbetsmetoder, kontaktuppgifter, formuleringar..."></textarea>
+              </div>
+
+              <div class="full">
+                <label for="missingInfo">Vad saknas på sidan?</label>
+                <textarea id="missingInfo" name="missingInfo" placeholder="Ex. målgrupp, kriterier, metoder, boendemiljö, personal, tillstånd, samarbeten, FAQ..."></textarea>
+              </div>
+
+              <div class="full">
+                <label for="removeInfo">Vad ska tas bort eller tonas ner?</label>
+                <textarea id="removeInfo" name="removeInfo" placeholder="Ex. text som känns fel, för säljig, för stark, för vag eller inte relevant..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Bilder, färger och känsla</h2>
+            <p class="hint">Bra bildval säljer förtroende. Dåliga bildval säljer “mall från 2014”.</p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="colorTheme">Färgtema</label>
+                <select id="colorTheme" name="colorTheme">
+                  <option value="">Välj alternativ</option>
+                  <option>Varmt tema</option>
+                  <option>Lugnt/grönt tema</option>
+                  <option>Ljust tema</option>
+                  <option>Mörkt tema</option>
+                  <option>Annat färgtema</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="fontStyle">Textstil</label>
+                <select id="fontStyle" name="fontStyle">
+                  <option value="">Välj alternativ</option>
+                  <option>Modern</option>
+                  <option>Mjuk</option>
+                  <option>Tydlig</option>
+                  <option>Myndig</option>
+                  <option>Annat</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="imageNotes">Bildönskemål</label>
+                <textarea id="imageNotes" name="imageNotes" placeholder="Vill ni använda egna bilder? Personalbilder? Lägenheter? Växjöbilder? Något som absolut inte ska visas?"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Funktioner</h2>
+            <p class="hint">Välj vad som är relevant i skarp version.</p>
+
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="features" value="Kontaktformulär"> Kontaktformulär</label>
+              <label class="check"><input type="checkbox" name="features" value="Informationsblad"> Informationsblad</label>
+              <label class="check"><input type="checkbox" name="features" value="Språkval svenska/engelska"> Språkval svenska/engelska</label>
+              <label class="check"><input type="checkbox" name="features" value="Större text"> Större text</label>
+              <label class="check"><input type="checkbox" name="features" value="Hög kontrast"> Hög kontrast</label>
+              <label class="check"><input type="checkbox" name="features" value="FAQ"> FAQ</label>
+              <label class="check"><input type="checkbox" name="features" value="Karta/adress"> Karta/adress</label>
+              <label class="check"><input type="checkbox" name="features" value="Sociala medier"> Sociala medier</label>
+            </div>
+
+            <div style="margin-top:18px;">
+              <label for="featureNotes">Kommentar om funktioner</label>
+              <textarea id="featureNotes" name="featureNotes" placeholder="Ex. formuläret ska gå till viss e-post, informationsbladet ska innehålla X, språk behövs/behövs inte..."></textarea>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Nästa demo</h2>
+            <p class="hint">
+              Efter feedbacken gör jag en förbättrad demo på en ny adress.
+              Då kan ni jämföra den nuvarande versionen med nästa version utan att något försvinner.
+            </p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="compareNeed">Vill ni jämföra versionerna?</label>
+                <select id="compareNeed" name="compareNeed">
+                  <option value="">Välj alternativ</option>
+                  <option>Ja, behåll nuvarande demo och gör ny version på ny adress</option>
+                  <option>Det räcker med ny version</option>
+                  <option>Vi vill se flera olika riktningar</option>
+                  <option>Vet inte ännu</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="nextVersionFocus">Viktigast i nästa version</label>
+                <select id="nextVersionFocus" name="nextVersionFocus">
+                  <option value="">Välj alternativ</option>
+                  <option>Text och innehåll</option>
+                  <option>Design och känsla</option>
+                  <option>Bilder och visuellt uttryck</option>
+                  <option>Struktur och tydlighet</option>
+                  <option>Allt ovan</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="promptNotes">Skriv gärna fritt så jag kan bygga en bättre prompt</label>
+                <textarea id="promptNotes" name="promptNotes" placeholder="Ex. sidan ska kännas mer som X, mindre som Y. Vi vill framstå som trygga, seriösa och tillgängliga. Undvik detta. Lyft detta mer..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Nästa steg</h2>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="decision">Hur vill ni gå vidare?</label>
+                <select id="decision" name="decision">
+                  <option value="">Välj alternativ</option>
+                  <option>Vi vill gå vidare med justeringar</option>
+                  <option>Vi vill först se en ny version</option>
+                  <option>Vi behöver diskutera internt</option>
+                  <option>Vi avvaktar</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="priority">Prioritet</label>
+                <select id="priority" name="priority">
+                  <option value="">Välj alternativ</option>
+                  <option>Brådskande</option>
+                  <option>Gärna snart</option>
+                  <option>Ingen stress</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="other">Övrigt</label>
+                <textarea id="other" name="other" placeholder="Allt annat som är bra att veta."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Skicka svar via mejl</button>
+            <button class="btn btn-secondary" type="button" id="copyBtn">Kopiera svar</button>
+            <button class="btn btn-gold" type="button" id="previewBtn">Visa sammanställning</button>
+            <button class="btn btn-secondary" type="reset">Rensa formulär</button>
+          </div>
+
+          <div id="status" class="status" role="status"></div>
+          <div id="previewBox" class="preview-box" aria-label="Sammanställning"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Feedbackformulär framtaget av Nordlöf Nordic. Sidan är endast för förhandsvisning och ska inte indexeras.
+  </footer>
+
+  <script>
+    const SEND_TO = "erica@webutvecklare.se";
+    const PREVIEW_URL = "https://webutvecklare.se/r3start-vaxjo2";
+    const NEXT_DEMO_NOTE = "Nästa förbättrade demo görs på en ny adress så nuvarande och ny version kan jämföras.";
+
+    const form = document.getElementById("feedbackForm");
+    const statusBox = document.getElementById("status");
+    const previewBox = document.getElementById("previewBox");
+    const copyBtn = document.getElementById("copyBtn");
+    const previewBtn = document.getElementById("previewBtn");
+
+    const STORAGE_KEY = "r3startFeedbackDraft";
+
+    function getCheckedValues(name){
+      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+        .map(input => input.value)
+        .join(", ");
+    }
+
+    function getValue(id){
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+
+    function buildSummary(){
+      return `Feedback på förhandsvisning – R3start Växjö
+
+Förhandsvisning:
+${PREVIEW_URL}
+
+Plan för nästa demo:
+${NEXT_DEMO_NOTE}
+
+KONTAKT
+Namn: ${getValue("name") || "-"}
+E-post: ${getValue("email") || "-"}
+Roll/funktion: ${getValue("role") || "-"}
+
+ÄRLIG FEEDBACK
+Vad känns dåligt, fel eller inte rätt?
+${getValue("badFeedback") || "-"}
+
+Vad fungerar bra?
+${getValue("goodFeedback") || "-"}
+
+Önskad riktning för nästa version:
+${getValue("wishDirection") || "-"}
+
+HELHETSKÄNSLA
+Hur känns sidan totalt?
+${getValue("overall") || "-"}
+
+Vilken stil passar bäst?
+${getValue("style") || "-"}
+
+Första tankar:
+${getValue("firstThoughts") || "-"}
+
+VAD SKA ÄNDRAS?
+Områden:
+${getCheckedValues("changeAreas") || "-"}
+
+Beskriv ändringarna:
+${getValue("specificChanges") || "-"}
+
+TEXT OCH INNEHÅLL
+Finns något som är felaktigt?
+${getValue("wrongInfo") || "-"}
+
+Vad saknas på sidan?
+${getValue("missingInfo") || "-"}
+
+Vad ska tas bort eller tonas ner?
+${getValue("removeInfo") || "-"}
+
+BILDER, FÄRGER OCH KÄNSLA
+Färgtema:
+${getValue("colorTheme") || "-"}
+
+Textstil:
+${getValue("fontStyle") || "-"}
+
+Bildönskemål:
+${getValue("imageNotes") || "-"}
+
+FUNKTIONER
+Valda funktioner:
+${getCheckedValues("features") || "-"}
+
+Kommentar om funktioner:
+${getValue("featureNotes") || "-"}
+
+NÄSTA DEMO
+Vill ni jämföra versionerna?
+${getValue("compareNeed") || "-"}
+
+Viktigast i nästa version:
+${getValue("nextVersionFocus") || "-"}
+
+Anteckningar för bättre prompt:
+${getValue("promptNotes") || "-"}
+
+NÄSTA STEG
+Hur vill ni gå vidare?
+${getValue("decision") || "-"}
+
+Prioritet:
+${getValue("priority") || "-"}
+
+Övrigt:
+${getValue("other") || "-"}`;
+    }
+
+    function showStatus(type, text){
+      statusBox.className = "status " + type;
+      statusBox.textContent = text;
+    }
+
+    function showPreview(){
+      const summary = buildSummary();
+      previewBox.textContent = summary;
+      previewBox.style.display = "block";
+      previewBox.scrollIntoView({ behavior:"smooth", block:"nearest" });
+    }
+
+    async function copySummary(){
+      const summary = buildSummary();
+
+      try{
+        await navigator.clipboard.writeText(summary);
+        showStatus("ok", "Svar kopierade. Klistra in i ett mejl om mejlknappen inte fungerar.");
+      }catch(error){
+        showPreview();
+        showStatus("warn", "Kunde inte kopiera automatiskt. Markera texten i sammanställningen och kopiera manuellt.");
+      }
+    }
+
+    function openEmail(){
+      const subject = "Feedback på förhandsvisning – R3start Växjö";
+      const body = buildSummary();
+
+      const mailto = `mailto:${encodeURIComponent(SEND_TO)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+
+      showStatus("ok", "Mejlprogrammet öppnas med svaren ifyllda. Om inget händer: klicka på “Kopiera svar”.");
+    }
+
+    function saveDraft(){
+      const data = new FormData(form);
+      const values = {};
+
+      for(const [key, value] of data.entries()){
+        if(values[key]){
+          values[key] = Array.isArray(values[key]) ? [...values[key], value] : [values[key], value];
+        }else{
+          values[key] = value;
+        }
+      }
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(values));
+    }
+
+    function loadDraft(){
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if(!saved) return;
+
+      try{
+        const values = JSON.parse(saved);
+
+        Object.entries(values).forEach(([key, value]) => {
+          const fields = form.querySelectorAll(`[name="${key}"]`);
+          if(!fields.length) return;
+
+          fields.forEach(field => {
+            if(field.type === "checkbox"){
+              const selected = Array.isArray(value) ? value : [value];
+              field.checked = selected.includes(field.value);
+            }else{
+              field.value = value;
+            }
+          });
+        });
+      }catch(error){
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+
+    form.addEventListener("input", saveDraft);
+    form.addEventListener("change", saveDraft);
+
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+      saveDraft();
+      openEmail();
+    });
+
+    form.addEventListener("reset", function(){
+      setTimeout(() => {
+        localStorage.removeItem(STORAGE_KEY);
+        previewBox.style.display = "none";
+        statusBox.className = "status";
+        statusBox.textContent = "";
+      }, 0);
+    });
+
+    copyBtn.addEventListener("click", copySummary);
+    previewBtn.addEventListener("click", showPreview);
+
+    loadDraft();
+  </script>
+</body>
+</html>
