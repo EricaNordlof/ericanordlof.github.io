@@ -7,11 +7,15 @@
   <title>Feedback på förhandsvisning | R3start Växjö</title>
   <meta
     name="description"
-    content="Lämna ärlig feedback, förbättringar, ändringar och önskemål för förhandsvisningen av R3start Växjös nya hemsida."
+    content="Lämna ärlig feedback, förbättringar, ändringar, speciallösningar och önskemål för förhandsvisningen av R3start Växjös nya hemsida."
   />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#173128" />
   <meta name="author" content="Nordlöf Nordic" />
+
+  <meta property="og:title" content="Feedback på förhandsvisning | R3start Växjö" />
+  <meta property="og:description" content="Feedbackformulär för förhandsvisning av ny hemsida för R3start Växjö." />
+  <meta property="og:type" content="website" />
 
   <style>
     :root{
@@ -28,7 +32,11 @@
       --line:#ddd1c0;
       --line-dark:#c8b9a4;
       --danger:#8a1f11;
+      --danger-bg:#fff1f2;
       --ok:#14532d;
+      --ok-bg:#dcfce7;
+      --warning:#9a3412;
+      --warning-bg:#fff7ed;
       --shadow:0 28px 90px rgba(20,32,27,.16);
       --shadow-soft:0 18px 50px rgba(20,32,27,.10);
       --radius:28px;
@@ -42,6 +50,7 @@
 
     html{
       scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
       text-size-adjust:100%;
       font-size:16px;
       max-width:100%;
@@ -64,10 +73,35 @@
       color:inherit;
     }
 
+    button,
+    input,
+    select,
+    textarea{
+      font:inherit;
+    }
+
     :focus-visible{
       outline:4px solid var(--focus);
       outline-offset:4px;
       border-radius:10px;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:14px;
+      top:-90px;
+      z-index:999;
+      background:#ffffff;
+      color:#000000;
+      border:2px solid #000000;
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:950;
+      transition:.18s ease;
+    }
+
+    .skip-link:focus{
+      top:14px;
     }
 
     .topbar{
@@ -89,6 +123,13 @@
       font-size:.95rem;
     }
 
+    .topbar-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
     .topbar a{
       color:#ffffff;
       text-decoration:none;
@@ -97,6 +138,11 @@
       border-radius:999px;
       padding:8px 12px;
       font-weight:900;
+    }
+
+    .topbar a:hover{
+      background:#ffffff;
+      color:#13211c;
     }
 
     .hero{
@@ -109,12 +155,13 @@
     }
 
     .hero-card{
-      background:rgba(255,250,243,.86);
+      background:rgba(255,250,243,.88);
       border:1px solid rgba(200,185,164,.85);
       border-radius:42px;
       padding:42px;
       box-shadow:var(--shadow);
       backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
     }
 
     .eyebrow{
@@ -129,6 +176,7 @@
       font-weight:950;
       font-size:.86rem;
       margin-bottom:18px;
+      max-width:100%;
     }
 
     h1,h2,h3{
@@ -161,7 +209,7 @@
     .lead{
       font-size:clamp(1.02rem, 1.6vw, 1.22rem);
       margin-top:18px;
-      max-width:780px;
+      max-width:790px;
       font-weight:650;
     }
 
@@ -187,6 +235,21 @@
     .notice p{
       color:#f4eadc;
       font-weight:700;
+    }
+
+    .privacy-note{
+      margin-top:16px;
+      background:var(--danger-bg);
+      color:var(--danger);
+      border:1px solid rgba(138,31,17,.22);
+      border-radius:22px;
+      padding:16px 18px;
+      font-weight:800;
+      line-height:1.55;
+    }
+
+    .privacy-note strong{
+      color:var(--danger);
     }
 
     .quick{
@@ -250,6 +313,14 @@
       border-color:rgba(22,56,47,.28);
     }
 
+    .special-block{
+      background:
+        radial-gradient(circle at top right, rgba(217,170,103,.20), transparent 22rem),
+        linear-gradient(135deg, rgba(22,56,47,.08), rgba(22,56,47,.03)),
+        #fffaf3;
+      border-color:rgba(22,56,47,.32);
+    }
+
     .form-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -285,7 +356,6 @@
       border:1px solid #b9c0bb;
       border-radius:16px;
       padding:14px 15px;
-      font:inherit;
       color:var(--ink);
       background:#ffffff;
       font-weight:650;
@@ -319,6 +389,12 @@
       color:var(--ink);
       font-weight:750;
       cursor:pointer;
+      line-height:1.35;
+    }
+
+    .check:hover{
+      border-color:var(--forest);
+      background:var(--forest-soft);
     }
 
     .check input{
@@ -365,10 +441,19 @@
       box-shadow:0 16px 38px rgba(22,56,47,.22);
     }
 
+    .btn-primary:hover{
+      background:var(--forest-2);
+      border-color:var(--forest-2);
+    }
+
     .btn-secondary{
       background:#ffffff;
       color:var(--forest);
       border-color:var(--line-dark);
+    }
+
+    .btn-secondary:hover{
+      background:var(--forest-soft);
     }
 
     .btn-gold{
@@ -384,19 +469,20 @@
       border-radius:18px;
       padding:14px 16px;
       font-weight:800;
+      line-height:1.5;
     }
 
     .status.ok{
       display:block;
-      background:#dcfce7;
+      background:var(--ok-bg);
       color:var(--ok);
       border:1px solid #86efac;
     }
 
     .status.warn{
       display:block;
-      background:#fff7ed;
-      color:#9a3412;
+      background:var(--warning-bg);
+      color:var(--warning);
       border:1px solid #fdba74;
     }
 
@@ -415,12 +501,49 @@
       max-height:420px;
     }
 
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .mini-card{
+      background:#ffffff;
+      border:1px solid var(--line-dark);
+      border-radius:20px;
+      padding:16px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .mini-card strong{
+      display:block;
+      color:var(--ink);
+      font-weight:950;
+      line-height:1.2;
+      margin-bottom:5px;
+    }
+
+    .mini-card span{
+      display:block;
+      color:var(--muted);
+      font-weight:650;
+      font-size:.92rem;
+      line-height:1.45;
+    }
+
     .footer{
       padding:34px 18px;
       color:#6b756f;
       text-align:center;
       font-size:.94rem;
       font-weight:650;
+    }
+
+    .footer a{
+      color:var(--forest);
+      font-weight:900;
+      text-underline-offset:3px;
     }
 
     @media (max-width:760px){
@@ -445,7 +568,8 @@
 
       .quick,
       .form-grid,
-      .checks{
+      .checks,
+      .mini-grid{
         grid-template-columns:1fr;
       }
 
@@ -461,47 +585,93 @@
       .btn{
         width:100%;
       }
+
+      .topbar-inner{
+        align-items:flex-start;
+      }
+
+      .topbar-actions{
+        width:100%;
+      }
+
+      .topbar a{
+        width:100%;
+        text-align:center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after{
+        transition:none !important;
+      }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Hoppa till formuläret</a>
+
   <div class="topbar">
     <div class="topbar-inner">
       <span>Feedbackformulär för R3start Växjö</span>
-      <a href="https://webutvecklare.se/r3start-vaxjo2" target="_blank" rel="noopener">Öppna nuvarande förhandsvisning</a>
+
+      <div class="topbar-actions">
+        <a href="https://webutvecklare.se/r3start-vaxjo2.html" target="_blank" rel="noopener">
+          Öppna nuvarande förhandsvisning
+        </a>
+        <a href="mailto:erica@webutvecklare.se">
+          Mejla Erica direkt
+        </a>
+      </div>
     </div>
   </div>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="wrap">
         <div class="hero-card">
           <span class="eyebrow">Förhandsvisning / ärlig feedback / nästa version</span>
+
           <h1>Vad vill ni ändra innan sidan görs färdig?</h1>
+
           <p class="lead">
-            Fyll gärna i synpunkter här. Det behöver inte vara perfekt formulerat.
-            Korta svar räcker. Målet är att få rätt innehåll, rätt känsla och rätt detaljer innan nästa version.
+            Fyll gärna i synpunkter här. Korta svar räcker. Ni behöver inte fylla i allt.
+            Målet är att få rätt innehåll, rätt känsla, rätt funktioner och rätt detaljer innan nästa version.
           </p>
 
           <div class="notice">
             <strong>Var brutalt ärliga. Snäll feedback bygger sämre hemsidor.</strong>
             <p>
-              Skriv hellre “det här känns fel” än att låta det passera. Jag blir inte sur om ni tycker att något är dåligt.
+              Skriv hellre “det här känns fel” än att låta det passera.
+              Jag blir inte sur om ni tycker att något är dåligt.
               Jag bygger i kod och kan ändra text, färger, bilder, struktur och funktioner enligt era önskemål.
               Däremot kan jag inte läsa tankar, även om det hade varit en stark tilläggstjänst.
             </p>
           </div>
 
+          <div class="privacy-note">
+            <strong>Viktigt:</strong>
+            Skriv inte känsliga personuppgifter, klientuppgifter eller pågående personärenden i detta formulär.
+            Om ni behöver ett säkrare ärende- eller placeringsflöde kan vi prata om det som speciallösning.
+          </div>
+
           <div class="quick" aria-label="Kort information">
             <div class="quick-item">
               <strong>1. Gå igenom sidan</strong>
-              <span>Titta på text, bilder, struktur, känsla och kontaktdel.</span>
+              <span>Titta på text, bilder, struktur, känsla, kontaktväg och förtroendesignaler.</span>
             </div>
+
             <div class="quick-item">
               <strong>2. Skriv ärligt</strong>
               <span>Vad är bra, dåligt, fel, saknas eller ska göras om?</span>
             </div>
+
             <div class="quick-item">
               <strong>3. Jämför nästa demo</strong>
               <span>Nästa version läggs på en ny adress så ni kan jämföra före och efter.</span>
@@ -539,7 +709,8 @@
           <div class="section-block honest-block">
             <h2>Ärlig feedback först</h2>
             <p class="hint">
-              Här får ni gärna vara raka. <strong>Säg inte att något är bra om ni inte tycker det.</strong>
+              Här får ni gärna vara raka.
+              <strong>Säg inte att något är bra om ni inte tycker det.</strong>
               Det hjälper mig att bygga nästa version bättre och snabbare.
             </p>
 
@@ -610,6 +781,8 @@
               <label class="check"><input type="checkbox" name="changeAreas" value="Målgrupp"> Målgrupp</label>
               <label class="check"><input type="checkbox" name="changeAreas" value="Placeringar/insatser"> Placeringar / insatser</label>
               <label class="check"><input type="checkbox" name="changeAreas" value="Kompetens/personal"> Kompetens / personal</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Kvalitet/förtroende"> Kvalitet / förtroende</label>
+              <label class="check"><input type="checkbox" name="changeAreas" value="Navigering/struktur"> Navigering / struktur</label>
               <label class="check"><input type="checkbox" name="changeAreas" value="Annat"> Annat</label>
             </div>
 
@@ -678,7 +851,7 @@
           </div>
 
           <div class="section-block">
-            <h2>Funktioner</h2>
+            <h2>Funktioner på hemsidan</h2>
             <p class="hint">Välj vad som är relevant i skarp version.</p>
 
             <div class="checks">
@@ -690,11 +863,91 @@
               <label class="check"><input type="checkbox" name="features" value="FAQ"> FAQ</label>
               <label class="check"><input type="checkbox" name="features" value="Karta/adress"> Karta/adress</label>
               <label class="check"><input type="checkbox" name="features" value="Sociala medier"> Sociala medier</label>
+              <label class="check"><input type="checkbox" name="features" value="Nedladdningsbara dokument"> Nedladdningsbara dokument</label>
+              <label class="check"><input type="checkbox" name="features" value="Tydlig akutkontakt"> Tydlig akutkontakt</label>
             </div>
 
             <div style="margin-top:18px;">
               <label for="featureNotes">Kommentar om funktioner</label>
               <textarea id="featureNotes" name="featureNotes" placeholder="Ex. formuläret ska gå till viss e-post, informationsbladet ska innehålla X, språk behövs/behövs inte..."></textarea>
+            </div>
+          </div>
+
+          <div class="section-block special-block">
+            <span class="eyebrow">Speciallösningar / flöden / smartare funktioner</span>
+            <h2>Behöver ni något mer än en vanlig hemsida?</h2>
+            <p class="hint">
+              Ibland är själva hemsidan bara framsidan. Mer värde kan ligga i formulärflöden,
+              dokument, sortering, intern hantering, informationsblad, akutkontakt eller andra funktioner som sparar tid.
+            </p>
+
+            <div class="mini-grid">
+              <div class="mini-card">
+                <strong>Exempel: placeringsförfrågan</strong>
+                <span>Ett tydligare formulär där rätt uppgifter samlas in från start.</span>
+              </div>
+
+              <div class="mini-card">
+                <strong>Exempel: informationsblad</strong>
+                <span>HTML/PDF-liknande informationsblad för kommun, socialtjänst eller intern vidarebefordran.</span>
+              </div>
+
+              <div class="mini-card">
+                <strong>Exempel: internt flöde</strong>
+                <span>Kontaktformulär som sorterar ärenden, skickar till rätt mottagare eller loggar förfrågningar.</span>
+              </div>
+            </div>
+
+            <div class="checks" style="margin-top:20px;">
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Skarpare placeringsformulär"> Skarpare placeringsformulär</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Akutplaceringsflöde"> Akutplaceringsflöde</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Informationsblad som kan laddas ner"> Informationsblad som kan laddas ner</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Separat sida för kommun/socialtjänst"> Separat sida för kommun / socialtjänst</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Dokumentbank"> Dokumentbank</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Mejlflöde till rätt person"> Mejlflöde till rätt person</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Koppling till kalkylark/CRM"> Koppling till kalkylark / CRM</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Intern adminvy"> Enkel intern adminvy</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Lediga platser/kapacitet"> Visa lediga platser / kapacitet</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Säkrare ärendeflöde"> Säkrare ärendeflöde</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Integration med annat system"> Integration med annat system</label>
+              <label class="check"><input type="checkbox" name="specialNeeds" value="Vet inte ännu"> Vet inte ännu</label>
+            </div>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="specialPriority">Hur viktigt är speciallösningar?</label>
+                <select id="specialPriority" name="specialPriority">
+                  <option value="">Välj alternativ</option>
+                  <option>Inte aktuellt, vi behöver bara hemsidan</option>
+                  <option>Kan vara intressant senare</option>
+                  <option>Ja, vi vill gärna diskutera det</option>
+                  <option>Viktigt redan i första versionen</option>
+                  <option>Vet inte ännu</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="specialBudget">Budgetnivå för specialfunktioner</label>
+                <select id="specialBudget" name="specialBudget">
+                  <option value="">Välj alternativ</option>
+                  <option>Vet inte ännu</option>
+                  <option>Endast om det ryms i hemsideprojektet</option>
+                  <option>Kan tas separat senare</option>
+                  <option>Kan tas löpande på timpris</option>
+                  <option>Vill först få förslag</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="specialNotes">Beskriv specialbehov eller återkommande problem</label>
+                <textarea id="specialNotes" name="specialNotes" placeholder="Ex. vi vill få bättre placeringsförfrågningar, slippa fel frågor via mejl, kunna skicka informationsblad enkelt, samla inkommande förfrågningar eller ha en enklare intern översikt..."></textarea>
+              </div>
+            </div>
+
+            <div class="privacy-note" style="margin-top:18px;">
+              <strong>Obs:</strong>
+              Skriv inte riktiga klientärenden här. Beskriv bara typen av flöde eller problem.
+              Exempel: “vi behöver sortera placeringsförfrågningar bättre” räcker.
             </div>
           </div>
 
@@ -725,6 +978,7 @@
                   <option>Design och känsla</option>
                   <option>Bilder och visuellt uttryck</option>
                   <option>Struktur och tydlighet</option>
+                  <option>Funktioner och speciallösningar</option>
                   <option>Allt ovan</option>
                 </select>
               </div>
@@ -746,6 +1000,7 @@
                   <option value="">Välj alternativ</option>
                   <option>Vi vill gå vidare med justeringar</option>
                   <option>Vi vill först se en ny version</option>
+                  <option>Vi vill prata om hemsida + speciallösningar</option>
                   <option>Vi behöver diskutera internt</option>
                   <option>Vi avvaktar</option>
                 </select>
@@ -769,13 +1024,17 @@
           </div>
 
           <div class="actions">
-            <button class="btn btn-primary" type="submit">Skicka svar via mejl</button>
+            <button class="btn btn-primary" type="submit">Öppna mejl med svar</button>
             <button class="btn btn-secondary" type="button" id="copyBtn">Kopiera svar</button>
             <button class="btn btn-gold" type="button" id="previewBtn">Visa sammanställning</button>
             <button class="btn btn-secondary" type="reset">Rensa formulär</button>
           </div>
 
-          <div id="status" class="status" role="status"></div>
+          <p class="hint" style="margin-top:12px;">
+            Om mejlknappen inte öppnar ditt mejlprogram: klicka på <strong>“Kopiera svar”</strong> och klistra in svaret i ett vanligt mejl.
+          </p>
+
+          <div id="status" class="status" role="status" aria-live="polite"></div>
           <div id="previewBox" class="preview-box" aria-label="Sammanställning"></div>
         </form>
       </div>
@@ -783,12 +1042,15 @@
   </main>
 
   <footer class="footer">
-    Feedbackformulär framtaget av Nordlöf Nordic. Sidan är endast för förhandsvisning och ska inte indexeras.
+    Feedbackformulär framtaget av Nordlöf Nordic.
+    Sidan är endast för förhandsvisning och ska inte indexeras.
+    <br />
+    <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
   </footer>
 
   <script>
     const SEND_TO = "erica@webutvecklare.se";
-    const PREVIEW_URL = "https://webutvecklare.se/r3start-vaxjo2";
+    const PREVIEW_URL = "https://webutvecklare.se/r3start-vaxjo2.html";
     const NEXT_DEMO_NOTE = "Nästa förbättrade demo görs på en ny adress så nuvarande och ny version kan jämföras.";
 
     const form = document.getElementById("feedbackForm");
@@ -797,7 +1059,7 @@
     const copyBtn = document.getElementById("copyBtn");
     const previewBtn = document.getElementById("previewBtn");
 
-    const STORAGE_KEY = "r3startFeedbackDraft";
+    const STORAGE_KEY = "r3startFeedbackDraftV2";
 
     function getCheckedValues(name){
       return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
@@ -818,6 +1080,9 @@ ${PREVIEW_URL}
 
 Plan för nästa demo:
 ${NEXT_DEMO_NOTE}
+
+VIKTIGT
+Feedbacken ska inte innehålla känsliga personuppgifter, klientuppgifter eller pågående personärenden.
 
 KONTAKT
 Namn: ${getValue("name") || "-"}
@@ -871,12 +1136,25 @@ ${getValue("fontStyle") || "-"}
 Bildönskemål:
 ${getValue("imageNotes") || "-"}
 
-FUNKTIONER
+FUNKTIONER PÅ HEMSIDAN
 Valda funktioner:
 ${getCheckedValues("features") || "-"}
 
 Kommentar om funktioner:
 ${getValue("featureNotes") || "-"}
+
+SPECIALÖSNINGAR / FLÖDEN / SMARTARE FUNKTIONER
+Valda specialbehov:
+${getCheckedValues("specialNeeds") || "-"}
+
+Hur viktigt är speciallösningar?
+${getValue("specialPriority") || "-"}
+
+Budgetnivå för specialfunktioner:
+${getValue("specialBudget") || "-"}
+
+Beskriv specialbehov eller återkommande problem:
+${getValue("specialNotes") || "-"}
 
 NÄSTA DEMO
 Vill ni jämföra versionerna?
@@ -929,6 +1207,12 @@ ${getValue("other") || "-"}`;
 
       const mailto = `mailto:${encodeURIComponent(SEND_TO)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+      if(mailto.length > 7500){
+        showPreview();
+        showStatus("warn", "Svaren är ganska långa. Klicka på “Kopiera svar” och klistra in i ett vanligt mejl i stället.");
+        return;
+      }
+
       window.location.href = mailto;
 
       showStatus("ok", "Mejlprogrammet öppnas med svaren ifyllda. Om inget händer: klicka på “Kopiera svar”.");
@@ -946,7 +1230,13 @@ ${getValue("other") || "-"}`;
         }
       }
 
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(values));
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(values));
+      }catch(error){
+        return false;
+      }
+
+      return true;
     }
 
     function loadDraft(){
