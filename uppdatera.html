@@ -247,6 +247,29 @@
       margin-bottom:6px;
     }
 
+    .ownership-note{
+  margin-top:16px;
+  background:#ecfdf5;
+  color:#14532d;
+  border:1px solid #86efac;
+  border-radius:22px;
+  padding:18px;
+  font-weight:800;
+  line-height:1.6;
+}
+
+.ownership-note strong{
+  display:block;
+  color:#14532d;
+  font-weight:950;
+  margin-bottom:6px;
+}
+
+.ownership-note p{
+  color:#14532d;
+  font-weight:750;
+}
+
     .privacy-note{
       margin-top:16px;
       background:var(--danger-bg);
@@ -649,6 +672,15 @@
             Demo först ingår för att ni ska kunna se riktningen innan ni bestämmer er.
             Fortsatt arbete, ny version, större ändringar, specialfunktioner och färdigställande görs efter offert och betalning.
           </div>
+
+          <div class="ownership-note">
+  <strong>Ni äger koden efter köp.</strong>
+  <p>
+    Om ni går vidare och köper sidan får ni en kodbas som kan flyttas, vidareutvecklas och tas med till annan driftlösning.
+    Ni hyr alltså inte en låst hemsida som bara fungerar i ett visst system. Med egen kod blir ni mer självständiga.
+    Webbutvecklingen rör sig snabbt, så det är smart att bygga rörligt från start.
+  </p>
+</div>
 
           <div class="privacy-note">
             <strong>Viktigt:</strong>
@@ -1114,6 +1146,8 @@
     const PREVIEW_URL = "https://webutvecklare.se/r3start-vaxjo2.html";
     const NEXT_DEMO_NOTE = "Första demo/förhandsvisning är framtagen. Fortsatt arbete, ny version, färdigställande och speciallösningar sker efter offert och betalning.";
 
+    const OWNERSHIP_NOTE = "Vid köp får kunden en kodbas som kan flyttas, vidareutvecklas och tas med till annan driftlösning. Kunden hyr inte en låst sida i ett system. Med egen kod blir kunden mer självständig och rörlig.";
+
     const form = document.getElementById("feedbackForm");
     const statusBox = document.getElementById("status");
     const previewBox = document.getElementById("previewBox");
@@ -1141,6 +1175,9 @@ ${PREVIEW_URL}
 
 UPPLÄGG
 ${NEXT_DEMO_NOTE}
+
+ÄGANDE OCH RÖRLIGHET
+${OWNERSHIP_NOTE}
 
 VIKTIGT
 Feedbacken ska inte innehålla känsliga personuppgifter, klientuppgifter eller pågående personärenden.
