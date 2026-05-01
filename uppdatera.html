@@ -1,658 +1,25 @@
-<!doctype html>
-<html lang="sv">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+          <span class="eyebrow">Första demo är klar / nästa steg / offert</span>
 
-  <title>Feedback på förhandsvisning | R3start Växjö</title>
-  <meta
-    name="description"
-    content="Lämna ärlig feedback, förbättringar, ändringar, speciallösningar och önskemål för förhandsvisningen av R3start Växjös nya hemsida."
-  />
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="theme-color" content="#173128" />
-  <meta name="author" content="Nordlöf Nordic" />
-
-  <meta property="og:title" content="Feedback på förhandsvisning | R3start Växjö" />
-  <meta property="og:description" content="Feedbackformulär för förhandsvisning av ny hemsida för R3start Växjö." />
-  <meta property="og:type" content="website" />
-
-  <style>
-    :root{
-      --bg:#efe8dc;
-      --paper:#fffaf3;
-      --white:#ffffff;
-      --ink:#16211d;
-      --muted:#53615a;
-      --forest:#16382f;
-      --forest-2:#24594b;
-      --forest-soft:#dfeae4;
-      --gold:#b98542;
-      --gold-2:#d9aa67;
-      --line:#ddd1c0;
-      --line-dark:#c8b9a4;
-      --danger:#8a1f11;
-      --danger-bg:#fff1f2;
-      --ok:#14532d;
-      --ok-bg:#dcfce7;
-      --warning:#9a3412;
-      --warning-bg:#fff7ed;
-      --shadow:0 28px 90px rgba(20,32,27,.16);
-      --shadow-soft:0 18px 50px rgba(20,32,27,.10);
-      --radius:28px;
-      --max:980px;
-      --focus:#b45309;
-    }
-
-    *{
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-      -webkit-text-size-adjust:100%;
-      text-size-adjust:100%;
-      font-size:16px;
-      max-width:100%;
-      overflow-x:hidden;
-    }
-
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(185,133,66,.22), transparent 34rem),
-        radial-gradient(circle at top right, rgba(22,56,47,.16), transparent 36rem),
-        linear-gradient(180deg, #f8f1e6 0%, #ece1d3 48%, #f8f3eb 100%);
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-
-    a{
-      color:inherit;
-    }
-
-    button,
-    input,
-    select,
-    textarea{
-      font:inherit;
-    }
-
-    :focus-visible{
-      outline:4px solid var(--focus);
-      outline-offset:4px;
-      border-radius:10px;
-    }
-
-    .skip-link{
-      position:absolute;
-      left:14px;
-      top:-90px;
-      z-index:999;
-      background:#ffffff;
-      color:#000000;
-      border:2px solid #000000;
-      padding:12px 16px;
-      border-radius:999px;
-      font-weight:950;
-      transition:.18s ease;
-    }
-
-    .skip-link:focus{
-      top:14px;
-    }
-
-    .topbar{
-      background:#173128;
-      color:#f6efe5;
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-
-    .topbar-inner{
-      max-width:var(--max);
-      margin:auto;
-      padding:12px 18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap;
-      font-weight:850;
-      font-size:.95rem;
-    }
-
-    .topbar-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .topbar a{
-      color:#ffffff;
-      text-decoration:none;
-      border:1px solid rgba(255,255,255,.24);
-      background:rgba(255,255,255,.08);
-      border-radius:999px;
-      padding:8px 12px;
-      font-weight:900;
-    }
-
-    .topbar a:hover{
-      background:#ffffff;
-      color:#13211c;
-    }
-
-    .hero{
-      padding:70px 18px 34px;
-    }
-
-    .wrap{
-      max-width:var(--max);
-      margin:auto;
-    }
-
-    .hero-card{
-      background:rgba(255,250,243,.88);
-      border:1px solid rgba(200,185,164,.85);
-      border-radius:42px;
-      padding:42px;
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 13px;
-      background:rgba(185,133,66,.14);
-      color:#80531f;
-      border:1px solid rgba(185,133,66,.30);
-      border-radius:999px;
-      font-weight:950;
-      font-size:.86rem;
-      margin-bottom:18px;
-      max-width:100%;
-    }
-
-    h1,h2,h3{
-      margin:0;
-      line-height:1.04;
-      letter-spacing:-.055em;
-      color:var(--ink);
-    }
-
-    h1{
-      font-size:clamp(2.25rem, 6vw, 4.9rem);
-      max-width:850px;
-    }
-
-    h2{
-      font-size:clamp(1.55rem, 3.5vw, 2.4rem);
-      margin-bottom:12px;
-    }
-
-    h3{
-      font-size:1.18rem;
-      letter-spacing:-.035em;
-    }
-
-    p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .lead{
-      font-size:clamp(1.02rem, 1.6vw, 1.22rem);
-      margin-top:18px;
-      max-width:790px;
-      font-weight:650;
-    }
-
-    .notice{
-      margin-top:24px;
-      background:#173128;
-      color:#fffaf3;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:26px;
-      padding:22px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .notice strong{
-      display:block;
-      color:#ffffff;
-      font-size:1.08rem;
-      line-height:1.2;
-      margin-bottom:7px;
-      font-weight:950;
-    }
-
-    .notice p{
-      color:#f4eadc;
-      font-weight:700;
-    }
-
-    .privacy-note{
-      margin-top:16px;
-      background:var(--danger-bg);
-      color:var(--danger);
-      border:1px solid rgba(138,31,17,.22);
-      border-radius:22px;
-      padding:16px 18px;
-      font-weight:800;
-      line-height:1.55;
-    }
-
-    .privacy-note strong{
-      color:var(--danger);
-    }
-
-    .quick{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
-      margin-top:28px;
-    }
-
-    .quick-item{
-      background:#ffffff;
-      border:1px solid var(--line-dark);
-      border-radius:22px;
-      padding:18px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .quick-item strong{
-      display:block;
-      font-weight:950;
-      color:var(--ink);
-      line-height:1.2;
-    }
-
-    .quick-item span{
-      display:block;
-      color:var(--muted);
-      font-weight:700;
-      margin-top:5px;
-      font-size:.93rem;
-    }
-
-    .section{
-      padding:34px 18px 80px;
-    }
-
-    form{
-      background:#ffffff;
-      border:1px solid var(--line-dark);
-      border-radius:38px;
-      padding:34px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .section-block{
-      border:1px solid var(--line);
-      background:#fffaf3;
-      border-radius:28px;
-      padding:26px;
-      margin-bottom:20px;
-    }
-
-    .section-block:last-child{
-      margin-bottom:0;
-    }
-
-    .honest-block{
-      background:
-        linear-gradient(135deg, rgba(22,56,47,.08), rgba(185,133,66,.12)),
-        #fffaf3;
-      border-color:rgba(22,56,47,.28);
-    }
-
-    .special-block{
-      background:
-        radial-gradient(circle at top right, rgba(217,170,103,.20), transparent 22rem),
-        linear-gradient(135deg, rgba(22,56,47,.08), rgba(22,56,47,.03)),
-        #fffaf3;
-      border-color:rgba(22,56,47,.32);
-    }
-
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-
-    .full{
-      grid-column:1 / -1;
-    }
-
-    label{
-      display:block;
-      color:var(--ink);
-      font-weight:950;
-      margin-bottom:7px;
-    }
-
-    .hint{
-      color:var(--muted);
-      font-size:.92rem;
-      font-weight:650;
-      margin-top:5px;
-    }
-
-    .hint strong{
-      color:var(--ink);
-    }
-
-    input,
-    select,
-    textarea{
-      width:100%;
-      border:1px solid #b9c0bb;
-      border-radius:16px;
-      padding:14px 15px;
-      color:var(--ink);
-      background:#ffffff;
-      font-weight:650;
-    }
-
-    textarea{
-      min-height:128px;
-      resize:vertical;
-    }
-
-    input::placeholder,
-    textarea::placeholder{
-      color:#66736c;
-    }
-
-    .checks{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:10px;
-      margin-top:10px;
-    }
-
-    .check{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      background:#ffffff;
-      border:1px solid var(--line-dark);
-      border-radius:18px;
-      padding:13px;
-      color:var(--ink);
-      font-weight:750;
-      cursor:pointer;
-      line-height:1.35;
-    }
-
-    .check:hover{
-      border-color:var(--forest);
-      background:var(--forest-soft);
-    }
-
-    .check input{
-      width:auto;
-      margin-top:4px;
-      flex:0 0 auto;
-      accent-color:var(--forest);
-    }
-
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:26px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      border-radius:999px;
-      padding:14px 20px;
-      font-weight:950;
-      text-decoration:none;
-      cursor:pointer;
-      line-height:1.1;
-      transition:.18s ease;
-      white-space:normal;
-      border:1px solid transparent;
-      font-size:1rem;
-      text-align:center;
-      font-family:inherit;
-    }
-
-    .btn:hover{
-      transform:translateY(-1px);
-    }
-
-    .btn-primary{
-      background:var(--forest);
-      color:#ffffff;
-      border-color:var(--forest);
-      box-shadow:0 16px 38px rgba(22,56,47,.22);
-    }
-
-    .btn-primary:hover{
-      background:var(--forest-2);
-      border-color:var(--forest-2);
-    }
-
-    .btn-secondary{
-      background:#ffffff;
-      color:var(--forest);
-      border-color:var(--line-dark);
-    }
-
-    .btn-secondary:hover{
-      background:var(--forest-soft);
-    }
-
-    .btn-gold{
-      background:linear-gradient(135deg, var(--gold), var(--gold-2));
-      color:#17120a;
-      border-color:rgba(185,133,66,.55);
-      box-shadow:0 16px 38px rgba(185,133,66,.18);
-    }
-
-    .status{
-      display:none;
-      margin-top:16px;
-      border-radius:18px;
-      padding:14px 16px;
-      font-weight:800;
-      line-height:1.5;
-    }
-
-    .status.ok{
-      display:block;
-      background:var(--ok-bg);
-      color:var(--ok);
-      border:1px solid #86efac;
-    }
-
-    .status.warn{
-      display:block;
-      background:var(--warning-bg);
-      color:var(--warning);
-      border:1px solid #fdba74;
-    }
-
-    .preview-box{
-      display:none;
-      margin-top:18px;
-      background:#0f1714;
-      color:#f6efe5;
-      border-radius:24px;
-      padding:22px;
-      white-space:pre-wrap;
-      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size:.92rem;
-      line-height:1.55;
-      overflow:auto;
-      max-height:420px;
-    }
-
-    .mini-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .mini-card{
-      background:#ffffff;
-      border:1px solid var(--line-dark);
-      border-radius:20px;
-      padding:16px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .mini-card strong{
-      display:block;
-      color:var(--ink);
-      font-weight:950;
-      line-height:1.2;
-      margin-bottom:5px;
-    }
-
-    .mini-card span{
-      display:block;
-      color:var(--muted);
-      font-weight:650;
-      font-size:.92rem;
-      line-height:1.45;
-    }
-
-    .footer{
-      padding:34px 18px;
-      color:#6b756f;
-      text-align:center;
-      font-size:.94rem;
-      font-weight:650;
-    }
-
-    .footer a{
-      color:var(--forest);
-      font-weight:900;
-      text-underline-offset:3px;
-    }
-
-    @media (max-width:760px){
-      .hero{
-        padding:44px 14px 24px;
-      }
-
-      .hero-card,
-      form{
-        border-radius:28px;
-        padding:24px;
-      }
-
-      .section{
-        padding:24px 14px 58px;
-      }
-
-      .section-block{
-        border-radius:22px;
-        padding:20px;
-      }
-
-      .quick,
-      .form-grid,
-      .checks,
-      .mini-grid{
-        grid-template-columns:1fr;
-      }
-
-      .full{
-        grid-column:auto;
-      }
-
-      .actions{
-        display:grid;
-        grid-template-columns:1fr;
-      }
-
-      .btn{
-        width:100%;
-      }
-
-      .topbar-inner{
-        align-items:flex-start;
-      }
-
-      .topbar-actions{
-        width:100%;
-      }
-
-      .topbar a{
-        width:100%;
-        text-align:center;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      html{
-        scroll-behavior:auto;
-      }
-
-      *,
-      *::before,
-      *::after{
-        transition:none !important;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <a class="skip-link" href="#main">Hoppa till formuläret</a>
-
-  <div class="topbar">
-    <div class="topbar-inner">
-      <span>Feedbackformulär för R3start Växjö</span>
-
-      <div class="topbar-actions">
-        <a href="https://webutvecklare.se/r3start-vaxjo2.html" target="_blank" rel="noopener">
-          Öppna nuvarande förhandsvisning
-        </a>
-        <a href="mailto:erica@webutvecklare.se">
-          Mejla Erica direkt
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <main id="main">
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-card">
-          <span class="eyebrow">Förhandsvisning / ärlig feedback / nästa version</span>
-
-          <h1>Vad vill ni ändra innan sidan görs färdig?</h1>
+          <h1>Vill ni gå vidare? Fyll i önskemålen här.</h1>
 
           <p class="lead">
-            Fyll gärna i synpunkter här. Korta svar räcker. Ni behöver inte fylla i allt.
-            Målet är att få rätt innehåll, rätt känsla, rätt funktioner och rätt detaljer innan nästa version.
+            Jag har nu tagit fram en första demo/förhandsvisning för R3start Växjö.
+            Om ni vill fortsätta behöver ni fylla i vad ni vill ändra, lägga till eller bygga vidare på.
+            När jag fått in era önskemål återkommer jag med offert.
           </p>
 
           <div class="notice">
-            <strong>Var brutalt ärliga. Snäll feedback bygger sämre hemsidor.</strong>
+            <strong>Första demon är gjord. Fortsatt arbete sker efter offert.</strong>
             <p>
-              Skriv hellre “det här känns fel” än att låta det passera.
-              Jag blir inte sur om ni tycker att något är dåligt.
-              Jag bygger i kod och kan ändra text, färger, bilder, struktur och funktioner enligt era önskemål.
-              Däremot kan jag inte läsa tankar, även om det hade varit en stark tilläggstjänst.
+              Förhandsvisningen visar riktning, struktur och möjlig design. Nästa steg är att ni fyller i feedback och önskemål här.
+              Därefter återkommer jag med offert. När offerten är godkänd och betald fortsätter jag med nästa version.
             </p>
+          </div>
+
+          <div class="business-note">
+            <strong>Rakt och tydligt upplägg:</strong>
+            Demo först ingår för att ni ska kunna se riktningen innan ni bestämmer er.
+            Fortsatt arbete, ny version, större ändringar, specialfunktioner och färdigställande görs efter offert och betalning.
           </div>
 
           <div class="privacy-note">
@@ -663,18 +30,18 @@
 
           <div class="quick" aria-label="Kort information">
             <div class="quick-item">
-              <strong>1. Gå igenom sidan</strong>
-              <span>Titta på text, bilder, struktur, känsla, kontaktväg och förtroendesignaler.</span>
+              <strong>1. Fyll i önskemål</strong>
+              <span>Text, bilder, funktioner, känsla, struktur och eventuella speciallösningar.</span>
             </div>
 
             <div class="quick-item">
-              <strong>2. Skriv ärligt</strong>
-              <span>Vad är bra, dåligt, fel, saknas eller ska göras om?</span>
+              <strong>2. Jag återkommer med offert</strong>
+              <span>När jag vet omfattningen kan jag prissätta nästa steg korrekt.</span>
             </div>
 
             <div class="quick-item">
-              <strong>3. Jämför nästa demo</strong>
-              <span>Nästa version läggs på en ny adress så ni kan jämföra före och efter.</span>
+              <strong>3. Betald offert = fortsatt arbete</strong>
+              <span>När offerten är godkänd och betald bygger jag nästa version.</span>
             </div>
           </div>
         </div>
@@ -684,6 +51,69 @@
     <section class="section">
       <div class="wrap">
         <form id="feedbackForm">
+          <div class="section-block quote-block">
+            <span class="eyebrow">Offertunderlag</span>
+            <h2>Vad vill ni att jag ska lämna offert på?</h2>
+            <p class="hint">
+              Fyll i så tydligt ni kan. Korta svar räcker. Det här används som underlag för offert,
+              inte som start på gratis vidarearbete.
+            </p>
+
+            <div class="form-grid" style="margin-top:18px;">
+              <div>
+                <label for="quoteType">Vad gäller nästa steg?</label>
+                <select id="quoteType" name="quoteType">
+                  <option value="">Välj alternativ</option>
+                  <option>Justera och färdigställa nuvarande demo</option>
+                  <option>Göra en ny förbättrad version</option>
+                  <option>Bygga färdig hemsida med nuvarande riktning</option>
+                  <option>Hemsida + speciallösningar</option>
+                  <option>Vill först veta vad olika alternativ kostar</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="paidNextStep">Förstår ni upplägget?</label>
+                <select id="paidNextStep" name="paidNextStep">
+                  <option value="">Välj alternativ</option>
+                  <option>Ja, återkom med offert</option>
+                  <option>Ja, men vi vill diskutera omfattningen först</option>
+                  <option>Vi behöver diskutera internt först</option>
+                  <option>Inte aktuellt just nu</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="deadline">Önskad tidsram</label>
+                <select id="deadline" name="deadline">
+                  <option value="">Välj alternativ</option>
+                  <option>Så snart som möjligt</option>
+                  <option>Inom 1 vecka</option>
+                  <option>Inom 2–3 veckor</option>
+                  <option>Ingen brådska</option>
+                  <option>Vet inte ännu</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="budgetFrame">Budgetnivå / omfattning</label>
+                <select id="budgetFrame" name="budgetFrame">
+                  <option value="">Välj alternativ</option>
+                  <option>Vill ha enklast möjliga färdiga version</option>
+                  <option>Vill ha en mer genomarbetad version</option>
+                  <option>Vill ha hemsida + extra funktioner</option>
+                  <option>Vill först få offertförslag</option>
+                  <option>Vet inte ännu</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="quoteNotes">Beskriv vad ni vill att offerten ska omfatta</label>
+                <textarea id="quoteNotes" name="quoteNotes" placeholder="Ex. färdigställa sidan, byta bilder, ändra texter, lägga till mer om målgrupp, koppla formulär, skapa informationsblad, speciallösning för placeringsförfrågningar..."></textarea>
+              </div>
+            </div>
+          </div>
+
           <div class="section-block">
             <h2>Kontakt</h2>
             <p class="hint">Så jag vet vem svaren kommer från.</p>
@@ -707,11 +137,11 @@
           </div>
 
           <div class="section-block honest-block">
-            <h2>Ärlig feedback först</h2>
+            <h2>Ärlig feedback på första demon</h2>
             <p class="hint">
               Här får ni gärna vara raka.
               <strong>Säg inte att något är bra om ni inte tycker det.</strong>
-              Det hjälper mig att bygga nästa version bättre och snabbare.
+              Det hjälper mig att räkna rätt på nästa steg och bygga bättre.
             </p>
 
             <div class="form-grid" style="margin-top:18px;">
@@ -952,10 +382,11 @@
           </div>
 
           <div class="section-block">
-            <h2>Nästa demo</h2>
+            <h2>Nästa version</h2>
             <p class="hint">
-              Efter feedbacken gör jag en förbättrad demo på en ny adress.
-              Då kan ni jämföra den nuvarande versionen med nästa version utan att något försvinner.
+              Om ni vill gå vidare återkommer jag med offert utifrån era önskemål.
+              När offerten är godkänd och betald gör jag nästa version på en ny adress.
+              Då kan ni jämföra första demo med nästa version.
             </p>
 
             <div class="form-grid" style="margin-top:18px;">
@@ -998,9 +429,10 @@
                 <label for="decision">Hur vill ni gå vidare?</label>
                 <select id="decision" name="decision">
                   <option value="">Välj alternativ</option>
-                  <option>Vi vill gå vidare med justeringar</option>
-                  <option>Vi vill först se en ny version</option>
-                  <option>Vi vill prata om hemsida + speciallösningar</option>
+                  <option>Återkom med offert för justeringar</option>
+                  <option>Återkom med offert för färdig hemsida</option>
+                  <option>Återkom med offert för hemsida + speciallösningar</option>
+                  <option>Vi vill först prata om omfattningen</option>
                   <option>Vi behöver diskutera internt</option>
                   <option>Vi avvaktar</option>
                 </select>
@@ -1042,8 +474,9 @@
   </main>
 
   <footer class="footer">
-    Feedbackformulär framtaget av Nordlöf Nordic.
+    Formulär framtaget av Nordlöf Nordic.
     Sidan är endast för förhandsvisning och ska inte indexeras.
+    Fortsatt arbete sker efter offert och betalning.
     <br />
     <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
   </footer>
@@ -1051,7 +484,7 @@
   <script>
     const SEND_TO = "erica@webutvecklare.se";
     const PREVIEW_URL = "https://webutvecklare.se/r3start-vaxjo2.html";
-    const NEXT_DEMO_NOTE = "Nästa förbättrade demo görs på en ny adress så nuvarande och ny version kan jämföras.";
+    const NEXT_DEMO_NOTE = "Första demo/förhandsvisning är framtagen. Fortsatt arbete, ny version, färdigställande och speciallösningar sker efter offert och betalning.";
 
     const form = document.getElementById("feedbackForm");
     const statusBox = document.getElementById("status");
@@ -1059,7 +492,7 @@
     const copyBtn = document.getElementById("copyBtn");
     const previewBtn = document.getElementById("previewBtn");
 
-    const STORAGE_KEY = "r3startFeedbackDraftV2";
+    const STORAGE_KEY = "r3startFeedbackQuoteDraftV1";
 
     function getCheckedValues(name){
       return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
@@ -1073,23 +506,39 @@
     }
 
     function buildSummary(){
-      return `Feedback på förhandsvisning – R3start Växjö
+      return `Offertunderlag och feedback – R3start Växjö
 
 Förhandsvisning:
 ${PREVIEW_URL}
 
-Plan för nästa demo:
+UPPLÄGG
 ${NEXT_DEMO_NOTE}
 
 VIKTIGT
 Feedbacken ska inte innehålla känsliga personuppgifter, klientuppgifter eller pågående personärenden.
+
+OFFERTUNDERLAG
+Vad gäller nästa steg?
+${getValue("quoteType") || "-"}
+
+Förstår ni upplägget?
+${getValue("paidNextStep") || "-"}
+
+Önskad tidsram:
+${getValue("deadline") || "-"}
+
+Budgetnivå / omfattning:
+${getValue("budgetFrame") || "-"}
+
+Vad ska offerten omfatta?
+${getValue("quoteNotes") || "-"}
 
 KONTAKT
 Namn: ${getValue("name") || "-"}
 E-post: ${getValue("email") || "-"}
 Roll/funktion: ${getValue("role") || "-"}
 
-ÄRLIG FEEDBACK
+ÄRLIG FEEDBACK PÅ FÖRSTA DEMON
 Vad känns dåligt, fel eller inte rätt?
 ${getValue("badFeedback") || "-"}
 
@@ -1156,7 +605,7 @@ ${getValue("specialBudget") || "-"}
 Beskriv specialbehov eller återkommande problem:
 ${getValue("specialNotes") || "-"}
 
-NÄSTA DEMO
+NÄSTA VERSION
 Vill ni jämföra versionerna?
 ${getValue("compareNeed") || "-"}
 
@@ -1202,7 +651,7 @@ ${getValue("other") || "-"}`;
     }
 
     function openEmail(){
-      const subject = "Feedback på förhandsvisning – R3start Växjö";
+      const subject = "Offertunderlag och feedback – R3start Växjö";
       const body = buildSummary();
 
       const mailto = `mailto:${encodeURIComponent(SEND_TO)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
