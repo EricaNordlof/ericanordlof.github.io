@@ -122,7 +122,7 @@
       --shadow:0 18px 50px rgba(36,30,26,.08);
       --shadow-strong:0 26px 70px rgba(36,30,26,.13);
       --radius:24px;
-      --max:920px;
+      --max:960px;
     }
 
     *{box-sizing:border-box;}
@@ -148,6 +148,7 @@
     body.large-text p,
     body.large-text a,
     body.large-text button,
+    body.large-text select,
     body.large-text time{
       line-height:1.75;
     }
@@ -169,23 +170,16 @@
       color:#000;
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    button,select{font:inherit;}
+    button{border:0;}
 
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    button{
-      font:inherit;
-      border:0;
-    }
+    :target{scroll-margin-top:96px;}
 
     a:focus-visible,
-    button:focus-visible{
+    button:focus-visible,
+    select:focus-visible{
       outline:3px solid #111;
       outline-offset:4px;
       box-shadow:0 0 0 6px rgba(255,255,255,.88);
@@ -207,13 +201,51 @@
       transition:.15s ease;
     }
 
-    .skip-link:focus{
-      transform:translateY(0);
-    }
+    .skip-link:focus{transform:translateY(0);}
 
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
+    }
+
+    .accessibility-tools{
+      position:fixed;
+      right:12px;
+      top:88px;
+      z-index:70;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      max-width:calc(100vw - 24px);
+      padding:8px;
+      border-radius:999px;
+      background:rgba(251,247,244,.94);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 14px 40px rgba(36,30,26,.12);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    .accessibility-btn{
+      min-height:44px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      border:2px solid #fff;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 12px 30px rgba(36,30,26,.18);
+      white-space:nowrap;
+      font-size:13px;
+    }
+
+    .accessibility-btn:hover{background:#000;}
+
+    .accessibility-btn[aria-pressed="true"]{
+      background:#fff;
+      color:#111;
+      border-color:#111;
     }
 
     .topbar{
@@ -270,12 +302,47 @@
       text-overflow:ellipsis;
     }
 
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:0 0 auto;
+    }
+
+    .language-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .language-label{
+      font-size:13px;
+      font-weight:900;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .language-select{
+      min-height:48px;
+      padding:12px 42px 12px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+      max-width:190px;
+    }
+
+    .mobile-lang{display:none;}
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:46px;
-      padding:13px 18px;
+      min-height:48px;
+      padding:14px 20px;
       border-radius:999px;
       font-weight:900;
       border:1px solid transparent;
@@ -286,9 +353,7 @@
       white-space:nowrap;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px);}
 
     .btn-primary{
       background:linear-gradient(135deg,var(--brand-deep),var(--brand));
@@ -303,45 +368,17 @@
       box-shadow:0 10px 24px rgba(36,30,26,.05);
     }
 
-    .tools{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:center;
-      padding:12px 0 0;
-      flex-wrap:wrap;
-    }
-
-    .tool-btn{
-      min-height:42px;
-      padding:10px 13px;
-      border-radius:999px;
-      background:#111;
-      color:#fff;
-      border:2px solid #fff;
-      font-weight:900;
-      cursor:pointer;
-      box-shadow:0 12px 30px rgba(36,30,26,.14);
-      font-size:13px;
-    }
-
-    .tool-btn[aria-pressed="true"]{
-      background:#fff;
-      color:#111;
-      border-color:#111;
-    }
-
     .hero{
-      padding:clamp(34px,6vw,78px) 0 24px;
+      padding:clamp(34px,6vw,76px) 0 28px;
     }
 
     .hero-card{
       background:
-        radial-gradient(circle at top right,rgba(255,255,255,.55),transparent 34%),
-        rgba(255,255,255,.88);
+        radial-gradient(circle at top right,rgba(255,255,255,.62),transparent 34%),
+        rgba(255,255,255,.92);
       border:1px solid var(--line);
       border-radius:34px;
-      padding:clamp(24px,5vw,46px);
+      padding:clamp(24px,5vw,48px);
       box-shadow:var(--shadow-strong);
       text-align:center;
     }
@@ -368,7 +405,7 @@
 
     h1{
       margin:18px auto 14px;
-      font-size:clamp(2.35rem,7vw,4.5rem);
+      font-size:clamp(2.35rem,7vw,4.7rem);
       line-height:.98;
       max-width:760px;
       text-wrap:balance;
@@ -376,7 +413,7 @@
 
     .lead{
       margin:0 auto;
-      max-width:670px;
+      max-width:700px;
       color:#4d453f;
       font-size:clamp(17px,2vw,19px);
       line-height:1.72;
@@ -391,7 +428,7 @@
     }
 
     .blog{
-      padding:28px 0 clamp(46px,7vw,90px);
+      padding:28px 0 clamp(44px,7vw,78px);
     }
 
     .blog-head{
@@ -410,7 +447,7 @@
 
     .blog-head p{
       margin:0;
-      max-width:460px;
+      max-width:470px;
       color:var(--muted);
       line-height:1.7;
     }
@@ -440,7 +477,7 @@
     }
 
     .post-body{
-      padding:clamp(18px,4vw,28px);
+      padding:clamp(18px,4vw,30px);
     }
 
     .post time{
@@ -467,7 +504,7 @@
 
     .post h2{
       margin:0 0 10px;
-      font-size:clamp(1.65rem,4vw,2.35rem);
+      font-size:clamp(1.65rem,4vw,2.45rem);
       line-height:1.05;
       letter-spacing:-.04em;
     }
@@ -479,9 +516,7 @@
       font-size:16px;
     }
 
-    .post p + p{
-      margin-top:13px;
-    }
+    .post p + p{margin-top:13px;}
 
     .post a{
       color:var(--brand-deep);
@@ -501,12 +536,10 @@
       font-size:14px;
     }
 
-    .note strong{
-      color:var(--text);
-    }
+    .note strong{color:var(--text);}
 
     footer{
-      padding:28px 0 40px;
+      padding:24px 0 34px;
       color:#6f655e;
       font-size:14px;
     }
@@ -515,10 +548,17 @@
       border-top:1px solid var(--line);
       padding-top:18px;
       display:flex;
+      align-items:center;
       justify-content:space-between;
       gap:16px;
       flex-wrap:wrap;
       line-height:1.7;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
     .footer-box a{
@@ -530,7 +570,9 @@
     body.high-contrast .topbar,
     body.high-contrast .hero-card,
     body.high-contrast .post,
-    body.high-contrast .note{
+    body.high-contrast .note,
+    body.high-contrast .accessibility-tools,
+    body.high-contrast .language-select{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -539,14 +581,14 @@
 
     body.high-contrast .btn-primary,
     body.high-contrast .btn-secondary,
-    body.high-contrast .tool-btn{
+    body.high-contrast .accessibility-btn{
       background:#000;
       color:#fff;
       border:3px solid #000;
       box-shadow:none;
     }
 
-    body.high-contrast .tool-btn[aria-pressed="true"]{
+    body.high-contrast .accessibility-btn[aria-pressed="true"]{
       background:#fff;
       color:#000;
     }
@@ -574,14 +616,50 @@
       .btn:hover{transform:none;}
     }
 
-    @media(max-width:720px){
+    @media(max-width:1080px){
+      .accessibility-tools{
+        position:static;
+        width:min(var(--max),calc(100% - 28px));
+        margin:10px auto 0;
+        justify-content:center;
+        border-radius:22px;
+      }
+    }
+
+    @media(max-width:760px){
       .container{
         width:min(var(--max),calc(100% - 22px));
+      }
+
+      .topbar{
+        padding-top:env(safe-area-inset-top);
+      }
+
+      .accessibility-tools{
+        width:min(var(--max),calc(100% - 22px));
+        margin:10px auto 0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:8px;
+        padding:8px;
+        border-radius:18px;
+      }
+
+      .accessibility-btn{
+        width:100%;
+        min-height:44px;
+        padding:9px 8px;
+        font-size:12px;
+        white-space:normal;
       }
 
       .nav{
         min-height:auto;
         padding:10px 0;
+      }
+
+      .brand{
+        gap:10px;
       }
 
       .brand img{
@@ -598,9 +676,32 @@
         display:none;
       }
 
-      .btn{
+      .nav-actions{
+        display:none;
+      }
+
+      .mobile-lang{
+        display:block;
+        position:sticky;
+        top:61px;
+        z-index:55;
+        background:rgba(251,247,244,.96);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
+        border-bottom:1px solid rgba(36,30,26,.08);
+      }
+
+      .mobile-lang-inner{
+        width:min(var(--max),calc(100% - 22px));
+        margin:auto;
+        padding:9px 0;
+      }
+
+      .mobile-lang .language-select{
+        width:100%;
+        max-width:none;
         min-height:42px;
-        padding:11px 13px;
+        padding:10px 14px;
         font-size:14px;
       }
 
@@ -613,8 +714,17 @@
         padding:22px 16px;
       }
 
+      .eyebrow{
+        font-size:12px;
+        line-height:1.35;
+        border-radius:16px;
+        padding:8px 10px;
+      }
+
       h1{
-        font-size:clamp(2rem,11vw,3.1rem);
+        font-size:clamp(2rem,11vw,3.15rem);
+        line-height:.98;
+        margin:14px 0 12px;
       }
 
       .lead{
@@ -629,6 +739,10 @@
 
       .hero-actions .btn{
         width:100%;
+      }
+
+      .blog{
+        padding-top:24px;
       }
 
       .blog-head{
@@ -647,48 +761,100 @@
         padding:18px;
       }
 
+      .post p{
+        font-size:15px;
+        line-height:1.68;
+      }
+
       .footer-box{
         display:grid;
         grid-template-columns:1fr;
+        font-size:13px;
+      }
+
+      .footer-links{
+        gap:9px 12px;
+      }
+    }
+
+    @media(max-width:390px){
+      .container{
+        width:min(var(--max),calc(100% - 18px));
+      }
+
+      h1{
+        font-size:2rem;
+      }
+
+      .btn{
+        font-size:13px;
+      }
+
+      .accessibility-btn{
+        font-size:11px;
+        padding:8px 6px;
       }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Hoppa till huvudinnehåll</a>
+
+  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar" data-i18n-attr="aria-label:toolsLabel">
+    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false" data-i18n="contrast">Hög kontrast</button>
+    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false" data-i18n="largeText">Större text</button>
+    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false" data-i18n="listen">Kort uppläsning</button>
+  </div>
 
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
+      <a class="brand" href="https://webutvecklare.se/" aria-label="Gå till startsidan" data-i18n-attr="aria-label:homeAria">
         <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
         <span>
           <strong>Nordlöf Nordic</strong>
-          <span>Blogg · Erica Nordlöf</span>
+          <span data-i18n="brandSub">Blogg · Erica Nordlöf</span>
         </span>
       </a>
 
-      <a class="btn btn-secondary" href="/">Startsida</a>
+      <div class="nav-actions" aria-label="Språk och startsida" data-i18n-attr="aria-label:navActions">
+        <div class="language-wrap">
+          <label class="language-label" for="languageSelect" data-i18n="languageLabel">Språk</label>
+          <select id="languageSelect" class="language-select" aria-label="Välj språk" data-i18n-attr="aria-label:languageAria">
+            <option value="sv">🇸🇪 Svenska</option>
+            <option value="en">🇬🇧 English</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+          </select>
+        </div>
+        <a class="btn btn-secondary" href="/" data-i18n="homeBtn">Startsida</a>
+      </div>
     </div>
   </header>
 
-  <div class="container tools" aria-label="Tillgänglighetsinställningar">
-    <button class="tool-btn" type="button" id="toggleContrast" aria-pressed="false">Hög kontrast</button>
-    <button class="tool-btn" type="button" id="toggleLargeText" aria-pressed="false">Större text</button>
-  </div>
+  <nav class="mobile-lang" aria-label="Språkval" data-i18n-attr="aria-label:languageNav">
+    <div class="mobile-lang-inner">
+      <select id="mobileLanguageSelect" class="language-select" aria-label="Välj språk" data-i18n-attr="aria-label:languageAria">
+        <option value="sv">🇸🇪 Svenska</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="da">🇩🇰 Dansk</option>
+        <option value="no">🇳🇴 Norsk</option>
+      </select>
+    </div>
+  </nav>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-card">
-          <span class="eyebrow">Blogg · Dagbok · Webbutveckling</span>
-          <h1 id="hero-title">Välkommen till min blogg.</h1>
-          <p class="lead">
+          <span class="eyebrow" data-i18n="eyebrow">Blogg · Dagbok · Webbutveckling</span>
+          <h1 id="hero-title" data-i18n="heroTitle">Välkommen till min blogg.</h1>
+          <p class="lead" data-i18n="heroLead">
             Här kan du följa min resa som nyutbildad webbutvecklare och nystartad företagare.
             Jag delar korta inlägg från vardagen bakom webutvecklare.se.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="/">Till startsidan</a>
+            <a class="btn btn-primary" href="/" data-i18n="heroBtn">Till startsidan</a>
           </div>
         </div>
       </div>
@@ -697,32 +863,38 @@
     <section class="blog" aria-labelledby="blog-title">
       <div class="container">
         <div class="blog-head">
-          <h2 id="blog-title">Dagbok.</h2>
-          <p>Nya inlägg läggs överst. Bild, datum och några rader. Klart. Inget romanbygge.</p>
+          <h2 id="blog-title" data-i18n="blogTitle">Dagbok.</h2>
+          <p data-i18n="blogIntro">Nya inlägg läggs överst. Bild, datum och några rader. Klart. Inget romanbygge.</p>
         </div>
 
         <div class="post-list">
-
           <article class="post" id="forsta-sparet-leadscentralen">
             <figure>
-              <img src="leadscentralen.se.PNG" alt="Leadscentralen som möjlig leadpartner för webutvecklare.se" loading="lazy">
+              <img src="leadscentralen.se.PNG" alt="Leadscentralen som möjlig leadpartner för webutvecklare.se" loading="lazy" data-i18n-attr="alt:postImageAlt">
             </figure>
             <div class="post-body">
-              <time datetime="2026-05-03">3 maj 2026</time>
-              <h2>Första spåret: Leadscentralen.</h2>
+              <time datetime="2026-05-03" data-i18n="postDate">3 maj 2026</time>
+              <h2 data-i18n="postTitle">Första spåret: Leadscentralen.</h2>
+
               <p>
-                Idag hittade jag Leadscentralen. Jag behöver fler leads till
-                <a href="/">webutvecklare.se</a>, så det kändes värt att testa.
+                <span data-i18n="postP1a">Idag hittade jag</span>
+                <a href="https://leadscentralen.se/" target="_blank" rel="noopener noreferrer">Leadscentralen</a>.
+                <span data-i18n="postP1b">Jag behöver fler leads till</span>
+                <a href="/">webutvecklare.se</a>,
+                <span data-i18n="postP1c">så det kändes värt att testa.</span>
               </p>
-              <p>
+
+              <p data-i18n="postP2">
                 Jag är nyutbildad webbutvecklare och har precis startat eget.
                 Just nu bygger jag allt steg för steg: hemsidan, erbjudandet, kontakterna och sättet att hitta kunder.
               </p>
-              <p>
+
+              <p data-i18n="postP3">
                 Jag vill hitta företag som behöver hjälp med hemsida, webbfix, formulär, bokningsflöde,
                 landningssida eller andra webblösningar.
               </p>
-              <p>
+
+              <p data-i18n="postP4">
                 Vi får se om Leadscentralen kan ge något. Jag börjar smått.
                 Budgeten är ungefär en pizza och en rejäl dos envishet.
               </p>
@@ -744,13 +916,14 @@
               </div>
             </article>
           -->
-
         </div>
 
         <div class="note">
-          <strong>Så lägger du till nytt inlägg:</strong>
-          kopiera mallen i koden, lägg den överst i listan, byt datum, rubrik, bildnamn och text.
-          Lägg gärna bilder i en mapp som heter <strong>blogg</strong>, till exempel <strong>blogg/2026-05-04.jpg</strong>.
+          <strong data-i18n="noteStrong">Så lägger du till nytt inlägg:</strong>
+          <span data-i18n="noteText">
+            kopiera mallen i koden, lägg den överst i listan, byt datum, rubrik, bildnamn och text.
+            Lägg gärna bilder i en mapp som heter blogg, till exempel blogg/2026-05-04.jpg.
+          </span>
         </div>
       </div>
     </section>
@@ -760,23 +933,186 @@
     <div class="container footer-box">
       <div>
         <strong>© 2026 Nordlöf Nordic</strong><br>
-        Blogg av Erica Nordlöf.
+        <span data-i18n="footerText">Blogg av Erica Nordlöf.</span>
       </div>
-      <div>
-        <a href="/">Till startsidan</a>
+      <div class="footer-links">
+        <a href="/" data-i18n="footerHome">Startsida</a>
+        <a href="/om-mig.html" data-i18n="footerAbout">Om mig</a>
+        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
       </div>
     </div>
   </footer>
 
   <script>
+    const translations = {
+      sv: {
+        htmlLang: "sv",
+        pageTitle: "Blogg | Erica Nordlöf | Nyutbildad webbutvecklare",
+        metaDescription: "Följ Erica Nordlöfs resa som nyutbildad webbutvecklare och nystartad företagare bakom Nordlöf Nordic och webutvecklare.se.",
+        skip: "Hoppa till huvudinnehåll",
+        toolsLabel: "Tillgänglighetsinställningar",
+        contrast: "Hög kontrast",
+        largeText: "Större text",
+        listen: "Kort uppläsning",
+        stopListen: "Stoppa uppläsning",
+        brandSub: "Blogg · Erica Nordlöf",
+        homeAria: "Gå till startsidan",
+        navActions: "Språk och startsida",
+        languageLabel: "Språk",
+        languageAria: "Välj språk",
+        languageNav: "Språkval",
+        homeBtn: "Startsida",
+        eyebrow: "Blogg · Dagbok · Webbutveckling",
+        heroTitle: "Välkommen till min blogg.",
+        heroLead: "Här kan du följa min resa som nyutbildad webbutvecklare och nystartad företagare. Jag delar korta inlägg från vardagen bakom webutvecklare.se.",
+        heroBtn: "Till startsidan",
+        blogTitle: "Dagbok.",
+        blogIntro: "Nya inlägg läggs överst. Bild, datum och några rader. Klart. Inget romanbygge.",
+        postImageAlt: "Leadscentralen som möjlig leadpartner för webutvecklare.se",
+        postDate: "3 maj 2026",
+        postTitle: "Första spåret: Leadscentralen.",
+        postP1a: "Idag hittade jag",
+        postP1b: "Jag behöver fler leads till",
+        postP1c: "så det kändes värt att testa.",
+        postP2: "Jag är nyutbildad webbutvecklare och har precis startat eget. Just nu bygger jag allt steg för steg: hemsidan, erbjudandet, kontakterna och sättet att hitta kunder.",
+        postP3: "Jag vill hitta företag som behöver hjälp med hemsida, webbfix, formulär, bokningsflöde, landningssida eller andra webblösningar.",
+        postP4: "Vi får se om Leadscentralen kan ge något. Jag börjar smått. Budgeten är ungefär en pizza och en rejäl dos envishet.",
+        noteStrong: "Så lägger du till nytt inlägg:",
+        noteText: "kopiera mallen i koden, lägg den överst i listan, byt datum, rubrik, bildnamn och text. Lägg gärna bilder i en mapp som heter blogg, till exempel blogg/2026-05-04.jpg.",
+        footerText: "Blogg av Erica Nordlöf.",
+        footerHome: "Startsida",
+        footerAbout: "Om mig",
+        speechLang: "sv-SE",
+        speechText: "Välkommen till min blogg. Här kan du följa min resa som nyutbildad webbutvecklare och nystartad företagare. Den tredje maj tvåtusentjugosex hittade jag Leadscentralen. Jag behöver fler leads till webutvecklare.se, så det kändes värt att testa. Jag vill hitta företag som behöver hjälp med hemsida, webbfix, formulär, bokningsflöde, landningssida eller andra webblösningar. Jag börjar smått. Budgeten är ungefär en pizza och en rejäl dos envishet."
+      },
+      en: {
+        htmlLang: "en",
+        pageTitle: "Blog | Erica Nordlöf | Newly trained web developer",
+        metaDescription: "Follow Erica Nordlöf’s journey as a newly trained web developer and new business owner behind Nordlöf Nordic and webutvecklare.se.",
+        skip: "Skip to main content",
+        toolsLabel: "Accessibility settings",
+        contrast: "High contrast",
+        largeText: "Larger text",
+        listen: "Short reading",
+        stopListen: "Stop reading",
+        brandSub: "Blog · Erica Nordlöf",
+        homeAria: "Go to homepage",
+        navActions: "Language and homepage",
+        languageLabel: "Language",
+        languageAria: "Choose language",
+        languageNav: "Language selection",
+        homeBtn: "Homepage",
+        eyebrow: "Blog · Diary · Web development",
+        heroTitle: "Welcome to my blog.",
+        heroLead: "Here you can follow my journey as a newly trained web developer and new business owner. I share short updates from everyday life behind webutvecklare.se.",
+        heroBtn: "Go to homepage",
+        blogTitle: "Diary.",
+        blogIntro: "New posts go at the top. Image, date and a few lines. Done. No novel-writing department.",
+        postImageAlt: "Leadscentralen as a possible lead partner for webutvecklare.se",
+        postDate: "May 3, 2026",
+        postTitle: "First lead track: Leadscentralen.",
+        postP1a: "Today I found",
+        postP1b: "I need more leads for",
+        postP1c: "so it felt worth testing.",
+        postP2: "I am a newly trained web developer and have just started my own business. Right now I am building everything step by step: the website, the offer, the contacts and the way to find customers.",
+        postP3: "I want to find companies that need help with a website, web fixes, forms, booking flows, landing pages or other web solutions.",
+        postP4: "We will see if Leadscentralen gives anything. I am starting small. The budget is about one pizza and a solid dose of stubbornness.",
+        noteStrong: "How to add a new post:",
+        noteText: "copy the template in the code, place it at the top of the list, change the date, heading, image name and text. Preferably place images in a folder called blogg, for example blogg/2026-05-04.jpg.",
+        footerText: "Blog by Erica Nordlöf.",
+        footerHome: "Homepage",
+        footerAbout: "About me",
+        speechLang: "en-GB",
+        speechText: "Welcome to my blog. Here you can follow my journey as a newly trained web developer and new business owner. On May third twenty twenty-six, I found Leadscentralen. I need more leads for webutvecklare.se, so it felt worth testing. I want to find companies that need help with a website, web fixes, forms, booking flows, landing pages or other web solutions. I am starting small. The budget is about one pizza and a solid dose of stubbornness."
+      },
+      da: {
+        htmlLang: "da",
+        pageTitle: "Blog | Erica Nordlöf | Nyuddannet webudvikler",
+        metaDescription: "Følg Erica Nordlöfs rejse som nyuddannet webudvikler og nystartet virksomhedsejer bag Nordlöf Nordic og webutvecklare.se.",
+        skip: "Spring til hovedindhold",
+        toolsLabel: "Tilgængelighedsindstillinger",
+        contrast: "Høj kontrast",
+        largeText: "Større tekst",
+        listen: "Kort oplæsning",
+        stopListen: "Stop oplæsning",
+        brandSub: "Blog · Erica Nordlöf",
+        homeAria: "Gå til forsiden",
+        navActions: "Sprog og forside",
+        languageLabel: "Sprog",
+        languageAria: "Vælg sprog",
+        languageNav: "Sprogvalg",
+        homeBtn: "Forside",
+        eyebrow: "Blog · Dagbog · Webudvikling",
+        heroTitle: "Velkommen til min blog.",
+        heroLead: "Her kan du følge min rejse som nyuddannet webudvikler og nystartet virksomhedsejer. Jeg deler korte indlæg fra hverdagen bag webutvecklare.se.",
+        heroBtn: "Til forsiden",
+        blogTitle: "Dagbog.",
+        blogIntro: "Nye indlæg ligger øverst. Billede, dato og nogle linjer. Færdigt. Ingen romanproduktion.",
+        postImageAlt: "Leadscentralen som mulig leadpartner for webutvecklare.se",
+        postDate: "3. maj 2026",
+        postTitle: "Første spor: Leadscentralen.",
+        postP1a: "I dag fandt jeg",
+        postP1b: "Jeg har brug for flere leads til",
+        postP1c: "så det føltes værd at teste.",
+        postP2: "Jeg er nyuddannet webudvikler og har netop startet egen virksomhed. Lige nu bygger jeg alt trin for trin: hjemmesiden, tilbuddet, kontakterne og måden at finde kunder på.",
+        postP3: "Jeg vil finde virksomheder, der har brug for hjælp med hjemmeside, webfix, formularer, bookingflow, landingsside eller andre webløsninger.",
+        postP4: "Vi må se, om Leadscentralen giver noget. Jeg starter småt. Budgettet er cirka en pizza og en solid portion stædighed.",
+        noteStrong: "Sådan tilføjer du et nyt indlæg:",
+        noteText: "kopiér skabelonen i koden, læg den øverst i listen, skift dato, overskrift, billednavn og tekst. Læg gerne billeder i en mappe, der hedder blogg, for eksempel blogg/2026-05-04.jpg.",
+        footerText: "Blog af Erica Nordlöf.",
+        footerHome: "Forside",
+        footerAbout: "Om mig",
+        speechLang: "da-DK",
+        speechText: "Velkommen til min blog. Her kan du følge min rejse som nyuddannet webudvikler og nystartet virksomhedsejer. Den tredje maj to tusind seksogtyve fandt jeg Leadscentralen. Jeg har brug for flere leads til webutvecklare.se, så det føltes værd at teste. Jeg vil finde virksomheder, der har brug for hjælp med hjemmeside, webfix, formularer, bookingflow, landingsside eller andre webløsninger. Jeg starter småt. Budgettet er cirka en pizza og en solid portion stædighed."
+      },
+      no: {
+        htmlLang: "no",
+        pageTitle: "Blogg | Erica Nordlöf | Nyutdannet webutvikler",
+        metaDescription: "Følg Erica Nordlöfs reise som nyutdannet webutvikler og nystartet bedriftseier bak Nordlöf Nordic og webutvecklare.se.",
+        skip: "Hopp til hovedinnhold",
+        toolsLabel: "Tilgjengelighetsinnstillinger",
+        contrast: "Høy kontrast",
+        largeText: "Større tekst",
+        listen: "Kort opplesning",
+        stopListen: "Stopp opplesning",
+        brandSub: "Blogg · Erica Nordlöf",
+        homeAria: "Gå til forsiden",
+        navActions: "Språk og forside",
+        languageLabel: "Språk",
+        languageAria: "Velg språk",
+        languageNav: "Språkvalg",
+        homeBtn: "Forside",
+        eyebrow: "Blogg · Dagbok · Webutvikling",
+        heroTitle: "Velkommen til bloggen min.",
+        heroLead: "Her kan du følge reisen min som nyutdannet webutvikler og nystartet bedriftseier. Jeg deler korte innlegg fra hverdagen bak webutvecklare.se.",
+        heroBtn: "Til forsiden",
+        blogTitle: "Dagbok.",
+        blogIntro: "Nye innlegg legges øverst. Bilde, dato og noen linjer. Ferdig. Ingen romanavdeling.",
+        postImageAlt: "Leadscentralen som mulig leadpartner for webutvecklare.se",
+        postDate: "3. mai 2026",
+        postTitle: "Første spor: Leadscentralen.",
+        postP1a: "I dag fant jeg",
+        postP1b: "Jeg trenger flere leads til",
+        postP1c: "så det virket verdt å teste.",
+        postP2: "Jeg er nyutdannet webutvikler og har nettopp startet for meg selv. Akkurat nå bygger jeg alt steg for steg: nettsiden, tilbudet, kontaktene og måten å finne kunder på.",
+        postP3: "Jeg vil finne bedrifter som trenger hjelp med nettside, webfiks, skjemaer, bookingflyt, landingsside eller andre webløsninger.",
+        postP4: "Vi får se om Leadscentralen gir noe. Jeg starter smått. Budsjettet er omtrent en pizza og en solid dose stahet.",
+        noteStrong: "Slik legger du til et nytt innlegg:",
+        noteText: "kopier malen i koden, legg den øverst i listen, bytt dato, tittel, bildenavn og tekst. Legg gjerne bilder i en mappe som heter blogg, for eksempel blogg/2026-05-04.jpg.",
+        footerText: "Blogg av Erica Nordlöf.",
+        footerHome: "Forside",
+        footerAbout: "Om meg",
+        speechLang: "nb-NO",
+        speechText: "Velkommen til bloggen min. Her kan du følge reisen min som nyutdannet webutvikler og nystartet bedriftseier. Den tredje mai to tusen tjueseks fant jeg Leadscentralen. Jeg trenger flere leads til webutvecklare.se, så det virket verdt å teste. Jeg vil finne bedrifter som trenger hjelp med nettside, webfiks, skjemaer, bookingflyt, landingsside eller andre webløsninger. Jeg starter smått. Budsjettet er omtrent en pizza og en solid dose stahet."
+      }
+    };
+
     const contrastButton = document.getElementById('toggleContrast');
     const largeTextButton = document.getElementById('toggleLargeText');
-
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
-      }
-    }
+    const listenButton = document.getElementById('listenSummary');
+    const languageSelects = document.querySelectorAll('.language-select');
+    let currentLanguage = 'sv';
+    let isSpeaking = false;
 
     function safeGet(key) {
       try {
@@ -793,6 +1129,87 @@
         return false;
       }
       return true;
+    }
+
+    function setPressed(button, isPressed) {
+      if (button) {
+        button.setAttribute('aria-pressed', String(isPressed));
+      }
+    }
+
+    function getRequestedLanguage() {
+      const params = new URLSearchParams(window.location.search);
+      const queryLang = params.get('lang');
+      const savedLang = safeGet('blogLanguage');
+      if (queryLang && translations[queryLang]) {
+        return queryLang;
+      }
+      if (savedLang && translations[savedLang]) {
+        return savedLang;
+      }
+      return 'sv';
+    }
+
+    function updateQueryLanguage(lang) {
+      const url = new URL(window.location.href);
+      if (lang === 'sv') {
+        url.searchParams.delete('lang');
+      } else {
+        url.searchParams.set('lang', lang);
+      }
+      window.history.replaceState({}, '', url.toString());
+    }
+
+    function syncLanguageSelects(lang) {
+      languageSelects.forEach((select) => {
+        select.value = lang;
+      });
+    }
+
+    function applyAttributeTranslations(dict) {
+      document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
+        const rules = element.getAttribute('data-i18n-attr').split(',');
+        rules.forEach((rule) => {
+          const parts = rule.split(':');
+          if (parts.length !== 2) {
+            return;
+          }
+          const attr = parts[0].trim();
+          const key = parts[1].trim();
+          if (dict[key]) {
+            element.setAttribute(attr, dict[key]);
+          }
+        });
+      });
+    }
+
+    function applyLanguage(lang) {
+      const dict = translations[lang] || translations.sv;
+      currentLanguage = lang;
+
+      document.documentElement.lang = dict.htmlLang;
+      document.title = dict.pageTitle;
+
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', dict.metaDescription);
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.getAttribute('data-i18n');
+        if (dict[key]) {
+          element.textContent = dict[key];
+        }
+      });
+
+      applyAttributeTranslations(dict);
+      syncLanguageSelects(lang);
+      safeSet('blogLanguage', lang);
+      updateQueryLanguage(lang);
+
+      if (listenButton && !isSpeaking) {
+        listenButton.textContent = dict.listen;
+      }
     }
 
     const savedContrast = safeGet('blogHighContrast') === 'true';
@@ -824,6 +1241,69 @@
         setPressed(largeTextButton, isActive);
       });
     }
+
+    languageSelects.forEach((select) => {
+      select.addEventListener('change', () => {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+        }
+        isSpeaking = false;
+        applyLanguage(select.value);
+        setPressed(listenButton, false);
+      });
+    });
+
+    function resetListenButton() {
+      const dict = translations[currentLanguage] || translations.sv;
+      if (listenButton) {
+        listenButton.setAttribute('aria-pressed', 'false');
+        listenButton.textContent = dict.listen;
+      }
+      isSpeaking = false;
+    }
+
+    if (listenButton && 'speechSynthesis' in window) {
+      listenButton.addEventListener('click', () => {
+        const dict = translations[currentLanguage] || translations.sv;
+
+        if (isSpeaking) {
+          window.speechSynthesis.cancel();
+          resetListenButton();
+          return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(dict.speechText);
+        utterance.lang = dict.speechLang;
+        utterance.rate = 0.95;
+        utterance.pitch = 1;
+
+        isSpeaking = true;
+        listenButton.setAttribute('aria-pressed', 'true');
+        listenButton.textContent = dict.stopListen;
+
+        utterance.onend = () => {
+          resetListenButton();
+        };
+
+        utterance.onerror = () => {
+          resetListenButton();
+        };
+
+        window.speechSynthesis.speak(utterance);
+      });
+    } else if (listenButton) {
+      listenButton.hidden = true;
+    }
+
+    window.addEventListener('pagehide', () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    });
+
+    applyLanguage(getRequestedLanguage());
   </script>
 </body>
 </html>
