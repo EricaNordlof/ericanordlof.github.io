@@ -32,6 +32,8 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <link rel="me" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" />
+
   <meta name="theme-color" content="#f7f0ec" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,7 +66,8 @@
         "url": "https://webutvecklare.se/om-mig.html",
         "sameAs": [
           "https://github.com/EricaNordlof",
-          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+          "https://www.linkedin.com/in/erica-nordl%C3%B6f/",
+          "https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic"
         ],
         "knowsAbout": [
           "Webudvikling",
@@ -113,6 +116,7 @@
         "sameAs": [
           "https://github.com/EricaNordlof",
           "https://www.linkedin.com/in/erica-nordl%C3%B6f/",
+          "https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic",
           "https://offroadbumpis.se",
           "https://safestandard.se",
           "https://hansen-byggochgront.se"
@@ -302,7 +306,7 @@
       --shadow:0 18px 50px rgba(36,30,26,.08);
       --shadow-strong:0 26px 70px rgba(36,30,26,.13);
       --radius:24px;
-      --max:1140px;
+      --max:1180px;
     }
 
     *{box-sizing:border-box;}
@@ -450,7 +454,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:14px;
       padding:12px 0;
     }
 
@@ -459,6 +463,8 @@
       align-items:center;
       gap:12px;
       min-width:0;
+      flex:0 0 auto;
+      max-width:280px;
     }
 
     .brand img{
@@ -492,10 +498,19 @@
     .nav-links{
       display:flex;
       align-items:center;
-      gap:16px;
+      justify-content:center;
+      gap:clamp(8px,1vw,15px);
       color:#4f4741;
-      font-size:14px;
-      font-weight:800;
+      font-size:13.5px;
+      font-weight:900;
+      flex:1 1 auto;
+      min-width:0;
+    }
+
+    .nav-links a{
+      white-space:nowrap;
+      line-height:1;
+      padding:10px 0;
     }
 
     .nav-links a:hover{color:var(--brand-dark);}
@@ -1341,15 +1356,58 @@
       .btn:hover{transform:none;}
     }
 
-    @media(max-width:1080px){
+    @media(max-width:1320px){
+      :root{--max:1120px;}
+
+      .nav{gap:10px;}
+
+      .brand{
+        max-width:230px;
+      }
+
+      .brand img{
+        width:42px;
+        height:42px;
+        border-radius:13px;
+      }
+
+      .brand span span{
+        display:none;
+      }
+
+      .nav-links{
+        gap:10px;
+        font-size:13px;
+      }
+
+      .language-label{
+        display:none;
+      }
+
+      .language-select{
+        max-width:156px;
+        min-height:46px;
+        padding:11px 36px 11px 14px;
+      }
+
+      .nav-actions .btn{
+        min-height:46px;
+        padding:13px 18px;
+      }
+    }
+
+    @media(max-width:1180px){
       .nav-links{display:none;}
+
       .hero-grid,
       .cta-box,
       .grid-2,
       .compare,
       .about-strip,
       .footer-box{grid-template-columns:1fr;}
+
       .grid-4,.grid-3,.quick-grid,.contact-row{grid-template-columns:repeat(2,minmax(0,1fr));}
+
       .accessibility-tools{
         position:static;
         width:min(var(--max),calc(100% - 28px));
@@ -1517,6 +1575,7 @@
         <a href="/case.html">Cases</a>
         <a href="/webbfix.html">Webfix</a>
         <a href="/om-mig.html">Om mig</a>
+        <a href="#recension">Anmeldelse</a>
         <a href="/blogg.html?lang=da">Blog</a>
         <a href="#demo-ramme">Ramme</a>
         <a href="#ydelser">Ydelser</a>
@@ -2056,6 +2115,50 @@
       </div>
     </section>
 
+    <section class="section" id="recension">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <span class="tag dark">Google-anmeldelse</span>
+            <h2>Har jeg hjulpet dig? Skriv gerne en anmeldelse på Google.</h2>
+            <p>
+              Anmeldelser skrives på min Google Maps-profil. Det hjælper nye kunder med at se, at Nordlöf Nordic er en rigtig virksomhed bag webutvecklare.se.
+            </p>
+            <p style="margin-top:12px;">
+              LinkedIn bruger jeg primært som verificering: der kan du se, at jeg er en rigtig person, og profilen linker tilbage til webutvecklare.se. Selve anmeldelsen skal skrives på Google Maps.
+            </p>
+          </div>
+
+          <div class="cta-panel">
+            <strong>Anmeldelse på Google.</strong>
+            <p>
+              Har du fået hjælp med hjemmeside, webfix, demo, rådgivning eller andet webarbejde? Skriv gerne et par ærlige linjer.
+            </p>
+
+            <a
+              class="btn btn-light"
+              href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-top:16px;width:100%;"
+            >
+              Skriv anmeldelse på Google Maps
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-top:10px;width:100%;"
+            >
+              Se verificeret LinkedIn-profil
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
@@ -2199,7 +2302,8 @@
             <a href="villkor.html">Vilkår</a>
             <a href="integritet.html">Privatliv</a>
             <a href="affiliate-da.html">Affiliate</a>
-            <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="noopener noreferrer">Skriv Google-anmeldelse</a>
+            <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">Verificeret LinkedIn</a>
             <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
@@ -2238,8 +2342,8 @@
   </footer>
 
   <nav class="mobile-sticky" aria-label="Hurtigvalg på mobil">
-    <a class="btn btn-secondary" href="#behov">Behov</a>
     <a class="btn btn-secondary" href="#priser">Priser</a>
+    <a class="btn btn-secondary" href="#recension">Anmeldelse</a>
     <a class="btn btn-primary" href="#kontakt">Demo</a>
   </nav>
 
@@ -2421,6 +2525,8 @@
           Efter køb kan du få kode, filer og materiale, så du ikke bliver låst.
           Erica Nordlöf er nyuddannet webudvikler og nystartet selvstændig.
           Priserne er lavere lige nu, mens portfolio, kundebase og referencer bygges op.
+          Anmeldelser skrives på Google Maps.
+          LinkedIn bruges primært som verificering og linker tilbage til webutvecklare.se.
           Kontakt sker via formularen på siden, e-mail eller telefon.
         `;
 
