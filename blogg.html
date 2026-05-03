@@ -11,7 +11,6 @@
   />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="author" content="Erica Nordlöf" />
-
   <link rel="canonical" href="https://webutvecklare.se/blogg.html" />
 
   <meta property="og:title" content="Blogg | Erica Nordlöf" />
@@ -48,31 +47,43 @@
         "inLanguage": "sv-SE",
         "description": "Dagbok om resan som nyutbildad webbutvecklare och nystartad företagare.",
         "author": {
-          "@id": "https://webutvecklare.se/#erica"
+          "@type": "Person",
+          "name": "Erica Nordlöf",
+          "url": "https://webutvecklare.se/om-mig.html"
         },
         "publisher": {
-          "@id": "https://webutvecklare.se/#business"
+          "@type": "Organization",
+          "name": "Nordlöf Nordic",
+          "url": "https://webutvecklare.se/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://webutvecklare.se/nordlof-nordic-logo.png"
+          }
         }
       },
       {
-        "@type": "Person",
-        "@id": "https://webutvecklare.se/#erica",
-        "name": "Erica Nordlöf",
-        "jobTitle": "Webbutvecklare",
-        "url": "https://webutvecklare.se/om-mig.html",
-        "sameAs": [
-          "https://github.com/EricaNordlof",
-          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
-        ]
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://webutvecklare.se/#business",
-        "name": "Nordlöf Nordic",
-        "url": "https://webutvecklare.se/",
-        "image": "https://webutvecklare.se/nordlof-nordic-logo.png",
-        "email": "erica@webutvecklare.se",
-        "telephone": "+46793442520"
+        "@type": "BlogPosting",
+        "@id": "https://webutvecklare.se/blogg.html#forsta-sparet-leadscentralen",
+        "headline": "Första spåret: Leadscentralen",
+        "datePublished": "2026-05-03",
+        "dateModified": "2026-05-03",
+        "image": "https://webutvecklare.se/leadscentralen.se.PNG",
+        "author": {
+          "@type": "Person",
+          "name": "Erica Nordlöf"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Nordlöf Nordic",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://webutvecklare.se/nordlof-nordic-logo.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://webutvecklare.se/blogg.html"
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -257,13 +268,6 @@
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-    }
-
-    .top-actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex:0 0 auto;
     }
 
     .btn{
@@ -479,689 +483,11 @@
       margin-top:13px;
     }
 
-    .note{
-      margin-top:18px;
-      background:#fff;
-      border:1px dashed rgba(36,30,26,.22);
-      border-radius:20px;
-      padding:16px 18px;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:14px;
-    }
-
-    .note strong{
-      color:var(--text);
-    }
-
-    footer{
-      padding:28px 0 40px;
-      color:#6f655e;
-      font-size:14px;
-    }
-
-    .footer-box{
-      border-top:1px solid var(--line);
-      padding-top:18px;
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      line-height:1.7;
-    }
-
-    .footer-box a{
+    .post a{
+      color:var(--brand-deep);
+      font-weight:900;
       text-decoration:underline;
       text-underline-offset:3px;
-      font-weight:800;
-    }
-
-    body.high-contrast .topbar,
-    body.high-contrast .hero-card,
-    body.high-contrast .post,
-    body.high-contrast .note{
-      background:#fff;
-      color:#000;
-      border:2px solid #000;
-      box-shadow:none;
-    }
-
-    body.high-contrast .btn-primary,
-    body.high-contrast .btn-secondary,
-    body.high-contrast .tool-btn{
-      background:#000;
-      color:#fff;
-      border:3px solid #000;
-      box-shadow:none;
-    }
-
-    body.high-contrast .tool-btn[aria-pressed="true"]{
-      background:#fff;
-      color:#000;
-    }
-
-    body.high-contrast .eyebrow,
-    body.high-contrast .post time{
-      background:#fff;
-      color:#000;
-      border:2px solid #000;
-    }
-
-    body.high-contrast a{
-      text-decoration:underline;
-      text-decoration-thickness:2px;
-      text-underline-offset:4px;
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto;}
-      *,*::before,*::after{
-        animation-duration:.01ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:.01ms !important;
-      }
-      .btn:hover{transform:none;}
-    }
-
-    @media(max-width:720px){
-      .container{
-        width:min(var(--max),calc(100% - 22px));
-      }
-
-      .nav{
-        min-height:auto;
-        padding:10px 0;
-      }
-
-      .brand img{
-        width:40px;
-        height:40px;
-        border-radius:12px;
-      }
-
-      .brand strong{
-        font-size:15px;
-      }
-
-      .brand span span{
-        display:none;
-      }
-
-      .top-actions{
-        gap:8px;
-      }
-
-      .btn{
-        min-height:42px;
-        padding:11px 13px;
-        font-size:14px;
-      }
-
-      .hero{
-        padding:24px 0 16px;
-      }
-
-      .hero-card{
-        border-radius:24px;
-        padding:22px 16px;
-      }
-
-      h1{
-        font-size:clamp(2rem,11vw,3.1rem);
-      }
-
-      .lead{
-        font-size:15.5px;
-        line-height:1.65;
-      }
-
-      .hero-actions{
-        display:grid;
-        grid-template-columns:1fr;
-      }
-
-      .hero-actions .btn{
-        width:100%;
-      }
-
-      .blog-head{
-        display:block;
-      }
-
-      .blog-head p{
-        margin-top:8px;
-      }
-
-      .post{
-        border-radius:20px;
-      }
-
-      .post-body{
-        padding:18px;
-      }
-
-      .footer-box{
-        display:grid;
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
-
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
-        <span>
-          <strong>Nordlöf Nordic</strong>
-          <span>Blogg · Erica Nordlöf</span>
-        </span>
-      </a>
-
-      <div class="top-actions">
-        <a class="btn btn-secondary" href="/">Startsida</a>
-      </div>
-    </div>
-  </header>
-
-  <div class="container tools" aria-label="Tillgänglighetsinställningar">
-    <button class="tool-btn" type="button" id="toggleContrast" aria-pressed="false">Hög kontrast</button>
-    <button class="tool-btn" type="button" id="toggleLargeText" aria-pressed="false">Större text</button>
-  </div>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero-card">
-          <span class="eyebrow">Blogg · Dagbok · Webbutveckling</span>
-          <h1 id="hero-title">Välkommen till min blogg.</h1>
-          <p class="lead">
-            Här kan du följa min resa som nyutbildad webbutvecklare och nystartad företagare.
-            Jag delar korta inlägg från vardagen bakom webutvecklare.se.
-          </p>
-          <div class="hero-actions">
-           <!doctype html>
-<html lang="sv">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
-  <title>Blogg | Erica Nordlöf | Nyutbildad webbutvecklare</title>
-  <meta
-    name="description"
-    content="Följ Erica Nordlöfs resa som nyutbildad webbutvecklare och nystartad företagare bakom Nordlöf Nordic och webutvecklare.se."
-  />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-  <meta name="author" content="Erica Nordlöf" />
-
-  <link rel="canonical" href="https://webutvecklare.se/blogg.html" />
-
-  <meta property="og:title" content="Blogg | Erica Nordlöf" />
-  <meta property="og:description" content="Följ min resa som nyutbildad webbutvecklare och nystartad företagare." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://webutvecklare.se/blogg.html" />
-  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blogg | Erica Nordlöf" />
-  <meta name="twitter:description" content="Följ min resa som nyutbildad webbutvecklare och nystartad företagare." />
-  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
-
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
-  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
-  <meta name="theme-color" content="#f7f0ec" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  >
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Blog",
-        "@id": "https://webutvecklare.se/blogg.html#blog",
-        "name": "Blogg | Erica Nordlöf",
-        "url": "https://webutvecklare.se/blogg.html",
-        "inLanguage": "sv-SE",
-        "description": "Dagbok om resan som nyutbildad webbutvecklare och nystartad företagare.",
-        "author": {
-          "@id": "https://webutvecklare.se/#erica"
-        },
-        "publisher": {
-          "@id": "https://webutvecklare.se/#business"
-        }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://webutvecklare.se/#erica",
-        "name": "Erica Nordlöf",
-        "jobTitle": "Webbutvecklare",
-        "url": "https://webutvecklare.se/om-mig.html",
-        "sameAs": [
-          "https://github.com/EricaNordlof",
-          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
-        ]
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://webutvecklare.se/#business",
-        "name": "Nordlöf Nordic",
-        "url": "https://webutvecklare.se/",
-        "image": "https://webutvecklare.se/nordlof-nordic-logo.png",
-        "email": "erica@webutvecklare.se",
-        "telephone": "+46793442520"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://webutvecklare.se/blogg.html#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Startsida",
-            "item": "https://webutvecklare.se/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blogg",
-            "item": "https://webutvecklare.se/blogg.html"
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#f7f0ec;
-      --soft:#fbf7f4;
-      --card:#fff;
-      --text:#241e1a;
-      --muted:#665d57;
-      --line:rgba(36,30,26,.10);
-      --brand:#d98672;
-      --brand-dark:#b96f61;
-      --brand-deep:#8f4d45;
-      --brand-soft:#f3d9cc;
-      --shadow:0 18px 50px rgba(36,30,26,.08);
-      --shadow-strong:0 26px 70px rgba(36,30,26,.13);
-      --radius:24px;
-      --max:920px;
-    }
-
-    *{box-sizing:border-box;}
-
-    html{
-      scroll-behavior:smooth;
-      -webkit-text-size-adjust:100%;
-    }
-
-    body{
-      margin:0;
-      font-family:Inter,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(217,134,114,.20), transparent 32%),
-        radial-gradient(circle at 80% 10%, rgba(185,111,97,.12), transparent 24%),
-        linear-gradient(180deg,#fbf7f4 0%,#f4eeea 100%);
-      overflow-x:hidden;
-    }
-
-    body.large-text{font-size:118%;}
-
-    body.large-text p,
-    body.large-text a,
-    body.large-text button,
-    body.large-text time{
-      line-height:1.75;
-    }
-
-    body.high-contrast{
-      --bg:#fff;
-      --soft:#fff;
-      --card:#fff;
-      --text:#000;
-      --muted:#111;
-      --line:#000;
-      --brand:#000;
-      --brand-dark:#000;
-      --brand-deep:#000;
-      --brand-soft:#fff;
-      --shadow:none;
-      --shadow-strong:none;
-      background:#fff;
-      color:#000;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    button{
-      font:inherit;
-      border:0;
-    }
-
-    a:focus-visible,
-    button:focus-visible{
-      outline:3px solid #111;
-      outline-offset:4px;
-      box-shadow:0 0 0 6px rgba(255,255,255,.88);
-    }
-
-    .skip-link{
-      position:absolute;
-      left:12px;
-      top:12px;
-      z-index:999;
-      transform:translateY(-150%);
-      background:#fff;
-      color:var(--text);
-      padding:12px 16px;
-      border-radius:999px;
-      font-weight:900;
-      border:2px solid var(--brand-deep);
-      box-shadow:0 12px 30px rgba(36,30,26,.16);
-      transition:.15s ease;
-    }
-
-    .skip-link:focus{
-      transform:translateY(0);
-    }
-
-    .container{
-      width:min(var(--max),calc(100% - 28px));
-      margin:auto;
-    }
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:60;
-      background:rgba(251,247,244,.94);
-      border-bottom:1px solid rgba(36,30,26,.08);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-    }
-
-    .nav{
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:12px 0;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-    }
-
-    .brand img{
-      width:46px;
-      height:46px;
-      border-radius:14px;
-      object-fit:cover;
-      box-shadow:0 12px 30px rgba(36,30,26,.08);
-      flex:0 0 auto;
-    }
-
-    .brand strong{
-      display:block;
-      font-size:16px;
-      letter-spacing:-.03em;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .brand span span{
-      display:block;
-      color:var(--muted);
-      font-size:12px;
-      margin-top:2px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .top-actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex:0 0 auto;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:46px;
-      padding:13px 18px;
-      border-radius:999px;
-      font-weight:900;
-      border:1px solid transparent;
-      cursor:pointer;
-      text-align:center;
-      transition:.18s ease;
-      line-height:1.1;
-      white-space:nowrap;
-    }
-
-    .btn:hover{
-      transform:translateY(-1px);
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
-      color:#fff;
-      box-shadow:0 14px 30px rgba(185,111,97,.24);
-    }
-
-    .btn-secondary{
-      background:#fff;
-      border-color:var(--line);
-      color:var(--text);
-      box-shadow:0 10px 24px rgba(36,30,26,.05);
-    }
-
-    .tools{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:center;
-      padding:12px 0 0;
-      flex-wrap:wrap;
-    }
-
-    .tool-btn{
-      min-height:42px;
-      padding:10px 13px;
-      border-radius:999px;
-      background:#111;
-      color:#fff;
-      border:2px solid #fff;
-      font-weight:900;
-      cursor:pointer;
-      box-shadow:0 12px 30px rgba(36,30,26,.14);
-      font-size:13px;
-    }
-
-    .tool-btn[aria-pressed="true"]{
-      background:#fff;
-      color:#111;
-      border-color:#111;
-    }
-
-    .hero{
-      padding:clamp(34px,6vw,78px) 0 24px;
-    }
-
-    .hero-card{
-      background:
-        radial-gradient(circle at top right,rgba(255,255,255,.55),transparent 34%),
-        rgba(255,255,255,.88);
-      border:1px solid var(--line);
-      border-radius:34px;
-      padding:clamp(24px,5vw,46px);
-      box-shadow:var(--shadow-strong);
-      text-align:center;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:9px 13px;
-      border-radius:999px;
-      background:#fff;
-      border:1px solid var(--line);
-      color:#7a5148;
-      font-size:13px;
-      font-weight:900;
-      box-shadow:0 10px 30px rgba(36,30,26,.04);
-      max-width:100%;
-    }
-
-    h1,h2{
-      font-family:"Playfair Display",serif;
-      letter-spacing:-.045em;
-    }
-
-    h1{
-      margin:18px auto 14px;
-      font-size:clamp(2.35rem,7vw,4.5rem);
-      line-height:.98;
-      max-width:760px;
-      text-wrap:balance;
-    }
-
-    .lead{
-      margin:0 auto;
-      max-width:670px;
-      color:#4d453f;
-      font-size:clamp(17px,2vw,19px);
-      line-height:1.72;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:12px;
-      margin-top:24px;
-    }
-
-    .blog{
-      padding:28px 0 clamp(46px,7vw,90px);
-    }
-
-    .blog-head{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:18px;
-      margin-bottom:18px;
-    }
-
-    .blog-head h2{
-      margin:0;
-      font-size:clamp(2rem,5vw,3.1rem);
-      line-height:1.02;
-    }
-
-    .blog-head p{
-      margin:0;
-      max-width:460px;
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .post-list{
-      display:grid;
-      gap:18px;
-    }
-
-    .post{
-      background:rgba(255,255,255,.96);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .post figure{
-      margin:0;
-      background:var(--brand-soft);
-    }
-
-    .post img{
-      width:100%;
-      aspect-ratio:16/9;
-      object-fit:cover;
-    }
-
-    .post-body{
-      padding:clamp(18px,4vw,28px);
-    }
-
-    .post time{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 11px;
-      border-radius:999px;
-      background:#f4e5dc;
-      color:#7a5148;
-      font-size:13px;
-      font-weight:900;
-      margin-bottom:13px;
-    }
-
-    .post time::before{
-      content:"";
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:currentColor;
-      opacity:.7;
-    }
-
-    .post h2{
-      margin:0 0 10px;
-      font-size:clamp(1.65rem,4vw,2.35rem);
-      line-height:1.05;
-      letter-spacing:-.04em;
-    }
-
-    .post p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:16px;
-    }
-
-    .post p + p{
-      margin-top:13px;
     }
 
     .note{
@@ -1272,10 +598,6 @@
         display:none;
       }
 
-      .top-actions{
-        gap:8px;
-      }
-
       .btn{
         min-height:42px;
         padding:11px 13px;
@@ -1346,9 +668,7 @@
         </span>
       </a>
 
-      <div class="top-actions">
-        <a class="btn btn-secondary" href="/">Startsida</a>
-      </div>
+      <a class="btn btn-secondary" href="/">Startsida</a>
     </div>
   </header>
 
@@ -1381,222 +701,56 @@
           <p>Nya inlägg läggs överst. Bild, datum och några rader. Klart. Inget romanbygge.</p>
         </div>
 
-        <article class="post">
-  <figure>
-    <img src="leadscentralen.se.PNG" alt="Leadscentralen som möjlig leadpartner för webutvecklare.se" loading="lazy">
-  </figure>
-  <div class="post-body">
-    <time datetime="2026-05-03">3 maj 2026</time>
-    <h2>Första spåret: Leadscentralen.</h2>
-    <p>
-      Idag hittade jag Leadscentralen. Lite meta ändå: jag behöver fler leads till
-      <a href="/">webutvecklare.se</a>, och första spåret blev ett företag som själva jobbar med leads.
-    </p>
-    <p>
-      Jag är nyutbildad webbutvecklare och nystartad företagare, så just nu bygger jag allt från grunden:
-      hemsidan, erbjudandet, kontakterna och modet att faktiskt höra av mig.
-    </p>
-    <p>
-      Målet är enkelt: hitta företag som behöver webbhjälp, bättre hemsida, formulär, bokningsflöde,
-      landningssida eller en webbutvecklare som kan fixa saker snabbt utan byråfluff.
-    </p>
-    <p>
-      Vi får se om det blir något. Första steget är taget. Företagsresan fortsätter.
-      Budgetnivå: en pizza och envishet.
-    </p>
-  </div>
-</article>
+        <div class="post-list">
 
-  <!--
-    KOPIERA DENNA MALL NÄR DU SKA LÄGGA TILL ETT NYTT INLÄGG.
+          <article class="post" id="forsta-sparet-leadscentralen">
             <figure>
-              <img src="blogg/2026-05-03.jpg" alt="Arbete med webbutveckling och Nordlöf Nordic" loading="lazy">
+              <img src="leadscentralen.se.PNG" alt="Leadscentralen som möjlig leadpartner för webutvecklare.se" loading="lazy">
             </figure>
             <div class="post-body">
               <time datetime="2026-05-03">3 maj 2026</time>
-              <h2>Bloggen är igång.</h2>
+              <h2>Första spåret: Leadscentralen.</h2>
               <p>
-                Idag startar jag den här bloggen som en enkel dagbok för resan med webutvecklare.se.
-                Här kommer jag lägga upp korta inlägg om vad jag bygger, testar, lär mig och förbättrar.
+                Idag hittade jag Leadscentralen. Jag behöver fler leads till
+                <a href="/">webutvecklare.se</a>, så det kändes värt att testa.
               </p>
               <p>
-                Inget krångligt. Bara vardagen bakom ett nystartat företag, kod, kundjakt, idéer och små steg framåt.
+                Jag är nyutbildad webbutvecklare och har precis startat eget.
+                Just nu bygger jag allt steg för steg: hemsidan, erbjudandet, kontakterna och sättet att hitta kunder.
+              </p>
+              <p>
+                Jag vill hitta företag som behöver hjälp med hemsida, webbfix, formulär, bokningsflöde,
+                landningssida eller andra webblösningar.
+              </p>
+              <p>
+                Vi får se om Leadscentralen kan ge något. Jag börjar smått.
+                Budgeten är ungefär en pizza och en rejäl dos envishet.
               </p>
             </div>
           </article>
 
-          <article class="post">
-            <figure>
-              <img src="blogg/exempel-bild.jpg" alt="Exempelbild för blogginlägg" loading="lazy">
-            </figure>
-            <div class="post-body">
-              <time datetime="2026-05-02">2 maj 2026</time>
-              <h2>Exempel på ett inlägg.</h2>
-              <p>
-                Här kan du skriva en kort uppdatering från dagen.
-                Lägg in en egen bild, ändra datum, ändra rubrik och skriv några rader.
-              </p>
-            </div>
-          </article>
+          <!--
+            KOPIERA DENNA MALL NÄR DU SKA LÄGGA TILL ETT NYTT INLÄGG.
+            Lägg nya inlägg ÖVERST i .post-list.
+
+            <article class="post">
+              <figure>
+                <img src="blogg/2026-05-04.jpg" alt="Kort beskrivning av bilden" loading="lazy">
+              </figure>
+              <div class="post-body">
+                <time datetime="2026-05-04">4 maj 2026</time>
+                <h2>Rubrik här.</h2>
+                <p>Din text här.</p>
+              </div>
+            </article>
+          -->
 
         </div>
 
         <div class="note">
           <strong>Så lägger du till nytt inlägg:</strong>
           kopiera mallen i koden, lägg den överst i listan, byt datum, rubrik, bildnamn och text.
-          Lägg bilden i en mapp som heter <strong>blogg</strong>, till exempel <strong>blogg/2026-05-04.jpg</strong>.
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-box">
-      <div>
-        <strong>© 2026 Nordlöf Nordic</strong><br>
-        Blogg av Erica Nordlöf.
-      </div>
-      <div>
-        <a href="/">Till startsidan</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const contrastButton = document.getElementById('toggleContrast');
-    const largeTextButton = document.getElementById('toggleLargeText');
-
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute('aria-pressed', String(isPressed));
-      }
-    }
-
-    function safeGet(key) {
-      try {
-        return localStorage.getItem(key);
-      } catch (error) {
-        return null;
-      }
-    }
-
-    function safeSet(key, value) {
-      try {
-        localStorage.setItem(key, value);
-      } catch (error) {
-        return false;
-      }
-      return true;
-    }
-
-    const savedContrast = safeGet('blogHighContrast') === 'true';
-    const savedLargeText = safeGet('blogLargeText') === 'true';
-
-    if (savedContrast) {
-      document.body.classList.add('high-contrast');
-    }
-
-    if (savedLargeText) {
-      document.body.classList.add('large-text');
-    }
-
-    setPressed(contrastButton, savedContrast);
-    setPressed(largeTextButton, savedLargeText);
-
-    if (contrastButton) {
-      contrastButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('high-contrast');
-        safeSet('blogHighContrast', String(isActive));
-        setPressed(contrastButton, isActive);
-      });
-    }
-
-    if (largeTextButton) {
-      largeTextButton.addEventListener('click', () => {
-        const isActive = document.body.classList.toggle('large-text');
-        safeSet('blogLargeText', String(isActive));
-        setPressed(largeTextButton, isActive);
-      });
-    }
-  </script>
-</body>
-</html> <a class="btn btn-primary" href="/">Till startsidan</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="blog" aria-labelledby="blog-title">
-      <div class="container">
-        <div class="blog-head">
-          <h2 id="blog-title">Dagbok.</h2>
-          <p>Nya inlägg läggs överst. Bild, datum och några rader. Klart. Inget romanbygge.</p>
-        </div>
-
-        <article class="post">
-  <figure>
-    <img src="leadscentralen.se.PNG" alt="Leadscentralen som möjlig leadpartner för webutvecklare.se" loading="lazy">
-  </figure>
-  <div class="post-body">
-    <time datetime="2026-05-03">3 maj 2026</time>
-    <h2>Första spåret: Leadscentralen.</h2>
-    <p>
-      Idag hittade jag Leadscentralen. Lite meta ändå: jag behöver fler leads till
-      <a href="/">webutvecklare.se</a>, och första spåret blev ett företag som själva jobbar med leads.
-    </p>
-    <p>
-      Jag är nyutbildad webbutvecklare och nystartad företagare, så just nu bygger jag allt från grunden:
-      hemsidan, erbjudandet, kontakterna och modet att faktiskt höra av mig.
-    </p>
-    <p>
-      Målet är enkelt: hitta företag som behöver webbhjälp, bättre hemsida, formulär, bokningsflöde,
-      landningssida eller en webbutvecklare som kan fixa saker snabbt utan byråfluff.
-    </p>
-    <p>
-      Vi får se om det blir något. Första steget är taget. Företagsresan fortsätter.
-      Budgetnivå: en pizza och envishet.
-    </p>
-  </div>
-</article>
-
-  <!--
-    KOPIERA DENNA MALL NÄR DU SKA LÄGGA TILL ETT NYTT INLÄGG.
-            <figure>
-              <img src="blogg/2026-05-03.jpg" alt="Arbete med webbutveckling och Nordlöf Nordic" loading="lazy">
-            </figure>
-            <div class="post-body">
-              <time datetime="2026-05-03">3 maj 2026</time>
-              <h2>Bloggen är igång.</h2>
-              <p>
-                Idag startar jag den här bloggen som en enkel dagbok för resan med webutvecklare.se.
-                Här kommer jag lägga upp korta inlägg om vad jag bygger, testar, lär mig och förbättrar.
-              </p>
-              <p>
-                Inget krångligt. Bara vardagen bakom ett nystartat företag, kod, kundjakt, idéer och små steg framåt.
-              </p>
-            </div>
-          </article>
-
-          <article class="post">
-            <figure>
-              <img src="blogg/exempel-bild.jpg" alt="Exempelbild för blogginlägg" loading="lazy">
-            </figure>
-            <div class="post-body">
-              <time datetime="2026-05-02">2 maj 2026</time>
-              <h2>Exempel på ett inlägg.</h2>
-              <p>
-                Här kan du skriva en kort uppdatering från dagen.
-                Lägg in en egen bild, ändra datum, ändra rubrik och skriv några rader.
-              </p>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="note">
-          <strong>Så lägger du till nytt inlägg:</strong>
-          kopiera mallen i koden, lägg den överst i listan, byt datum, rubrik, bildnamn och text.
-          Lägg bilden i en mapp som heter <strong>blogg</strong>, till exempel <strong>blogg/2026-05-04.jpg</strong>.
+          Lägg gärna bilder i en mapp som heter <strong>blogg</strong>, till exempel <strong>blogg/2026-05-04.jpg</strong>.
         </div>
       </div>
     </section>
