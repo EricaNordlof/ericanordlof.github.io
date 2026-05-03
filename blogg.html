@@ -67,7 +67,7 @@
         "headline": "Första spåret: Leadscentralen",
         "datePublished": "2026-05-03",
         "dateModified": "2026-05-03",
-        "image": "https://webutvecklare.se/leadscentralen.se.PNG",
+        "image": "https://webutvecklare.se/blogg/leadscentralen.se.PNG",
         "author": {
           "@type": "Person",
           "name": "Erica Nordlöf"
@@ -525,19 +525,6 @@
       text-underline-offset:3px;
     }
 
-    .note{
-      margin-top:18px;
-      background:#fff;
-      border:1px dashed rgba(36,30,26,.22);
-      border-radius:20px;
-      padding:16px 18px;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:14px;
-    }
-
-    .note strong{color:var(--text);}
-
     footer{
       padding:24px 0 34px;
       color:#6f655e;
@@ -570,7 +557,6 @@
     body.high-contrast .topbar,
     body.high-contrast .hero-card,
     body.high-contrast .post,
-    body.high-contrast .note,
     body.high-contrast .accessibility-tools,
     body.high-contrast .language-select{
       background:#fff;
@@ -864,13 +850,13 @@
       <div class="container">
         <div class="blog-head">
           <h2 id="blog-title" data-i18n="blogTitle">Dagbok.</h2>
-          <p data-i18n="blogIntro">Nya inlägg läggs överst. Bild, datum och några rader. Klart. Inget romanbygge.</p>
+          <p data-i18n="blogIntro">Nya inlägg läggs överst. Bild, datum och några rader. Klart.</p>
         </div>
 
         <div class="post-list">
           <article class="post" id="forsta-sparet-leadscentralen">
             <figure>
-              <img src="leadscentralen.se.PNG" alt="Leadscentralen som möjlig leadpartner för webutvecklare.se" loading="lazy" data-i18n-attr="alt:postImageAlt">
+              <img src="blogg/leadscentralen.se.PNG" alt="Leadscentralen som möjlig leadpartner för webutvecklare.se" loading="lazy" data-i18n-attr="alt:postImageAlt">
             </figure>
             <div class="post-body">
               <time datetime="2026-05-03" data-i18n="postDate">3 maj 2026</time>
@@ -900,30 +886,6 @@
               </p>
             </div>
           </article>
-
-          <!--
-            KOPIERA DENNA MALL NÄR DU SKA LÄGGA TILL ETT NYTT INLÄGG.
-            Lägg nya inlägg ÖVERST i .post-list.
-
-            <article class="post">
-              <figure>
-                <img src="blogg/2026-05-04.jpg" alt="Kort beskrivning av bilden" loading="lazy">
-              </figure>
-              <div class="post-body">
-                <time datetime="2026-05-04">4 maj 2026</time>
-                <h2>Rubrik här.</h2>
-                <p>Din text här.</p>
-              </div>
-            </article>
-          -->
-        </div>
-
-        <div class="note">
-          <strong data-i18n="noteStrong">Så lägger du till nytt inlägg:</strong>
-          <span data-i18n="noteText">
-            kopiera mallen i koden, lägg den överst i listan, byt datum, rubrik, bildnamn och text.
-            Lägg gärna bilder i en mapp som heter blogg, till exempel blogg/2026-05-04.jpg.
-          </span>
         </div>
       </div>
     </section>
@@ -967,7 +929,7 @@
         heroLead: "Här kan du följa min resa som nyutbildad webbutvecklare och nystartad företagare. Jag delar korta inlägg från vardagen bakom webutvecklare.se.",
         heroBtn: "Till startsidan",
         blogTitle: "Dagbok.",
-        blogIntro: "Nya inlägg läggs överst. Bild, datum och några rader. Klart. Inget romanbygge.",
+        blogIntro: "Nya inlägg läggs överst. Bild, datum och några rader. Klart.",
         postImageAlt: "Leadscentralen som möjlig leadpartner för webutvecklare.se",
         postDate: "3 maj 2026",
         postTitle: "Första spåret: Leadscentralen.",
@@ -977,8 +939,6 @@
         postP2: "Jag är nyutbildad webbutvecklare och har precis startat eget. Just nu bygger jag allt steg för steg: hemsidan, erbjudandet, kontakterna och sättet att hitta kunder.",
         postP3: "Jag vill hitta företag som behöver hjälp med hemsida, webbfix, formulär, bokningsflöde, landningssida eller andra webblösningar.",
         postP4: "Vi får se om Leadscentralen kan ge något. Jag börjar smått. Budgeten är ungefär en pizza och en rejäl dos envishet.",
-        noteStrong: "Så lägger du till nytt inlägg:",
-        noteText: "kopiera mallen i koden, lägg den överst i listan, byt datum, rubrik, bildnamn och text. Lägg gärna bilder i en mapp som heter blogg, till exempel blogg/2026-05-04.jpg.",
         footerText: "Blogg av Erica Nordlöf.",
         footerHome: "Startsida",
         footerAbout: "Om mig",
@@ -1007,7 +967,7 @@
         heroLead: "Here you can follow my journey as a newly trained web developer and new business owner. I share short updates from everyday life behind webutvecklare.se.",
         heroBtn: "Go to homepage",
         blogTitle: "Diary.",
-        blogIntro: "New posts go at the top. Image, date and a few lines. Done. No novel-writing department.",
+        blogIntro: "New posts go at the top. Image, date and a few lines. Done.",
         postImageAlt: "Leadscentralen as a possible lead partner for webutvecklare.se",
         postDate: "May 3, 2026",
         postTitle: "First lead track: Leadscentralen.",
@@ -1017,8 +977,6 @@
         postP2: "I am a newly trained web developer and have just started my own business. Right now I am building everything step by step: the website, the offer, the contacts and the way to find customers.",
         postP3: "I want to find companies that need help with a website, web fixes, forms, booking flows, landing pages or other web solutions.",
         postP4: "We will see if Leadscentralen gives anything. I am starting small. The budget is about one pizza and a solid dose of stubbornness.",
-        noteStrong: "How to add a new post:",
-        noteText: "copy the template in the code, place it at the top of the list, change the date, heading, image name and text. Preferably place images in a folder called blogg, for example blogg/2026-05-04.jpg.",
         footerText: "Blog by Erica Nordlöf.",
         footerHome: "Homepage",
         footerAbout: "About me",
@@ -1047,7 +1005,7 @@
         heroLead: "Her kan du følge min rejse som nyuddannet webudvikler og nystartet virksomhedsejer. Jeg deler korte indlæg fra hverdagen bag webutvecklare.se.",
         heroBtn: "Til forsiden",
         blogTitle: "Dagbog.",
-        blogIntro: "Nye indlæg ligger øverst. Billede, dato og nogle linjer. Færdigt. Ingen romanproduktion.",
+        blogIntro: "Nye indlæg ligger øverst. Billede, dato og nogle linjer. Færdigt.",
         postImageAlt: "Leadscentralen som mulig leadpartner for webutvecklare.se",
         postDate: "3. maj 2026",
         postTitle: "Første spor: Leadscentralen.",
@@ -1057,8 +1015,6 @@
         postP2: "Jeg er nyuddannet webudvikler og har netop startet egen virksomhed. Lige nu bygger jeg alt trin for trin: hjemmesiden, tilbuddet, kontakterne og måden at finde kunder på.",
         postP3: "Jeg vil finde virksomheder, der har brug for hjælp med hjemmeside, webfix, formularer, bookingflow, landingsside eller andre webløsninger.",
         postP4: "Vi må se, om Leadscentralen giver noget. Jeg starter småt. Budgettet er cirka en pizza og en solid portion stædighed.",
-        noteStrong: "Sådan tilføjer du et nyt indlæg:",
-        noteText: "kopiér skabelonen i koden, læg den øverst i listen, skift dato, overskrift, billednavn og tekst. Læg gerne billeder i en mappe, der hedder blogg, for eksempel blogg/2026-05-04.jpg.",
         footerText: "Blog af Erica Nordlöf.",
         footerHome: "Forside",
         footerAbout: "Om mig",
@@ -1082,12 +1038,12 @@
         languageAria: "Velg språk",
         languageNav: "Språkvalg",
         homeBtn: "Forside",
-        eyebrow: "Blogg · Dagbok · Webutvikling",
+        eyebrow: "Blogg · Dagbok · Webbutvikling",
         heroTitle: "Velkommen til bloggen min.",
         heroLead: "Her kan du følge reisen min som nyutdannet webutvikler og nystartet bedriftseier. Jeg deler korte innlegg fra hverdagen bak webutvecklare.se.",
         heroBtn: "Til forsiden",
         blogTitle: "Dagbok.",
-        blogIntro: "Nye innlegg legges øverst. Bilde, dato og noen linjer. Ferdig. Ingen romanavdeling.",
+        blogIntro: "Nye innlegg legges øverst. Bilde, dato og noen linjer. Ferdig.",
         postImageAlt: "Leadscentralen som mulig leadpartner for webutvecklare.se",
         postDate: "3. mai 2026",
         postTitle: "Første spor: Leadscentralen.",
@@ -1097,8 +1053,6 @@
         postP2: "Jeg er nyutdannet webutvikler og har nettopp startet for meg selv. Akkurat nå bygger jeg alt steg for steg: nettsiden, tilbudet, kontaktene og måten å finne kunder på.",
         postP3: "Jeg vil finne bedrifter som trenger hjelp med nettside, webfiks, skjemaer, bookingflyt, landingsside eller andre webløsninger.",
         postP4: "Vi får se om Leadscentralen gir noe. Jeg starter smått. Budsjettet er omtrent en pizza og en solid dose stahet.",
-        noteStrong: "Slik legger du til et nytt innlegg:",
-        noteText: "kopier malen i koden, legg den øverst i listen, bytt dato, tittel, bildenavn og tekst. Legg gjerne bilder i en mappe som heter blogg, for eksempel blogg/2026-05-04.jpg.",
         footerText: "Blogg av Erica Nordlöf.",
         footerHome: "Forside",
         footerAbout: "Om meg",
