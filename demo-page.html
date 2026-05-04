@@ -37,12 +37,12 @@
       --shadow:0 28px 90px rgba(20,32,27,.16);
       --shadow-soft:0 18px 50px rgba(20,32,27,.10);
       --topbar:#173128;
-      --topbar-height:0px;
       --contact-bg:#151f1b;
       --footer-bg:#0f1714;
       --focus:#b45309;
       --radius:28px;
       --max:1180px;
+      --header-height:80px;
       --font-main:"Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-heading:"Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -79,7 +79,9 @@
     button,
     input,
     select,
-    textarea{font:inherit;}
+    textarea{
+      font:inherit;
+    }
 
     h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
       overflow-wrap:break-word;
@@ -128,9 +130,8 @@
       background:var(--topbar);
       color:#f6efe5;
       border-bottom:1px solid rgba(255,255,255,.10);
-      position:sticky;
-      top:0;
-      z-index:1000;
+      position:relative;
+      z-index:20;
     }
 
     .topbar-inner{
@@ -266,14 +267,25 @@
     }
 
     header{
-      position:sticky;
-      top:var(--topbar-height, 0px);
+      position:relative;
       z-index:999;
       background:color-mix(in srgb, var(--paper) 94%, transparent);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       border-bottom:1px solid color-mix(in srgb, var(--ink) 10%, transparent);
       box-shadow:0 12px 34px rgba(20,32,27,.08);
+    }
+
+    body.menu-fixed header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:3000;
+    }
+
+    body.menu-fixed main{
+      padding-top:var(--header-height, 80px);
     }
 
     .nav{
@@ -343,7 +355,7 @@
       border-radius:26px;
       padding:12px;
       box-shadow:var(--shadow);
-      z-index:1001;
+      z-index:5000;
     }
 
     #siteNav ul{
@@ -432,7 +444,7 @@
 
     section{
       padding:88px 18px;
-      scroll-margin-top:calc(var(--topbar-height, 0px) + 105px);
+      scroll-margin-top:105px;
     }
 
     .wrap{
@@ -730,7 +742,7 @@
       display:grid;
       gap:16px;
       position:sticky;
-      top:calc(var(--topbar-height, 0px) + 105px);
+      top:105px;
     }
 
     .mini-box{
@@ -827,7 +839,9 @@
       margin-bottom:17px;
     }
 
-    .card p{margin-top:10px;}
+    .card p{
+      margin-top:10px;
+    }
 
     .material-list,
     .check-list{
@@ -909,7 +923,9 @@
       margin-bottom:16px;
     }
 
-    .process-step p{margin-top:9px;}
+    .process-step p{
+      margin-top:9px;
+    }
 
     .image-panel,
     .rounded-image{
@@ -939,7 +955,9 @@
       padding:20px;
     }
 
-    .image-strip-wrap{margin-top:34px;}
+    .image-strip-wrap{
+      margin-top:34px;
+    }
 
     .drag-hint{
       display:flex;
@@ -1135,7 +1153,9 @@
       padding:24px;
     }
 
-    .faq-item p{margin-top:9px;}
+    .faq-item p{
+      margin-top:9px;
+    }
 
     .contact{
       background:var(--contact-bg);
@@ -1564,7 +1584,7 @@
       section{
         padding-top:52px;
         padding-bottom:52px;
-        scroll-margin-top:calc(var(--topbar-height, 0px) + 92px);
+        scroll-margin-top:92px;
       }
 
       .hero{
@@ -1933,7 +1953,6 @@
       <div class="hero-grid">
         <div>
           <span class="eyebrow" data-edit>Gratis demo av ny hemsida</span>
-
           <h1 data-edit>Skicka ert material. Få en konkret demo innan ni bestämmer er.</h1>
 
           <p class="lead" data-edit>
@@ -2041,7 +2060,7 @@
           <div class="mini-box">
             <h3 data-edit>Kontakt direkt</h3>
             <p data-edit>För frågor, demo, offert eller samarbete.</p>
-            <a href="tel:+46793442520" data-edit>+46 793 44 25 20</a>
+            <a href="tel:+46000000000" data-edit>[Telefonnummer]</a>
             <a href="mailto:erica@webutvecklare.se" data-edit>erica@webutvecklare.se</a>
           </div>
         </aside>
@@ -2082,7 +2101,6 @@
 
         <div class="material-card" id="checklista">
           <h3 data-edit>Skicka detta, så löser jag resten</h3>
-
           <ul class="material-list">
             <li data-edit><strong>Företagsberättelse:</strong> vilka ni är, varför ni startade och vad ni vill förmedla.</li>
             <li data-edit><strong>Tjänster:</strong> vad ni erbjuder, gärna med kort förklaring av varje tjänst.</li>
@@ -2525,11 +2543,15 @@
     const galleryPrev = document.getElementById("galleryPrev");
     const galleryNext = document.getElementById("galleryNext");
 
+    const siteHeaderElement = document.querySelector("header");
+    const topbarElement = document.querySelector(".topbar");
+
     const STORAGE_KEY = "nordlofGratisDemoEditableV3";
     const ORIGINAL_HTML = {};
     const editableElements = Array.from(document.querySelectorAll("[data-edit]"));
 
     const isLocalFile = window.location.protocol === "file:";
+
     if(isLocalFile){
       body.classList.add("is-local-file");
     }
@@ -2539,12 +2561,6 @@
       el.dataset.editId = id;
       ORIGINAL_HTML[id] = el.innerHTML;
     });
-
-    function updateTopbarHeight(){
-      const topbar = document.querySelector(".topbar");
-      if(!topbar) return;
-      root.style.setProperty("--topbar-height", topbar.offsetHeight + "px");
-    }
 
     function normalizeHex(value, fallback){
       const clean = String(value || "").trim();
@@ -2586,6 +2602,21 @@
 
     function contrastText(hex){
       return brightness(hex) > 150 ? "#111111" : "#FFFFFF";
+    }
+
+    function updateFixedMenu(){
+      if(!siteHeaderElement) return;
+
+      const headerHeight = siteHeaderElement.offsetHeight || 80;
+      const topbarHeight = topbarElement ? topbarElement.offsetHeight : 0;
+
+      root.style.setProperty("--header-height", headerHeight + "px");
+
+      if(window.scrollY > topbarHeight){
+        body.classList.add("menu-fixed");
+      }else{
+        body.classList.remove("menu-fixed");
+      }
     }
 
     function applyDesign(values = {}, shouldSave = true){
@@ -2644,7 +2675,8 @@
         root.style.setProperty("--shadow-soft", "0 18px 50px rgba(20,32,27,.10)");
       }
 
-      updateTopbarHeight();
+      updateFixedMenu();
+
       if(shouldSave) saveState();
     }
 
@@ -2673,8 +2705,8 @@
       });
 
       editToggle.textContent = active ? "Stäng redigering" : "Redigera text";
-      updateTopbarHeight();
       saveState();
+      updateFixedMenu();
     }
 
     function getState(){
@@ -2736,6 +2768,7 @@
       });
 
       saveState();
+      updateFixedMenu();
     }
 
     function saveEditedPage(){
@@ -2754,9 +2787,11 @@
       });
 
       const clonedBody = clone.querySelector("body");
+
       if(clonedBody){
         clonedBody.classList.remove("edit-mode");
         clonedBody.classList.remove("is-local-file");
+        clonedBody.classList.remove("menu-fixed");
       }
 
       const meta = document.createElement("meta");
@@ -2801,6 +2836,7 @@
       if(!imageStrip || !galleryPrev || !galleryNext) return;
 
       const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
+
       galleryPrev.disabled = imageStrip.scrollLeft <= 8;
       galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
     }
@@ -2812,8 +2848,7 @@
 
     designToggle.addEventListener("click", () => {
       designPanel.classList.toggle("open");
-      requestAnimationFrame(updateTopbarHeight);
-      setTimeout(updateTopbarHeight, 80);
+      setTimeout(updateFixedMenu, 50);
     });
 
     editToggle.addEventListener("click", () => {
@@ -2871,19 +2906,21 @@
       });
     }
 
+    window.addEventListener("scroll", updateFixedMenu, {passive:true});
+
     window.addEventListener("resize", () => {
-      updateTopbarHeight();
       updateGalleryButtons();
+      updateFixedMenu();
     });
 
     window.addEventListener("load", () => {
-      updateTopbarHeight();
       updateGalleryButtons();
+      updateFixedMenu();
     });
 
     loadState();
-    updateTopbarHeight();
     updateGalleryButtons();
+    updateFixedMenu();
   </script>
 </body>
 </html>
