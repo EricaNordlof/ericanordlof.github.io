@@ -1,0 +1,2775 @@
+Spara som gratis-demo-no.html. Den länkar tillbaka till norska startsidan: https://webutvecklare.se/no.html.
+
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Gratis demo av ny nettside | Nordlöf Nordic</title>
+  <meta
+    name="description"
+    content="Bestill en gratis demo av ny nettside. Send bedriftens historie, bilder, materiale og ønsker – Nordlöf Nordic bygger først et konkret sideforslag."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#f7f0ec" />
+  <meta name="author" content="Nordlöf Nordic" />
+  <link rel="canonical" href="https://webutvecklare.se/gratis-demo-no.html" />
+  <link rel="alternate" hreflang="sv-SE" href="https://webutvecklare.se/gratis-demo.html" />
+  <link rel="alternate" hreflang="en" href="https://webutvecklare.se/gratis-demo-en.html" />
+  <link rel="alternate" hreflang="da" href="https://webutvecklare.se/gratis-demo-da.html" />
+  <link rel="alternate" hreflang="no" href="https://webutvecklare.se/gratis-demo-no.html" />
+  <link rel="alternate" hreflang="x-default" href="https://webutvecklare.se/gratis-demo.html" />
+  <meta property="og:title" content="Gratis demo av ny nettside | Nordlöf Nordic" />
+  <meta property="og:description" content="Send materiale og ønsker. Få et konkret sideforslag før du bestemmer deg." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webutvecklare.se/gratis-demo-no.html" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&family=Lato:wght@400;700;900&family=Lexend:wght@400;600;700;900&family=Lora:wght@400;600;700&family=Manrope:wght@400;600;700;900&family=Merriweather:wght@400;700;900&family=Montserrat:wght@400;600;700;900&family=Nunito:wght@400;600;700;900&family=Open+Sans:wght@400;600;700;800&family=Oswald:wght@400;600;700&family=Playfair+Display:wght@600;700;900&family=Poppins:wght@400;600;700;900&family=Quicksand:wght@400;600;700&family=Raleway:wght@400;600;700;900&family=Roboto:wght@400;700;900&family=Roboto+Slab:wght@400;600;700;900&family=Rubik:wght@400;600;700;900&family=Source+Sans+3:wght@400;600;700;900&family=Space+Grotesk:wght@400;600;700&family=Work+Sans:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root{
+      --bg:#f7f0ec;
+      --soft:#fbf7f4;
+      --card:#ffffff;
+      --text:#241e1a;
+      --muted:#665d57;
+      --line:rgba(36,30,26,.10);
+      --line-dark:rgba(36,30,26,.18);
+      --brand:#d98672;
+      --brand-dark:#b96f61;
+      --brand-deep:#8f4d45;
+      --brand-soft:#f3d9cc;
+      --brand-contrast:#ffffff;
+      --dark:#241e1a;
+      --dark-2:#160f0d;
+      --shadow:0 18px 50px rgba(36,30,26,.08);
+      --shadow-strong:0 26px 70px rgba(36,30,26,.13);
+      --radius:24px;
+      --max:1240px;
+      --sticky-height:0px;
+      --font-main:"Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-heading:"Playfair Display", Georgia, serif;
+    }
+    *{box-sizing:border-box;}
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
+      text-size-adjust:100%;
+      font-size:16px;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+    body{
+      margin:0;
+      padding-top:var(--sticky-height, 0px);
+      font-family:var(--font-main);
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--brand) 20%, transparent), transparent 32%),
+        radial-gradient(circle at 80% 10%, color-mix(in srgb, var(--brand-dark) 12%, transparent), transparent 24%),
+        linear-gradient(180deg,var(--soft) 0%, color-mix(in srgb, var(--soft) 88%, var(--brand-soft)) 100%);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+      line-height:1.6;
+    }
+    a{color:inherit;}
+    img{display:block;max-width:100%;}
+    button,input,select,textarea{font:inherit;}
+    h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
+      overflow-wrap:break-word;
+      word-break:normal;
+      hyphens:auto;
+      text-shadow:none;
+    }
+    :focus-visible{
+      outline:4px solid #111;
+      outline-offset:4px;
+      border-radius:10px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
+    }
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      z-index:120000;
+      transform:translateY(-150%);
+      background:#fff;
+      color:var(--text);
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:900;
+      border:2px solid var(--brand-deep);
+      box-shadow:0 12px 30px rgba(36,30,26,.16);
+      transition:.15s ease;
+    }
+    .skip-link:focus{transform:translateY(0);}
+    .file-warning{
+      display:none;
+      background:#fff1f2;
+      color:#8a1f11;
+      border-bottom:2px solid rgba(138,31,17,.24);
+      padding:14px 18px;
+      font-weight:900;
+      text-align:center;
+      line-height:1.5;
+    }
+    body.is-local-file .file-warning{display:block;}
+    .sticky-shell{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      width:100%;
+      z-index:99999;
+      box-shadow:0 14px 38px rgba(36,30,26,.08);
+    }
+    .demo-toolbar{
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.16);
+    }
+    .toolbar-inner{
+      width:min(var(--max),calc(100% - 28px));
+      margin:auto;
+      padding:10px 0;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto auto;
+      gap:12px;
+      align-items:center;
+      font-weight:800;
+    }
+    .toolbar-title{
+      font-size:.9rem;
+      line-height:1.35;
+      min-width:0;
+    }
+    .toolbar-actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .tool-btn,
+    .pill{
+      border:1px solid rgba(255,255,255,.32);
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:850;
+      font-size:.84rem;
+      cursor:pointer;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .tool-btn:hover{
+      background:#fff;
+      color:#111827;
+    }
+    .language-select-wrap{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+    }
+    .language-select-label{
+      font-weight:900;
+      color:#fff;
+      white-space:nowrap;
+      font-size:.84rem;
+    }
+    .language-select{
+      min-height:38px;
+      border:1px solid rgba(255,255,255,.32);
+      background:#fff;
+      color:#111827;
+      border-radius:999px;
+      padding:8px 36px 8px 12px;
+      font-weight:900;
+      font-size:.84rem;
+      cursor:pointer;
+      width:auto;
+    }
+    .design-panel{
+      display:none;
+      width:min(var(--max),calc(100% - 28px));
+      margin:auto;
+      padding:0 0 14px;
+    }
+    .design-panel.open{display:block;}
+    .design-tools{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(150px, 1fr));
+      gap:10px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.08);
+      border-radius:22px;
+    }
+    .tool-field{
+      display:grid;
+      gap:6px;
+      color:#fff;
+      font-weight:800;
+      font-size:.82rem;
+      min-width:0;
+    }
+    .tool-field select,
+    .tool-field input[type="text"]{
+      width:100%;
+      min-height:42px;
+      border:1px solid rgba(255,255,255,.30);
+      border-radius:14px;
+      padding:10px 12px;
+      font:inherit;
+      font-weight:750;
+      color:#111827;
+      background:#fff;
+    }
+    .tool-field input[type="color"]{
+      width:100%;
+      height:42px;
+      border:2px solid rgba(255,255,255,.65);
+      border-radius:14px;
+      background:transparent;
+      padding:0;
+      cursor:pointer;
+    }
+    .edit-hint{
+      display:none;
+      background:#fff7ed;
+      border-bottom:1px solid #fdba74;
+      color:#7c2d12;
+      padding:10px 18px;
+      font-weight:850;
+      text-align:center;
+    }
+    body.edit-mode .edit-hint{display:block;}
+    body.edit-mode [data-edit]{
+      outline:2px dashed color-mix(in srgb, var(--brand) 80%, transparent);
+      outline-offset:5px;
+      border-radius:10px;
+      cursor:text;
+      min-height:1em;
+    }
+    body.edit-mode [data-edit]:focus{
+      outline:4px solid #111;
+      background:rgba(255,255,255,.42);
+    }
+    .site-header{
+      background:color-mix(in srgb, var(--soft) 94%, transparent);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+    .nav{
+      width:min(var(--max),calc(100% - 28px));
+      margin:auto;
+      min-height:72px;
+      display:grid;
+      grid-template-columns:minmax(220px,270px) minmax(0,1fr) auto;
+      align-items:center;
+      gap:14px;
+      padding:12px 0;
+      position:relative;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      max-width:270px;
+      color:var(--text);
+      text-decoration:none;
+    }
+    .brand img{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:0 12px 30px rgba(36,30,26,.08);
+      flex:0 0 auto;
+    }
+    .brand strong{
+      display:block;
+      font-size:16px;
+      letter-spacing:-.03em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand span span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      margin-top:2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:clamp(8px,.85vw,14px);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:900;
+      min-width:0;
+      overflow:hidden;
+    }
+    .nav-links a{
+      white-space:nowrap;
+      line-height:1;
+      padding:10px 0;
+      flex:0 0 auto;
+      text-decoration:none;
+    }
+    .nav-links a:hover{color:var(--brand-dark);}
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+      min-width:230px;
+    }
+    .menu-btn{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--brand-deep);
+      border-radius:999px;
+      padding:13px 20px;
+      font-weight:900;
+      cursor:pointer;
+      min-height:48px;
+      font-size:1rem;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+    }
+    #siteNavMobile{display:none;}
+    #siteNavMobile.open{
+      display:block;
+      position:absolute;
+      top:calc(100% + 10px);
+      right:0;
+      width:min(390px, calc(100vw - 28px));
+      background:var(--soft);
+      border:1px solid var(--line-dark);
+      border-radius:24px;
+      padding:12px;
+      box-shadow:var(--shadow-strong);
+      z-index:9000;
+    }
+    #siteNavMobile ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:6px;
+    }
+    #siteNavMobile a{
+      display:flex;
+      width:100%;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#fff;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:850;
+      text-decoration:none;
+    }
+    #siteNavMobile a:hover{
+      color:var(--brand-dark);
+      border-color:var(--brand);
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:48px;
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:900;
+      text-decoration:none;
+      border:1px solid transparent;
+      cursor:pointer;
+      text-align:center;
+      transition:.18s ease;
+      line-height:1.1;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      box-shadow:0 14px 30px color-mix(in srgb, var(--brand-dark) 24%, transparent);
+    }
+    .btn-secondary{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--text);
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+    }
+    .btn-light{
+      background:#fff;
+      color:var(--brand-deep);
+      box-shadow:0 16px 34px rgba(36,30,26,.08);
+    }
+    .btn-gold{
+      background:linear-gradient(135deg,var(--brand),color-mix(in srgb, var(--brand) 58%, #ffffff));
+      color:#241e1a;
+      border-color:color-mix(in srgb, var(--brand) 45%, transparent);
+      box-shadow:0 16px 38px color-mix(in srgb, var(--brand) 20%, transparent);
+    }
+    main{overflow:hidden;}
+    section{
+      padding:82px 18px;
+      scroll-margin-top:calc(var(--sticky-height, 120px) + 24px);
+    }
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 13px;
+      background:#fff;
+      color:var(--brand-deep);
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+      margin-bottom:18px;
+      max-width:100%;
+      box-shadow:0 10px 30px rgba(36,30,26,.04);
+    }
+    h1,h2,h3{
+      font-family:var(--font-heading);
+      margin:0;
+      line-height:1.04;
+      letter-spacing:-.045em;
+      color:var(--text);
+      font-weight:900;
+    }
+    h1{
+      font-size:clamp(2.35rem,6.3vw,4.9rem);
+      max-width:980px;
+      line-height:.98;
+      text-wrap:balance;
+    }
+    h2{
+      font-size:clamp(2rem,5vw,3.25rem);
+      max-width:900px;
+      line-height:1.02;
+      text-wrap:balance;
+    }
+    h3{
+      font-size:23px;
+      letter-spacing:-.035em;
+      line-height:1.15;
+    }
+    p{
+      margin:0;
+      color:var(--muted);
+      font-weight:650;
+    }
+    .lead{
+      font-size:clamp(17px,2vw,19px);
+      line-height:1.72;
+      margin-top:20px;
+      max-width:790px;
+      color:var(--muted);
+    }
+    .hero{
+      padding-top:72px;
+      padding-bottom:80px;
+    }
+    .hero-grid{
+      max-width:var(--max);
+      margin:auto;
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+      gap:30px;
+      align-items:center;
+    }
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+    .trust-row{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:30px;
+      max-width:860px;
+    }
+    .trust-pill{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      box-shadow:0 12px 34px rgba(36,30,26,.04);
+      font-weight:900;
+      line-height:1.35;
+    }
+    .trust-pill strong{
+      display:block;
+      color:var(--text);
+      font-size:1.08rem;
+      line-height:1.2;
+      font-weight:900;
+    }
+    .trust-pill span{
+      display:block;
+      margin-top:5px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:600;
+      line-height:1.45;
+    }
+    .hero-visual{
+      position:relative;
+      min-height:520px;
+    }
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:34px;
+      background:
+        radial-gradient(circle at top right,rgba(255,255,255,.28),transparent 34%),
+        linear-gradient(145deg,var(--brand-deep) 0%,var(--brand) 52%,color-mix(in srgb, var(--brand) 60%, #ffffff) 100%);
+      color:#fff;
+      padding:12px;
+      box-shadow:0 32px 90px color-mix(in srgb, var(--brand-dark) 24%, transparent);
+      z-index:2;
+    }
+    .hero-photo{
+      min-height:500px;
+      border-radius:25px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.32)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=82") center/cover;
+      position:relative;
+      overflow:hidden;
+    }
+    .photo-caption,
+    .image-panel-text,
+    .slide-label,
+    .image-note{
+      background:rgba(255,250,243,.92);
+      border:1px solid rgba(255,255,255,.92);
+      box-shadow:0 18px 38px rgba(0,0,0,.14);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+    .photo-caption{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      border-radius:24px;
+      padding:22px;
+    }
+    .photo-caption strong,
+    .image-panel-text strong,
+    .slide-label strong,
+    .image-note strong{
+      display:block;
+      color:#241e1a;
+      font-weight:900;
+    }
+    .photo-caption span,
+    .image-panel-text span,
+    .slide-label span,
+    .image-note span{
+      display:block;
+      color:#4f4741;
+      margin-top:6px;
+      font-weight:750;
+    }
+    .floating-card{
+      position:absolute;
+      left:-22px;
+      top:42px;
+      z-index:3;
+      width:min(280px,72%);
+      background:rgba(255,250,243,.92);
+      border:1px solid rgba(200,185,164,.85);
+      border-radius:26px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+    .floating-card strong{
+      display:block;
+      font-size:2.1rem;
+      line-height:.95;
+      letter-spacing:-.04em;
+      color:var(--brand-deep);
+      font-weight:900;
+    }
+    .floating-card span{
+      display:block;
+      color:#241e1a;
+      margin-top:9px;
+      font-weight:750;
+      line-height:1.35;
+    }
+    .mini-photo{
+      position:absolute;
+      right:24px;
+      top:24px;
+      width:220px;
+      height:155px;
+      border-radius:28px;
+      border:8px solid rgba(255,250,243,.88);
+      box-shadow:var(--shadow-strong);
+      z-index:4;
+      background:url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=82") center/cover;
+    }
+    .quickfacts,
+    .material-section,
+    .editorial,
+    .methods,
+    .faq-section{
+      background:var(--soft);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:20px;
+    }
+    .section-head p{
+      margin:0;
+      max-width:660px;
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .dashboard{
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      gap:28px;
+      align-items:start;
+    }
+    .split{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:30px;
+      align-items:start;
+    }
+    .material-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:30px;
+      align-items:start;
+    }
+    .text-image-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:center;
+    }
+    .quick-card,
+    .panel,
+    .material-card,
+    .method-card,
+    .faq-item,
+    .mini-box,
+    .access-card,
+    .card{
+      background:color-mix(in srgb, var(--card) 96%, transparent);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+    .quick-card p,
+    .panel p,
+    .material-card p,
+    .method-card p,
+    .access-card p,
+    .card p{
+      margin-top:10px;
+      color:var(--muted);
+      line-height:1.72;
+    }
+    .sidebar-stack{
+      display:grid;
+      gap:16px;
+      position:sticky;
+      top:calc(var(--sticky-height, 120px) + 20px);
+    }
+    .mini-box{
+      border-radius:24px;
+      padding:22px;
+    }
+    .mini-box a{
+      display:block;
+      margin-top:10px;
+      color:var(--brand-deep);
+      font-weight:900;
+      text-decoration:underline;
+      text-underline-offset:4px;
+    }
+    .badge-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      border-radius:999px;
+      padding:8px 12px;
+      background:var(--brand-soft);
+      color:var(--brand-deep);
+      font-weight:850;
+      font-size:.9rem;
+      border:1px solid var(--line);
+    }
+    .facts{
+      display:grid;
+      gap:12px;
+    }
+    .fact{
+      display:grid;
+      grid-template-columns:minmax(135px,.9fr) minmax(0,1.5fr);
+      gap:16px;
+      align-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+    .fact span{
+      color:var(--muted);
+      font-weight:700;
+    }
+    .fact strong{
+      color:var(--text);
+      font-weight:900;
+      text-align:right;
+    }
+    .cards,
+    .method-grid,
+    .access-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+    .access-grid{
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      margin-top:28px;
+    }
+    .method-grid{margin-top:28px;}
+    .card-icon,
+    .access-icon{
+      width:50px;
+      height:50px;
+      border-radius:18px;
+      background:var(--brand-soft);
+      color:var(--brand-deep);
+      display:grid;
+      place-items:center;
+      font-size:1.35rem;
+      margin-bottom:17px;
+      font-weight:900;
+    }
+    .material-list,
+    .check-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:12px;
+    }
+    .material-list li{
+      background:var(--soft);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:15px 16px;
+      color:var(--muted);
+      font-weight:650;
+      line-height:1.55;
+    }
+    .material-list strong{
+      color:var(--text);
+      font-weight:900;
+    }
+    .check-list li{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:19px 20px 19px 56px;
+      position:relative;
+      color:var(--muted);
+      box-shadow:var(--shadow);
+      font-weight:650;
+      line-height:1.55;
+    }
+    .check-list li::before{
+      content:"✓";
+      position:absolute;
+      left:18px;
+      top:19px;
+      width:27px;
+      height:27px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+    }
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+      counter-reset:process;
+      margin-top:30px;
+    }
+    .process-step{
+      counter-increment:process;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .process-step::before{
+      content:counter(process);
+      width:38px;
+      height:38px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      margin-bottom:16px;
+    }
+    .process-step p{margin-top:9px;}
+    .image-panel,
+    .rounded-image{
+      min-height:420px;
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      position:relative;
+      background-size:cover;
+      background-position:center;
+    }
+    .image-panel{
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.28)),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=82") center/cover;
+    }
+    .image-panel-text,
+    .image-note{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      border-radius:22px;
+      padding:20px;
+    }
+    .image-strip-wrap{margin-top:34px;}
+    .drag-hint{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:14px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:.96rem;
+      flex-wrap:wrap;
+    }
+    .gallery-tools{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .gallery-arrow{
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:999px;
+      background:var(--brand-deep);
+      color:#fff;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      font-size:1.3rem;
+      font-weight:900;
+      box-shadow:0 12px 26px color-mix(in srgb, var(--brand) 22%, transparent);
+      transition:.18s ease;
+      flex:0 0 auto;
+    }
+    .gallery-arrow:disabled{
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .image-strip{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      padding:6px 2px 10px;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;
+      scroll-behavior:smooth;
+    }
+    .photo-slide{
+      flex:0 0 min(360px,82vw);
+      min-height:255px;
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      position:relative;
+      scroll-snap-align:start;
+      background-size:cover;
+      background-position:center;
+    }
+    .slide-label{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      border-radius:18px;
+      padding:14px 15px;
+    }
+    .quality-wrap,
+    .access-wrap{
+      background:
+        radial-gradient(circle at top right,rgba(255,255,255,.25),transparent 34%),
+        linear-gradient(145deg,var(--brand-deep) 0%,var(--brand) 52%,color-mix(in srgb, var(--brand) 60%, #ffffff) 100%);
+      color:#fff;
+      border-radius:34px;
+      padding:48px;
+      box-shadow:0 30px 80px color-mix(in srgb, var(--brand-dark) 18%, transparent);
+      border:1px solid rgba(255,255,255,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .quality-grid{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:34px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .score{
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:30px;
+      padding:34px;
+      backdrop-filter:blur(12px);
+    }
+    .score strong{
+      display:block;
+      font-size:clamp(3.2rem,8vw,6.1rem);
+      line-height:.9;
+      letter-spacing:-.05em;
+      color:#fff;
+      font-weight:900;
+    }
+    .score span{
+      display:block;
+      margin-top:16px;
+      color:#fff;
+      font-weight:750;
+      opacity:.92;
+    }
+    .quality-wrap .eyebrow,
+    .access-wrap .eyebrow{
+      background:rgba(255,255,255,.17);
+      color:#fff;
+      border-color:rgba(255,255,255,.28);
+    }
+    .quality-wrap h2,
+    .quality-wrap p,
+    .access-wrap h2,
+    .access-wrap p{
+      color:#fff;
+    }
+    .quality-wrap p,
+    .access-wrap p{
+      margin-top:16px;
+      font-size:1.06rem;
+      opacity:.94;
+    }
+    .access-wrap .access-card{
+      background:rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.22);
+      box-shadow:none;
+    }
+    .access-wrap .access-card h3,
+    .access-wrap .access-card p{color:#fff;}
+    .access-wrap .access-icon{
+      background:rgba(255,255,255,.18);
+      color:#fff;
+    }
+    .steps{
+      counter-reset:step;
+      display:grid;
+      gap:16px;
+    }
+    .step{
+      counter-increment:step;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px 24px 24px 92px;
+      position:relative;
+      box-shadow:var(--shadow);
+      min-width:0;
+    }
+    .step::before{
+      content:counter(step);
+      position:absolute;
+      left:24px;
+      top:24px;
+      width:46px;
+      height:46px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:1.25rem;
+      line-height:1;
+    }
+    .step p{
+      margin-top:8px;
+      line-height:1.55;
+    }
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-top:28px;
+    }
+    .faq-item{
+      border-radius:24px;
+      padding:24px;
+    }
+    .faq-item p{margin-top:9px;}
+    .contact{
+      background:var(--dark);
+      color:#fff;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+    .contact h2,
+    .contact h3,
+    .contact p{color:#fff;}
+    .contact .eyebrow{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      border-color:rgba(255,255,255,.25);
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:28px;
+      align-items:start;
+    }
+    .contact-box,
+    form{
+      background:var(--soft);
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:30px;
+      padding:34px;
+      box-shadow:0 28px 70px rgba(0,0,0,.20);
+    }
+    .contact-box h2,
+    .contact-box h3,
+    form h3{color:var(--text);}
+    .contact-box p{
+      color:var(--muted);
+      margin-top:14px;
+    }
+    .contact-links{
+      display:grid;
+      gap:12px;
+      margin-top:22px;
+    }
+    .contact-link{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:17px;
+      text-decoration:none;
+      font-weight:900;
+      color:var(--text);
+    }
+    .contact-link span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:650;
+      margin-top:3px;
+    }
+    .contact-person{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:18px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:var(--shadow);
+      margin-top:18px;
+    }
+    .person-photo{
+      width:70px;
+      height:70px;
+      border-radius:22px;
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+    }
+    .person-photo::after{
+      content:"N";
+      color:#fff;
+      font-weight:900;
+      font-size:2rem;
+    }
+    .contact-person strong{
+      display:block;
+      color:var(--text);
+      font-weight:900;
+    }
+    .contact-person span{
+      display:block;
+      color:var(--muted);
+      font-weight:650;
+      margin-top:3px;
+    }
+    label{
+      display:block;
+      font-weight:900;
+      margin-bottom:7px;
+      color:var(--text);
+    }
+    input,
+    select,
+    textarea{
+      width:100%;
+      border:1px solid var(--line-dark);
+      border-radius:16px;
+      padding:14px 15px;
+      color:var(--text);
+      background:#fff;
+      font-weight:650;
+    }
+    input::placeholder,
+    textarea::placeholder{color:color-mix(in srgb, var(--muted) 86%, #ffffff);}
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+    input[type="file"]{
+      cursor:pointer;
+      padding:12px;
+      background:#fff;
+    }
+    input[type="file"]::file-selector-button{
+      border:0;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      padding:10px 14px;
+      margin-right:12px;
+      font:inherit;
+      font-weight:850;
+      cursor:pointer;
+    }
+    .drop-zone{
+      border:2px dashed color-mix(in srgb, var(--brand-deep) 40%, transparent);
+      background:rgba(255,255,255,.72);
+      border-radius:22px;
+      padding:16px;
+      transition:.16s ease;
+      cursor:pointer;
+    }
+    .drop-zone:hover,
+    .drop-zone.drag-over{
+      border-color:var(--brand-deep);
+      background:#fff;
+      box-shadow:0 18px 45px color-mix(in srgb, var(--brand) 13%, transparent);
+    }
+    .drop-zone input[type="file"]{margin-top:12px;}
+    .drop-zone-text{
+      display:grid;
+      gap:5px;
+      color:var(--text);
+      font-weight:900;
+    }
+    .drop-zone-text span{
+      color:var(--muted);
+      font-size:.92rem;
+      font-weight:700;
+    }
+    .file-list{
+      display:none;
+      list-style:none;
+      margin:12px 0 0;
+      padding:0;
+      gap:7px;
+    }
+    .file-list.has-files{display:grid;}
+    .file-list li{
+      padding:10px 12px;
+      border-radius:14px;
+      background:var(--soft);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-weight:750;
+      font-size:.9rem;
+    }
+    .required-upload,
+    .local-file-note{
+      background:#fff7ed;
+      border:1px solid #fdba74;
+      border-radius:24px;
+      padding:18px;
+      margin-bottom:18px;
+    }
+    .local-file-note{
+      display:none;
+      background:#fff1f2;
+      border-color:rgba(138,31,17,.24);
+    }
+    body.is-local-file .local-file-note{display:block;}
+    .required-upload strong,
+    .local-file-note strong{
+      display:block;
+      color:#7c2d12;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+    .local-file-note strong{color:#8a1f11;}
+    .required-upload p,
+    .local-file-note p{
+      color:#7c2d12;
+      font-weight:750;
+      margin-top:0;
+    }
+    .local-file-note p{color:#8a1f11;}
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .field{margin-bottom:16px;}
+    .full{grid-column:1 / -1;}
+    .form-note{
+      font-size:.92rem;
+      color:var(--muted) !important;
+      margin-top:12px;
+      font-weight:650;
+      line-height:1.55;
+    }
+    .form-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+    .footer{
+      background:var(--dark-2);
+      color:#fff;
+      padding:34px 18px;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+    .footer-inner{
+      max-width:var(--max);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:20px;
+      align-items:center;
+    }
+    .footer-copy{
+      color:#d9e0dc;
+      font-size:.95rem;
+      font-weight:650;
+    }
+    .footer-copy strong{color:#fff;}
+    .footer-right{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      margin-top:12px;
+    }
+    .footer-links a{
+      color:#fff;
+      opacity:.88;
+      text-decoration:underline;
+      text-underline-offset:4px;
+      font-weight:750;
+    }
+    .footer-links a:hover{opacity:1;}
+    .socials{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .social-icon{
+      width:46px;
+      height:46px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+    .social-icon svg{
+      width:20px;
+      height:20px;
+      fill:currentColor;
+    }
+    .social-icon.facebook{background:#1877f2;}
+    .social-icon.instagram{background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);}
+    .social-icon.linkedin{background:#0a66c2;}
+    .footer .btn-secondary{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+    }
+    @media(max-width:1280px){
+      .nav{grid-template-columns:auto auto;}
+      .nav-links{display:none;}
+      .menu-btn{display:inline-flex;}
+      .nav-actions{min-width:0;}
+      .hero-grid,
+      .dashboard,
+      .split,
+      .material-grid,
+      .quality-grid,
+      .contact-grid,
+      .text-image-grid,
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+      .cards,
+      .method-grid,
+      .process,
+      .faq-grid,
+      .access-grid,
+      .trust-row{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .sidebar-stack{position:static;}
+      .hero-visual{min-height:auto;}
+      .floating-card,
+      .mini-photo{display:none;}
+      .fact{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+      .fact strong{text-align:left;}
+    }
+    @media(max-width:820px){
+      html{font-size:15px;}
+      body{padding-bottom:0;}
+      .toolbar-inner{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+      .toolbar-actions{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:2px;
+      }
+      .tool-btn,
+      .pill{
+        font-size:.8rem;
+        padding:8px 10px;
+      }
+      .language-select-wrap{min-width:190px;}
+      .language-select{width:100%;}
+      .design-tools{
+        grid-template-columns:1fr;
+        padding:10px;
+        border-radius:18px;
+      }
+      .nav{
+        min-height:66px;
+        gap:10px;
+      }
+      .brand img{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+      }
+      .brand strong{
+        font-size:15px;
+        max-width:45vw;
+      }
+      .brand span span{display:none;}
+      .nav-actions .btn{display:none;}
+      .menu-btn{
+        min-height:42px;
+        padding:10px 13px;
+      }
+      #siteNavMobile.open{
+        left:0;
+        right:0;
+        width:auto;
+        max-height:74vh;
+        overflow:auto;
+        border-radius:18px;
+      }
+      section{
+        padding-top:52px;
+        padding-bottom:52px;
+      }
+      .hero{
+        padding-top:38px;
+        padding-bottom:52px;
+      }
+      .hero-grid{
+        display:flex;
+        flex-direction:column;
+        gap:18px;
+      }
+      h1{
+        font-size:clamp(2.05rem,10vw,3.25rem);
+        line-height:.98;
+        letter-spacing:-.055em;
+      }
+      h2{
+        font-size:clamp(1.85rem,9vw,2.55rem);
+        line-height:1.05;
+      }
+      h3{font-size:21px;}
+      .lead{
+        font-size:15.5px;
+        line-height:1.65;
+        margin-top:16px;
+      }
+      .hero-actions,
+      .form-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:9px;
+      }
+      .btn{
+        width:100%;
+        min-height:46px;
+        padding:12px 14px;
+        white-space:normal;
+        line-height:1.18;
+        font-size:14px;
+      }
+      .trust-row,
+      .cards,
+      .method-grid,
+      .process,
+      .faq-grid,
+      .access-grid,
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+      .quick-card,
+      .panel,
+      .material-card,
+      .method-card,
+      .faq-item,
+      .mini-box,
+      .access-card,
+      .card,
+      .process-step,
+      .step,
+      .contact-box,
+      form{
+        border-radius:22px;
+        padding:20px;
+      }
+      .hero-card{
+        width:100%;
+        padding:7px;
+        border-radius:24px;
+      }
+      .hero-photo{
+        min-height:310px;
+        border-radius:18px;
+        display:flex;
+        align-items:flex-end;
+        padding:10px;
+      }
+      .photo-caption{
+        position:static;
+        width:100%;
+        border-radius:16px;
+        padding:14px;
+      }
+      .section-head{
+        display:block;
+        margin-bottom:22px;
+      }
+      .section-head p{
+        margin-top:12px;
+        font-size:15px;
+        line-height:1.65;
+      }
+      .image-panel,
+      .rounded-image{
+        min-height:285px;
+        border-radius:22px;
+      }
+      .image-panel-text,
+      .slide-label,
+      .image-note{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        border-radius:15px;
+        padding:12px;
+      }
+      .photo-slide{
+        flex-basis:82vw;
+        min-height:210px;
+        border-radius:20px;
+      }
+      .quality-wrap,
+      .access-wrap{
+        border-radius:24px;
+        padding:20px;
+      }
+      .score{
+        border-radius:20px;
+        padding:20px;
+      }
+      .step{
+        padding:72px 18px 18px 18px !important;
+      }
+      .step::before{
+        left:18px !important;
+        top:18px !important;
+        width:44px !important;
+        height:44px !important;
+      }
+      input,
+      select,
+      textarea{
+        min-height:46px;
+        border-radius:12px;
+        padding:12px 13px;
+        font-size:16px;
+      }
+      textarea{min-height:125px;}
+      .full{grid-column:auto;}
+      .footer-right{justify-content:flex-start;}
+    }
+    @media(max-width:430px){
+      h1{font-size:2.02rem;}
+      h2{font-size:1.55rem;}
+      .quick-card,
+      .panel,
+      .material-card,
+      .method-card,
+      .faq-item,
+      .mini-box,
+      .access-card,
+      .card,
+      .process-step,
+      .step,
+      .contact-box,
+      form{
+        padding:17px;
+      }
+      .hero-photo{min-height:280px;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+        transition:none !important;
+      }
+      .btn:hover{transform:none;}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Hopp til innhold</a>
+  <div class="file-warning">
+    Du har åpnet en lagret HTML-fil fra datamaskinen. Denne filen skal bare legges ved i skjemaet på den riktige nettadressen. Gå tilbake til https-siden og legg ved filen der.
+  </div>
+  <div class="sticky-shell">
+    <div class="demo-toolbar">
+      <div class="toolbar-inner">
+        <span class="toolbar-title" data-edit>Gratis demo: få et konkret sideforslag før du bestemmer deg</span>
+        <div class="toolbar-actions">
+          <button class="tool-btn" type="button" id="designToggle">Endre design</button>
+          <button class="tool-btn" type="button" id="editToggle">Rediger tekst</button>
+          <button class="tool-btn" type="button" id="savePageBtnTop">Lagre endret side</button>
+          <button class="tool-btn" type="button" id="resetTextBtn">Tilbakestill tekst</button>
+        </div>
+        <div class="toolbar-actions language-select-wrap" aria-label="Velg språk">
+          <label class="language-select-label" for="languageSelect">Språk:</label>
+          <select id="languageSelect" class="language-select">
+            <option value="https://webutvecklare.se/gratis-demo.html">🇸🇪 Svenska</option>
+            <option value="https://webutvecklare.se/gratis-demo-en.html">🇬🇧 English</option>
+            <option value="https://webutvecklare.se/gratis-demo-da.html">🇩🇰 Dansk</option>
+            <option value="https://webutvecklare.se/gratis-demo-no.html">🇳🇴 Norsk</option>
+          </select>
+        </div>
+      </div>
+      <div class="design-panel" id="designPanel">
+        <div class="design-tools">
+          <div class="tool-field">
+            <label for="stylePreset">Ferdig stil</label>
+            <select id="stylePreset">
+              <option value="">Velg kombinasjon</option>
+              <option value="classic">Webutvecklare.se standard</option>
+              <option value="white">Minimal hvit</option>
+              <option value="blue">Corporate blå</option>
+              <option value="forest">Lokal service</option>
+              <option value="luxury">Luksus mørk/gull</option>
+              <option value="pink">Creative rosa</option>
+              <option value="orange">Varm oransje</option>
+              <option value="black">Svart/hvit</option>
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="fontSelect">Fontstil</label>
+            <select id="fontSelect">
+              <option value="Playfair Display">Playfair Display – premium</option>
+              <option value="Inter">Inter – moderne</option>
+              <option value="Montserrat">Montserrat – tydelig</option>
+              <option value="Manrope">Manrope – premium sans</option>
+              <option value="DM Sans">DM Sans – SaaS</option>
+              <option value="Poppins">Poppins – myk</option>
+              <option value="Open Sans">Open Sans – nøytral</option>
+              <option value="Lato">Lato – vennlig</option>
+              <option value="Roboto">Roboto – teknisk</option>
+              <option value="Lexend">Lexend – lettlest</option>
+              <option value="Space Grotesk">Space Grotesk – startup</option>
+              <option value="Lora">Lora – editorial</option>
+              <option value="Merriweather">Merriweather – seriøs</option>
+              <option value="Oswald">Oswald – kompakt</option>
+              <option value="Bebas Neue">Bebas Neue – sterk overskrift</option>
+              <option value="Verdana">Verdana – superlesbar</option>
+              <option value="Arial">Arial – enkel</option>
+              <option value="Georgia">Georgia – klassisk</option>
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="bgColor">Bakgrunn</label>
+            <input id="bgColor" type="color" value="#fbf7f4" />
+          </div>
+          <div class="tool-field">
+            <label for="paperColor">Kort</label>
+            <input id="paperColor" type="color" value="#ffffff" />
+          </div>
+          <div class="tool-field">
+            <label for="inkColor">Tekst</label>
+            <input id="inkColor" type="color" value="#241e1a" />
+          </div>
+          <div class="tool-field">
+            <label for="brandColor">Accent</label>
+            <input id="brandColor" type="color" value="#d98672" />
+          </div>
+          <div class="tool-field">
+            <label for="brandDeepColor">Mørk accent</label>
+            <input id="brandDeepColor" type="color" value="#8f4d45" />
+          </div>
+          <div class="tool-field">
+            <label for="radiusSelect">Runding</label>
+            <select id="radiusSelect">
+              <option value="18px">Liten</option>
+              <option value="24px" selected>Normal</option>
+              <option value="34px">Stor</option>
+            </select>
+          </div>
+          <div class="tool-field">
+            <label for="contrastSelect">Kontrast</label>
+            <select id="contrastSelect">
+              <option value="normal">Normal</option>
+              <option value="strong">Sterkere</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="edit-hint">
+      Redigeringsmodus er på. Klikk direkte på overskrifter og tekster på siden. Når du er ferdig: klikk “Lagre endret side” og legg ved filen nederst i skjemaet.
+    </div>
+    <header class="site-header">
+      <div class="nav">
+        <a class="brand" href="https://webutvecklare.se/no.html" aria-label="Gå til norsk forside">
+          <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logo">
+          <span>
+            <strong data-edit>Nordlöf Nordic</strong>
+            <span data-edit>Kodede webløsninger for bedrifter</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Hovednavigasjon">
+          <a href="/no.html">Forside</a>
+          <a href="/gratis-demo-no.html" aria-current="page">Gratis demo</a>
+          <a href="/case.html">Cases</a>
+          <a href="/webbfix.html">Webfix</a>
+          <a href="/blogg.html?lang=no">Blogg</a>
+          <a href="#material">Materiale</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <nav id="siteNavMobile" aria-label="Mobilmeny">
+          <ul>
+            <li><a href="/no.html">Forside</a></li>
+            <li><a href="/gratis-demo-no.html">Gratis demo</a></li>
+            <li><a href="/case.html">Cases</a></li>
+            <li><a href="/webbfix.html">Webfix</a></li>
+            <li><a href="/blogg.html?lang=no">Blogg</a></li>
+            <li><a href="#gratis-demo">Demo</a></li>
+            <li><a href="#material">Materiale</a></li>
+            <li><a href="#hurtigfakta">Hurtigfakta</a></li>
+            <li><a href="#tjenester">Tjenester</a></li>
+            <li><a href="#tilgjengelighet">Tilgjengelighet</a></li>
+            <li><a href="#prosess">Prosess</a></li>
+            <li><a href="#bilder">Bilder</a></li>
+            <li><a href="#tillit">Tillit</a></li>
+            <li><a href="#faq">Spørsmål</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="#kontakt" data-edit>Bestill gratis demo</a>
+          <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNavMobile">Meny</button>
+        </div>
+      </div>
+    </header>
+  </div>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow" data-edit>Gratis demo av ny nettside</span>
+          <h1 data-edit>Send materialet deres. Få en konkret demo før dere bestemmer dere.</h1>
+          <p class="lead" data-edit>
+            Jeg bygger et første sideforslag basert på bedriftens historie, tjenester, bilder, lenker og ønsker. Dere ser oppsettet først og kan gi tilbakemelding før noe går videre.
+          </p>
+          <p class="lead" data-edit>
+            Tanken er enkel: dere skal ikke måtte gjette hvordan en ny nettside kan se ut. Jeg viser det konkret.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt" data-edit>Bestill gratis demo</a>
+            <a class="btn btn-gold" href="#material" data-edit>Se hva jeg trenger</a>
+            <a class="btn btn-secondary" href="https://webutvecklare.se/no.html" data-edit>Til norsk forside</a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-pill">
+              <strong data-edit>Gratis demo først</strong>
+              <span data-edit>se forslaget før beslutning</span>
+            </div>
+            <div class="trust-pill">
+              <strong data-edit>Deres materiale styrer</strong>
+              <span data-edit>historie, bilder og tjenester former siden</span>
+            </div>
+            <div class="trust-pill">
+              <strong data-edit>Tilgjengelighetsvalg ved behov</strong>
+              <span data-edit>språkvalg, opplesning, høy kontrast og større tekst kan legges til i sluttversjonen</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card">
+            <strong data-edit>Gratis demo</strong>
+            <span data-edit>Dere sender materiale. Jeg viser et konkret sideforslag.</span>
+          </div>
+          <div class="hero-card">
+            <div class="hero-photo">
+              <div class="photo-caption">
+                <strong data-edit>Bytt til deres egne bilder.</strong>
+                <span data-edit>Ekte historie, ekte bilder og tydelige tjenester slår mal-fyll hver eneste uke.</span>
+              </div>
+            </div>
+          </div>
+          <div class="mini-photo" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+    <section class="material-section" id="gratis-demo">
+      <div class="wrap material-grid">
+        <div>
+          <span class="eyebrow" data-edit>Gratis demo</span>
+          <h2 data-edit>Dere får et første sideforslag før dere trenger å ta beslutningen.</h2>
+          <p class="lead" data-edit>
+            Send bedriftens historie, bilder, tjenester, priser, lenker og hva dere vil at siden skal gjøre. Jeg bygger en demo som viser struktur, følelse og kundereise.
+          </p>
+          <p class="lead" data-edit>
+            Hvis dere vil gå videre etter demoen, kan siden gjøres skarp med riktig innhold, SEO-grunnlag, teknisk struktur, kontaktflyt og koblinger som Google Maps.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt" data-edit>Bestill gratis demo</a>
+            <a class="btn btn-secondary" href="#material" data-edit>Hva skal jeg sende?</a>
+          </div>
+        </div>
+        <div class="material-card">
+          <h3 data-edit>Dette inngår i demoen</h3>
+          <ul class="material-list">
+            <li data-edit><strong>Første sidestruktur:</strong> hero, tjenester, tillit, prosess, spørsmål og kontakt.</li>
+            <li data-edit><strong>Designretning:</strong> farger, typografi og layout som passer bedriftens uttrykk.</li>
+            <li data-edit><strong>Materialplassering:</strong> tydelig plan for bilder, filmer, lenker og innhold.</li>
+            <li data-edit><strong>Tilgjengelighetsplan:</strong> hvis dere ønsker det, kan språkvalg, kort opplesning, høy kontrast og større tekst planlegges inn i sluttversjonen.</li>
+            <li data-edit><strong>Neste steg:</strong> hva som trengs før skarp publisering.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="quickfacts" id="hurtigfakta">
+      <div class="wrap dashboard">
+        <aside class="sidebar-stack">
+          <div class="quick-card">
+            <span class="eyebrow" data-edit>Hurtigfakta</span>
+            <h2 data-edit>Det viktigste først.</h2>
+            <p data-edit>
+              Demoen skal raskt vise hva bedriften gjør, hvem den hjelper, hvorfor kunden skal bry seg, og hvordan neste steg ser ut.
+            </p>
+            <div class="badge-list">
+              <span class="badge" data-edit>Demo først</span>
+              <span class="badge" data-edit>Deres materiale</span>
+              <span class="badge" data-edit>SEO-grunnlag</span>
+              <span class="badge" data-edit>Kodet side</span>
+              <span class="badge" data-edit>Tilgjengelighetsvalg</span>
+            </div>
+          </div>
+          <div class="mini-box">
+            <h3 data-edit>Direkte kontakt</h3>
+            <p data-edit>For spørsmål, demo, tilbud eller samarbeid.</p>
+            <a href="tel:+46793442520" data-edit>+46 79-344 25 20</a>
+            <a href="mailto:erica@webutvecklare.se" data-edit>erica@webutvecklare.se</a>
+          </div>
+        </aside>
+        <div class="facts">
+          <div class="fact"><span data-edit>Bedrift</span><strong data-edit>[Bedriftsnavn]</strong></div>
+          <div class="fact"><span data-edit>Sted / område</span><strong data-edit>[Sted / område]</strong></div>
+          <div class="fact"><span data-edit>Tilbud</span><strong data-edit>[Kort tilbud]</strong></div>
+          <div class="fact"><span data-edit>Målgruppe</span><strong data-edit>[Kunder dere vil nå]</strong></div>
+          <div class="fact"><span data-edit>Materiale</span><strong data-edit>Tekst, bilder, filmer, lenker og logo</strong></div>
+          <div class="fact"><span data-edit>Google</span><strong data-edit>Maps-lenke, områder og søkeord</strong></div>
+          <div class="fact"><span data-edit>Inspirasjon</span><strong data-edit>URL-er til sider dere liker</strong></div>
+          <div class="fact"><span data-edit>Tilgjengelighet</span><strong data-edit>Språkvalg, opplesning, høy kontrast og større tekst hvis ønsket</strong></div>
+          <div class="fact"><span data-edit>Neste steg</span><strong data-edit>Demo → feedback → skarp versjon</strong></div>
+          <div class="fact"><span data-edit>Teknikk</span><strong data-edit>Kodet side, SEO-grunnlag og kontaktflyt</strong></div>
+        </div>
+      </div>
+    </section>
+    <section class="material-section" id="material">
+      <div class="wrap material-grid">
+        <div>
+          <span class="eyebrow" data-edit>Materiale fra kunden</span>
+          <h2 data-edit>For å bygge en god gratis demo trenger jeg historien og materialet deres.</h2>
+          <p class="lead" data-edit>
+            Finjustering av tekstens synlighet, farger, avstander, seksjoner og hele designet fikser jeg. Det jeg trenger fra dere er bedriftens ekte historie, all viktig informasjon, bilder, eventuelle filmer og lenker som skal være med på nettsiden.
+          </p>
+          <p class="lead" data-edit>
+            Hvis dere prøver å bygge alt selv i for eksempel Loopia eller lignende verktøy, kan det fort gå mange timer bare på å få designet til å føles riktig. Og da står arbeidet bak siden fortsatt igjen: struktur, teknisk grunnlag, SEO, indeksering i Google, kontaktflyt og koblinger som Google Maps.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt" data-edit>Bestill gratis demo</a>
+            <a class="btn btn-secondary" href="#sjekkliste" data-edit>Se sjekkliste</a>
+          </div>
+        </div>
+        <div class="material-card" id="sjekkliste">
+          <h3 data-edit>Send dette, så fikser jeg resten</h3>
+          <ul class="material-list">
+            <li data-edit><strong>Bedriftshistorie:</strong> hvem dere er, hvorfor dere startet og hva dere vil formidle.</li>
+            <li data-edit><strong>Tjenester:</strong> hva dere tilbyr, gjerne med kort forklaring av hver tjeneste.</li>
+            <li data-edit><strong>Målgruppe:</strong> hvilke kunder dere helst vil nå.</li>
+            <li data-edit><strong>Priser:</strong> faste priser, fra-priser eller om tilbud gjelder.</li>
+            <li data-edit><strong>Bilder og filer:</strong> logo, personalbilder, miljøbilder, produktbilder, PDF-er, prislister, brosjyrer eller tidligere arbeid.</li>
+            <li data-edit><strong>Kontaktopplysninger:</strong> telefon, e-post, sted, adresse og sosiale medier.</li>
+            <li data-edit><strong>Eksempler og inspirasjon:</strong> hvis dere vil ha med noe lignende fra en annen side, send URL-en og skriv hva dere liker.</li>
+            <li data-edit><strong>Google og kart:</strong> Google Maps-lenke, bedriftsprofil, adresse, områder og søkeord dere vil bli funnet på.</li>
+            <li data-edit><strong>Film:</strong> eventuelle videoklipp, YouTube-lenker, Instagram/Reels eller annet levende materiale.</li>
+            <li data-edit><strong>Tilgjengelighetsønsker:</strong> skriv hvis dere vil ha språkvalg, kort opplesning, høy kontrast eller større tekst i sluttversjonen.</li>
+            <li data-edit><strong>Må-ha:</strong> det som absolutt må være med på nettsiden.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="om">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-edit>Om bedriften</span>
+            <h2 data-edit>Fortell hva dere gjør, uten at besøkeren må gjette.</h2>
+          </div>
+          <p data-edit>
+            Denne delen skal selge inn bedriften enkelt: hva dere gjør, hvorfor det er relevant, og hvorfor kunden skal velge akkurat dere.
+          </p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3 data-edit>Tydelig tilbud</h3>
+            <p data-edit>Beskriv hovedtjenesten her. Hold det konkret: hva kunden får og hvilket problem det løser.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🤝</div>
+            <h3 data-edit>Trygg kontakt</h3>
+            <p data-edit>Løft hvordan kunden får hjelp, hvordan kommunikasjonen fungerer og hvordan neste steg ser ut.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">📍</div>
+            <h3 data-edit>Lokal forankring</h3>
+            <p data-edit>Skriv hvor bedriften finnes, hvilke områder dere dekker, og hvorfor det er relevant for kunden.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="tjenester" class="methods">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-edit>Tjenester</span>
+            <h2 data-edit>Vis hva kunden kan kjøpe, booke eller spørre om.</h2>
+          </div>
+          <p data-edit>Tjenestene skal være lette å skumme. Ingen romaner. Salgsstyring, ikke kommunal årsrapport.</p>
+        </div>
+        <div class="method-grid">
+          <article class="method-card"><h3 data-edit>[Tjeneste 1]</h3><p data-edit>Kort beskrivelse av tjenesten, hvem den passer for, og hvilket resultat kunden kan forvente.</p></article>
+          <article class="method-card"><h3 data-edit>[Tjeneste 2]</h3><p data-edit>Kort beskrivelse av tjenesten, gjerne med konkret nytte i første setning.</p></article>
+          <article class="method-card"><h3 data-edit>[Tjeneste 3]</h3><p data-edit>Kort beskrivelse av tjenesten. Løft forskjellen mot konkurrenter hvis det finnes en tydelig en.</p></article>
+          <article class="method-card"><h3 data-edit>[Tillegg / pakke]</h3><p data-edit>Passer bra for ekstra tilbud, pakkeløsning, serviceavtale eller vanlig tilleggstjeneste.</p></article>
+          <article class="method-card"><h3 data-edit>[Spesialløsning]</h3><p data-edit>Brukes hvis kunden gjør noe mer avansert, skreddersydd eller behovsstyrt.</p></article>
+          <article class="method-card"><h3 data-edit>[Rådgivning / tilbud]</h3><p data-edit>En lav terskel for besøkende som ikke vet nøyaktig hva de trenger ennå.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="maalgruppe">
+      <div class="wrap split">
+        <div class="panel">
+          <span class="eyebrow" data-edit>Målgruppe</span>
+          <h2 data-edit>Gjør det tydelig hvem siden er for.</h2>
+          <p data-edit>Her beskriver du hvilke kunder bedriften passer best for. Det filtrerer bort feil leads og gjør riktig besøkende tryggere.</p>
+          <p data-edit>Skriv enkelt, konkret og uten fluff. En besøkende skal tenke: dette er for meg.</p>
+        </div>
+        <ul class="check-list">
+          <li data-edit><strong>[Målgruppe 1].</strong><br />Beskriv en vanlig kundetype og hvilket problem de trenger hjelp med.</li>
+          <li data-edit><strong>[Målgruppe 2].</strong><br />Beskriv når tjenesten blir ekstra relevant, og hva kunden får ut av den.</li>
+          <li data-edit><strong>[Målgruppe 3].</strong><br />Beskriv en tredje målgruppe, bransje eller situasjon.</li>
+        </ul>
+      </div>
+    </section>
+    <section id="tilgjengelighet">
+      <div class="wrap">
+        <div class="access-wrap">
+          <span class="eyebrow" data-edit>Tilgjengelighetsvalg i sluttversjonen</span>
+          <h2 data-edit>Vil dere gjøre siden enklere å bruke for flere? Det kan bygges inn.</h2>
+          <p data-edit>
+            I sluttversjonen kan hver side få tilgjengelighetsvalg hvis dere ønsker det. Det kan for eksempel være språkvalg, kort opplesning, høy kontrast og større tekst. Ingenting er et krav – men det er bra når målgruppen trenger raskere, tydeligere og mer lettlest informasjon.
+          </p>
+          <div class="access-grid">
+            <article class="access-card">
+              <div class="access-icon">🌍</div>
+              <h3 data-edit>Språkvalg</h3>
+              <p data-edit>Svensk, engelsk, dansk, norsk eller annet språk kan legges opp avhengig av kundene deres.</p>
+            </article>
+            <article class="access-card">
+              <div class="access-icon">🔊</div>
+              <h3 data-edit>Kort opplesning</h3>
+              <p data-edit>En knapp kan lese opp en kort oppsummering av siden for besøkende som heller vil lytte enn lese.</p>
+            </article>
+            <article class="access-card">
+              <div class="access-icon">◐</div>
+              <h3 data-edit>Høy kontrast</h3>
+              <p data-edit>Besøkeren kan bytte til en tydeligere kontrastvisning når lesbarhet er viktigere enn pynt.</p>
+            </article>
+            <article class="access-card">
+              <div class="access-icon">A+</div>
+              <h3 data-edit>Større tekst</h3>
+              <p data-edit>En enkel knapp kan gjøre teksten større på siden. Brillene får fri, siden gjør jobben.</p>
+            </article>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#kontakt" data-edit>Fortell om dere vil ha dette</a>
+            <a class="btn btn-secondary" href="#faq" data-edit>Les vanlige spørsmål</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="methods" id="prosess">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-edit>Prosess</span>
+            <h2 data-edit>Slik går det fra gratis demo til skarp nettside.</h2>
+          </div>
+          <p data-edit>En enkel prosess senker terskelen. Dere vet hva som skjer etter at dere har sendt materialet.</p>
+        </div>
+        <div class="process">
+          <article class="process-step"><h3 data-edit>Send materiale</h3><p data-edit>Dere sender bedriftshistorie, bilder, tjenester, lenker, priser og ønsker.</p></article>
+          <article class="process-step"><h3 data-edit>Jeg bygger demo</h3><p data-edit>Jeg setter struktur, designretning, tekster, seksjoner og tydelig kontaktflyt.</p></article>
+          <article class="process-step"><h3 data-edit>Dere gir feedback</h3><p data-edit>Dere sier hva som føles riktig, feil, mangler eller skal ligne noe annet.</p></article>
+          <article class="process-step"><h3 data-edit>Skarp versjon</h3><p data-edit>Vil dere videre, gjøres siden klar med SEO-grunnlag, indeksering, teknikk, publisering og eventuelle tilgjengelighetsvalg.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="editorial" id="bilder">
+      <div class="wrap split">
+        <div class="panel">
+          <span class="eyebrow" data-edit>Bilder</span>
+          <h2 data-edit>Bytt bildestil etter kundens virksomhet.</h2>
+          <p data-edit>Bildene her er bare plassholdere. I skarp versjon brukes kundens egne bilder, lokale miljøer, team, produkter eller tidligere arbeid.</p>
+          <p data-edit>Riktige bilder gjør mer enn å fylle ut. De selger tillit før teksten rekker å ta på seg skoene.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt" data-edit>Send bilder og materiale</a>
+          </div>
+        </div>
+        <div class="image-panel">
+          <div class="image-panel-text">
+            <strong data-edit>Plassholder for hovedbilde.</strong>
+            <span data-edit>Bytt til kundens eget bilde før skarp versjon.</span>
+          </div>
+        </div>
+      </div>
+      <div class="wrap image-strip-wrap">
+        <div class="drag-hint">
+          <span data-edit>Dra til siden eller bruk pilene for flere bilder</span>
+          <div class="gallery-tools">
+            <button class="gallery-arrow" type="button" id="galleryPrev" aria-label="Forrige bilder">←</button>
+            <button class="gallery-arrow" type="button" id="galleryNext" aria-label="Neste bilder">→</button>
+          </div>
+        </div>
+        <div class="image-strip" id="imageStrip">
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=82");'>
+            <div class="slide-label"><strong data-edit>Miljøbilde</strong><span data-edit>Bytt til relevant kundebilde.</span></div>
+          </article>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=82");'>
+            <div class="slide-label"><strong data-edit>Detaljbilde</strong><span data-edit>Passer for produkt, lokale eller håndverk.</span></div>
+          </article>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=82");'>
+            <div class="slide-label"><strong data-edit>Arbeidsbilde</strong><span data-edit>Bra for å vise prosessen.</span></div>
+          </article>
+          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=82");'>
+            <div class="slide-label"><strong data-edit>Team / møte</strong><span data-edit>Bytt til ekte bilde hvis det finnes.</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="text-image" id="fordeler">
+      <div class="wrap text-image-grid">
+        <div class="rounded-image" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28)), url("https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=82");'>
+          <div class="image-note">
+            <strong data-edit>Vis nytten tydelig.</strong>
+            <span data-edit>Dette bildet kan byttes til produkt, resultat eller referansecase.</span>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow" data-edit>Hvorfor velge kodet side</span>
+          <h2 data-edit>Tre grunner til å gå videre.</h2>
+          <p class="lead" data-edit>Her bygger du tillit uten å fly av gårde. Kort, konkret og kundenært.</p>
+          <ul class="check-list" style="margin-top:26px;">
+            <li data-edit><strong>Dere slipper å sitte fast i maler.</strong><br />Design og struktur kan tilpasses bedriften.</li>
+            <li data-edit><strong>Dere eier koden.</strong><br />En kodet side kan flyttes, bygges videre på og justeres uten plattformlåsning.</li>
+            <li data-edit><strong>Teknikken følger med fra start.</strong><br />SEO-grunnlag, struktur, skjemaer, tilgjengelighetsvalg og indeksering kan planlegges fra begynnelsen.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="tillit">
+      <div class="wrap">
+        <div class="quality-wrap">
+          <div class="quality-grid">
+            <div class="score">
+              <strong data-edit>Demo</strong>
+              <span data-edit>først – beslutning etter at dere har sett et konkret forslag</span>
+            </div>
+            <div>
+              <span class="eyebrow" data-edit>Tillit</span>
+              <h2 data-edit>Gode bevis skal vises tidlig, ikke støve ned nederst.</h2>
+              <p data-edit>Her kan du løfte anmeldelser, sertifikater, erfaring, resultater, kundecases, antall år i bransjen, garanti eller annet som gjør besøkeren tryggere.</p>
+              <div class="hero-actions">
+                <a class="btn btn-gold" href="#kontakt" data-edit>Bestill gratis demo</a>
+                <a class="btn btn-secondary" href="#faq" data-edit>Les vanlige spørsmål</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="kompetanse">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow" data-edit>Hva jeg fikser</span>
+          <h2 data-edit>Designet, strukturen og teknikken er ikke deres problem å løse.</h2>
+          <p class="lead" data-edit>Dere sender bedriftens ekte materiale. Jeg finjusterer tekstens synlighet, farger, avstander, seksjoner, SEO-grunnlag, tilgjengelighetsvalg og den tekniske helheten.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3 data-edit>Design og lesbarhet</h3><p data-edit>Farger, kontrast, tekststørrelse, avstand og mobilvisning justeres, så siden føles ferdig.</p></article>
+          <article class="step"><h3 data-edit>Innholdsstruktur</h3><p data-edit>Fortelling, tjenester, målgruppe, spørsmål og kontaktveier settes i riktig rekkefølge.</p></article>
+          <article class="step"><h3 data-edit>SEO og Google</h3><p data-edit>Grunnstruktur, titler, tekster, indeksering og Google Maps-kobling kan planlegges inn.</p></article>
+          <article class="step"><h3 data-edit>Tilgjengelighet og kontaktflyt</h3><p data-edit>Språkvalg, kort opplesning, høy kontrast, større tekst, skjema, filopplasting og neste steg kan bygges inn hvis dere ønsker det.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="faq-section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" data-edit>Vanlige spørsmål</span>
+            <h2 data-edit>Svar på spørsmål før kunden rekker å nøle.</h2>
+          </div>
+          <p data-edit>FAQ er bra for både kundereise og salg. Mindre friksjon, flere klare svar.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item"><h3 data-edit>Koster demoen noe?</h3><p data-edit>Nei, tanken er at dere får se et konkret sideforslag først. Hvis dere vil gå videre, gjøres siden skarp etter avtale.</p></article>
+          <article class="faq-item"><h3 data-edit>Hva trenger vi å sende?</h3><p data-edit>Bedriftshistorie, tjenester, bilder, filmer, priser, kontaktopplysninger, Google Maps-lenke, sosiale medier, tilgjengelighetsønsker og eksempler på sider dere liker.</p></article>
+          <article class="faq-item"><h3 data-edit>Må vi fikse designet selv?</h3><p data-edit>Nei. Dere trenger ikke sitte og pirke med farger, avstander, tekststørrelse og seksjoner. Send materialet, så finjusterer jeg helheten.</p></article>
+          <article class="faq-item"><h3 data-edit>Hva skjer etter demoen?</h3><p data-edit>Dere gir feedback. Vil dere videre, gjøres siden klar med skarpt innhold, SEO-grunnlag, teknisk struktur og publisering.</p></article>
+          <article class="faq-item"><h3 data-edit>Kan tilgjengelighetsvalg inngå?</h3><p data-edit>Ja, i sluttversjonen kan språkvalg, kort opplesning, høy kontrast og større tekst legges inn på hver side hvis dere ønsker det.</p></article>
+          <article class="faq-item"><h3 data-edit>Må alle sider ha slike valg?</h3><p data-edit>Nei. Det er valgfritt. Det brukes når det passer målgruppen, bedriften og sidens formål.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="kontakt" class="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-box">
+          <span class="eyebrow" data-edit>Kontakt</span>
+          <h2 data-edit>Vil du ha en gratis demo?</h2>
+          <p data-edit>Send bedriftshistorie, tjenester, bilder, priser, lenker og ønsker. Jo mer materiale som finnes fra start, desto bedre blir demoen.</p>
+          <div class="contact-person">
+            <div class="person-photo" aria-hidden="true"></div>
+            <div>
+              <strong data-edit>Erica Nordlöf – Nordlöf Nordic</strong>
+              <span data-edit>Webutvikler. Kodede nettsider, skjemaflyt, tilgjengelighetsvalg og teknisk struktur.</span>
+            </div>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:erica@webutvecklare.se">
+              <span style="font-size:1rem;font-weight:900;color:var(--text);" data-edit>erica@webutvecklare.se</span>
+              <span data-edit>Forespørsler og materiale</span>
+            </a>
+            <a class="contact-link" href="https://webutvecklare.se/no.html">
+              <span style="font-size:1rem;font-weight:900;color:var(--text);" data-edit>webutvecklare.se/no.html</span>
+              <span data-edit>Til norsk forside</span>
+            </a>
+          </div>
+        </div>
+        <form
+          action="https://formsubmit.co/erica@webutvecklare.se"
+          method="POST"
+          enctype="multipart/form-data"
+          accept-charset="UTF-8"
+          aria-label="Kontaktskjema"
+          id="contactForm"
+        >
+          <input type="hidden" name="_subject" value="Ny demoforspørsel fra gratis-demo-no.html" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://webutvecklare.se/tack.html" />
+          <input type="hidden" name="formName" value="Gratis demo av ny nettside" />
+          <input type="hidden" name="sourcePage" value="gratis-demo-no.html" />
+          <div class="local-file-note" id="localFileNote">
+            <strong>Ikke send fra den lagrede filen.</strong>
+            <p>
+              Hvis adressen starter med <strong>file://</strong>, er dette bare den lagrede HTML-filen. Skjemaet fungerer bare fra den riktige https-siden.
+              Gå tilbake til nettadressen, legg ved denne HTML-filen der og send skjemaet fra https-siden.
+            </p>
+          </div>
+          <div class="required-upload">
+            <strong>Har dere redigert siden selv?</strong>
+            <p>
+              Klikk først på <strong>“Lagre endret side”</strong>. Legg deretter ved den nedlastede HTML-filen her.
+              Da kan jeg åpne akkurat den versjonen dere selv har endret, og lansere eller bygge videre på den.
+            </p>
+            <div class="form-actions" style="margin-top:14px;">
+              <button class="btn btn-gold" type="button" id="savePageBtnBottom">Lagre endret side</button>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="editedPageFile">Legg ved lagret HTML-side</label>
+            <div class="drop-zone" data-drop-zone="editedPageFile">
+              <div class="drop-zone-text">
+                Dra HTML-filen hit
+                <span>eller klikk på filknappen nedenfor. Kun .html eller .htm.</span>
+              </div>
+              <input id="editedPageFile" name="Lagret_HTML_side" type="file" accept=".html,.htm,text/html" />
+              <ul class="file-list" id="editedPageFileList"></ul>
+            </div>
+            <p class="form-note">
+              Feltet er for filen som opprettes når dere klikker “Lagre endret side”. Hvis dere ikke har redigert siden selv, kan dere la dette stå tomt.
+            </p>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Navn</label>
+              <input id="name" name="Navn" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="company">Bedrift</label>
+              <input id="company" name="Bedrift" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="email">E-post</label>
+              <input id="email" name="E-post" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" name="Telefon" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field full">
+              <label for="story">Bedriftshistorie</label>
+              <textarea id="story" name="Bedriftshistorie" placeholder="Fortell om bedriften: hvem dere er, hva dere gjør, hvorfor dere gjør det, og hva kunden skal føle når de kommer inn på siden..."></textarea>
+            </div>
+            <div class="field full">
+              <label for="services">Tjenester / tilbud</label>
+              <textarea id="services" name="Tjenester_og_tilbud" placeholder="Skriv hvilke tjenester, produkter, pakker eller tilbud som skal være på nettsiden..."></textarea>
+            </div>
+            <div class="field full">
+              <label for="target">Målgruppe</label>
+              <textarea id="target" name="Målgruppe" placeholder="Hvilke kunder vil dere nå? Bedrifter, privatpersoner, bransje, sted, alder, behov, problem?"></textarea>
+            </div>
+            <div class="field full">
+              <label for="prices">Priser / tilbudsmodell</label>
+              <textarea id="prices" name="Priser_eller_tilbudsmodell" placeholder="Skriv faste priser, fra-priser, pakker, timepris eller om tilbud gjelder..."></textarea>
+            </div>
+            <div class="field full">
+              <label for="accessibility">Tilgjengelighetsvalg i sluttversjonen</label>
+              <select id="accessibility" name="Tilgjengelighetsvalg_ønskes">
+                <option value="Vet ikke ennå">Vet ikke ennå</option>
+                <option value="Ja, gjerne på hver side">Ja, gjerne på hver side</option>
+                <option value="Språkvalg">Språkvalg</option>
+                <option value="Kort oppsummeringsopplesning">Kort oppsummeringsopplesning</option>
+                <option value="Høy kontrast">Høy kontrast</option>
+                <option value="Større tekst">Større tekst</option>
+                <option value="Alle: språkvalg, opplesning, høy kontrast og større tekst">Alle: språkvalg, opplesning, høy kontrast og større tekst</option>
+                <option value="Nei, ikke nå">Nei, ikke nå</option>
+              </select>
+              <p class="form-note">
+                I sluttversjonen kan språkvalg, kort opplesning, høy kontrast og større tekst legges til hvis dere ønsker det.
+              </p>
+            </div>
+            <div class="field full">
+              <label for="materialLinks">Materiale og lenker</label>
+              <textarea id="materialLinks" name="Materiale_og_lenker" placeholder="Lim inn lenker til bilder, logo, Google Drive, sosiale medier, nåværende nettside eller nettsider dere liker. Vil dere ha noe lignende fra en annen side? Send URL og skriv hva dere vil ha med."></textarea>
+            </div>
+            <div class="field full">
+              <label for="files">Legg ved øvrige filer</label>
+              <div class="drop-zone" data-drop-zone="files">
+                <div class="drop-zone-text">
+                  Dra filer hit
+                  <span>eller klikk på filknappen nedenfor. Bilder, filmer, PDF, Word, tekst, PowerPoint og Excel fungerer.</span>
+                </div>
+                <input id="files" name="Øvrige_filer" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx" />
+                <ul class="file-list" id="filesList"></ul>
+              </div>
+              <p class="form-note">
+                Her kan dere legge ved logo, bilder, filmer, PDF-er, prislister, tekster, brosjyrer eller annet materiale.
+              </p>
+            </div>
+            <div class="field full">
+              <label for="mustHave">Må-ha på siden</label>
+              <textarea id="mustHave" name="Må_ha_på_siden" placeholder="Skriv alt som absolutt må være med: priser, garantier, sertifikater, områder, åpningstider, vanlige spørsmål, spesielle regler..."></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send demo-materiale</button>
+            <a class="btn btn-secondary" href="mailto:erica@webutvecklare.se">Send e-post i stedet</a>
+          </div>
+          <p class="form-note">
+            Viktig: Hvis dere har redigert tekst direkte på siden, må dere klikke “Lagre endret side” og legge ved HTML-filen i skjemaet. Ellers får jeg bare skjemasvarene, ikke selve siden dere har endret.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        <strong data-edit>Nordlöf Nordic</strong><br />
+        <span data-edit>Gratis demo av ny nettside for bedrifter.</span><br /><br />
+        <span data-edit>Demo først. Feedback etterpå. Skarp versjon når alt føles riktig.</span>
+        <div class="footer-links">
+          <a href="/no.html">Norsk forside</a>
+          <a href="/case.html">Cases</a>
+          <a href="/webbfix.html">Webfix</a>
+          <a href="/blogg.html?lang=no">Blogg</a>
+          <a href="/om-mig.html">Om meg</a>
+          <a href="/integritet.html">Integritet</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="socials" aria-label="Sosiale medier">
+          <a class="social-icon facebook" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.2 0-.9-.1-1.8-.1-2.6 0-4.2 1.5-4.2 4.3V11H7.5v3H10v7h3.5z"/></svg>
+          </a>
+          <a class="social-icon instagram" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9zm9.6 1.5a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1zM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 1.8A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1z"/></svg>
+          </a>
+          <a class="social-icon linkedin" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3A1.6 1.6 0 1 1 5.2 5a1.6 1.6 0 0 1 0 3.3zM3.8 9.7h2.9V20H3.8V9.7zm4.8 0h2.8v1.4h.1c.4-.8 1.4-1.7 2.8-1.7 3 0 3.5 2 3.5 4.5V20H15v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H8.6V9.7z"/></svg>
+          </a>
+        </div>
+        <a class="btn btn-secondary" href="https://webutvecklare.se/no.html" data-edit>Til norsk forside</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const body = document.body;
+    const root = document.documentElement;
+    const designToggle = document.getElementById("designToggle");
+    const designPanel = document.getElementById("designPanel");
+    const editToggle = document.getElementById("editToggle");
+    const savePageBtnTop = document.getElementById("savePageBtnTop");
+    const savePageBtnBottom = document.getElementById("savePageBtnBottom");
+    const resetTextBtn = document.getElementById("resetTextBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const siteNavMobile = document.getElementById("siteNavMobile");
+    const contactForm = document.getElementById("contactForm");
+    const languageSelect = document.getElementById("languageSelect");
+    const stylePreset = document.getElementById("stylePreset");
+    const fontSelect = document.getElementById("fontSelect");
+    const bgColor = document.getElementById("bgColor");
+    const paperColor = document.getElementById("paperColor");
+    const inkColor = document.getElementById("inkColor");
+    const brandColor = document.getElementById("brandColor");
+    const brandDeepColor = document.getElementById("brandDeepColor");
+    const radiusSelect = document.getElementById("radiusSelect");
+    const contrastSelect = document.getElementById("contrastSelect");
+    const imageStrip = document.getElementById("imageStrip");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+    const stickyShell = document.querySelector(".sticky-shell");
+    const STORAGE_KEY = "nordlofGratisDemoNorskV1";
+    const ORIGINAL_HTML = {};
+    const editableElements = Array.from(document.querySelectorAll("[data-edit]"));
+    const isLocalFile = window.location.protocol === "file:";
+    if(isLocalFile){
+      body.classList.add("is-local-file");
+    }
+    editableElements.forEach((el, index) => {
+      const id = "edit-" + index;
+      el.dataset.editId = id;
+      ORIGINAL_HTML[id] = el.innerHTML;
+    });
+    function updateStickyHeight(){
+      if(!stickyShell) return;
+      const height = stickyShell.offsetHeight || 0;
+      root.style.setProperty("--sticky-height", height + "px");
+    }
+    function normalizeHex(value, fallback){
+      const clean = String(value || "").trim();
+      if(/^#[0-9A-Fa-f]{6}$/.test(clean)) return clean.toUpperCase();
+      return fallback.toUpperCase();
+    }
+    function hexToRgb(hex){
+      const safe = normalizeHex(hex, "#000000").replace("#", "");
+      return {
+        r:parseInt(safe.slice(0,2),16),
+        g:parseInt(safe.slice(2,4),16),
+        b:parseInt(safe.slice(4,6),16)
+      };
+    }
+    function rgbToHex(r,g,b){
+      return "#" + [r,g,b].map(value => {
+        const hex = Math.max(0, Math.min(255, Math.round(value))).toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      }).join("").toUpperCase();
+    }
+    function mixHex(a, b, amount){
+      const x = hexToRgb(a);
+      const y = hexToRgb(b);
+      const t = Math.max(0, Math.min(1, amount));
+      return rgbToHex(
+        x.r + (y.r - x.r) * t,
+        x.g + (y.g - x.g) * t,
+        x.b + (y.b - x.b) * t
+      );
+    }
+    function brightness(hex){
+      const rgb = hexToRgb(hex);
+      return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+    }
+    function contrastText(hex){
+      return brightness(hex) > 150 ? "#111111" : "#FFFFFF";
+    }
+    function hexToRgba(hex, alpha){
+      const rgb = hexToRgb(hex);
+      return "rgba(" + rgb.r + "," + rgb.g + "," + rgb.b + "," + alpha + ")";
+    }
+    function applyDesign(values = {}, shouldSave = true){
+      const bg = normalizeHex(values.bg || bgColor.value, "#FBF7F4");
+      const paper = normalizeHex(values.paper || paperColor.value, "#FFFFFF");
+      const ink = normalizeHex(values.ink || inkColor.value, "#241E1A");
+      const brand = normalizeHex(values.brand || brandColor.value, "#D98672");
+      const brandDeep = normalizeHex(values.brandDeep || brandDeepColor.value, "#8F4D45");
+      const radius = values.radius || radiusSelect.value || "24px";
+      const font = values.font || fontSelect.value || "Playfair Display";
+      const contrast = values.contrast || contrastSelect.value || "normal";
+      const brandContrast = contrastText(brandDeep);
+      const muted = brightness(ink) > 150 ? mixHex(ink, "#000000", .28) : mixHex(ink, "#FFFFFF", .34);
+      const line = hexToRgba(ink, .10);
+      const lineDark = hexToRgba(ink, .18);
+      const brandDark = mixHex(brandDeep, brand, .32);
+      const brandSoft = mixHex("#FFFFFF", brand, .22);
+      const dark = mixHex(brandDeep, "#000000", .72);
+      const dark2 = mixHex(brandDeep, "#000000", .84);
+      root.style.setProperty("--bg", "#f7f0ec");
+      root.style.setProperty("--soft", bg);
+      root.style.setProperty("--card", paper);
+      root.style.setProperty("--text", ink);
+      root.style.setProperty("--muted", muted);
+      root.style.setProperty("--line", line);
+      root.style.setProperty("--line-dark", lineDark);
+      root.style.setProperty("--brand", brand);
+      root.style.setProperty("--brand-dark", brandDark);
+      root.style.setProperty("--brand-deep", brandDeep);
+      root.style.setProperty("--brand-soft", brandSoft);
+      root.style.setProperty("--brand-contrast", brandContrast);
+      root.style.setProperty("--dark", dark);
+      root.style.setProperty("--dark-2", dark2);
+      root.style.setProperty("--radius", radius);
+      root.style.setProperty("--font-main", `"Inter", ui-sans-serif, system-ui, sans-serif`);
+      root.style.setProperty("--font-heading", `"${font}", Georgia, serif`);
+      if(contrast === "strong"){
+        root.style.setProperty("--shadow", "0 18px 44px rgba(0,0,0,.20)");
+        root.style.setProperty("--shadow-strong", "0 24px 60px rgba(0,0,0,.26)");
+      }else{
+        root.style.setProperty("--shadow", "0 18px 50px rgba(36,30,26,.08)");
+        root.style.setProperty("--shadow-strong", "0 26px 70px rgba(36,30,26,.13)");
+      }
+      bgColor.value = bg;
+      paperColor.value = paper;
+      inkColor.value = ink;
+      brandColor.value = brand;
+      brandDeepColor.value = brandDeep;
+      radiusSelect.value = radius;
+      fontSelect.value = font;
+      contrastSelect.value = contrast;
+      updateStickyHeight();
+      if(shouldSave) saveState();
+    }
+    function applyPreset(key){
+      const presets = {
+        classic:{bg:"#FBF7F4", paper:"#FFFFFF", ink:"#241E1A", brand:"#D98672", brandDeep:"#8F4D45", font:"Playfair Display", radius:"24px", contrast:"normal"},
+        white:{bg:"#FFFFFF", paper:"#FFFFFF", ink:"#111111", brand:"#111111", brandDeep:"#000000", font:"Inter", radius:"24px", contrast:"normal"},
+        blue:{bg:"#EAF2FF", paper:"#FFFFFF", ink:"#102033", brand:"#2563EB", brandDeep:"#1557B0", font:"DM Sans", radius:"24px", contrast:"normal"},
+        forest:{bg:"#E9F3EC", paper:"#FFFFFF", ink:"#102015", brand:"#3B7A57", brandDeep:"#14532D", font:"Manrope", radius:"28px", contrast:"normal"},
+        luxury:{bg:"#090909", paper:"#16120B", ink:"#FFF8E8", brand:"#C89B3C", brandDeep:"#6B4E16", font:"Playfair Display", radius:"30px", contrast:"strong"},
+        pink:{bg:"#FFF0F7", paper:"#FFFFFF", ink:"#2A1020", brand:"#EC4899", brandDeep:"#BE185D", font:"Poppins", radius:"30px", contrast:"normal"},
+        orange:{bg:"#FFF3E6", paper:"#FFFFFF", ink:"#2B1708", brand:"#F97316", brandDeep:"#C2410C", font:"Nunito", radius:"28px", contrast:"normal"},
+        black:{bg:"#000000", paper:"#111111", ink:"#FFFFFF", brand:"#FFFFFF", brandDeep:"#000000", font:"Oswald", radius:"20px", contrast:"strong"}
+      };
+      if(!presets[key]) return;
+      applyDesign(presets[key]);
+    }
+    function setEditMode(active){
+      body.classList.toggle("edit-mode", active);
+      editableElements.forEach(el => {
+        el.contentEditable = active ? "true" : "false";
+        el.spellcheck = active ? true : false;
+      });
+      editToggle.textContent = active ? "Lukk redigering" : "Rediger tekst";
+      saveState();
+      setTimeout(updateStickyHeight, 80);
+    }
+    function getState(){
+      const text = {};
+      editableElements.forEach(el => {
+        text[el.dataset.editId] = el.innerHTML;
+      });
+      return {
+        text,
+        design:{
+          bg:bgColor.value,
+          paper:paperColor.value,
+          ink:inkColor.value,
+          brand:brandColor.value,
+          brandDeep:brandDeepColor.value,
+          radius:radiusSelect.value,
+          font:fontSelect.value,
+          contrast:contrastSelect.value
+        }
+      };
+    }
+    function saveState(){
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
+      }catch(error){}
+    }
+    function loadState(){
+      try{
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+        if(saved.text){
+          editableElements.forEach(el => {
+            const id = el.dataset.editId;
+            if(saved.text[id] !== undefined){
+              el.innerHTML = saved.text[id];
+            }
+          });
+        }
+        if(saved.design){
+          applyDesign(saved.design, false);
+        }else{
+          applyDesign({}, false);
+        }
+        setEditMode(false);
+      }catch(error){
+        localStorage.removeItem(STORAGE_KEY);
+        applyDesign({}, false);
+      }
+    }
+    function resetText(){
+      if(!confirm("Vil du tilbakestille all redigert tekst til originalteksten?")) return;
+      editableElements.forEach(el => {
+        const id = el.dataset.editId;
+        el.innerHTML = ORIGINAL_HTML[id];
+      });
+      saveState();
+      updateStickyHeight();
+    }
+    function saveEditedPage(){
+      setEditMode(false);
+      saveState();
+      const clone = document.documentElement.cloneNode(true);
+      clone.querySelectorAll("[contenteditable]").forEach(el => {
+        el.removeAttribute("contenteditable");
+        el.removeAttribute("spellcheck");
+      });
+      const clonedBody = clone.querySelector("body");
+      if(clonedBody){
+        clonedBody.classList.remove("edit-mode");
+        clonedBody.classList.remove("is-local-file");
+      }
+      const meta = document.createElement("meta");
+      meta.setAttribute("name", "saved-edited-page");
+      meta.setAttribute("content", "Denne HTML-filen er lagret fra kundens redigerte demo. Den skal legges ved i skjemaet på den riktige https-siden.");
+      clone.querySelector("head")?.appendChild(meta);
+      const html = "<!doctype html>\n" + clone.outerHTML;
+      const blob = new Blob([html], {type:"text/html;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const date = new Date();
+      const stamp = date.toISOString().slice(0,19).replace(/[:T]/g, "-");
+      const filename = "redigert-demo-" + stamp + ".html";
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+        a.remove();
+      }, 1500);
+      alert("Den endrede siden er lagret som HTML-fil. Gå tilbake til https-siden og legg ved filen i skjemaet nederst. Ikke åpne filen og send derfra.");
+    }
+    function getSlideWidth(){
+      const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
+      if(!firstSlide) return 320;
+      const styles = window.getComputedStyle(imageStrip);
+      const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
+      return firstSlide.getBoundingClientRect().width + gap;
+    }
+    function updateGalleryButtons(){
+      if(!imageStrip || !galleryPrev || !galleryNext) return;
+      const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
+      galleryPrev.disabled = imageStrip.scrollLeft <= 8;
+      galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
+    }
+    function scrollGallery(direction){
+      if(!imageStrip) return;
+      imageStrip.scrollBy({left:getSlideWidth() * direction, behavior:"smooth"});
+    }
+    function formatFileSize(bytes){
+      if(!bytes && bytes !== 0) return "";
+      if(bytes < 1024) return bytes + " B";
+      if(bytes < 1024 * 1024) return Math.round(bytes / 1024) + " KB";
+      return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+    }
+    function updateFileList(input){
+      if(!input) return;
+      const list = document.getElementById(input.id + "List");
+      if(!list) return;
+      list.innerHTML = "";
+      const files = Array.from(input.files || []);
+      files.forEach(file => {
+        const li = document.createElement("li");
+        li.textContent = file.name + " · " + formatFileSize(file.size);
+        list.appendChild(li);
+      });
+      list.classList.toggle("has-files", files.length > 0);
+    }
+    function assignFilesToInput(input, fileList){
+      if(!input || !fileList) return;
+      const files = Array.from(fileList);
+      const dataTransfer = new DataTransfer();
+      files.slice(0, input.multiple ? files.length : 1).forEach(file => {
+        dataTransfer.items.add(file);
+      });
+      input.files = dataTransfer.files;
+      input.dispatchEvent(new Event("change", {bubbles:true}));
+    }
+    function setupDropZones(){
+      document.querySelectorAll("[data-drop-zone]").forEach(zone => {
+        const inputId = zone.getAttribute("data-drop-zone");
+        const input = document.getElementById(inputId);
+        if(!input) return;
+        input.addEventListener("change", () => updateFileList(input));
+        ["dragenter", "dragover"].forEach(eventName => {
+          zone.addEventListener(eventName, event => {
+            event.preventDefault();
+            event.stopPropagation();
+            zone.classList.add("drag-over");
+          });
+        });
+        ["dragleave", "drop"].forEach(eventName => {
+          zone.addEventListener(eventName, event => {
+            event.preventDefault();
+            event.stopPropagation();
+            zone.classList.remove("drag-over");
+          });
+        });
+        zone.addEventListener("drop", event => {
+          const files = event.dataTransfer ? event.dataTransfer.files : null;
+          if(files && files.length){
+            assignFilesToInput(input, files);
+          }
+        });
+      });
+      ["dragover", "drop"].forEach(eventName => {
+        document.addEventListener(eventName, event => {
+          event.preventDefault();
+        });
+      });
+    }
+    function getCurrentLanguagePage(){
+      const path = window.location.pathname;
+      if(path.includes("gratis-demo-en.html")){
+        return "https://webutvecklare.se/gratis-demo-en.html";
+      }
+      if(path.includes("gratis-demo-da.html")){
+        return "https://webutvecklare.se/gratis-demo-da.html";
+      }
+      if(path.includes("gratis-demo-no.html")){
+        return "https://webutvecklare.se/gratis-demo-no.html";
+      }
+      return "https://webutvecklare.se/gratis-demo.html";
+    }
+    function setupLanguageSelect(){
+      if(!languageSelect) return;
+      languageSelect.value = getCurrentLanguagePage();
+      languageSelect.addEventListener("change", () => {
+        const target = languageSelect.value;
+        if(!target) return;
+        if(target !== window.location.href){
+          window.location.href = target;
+        }
+      });
+    }
+    designToggle.addEventListener("click", () => {
+      designPanel.classList.toggle("open");
+      setTimeout(updateStickyHeight, 80);
+    });
+    editToggle.addEventListener("click", () => {
+      setEditMode(!body.classList.contains("edit-mode"));
+    });
+    savePageBtnTop.addEventListener("click", saveEditedPage);
+    savePageBtnBottom.addEventListener("click", saveEditedPage);
+    resetTextBtn.addEventListener("click", resetText);
+    if(menuBtn && siteNavMobile){
+      menuBtn.addEventListener("click", () => {
+        const isOpen = siteNavMobile.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        setTimeout(updateStickyHeight, 80);
+      });
+      siteNavMobile.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          siteNavMobile.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+      document.addEventListener("click", event => {
+        if(siteNavMobile.contains(event.target) || menuBtn.contains(event.target)) return;
+        siteNavMobile.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    }
+    stylePreset.addEventListener("change", () => applyPreset(stylePreset.value));
+    fontSelect.addEventListener("change", () => applyDesign({font:fontSelect.value}));
+    bgColor.addEventListener("input", () => applyDesign({bg:bgColor.value}));
+    paperColor.addEventListener("input", () => applyDesign({paper:paperColor.value}));
+    inkColor.addEventListener("input", () => applyDesign({ink:inkColor.value}));
+    brandColor.addEventListener("input", () => applyDesign({brand:brandColor.value}));
+    brandDeepColor.addEventListener("input", () => applyDesign({brandDeep:brandDeepColor.value}));
+    radiusSelect.addEventListener("change", () => applyDesign({radius:radiusSelect.value}));
+    contrastSelect.addEventListener("change", () => applyDesign({contrast:contrastSelect.value}));
+    editableElements.forEach(el => {
+      el.addEventListener("input", saveState);
+      el.addEventListener("blur", saveState);
+    });
+    if(galleryPrev) galleryPrev.addEventListener("click", () => scrollGallery(-1));
+    if(galleryNext) galleryNext.addEventListener("click", () => scrollGallery(1));
+    if(imageStrip) imageStrip.addEventListener("scroll", updateGalleryButtons);
+    if(contactForm){
+      contactForm.addEventListener("submit", event => {
+        if(window.location.protocol === "file:"){
+          event.preventDefault();
+          alert("Du har åpnet den lagrede HTML-filen fra datamaskinen. Den filen skal bare legges ved i skjemaet. Gå tilbake til den riktige https-lenken og legg ved filen der.");
+        }
+      });
+    }
+    window.addEventListener("resize", () => {
+      updateGalleryButtons();
+      updateStickyHeight();
+    });
+    window.addEventListener("load", () => {
+      updateGalleryButtons();
+      updateStickyHeight();
+    });
+    setupLanguageSelect();
+    setupDropZones();
+    loadState();
+    updateGalleryButtons();
+    updateStickyHeight();
+  </script>
+</body>
+</html>
