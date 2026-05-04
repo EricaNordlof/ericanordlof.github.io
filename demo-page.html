@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>Gratis demo av ny hemsida | Nordlöf Nordic</title>
-  <meta name="description" content="Beställ en gratis demo av en ny hemsida. Skicka företagsberättelse, bilder, material och önskemål – Nordlöf Nordic bygger ett tydligt sidförslag först." />
+  <meta name="description" content="Beställ en gratis demo av ny hemsida. Skicka företagsberättelse, bilder, material och önskemål – Nordlöf Nordic bygger ett konkret sidförslag först." />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="theme-color" content="#173128" />
   <meta name="author" content="Nordlöf Nordic" />
+
   <meta property="og:title" content="Gratis demo av ny hemsida | Nordlöf Nordic" />
   <meta property="og:description" content="Skicka material och önskemål. Få ett konkret sidförslag innan du bestämmer dig." />
   <meta property="og:type" content="website" />
@@ -38,11 +39,9 @@
       --topbar:#173128;
       --contact-bg:#151f1b;
       --footer-bg:#0f1714;
-      --bg-glow-1:rgba(185,133,66,.22);
       --focus:#b45309;
       --radius:28px;
       --max:1180px;
-      --header-offset:0px;
       --font-main:"Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-heading:"Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -51,20 +50,19 @@
 
     html{
       scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
       text-size-adjust:100%;
       font-size:16px;
       max-width:100%;
       overflow-x:hidden;
     }
 
-    html.large-text{font-size:112%;}
-
     body{
       margin:0;
       font-family:var(--font-main);
       color:var(--ink);
       background:
-        radial-gradient(circle at top left, var(--bg-glow-1), transparent 34rem),
+        radial-gradient(circle at top left, color-mix(in srgb, var(--gold) 22%, transparent), transparent 34rem),
         radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 16%, transparent), transparent 36rem),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       line-height:1.6;
@@ -77,17 +75,18 @@
     a{color:inherit;}
     img{display:block;max-width:100%;}
 
+    button,
+    input,
+    select,
+    textarea{
+      font:inherit;
+    }
+
     h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
       overflow-wrap:break-word;
       word-break:normal;
       hyphens:auto;
       text-shadow:none;
-    }
-
-    .btn,.menu-btn,.design-toggle,.pill,.badge,.eyebrow,.fact span,.fact strong,.logo-text strong,.logo-text span{
-      overflow-wrap:normal;
-      word-break:normal;
-      hyphens:none;
     }
 
     :focus-visible{
@@ -105,7 +104,7 @@
       padding:12px 16px;
       border-radius:999px;
       z-index:1200;
-      font-weight:800;
+      font-weight:900;
       transition:.2s ease;
     }
 
@@ -116,88 +115,81 @@
       color:#f6efe5;
       border-bottom:1px solid rgba(255,255,255,.10);
       position:relative;
-      z-index:10;
+      z-index:20;
     }
 
     .topbar-inner{
       max-width:var(--max);
       margin:auto;
-      padding:10px 18px;
+      padding:12px 18px;
       display:flex;
       gap:12px;
       align-items:center;
       justify-content:space-between;
       flex-wrap:wrap;
-      font-weight:700;
-    }
-
-    .topbar-title{font-size:.92rem;}
-
-    .language-pills{
-      display:flex;
-      align-items:center;
-      gap:7px;
-      flex-wrap:wrap;
-      color:#fff;
       font-weight:800;
     }
 
-    .language-pills span{font-size:.86rem;opacity:.9;}
+    .topbar-title{
+      font-size:.92rem;
+      line-height:1.35;
+    }
 
+    .topbar-actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .tool-btn,
     .pill{
       border:1px solid rgba(255,255,255,.28);
       background:rgba(255,255,255,.10);
       color:#fff;
       border-radius:999px;
-      padding:8px 11px;
-      font-weight:800;
-      font-size:.86rem;
-      cursor:default;
-      font-family:var(--font-main);
+      padding:9px 13px;
+      font-weight:850;
+      font-size:.88rem;
+      cursor:pointer;
+      text-decoration:none;
     }
 
-    .pill.active{background:#fff;color:#111827;}
-    .pill.ghost{opacity:.72;}
+    .pill.active,
+    .tool-btn:hover{
+      background:#fff;
+      color:#111827;
+    }
+
+    .pill{
+      cursor:default;
+      opacity:.75;
+    }
+
+    .pill.active{
+      opacity:1;
+    }
 
     .design-panel{
-      width:100%;
+      display:none;
       max-width:var(--max);
-      margin:0 auto;
-      padding:0 18px 14px;
+      margin:auto;
+      padding:0 18px 16px;
     }
 
-    .edit-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
+    .design-panel.open{
+      display:block;
     }
-
-    .design-toggle{
-      border:1px solid rgba(255,255,255,.24);
-      color:#fff;
-      background:rgba(255,255,255,.10);
-      border-radius:999px;
-      padding:10px 14px;
-      cursor:pointer;
-      font-weight:800;
-      font-family:var(--font-main);
-      min-height:44px;
-    }
-
-    .design-toggle:hover{background:#fff;color:#111827;}
 
     .design-tools{
-      display:none;
-      grid-template-columns:repeat(4, minmax(160px, 1fr));
+      display:grid;
+      grid-template-columns:repeat(4, minmax(150px, 1fr));
       gap:10px;
-      margin-top:12px;
       padding:12px;
       border:1px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.07);
       border-radius:22px;
     }
-
-    .design-tools.open{display:grid;}
 
     .tool-field{
       display:grid;
@@ -216,101 +208,58 @@
       border-radius:14px;
       padding:10px 12px;
       font:inherit;
-      font-weight:700;
+      font-weight:750;
       color:#111827;
       background:#fff;
     }
 
-    .tool-field input[type="text"]{
-      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      text-transform:uppercase;
-    }
-
-    .range-control{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) 28px;
-      gap:8px;
-      align-items:center;
-    }
-
-    .range-control input[type="range"]{
+    .tool-field input[type="color"]{
       width:100%;
-      height:8px;
-      border-radius:999px;
-      appearance:none;
-      -webkit-appearance:none;
-      background:linear-gradient(90deg,hsl(0 80% 55%),hsl(45 80% 55%),hsl(90 80% 45%),hsl(150 80% 42%),hsl(210 80% 55%),hsl(270 80% 58%),hsl(330 80% 55%),hsl(360 80% 55%));
-      cursor:pointer;
-    }
-
-    #bgLight{background:linear-gradient(90deg,#000,#777,#fff);}
-
-    .range-control input[type="range"]::-webkit-slider-thumb{
-      appearance:none;
-      -webkit-appearance:none;
-      width:20px;
-      height:20px;
-      border-radius:999px;
-      background:#fff;
-      border:3px solid rgba(0,0,0,.35);
-      box-shadow:0 6px 18px rgba(0,0,0,.28);
-    }
-
-    .range-control input[type="range"]::-moz-range-thumb{
-      width:20px;
-      height:20px;
-      border-radius:999px;
-      background:#fff;
-      border:3px solid rgba(0,0,0,.35);
-      box-shadow:0 6px 18px rgba(0,0,0,.28);
-    }
-
-    .color-line{
-      display:grid;
-      grid-template-columns:1fr 42px;
-      gap:8px;
-      align-items:end;
-    }
-
-    .color-line input[type="color"]{
-      width:42px;
       height:42px;
-      min-height:42px;
-      padding:0;
-      border:2px solid rgba(255,255,255,.75);
-      border-radius:12px;
+      border:2px solid rgba(255,255,255,.65);
+      border-radius:14px;
       background:transparent;
+      padding:0;
       cursor:pointer;
     }
 
-    .color-dot{
-      width:22px;
-      height:22px;
-      border-radius:999px;
-      border:2px solid rgba(255,255,255,.82);
-      background:#fff;
-      box-shadow:0 5px 14px rgba(0,0,0,.22);
+    .edit-hint{
+      display:none;
+      background:#fff7ed;
+      border:1px solid #fdba74;
+      color:#7c2d12;
+      padding:12px 18px;
+      font-weight:850;
+      text-align:center;
+    }
+
+    body.edit-mode .edit-hint{
+      display:block;
+    }
+
+    body.edit-mode [data-edit]{
+      outline:2px dashed color-mix(in srgb, var(--gold) 75%, transparent);
+      outline-offset:5px;
+      border-radius:10px;
+      cursor:text;
+      min-height:1em;
+    }
+
+    body.edit-mode [data-edit]:focus{
+      outline:4px solid var(--focus);
+      background:rgba(255,255,255,.42);
     }
 
     header{
-      position:relative;
-      z-index:100;
+      position:sticky;
+      top:0;
+      z-index:15;
       background:color-mix(in srgb, var(--paper) 94%, transparent);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       border-bottom:1px solid color-mix(in srgb, var(--ink) 10%, transparent);
       box-shadow:0 12px 34px rgba(20,32,27,.08);
     }
-
-    body.header-fixed header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:999;
-    }
-
-    body.header-fixed main{padding-top:var(--header-offset);}
 
     .nav{
       max-width:var(--max);
@@ -341,13 +290,15 @@
       color:var(--accent-contrast);
       display:grid;
       place-items:center;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:-.05em;
       box-shadow:0 15px 32px color-mix(in srgb, var(--accent) 22%, transparent);
       flex:0 0 auto;
     }
 
-    .logo-text{min-width:0;}
+    .logo-text{
+      min-width:0;
+    }
 
     .logo-text strong{
       display:block;
@@ -355,7 +306,7 @@
       letter-spacing:-.02em;
       line-height:1.1;
       color:var(--ink);
-      font-weight:800;
+      font-weight:900;
     }
 
     .logo-text span{
@@ -363,15 +314,17 @@
       font-size:.82rem;
       color:var(--muted);
       line-height:1.25;
-      font-weight:600;
+      font-weight:650;
     }
 
-    #siteNav{display:none !important;}
+    #siteNav{
+      display:none;
+    }
 
     #siteNav.open{
-      display:block !important;
+      display:block;
       position:absolute;
-      top:calc(100% + 12px);
+      top:calc(100% + 10px);
       right:18px;
       width:min(390px, calc(100vw - 36px));
       background:var(--paper);
@@ -379,34 +332,34 @@
       border-radius:26px;
       padding:12px;
       box-shadow:var(--shadow);
-      z-index:1000;
+      z-index:50;
     }
 
-    #siteNav ul{list-style:none;margin:0;padding:0;}
-    #siteNav.open ul{display:grid;gap:6px;}
+    #siteNav ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:6px;
+    }
 
-    #siteNav.open a{
-      width:100%;
+    #siteNav a{
       display:flex;
-      align-items:center;
-      justify-content:space-between;
+      width:100%;
       padding:14px 16px;
       border-radius:18px;
       background:var(--white);
       color:var(--ink);
       border:1px solid var(--line);
-      font-weight:800;
+      font-weight:850;
       text-decoration:none;
     }
-
-    #siteNav.open a:hover{background:var(--accent-soft);}
 
     .nav-actions{
       display:flex;
       align-items:center;
       gap:10px;
       flex:0 0 auto;
-      margin-left:auto;
     }
 
     .menu-btn{
@@ -417,12 +370,11 @@
       background:var(--white);
       color:var(--accent);
       border-radius:999px;
-      padding:13px 22px;
-      font-weight:800;
+      padding:13px 20px;
+      font-weight:900;
       cursor:pointer;
       min-height:48px;
       font-size:1rem;
-      font-family:var(--font-main);
     }
 
     .btn{
@@ -432,19 +384,20 @@
       gap:8px;
       border-radius:999px;
       padding:13px 20px;
-      font-weight:800;
+      font-weight:900;
       text-decoration:none;
       cursor:pointer;
-      line-height:1;
-      transition:transform .18s ease, background .18s ease, border-color .18s ease;
-      white-space:nowrap;
+      line-height:1.1;
+      transition:.18s ease;
+      white-space:normal;
       border:1px solid transparent;
       font-size:.96rem;
       text-align:center;
-      font-family:var(--font-main);
     }
 
-    .btn:hover{transform:translateY(-1px);}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .btn-primary{
       background:var(--accent);
@@ -453,15 +406,11 @@
       box-shadow:0 16px 38px color-mix(in srgb, var(--accent) 22%, transparent);
     }
 
-    .btn-primary:hover{background:var(--accent-2);border-color:var(--accent-2);}
-
     .btn-secondary{
       background:rgba(255,255,255,.82);
       color:var(--accent);
       border-color:var(--line-dark);
     }
-
-    .btn-secondary:hover{background:#fff;color:#13211c;}
 
     .btn-gold{
       background:linear-gradient(135deg, var(--gold), var(--gold-2));
@@ -470,14 +419,19 @@
       box-shadow:0 16px 38px color-mix(in srgb, var(--gold) 22%, transparent);
     }
 
-    main{overflow:hidden;}
+    main{
+      overflow:hidden;
+    }
 
     section{
       padding:88px 18px;
-      scroll-margin-top:120px;
+      scroll-margin-top:105px;
     }
 
-    .wrap{max-width:var(--max);margin:auto;}
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+    }
 
     .eyebrow{
       display:inline-flex;
@@ -488,7 +442,7 @@
       color:color-mix(in srgb, var(--gold) 70%, #2b1b08);
       border:1px solid color-mix(in srgb, var(--gold) 30%, transparent);
       border-radius:999px;
-      font-weight:800;
+      font-weight:900;
       font-size:.86rem;
       margin-bottom:18px;
       max-width:100%;
@@ -498,44 +452,63 @@
       font-family:var(--font-heading);
       margin:0;
       line-height:1.04;
-      letter-spacing:-.03em;
+      letter-spacing:-.035em;
       color:var(--ink);
-      font-weight:850;
+      font-weight:900;
     }
 
-    h1{font-size:clamp(2.7rem, 6vw, 6.1rem);max-width:960px;font-weight:900;}
-    h2{font-size:clamp(2rem, 4.2vw, 3.55rem);max-width:900px;}
-    h3{font-size:1.32rem;letter-spacing:-.02em;}
+    h1{
+      font-size:clamp(2.45rem, 6vw, 5.8rem);
+      max-width:980px;
+    }
 
-    p{margin:0;color:var(--muted);font-weight:600;}
-    strong{font-weight:800;}
+    h2{
+      font-size:clamp(1.9rem, 4.2vw, 3.35rem);
+      max-width:900px;
+    }
+
+    h3{
+      font-size:1.24rem;
+      letter-spacing:-.02em;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+      font-weight:650;
+    }
 
     .lead{
-      font-size:clamp(1.08rem, 1.6vw, 1.28rem);
-      margin-top:22px;
-      max-width:780px;
-      color:var(--muted);
-      font-weight:600;
+      font-size:clamp(1.05rem, 1.6vw, 1.22rem);
+      margin-top:20px;
+      max-width:790px;
     }
 
-    .hero{padding:72px 18px 80px;}
+    .hero{
+      padding:72px 18px 80px;
+    }
 
     .hero-grid{
       max-width:var(--max);
       margin:auto;
       display:grid;
-      grid-template-columns:1.04fr .96fr;
+      grid-template-columns:1.05fr .95fr;
       gap:44px;
       align-items:center;
     }
 
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
 
     .trust-row{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:12px;
-      margin-top:32px;
+      margin-top:30px;
       max-width:830px;
     }
 
@@ -548,10 +521,26 @@
       backdrop-filter:blur(14px);
     }
 
-    .trust-pill strong{display:block;font-size:1.12rem;color:var(--ink);line-height:1.2;font-weight:800;}
-    .trust-pill span{display:block;color:var(--muted);font-size:.93rem;margin-top:5px;font-weight:600;}
+    .trust-pill strong{
+      display:block;
+      font-size:1.08rem;
+      color:var(--ink);
+      line-height:1.2;
+      font-weight:900;
+    }
 
-    .hero-visual{position:relative;min-height:590px;}
+    .trust-pill span{
+      display:block;
+      color:var(--muted);
+      font-size:.93rem;
+      margin-top:5px;
+      font-weight:650;
+    }
+
+    .hero-visual{
+      position:relative;
+      min-height:520px;
+    }
 
     .hero-card{
       background:var(--white);
@@ -564,10 +553,10 @@
     }
 
     .hero-photo{
-      min-height:540px;
+      min-height:500px;
       border-radius:30px;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.34)),
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.36)),
         url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=82") center/cover;
       position:relative;
       overflow:hidden;
@@ -577,24 +566,40 @@
     .image-panel-text,
     .slide-label,
     .image-note{
-      background:rgba(255,250,243,.90) !important;
-      border:1px solid rgba(255,255,255,.92) !important;
+      background:rgba(255,250,243,.92);
+      border:1px solid rgba(255,255,255,.92);
       box-shadow:0 18px 38px rgba(0,0,0,.14);
-      backdrop-filter:blur(14px) !important;
-      -webkit-backdrop-filter:blur(14px) !important;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
-    .photo-caption{position:absolute;left:22px;right:22px;bottom:22px;border-radius:26px;padding:22px;}
+    .photo-caption{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      border-radius:26px;
+      padding:22px;
+    }
 
     .photo-caption strong,
     .image-panel-text strong,
     .slide-label strong,
-    .image-note strong{display:block;color:#10201a !important;font-weight:800 !important;}
+    .image-note strong{
+      display:block;
+      color:#10201a;
+      font-weight:900;
+    }
 
     .photo-caption span,
     .image-panel-text span,
     .slide-label span,
-    .image-note span{display:block;color:#173128 !important;margin-top:6px;font-weight:700 !important;}
+    .image-note span{
+      display:block;
+      color:#173128;
+      margin-top:6px;
+      font-weight:750;
+    }
 
     .floating-card{
       position:absolute;
@@ -602,7 +607,7 @@
       top:42px;
       z-index:3;
       width:min(280px, 72%);
-      background:rgba(255,250,243,.90);
+      background:rgba(255,250,243,.92);
       border:1px solid rgba(200,185,164,.85);
       border-radius:26px;
       padding:20px;
@@ -611,8 +616,22 @@
       -webkit-backdrop-filter:blur(12px);
     }
 
-    .floating-card strong{display:block;font-size:2.2rem;line-height:.95;letter-spacing:-.04em;color:var(--accent);font-weight:850;}
-    .floating-card span{display:block;color:#10201a;margin-top:9px;font-weight:700;line-height:1.35;}
+    .floating-card strong{
+      display:block;
+      font-size:2.1rem;
+      line-height:.95;
+      letter-spacing:-.04em;
+      color:var(--accent);
+      font-weight:900;
+    }
+
+    .floating-card span{
+      display:block;
+      color:#10201a;
+      margin-top:9px;
+      font-weight:750;
+      line-height:1.35;
+    }
 
     .mini-photo{
       position:absolute;
@@ -635,7 +654,10 @@
       margin-bottom:36px;
     }
 
-    .section-head p{max-width:560px;font-size:1.06rem;color:var(--muted);font-weight:600;}
+    .section-head p{
+      max-width:560px;
+      font-size:1.04rem;
+    }
 
     .quickfacts,
     .material-section,
@@ -647,10 +669,33 @@
       border-bottom:1px solid var(--line);
     }
 
-    .dashboard{display:grid;grid-template-columns:.72fr 1.28fr;gap:28px;align-items:start;}
-    .split{display:grid;grid-template-columns:.92fr 1.08fr;gap:30px;align-items:start;}
-    .material-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px;align-items:start;}
-    .text-image-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+    .dashboard{
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .material-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .text-image-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:center;
+    }
 
     .quick-card,
     .panel,
@@ -670,14 +715,36 @@
     .panel p,
     .material-card p,
     .method-card p,
-    .info-card p{margin-top:14px;font-weight:600;}
+    .info-card p{
+      margin-top:14px;
+    }
 
-    .sidebar-stack{display:grid;gap:16px;position:sticky;top:120px;}
-    .mini-box{border-radius:26px;padding:22px;}
-    .mini-box h3{font-size:1.2rem;}
-    .mini-box a{display:block;margin-top:10px;color:var(--accent);font-weight:800;text-decoration:none;}
+    .sidebar-stack{
+      display:grid;
+      gap:16px;
+      position:sticky;
+      top:105px;
+    }
 
-    .badge-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+    .mini-box{
+      border-radius:26px;
+      padding:22px;
+    }
+
+    .mini-box a{
+      display:block;
+      margin-top:10px;
+      color:var(--accent);
+      font-weight:900;
+      text-decoration:none;
+    }
+
+    .badge-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
 
     .badge{
       display:inline-flex;
@@ -687,16 +754,19 @@
       padding:8px 12px;
       background:var(--accent-soft);
       color:var(--accent);
-      font-weight:800;
+      font-weight:850;
       font-size:.9rem;
       border:1px solid var(--line-dark);
     }
 
-    .facts{display:grid;gap:12px;}
+    .facts{
+      display:grid;
+      gap:12px;
+    }
 
     .fact{
       display:grid;
-      grid-template-columns:minmax(140px, .9fr) minmax(0, 1.5fr);
+      grid-template-columns:minmax(135px, .9fr) minmax(0, 1.5fr);
       gap:16px;
       align-items:center;
       background:var(--white);
@@ -707,8 +777,16 @@
       min-width:0;
     }
 
-    .fact span{color:var(--muted);font-weight:650;min-width:0;}
-    .fact strong{color:var(--ink);font-weight:800;text-align:right;min-width:0;}
+    .fact span{
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .fact strong{
+      color:var(--ink);
+      font-weight:900;
+      text-align:right;
+    }
 
     .cards,
     .method-grid{
@@ -717,8 +795,9 @@
       gap:18px;
     }
 
-    .cards{margin-top:0;}
-    .method-grid{margin-top:28px;}
+    .method-grid{
+      margin-top:28px;
+    }
 
     .card{
       background:rgba(255,255,255,.82);
@@ -741,7 +820,9 @@
       margin-bottom:17px;
     }
 
-    .card p{margin-top:10px;color:var(--muted);font-weight:600;}
+    .card p{
+      margin-top:10px;
+    }
 
     .material-list,
     .check-list{
@@ -758,10 +839,13 @@
       border-radius:18px;
       padding:15px 16px;
       color:var(--muted);
-      font-weight:600;
+      font-weight:650;
     }
 
-    .material-list strong{color:var(--ink);font-weight:800;}
+    .material-list strong{
+      color:var(--ink);
+      font-weight:900;
+    }
 
     .check-list li{
       background:var(--white);
@@ -771,7 +855,7 @@
       position:relative;
       color:var(--muted);
       box-shadow:var(--shadow-soft);
-      font-weight:600;
+      font-weight:650;
     }
 
     .check-list li::before{
@@ -786,10 +870,8 @@
       color:var(--accent-contrast);
       display:grid;
       place-items:center;
-      font-weight:800;
+      font-weight:900;
     }
-
-    .check-list strong{color:var(--ink);font-weight:800;}
 
     .process{
       display:grid;
@@ -818,16 +900,17 @@
       color:var(--accent-contrast);
       display:grid;
       place-items:center;
-      font-weight:800;
+      font-weight:900;
       margin-bottom:16px;
     }
 
-    .process-step h3{font-size:1.18rem;}
-    .process-step p{margin-top:9px;font-weight:600;}
+    .process-step p{
+      margin-top:9px;
+    }
 
     .image-panel,
     .rounded-image{
-      min-height:430px;
+      min-height:420px;
       border-radius:36px;
       overflow:hidden;
       border:1px solid var(--line-dark);
@@ -844,9 +927,18 @@
     }
 
     .image-panel-text,
-    .image-note{position:absolute;left:22px;right:22px;bottom:22px;border-radius:24px;padding:20px;}
+    .image-note{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      border-radius:24px;
+      padding:20px;
+    }
 
-    .image-strip-wrap{margin-top:34px;}
+    .image-strip-wrap{
+      margin-top:34px;
+    }
 
     .drag-hint{
       display:flex;
@@ -855,12 +947,17 @@
       gap:16px;
       margin-bottom:14px;
       color:var(--muted);
-      font-weight:650;
+      font-weight:700;
       font-size:.96rem;
       flex-wrap:wrap;
     }
 
-    .gallery-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+    .gallery-tools{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
     .gallery-arrow{
       width:48px;
@@ -873,14 +970,16 @@
       display:grid;
       place-items:center;
       font-size:1.3rem;
-      font-weight:800;
+      font-weight:900;
       box-shadow:0 12px 26px color-mix(in srgb, var(--accent) 22%, transparent);
       transition:.18s ease;
       flex:0 0 auto;
     }
 
-    .gallery-arrow:hover{transform:translateY(-1px);background:var(--accent-2);}
-    .gallery-arrow:disabled{opacity:.45;cursor:not-allowed;transform:none;}
+    .gallery-arrow:disabled{
+      opacity:.45;
+      cursor:not-allowed;
+    }
 
     .image-strip{
       display:flex;
@@ -889,16 +988,9 @@
       padding:6px 2px 10px;
       scroll-snap-type:x mandatory;
       -webkit-overflow-scrolling:touch;
-      cursor:grab;
       scrollbar-width:thin;
-      scrollbar-color:#9aa69f transparent;
       scroll-behavior:smooth;
     }
-
-    .image-strip:active{cursor:grabbing;}
-    .image-strip::-webkit-scrollbar{height:10px;}
-    .image-strip::-webkit-scrollbar-track{background:transparent;}
-    .image-strip::-webkit-scrollbar-thumb{background:color-mix(in srgb, var(--accent) 28%, transparent);border-radius:999px;}
 
     .photo-slide{
       flex:0 0 min(360px, 82vw);
@@ -913,9 +1005,14 @@
       background-position:center;
     }
 
-    .slide-label{position:absolute;left:16px;right:16px;bottom:16px;border-radius:18px;padding:14px 15px;}
-
-    .text-image{background:var(--bg-2);}
+    .slide-label{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      border-radius:18px;
+      padding:14px 15px;
+    }
 
     .quality-wrap{
       background:linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -928,18 +1025,14 @@
       overflow:hidden;
     }
 
-    .quality-wrap::before{
-      content:"";
-      position:absolute;
-      right:-160px;
-      top:-160px;
-      width:360px;
-      height:360px;
-      border-radius:999px;
-      background:color-mix(in srgb, var(--gold) 18%, transparent);
+    .quality-grid{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:34px;
+      align-items:center;
+      position:relative;
+      z-index:2;
     }
-
-    .quality-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:34px;align-items:center;position:relative;z-index:2;}
 
     .score{
       background:rgba(255,255,255,.12);
@@ -949,14 +1042,45 @@
       backdrop-filter:blur(12px);
     }
 
-    .score strong{display:block;font-size:clamp(3.8rem, 8vw, 7.1rem);line-height:.85;letter-spacing:-.05em;color:var(--accent-contrast);font-weight:850;}
-    .score span{display:block;margin-top:16px;color:var(--accent-contrast);font-weight:700;opacity:.9;}
+    .score strong{
+      display:block;
+      font-size:clamp(3.2rem, 8vw, 6.1rem);
+      line-height:.9;
+      letter-spacing:-.05em;
+      color:var(--accent-contrast);
+      font-weight:900;
+    }
 
-    .quality-wrap .eyebrow{background:rgba(255,255,255,.12);color:var(--accent-contrast);border-color:rgba(255,255,255,.28);}
-    .quality-wrap h2,.quality-wrap p{color:var(--accent-contrast);}
-    .quality-wrap p{margin-top:16px;font-size:1.08rem;font-weight:600;opacity:.92;}
+    .score span{
+      display:block;
+      margin-top:16px;
+      color:var(--accent-contrast);
+      font-weight:750;
+      opacity:.92;
+    }
 
-    .steps{counter-reset:step;display:grid;gap:16px;}
+    .quality-wrap .eyebrow{
+      background:rgba(255,255,255,.12);
+      color:var(--accent-contrast);
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .quality-wrap h2,
+    .quality-wrap p{
+      color:var(--accent-contrast);
+    }
+
+    .quality-wrap p{
+      margin-top:16px;
+      font-size:1.06rem;
+      opacity:.94;
+    }
+
+    .steps{
+      counter-reset:step;
+      display:grid;
+      gap:16px;
+    }
 
     .step{
       counter-increment:step;
@@ -966,6 +1090,7 @@
       padding:24px 24px 24px 82px;
       position:relative;
       box-shadow:var(--shadow-soft);
+      min-width:0;
     }
 
     .step::before{
@@ -980,15 +1105,28 @@
       color:var(--accent-contrast);
       display:grid;
       place-items:center;
-      font-weight:800;
+      font-weight:900;
     }
 
-    .step p{margin-top:7px;color:var(--muted);font-weight:600;}
+    .step p{
+      margin-top:7px;
+    }
 
-    .faq-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:16px;margin-top:28px;}
-    .faq-item{border-radius:26px;padding:24px;}
-    .faq-item h3{font-size:1.18rem;}
-    .faq-item p{margin-top:9px;font-weight:600;}
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .faq-item{
+      border-radius:26px;
+      padding:24px;
+    }
+
+    .faq-item p{
+      margin-top:9px;
+    }
 
     .contact{
       background:var(--contact-bg);
@@ -996,10 +1134,24 @@
       border-top:1px solid rgba(255,255,255,.10);
     }
 
-    .contact h2,.contact h3,.contact p{color:#fff;}
-    .contact .eyebrow{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.25);}
+    .contact h2,
+    .contact h3,
+    .contact p{
+      color:#fff;
+    }
 
-    .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:28px;align-items:start;}
+    .contact .eyebrow{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-color:rgba(255,255,255,.25);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:28px;
+      align-items:start;
+    }
 
     .contact-box,
     form{
@@ -1011,10 +1163,22 @@
       box-shadow:0 28px 70px rgba(0,0,0,.20);
     }
 
-    .contact-box h2,.contact-box h3,form h3{color:var(--ink);}
-    .contact-box p{color:var(--muted);margin-top:14px;font-weight:600;}
+    .contact-box h2,
+    .contact-box h3,
+    form h3{
+      color:var(--ink);
+    }
 
-    .contact-links{display:grid;gap:12px;margin-top:22px;}
+    .contact-box p{
+      color:var(--muted);
+      margin-top:14px;
+    }
+
+    .contact-links{
+      display:grid;
+      gap:12px;
+      margin-top:22px;
+    }
 
     .contact-link{
       background:var(--white);
@@ -1022,11 +1186,17 @@
       border-radius:20px;
       padding:17px;
       text-decoration:none;
-      font-weight:800;
+      font-weight:900;
       color:var(--ink);
     }
 
-    .contact-link span{display:block;color:var(--muted);font-size:.9rem;font-weight:600;margin-top:3px;}
+    .contact-link span{
+      display:block;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:650;
+      margin-top:3px;
+    }
 
     .contact-person{
       display:flex;
@@ -1050,25 +1220,54 @@
       flex:0 0 auto;
     }
 
-    .person-photo::after{content:"N";color:var(--accent-contrast);font-weight:800;font-size:2rem;}
-    .contact-person strong{display:block;color:var(--ink);font-weight:800;}
-    .contact-person span{display:block;color:var(--muted);font-weight:600;margin-top:3px;}
+    .person-photo::after{
+      content:"N";
+      color:var(--accent-contrast);
+      font-weight:900;
+      font-size:2rem;
+    }
 
-    label{display:block;font-weight:800;margin-bottom:7px;color:var(--ink);}
+    .contact-person strong{
+      display:block;
+      color:var(--ink);
+      font-weight:900;
+    }
 
-    input,select,textarea{
+    .contact-person span{
+      display:block;
+      color:var(--muted);
+      font-weight:650;
+      margin-top:3px;
+    }
+
+    label{
+      display:block;
+      font-weight:900;
+      margin-bottom:7px;
+      color:var(--ink);
+    }
+
+    input,
+    select,
+    textarea{
       width:100%;
       border:1px solid #b9c0bb;
       border-radius:16px;
       padding:14px 15px;
-      font:inherit;
       color:var(--ink);
       background:var(--white);
-      font-weight:600;
+      font-weight:650;
     }
 
-    input::placeholder,textarea::placeholder{color:#66736c;}
-    textarea{min-height:140px;resize:vertical;}
+    input::placeholder,
+    textarea::placeholder{
+      color:#66736c;
+    }
+
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
 
     input[type="file"]{
       cursor:pointer;
@@ -1084,48 +1283,59 @@
       padding:10px 14px;
       margin-right:12px;
       font:inherit;
-      font-weight:800;
+      font-weight:850;
       cursor:pointer;
     }
 
-    .file-help{margin-top:8px !important;margin-bottom:0;}
+    .required-upload{
+      background:#fff7ed;
+      border:1px solid #fdba74;
+      border-radius:24px;
+      padding:18px;
+      margin-bottom:18px;
+    }
 
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-    .field{margin-bottom:16px;}
-    .full{grid-column:1 / -1;}
+    .required-upload strong{
+      display:block;
+      color:#7c2d12;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .required-upload p{
+      color:#7c2d12;
+      font-weight:750;
+      margin-top:0;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .field{
+      margin-bottom:16px;
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
 
     .form-note{
       font-size:.92rem;
       color:var(--muted) !important;
       margin-top:12px;
-      font-weight:600;
+      font-weight:650;
       line-height:1.55;
     }
 
-    .form-status{
-      display:none;
-      margin-top:14px;
-      border-radius:18px;
-      padding:14px 16px;
-      font-weight:800;
-      line-height:1.5;
+    .form-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:6px;
     }
-
-    .form-status.ok{
-      display:block;
-      background:#dcfce7;
-      color:#14532d;
-      border:1px solid #86efac;
-    }
-
-    .form-status.warn{
-      display:block;
-      background:#fff7ed;
-      color:#9a3412;
-      border:1px solid #fdba74;
-    }
-
-    .form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
 
     .footer{
       background:var(--footer-bg);
@@ -1143,11 +1353,30 @@
       align-items:center;
     }
 
-    .footer-copy{color:#d9e0dc;font-size:.95rem;font-weight:600;}
-    .footer-copy strong{color:#fff;}
-    .footer-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end;}
+    .footer-copy{
+      color:#d9e0dc;
+      font-size:.95rem;
+      font-weight:650;
+    }
 
-    .socials{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+    .footer-copy strong{
+      color:#fff;
+    }
+
+    .footer-right{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .socials{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
 
     .social-icon{
       width:46px;
@@ -1158,496 +1387,483 @@
       text-decoration:none;
       color:#fff;
       border:1px solid rgba(255,255,255,.16);
-      transition:.18s ease;
       box-shadow:0 10px 24px rgba(0,0,0,.18);
     }
 
-    .social-icon:hover{transform:translateY(-1px) scale(1.03);filter:brightness(1.06);}
-    .social-icon svg{width:20px;height:20px;fill:currentColor;}
+    .social-icon svg{
+      width:20px;
+      height:20px;
+      fill:currentColor;
+    }
+
     .social-icon.facebook{background:#1877f2;}
     .social-icon.instagram{background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);}
     .social-icon.linkedin{background:#0a66c2;}
 
-    .footer .btn-secondary{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.24);}
-    .footer .btn-secondary:hover{background:#fff;color:#13211c;}
-
-    body.edit-mode [data-editable-text="true"]{
-      outline:2px dashed color-mix(in srgb, var(--gold) 75%, transparent);
-      outline-offset:4px;
-      border-radius:10px;
-      cursor:pointer;
-    }
-
-    body.edit-mode [data-editable-text="true"]:hover{
-      background:color-mix(in srgb, var(--gold) 12%, transparent);
-    }
-
-    .edit-help{
-      display:none;
-      color:#fff;
+    .footer .btn-secondary{
       background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:18px;
-      padding:10px 12px;
-      font-weight:700;
-      font-size:.9rem;
-      margin-top:10px;
-    }
-
-    body.edit-mode .edit-help{display:block;}
-
-    .text-editor-modal{
-      position:fixed;
-      inset:0;
-      z-index:5000;
-      display:none;
-      align-items:end;
-      justify-content:center;
-      padding:14px;
-    }
-
-    .text-editor-modal.open{display:flex;}
-
-    .text-editor-backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.58);
-    }
-
-    .text-editor-box{
-      position:relative;
-      z-index:2;
-      width:min(720px, 100%);
-      max-height:86vh;
-      overflow:auto;
-      background:var(--paper);
-      color:var(--ink);
-      border:1px solid var(--line-dark);
-      border-radius:26px;
-      padding:22px;
-      box-shadow:0 30px 90px rgba(0,0,0,.35);
-    }
-
-    .text-editor-box h2{
-      font-size:1.7rem !important;
-      margin:0 0 8px;
-      color:var(--ink);
-    }
-
-    .text-editor-box p{
-      color:var(--muted);
-      margin-bottom:14px;
-    }
-
-    #textEditorInput{
-      min-height:240px;
-      width:100%;
-      font-size:16px;
-      line-height:1.5;
-      background:#fff;
-      color:#111;
-      border:2px solid var(--line-dark);
-      border-radius:16px;
-      padding:14px;
-    }
-
-    .text-editor-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
-
-    body.high-contrast{background:#000 !important;color:#fff !important;}
-    body.high-contrast *{box-shadow:none !important;text-shadow:none !important;}
-    body.high-contrast header,
-    body.high-contrast .topbar,
-    body.high-contrast section,
-    body.high-contrast .quickfacts,
-    body.high-contrast .material-section,
-    body.high-contrast .editorial,
-    body.high-contrast .methods,
-    body.high-contrast .text-image,
-    body.high-contrast .contact,
-    body.high-contrast .footer,
-    body.high-contrast .quality-wrap,
-    body.high-contrast .faq-section{background:#000 !important;color:#fff !important;border-color:#fff !important;}
-
-    body.high-contrast h1,
-    body.high-contrast h2,
-    body.high-contrast h3,
-    body.high-contrast p,
-    body.high-contrast li,
-    body.high-contrast a,
-    body.high-contrast span,
-    body.high-contrast strong,
-    body.high-contrast label{color:#fff !important;}
-
-    body.high-contrast .card,
-    body.high-contrast .panel,
-    body.high-contrast .step,
-    body.high-contrast .trust-pill,
-    body.high-contrast .check-list li,
-    body.high-contrast .material-list li,
-    body.high-contrast .contact-box,
-    body.high-contrast form,
-    body.high-contrast .contact-link,
-    body.high-contrast .contact-person,
-    body.high-contrast .score,
-    body.high-contrast .photo-caption,
-    body.high-contrast .image-panel-text,
-    body.high-contrast .slide-label,
-    body.high-contrast .floating-card,
-    body.high-contrast .quick-card,
-    body.high-contrast .fact,
-    body.high-contrast .material-card,
-    body.high-contrast .method-card,
-    body.high-contrast .image-note,
-    body.high-contrast .info-card,
-    body.high-contrast .faq-item,
-    body.high-contrast .mini-box,
-    body.high-contrast .process-step,
-    body.high-contrast #siteNav.open{background:#fff !important;color:#000 !important;border:2px solid #fff !important;}
-
-    body.high-contrast .card *,
-    body.high-contrast .panel *,
-    body.high-contrast .step *,
-    body.high-contrast .trust-pill *,
-    body.high-contrast .check-list li *,
-    body.high-contrast .material-list li *,
-    body.high-contrast .contact-box *,
-    body.high-contrast form *,
-    body.high-contrast .contact-link *,
-    body.high-contrast .contact-person *,
-    body.high-contrast .score *,
-    body.high-contrast .photo-caption *,
-    body.high-contrast .image-panel-text *,
-    body.high-contrast .slide-label *,
-    body.high-contrast .floating-card *,
-    body.high-contrast .quick-card *,
-    body.high-contrast .fact *,
-    body.high-contrast .material-card *,
-    body.high-contrast .method-card *,
-    body.high-contrast .image-note *,
-    body.high-contrast .info-card *,
-    body.high-contrast .faq-item *,
-    body.high-contrast .mini-box *,
-    body.high-contrast .process-step *,
-    body.high-contrast #siteNav.open *{color:#000 !important;}
-
-    body.high-contrast .btn,
-    body.high-contrast .menu-btn,
-    body.high-contrast .design-toggle,
-    body.high-contrast .pill{background:#fff !important;color:#000 !important;border:2px solid #fff !important;}
-
-    body.high-contrast input,
-    body.high-contrast select,
-    body.high-contrast textarea{background:#fff !important;color:#000 !important;border:3px solid #000 !important;}
-
-    body.high-contrast input::placeholder,
-    body.high-contrast textarea::placeholder{color:#333 !important;}
-
-    body.high-contrast .step::before,
-    body.high-contrast .check-list li::before,
-    body.high-contrast .process-step::before{background:#000 !important;color:#fff !important;border:2px solid #000 !important;}
-
-    body.high-contrast .eyebrow,
-    body.high-contrast .badge{background:#fff !important;color:#000 !important;border:2px solid #fff !important;}
-
-    body.high-contrast .hero-photo,
-    body.high-contrast .mini-photo,
-    body.high-contrast .image-panel,
-    body.high-contrast .rounded-image,
-    body.high-contrast .photo-slide,
-    body.high-contrast .person-photo{background-color:transparent !important;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important;background-blend-mode:normal !important;filter:contrast(1.15) brightness(.88) saturate(.95) !important;}
-
-    @media (min-width:821px){
-      .text-editor-modal{align-items:center;}
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
     }
 
     @media (max-width:1100px){
-      .hero-grid,.dashboard,.split,.material-grid,.quality-grid,.contact-grid,.cards,.text-image-grid,.method-grid,.process,.faq-grid{
-        grid-template-columns:1fr !important;
+      .hero-grid,
+      .dashboard,
+      .split,
+      .material-grid,
+      .quality-grid,
+      .contact-grid,
+      .cards,
+      .text-image-grid,
+      .method-grid,
+      .process,
+      .faq-grid{
+        grid-template-columns:1fr;
       }
 
-      .nav-actions .btn{display:none;}
-      .sidebar-stack{position:static !important;}
-      .hero-visual{min-height:auto !important;}
-      .hero-photo{min-height:430px;}
-      .floating-card,.mini-photo{display:none !important;}
-      .facts,.cards,.method-grid,.process,.faq-grid,.steps,.material-list,.check-list{width:100%;min-width:0;}
-      .fact{grid-template-columns:1fr !important;gap:6px !important;min-width:0;}
-      .fact strong{text-align:left !important;}
+      .nav-actions .btn{
+        display:none;
+      }
+
+      .sidebar-stack{
+        position:static;
+      }
+
+      .hero-visual{
+        min-height:auto;
+      }
+
+      .hero-photo{
+        min-height:430px;
+      }
+
+      .floating-card,
+      .mini-photo{
+        display:none;
+      }
+
+      .fact{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+
+      .fact strong{
+        text-align:left;
+      }
     }
 
     @media (max-width:820px){
-      html{font-size:15px;}
-      html.large-text{font-size:106%;}
-      body{min-width:0;}
-
-      .topbar-inner,.design-panel,.nav,section,.hero,.footer{
-        padding-left:14px !important;
-        padding-right:14px !important;
+      html{
+        font-size:15px;
       }
 
-      .topbar-inner{display:grid;grid-template-columns:1fr;gap:10px;}
-      .topbar-title{font-size:.82rem;line-height:1.35;}
-      .language-pills{gap:6px;}
-      .language-pills span{width:100%;}
-      .pill{padding:7px 9px;font-size:.78rem;}
-      .edit-actions{display:grid;grid-template-columns:1fr;}
-      .design-toggle{width:100%;min-height:44px;border-radius:14px;}
-      .design-tools{grid-template-columns:1fr !important;padding:10px;border-radius:18px;}
-      .color-line{grid-template-columns:1fr 44px;}
-
-      .nav{min-height:68px;gap:10px;}
-      .logo{min-width:0;flex:1 1 auto;}
-      .logo-mark{width:42px;height:42px;border-radius:14px;flex:0 0 42px;}
-      .logo-text strong{font-size:.98rem;max-width:52vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-      .logo-text span{display:block;font-size:.78rem;max-width:52vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-      .menu-btn{min-height:42px;padding:10px 13px;flex:0 0 auto;}
-
-      #siteNav.open{left:10px !important;right:10px !important;width:auto !important;max-height:74vh;overflow:auto;border-radius:18px;}
-      #siteNav.open a{padding:12px 13px;font-size:.98rem;}
-
-      section{padding-top:52px !important;padding-bottom:52px !important;scroll-margin-top:92px;}
-      .hero{padding-top:38px !important;padding-bottom:52px !important;}
-
-      h1{font-size:clamp(2rem, 10.5vw, 3.05rem) !important;line-height:1.02;letter-spacing:-.025em;}
-      h2{font-size:clamp(1.62rem, 7.6vw, 2.35rem) !important;line-height:1.06;letter-spacing:-.022em;}
-      h3{font-size:1.08rem !important;line-height:1.16;}
-      .lead{font-size:1rem;line-height:1.58;margin-top:16px;}
-
-      .hero-actions,.form-actions{display:grid !important;grid-template-columns:1fr;gap:9px;}
-      .btn{width:100%;min-height:46px;padding:13px 15px;white-space:normal;line-height:1.18;}
-      .trust-row{grid-template-columns:1fr !important;gap:10px;}
-
-      .trust-pill,.card,.panel,.quick-card,.material-card,.method-card,.info-card,.faq-item,.mini-box,.process-step,.step,.contact-box,form{
-        border-radius:22px !important;
-        padding:20px !important;
+      .topbar-inner,
+      .design-panel,
+      .nav,
+      section,
+      .hero,
+      .footer{
+        padding-left:14px;
+        padding-right:14px;
       }
 
-      .hero-card{border-radius:24px;padding:7px;}
-      .hero-photo{min-height:310px !important;border-radius:18px;display:flex;align-items:flex-end;padding:10px;}
-      .photo-caption{position:static !important;width:100%;border-radius:16px !important;padding:14px !important;}
-      .section-head{display:block !important;margin-bottom:22px;}
-      .section-head p{margin-top:12px;}
-      .fact{padding:14px 15px !important;border-radius:16px !important;}
-      .material-list li,.check-list li{border-radius:16px;}
-      .check-list li{padding:15px 14px 15px 46px !important;}
-      .check-list li::before{left:14px !important;top:15px !important;width:25px;height:25px;}
-      .image-panel,.rounded-image{min-height:285px !important;border-radius:22px !important;}
-      .image-panel-text,.slide-label,.image-note{left:12px !important;right:12px !important;bottom:12px !important;border-radius:15px !important;padding:12px !important;}
-      .photo-slide{flex-basis:82vw !important;min-height:210px !important;border-radius:20px !important;}
-      .quality-wrap{border-radius:24px !important;padding:20px !important;}
-      .score{border-radius:20px !important;padding:20px !important;}
-      .score strong{font-size:clamp(3rem, 22vw, 4.8rem) !important;}
-      .step{padding-left:62px !important;}
-      .step::before{left:16px !important;top:20px !important;width:34px;height:34px;border-radius:12px;}
-      input,select,textarea{min-height:46px;border-radius:12px;padding:12px 13px;font-size:16px;}
-      textarea{min-height:125px;}
-      .form-grid{grid-template-columns:1fr !important;gap:0 !important;}
-      .contact-person{align-items:flex-start;}
-      .person-photo{width:58px;height:58px;border-radius:18px;flex-basis:58px;}
-      .footer-inner{grid-template-columns:1fr !important;}
-      .footer-right{justify-content:flex-start !important;}
-
-      .text-editor-box{
-        border-radius:22px 22px 0 0;
-        padding:18px;
+      .topbar-inner{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
       }
 
-      #textEditorInput{min-height:260px;}
+      .topbar-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        width:100%;
+      }
+
+      .tool-btn,
+      .pill{
+        width:100%;
+        text-align:center;
+      }
+
+      .design-tools{
+        grid-template-columns:1fr;
+        padding:10px;
+        border-radius:18px;
+      }
+
+      .nav{
+        min-height:68px;
+        gap:10px;
+      }
+
+      .logo-mark{
+        width:42px;
+        height:42px;
+        border-radius:14px;
+        flex:0 0 42px;
+      }
+
+      .logo-text strong{
+        font-size:.98rem;
+        max-width:48vw;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+
+      .logo-text span{
+        font-size:.78rem;
+        max-width:48vw;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+
+      .menu-btn{
+        min-height:42px;
+        padding:10px 13px;
+      }
+
+      #siteNav.open{
+        left:10px;
+        right:10px;
+        width:auto;
+        max-height:74vh;
+        overflow:auto;
+        border-radius:18px;
+      }
+
+      section{
+        padding-top:52px;
+        padding-bottom:52px;
+        scroll-margin-top:92px;
+      }
+
+      .hero{
+        padding-top:38px;
+        padding-bottom:52px;
+      }
+
+      h1{
+        font-size:clamp(2rem, 10.5vw, 3.05rem);
+        line-height:1.02;
+        letter-spacing:-.025em;
+      }
+
+      h2{
+        font-size:clamp(1.62rem, 7.6vw, 2.35rem);
+        line-height:1.06;
+        letter-spacing:-.022em;
+      }
+
+      h3{
+        font-size:1.08rem;
+        line-height:1.16;
+      }
+
+      .lead{
+        font-size:1rem;
+        line-height:1.58;
+        margin-top:16px;
+      }
+
+      .hero-actions,
+      .form-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:9px;
+      }
+
+      .btn{
+        width:100%;
+        min-height:46px;
+        padding:13px 15px;
+        white-space:normal;
+        line-height:1.18;
+      }
+
+      .trust-row{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+
+      .trust-pill,
+      .card,
+      .panel,
+      .quick-card,
+      .material-card,
+      .method-card,
+      .info-card,
+      .faq-item,
+      .mini-box,
+      .process-step,
+      .step,
+      .contact-box,
+      form{
+        border-radius:22px;
+        padding:20px;
+      }
+
+      .hero-card{
+        border-radius:24px;
+        padding:7px;
+      }
+
+      .hero-photo{
+        min-height:310px;
+        border-radius:18px;
+        display:flex;
+        align-items:flex-end;
+        padding:10px;
+      }
+
+      .photo-caption{
+        position:static;
+        width:100%;
+        border-radius:16px;
+        padding:14px;
+      }
+
+      .section-head{
+        display:block;
+        margin-bottom:22px;
+      }
+
+      .section-head p{
+        margin-top:12px;
+      }
+
+      .image-panel,
+      .rounded-image{
+        min-height:285px;
+        border-radius:22px;
+      }
+
+      .image-panel-text,
+      .slide-label,
+      .image-note{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        border-radius:15px;
+        padding:12px;
+      }
+
+      .photo-slide{
+        flex-basis:82vw;
+        min-height:210px;
+        border-radius:20px;
+      }
+
+      .quality-wrap{
+        border-radius:24px;
+        padding:20px;
+      }
+
+      .score{
+        border-radius:20px;
+        padding:20px;
+      }
+
+      .step{
+        padding-left:62px;
+      }
+
+      .step::before{
+        left:16px;
+        top:20px;
+        width:34px;
+        height:34px;
+        border-radius:12px;
+      }
+
+      input,
+      select,
+      textarea{
+        min-height:46px;
+        border-radius:12px;
+        padding:12px 13px;
+        font-size:16px;
+      }
+
+      textarea{
+        min-height:125px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+      .full{
+        grid-column:auto;
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+
+      .footer-right{
+        justify-content:flex-start;
+      }
     }
 
     @media (max-width:430px){
-      .topbar-inner,.design-panel,.nav,section,.hero,.footer{padding-left:12px !important;padding-right:12px !important;}
-      .logo-text strong,.logo-text span{max-width:46vw;}
-      h1{font-size:2.02rem !important;}
-      h2{font-size:1.55rem !important;}
-      .trust-pill,.card,.panel,.quick-card,.material-card,.method-card,.info-card,.faq-item,.mini-box,.process-step,.step,.contact-box,form{padding:17px !important;}
-      .hero-photo{min-height:280px !important;}
-      .photo-slide{flex-basis:86vw !important;}
+      h1{
+        font-size:2.02rem;
+      }
+
+      h2{
+        font-size:1.55rem;
+      }
+
+      .trust-pill,
+      .card,
+      .panel,
+      .quick-card,
+      .material-card,
+      .method-card,
+      .info-card,
+      .faq-item,
+      .mini-box,
+      .process-step,
+      .step,
+      .contact-box,
+      form{
+        padding:17px;
+      }
+
+      .hero-photo{
+        min-height:280px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
-      *,*::before,*::after{scroll-behavior:auto !important;transition:none !important;}
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+        transition:none !important;
+      }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Hoppa till innehåll</a>
 
-  <div class="topbar" id="topbar" aria-label="Sidverktyg">
+  <div class="topbar">
     <div class="topbar-inner">
-      <span class="topbar-title">Gratis demo: få ett konkret sidförslag innan du bestämmer dig</span>
+      <span class="topbar-title" data-edit>Gratis demo: få ett konkret sidförslag innan du bestämmer dig</span>
 
-      <div class="language-pills" aria-label="Språk som kan läggas till">
-        <span>Språk:</span>
-        <button type="button" class="pill active">Svenska</button>
-        <button type="button" class="pill ghost" title="Kan läggas till vid behov">English</button>
-        <button type="button" class="pill ghost" title="Kan läggas till vid behov">Dansk</button>
-        <button type="button" class="pill ghost" title="Kan läggas till vid behov">Norsk</button>
+      <div class="topbar-actions">
+        <button class="tool-btn" type="button" id="designToggle">Ändra design</button>
+        <button class="tool-btn" type="button" id="editToggle">Redigera text</button>
+        <button class="tool-btn" type="button" id="savePageBtn">Spara ändrad sida</button>
+        <button class="tool-btn" type="button" id="resetTextBtn">Återställ text</button>
+      </div>
+
+      <div class="topbar-actions" aria-label="Språk som kan läggas till">
+        <span style="font-weight:900;">Språk:</span>
+        <span class="pill active">Svenska</span>
+        <span class="pill">English</span>
+        <span class="pill">Dansk</span>
+        <span class="pill">Norsk</span>
       </div>
     </div>
 
-    <div class="design-panel">
-      <div class="edit-actions">
-        <button class="design-toggle" type="button" id="designToggle" aria-expanded="false" aria-controls="designTools">Ändra design</button>
-        <button class="design-toggle" type="button" id="editToggle" aria-pressed="false">Redigera text</button>
-        <button class="design-toggle" type="button" id="saveHtml">Spara ändrad sida</button>
-        <button class="design-toggle" type="button" id="resetText">Återställ text</button>
-      </div>
-      <div class="edit-help">Redigeringsläge är på. Klicka på valfri text, ändra och spara. Klicka sedan på “Spara ändrad sida” och skicka HTML-filen.</div>
-
-      <div class="design-tools" id="designTools">
+    <div class="design-panel" id="designPanel">
+      <div class="design-tools">
         <div class="tool-field">
-          <label for="stylePresetSelect">Färdig stil</label>
-          <select id="stylePresetSelect">
-            <option value="">Välj färdig kombination</option>
-            <option value="nordic-clean">Nordic Clean – grön + Inter</option>
-            <option value="minimal-white">Minimal Vit – svart/vit + Inter</option>
-            <option value="premium-beige">Premium Beige – beige + Montserrat</option>
-            <option value="local-service">Lokal Service – skog + Manrope</option>
-            <option value="corporate-blue">Corporate Blue – blå + DM Sans</option>
-            <option value="navy-trust">Navy Trust – marin + Merriweather</option>
-            <option value="luxury-gold">Luxury Gold – mörk/guld + Playfair</option>
-            <option value="creative-pink">Creative Pink – rosa + Poppins</option>
-            <option value="soft-editorial">Soft Editorial – beige + Lora</option>
-            <option value="tech-turquoise">Tech Turquoise – turkos + Space Grotesk</option>
-            <option value="bold-red">Bold Red – röd + Montserrat</option>
-            <option value="warm-orange">Warm Orange – orange + Nunito</option>
-            <option value="clear-verdana">Superläsbar – ljus + Verdana</option>
-            <option value="industrial-black">Industrial Black – svart + Oswald</option>
-          </select>
-        </div>
-
-        <div class="tool-field">
-          <label for="paletteSelect">Färgpalett</label>
-          <select id="paletteSelect">
-            <option value="classic" selected>Klassisk grön</option>
-            <option value="blackWhite">Svart/vit</option>
-            <option value="whiteBlack">Vit/svart</option>
-            <option value="beigeBrown">Beige/brun</option>
-            <option value="blue">Blå</option>
-            <option value="navy">Marinblå</option>
-            <option value="red">Röd</option>
-            <option value="burgundy">Vinröd</option>
-            <option value="purple">Lila</option>
-            <option value="pink">Rosa</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Gul</option>
-            <option value="turquoise">Turkos</option>
-            <option value="forest">Skog</option>
+          <label for="stylePreset">Färdig stil</label>
+          <select id="stylePreset">
+            <option value="">Välj kombination</option>
+            <option value="classic">Nordic Clean</option>
+            <option value="white">Minimal vit</option>
+            <option value="blue">Corporate blå</option>
+            <option value="forest">Lokal service</option>
             <option value="luxury">Lyx mörk/guld</option>
-            <option value="custom">Egen</option>
+            <option value="pink">Creative rosa</option>
+            <option value="orange">Varm orange</option>
+            <option value="black">Svart/vit</option>
           </select>
         </div>
 
         <div class="tool-field">
           <label for="fontSelect">Fontstil</label>
           <select id="fontSelect">
-            <option value="inter" selected>Inter – modern</option>
-            <option value="dm-sans">DM Sans – ren SaaS</option>
-            <option value="manrope">Manrope – premium</option>
-            <option value="montserrat">Montserrat – tydlig</option>
-            <option value="poppins">Poppins – mjuk modern</option>
-            <option value="open-sans">Open Sans – neutral</option>
-            <option value="lato">Lato – vänlig</option>
-            <option value="roboto">Roboto – teknisk</option>
-            <option value="source-sans">Source Sans 3 – redaktionell</option>
-            <option value="work-sans">Work Sans – rak</option>
-            <option value="rubik">Rubik – rundad</option>
-            <option value="nunito">Nunito – mjuk</option>
-            <option value="quicksand">Quicksand – lekfull</option>
-            <option value="lexend">Lexend – väldigt lättläst</option>
-            <option value="space-grotesk">Space Grotesk – startup</option>
-            <option value="raleway">Raleway – elegant</option>
-            <option value="oswald">Oswald – kompakt rubrik</option>
-            <option value="bebas">Bebas Neue – stark rubrik</option>
-            <option value="merriweather">Merriweather – seriös</option>
-            <option value="lora">Lora – varm editorial</option>
-            <option value="playfair">Playfair Display – exklusiv</option>
-            <option value="cormorant">Cormorant Garamond – klassisk</option>
-            <option value="roboto-slab">Roboto Slab – robust</option>
-            <option value="abril">Abril Fatface – mode/editorial</option>
-            <option value="georgia">Georgia – system serif</option>
-            <option value="arial">Arial – enkel systemfont</option>
-            <option value="verdana">Verdana – superläsbar</option>
-            <option value="trebuchet">Trebuchet MS – mjuk systemfont</option>
+            <option value="Inter">Inter – modern</option>
+            <option value="Montserrat">Montserrat – tydlig</option>
+            <option value="Manrope">Manrope – premium</option>
+            <option value="DM Sans">DM Sans – SaaS</option>
+            <option value="Poppins">Poppins – mjuk</option>
+            <option value="Open Sans">Open Sans – neutral</option>
+            <option value="Lato">Lato – vänlig</option>
+            <option value="Roboto">Roboto – teknisk</option>
+            <option value="Lexend">Lexend – lättläst</option>
+            <option value="Space Grotesk">Space Grotesk – startup</option>
+            <option value="Playfair Display">Playfair Display – exklusiv</option>
+            <option value="Lora">Lora – editorial</option>
+            <option value="Merriweather">Merriweather – seriös</option>
+            <option value="Oswald">Oswald – kompakt</option>
+            <option value="Bebas Neue">Bebas Neue – stark rubrik</option>
+            <option value="Verdana">Verdana – superläsbar</option>
+            <option value="Arial">Arial – enkel</option>
+            <option value="Georgia">Georgia – klassisk</option>
           </select>
         </div>
 
         <div class="tool-field">
-          <label for="bgHue">Bakgrundsfärg</label>
-          <div class="range-control">
-            <input id="bgHue" type="range" min="0" max="360" value="38" />
-            <i class="color-dot" id="bgDot" aria-hidden="true"></i>
-          </div>
+          <label for="bgColor">Bakgrund</label>
+          <input id="bgColor" type="color" value="#efe8dc" />
         </div>
 
         <div class="tool-field">
-          <label for="bgLight">Ljushet</label>
-          <div class="range-control">
-            <input id="bgLight" type="range" min="0" max="100" value="92" />
-            <i class="color-dot" id="lightDot" aria-hidden="true"></i>
-          </div>
+          <label for="paperColor">Kort</label>
+          <input id="paperColor" type="color" value="#fffaf3" />
         </div>
 
         <div class="tool-field">
-          <label for="accentHue">Accentfärg</label>
-          <div class="range-control">
-            <input id="accentHue" type="range" min="0" max="360" value="157" />
-            <i class="color-dot" id="accentDot" aria-hidden="true"></i>
-          </div>
+          <label for="inkColor">Text</label>
+          <input id="inkColor" type="color" value="#16211d" />
         </div>
 
         <div class="tool-field">
-          <label for="bgHex">Bakgrund HEX</label>
-          <div class="color-line">
-            <input id="bgHex" type="text" value="#EFE8DC" maxlength="7" placeholder="#EFE8DC" />
-            <input id="bgPicker" type="color" value="#efe8dc" aria-label="Välj bakgrundsfärg" />
-          </div>
+          <label for="accentColor">Accent</label>
+          <input id="accentColor" type="color" value="#16382f" />
         </div>
 
         <div class="tool-field">
-          <label for="paperHex">Kort HEX</label>
-          <div class="color-line">
-            <input id="paperHex" type="text" value="#FFFAF3" maxlength="7" placeholder="#FFFAF3" />
-            <input id="paperPicker" type="color" value="#fffaf3" aria-label="Välj kortfärg" />
-          </div>
+          <label for="radiusSelect">Rundning</label>
+          <select id="radiusSelect">
+            <option value="18px">Liten</option>
+            <option value="28px" selected>Normal</option>
+            <option value="38px">Stor</option>
+          </select>
         </div>
 
         <div class="tool-field">
-          <label for="inkHex">Text HEX</label>
-          <div class="color-line">
-            <input id="inkHex" type="text" value="#16211D" maxlength="7" placeholder="#16211D" />
-            <input id="inkPicker" type="color" value="#16211d" aria-label="Välj textfärg" />
-          </div>
+          <label for="contrastSelect">Kontrast</label>
+          <select id="contrastSelect">
+            <option value="normal">Normal</option>
+            <option value="strong">Starkare</option>
+          </select>
         </div>
-
-        <div class="tool-field">
-          <label for="accentHex">Accent HEX</label>
-          <div class="color-line">
-            <input id="accentHex" type="text" value="#16382F" maxlength="7" placeholder="#16382F" />
-            <input id="accentPicker" type="color" value="#16382f" aria-label="Välj accentfärg" />
-          </div>
-        </div>
-
-        <button class="design-toggle" type="button" id="increaseText" aria-pressed="false">Större text</button>
-        <button class="design-toggle" type="button" id="contrastToggle" aria-pressed="false">Hög kontrast</button>
-        <button class="design-toggle" type="button" id="resetDesign">Återställ design</button>
       </div>
     </div>
   </div>
 
-  <header id="siteHeader">
+  <div class="edit-hint">
+    Redigeringsläge är på. Klicka direkt på rubriker och texter på sidan. När du är klar: klicka “Spara ändrad sida” och bifoga filen längst ner i formuläret.
+  </div>
+
+  <header>
     <div class="nav">
-      <a class="logo" href="#top" aria-label="Till startsidan" id="logoLink">
-        <span class="logo-mark">NN</span>
+      <a class="logo" href="#top" aria-label="Till startsidan">
+        <span class="logo-mark" data-edit>NN</span>
         <span class="logo-text">
-          <strong>Nordlöf Nordic</strong>
-          <span>Gratis demo av ny hemsida för företag</span>
+          <strong data-edit>Nordlöf Nordic</strong>
+          <span data-edit>Gratis demo av ny hemsida för företag</span>
         </span>
       </a>
 
@@ -1666,7 +1882,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-primary" href="#kontakt">Beställ gratis demo</a>
+        <a class="btn btn-primary" href="#kontakt" data-edit>Beställ gratis demo</a>
         <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Meny</button>
       </div>
     </div>
@@ -1676,46 +1892,57 @@
     <section class="hero" id="top">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow">Gratis demo av ny hemsida</span>
-          <h1>Skicka ert material. Få en konkret demo innan ni bestämmer er.</h1>
-          <p class="lead">Jag bygger ett första sidförslag utifrån er företagsberättelse, era tjänster, bilder, länkar och önskemål. Ni ser upplägget först och kan lämna feedback innan något går vidare.</p>
-          <p class="lead">Tanken är enkel: ni ska inte behöva gissa hur en ny hemsida kan se ut. Jag visar det konkret.</p>
+          <span class="eyebrow" data-edit>Gratis demo av ny hemsida</span>
+
+          <h1 data-edit>Skicka ert material. Få en konkret demo innan ni bestämmer er.</h1>
+
+          <p class="lead" data-edit>
+            Jag bygger ett första sidförslag utifrån er företagsberättelse, era tjänster, bilder, länkar och önskemål. Ni ser upplägget först och kan lämna feedback innan något går vidare.
+          </p>
+
+          <p class="lead" data-edit>
+            Tanken är enkel: ni ska inte behöva gissa hur en ny hemsida kan se ut. Jag visar det konkret.
+          </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Beställ gratis demo</a>
-            <a class="btn btn-gold" href="#material">Se vad jag behöver</a>
-            <a class="btn btn-secondary" href="#process">Så går det till</a>
+            <a class="btn btn-primary" href="#kontakt" data-edit>Beställ gratis demo</a>
+            <a class="btn btn-gold" href="#material" data-edit>Se vad jag behöver</a>
+            <a class="btn btn-secondary" href="#process" data-edit>Så går det till</a>
           </div>
 
-          <div class="trust-row" aria-label="Förtroendepunkter">
+          <div class="trust-row">
             <div class="trust-pill">
-              <strong>Gratis demo först</strong>
-              <span>se förslaget innan beslut</span>
+              <strong data-edit>Gratis demo först</strong>
+              <span data-edit>se förslaget innan beslut</span>
             </div>
+
             <div class="trust-pill">
-              <strong>Ert material styr</strong>
-              <span>berättelse, bilder och tjänster formar sidan</span>
+              <strong data-edit>Ert material styr</strong>
+              <span data-edit>berättelse, bilder och tjänster formar sidan</span>
             </div>
+
             <div class="trust-pill">
-              <strong>Ingen WordPress-låsning</strong>
-              <span>kodad sida som kan flyttas och ägas</span>
+              <strong data-edit>Ingen WordPress-låsning</strong>
+              <span data-edit>kodad sida som kan flyttas och ägas</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Exempelbild för hemsidan">
+        <div class="hero-visual">
           <div class="floating-card">
-            <strong>Gratis demo</strong>
-            <span>Ni skickar material. Jag visar ett konkret sidförslag.</span>
+            <strong data-edit>Gratis demo</strong>
+            <span data-edit>Ni skickar material. Jag visar ett konkret sidförslag.</span>
           </div>
+
           <div class="hero-card">
             <div class="hero-photo">
               <div class="photo-caption">
-                <strong>Byt till era egna bilder.</strong>
-                <span>Riktig berättelse, riktiga bilder och tydliga tjänster slår mallfluff varje dag i veckan.</span>
+                <strong data-edit>Byt till era egna bilder.</strong>
+                <span data-edit>Riktig berättelse, riktiga bilder och tydliga tjänster slår mallfluff varje dag i veckan.</span>
               </div>
             </div>
           </div>
+
           <div class="mini-photo" aria-hidden="true"></div>
         </div>
       </div>
@@ -1724,23 +1951,30 @@
     <section class="material-section" id="gratis-demo">
       <div class="wrap material-grid">
         <div>
-          <span class="eyebrow">Gratis demo</span>
-          <h2>Ni får ett första sidförslag innan ni behöver ta beslut.</h2>
-          <p class="lead">Skicka företagets berättelse, bilder, tjänster, priser, länkar och vad ni vill att sidan ska göra. Jag bygger en demo som visar struktur, känsla och kundresa.</p>
-          <p class="lead">Vill ni gå vidare efter demon kan sidan göras skarp med rätt innehåll, SEO-grund, teknisk struktur, kontaktflöden och kopplingar som Google Maps. Vill ni inte gå vidare har ni ändå fått se ett konkret förslag.</p>
+          <span class="eyebrow" data-edit>Gratis demo</span>
+          <h2 data-edit>Ni får ett första sidförslag innan ni behöver ta beslut.</h2>
+
+          <p class="lead" data-edit>
+            Skicka företagets berättelse, bilder, tjänster, priser, länkar och vad ni vill att sidan ska göra. Jag bygger en demo som visar struktur, känsla och kundresa.
+          </p>
+
+          <p class="lead" data-edit>
+            Vill ni gå vidare efter demon kan sidan göras skarp med rätt innehåll, SEO-grund, teknisk struktur, kontaktflöden och kopplingar som Google Maps.
+          </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Beställ gratis demo</a>
-            <a class="btn btn-secondary" href="#material">Vad ska jag skicka?</a>
+            <a class="btn btn-primary" href="#kontakt" data-edit>Beställ gratis demo</a>
+            <a class="btn btn-secondary" href="#material" data-edit>Vad ska jag skicka?</a>
           </div>
         </div>
 
         <div class="material-card">
-          <h3>Det här ingår i demon</h3>
+          <h3 data-edit>Det här ingår i demon</h3>
           <ul class="material-list">
-            <li><strong>Första sidstruktur:</strong> hero, tjänster, förtroende, process, frågor och kontakt.</li>
-            <li><strong>Designriktning:</strong> färger, typografi och layout som passar företagets känsla.</li>
-            <li><strong>Materialplats:</strong> tydlig plan för bilder, filmer, länkar och innehåll.</li>
-            <li><strong>Nästa steg:</strong> vad som behöver göras för skarp publicering.</li>
+            <li data-edit><strong>Första sidstruktur:</strong> hero, tjänster, förtroende, process, frågor och kontakt.</li>
+            <li data-edit><strong>Designriktning:</strong> färger, typografi och layout som passar företagets känsla.</li>
+            <li data-edit><strong>Materialplats:</strong> tydlig plan för bilder, filmer, länkar och innehåll.</li>
+            <li data-edit><strong>Nästa steg:</strong> vad som behöver göras för skarp publicering.</li>
           </ul>
         </div>
       </div>
@@ -1748,37 +1982,40 @@
 
     <section class="quickfacts" id="snabbfakta">
       <div class="wrap dashboard">
-        <aside class="sidebar-stack" aria-label="Fakta och kontakt">
+        <aside class="sidebar-stack">
           <div class="quick-card">
-            <span class="eyebrow">Snabbfakta</span>
-            <h2>Det viktigaste först.</h2>
-            <p>Demon ska snabbt visa vad företaget gör, vem det hjälper, varför kunden ska bry sig och hur nästa steg ser ut.</p>
+            <span class="eyebrow" data-edit>Snabbfakta</span>
+            <h2 data-edit>Det viktigaste först.</h2>
+            <p data-edit>
+              Demon ska snabbt visa vad företaget gör, vem det hjälper, varför kunden ska bry sig och hur nästa steg ser ut.
+            </p>
+
             <div class="badge-list">
-              <span class="badge">Demo först</span>
-              <span class="badge">Ert material</span>
-              <span class="badge">SEO-grund</span>
-              <span class="badge">Kodad sida</span>
+              <span class="badge" data-edit>Demo först</span>
+              <span class="badge" data-edit>Ert material</span>
+              <span class="badge" data-edit>SEO-grund</span>
+              <span class="badge" data-edit>Kodad sida</span>
             </div>
           </div>
 
           <div class="mini-box">
-            <h3>Kontakt direkt</h3>
-            <p>För frågor, demo, offert eller samarbete.</p>
-            <a href="tel:+460793442520">079 344 25 20</a>
-            <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+            <h3 data-edit>Kontakt direkt</h3>
+            <p data-edit>För frågor, demo, offert eller samarbete.</p>
+            <a href="tel:+46000000000" data-edit>[Telefonnummer]</a>
+            <a href="mailto:erica@webutvecklare.se" data-edit>erica@webutvecklare.se</a>
           </div>
         </aside>
 
         <div class="facts">
-          <div class="fact"><span>Företag</span><strong>[Företagsnamn]</strong></div>
-          <div class="fact"><span>Ort</span><strong>[Ort / område]</strong></div>
-          <div class="fact"><span>Erbjudande</span><strong>[Kort erbjudande]</strong></div>
-          <div class="fact"><span>Målgrupp</span><strong>[Vilka kunder ni vill nå]</strong></div>
-          <div class="fact"><span>Material</span><strong>Text, bilder, filmer, länkar och logga</strong></div>
-          <div class="fact"><span>Google</span><strong>Maps-länk, områden och sökord</strong></div>
-          <div class="fact"><span>Inspiration</span><strong>URL:er till sidor ni gillar</strong></div>
-          <div class="fact"><span>Nästa steg</span><strong>Demo → feedback → skarp version</strong></div>
-          <div class="fact"><span>Teknik</span><strong>Kodad sida, SEO-grund och kontaktflöde</strong></div>
+          <div class="fact"><span data-edit>Företag</span><strong data-edit>[Företagsnamn]</strong></div>
+          <div class="fact"><span data-edit>Ort</span><strong data-edit>[Ort / område]</strong></div>
+          <div class="fact"><span data-edit>Erbjudande</span><strong data-edit>[Kort erbjudande]</strong></div>
+          <div class="fact"><span data-edit>Målgrupp</span><strong data-edit>[Vilka kunder ni vill nå]</strong></div>
+          <div class="fact"><span data-edit>Material</span><strong data-edit>Text, bilder, filmer, länkar och logga</strong></div>
+          <div class="fact"><span data-edit>Google</span><strong data-edit>Maps-länk, områden och sökord</strong></div>
+          <div class="fact"><span data-edit>Inspiration</span><strong data-edit>URL:er till sidor ni gillar</strong></div>
+          <div class="fact"><span data-edit>Nästa steg</span><strong data-edit>Demo → feedback → skarp version</strong></div>
+          <div class="fact"><span data-edit>Teknik</span><strong data-edit>Kodad sida, SEO-grund och kontaktflöde</strong></div>
         </div>
       </div>
     </section>
@@ -1786,29 +2023,37 @@
     <section class="material-section" id="material">
       <div class="wrap material-grid">
         <div>
-          <span class="eyebrow">Material från kunden</span>
-          <h2>För att bygga en bra gratis demo behöver jag er berättelse och ert material.</h2>
-          <p class="lead">Finjusteringar i textens synlighet, färger, avstånd, sektioner och hela designen fixar jag. Det jag behöver från er är företagets riktiga berättelse, all viktig information, bilder, eventuella filmer och länkar som ska finnas med på hemsidan.</p>
-          <p class="lead">Om ni försöker bygga allt själva i exempelvis Loopia eller liknande verktyg kan det lätt gå många timmar bara på att få designen att kännas rätt. Och då är arbetet bakom sidan fortfarande kvar: struktur, teknisk grund, SEO, indexering i Google, kontaktflöden och kopplingar som Google Maps.</p>
+          <span class="eyebrow" data-edit>Material från kunden</span>
+          <h2 data-edit>För att bygga en bra gratis demo behöver jag er berättelse och ert material.</h2>
+
+          <p class="lead" data-edit>
+            Finjusteringar i textens synlighet, färger, avstånd, sektioner och hela designen fixar jag. Det jag behöver från er är företagets riktiga berättelse, all viktig information, bilder, eventuella filmer och länkar som ska finnas med på hemsidan.
+          </p>
+
+          <p class="lead" data-edit>
+            Om ni försöker bygga allt själva i exempelvis Loopia eller liknande verktyg kan det lätt gå många timmar bara på att få designen att kännas rätt. Och då är arbetet bakom sidan fortfarande kvar: struktur, teknisk grund, SEO, indexering i Google, kontaktflöden och kopplingar som Google Maps.
+          </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Beställ gratis demo</a>
-            <a class="btn btn-secondary" href="#checklista">Se checklista</a>
+            <a class="btn btn-primary" href="#kontakt" data-edit>Beställ gratis demo</a>
+            <a class="btn btn-secondary" href="#checklista" data-edit>Se checklista</a>
           </div>
         </div>
 
         <div class="material-card" id="checklista">
-          <h3>Skicka detta, så löser jag resten</h3>
+          <h3 data-edit>Skicka detta, så löser jag resten</h3>
+
           <ul class="material-list">
-            <li><strong>Företagsberättelse:</strong> vilka ni är, varför ni startade och vad ni vill förmedla.</li>
-            <li><strong>Tjänster:</strong> vad ni erbjuder, gärna med kort förklaring av varje tjänst.</li>
-            <li><strong>Målgrupp:</strong> vilka kunder ni helst vill nå.</li>
-            <li><strong>Priser:</strong> fasta priser, från-priser eller om offert gäller.</li>
-            <li><strong>Bilder och filer:</strong> logga, personalbilder, miljöbilder, produktbilder, pdf:er, prislistor, broschyrer eller tidigare arbeten.</li>
-            <li><strong>Kontaktuppgifter:</strong> telefon, e-post, ort, adress och sociala medier.</li>
-            <li><strong>Exempel och inspiration:</strong> om ni vill ha med något liknande från någon annan sida, skicka URL:en och skriv vad ni gillar eller vill efterlikna. Då kan jag bygga en egen version som passar er sida.</li>
-            <li><strong>Google och karta:</strong> Google Maps-länk, företagsprofil, adress, områden och sökord ni vill synas på.</li>
-            <li><strong>Film:</strong> eventuella videoklipp, YouTube-länkar, Instagram/Reels eller annat rörligt material.</li>
-            <li><strong>Måsten:</strong> sådant som absolut måste stå med på hemsidan.</li>
+            <li data-edit><strong>Företagsberättelse:</strong> vilka ni är, varför ni startade och vad ni vill förmedla.</li>
+            <li data-edit><strong>Tjänster:</strong> vad ni erbjuder, gärna med kort förklaring av varje tjänst.</li>
+            <li data-edit><strong>Målgrupp:</strong> vilka kunder ni helst vill nå.</li>
+            <li data-edit><strong>Priser:</strong> fasta priser, från-priser eller om offert gäller.</li>
+            <li data-edit><strong>Bilder och filer:</strong> logga, personalbilder, miljöbilder, produktbilder, pdf:er, prislistor, broschyrer eller tidigare arbeten.</li>
+            <li data-edit><strong>Kontaktuppgifter:</strong> telefon, e-post, ort, adress och sociala medier.</li>
+            <li data-edit><strong>Exempel och inspiration:</strong> om ni vill ha med något liknande från någon annan sida, skicka URL:en och skriv vad ni gillar.</li>
+            <li data-edit><strong>Google och karta:</strong> Google Maps-länk, företagsprofil, adress, områden och sökord ni vill synas på.</li>
+            <li data-edit><strong>Film:</strong> eventuella videoklipp, YouTube-länkar, Instagram/Reels eller annat rörligt material.</li>
+            <li data-edit><strong>Måsten:</strong> sådant som absolut måste stå med på hemsidan.</li>
           </ul>
         </div>
       </div>
@@ -1818,27 +2063,32 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Om företaget</span>
-            <h2>Berätta vad ni gör utan att besökaren behöver gissa.</h2>
+            <span class="eyebrow" data-edit>Om företaget</span>
+            <h2 data-edit>Berätta vad ni gör utan att besökaren behöver gissa.</h2>
           </div>
-          <p>Den här delen ska sälja in företaget enkelt: vad ni gör, varför det behövs och varför kunden ska välja just er.</p>
+
+          <p data-edit>
+            Den här delen ska sälja in företaget enkelt: vad ni gör, varför det behövs och varför kunden ska välja just er.
+          </p>
         </div>
 
         <div class="cards">
           <article class="card">
-            <div class="card-icon" aria-hidden="true">⚙️</div>
-            <h3>Tydligt erbjudande</h3>
-            <p>Beskriv huvudtjänsten här. Håll det konkret: vad kunden får och vilket problem det löser.</p>
+            <div class="card-icon">⚙️</div>
+            <h3 data-edit>Tydligt erbjudande</h3>
+            <p data-edit>Beskriv huvudtjänsten här. Håll det konkret: vad kunden får och vilket problem det löser.</p>
           </article>
+
           <article class="card">
-            <div class="card-icon" aria-hidden="true">🤝</div>
-            <h3>Trygg kontakt</h3>
-            <p>Lyft hur kunden får hjälp, hur kommunikationen fungerar och hur nästa steg ser ut.</p>
+            <div class="card-icon">🤝</div>
+            <h3 data-edit>Trygg kontakt</h3>
+            <p data-edit>Lyft hur kunden får hjälp, hur kommunikationen fungerar och hur nästa steg ser ut.</p>
           </article>
+
           <article class="card">
-            <div class="card-icon" aria-hidden="true">📍</div>
-            <h3>Lokal förankring</h3>
-            <p>Skriv var företaget finns, vilka områden ni täcker och varför det är relevant för kunden.</p>
+            <div class="card-icon">📍</div>
+            <h3 data-edit>Lokal förankring</h3>
+            <p data-edit>Skriv var företaget finns, vilka områden ni täcker och varför det är relevant för kunden.</p>
           </article>
         </div>
       </div>
@@ -1848,19 +2098,20 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Tjänster</span>
-            <h2>Visa vad kunden kan köpa, boka eller fråga om.</h2>
+            <span class="eyebrow" data-edit>Tjänster</span>
+            <h2 data-edit>Visa vad kunden kan köpa, boka eller fråga om.</h2>
           </div>
-          <p>Tjänsterna ska vara lätta att skumma. Inga romaner. Säljstyrning, inte kommunal årsredovisning.</p>
+
+          <p data-edit>Tjänsterna ska vara lätta att skumma. Inga romaner. Säljstyrning, inte kommunal årsredovisning.</p>
         </div>
 
         <div class="method-grid">
-          <article class="method-card"><h3>[Tjänst 1]</h3><p>Kort beskrivning av tjänsten, vem den passar för och vilket resultat kunden kan förvänta sig.</p></article>
-          <article class="method-card"><h3>[Tjänst 2]</h3><p>Kort beskrivning av tjänsten, gärna med konkret nytta i första meningen.</p></article>
-          <article class="method-card"><h3>[Tjänst 3]</h3><p>Kort beskrivning av tjänsten. Lyft skillnaden mot konkurrenter om det finns en tydlig sådan.</p></article>
-          <article class="method-card"><h3>[Tillägg / paket]</h3><p>Passar bra för extra erbjudande, paketpris, serviceavtal eller vanlig tilläggstjänst.</p></article>
-          <article class="method-card"><h3>[Speciallösning]</h3><p>Används om kunden gör något mer avancerat, skräddarsytt eller behovsstyrt.</p></article>
-          <article class="method-card"><h3>[Rådgivning / offert]</h3><p>En låg tröskel för besökare som inte vet exakt vad de behöver ännu.</p></article>
+          <article class="method-card"><h3 data-edit>[Tjänst 1]</h3><p data-edit>Kort beskrivning av tjänsten, vem den passar för och vilket resultat kunden kan förvänta sig.</p></article>
+          <article class="method-card"><h3 data-edit>[Tjänst 2]</h3><p data-edit>Kort beskrivning av tjänsten, gärna med konkret nytta i första meningen.</p></article>
+          <article class="method-card"><h3 data-edit>[Tjänst 3]</h3><p data-edit>Kort beskrivning av tjänsten. Lyft skillnaden mot konkurrenter om det finns en tydlig sådan.</p></article>
+          <article class="method-card"><h3 data-edit>[Tillägg / paket]</h3><p data-edit>Passar bra för extra erbjudande, paketpris, serviceavtal eller vanlig tilläggstjänst.</p></article>
+          <article class="method-card"><h3 data-edit>[Speciallösning]</h3><p data-edit>Används om kunden gör något mer avancerat, skräddarsytt eller behovsstyrt.</p></article>
+          <article class="method-card"><h3 data-edit>[Rådgivning / offert]</h3><p data-edit>En låg tröskel för besökare som inte vet exakt vad de behöver ännu.</p></article>
         </div>
       </div>
     </section>
@@ -1868,15 +2119,16 @@
     <section id="malgrupp">
       <div class="wrap split">
         <div class="panel">
-          <span class="eyebrow">Målgrupp</span>
-          <h2>Gör det tydligt vem sidan är för.</h2>
-          <p>Här beskriver du vilka kunder företaget passar bäst för. Det filtrerar bort fel leads och gör rätt besökare tryggare.</p>
-          <p>Skriv enkelt, konkret och utan fluff. En besökare ska känna: det här är för mig.</p>
+          <span class="eyebrow" data-edit>Målgrupp</span>
+          <h2 data-edit>Gör det tydligt vem sidan är för.</h2>
+          <p data-edit>Här beskriver du vilka kunder företaget passar bäst för. Det filtrerar bort fel leads och gör rätt besökare tryggare.</p>
+          <p data-edit>Skriv enkelt, konkret och utan fluff. En besökare ska känna: det här är för mig.</p>
         </div>
+
         <ul class="check-list">
-          <li><strong>[Målgrupp 1].</strong><br />Beskriv en vanlig kundtyp och vilket problem de behöver hjälp med.</li>
-          <li><strong>[Målgrupp 2].</strong><br />Beskriv när tjänsten blir extra relevant och vad kunden får ut av den.</li>
-          <li><strong>[Målgrupp 3].</strong><br />Beskriv en tredje målgrupp, bransch eller situation.</li>
+          <li data-edit><strong>[Målgrupp 1].</strong><br />Beskriv en vanlig kundtyp och vilket problem de behöver hjälp med.</li>
+          <li data-edit><strong>[Målgrupp 2].</strong><br />Beskriv när tjänsten blir extra relevant och vad kunden får ut av den.</li>
+          <li data-edit><strong>[Målgrupp 3].</strong><br />Beskriv en tredje målgrupp, bransch eller situation.</li>
         </ul>
       </div>
     </section>
@@ -1885,16 +2137,18 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Process</span>
-            <h2>Så går det till från gratis demo till skarp hemsida.</h2>
+            <span class="eyebrow" data-edit>Process</span>
+            <h2 data-edit>Så går det till från gratis demo till skarp hemsida.</h2>
           </div>
-          <p>En enkel process sänker tröskeln. Ni vet vad som händer efter att ni skickat materialet.</p>
+
+          <p data-edit>En enkel process sänker tröskeln. Ni vet vad som händer efter att ni skickat materialet.</p>
         </div>
+
         <div class="process">
-          <article class="process-step"><h3>Skicka material</h3><p>Ni skickar företagsberättelse, bilder, tjänster, länkar, priser och önskemål.</p></article>
-          <article class="process-step"><h3>Jag bygger demo</h3><p>Jag sätter struktur, designriktning, texter, sektioner och tydligt kontaktflöde.</p></article>
-          <article class="process-step"><h3>Ni ger feedback</h3><p>Ni säger vad som känns rätt, fel, saknas eller ska efterlikna något annat.</p></article>
-          <article class="process-step"><h3>Skarp version</h3><p>Vill ni gå vidare görs sidan klar med SEO-grund, indexering, teknik och publicering.</p></article>
+          <article class="process-step"><h3 data-edit>Skicka material</h3><p data-edit>Ni skickar företagsberättelse, bilder, tjänster, länkar, priser och önskemål.</p></article>
+          <article class="process-step"><h3 data-edit>Jag bygger demo</h3><p data-edit>Jag sätter struktur, designriktning, texter, sektioner och tydligt kontaktflöde.</p></article>
+          <article class="process-step"><h3 data-edit>Ni ger feedback</h3><p data-edit>Ni säger vad som känns rätt, fel, saknas eller ska efterlikna något annat.</p></article>
+          <article class="process-step"><h3 data-edit>Skarp version</h3><p data-edit>Vill ni gå vidare görs sidan klar med SEO-grund, indexering, teknik och publicering.</p></article>
         </div>
       </div>
     </section>
@@ -1902,42 +2156,48 @@
     <section class="editorial" id="bilder">
       <div class="wrap split">
         <div class="panel">
-          <span class="eyebrow">Bilder</span>
-          <h2>Byt bildspråk efter kundens verksamhet.</h2>
-          <p>Bilderna här är bara platshållare. I skarp version används kundens egna bilder, lokala miljöer, team, produkter eller tidigare arbeten.</p>
-          <p>Rätt bilder gör mer än att fylla ut. De säljer förtroende innan texten ens hunnit ta på sig skorna.</p>
+          <span class="eyebrow" data-edit>Bilder</span>
+          <h2 data-edit>Byt bildspråk efter kundens verksamhet.</h2>
+          <p data-edit>Bilderna här är bara platshållare. I skarp version används kundens egna bilder, lokala miljöer, team, produkter eller tidigare arbeten.</p>
+          <p data-edit>Rätt bilder gör mer än att fylla ut. De säljer förtroende innan texten ens hunnit ta på sig skorna.</p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt">Skicka bilder och material</a>
+            <a class="btn btn-primary" href="#kontakt" data-edit>Skicka bilder och material</a>
           </div>
         </div>
+
         <div class="image-panel">
           <div class="image-panel-text">
-            <strong>Platshållare för huvudbild.</strong>
-            <span>Byt till kundens egen bild inför skarp version.</span>
+            <strong data-edit>Platshållare för huvudbild.</strong>
+            <span data-edit>Byt till kundens egen bild inför skarp version.</span>
           </div>
         </div>
       </div>
 
       <div class="wrap image-strip-wrap">
         <div class="drag-hint">
-          <span>Dra åt sidan eller använd pilarna för fler bilder</span>
+          <span data-edit>Dra åt sidan eller använd pilarna för fler bilder</span>
           <div class="gallery-tools">
             <button class="gallery-arrow" type="button" id="galleryPrev" aria-label="Föregående bilder">←</button>
             <button class="gallery-arrow" type="button" id="galleryNext" aria-label="Nästa bilder">→</button>
           </div>
         </div>
-        <div class="image-strip" id="imageStrip" aria-label="Bildgalleri">
+
+        <div class="image-strip" id="imageStrip">
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=82");'>
-            <div class="slide-label"><strong>Miljöbild</strong><span>Byt till relevant kundbild.</span></div>
+            <div class="slide-label"><strong data-edit>Miljöbild</strong><span data-edit>Byt till relevant kundbild.</span></div>
           </article>
+
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=82");'>
-            <div class="slide-label"><strong>Detaljbild</strong><span>Passar för produkt, lokal eller hantverk.</span></div>
+            <div class="slide-label"><strong data-edit>Detaljbild</strong><span data-edit>Passar för produkt, lokal eller hantverk.</span></div>
           </article>
+
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=82");'>
-            <div class="slide-label"><strong>Arbetsbild</strong><span>Bra för att visa processen.</span></div>
+            <div class="slide-label"><strong data-edit>Arbetsbild</strong><span data-edit>Bra för att visa processen.</span></div>
           </article>
+
           <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=82");'>
-            <div class="slide-label"><strong>Team / möte</strong><span>Byt till verklig bild om det finns.</span></div>
+            <div class="slide-label"><strong data-edit>Team / möte</strong><span data-edit>Byt till verklig bild om det finns.</span></div>
           </article>
         </div>
       </div>
@@ -1947,18 +2207,20 @@
       <div class="wrap text-image-grid">
         <div class="rounded-image" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.28)), url("https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=82");'>
           <div class="image-note">
-            <strong>Visa nyttan tydligt.</strong>
-            <span>Den här bilden kan bytas mot produkt, resultat eller referenscase.</span>
+            <strong data-edit>Visa nyttan tydligt.</strong>
+            <span data-edit>Den här bilden kan bytas mot produkt, resultat eller referenscase.</span>
           </div>
         </div>
+
         <div>
-          <span class="eyebrow">Varför välja kodad sida</span>
-          <h2>Tre skäl att gå vidare.</h2>
-          <p class="lead">Här bygger du förtroende utan att sväva iväg. Kort, konkret och kundnära.</p>
+          <span class="eyebrow" data-edit>Varför välja kodad sida</span>
+          <h2 data-edit>Tre skäl att gå vidare.</h2>
+          <p class="lead" data-edit>Här bygger du förtroende utan att sväva iväg. Kort, konkret och kundnära.</p>
+
           <ul class="check-list" style="margin-top:26px;">
-            <li><strong>Ni slipper fastna i mallar.</strong><br />Design och struktur kan anpassas efter företaget.</li>
-            <li><strong>Ni äger er kod.</strong><br />En kodad sida kan flyttas, byggas vidare på och justeras utan plattformslåsning.</li>
-            <li><strong>Tekniken följer med från början.</strong><br />SEO-grund, struktur, formulär och indexering planeras från start.</li>
+            <li data-edit><strong>Ni slipper fastna i mallar.</strong><br />Design och struktur kan anpassas efter företaget.</li>
+            <li data-edit><strong>Ni äger er kod.</strong><br />En kodad sida kan flyttas, byggas vidare på och justeras utan plattformslåsning.</li>
+            <li data-edit><strong>Tekniken följer med från början.</strong><br />SEO-grund, struktur, formulär och indexering planeras från start.</li>
           </ul>
         </div>
       </div>
@@ -1969,16 +2231,18 @@
         <div class="quality-wrap">
           <div class="quality-grid">
             <div class="score">
-              <strong>Demo</strong>
-              <span>först – beslut efter att ni sett ett konkret förslag</span>
+              <strong data-edit>Demo</strong>
+              <span data-edit>först – beslut efter att ni sett ett konkret förslag</span>
             </div>
+
             <div>
-              <span class="eyebrow">Förtroende</span>
-              <h2>Bra bevis ska synas tidigt, inte ligga och damma längst ner.</h2>
-              <p>Här kan du lyfta omdömen, certifikat, erfarenhet, resultat, kundcase, antal år i branschen, garanti eller annat som gör besökaren tryggare.</p>
+              <span class="eyebrow" data-edit>Förtroende</span>
+              <h2 data-edit>Bra bevis ska synas tidigt, inte ligga och damma längst ner.</h2>
+              <p data-edit>Här kan du lyfta omdömen, certifikat, erfarenhet, resultat, kundcase, antal år i branschen, garanti eller annat som gör besökaren tryggare.</p>
+
               <div class="hero-actions">
-                <a class="btn btn-gold" href="#kontakt">Beställ gratis demo</a>
-                <a class="btn btn-secondary" href="#faq">Läs vanliga frågor</a>
+                <a class="btn btn-gold" href="#kontakt" data-edit>Beställ gratis demo</a>
+                <a class="btn btn-secondary" href="#faq" data-edit>Läs vanliga frågor</a>
               </div>
             </div>
           </div>
@@ -1989,15 +2253,16 @@
     <section id="kompetens">
       <div class="wrap split">
         <div>
-          <span class="eyebrow">Vad jag fixar</span>
-          <h2>Designen, strukturen och tekniken sitter inte på er att lösa.</h2>
-          <p class="lead">Ni skickar företagets riktiga material. Jag finjusterar textens synlighet, färger, avstånd, sektioner, SEO-grund och den tekniska helheten.</p>
+          <span class="eyebrow" data-edit>Vad jag fixar</span>
+          <h2 data-edit>Designen, strukturen och tekniken sitter inte på er att lösa.</h2>
+          <p class="lead" data-edit>Ni skickar företagets riktiga material. Jag finjusterar textens synlighet, färger, avstånd, sektioner, SEO-grund och den tekniska helheten.</p>
         </div>
+
         <div class="steps">
-          <article class="step"><h3>Design och läsbarhet</h3><p>Färger, kontrast, textstorlek, avstånd och mobilvy justeras så sidan känns färdig.</p></article>
-          <article class="step"><h3>Innehållsstruktur</h3><p>Berättelse, tjänster, målgrupp, frågor och kontaktvägar sätts i rätt ordning.</p></article>
-          <article class="step"><h3>SEO och Google</h3><p>Grundstruktur, titlar, texter, indexering och Google Maps-koppling kan planeras in.</p></article>
-          <article class="step"><h3>Kontaktflöde</h3><p>Formulär, filuppladdning och nästa steg kan kopplas till e-post, Drive eller ärendeflöde.</p></article>
+          <article class="step"><h3 data-edit>Design och läsbarhet</h3><p data-edit>Färger, kontrast, textstorlek, avstånd och mobilvy justeras så sidan känns färdig.</p></article>
+          <article class="step"><h3 data-edit>Innehållsstruktur</h3><p data-edit>Berättelse, tjänster, målgrupp, frågor och kontaktvägar sätts i rätt ordning.</p></article>
+          <article class="step"><h3 data-edit>SEO och Google</h3><p data-edit>Grundstruktur, titlar, texter, indexering och Google Maps-koppling kan planeras in.</p></article>
+          <article class="step"><h3 data-edit>Kontaktflöde</h3><p data-edit>Formulär, filuppladdning och nästa steg kan kopplas till e-post, Drive eller ärendeflöde.</p></article>
         </div>
       </div>
     </section>
@@ -2006,16 +2271,18 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Vanliga frågor</span>
-            <h2>Svara på frågor innan kunden hinner tveka.</h2>
+            <span class="eyebrow" data-edit>Vanliga frågor</span>
+            <h2 data-edit>Svara på frågor innan kunden hinner tveka.</h2>
           </div>
-          <p>FAQ är bra för både kundresa och sälj. Mindre friktion, fler raka puckar.</p>
+
+          <p data-edit>FAQ är bra för både kundresa och sälj. Mindre friktion, fler raka puckar.</p>
         </div>
+
         <div class="faq-grid">
-          <article class="faq-item"><h3>Kostar demon något?</h3><p>Nej, tanken är att ni får se ett konkret sidförslag först. Om ni vill gå vidare görs sidan skarp enligt överenskommelse.</p></article>
-          <article class="faq-item"><h3>Vad behöver vi skicka?</h3><p>Företagsberättelse, tjänster, bilder, filmer, priser, kontaktuppgifter, Google Maps-länk, sociala medier och exempel på sidor ni gillar.</p></article>
-          <article class="faq-item"><h3>Måste vi själva fixa designen?</h3><p>Nej. Ni behöver inte sitta och pilla med färger, avstånd, textstorlek och sektioner. Skicka materialet, så finjusterar jag helheten.</p></article>
-          <article class="faq-item"><h3>Vad händer efter demon?</h3><p>Ni lämnar feedback. Vill ni gå vidare görs sidan klar med skarpt innehåll, SEO-grund, teknisk struktur och publicering.</p></article>
+          <article class="faq-item"><h3 data-edit>Kostar demon något?</h3><p data-edit>Nej, tanken är att ni får se ett konkret sidförslag först. Om ni vill gå vidare görs sidan skarp enligt överenskommelse.</p></article>
+          <article class="faq-item"><h3 data-edit>Vad behöver vi skicka?</h3><p data-edit>Företagsberättelse, tjänster, bilder, filmer, priser, kontaktuppgifter, Google Maps-länk, sociala medier och exempel på sidor ni gillar.</p></article>
+          <article class="faq-item"><h3 data-edit>Måste vi själva fixa designen?</h3><p data-edit>Nej. Ni behöver inte sitta och pilla med färger, avstånd, textstorlek och sektioner. Skicka materialet, så finjusterar jag helheten.</p></article>
+          <article class="faq-item"><h3 data-edit>Vad händer efter demon?</h3><p data-edit>Ni lämnar feedback. Vill ni gå vidare görs sidan klar med skarpt innehåll, SEO-grund, teknisk struktur och publicering.</p></article>
         </div>
       </div>
     </section>
@@ -2023,57 +2290,128 @@
     <section id="kontakt" class="contact">
       <div class="wrap contact-grid">
         <div class="contact-box">
-          <span class="eyebrow">Kontakt</span>
-          <h2>Vill du ha en gratis demo?</h2>
-          <p>Skicka företagsberättelse, tjänster, bilder, priser, länkar och önskemål. Ju mer material som finns från början, desto bättre blir demon.</p>
+          <span class="eyebrow" data-edit>Kontakt</span>
+          <h2 data-edit>Vill du ha en gratis demo?</h2>
+          <p data-edit>Skicka företagsberättelse, tjänster, bilder, priser, länkar och önskemål. Ju mer material som finns från början, desto bättre blir demon.</p>
+
           <div class="contact-person">
             <div class="person-photo" aria-hidden="true"></div>
             <div>
-              <strong>Erica Nordlöf – Nordlöf Nordic</strong>
-              <span>Webbutvecklare. Kodad hemsida, demo först och tydligt nästa steg.</span>
+              <strong data-edit>Erica Nordlöf – Nordlöf Nordic</strong>
+              <span data-edit>Webbutvecklare. Kodade hemsidor, formulärflöden och teknisk struktur.</span>
             </div>
           </div>
+
           <div class="contact-links">
-            <a class="contact-link" href="tel:+460793442520"><span style="font-size:1rem;font-weight:800;color:var(--ink);">Telefon: 079 344 25 20</span><span>Ring vid frågor eller demo</span></a>
-            <a class="contact-link" href="mailto:erica@webutvecklare.se"><span style="font-size:1rem;font-weight:800;color:var(--ink);">erica@webutvecklare.se</span><span>Förfrågningar och material</span></a>
-            <a class="contact-link" href="https://webutvecklare.se"><span style="font-size:1rem;font-weight:800;color:var(--ink);">webutvecklare.se</span><span>Nuvarande webbplats</span></a>
+            <a class="contact-link" href="mailto:erica@webutvecklare.se">
+              <span style="font-size:1rem;font-weight:900;color:var(--ink);" data-edit>erica@webutvecklare.se</span>
+              <span data-edit>Förfrågningar och material</span>
+            </a>
+
+            <a class="contact-link" href="https://webutvecklare.se" target="_blank" rel="noopener">
+              <span style="font-size:1rem;font-weight:900;color:var(--ink);" data-edit>webutvecklare.se</span>
+              <span data-edit>Nordlöf Nordic</span>
+            </a>
           </div>
         </div>
 
-        <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" enctype="multipart/form-data" aria-label="Kontaktformulär" id="contactForm">
+        <form
+          action="https://formsubmit.co/erica@webutvecklare.se"
+          method="POST"
+          enctype="multipart/form-data"
+          aria-label="Kontaktformulär"
+          id="contactForm"
+        >
           <input type="hidden" name="_subject" value="Gratis demo av ny hemsida" />
-          <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://webutvecklare.se/" />
           <input type="hidden" name="formName" value="Gratis demo av ny hemsida" />
           <input type="hidden" name="sourcePage" value="gratis-demo.html" />
 
+          <div class="required-upload">
+            <strong>Har ni redigerat sidan själva?</strong>
+            <p>
+              Klicka först på <strong>“Spara ändrad sida”</strong> högst upp. Bifoga sedan den nedladdade HTML-filen här.
+              Då kan jag öppna exakt den version ni själva ändrat och lansera eller bygga vidare på den.
+            </p>
+          </div>
+
+          <div class="field full">
+            <label for="editedPageFile">Bifoga sparad HTML-sida</label>
+            <input id="editedPageFile" name="Sparad_HTML_sida" type="file" accept=".html,.htm,text/html" />
+            <p class="form-note">
+              Fältet är för filen som skapas när ni klickar “Spara ändrad sida”. Om ni inte har redigerat sidan själva kan ni lämna detta tomt.
+            </p>
+          </div>
+
           <div class="form-grid">
-            <div class="field"><label for="name">Namn</label><input id="name" name="name" autocomplete="name" required /></div>
-            <div class="field"><label for="company">Företag</label><input id="company" name="company" autocomplete="organization" /></div>
-            <div class="field"><label for="email">E-post</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
-            <div class="field"><label for="phone">Telefon</label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
-            <div class="field full"><label for="story">Företagsberättelse</label><textarea id="story" name="Företagsberättelse" placeholder="Berätta om företaget: vilka ni är, vad ni gör, varför ni gör det och vad kunden ska känna när de kommer till sidan..."></textarea></div>
-            <div class="field full"><label for="services">Tjänster / erbjudanden</label><textarea id="services" name="Tjänster och erbjudanden" placeholder="Skriv vilka tjänster, produkter, paket eller erbjudanden som ska finnas på hemsidan..."></textarea></div>
-            <div class="field full"><label for="target">Målgrupp</label><textarea id="target" name="Målgrupp" placeholder="Vilka kunder vill ni nå? Företag, privatpersoner, bransch, ort, ålder, behov, problem?"></textarea></div>
-            <div class="field full"><label for="prices">Priser / offertmodell</label><textarea id="prices" name="Priser eller offertmodell" placeholder="Skriv fasta priser, från-priser, paket, timpris eller om offert gäller..."></textarea></div>
-            <div class="field full"><label for="materialLinks">Material och länkar</label><textarea id="materialLinks" name="Material och länkar" placeholder="Klistra in länkar till bilder, logga, Google Drive, sociala medier, nuvarande hemsida eller hemsidor ni gillar. Vill ni ha något liknande från en annan sida? Skicka URL och skriv vad ni vill ha med."></textarea></div>
-            <div class="field full">
-              <label for="files">Bifoga filer</label>
-              <input id="files" name="attachment" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx" />
-              <p class="form-note file-help">Här kan ni bifoga logga, bilder, filmer, pdf:er, prislistor, texter, broschyrer eller annat material.</p>
+            <div class="field">
+              <label for="name">Namn</label>
+              <input id="name" name="name" autocomplete="name" required />
             </div>
-            <div class="field full"><label for="mustHave">Måsten på sidan</label><textarea id="mustHave" name="Måsten på sidan" placeholder="Skriv allt som absolut måste vara med: priser, garantier, certifikat, områden, öppettider, vanliga frågor, särskilda regler..."></textarea></div>
+
+            <div class="field">
+              <label for="company">Företag</label>
+              <input id="company" name="company" autocomplete="organization" />
+            </div>
+
+            <div class="field">
+              <label for="email">E-post</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+
+            <div class="field full">
+              <label for="story">Företagsberättelse</label>
+              <textarea id="story" name="Företagsberättelse" placeholder="Berätta om företaget: vilka ni är, vad ni gör, varför ni gör det och vad kunden ska känna när de kommer till sidan..."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="services">Tjänster / erbjudanden</label>
+              <textarea id="services" name="Tjänster_och_erbjudanden" placeholder="Skriv vilka tjänster, produkter, paket eller erbjudanden som ska finnas på hemsidan..."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="target">Målgrupp</label>
+              <textarea id="target" name="Målgrupp" placeholder="Vilka kunder vill ni nå? Företag, privatpersoner, bransch, ort, ålder, behov, problem?"></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="prices">Priser / offertmodell</label>
+              <textarea id="prices" name="Priser_eller_offertmodell" placeholder="Skriv fasta priser, från-priser, paket, timpris eller om offert gäller..."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="materialLinks">Material och länkar</label>
+              <textarea id="materialLinks" name="Material_och_länkar" placeholder="Klistra in länkar till bilder, logga, Google Drive, sociala medier, nuvarande hemsida eller hemsidor ni gillar. Vill ni ha något liknande från en annan sida? Skicka URL och skriv vad ni vill ha med."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="files">Bifoga övriga filer</label>
+              <input id="files" name="Övriga_filer" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx" />
+              <p class="form-note">
+                Här kan ni bifoga logga, bilder, filmer, pdf:er, prislistor, texter, broschyrer eller annat material.
+              </p>
+            </div>
+
+            <div class="field full">
+              <label for="mustHave">Måsten på sidan</label>
+              <textarea id="mustHave" name="Måsten_på_sidan" placeholder="Skriv allt som absolut måste vara med: priser, garantier, certifikat, områden, öppettider, vanliga frågor, särskilda regler..."></textarea>
+            </div>
           </div>
 
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit" id="submitDemoRequest">Beställ gratis demo</button>
+            <button class="btn btn-primary" type="submit">Skicka demo-underlag</button>
             <a class="btn btn-secondary" href="mailto:erica@webutvecklare.se">Mejla istället</a>
           </div>
 
-          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-
           <p class="form-note">
-            Tips: Ni behöver inte lösa designen själva. Skicka företagets berättelse, tjänster, bilder, filmer, länkar, priser, Google Maps-länk och allt som måste vara med. Vill ni ha med något liknande från en annan sida, skicka URL:en och skriv vad ni vill ha. Jag finjusterar textens synlighet, designen, strukturen, SEO-grunden och det tekniska runt sidan.
+            Viktigt: Om ni har redigerat text direkt på sidan måste ni klicka “Spara ändrad sida” och bifoga HTML-filen i formuläret. Annars får jag bara formulärsvaren, inte själva sidan ni ändrat.
           </p>
         </form>
       </div>
@@ -2083,812 +2421,362 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-copy">
-        <strong>Nordlöf Nordic</strong><br />
-        Gratis demo av ny hemsida för företag.<br /><br />
-        Demo först. Feedback sen. Skarp version när allt känns rätt.
+        <strong data-edit>Nordlöf Nordic</strong><br />
+        <span data-edit>Gratis demo av ny hemsida för företag.</span><br /><br />
+        <span data-edit>Demo först. Feedback sen. Skarp version när allt känns rätt.</span>
       </div>
 
       <div class="footer-right">
         <div class="socials" aria-label="Sociala medier">
-          <a class="social-icon facebook" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.2 0-.9-.1-1.8-.1-2.6 0-4.2 1.5-4.2 4.3V11H7.5v3H10v7h3.5z"/></svg></a>
-          <a class="social-icon instagram" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9zm9.6 1.5a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1zM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 1.8A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1z"/></svg></a>
-          <a class="social-icon linkedin" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3A1.6 1.6 0 1 1 5.2 5a1.6 1.6 0 0 1 0 3.3zM3.8 9.7h2.9V20H3.8V9.7zm4.8 0h2.8v1.4h.1c.4-.8 1.4-1.7 2.8-1.7 3 0 3.5 2 3.5 4.5V20H15v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H8.6V9.7z"/></svg></a>
+          <a class="social-icon facebook" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.2 0-.9-.1-1.8-.1-2.6 0-4.2 1.5-4.2 4.3V11H7.5v3H10v7h3.5z"/></svg>
+          </a>
+
+          <a class="social-icon instagram" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9zm9.6 1.5a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1zM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 1.8A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1z"/></svg>
+          </a>
+
+          <a class="social-icon linkedin" href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3A1.6 1.6 0 1 1 5.2 5a1.6 1.6 0 0 1 0 3.3zM3.8 9.7h2.9V20H3.8V9.7zm4.8 0h2.8v1.4h.1c.4-.8 1.4-1.7 2.8-1.7 3 0 3.5 2 3.5 4.5V20H15v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H8.6V9.7z"/></svg>
+          </a>
         </div>
-        <a class="btn btn-secondary" href="#kontakt">Beställ gratis demo</a>
+
+        <a class="btn btn-secondary" href="#kontakt" data-edit>Beställ gratis demo</a>
       </div>
     </div>
   </footer>
 
-  <div class="text-editor-modal" id="textEditorModal" aria-hidden="true">
-    <div class="text-editor-backdrop" data-close-editor="true"></div>
-    <div class="text-editor-box" role="dialog" aria-modal="true" aria-labelledby="textEditorTitle">
-      <h2 id="textEditorTitle">Ändra text</h2>
-      <p>Redigera texten här och spara. Det är stabilare på mobil än att skriva direkt på sidan.</p>
-      <textarea id="textEditorInput"></textarea>
-      <div class="text-editor-actions">
-        <button class="btn btn-primary" type="button" id="saveTextEdit">Spara text</button>
-        <button class="btn btn-secondary" type="button" id="cancelTextEdit">Avbryt</button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    (function(){
-      const body = document.body;
-      const root = document.documentElement;
-      const topbar = document.getElementById("topbar");
-      const siteHeader = document.getElementById("siteHeader");
-      const menuBtn = document.getElementById("menuBtn");
-      const siteNav = document.getElementById("siteNav");
-      const designToggle = document.getElementById("designToggle");
-      const designTools = document.getElementById("designTools");
-      const contrastToggle = document.getElementById("contrastToggle");
-      const increaseText = document.getElementById("increaseText");
-      const resetDesign = document.getElementById("resetDesign");
-      const imageStrip = document.getElementById("imageStrip");
-      const galleryPrev = document.getElementById("galleryPrev");
-      const galleryNext = document.getElementById("galleryNext");
-      const paletteSelect = document.getElementById("paletteSelect");
-      const fontSelect = document.getElementById("fontSelect");
-      const stylePresetSelect = document.getElementById("stylePresetSelect");
-      const bgHue = document.getElementById("bgHue");
-      const bgLight = document.getElementById("bgLight");
-      const accentHue = document.getElementById("accentHue");
-      const bgDot = document.getElementById("bgDot");
-      const lightDot = document.getElementById("lightDot");
-      const accentDot = document.getElementById("accentDot");
-      const bgHex = document.getElementById("bgHex");
-      const paperHex = document.getElementById("paperHex");
-      const inkHex = document.getElementById("inkHex");
-      const accentHex = document.getElementById("accentHex");
-      const bgPicker = document.getElementById("bgPicker");
-      const paperPicker = document.getElementById("paperPicker");
-      const inkPicker = document.getElementById("inkPicker");
-      const accentPicker = document.getElementById("accentPicker");
-      const editToggle = document.getElementById("editToggle");
-      const saveHtml = document.getElementById("saveHtml");
-      const resetText = document.getElementById("resetText");
-      const modal = document.getElementById("textEditorModal");
-      const textInput = document.getElementById("textEditorInput");
-      const saveTextEdit = document.getElementById("saveTextEdit");
-      const cancelTextEdit = document.getElementById("cancelTextEdit");
-      const contactForm = document.getElementById("contactForm");
-      const submitDemoRequest = document.getElementById("submitDemoRequest");
-      const formStatus = document.getElementById("formStatus");
+    const body = document.body;
+    const root = document.documentElement;
 
-      let activeElement = null;
+    const designToggle = document.getElementById("designToggle");
+    const designPanel = document.getElementById("designPanel");
+    const editToggle = document.getElementById("editToggle");
+    const savePageBtn = document.getElementById("savePageBtn");
+    const resetTextBtn = document.getElementById("resetTextBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const siteNav = document.getElementById("siteNav");
 
-      const STORAGE_PREFIX = "demoTemplateLaunchReadyV1";
-      const STORAGE_EDITED_HTML = STORAGE_PREFIX + "EditedHtml";
-      const STORAGE = {
-        text: STORAGE_PREFIX + "TextSize",
-        contrast: STORAGE_PREFIX + "Contrast",
-        palette: STORAGE_PREFIX + "Palette",
-        font: STORAGE_PREFIX + "Font",
-        stylePreset: STORAGE_PREFIX + "StylePreset",
-        bgHue: STORAGE_PREFIX + "BgHue",
-        bgLight: STORAGE_PREFIX + "BgLight",
-        accentHue: STORAGE_PREFIX + "AccentHue",
-        bgHex: STORAGE_PREFIX + "BgHex",
-        paperHex: STORAGE_PREFIX + "PaperHex",
-        inkHex: STORAGE_PREFIX + "InkHex",
-        accentHex: STORAGE_PREFIX + "AccentHex"
+    const stylePreset = document.getElementById("stylePreset");
+    const fontSelect = document.getElementById("fontSelect");
+    const bgColor = document.getElementById("bgColor");
+    const paperColor = document.getElementById("paperColor");
+    const inkColor = document.getElementById("inkColor");
+    const accentColor = document.getElementById("accentColor");
+    const radiusSelect = document.getElementById("radiusSelect");
+    const contrastSelect = document.getElementById("contrastSelect");
+
+    const imageStrip = document.getElementById("imageStrip");
+    const galleryPrev = document.getElementById("galleryPrev");
+    const galleryNext = document.getElementById("galleryNext");
+
+    const STORAGE_KEY = "nordlofGratisDemoEditableV1";
+    const ORIGINAL_HTML = {};
+    const editableElements = Array.from(document.querySelectorAll("[data-edit]"));
+
+    editableElements.forEach((el, index) => {
+      const id = "edit-" + index;
+      el.dataset.editId = id;
+      ORIGINAL_HTML[id] = el.innerHTML;
+    });
+
+    function normalizeHex(value, fallback){
+      const clean = String(value || "").trim();
+      if(/^#[0-9A-Fa-f]{6}$/.test(clean)) return clean.toUpperCase();
+      return fallback.toUpperCase();
+    }
+
+    function hexToRgb(hex){
+      const safe = normalizeHex(hex, "#000000").replace("#", "");
+      return {
+        r:parseInt(safe.slice(0,2),16),
+        g:parseInt(safe.slice(2,4),16),
+        b:parseInt(safe.slice(4,6),16)
+      };
+    }
+
+    function rgbToHex(r,g,b){
+      return "#" + [r,g,b].map(value => {
+        const hex = Math.max(0, Math.min(255, Math.round(value))).toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      }).join("").toUpperCase();
+    }
+
+    function mixHex(a, b, amount){
+      const x = hexToRgb(a);
+      const y = hexToRgb(b);
+      const t = Math.max(0, Math.min(1, amount));
+      return rgbToHex(
+        x.r + (y.r - x.r) * t,
+        x.g + (y.g - x.g) * t,
+        x.b + (y.b - x.b) * t
+      );
+    }
+
+    function brightness(hex){
+      const rgb = hexToRgb(hex);
+      return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+    }
+
+    function contrastText(hex){
+      return brightness(hex) > 150 ? "#111111" : "#FFFFFF";
+    }
+
+    function applyDesign(values){
+      const bg = normalizeHex(values.bg || bgColor.value, "#EFE8DC");
+      const paper = normalizeHex(values.paper || paperColor.value, "#FFFAF3");
+      const ink = normalizeHex(values.ink || inkColor.value, "#16211D");
+      const accent = normalizeHex(values.accent || accentColor.value, "#16382F");
+      const radius = values.radius || radiusSelect.value || "28px";
+      const font = values.font || fontSelect.value || "Inter";
+
+      const accentContrast = contrastText(accent);
+      const bg2 = mixHex(bg, brightness(bg) < 120 ? "#FFFFFF" : "#000000", .05);
+      const line = mixHex(paper, ink, .15);
+      const lineDark = mixHex(paper, ink, .28);
+      const accent2 = mixHex(accent, accentContrast === "#FFFFFF" ? "#FFFFFF" : "#000000", .16);
+      const accentSoft = mixHex(paper, accent, .16);
+      const muted = brightness(ink) > 150 ? mixHex(ink, "#000000", .28) : mixHex(ink, "#FFFFFF", .34);
+      const gold = mixHex(accent, "#D9AA67", .45);
+      const gold2 = mixHex(accent, "#FFD18A", .35);
+
+      root.style.setProperty("--bg", bg);
+      root.style.setProperty("--bg-2", bg2);
+      root.style.setProperty("--paper", paper);
+      root.style.setProperty("--white", paper);
+      root.style.setProperty("--ink", ink);
+      root.style.setProperty("--muted", muted);
+      root.style.setProperty("--accent", accent);
+      root.style.setProperty("--accent-2", accent2);
+      root.style.setProperty("--accent-soft", accentSoft);
+      root.style.setProperty("--accent-contrast", accentContrast);
+      root.style.setProperty("--gold", gold);
+      root.style.setProperty("--gold-2", gold2);
+      root.style.setProperty("--line", line);
+      root.style.setProperty("--line-dark", lineDark);
+      root.style.setProperty("--topbar", mixHex(accent, "#000000", .35));
+      root.style.setProperty("--contact-bg", mixHex(accent, "#000000", .55));
+      root.style.setProperty("--footer-bg", mixHex(accent, "#000000", .68));
+      root.style.setProperty("--radius", radius);
+      root.style.setProperty("--font-main", `"${font}", ui-sans-serif, system-ui, sans-serif`);
+      root.style.setProperty("--font-heading", `"${font}", ui-sans-serif, system-ui, sans-serif`);
+
+      bgColor.value = bg;
+      paperColor.value = paper;
+      inkColor.value = ink;
+      accentColor.value = accent;
+      radiusSelect.value = radius;
+      fontSelect.value = font;
+
+      if(values.contrast === "strong"){
+        body.classList.add("strong-contrast");
+        root.style.setProperty("--shadow", "0 18px 44px rgba(0,0,0,.24)");
+        root.style.setProperty("--shadow-soft", "0 12px 28px rgba(0,0,0,.18)");
+      }else{
+        body.classList.remove("strong-contrast");
+        root.style.setProperty("--shadow", "0 28px 90px rgba(20,32,27,.16)");
+        root.style.setProperty("--shadow-soft", "0 18px 50px rgba(20,32,27,.10)");
+      }
+
+      saveState();
+    }
+
+    function applyPreset(key){
+      const presets = {
+        classic:{bg:"#EFE8DC", paper:"#FFFAF3", ink:"#16211D", accent:"#16382F", font:"Inter", radius:"28px"},
+        white:{bg:"#FFFFFF", paper:"#F7F7F7", ink:"#111111", accent:"#000000", font:"Inter", radius:"24px"},
+        blue:{bg:"#EAF2FF", paper:"#FFFFFF", ink:"#102033", accent:"#1557B0", font:"DM Sans", radius:"24px"},
+        forest:{bg:"#E9F3EC", paper:"#FFFFFF", ink:"#102015", accent:"#14532D", font:"Manrope", radius:"28px"},
+        luxury:{bg:"#090909", paper:"#16120B", ink:"#FFF8E8", accent:"#C89B3C", font:"Playfair Display", radius:"30px"},
+        pink:{bg:"#FFF0F7", paper:"#FFFFFF", ink:"#2A1020", accent:"#BE185D", font:"Poppins", radius:"30px"},
+        orange:{bg:"#FFF3E6", paper:"#FFFFFF", ink:"#2B1708", accent:"#C2410C", font:"Nunito", radius:"28px"},
+        black:{bg:"#000000", paper:"#111111", ink:"#FFFFFF", accent:"#FFFFFF", font:"Oswald", radius:"20px"}
       };
 
-      const PALETTES = {
-        classic:{bg:"#EFE8DC",paper:"#FFFAF3",ink:"#16211D",accent:"#16382F"},
-        blackWhite:{bg:"#000000",paper:"#111111",ink:"#FFFFFF",accent:"#FFFFFF"},
-        whiteBlack:{bg:"#FFFFFF",paper:"#F7F7F7",ink:"#111111",accent:"#000000"},
-        beigeBrown:{bg:"#EFE3D0",paper:"#FFF8ED",ink:"#2A1B12",accent:"#6B3F22"},
-        blue:{bg:"#EAF2FF",paper:"#FFFFFF",ink:"#102033",accent:"#1557B0"},
-        navy:{bg:"#07111F",paper:"#101C2E",ink:"#F5F8FF",accent:"#4F8CFF"},
-        red:{bg:"#FFF0F0",paper:"#FFFFFF",ink:"#261313",accent:"#B91C1C"},
-        burgundy:{bg:"#251018",paper:"#321620",ink:"#FFF5F7",accent:"#E11D48"},
-        purple:{bg:"#F4EDFF",paper:"#FFFFFF",ink:"#20132F",accent:"#6D28D9"},
-        pink:{bg:"#FFF0F7",paper:"#FFFFFF",ink:"#2A1020",accent:"#BE185D"},
-        orange:{bg:"#FFF3E6",paper:"#FFFFFF",ink:"#2B1708",accent:"#C2410C"},
-        yellow:{bg:"#FFF9DB",paper:"#FFFFFF",ink:"#211A05",accent:"#A16207"},
-        turquoise:{bg:"#E8FFFB",paper:"#FFFFFF",ink:"#082522",accent:"#0F766E"},
-        forest:{bg:"#E9F3EC",paper:"#FFFFFF",ink:"#102015",accent:"#14532D"},
-        luxury:{bg:"#090909",paper:"#16120B",ink:"#FFF8E8",accent:"#C89B3C"}
-      };
+      if(!presets[key]) return;
+      applyDesign(presets[key]);
+    }
 
-      const FONT_MAP = {
-        "inter":{main:"\"Inter\", ui-sans-serif, system-ui, sans-serif",heading:"\"Inter\", ui-sans-serif, system-ui, sans-serif"},
-        "dm-sans":{main:"\"DM Sans\", ui-sans-serif, system-ui, sans-serif",heading:"\"DM Sans\", ui-sans-serif, system-ui, sans-serif"},
-        "manrope":{main:"\"Manrope\", ui-sans-serif, system-ui, sans-serif",heading:"\"Manrope\", ui-sans-serif, system-ui, sans-serif"},
-        "montserrat":{main:"\"Montserrat\", ui-sans-serif, system-ui, sans-serif",heading:"\"Montserrat\", ui-sans-serif, system-ui, sans-serif"},
-        "poppins":{main:"\"Poppins\", ui-sans-serif, system-ui, sans-serif",heading:"\"Poppins\", ui-sans-serif, system-ui, sans-serif"},
-        "open-sans":{main:"\"Open Sans\", ui-sans-serif, system-ui, sans-serif",heading:"\"Open Sans\", ui-sans-serif, system-ui, sans-serif"},
-        "lato":{main:"\"Lato\", ui-sans-serif, system-ui, sans-serif",heading:"\"Lato\", ui-sans-serif, system-ui, sans-serif"},
-        "roboto":{main:"\"Roboto\", ui-sans-serif, system-ui, sans-serif",heading:"\"Roboto\", ui-sans-serif, system-ui, sans-serif"},
-        "source-sans":{main:"\"Source Sans 3\", ui-sans-serif, system-ui, sans-serif",heading:"\"Source Sans 3\", ui-sans-serif, system-ui, sans-serif"},
-        "work-sans":{main:"\"Work Sans\", ui-sans-serif, system-ui, sans-serif",heading:"\"Work Sans\", ui-sans-serif, system-ui, sans-serif"},
-        "rubik":{main:"\"Rubik\", ui-sans-serif, system-ui, sans-serif",heading:"\"Rubik\", ui-sans-serif, system-ui, sans-serif"},
-        "nunito":{main:"\"Nunito\", ui-sans-serif, system-ui, sans-serif",heading:"\"Nunito\", ui-sans-serif, system-ui, sans-serif"},
-        "quicksand":{main:"\"Quicksand\", ui-sans-serif, system-ui, sans-serif",heading:"\"Quicksand\", ui-sans-serif, system-ui, sans-serif"},
-        "lexend":{main:"\"Lexend\", ui-sans-serif, system-ui, sans-serif",heading:"\"Lexend\", ui-sans-serif, system-ui, sans-serif"},
-        "space-grotesk":{main:"\"Space Grotesk\", ui-sans-serif, system-ui, sans-serif",heading:"\"Space Grotesk\", ui-sans-serif, system-ui, sans-serif"},
-        "raleway":{main:"\"Raleway\", ui-sans-serif, system-ui, sans-serif",heading:"\"Raleway\", ui-sans-serif, system-ui, sans-serif"},
-        "oswald":{main:"\"Open Sans\", ui-sans-serif, system-ui, sans-serif",heading:"\"Oswald\", ui-sans-serif, system-ui, sans-serif"},
-        "bebas":{main:"\"Inter\", ui-sans-serif, system-ui, sans-serif",heading:"\"Bebas Neue\", ui-sans-serif, system-ui, sans-serif"},
-        "merriweather":{main:"\"Merriweather\", Georgia, serif",heading:"\"Merriweather\", Georgia, serif"},
-        "lora":{main:"\"Lora\", Georgia, serif",heading:"\"Lora\", Georgia, serif"},
-        "playfair":{main:"\"Lato\", ui-sans-serif, system-ui, sans-serif",heading:"\"Playfair Display\", Georgia, serif"},
-        "cormorant":{main:"\"Cormorant Garamond\", Georgia, serif",heading:"\"Cormorant Garamond\", Georgia, serif"},
-        "roboto-slab":{main:"\"Roboto Slab\", Georgia, serif",heading:"\"Roboto Slab\", Georgia, serif"},
-        "abril":{main:"\"Lato\", ui-sans-serif, system-ui, sans-serif",heading:"\"Abril Fatface\", Georgia, serif"},
-        "georgia":{main:"Georgia, \"Times New Roman\", serif",heading:"Georgia, \"Times New Roman\", serif"},
-        "arial":{main:"Arial, Helvetica, sans-serif",heading:"Arial, Helvetica, sans-serif"},
-        "verdana":{main:"Verdana, Geneva, sans-serif",heading:"Verdana, Geneva, sans-serif"},
-        "trebuchet":{main:"\"Trebuchet MS\", Arial, sans-serif",heading:"\"Trebuchet MS\", Arial, sans-serif"}
-      };
+    function setEditMode(active){
+      body.classList.toggle("edit-mode", active);
+      editableElements.forEach(el => {
+        el.contentEditable = active ? "true" : "false";
+        el.spellcheck = active ? true : false;
+      });
+      editToggle.textContent = active ? "Stäng redigering" : "Redigera text";
+      saveState();
+    }
 
-      const STYLE_PRESETS = {
-        "nordic-clean":{palette:"classic",font:"inter"},
-        "minimal-white":{palette:"whiteBlack",font:"inter"},
-        "premium-beige":{palette:"beigeBrown",font:"montserrat"},
-        "local-service":{palette:"forest",font:"manrope"},
-        "corporate-blue":{palette:"blue",font:"dm-sans"},
-        "navy-trust":{palette:"navy",font:"merriweather"},
-        "luxury-gold":{palette:"luxury",font:"playfair"},
-        "creative-pink":{palette:"pink",font:"poppins"},
-        "soft-editorial":{palette:"beigeBrown",font:"lora"},
-        "tech-turquoise":{palette:"turquoise",font:"space-grotesk"},
-        "bold-red":{palette:"red",font:"montserrat"},
-        "warm-orange":{palette:"orange",font:"nunito"},
-        "clear-verdana":{palette:"whiteBlack",font:"verdana"},
-        "industrial-black":{palette:"blackWhite",font:"oswald"}
-      };
-
-      function clampNumber(value, min, max, fallback){
-        const number = Number(value);
-        if(Number.isNaN(number)) return fallback;
-        return Math.min(max, Math.max(min, number));
-      }
-
-      function rgbToHex(r,g,b){
-        return "#" + [r,g,b].map(value => {
-          const hex = Math.max(0, Math.min(255, Math.round(value))).toString(16);
-          return hex.length === 1 ? "0" + hex : hex;
-        }).join("").toUpperCase();
-      }
-
-      function normalizeHex(value, fallback){
-        const cleaned = String(value || "").trim();
-        if(/^#[0-9A-Fa-f]{6}$/.test(cleaned)) return cleaned.toUpperCase();
-        if(/^[0-9A-Fa-f]{6}$/.test(cleaned)) return ("#" + cleaned).toUpperCase();
-        return fallback.toUpperCase();
-      }
-
-      function hexToRgb(hex){
-        const safe = normalizeHex(hex, "#000000").replace("#", "");
-        return {r:parseInt(safe.slice(0,2),16),g:parseInt(safe.slice(2,4),16),b:parseInt(safe.slice(4,6),16)};
-      }
-
-      function mixHex(hex1, hex2, amount){
-        const a = hexToRgb(hex1);
-        const b = hexToRgb(hex2);
-        const t = Math.max(0, Math.min(1, amount));
-        return rgbToHex(a.r + (b.r - a.r) * t, a.g + (b.g - a.g) * t, a.b + (b.b - a.b) * t);
-      }
-
-      function getBrightness(hex){
-        const rgb = hexToRgb(hex);
-        return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
-      }
-
-      function getContrastText(hex){return getBrightness(hex) > 150 ? "#111111" : "#FFFFFF";}
-      function getReadableMuted(ink){return getBrightness(ink) > 150 ? mixHex(ink, "#000000", .28) : mixHex(ink, "#FFFFFF", .32);}
-      function hexToRgba(hex, alpha){
-        const rgb = hexToRgb(hex);
-        return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
-      }
-
-      function hslToHex(h,s,l){
-        h = clampNumber(h,0,360,0);
-        s = clampNumber(s,0,100,0) / 100;
-        l = clampNumber(l,0,100,50) / 100;
-        const c = (1 - Math.abs(2 * l - 1)) * s;
-        const x = c * (1 - Math.abs((h / 60) % 2 - 1));
-        const m = l - c / 2;
-        let r = 0, g = 0, b = 0;
-        if(h < 60){r = c; g = x; b = 0;}
-        else if(h < 120){r = x; g = c; b = 0;}
-        else if(h < 180){r = 0; g = c; b = x;}
-        else if(h < 240){r = 0; g = x; b = c;}
-        else if(h < 300){r = x; g = 0; b = c;}
-        else{r = c; g = 0; b = x;}
-        return rgbToHex((r + m) * 255, (g + m) * 255, (b + m) * 255);
-      }
-
-      function hexToHsl(hex){
-        const rgb = hexToRgb(hex);
-        const r = rgb.r / 255;
-        const g = rgb.g / 255;
-        const b = rgb.b / 255;
-        const max = Math.max(r,g,b);
-        const min = Math.min(r,g,b);
-        let h = 0;
-        let s = 0;
-        const l = (max + min) / 2;
-        if(max !== min){
-          const d = max - min;
-          s = l > .5 ? d / (2 - max - min) : d / (max + min);
-          switch(max){
-            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-            case g: h = (b - r) / d + 2; break;
-            default: h = (r - g) / d + 4;
-          }
-          h = h * 60;
-        }
-        return {h:Math.round(h),s:Math.round(s * 100),l:Math.round(l * 100)};
-      }
-
-      function setVar(name, value){body.style.setProperty(name, value);}
-
-      function syncInputs(values){
-        const bg = normalizeHex(values.bg, "#EFE8DC");
-        const paper = normalizeHex(values.paper, "#FFFAF3");
-        const ink = normalizeHex(values.ink, "#16211D");
-        const accent = normalizeHex(values.accent, "#16382F");
-        if(bgHex) bgHex.value = bg;
-        if(paperHex) paperHex.value = paper;
-        if(inkHex) inkHex.value = ink;
-        if(accentHex) accentHex.value = accent;
-        if(bgPicker) bgPicker.value = bg;
-        if(paperPicker) paperPicker.value = paper;
-        if(inkPicker) inkPicker.value = ink;
-        if(accentPicker) accentPicker.value = accent;
-        const bgHsl = hexToHsl(bg);
-        const accentHsl = hexToHsl(accent);
-        if(bgHue) bgHue.value = bgHsl.h;
-        if(bgLight) bgLight.value = bgHsl.l;
-        if(accentHue) accentHue.value = accentHsl.h;
-      }
-
-      function saveDesignState(extra = {}){
-        const state = {
-          palette:paletteSelect ? paletteSelect.value : "classic",
-          font:fontSelect ? fontSelect.value : "inter",
-          stylePreset:stylePresetSelect ? stylePresetSelect.value : "",
-          bg:bgHex ? bgHex.value : "#EFE8DC",
-          paper:paperHex ? paperHex.value : "#FFFAF3",
-          ink:inkHex ? inkHex.value : "#16211D",
-          accent:accentHex ? accentHex.value : "#16382F",
-          ...extra
-        };
-        localStorage.setItem(STORAGE.palette, state.palette);
-        localStorage.setItem(STORAGE.font, state.font);
-        localStorage.setItem(STORAGE.stylePreset, state.stylePreset);
-        localStorage.setItem(STORAGE.bgHex, state.bg);
-        localStorage.setItem(STORAGE.paperHex, state.paper);
-        localStorage.setItem(STORAGE.inkHex, state.ink);
-        localStorage.setItem(STORAGE.accentHex, state.accent);
-      }
-
-      function applyPalette(values, save = true){
-        const bg = normalizeHex(values.bg, "#EFE8DC");
-        const paper = normalizeHex(values.paper, "#FFFAF3");
-        const ink = normalizeHex(values.ink, "#16211D");
-        const accent = normalizeHex(values.accent, "#16382F");
-        const bgIsDark = getBrightness(bg) < 120;
-        const accentContrast = getContrastText(accent);
-        const muted = getReadableMuted(ink);
-        const bg2 = mixHex(bg, bgIsDark ? "#FFFFFF" : "#000000", .05);
-        const line = mixHex(paper, ink, .15);
-        const lineDark = mixHex(paper, ink, .28);
-        const accent2 = mixHex(accent, accentContrast === "#FFFFFF" ? "#FFFFFF" : "#000000", .14);
-        const accentSoft = mixHex(paper, accent, .16);
-        const gold = mixHex(accent, "#D9AA67", .45);
-        const gold2 = mixHex(accent, "#FFD18A", .35);
-
-        setVar("--bg", bg);
-        setVar("--bg-2", bg2);
-        setVar("--paper", paper);
-        setVar("--white", paper);
-        setVar("--ink", ink);
-        setVar("--muted", muted);
-        setVar("--line", line);
-        setVar("--line-dark", lineDark);
-        setVar("--bg-glow-1", hexToRgba(mixHex(bg, accent, .16), bgIsDark ? .20 : .24));
-        setVar("--accent", accent);
-        setVar("--accent-2", accent2);
-        setVar("--accent-soft", accentSoft);
-        setVar("--accent-contrast", accentContrast);
-        setVar("--gold", gold);
-        setVar("--gold-2", gold2);
-        setVar("--focus", accent);
-        setVar("--topbar", mixHex(accent, "#000000", .35));
-        setVar("--contact-bg", mixHex(accent, "#000000", .55));
-        setVar("--footer-bg", mixHex(accent, "#000000", .68));
-        setVar("--shadow", bgIsDark ? "0 28px 90px rgba(0,0,0,.34)" : "0 28px 90px rgba(20,32,27,.15)");
-        setVar("--shadow-soft", bgIsDark ? "0 18px 50px rgba(0,0,0,.24)" : "0 18px 50px rgba(20,32,27,.09)");
-
-        if(bgDot) bgDot.style.background = bg;
-        if(lightDot) lightDot.style.background = paper;
-        if(accentDot) accentDot.style.background = accent;
-        syncInputs({bg, paper, ink, accent});
-
-        if(save) saveDesignState({bg, paper, ink, accent});
-
-        const metaTheme = document.querySelector('meta[name="theme-color"]');
-        if(metaTheme) metaTheme.setAttribute("content", mixHex(accent, "#000000", .35));
-        updateFixedHeader();
-      }
-
-      function applySelectedPalette(key){
-        if(key === "custom"){
-          applyPalette({
-            bg:localStorage.getItem(STORAGE.bgHex) || "#EFE8DC",
-            paper:localStorage.getItem(STORAGE.paperHex) || "#FFFAF3",
-            ink:localStorage.getItem(STORAGE.inkHex) || "#16211D",
-            accent:localStorage.getItem(STORAGE.accentHex) || "#16382F"
-          });
-          if(paletteSelect) paletteSelect.value = "custom";
-          localStorage.setItem(STORAGE.palette, "custom");
-          return;
-        }
-        const palette = PALETTES[key] || PALETTES.classic;
-        if(paletteSelect) paletteSelect.value = key;
-        localStorage.setItem(STORAGE.palette, key);
-        applyPalette(palette);
-      }
-
-      function applySliderPalette(){
-        if(stylePresetSelect) stylePresetSelect.value = "";
-        const bg = clampNumber(bgHue?.value, 0, 360, 38);
-        const light = clampNumber(bgLight?.value, 0, 100, 92);
-        const accent = clampNumber(accentHue?.value, 0, 360, 157);
-        const isDark = light < 42;
-        const values = {
-          bg:hslToHex(bg, 45, light),
-          paper:hslToHex(bg, 35, isDark ? Math.min(light + 6, 28) : Math.min(light + 5, 99)),
-          ink:hslToHex(bg, 22, isDark ? 96 : 12),
-          accent:hslToHex(accent, 58, isDark ? 58 : 24)
-        };
-        if(paletteSelect) paletteSelect.value = "custom";
-        localStorage.setItem(STORAGE.palette, "custom");
-        localStorage.setItem(STORAGE.bgHue, String(bg));
-        localStorage.setItem(STORAGE.bgLight, String(light));
-        localStorage.setItem(STORAGE.accentHue, String(accent));
-        applyPalette(values);
-      }
-
-      function applyManualHexChange(){
-        if(stylePresetSelect) stylePresetSelect.value = "";
-        if(paletteSelect) paletteSelect.value = "custom";
-        localStorage.setItem(STORAGE.palette, "custom");
-        applyPalette({
-          bg:bgHex?.value || bgPicker?.value || "#EFE8DC",
-          paper:paperHex?.value || paperPicker?.value || "#FFFAF3",
-          ink:inkHex?.value || inkPicker?.value || "#16211D",
-          accent:accentHex?.value || accentPicker?.value || "#16382F"
-        });
-      }
-
-      function applyStylePreset(presetKey, save = true){
-        const preset = STYLE_PRESETS[presetKey];
-        if(!preset) return;
-        applySelectedPalette(preset.palette);
-        applyFontStyle(preset.font);
-        if(stylePresetSelect) stylePresetSelect.value = presetKey;
-        if(save) localStorage.setItem(STORAGE.stylePreset, presetKey);
-      }
-
-      function applyFontStyle(fontKey){
-        const safeKey = FONT_MAP[fontKey] ? fontKey : "inter";
-        const selectedFont = FONT_MAP[safeKey];
-        body.style.setProperty("--font-main", selectedFont.main);
-        body.style.setProperty("--font-heading", selectedFont.heading);
-        if(fontSelect) fontSelect.value = safeKey;
-        localStorage.setItem(STORAGE.font, safeKey);
-        updateFixedHeader();
-      }
-
-      function setLargeText(isLarge){
-        root.classList.toggle("large-text", isLarge);
-        localStorage.setItem(STORAGE.text, isLarge ? "large" : "normal");
-        if(increaseText){
-          increaseText.textContent = isLarge ? "Normal textstorlek" : "Större text";
-          increaseText.setAttribute("aria-pressed", isLarge ? "true" : "false");
-        }
-        updateFixedHeader();
-      }
-
-      function setHighContrast(isHighContrast){
-        body.classList.toggle("high-contrast", isHighContrast);
-        localStorage.setItem(STORAGE.contrast, isHighContrast ? "high" : "normal");
-        if(contrastToggle){
-          contrastToggle.textContent = isHighContrast ? "Normal kontrast" : "Hög kontrast";
-          contrastToggle.setAttribute("aria-pressed", isHighContrast ? "true" : "false");
-        }
-      }
-
-      function updateFixedHeader(){
-        if(!siteHeader) return;
-        const topbarHeight = topbar ? topbar.offsetHeight : 0;
-        const headerHeight = siteHeader.offsetHeight;
-        root.style.setProperty("--header-offset", headerHeight + "px");
-        if(window.scrollY > topbarHeight){
-          body.classList.add("header-fixed");
-        }else{
-          body.classList.remove("header-fixed");
-        }
-      }
-
-      function getSlideWidth(){
-        const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
-        if(!firstSlide) return 320;
-        const styles = window.getComputedStyle(imageStrip);
-        const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
-        return firstSlide.getBoundingClientRect().width + gap;
-      }
-
-      function updateGalleryButtons(){
-        if(!imageStrip || !galleryPrev || !galleryNext) return;
-        const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
-        galleryPrev.disabled = imageStrip.scrollLeft <= 8;
-        galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
-      }
-
-      function scrollGallery(direction){
-        if(!imageStrip) return;
-        imageStrip.scrollBy({left:getSlideWidth() * direction, behavior:"smooth"});
-      }
-
-      function editableElements(){
-        return Array.from(document.querySelectorAll([
-          "main h1",
-          "main h2",
-          "main h3",
-          "main p",
-          "main li",
-          "main a.btn",
-          "main .badge",
-          "main .fact strong",
-          "main .eyebrow",
-          ".logo-text strong",
-          ".logo-text span",
-          ".topbar-title",
-          "footer .footer-copy"
-        ].join(", "))).filter(el => {
-          if(el.closest("form")) return false;
-          if(el.closest(".design-panel")) return false;
-          if(el.closest("nav")) return false;
-          if(el.closest(".text-editor-modal")) return false;
-          return true;
-        });
-      }
-
-      function saveEditedHtmlToBrowser(){
-        const main = document.getElementById("main");
-        const footer = document.querySelector("footer");
-        if(!main || !footer) return;
-        localStorage.setItem(STORAGE_EDITED_HTML, JSON.stringify({main:main.innerHTML, footer:footer.innerHTML}));
-      }
-
-      function loadEditedHtmlFromBrowser(){
-        try{
-          const saved = localStorage.getItem(STORAGE_EDITED_HTML);
-          if(!saved) return;
-          const data = JSON.parse(saved);
-          const main = document.getElementById("main");
-          const footer = document.querySelector("footer");
-          if(data.main && main) main.innerHTML = data.main;
-          if(data.footer && footer) footer.innerHTML = data.footer;
-        }catch(error){
-          localStorage.removeItem(STORAGE_EDITED_HTML);
-        }
-      }
-
-      function setEditMode(isEditing){
-        body.classList.toggle("edit-mode", isEditing);
-        editableElements().forEach(el => {
-          if(isEditing){
-            el.dataset.editableText = "true";
-            el.setAttribute("tabindex", "0");
-            el.setAttribute("role", "button");
-            el.setAttribute("aria-label", "Klicka för att ändra text");
-          }else{
-            delete el.dataset.editableText;
-            el.removeAttribute("tabindex");
-            if(el.getAttribute("role") === "button") el.removeAttribute("role");
-            if(el.getAttribute("aria-label") === "Klicka för att ändra text") el.removeAttribute("aria-label");
-          }
-        });
-        if(editToggle){
-          editToggle.textContent = isEditing ? "Stäng textredigering" : "Redigera text";
-          editToggle.setAttribute("aria-pressed", isEditing ? "true" : "false");
-        }
-      }
-
-      function openTextEditor(element){
-        if(!element || !modal || !textInput) return;
-        activeElement = element;
-        textInput.value = element.innerText.trim();
-        modal.classList.add("open");
-        modal.setAttribute("aria-hidden", "false");
-        setTimeout(() => {
-          textInput.focus();
-          textInput.setSelectionRange(textInput.value.length, textInput.value.length);
-        }, 80);
-      }
-
-      function closeTextEditor(){
-        if(!modal) return;
-        modal.classList.remove("open");
-        modal.setAttribute("aria-hidden", "true");
-        activeElement = null;
-      }
-
-      function saveTextEditorValue(){
-        if(!activeElement || !textInput) return;
-        activeElement.innerText = textInput.value.trim();
-        saveEditedHtmlToBrowser();
-        closeTextEditor();
-        updateFixedHeader();
-      }
-
-      function cleanForDownload(doc){
-        doc.querySelectorAll("[data-editable-text], [contenteditable], [tabindex]").forEach(el => {
-          el.removeAttribute("data-editable-text");
-          el.removeAttribute("contenteditable");
-          el.removeAttribute("tabindex");
-          if(el.getAttribute("role") === "button") el.removeAttribute("role");
-          if(el.getAttribute("aria-label") === "Klicka för att ändra text") el.removeAttribute("aria-label");
-        });
-        doc.querySelectorAll(".text-editor-modal").forEach(el => el.remove());
-        const bodyClone = doc.querySelector("body");
-        if(bodyClone){
-          bodyClone.classList.remove("edit-mode", "header-fixed");
-        }
-        const editBtn = doc.querySelector("#editToggle");
-        if(editBtn){
-          editBtn.textContent = "Redigera text";
-          editBtn.setAttribute("aria-pressed", "false");
-        }
-      }
-
-      function downloadEditedHtml(){
-        saveEditedHtmlToBrowser();
-        setEditMode(false);
-        const clone = document.documentElement.cloneNode(true);
-        cleanForDownload(clone);
-        const html = "<!doctype html>\n" + clone.outerHTML;
-        const blob = new Blob([html], {type:"text/html;charset=utf-8"});
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "andrad-demo-hemsida-" + new Date().toISOString().slice(0,10) + ".html";
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        URL.revokeObjectURL(url);
-      }
-
-      function resetEditedText(){
-        const ok = confirm("Vill du återställa all text som ändrats i denna webbläsare?");
-        if(!ok) return;
-        localStorage.removeItem(STORAGE_EDITED_HTML);
-        window.location.reload();
-      }
-
-      loadEditedHtmlFromBrowser();
-
-      if(designToggle && designTools){
-        designToggle.addEventListener("click", () => {
-          const isOpen = designTools.classList.toggle("open");
-          designToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          designToggle.textContent = isOpen ? "Stäng designval" : "Ändra design";
-          updateFixedHeader();
-        });
-      }
-
-      if(paletteSelect){
-        paletteSelect.addEventListener("change", function(){
-          if(stylePresetSelect) stylePresetSelect.value = "";
-          applySelectedPalette(this.value);
-        });
-      }
-
-      if(fontSelect){
-        fontSelect.addEventListener("change", function(){
-          if(stylePresetSelect) stylePresetSelect.value = "";
-          applyFontStyle(this.value);
-        });
-      }
-
-      if(stylePresetSelect){
-        stylePresetSelect.addEventListener("change", function(){
-          if(!this.value){
-            localStorage.removeItem(STORAGE.stylePreset);
-            return;
-          }
-          applyStylePreset(this.value);
-        });
-      }
-
-      [bgHue, bgLight, accentHue].forEach(input => {
-        if(!input) return;
-        input.addEventListener("input", applySliderPalette);
-        input.addEventListener("change", applySliderPalette);
+    function getState(){
+      const text = {};
+      editableElements.forEach(el => {
+        text[el.dataset.editId] = el.innerHTML;
       });
 
-      [[bgHex,bgPicker],[paperHex,paperPicker],[inkHex,inkPicker],[accentHex,accentPicker]].forEach(([textField,colorInput]) => {
-        if(textField){
-          textField.addEventListener("change", () => {
-            textField.value = normalizeHex(textField.value, colorInput?.value || "#000000");
-            if(colorInput) colorInput.value = textField.value;
-            applyManualHexChange();
-          });
+      return {
+        editMode:body.classList.contains("edit-mode"),
+        text,
+        design:{
+          bg:bgColor.value,
+          paper:paperColor.value,
+          ink:inkColor.value,
+          accent:accentColor.value,
+          radius:radiusSelect.value,
+          font:fontSelect.value,
+          contrast:contrastSelect.value
+        }
+      };
+    }
 
-          textField.addEventListener("input", () => {
-            const value = textField.value.trim();
-            if(/^#[0-9A-Fa-f]{6}$/.test(value) || /^[0-9A-Fa-f]{6}$/.test(value)){
-              textField.value = normalizeHex(value, colorInput?.value || "#000000");
-              if(colorInput) colorInput.value = textField.value;
-              applyManualHexChange();
+    function saveState(){
+      try{
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
+      }catch(error){}
+    }
+
+    function loadState(){
+      try{
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+
+        if(saved.text){
+          editableElements.forEach(el => {
+            const id = el.dataset.editId;
+            if(saved.text[id] !== undefined){
+              el.innerHTML = saved.text[id];
             }
           });
         }
 
-        if(colorInput){
-          colorInput.addEventListener("input", () => {
-            if(textField) textField.value = colorInput.value.toUpperCase();
-            applyManualHexChange();
-          });
+        if(saved.design){
+          if(saved.design.contrast) contrastSelect.value = saved.design.contrast;
+          applyDesign(saved.design);
         }
+
+        setEditMode(false);
+      }catch(error){
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+
+    function resetText(){
+      if(!confirm("Vill du återställa all redigerad text till originaltexten?")) return;
+
+      editableElements.forEach(el => {
+        const id = el.dataset.editId;
+        el.innerHTML = ORIGINAL_HTML[id];
       });
 
-      if(resetDesign){
-        resetDesign.addEventListener("click", () => {
-          Object.values(STORAGE).forEach(key => localStorage.removeItem(key));
-          if(stylePresetSelect) stylePresetSelect.value = "";
-          applySelectedPalette("classic");
-          applyFontStyle("inter");
-          setLargeText(false);
-          setHighContrast(false);
-        });
-      }
+      saveState();
+    }
 
-      if(menuBtn && siteNav){
-        menuBtn.addEventListener("click", () => {
-          const isOpen = siteNav.classList.toggle("open");
-          menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
+    function saveEditedPage(){
+      setEditMode(false);
 
-        siteNav.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => {
-            siteNav.classList.remove("open");
-            menuBtn.setAttribute("aria-expanded", "false");
-          });
-        });
+      const clone = document.documentElement.cloneNode(true);
 
-        document.addEventListener("click", event => {
-          const clickedInsideMenu = siteNav.contains(event.target);
-          const clickedMenuButton = menuBtn.contains(event.target);
-          if(!clickedInsideMenu && !clickedMenuButton){
-            siteNav.classList.remove("open");
-            menuBtn.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
-
-      if(increaseText){increaseText.addEventListener("click", () => setLargeText(!root.classList.contains("large-text")));}
-      if(contrastToggle){contrastToggle.addEventListener("click", () => setHighContrast(!body.classList.contains("high-contrast")));}
-
-      if(editToggle){
-        editToggle.addEventListener("click", () => {
-          const isEditing = !body.classList.contains("edit-mode");
-          setEditMode(isEditing);
-        });
-      }
-
-      if(saveHtml){saveHtml.addEventListener("click", downloadEditedHtml);}
-      if(resetText){resetText.addEventListener("click", resetEditedText);}
-      if(saveTextEdit){saveTextEdit.addEventListener("click", saveTextEditorValue);}
-      if(cancelTextEdit){cancelTextEdit.addEventListener("click", closeTextEditor);}
-
-      document.addEventListener("click", event => {
-        if(event.target && event.target.matches("[data-close-editor='true']")){
-          closeTextEditor();
-          return;
-        }
-        if(!body.classList.contains("edit-mode")) return;
-        const editable = event.target.closest && event.target.closest("[data-editable-text='true']");
-        if(!editable) return;
-        event.preventDefault();
-        event.stopPropagation();
-        openTextEditor(editable);
-      }, true);
-
-      document.addEventListener("keydown", event => {
-        if(event.key === "Escape"){
-          closeTextEditor();
-          if(siteNav){
-            siteNav.classList.remove("open");
-            if(menuBtn) menuBtn.setAttribute("aria-expanded", "false");
-          }
-          return;
-        }
-
-        if(!body.classList.contains("edit-mode")) return;
-        if(event.key === "Enter" || event.key === " "){
-          const active = document.activeElement;
-          if(active && active.dataset && active.dataset.editableText === "true"){
-            event.preventDefault();
-            openTextEditor(active);
-          }
-        }
+      clone.querySelectorAll("[contenteditable]").forEach(el => {
+        el.removeAttribute("contenteditable");
+        el.removeAttribute("spellcheck");
       });
 
-      if(contactForm && submitDemoRequest && formStatus){
-        contactForm.addEventListener("submit", () => {
-          submitDemoRequest.disabled = true;
-          submitDemoRequest.textContent = "Skickar...";
-          formStatus.className = "form-status ok";
-          formStatus.textContent = "Skickar formuläret direkt. Vänta kvar tills bekräftelsen visas.";
+      clone.querySelector("body")?.classList.remove("edit-mode");
+
+      const savedNote = clone.createElement("meta");
+      savedNote.setAttribute("name", "saved-edited-page");
+      savedNote.setAttribute("content", "Denna HTML-fil är sparad från kundens redigerade demo.");
+      clone.querySelector("head")?.appendChild(savedNote);
+
+      const html = "<!doctype html>\n" + clone.outerHTML;
+      const blob = new Blob([html], {type:"text/html;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+
+      const date = new Date();
+      const stamp = date.toISOString().slice(0,19).replace(/[:T]/g, "-");
+      const filename = "redigerad-demo-" + stamp + ".html";
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+        a.remove();
+      }, 1000);
+
+      alert("Den ändrade sidan har sparats som HTML-fil. Bifoga den filen i formuläret längst ner på sidan.");
+    }
+
+    function getSlideWidth(){
+      const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
+      if(!firstSlide) return 320;
+      const styles = window.getComputedStyle(imageStrip);
+      const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
+      return firstSlide.getBoundingClientRect().width + gap;
+    }
+
+    function updateGalleryButtons(){
+      if(!imageStrip || !galleryPrev || !galleryNext) return;
+      const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
+      galleryPrev.disabled = imageStrip.scrollLeft <= 8;
+      galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
+    }
+
+    function scrollGallery(direction){
+      if(!imageStrip) return;
+      imageStrip.scrollBy({left:getSlideWidth() * direction, behavior:"smooth"});
+    }
+
+    designToggle.addEventListener("click", () => {
+      designPanel.classList.toggle("open");
+    });
+
+    editToggle.addEventListener("click", () => {
+      setEditMode(!body.classList.contains("edit-mode"));
+    });
+
+    savePageBtn.addEventListener("click", saveEditedPage);
+    resetTextBtn.addEventListener("click", resetText);
+
+    if(menuBtn && siteNav){
+      menuBtn.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      siteNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
         });
-      }
+      });
+    }
 
-      if(galleryPrev){galleryPrev.addEventListener("click", () => scrollGallery(-1));}
-      if(galleryNext){galleryNext.addEventListener("click", () => scrollGallery(1));}
+    stylePreset.addEventListener("change", () => applyPreset(stylePreset.value));
+    fontSelect.addEventListener("change", () => applyDesign({font:fontSelect.value}));
+    bgColor.addEventListener("input", () => applyDesign({bg:bgColor.value}));
+    paperColor.addEventListener("input", () => applyDesign({paper:paperColor.value}));
+    inkColor.addEventListener("input", () => applyDesign({ink:inkColor.value}));
+    accentColor.addEventListener("input", () => applyDesign({accent:accentColor.value}));
+    radiusSelect.addEventListener("change", () => applyDesign({radius:radiusSelect.value}));
+    contrastSelect.addEventListener("change", () => applyDesign({contrast:contrastSelect.value}));
 
-      if(imageStrip){
-        let isDown = false;
-        let startX = 0;
-        let scrollLeft = 0;
+    editableElements.forEach(el => {
+      el.addEventListener("input", saveState);
+      el.addEventListener("blur", saveState);
+    });
 
-        imageStrip.addEventListener("mousedown", e => {
-          isDown = true;
-          startX = e.pageX - imageStrip.offsetLeft;
-          scrollLeft = imageStrip.scrollLeft;
-        });
+    if(galleryPrev) galleryPrev.addEventListener("click", () => scrollGallery(-1));
+    if(galleryNext) galleryNext.addEventListener("click", () => scrollGallery(1));
+    if(imageStrip) imageStrip.addEventListener("scroll", updateGalleryButtons);
 
-        imageStrip.addEventListener("mouseleave", () => {isDown = false;});
-        imageStrip.addEventListener("mouseup", () => {isDown = false;});
-        imageStrip.addEventListener("mousemove", e => {
-          if(!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - imageStrip.offsetLeft;
-          const walk = (x - startX) * 1.2;
-          imageStrip.scrollLeft = scrollLeft - walk;
-        });
-        imageStrip.addEventListener("scroll", updateGalleryButtons);
-      }
+    window.addEventListener("resize", updateGalleryButtons);
+    window.addEventListener("load", updateGalleryButtons);
 
-      window.addEventListener("scroll", updateFixedHeader, {passive:true});
-      window.addEventListener("resize", () => {updateFixedHeader();updateGalleryButtons();});
-      window.addEventListener("load", () => {updateFixedHeader();updateGalleryButtons();});
-
-      const savedPalette = localStorage.getItem(STORAGE.palette) || "classic";
-      if(paletteSelect) paletteSelect.value = savedPalette;
-
-      if(savedPalette === "custom"){
-        applyPalette({
-          bg:localStorage.getItem(STORAGE.bgHex) || "#EFE8DC",
-          paper:localStorage.getItem(STORAGE.paperHex) || "#FFFAF3",
-          ink:localStorage.getItem(STORAGE.inkHex) || "#16211D",
-          accent:localStorage.getItem(STORAGE.accentHex) || "#16382F"
-        }, false);
-      }else{
-        applySelectedPalette(savedPalette);
-      }
-
-      const savedStylePreset = localStorage.getItem(STORAGE.stylePreset);
-      if(savedStylePreset && STYLE_PRESETS[savedStylePreset]){
-        applyStylePreset(savedStylePreset, false);
-      }else{
-        if(stylePresetSelect) stylePresetSelect.value = "";
-        applyFontStyle(localStorage.getItem(STORAGE.font) || "inter");
-      }
-
-      setLargeText(localStorage.getItem(STORAGE.text) === "large");
-      setHighContrast(localStorage.getItem(STORAGE.contrast) === "high");
-      updateFixedHeader();
-      updateGalleryButtons();
-    })();
+    loadState();
+    updateGalleryButtons();
   </script>
 </body>
 </html>
