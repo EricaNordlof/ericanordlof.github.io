@@ -1102,6 +1102,29 @@
       line-height:1.55;
     }
 
+    .form-status{
+      display:none;
+      margin-top:14px;
+      border-radius:18px;
+      padding:14px 16px;
+      font-weight:800;
+      line-height:1.5;
+    }
+
+    .form-status.ok{
+      display:block;
+      background:#dcfce7;
+      color:#14532d;
+      border:1px solid #86efac;
+    }
+
+    .form-status.warn{
+      display:block;
+      background:#fff7ed;
+      color:#9a3412;
+      border:1px solid #fdba74;
+    }
+
     .form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
 
     .footer{
@@ -1158,6 +1181,20 @@
     body.edit-mode [data-editable-text="true"]:hover{
       background:color-mix(in srgb, var(--gold) 12%, transparent);
     }
+
+    .edit-help{
+      display:none;
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:18px;
+      padding:10px 12px;
+      font-weight:700;
+      font-size:.9rem;
+      margin-top:10px;
+    }
+
+    body.edit-mode .edit-help{display:block;}
 
     .text-editor-modal{
       position:fixed;
@@ -1461,6 +1498,7 @@
         <button class="design-toggle" type="button" id="saveHtml">Spara ändrad sida</button>
         <button class="design-toggle" type="button" id="resetText">Återställ text</button>
       </div>
+      <div class="edit-help">Redigeringsläge är på. Klicka på valfri text, ändra och spara. Klicka sedan på “Spara ändrad sida” och skicka HTML-filen.</div>
 
       <div class="design-tools" id="designTools">
         <div class="tool-field">
@@ -1726,8 +1764,8 @@
           <div class="mini-box">
             <h3>Kontakt direkt</h3>
             <p>För frågor, demo, offert eller samarbete.</p>
-            <a href="tel:+46000000000">[Telefonnummer]</a>
-            <a href="mailto:info@example.se">[E-postadress]</a>
+            <a href="tel:+460793442520">079 344 25 20</a>
+            <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           </div>
         </aside>
 
@@ -1991,44 +2029,50 @@
           <div class="contact-person">
             <div class="person-photo" aria-hidden="true"></div>
             <div>
-              <strong>[Namn] – [roll]</strong>
-              <span>Bilden kan bytas mot riktig bild i färdig version.</span>
+              <strong>Erica Nordlöf – Nordlöf Nordic</strong>
+              <span>Webbutvecklare. Kodad hemsida, demo först och tydligt nästa steg.</span>
             </div>
           </div>
           <div class="contact-links">
-            <a class="contact-link" href="tel:+46000000000"><span style="font-size:1rem;font-weight:800;color:var(--ink);">Telefon: [telefonnummer]</span><span>Ring vid frågor eller demo</span></a>
-            <a class="contact-link" href="mailto:info@example.se"><span style="font-size:1rem;font-weight:800;color:var(--ink);">[e-postadress]</span><span>Förfrågningar och material</span></a>
-            <a class="contact-link" href="#"><span style="font-size:1rem;font-weight:800;color:var(--ink);">[webbadress]</span><span>Nuvarande webbplats eller social länk</span></a>
+            <a class="contact-link" href="tel:+460793442520"><span style="font-size:1rem;font-weight:800;color:var(--ink);">Telefon: 079 344 25 20</span><span>Ring vid frågor eller demo</span></a>
+            <a class="contact-link" href="mailto:erica@webutvecklare.se"><span style="font-size:1rem;font-weight:800;color:var(--ink);">erica@webutvecklare.se</span><span>Förfrågningar och material</span></a>
+            <a class="contact-link" href="https://webutvecklare.se"><span style="font-size:1rem;font-weight:800;color:var(--ink);">webutvecklare.se</span><span>Nuvarande webbplats</span></a>
           </div>
         </div>
 
-        <form action="" method="post" enctype="multipart/form-data" aria-label="Kontaktformulär" id="contactForm">
+        <form action="https://formsubmit.co/erica@webutvecklare.se" method="POST" enctype="multipart/form-data" aria-label="Kontaktformulär" id="contactForm">
+          <input type="hidden" name="_subject" value="Gratis demo av ny hemsida" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="formName" value="Gratis demo av ny hemsida" />
           <input type="hidden" name="sourcePage" value="gratis-demo.html" />
+
           <div class="form-grid">
             <div class="field"><label for="name">Namn</label><input id="name" name="name" autocomplete="name" required /></div>
             <div class="field"><label for="company">Företag</label><input id="company" name="company" autocomplete="organization" /></div>
             <div class="field"><label for="email">E-post</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
             <div class="field"><label for="phone">Telefon</label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
-            <div class="field full"><label for="story">Företagsberättelse</label><textarea id="story" name="story" placeholder="Berätta om företaget: vilka ni är, vad ni gör, varför ni gör det och vad kunden ska känna när de kommer till sidan..."></textarea></div>
-            <div class="field full"><label for="services">Tjänster / erbjudanden</label><textarea id="services" name="services" placeholder="Skriv vilka tjänster, produkter, paket eller erbjudanden som ska finnas på hemsidan..."></textarea></div>
-            <div class="field full"><label for="target">Målgrupp</label><textarea id="target" name="target" placeholder="Vilka kunder vill ni nå? Företag, privatpersoner, bransch, ort, ålder, behov, problem?"></textarea></div>
-            <div class="field full"><label for="prices">Priser / offertmodell</label><textarea id="prices" name="prices" placeholder="Skriv fasta priser, från-priser, paket, timpris eller om offert gäller..."></textarea></div>
-            <div class="field full"><label for="materialLinks">Material och länkar</label><textarea id="materialLinks" name="materialLinks" placeholder="Klistra in länkar till bilder, logga, Google Drive, sociala medier, nuvarande hemsida eller hemsidor ni gillar. Vill ni ha något liknande från en annan sida? Skicka URL och skriv vad ni vill ha med."></textarea></div>
+            <div class="field full"><label for="story">Företagsberättelse</label><textarea id="story" name="Företagsberättelse" placeholder="Berätta om företaget: vilka ni är, vad ni gör, varför ni gör det och vad kunden ska känna när de kommer till sidan..."></textarea></div>
+            <div class="field full"><label for="services">Tjänster / erbjudanden</label><textarea id="services" name="Tjänster och erbjudanden" placeholder="Skriv vilka tjänster, produkter, paket eller erbjudanden som ska finnas på hemsidan..."></textarea></div>
+            <div class="field full"><label for="target">Målgrupp</label><textarea id="target" name="Målgrupp" placeholder="Vilka kunder vill ni nå? Företag, privatpersoner, bransch, ort, ålder, behov, problem?"></textarea></div>
+            <div class="field full"><label for="prices">Priser / offertmodell</label><textarea id="prices" name="Priser eller offertmodell" placeholder="Skriv fasta priser, från-priser, paket, timpris eller om offert gäller..."></textarea></div>
+            <div class="field full"><label for="materialLinks">Material och länkar</label><textarea id="materialLinks" name="Material och länkar" placeholder="Klistra in länkar till bilder, logga, Google Drive, sociala medier, nuvarande hemsida eller hemsidor ni gillar. Vill ni ha något liknande från en annan sida? Skicka URL och skriv vad ni vill ha med."></textarea></div>
             <div class="field full">
               <label for="files">Bifoga filer</label>
-              <input id="files" name="files[]" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx" />
-              <p class="form-note file-help">Här kan ni bifoga logga, bilder, filmer, pdf:er, prislistor, texter, broschyrer eller annat material. I den skarpa versionen kopplas detta till ett riktigt uppladdningsflöde.</p>
+              <input id="files" name="attachment" type="file" multiple accept="image/*,video/*,.pdf,.doc,.docx,.txt,.ppt,.pptx,.xls,.xlsx" />
+              <p class="form-note file-help">Här kan ni bifoga logga, bilder, filmer, pdf:er, prislistor, texter, broschyrer eller annat material.</p>
             </div>
-            <div class="field full"><label for="mustHave">Måsten på sidan</label><textarea id="mustHave" name="mustHave" placeholder="Skriv allt som absolut måste vara med: priser, garantier, certifikat, områden, öppettider, vanliga frågor, särskilda regler..."></textarea></div>
+            <div class="field full"><label for="mustHave">Måsten på sidan</label><textarea id="mustHave" name="Måsten på sidan" placeholder="Skriv allt som absolut måste vara med: priser, garantier, certifikat, områden, öppettider, vanliga frågor, särskilda regler..."></textarea></div>
           </div>
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit" id="submitDemoRequest">Beställ gratis demo</button>
-            <a class="btn btn-secondary" href="mailto:info@example.se">Mejla istället</a>
+            <a class="btn btn-secondary" href="mailto:erica@webutvecklare.se">Mejla istället</a>
           </div>
 
-          <p class="form-note" id="formStatus" role="status" aria-live="polite">
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+          <p class="form-note">
             Tips: Ni behöver inte lösa designen själva. Skicka företagets berättelse, tjänster, bilder, filmer, länkar, priser, Google Maps-länk och allt som måste vara med. Vill ni ha med något liknande från en annan sida, skicka URL:en och skriv vad ni vill ha. Jag finjusterar textens synlighet, designen, strukturen, SEO-grunden och det tekniska runt sidan.
           </p>
         </form>
@@ -2070,9 +2114,7 @@
 
   <script>
     (function(){
-      const DEMO_FORM_ENDPOINT = "";
-    const FALLBACK_EMAIL = "info@example.se";
-    const body = document.body;
+      const body = document.body;
       const root = document.documentElement;
       const topbar = document.getElementById("topbar");
       const siteHeader = document.getElementById("siteHeader");
@@ -2083,7 +2125,6 @@
       const contrastToggle = document.getElementById("contrastToggle");
       const increaseText = document.getElementById("increaseText");
       const resetDesign = document.getElementById("resetDesign");
-      const form = document.getElementById("contactForm");
       const imageStrip = document.getElementById("imageStrip");
       const galleryPrev = document.getElementById("galleryPrev");
       const galleryNext = document.getElementById("galleryNext");
@@ -2111,10 +2152,13 @@
       const textInput = document.getElementById("textEditorInput");
       const saveTextEdit = document.getElementById("saveTextEdit");
       const cancelTextEdit = document.getElementById("cancelTextEdit");
+      const contactForm = document.getElementById("contactForm");
+      const submitDemoRequest = document.getElementById("submitDemoRequest");
+      const formStatus = document.getElementById("formStatus");
 
       let activeElement = null;
 
-      const STORAGE_PREFIX = "demoTemplateRedigerbarV1";
+      const STORAGE_PREFIX = "demoTemplateLaunchReadyV1";
       const STORAGE_EDITED_HTML = STORAGE_PREFIX + "EditedHtml";
       const STORAGE = {
         text: STORAGE_PREFIX + "TextSize",
@@ -2303,6 +2347,26 @@
         if(accentHue) accentHue.value = accentHsl.h;
       }
 
+      function saveDesignState(extra = {}){
+        const state = {
+          palette:paletteSelect ? paletteSelect.value : "classic",
+          font:fontSelect ? fontSelect.value : "inter",
+          stylePreset:stylePresetSelect ? stylePresetSelect.value : "",
+          bg:bgHex ? bgHex.value : "#EFE8DC",
+          paper:paperHex ? paperHex.value : "#FFFAF3",
+          ink:inkHex ? inkHex.value : "#16211D",
+          accent:accentHex ? accentHex.value : "#16382F",
+          ...extra
+        };
+        localStorage.setItem(STORAGE.palette, state.palette);
+        localStorage.setItem(STORAGE.font, state.font);
+        localStorage.setItem(STORAGE.stylePreset, state.stylePreset);
+        localStorage.setItem(STORAGE.bgHex, state.bg);
+        localStorage.setItem(STORAGE.paperHex, state.paper);
+        localStorage.setItem(STORAGE.inkHex, state.ink);
+        localStorage.setItem(STORAGE.accentHex, state.accent);
+      }
+
       function applyPalette(values, save = true){
         const bg = normalizeHex(values.bg, "#EFE8DC");
         const paper = normalizeHex(values.paper, "#FFFAF3");
@@ -2346,12 +2410,7 @@
         if(accentDot) accentDot.style.background = accent;
         syncInputs({bg, paper, ink, accent});
 
-        if(save){
-          localStorage.setItem(STORAGE.bgHex, bg);
-          localStorage.setItem(STORAGE.paperHex, paper);
-          localStorage.setItem(STORAGE.inkHex, ink);
-          localStorage.setItem(STORAGE.accentHex, accent);
-        }
+        if(save) saveDesignState({bg, paper, ink, accent});
 
         const metaTheme = document.querySelector('meta[name="theme-color"]');
         if(metaTheme) metaTheme.setAttribute("content", mixHex(accent, "#000000", .35));
@@ -2366,6 +2425,7 @@
             ink:localStorage.getItem(STORAGE.inkHex) || "#16211D",
             accent:localStorage.getItem(STORAGE.accentHex) || "#16382F"
           });
+          if(paletteSelect) paletteSelect.value = "custom";
           localStorage.setItem(STORAGE.palette, "custom");
           return;
         }
@@ -2376,7 +2436,6 @@
       }
 
       function applySliderPalette(){
-        localStorage.removeItem(STORAGE.stylePreset);
         if(stylePresetSelect) stylePresetSelect.value = "";
         const bg = clampNumber(bgHue?.value, 0, 360, 38);
         const light = clampNumber(bgLight?.value, 0, 100, 92);
@@ -2397,7 +2456,6 @@
       }
 
       function applyManualHexChange(){
-        localStorage.removeItem(STORAGE.stylePreset);
         if(stylePresetSelect) stylePresetSelect.value = "";
         if(paletteSelect) paletteSelect.value = "custom";
         localStorage.setItem(STORAGE.palette, "custom");
@@ -2520,7 +2578,7 @@
           if(data.main && main) main.innerHTML = data.main;
           if(data.footer && footer) footer.innerHTML = data.footer;
         }catch(error){
-          console.warn("Kunde inte läsa sparad text.", error);
+          localStorage.removeItem(STORAGE_EDITED_HTML);
         }
       }
 
@@ -2629,7 +2687,6 @@
 
       if(paletteSelect){
         paletteSelect.addEventListener("change", function(){
-          localStorage.removeItem(STORAGE.stylePreset);
           if(stylePresetSelect) stylePresetSelect.value = "";
           applySelectedPalette(this.value);
         });
@@ -2637,7 +2694,6 @@
 
       if(fontSelect){
         fontSelect.addEventListener("change", function(){
-          localStorage.removeItem(STORAGE.stylePreset);
           if(stylePresetSelect) stylePresetSelect.value = "";
           applyFontStyle(this.value);
         });
@@ -2767,77 +2823,14 @@
         }
       });
 
-      if(form){
-      form.addEventListener("submit", async event => {
-        event.preventDefault();
-
-        const submitButton = document.getElementById("submitDemoRequest");
-        const status = document.getElementById("formStatus");
-        const originalButtonText = submitButton ? submitButton.textContent : "Beställ gratis demo";
-        const formData = new FormData(form);
-
-        if(status){
-          status.textContent = "Skickar förfrågan...";
-        }
-
-        if(submitButton){
-          submitButton.disabled = true;
-          submitButton.textContent = "Skickar...";
-        }
-
-        try{
-          if(DEMO_FORM_ENDPOINT){
-            const response = await fetch(DEMO_FORM_ENDPOINT, {
-              method:"POST",
-              body:formData
-            });
-
-            if(!response.ok){
-              throw new Error("Formuläret kunde inte skickas.");
-            }
-
-            form.reset();
-            if(status){
-              status.textContent = "Tack! Din förfrågan är skickad. Jag återkommer så snart jag kan.";
-            }
-          }else{
-            const rows = [];
-            formData.forEach((value, key) => {
-              if(value instanceof File){
-                if(value.name){
-                  rows.push(`${key}: ${value.name}`);
-                }
-              }else{
-                rows.push(`${key}: ${value}`);
-              }
-            });
-
-            const subject = encodeURIComponent("Gratis demo av ny hemsida");
-            const bodyText = rows.join("
-
-") + "
-
-Obs: bifogade filer behöver mejlas separat om sidan körs utan backend/formulärtjänst.";
-            const mailtoUrl = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
-
-            window.location.href = mailtoUrl;
-
-            if(status){
-              status.textContent = "Ett mejl öppnas nu med informationen ifylld. Bifogade filer behöver läggas till manuellt i mejlet.";
-            }
-          }
-        }catch(error){
-          if(status){
-            status.textContent = "Det gick inte att skicka just nu. Mejla materialet istället, eller försök igen.";
-          }
-        }finally{
-          if(submitButton){
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-          }
-        }
-      });
-    }
+      if(contactForm && submitDemoRequest && formStatus){
+        contactForm.addEventListener("submit", () => {
+          submitDemoRequest.disabled = true;
+          submitDemoRequest.textContent = "Skickar...";
+          formStatus.className = "form-status ok";
+          formStatus.textContent = "Skickar formuläret direkt. Vänta kvar tills bekräftelsen visas.";
+        });
+      }
 
       if(galleryPrev){galleryPrev.addEventListener("click", () => scrollGallery(-1));}
       if(galleryNext){galleryNext.addEventListener("click", () => scrollGallery(1));}
@@ -2878,7 +2871,7 @@ Obs: bifogade filer behöver mejlas separat om sidan körs utan backend/formulä
           paper:localStorage.getItem(STORAGE.paperHex) || "#FFFAF3",
           ink:localStorage.getItem(STORAGE.inkHex) || "#16211D",
           accent:localStorage.getItem(STORAGE.accentHex) || "#16382F"
-        });
+        }, false);
       }else{
         applySelectedPalette(savedPalette);
       }
