@@ -522,6 +522,30 @@
       color:#8a7d75;
     }
 
+    .newsletter-success{
+      margin-top:14px;
+      display:grid;
+      gap:4px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:#f4e5dc;
+      color:#3a241f;
+      border:1px solid rgba(143,77,69,.20);
+      line-height:1.55;
+    }
+
+    .newsletter-success strong{
+      font-weight:900;
+    }
+
+    .newsletter-success span{
+      color:#5f433c;
+    }
+
+    .newsletter-success[hidden]{
+      display:none;
+    }
+
     .newsletter-note{
       margin-top:10px !important;
       font-size:14px;
@@ -672,11 +696,16 @@
       box-shadow:none;
     }
 
-    body.high-contrast .newsletter-row input{
+    body.high-contrast .newsletter-row input,
+    body.high-contrast .newsletter-success{
       background:#fff;
       color:#000;
       border:2px solid #000;
       box-shadow:none;
+    }
+
+    body.high-contrast .newsletter-success span{
+      color:#000;
     }
 
     body.high-contrast .btn-primary,
@@ -974,12 +1003,23 @@
             <input type="hidden" name="_subject" value="Ny prenumerant till bloggens nyhetsbrev">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://webutvecklare.se/blogg.html#newsletter-title">
+            <input type="hidden" name="_next" value="https://webutvecklare.se/blogg.html?nyhetsbrev=tack#newsletter-title">
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Tack! Din prenumeration är mottagen. Du får max ett utskick i veckan med veckans blogginlägg, enkla webbtips och senaste mangaserien från min resa som nyutbildad webbutvecklare. Jag använder din mejladress endast för nyhetsbrevet. Vill du avsluta prenumerationen senare kan du bara svara på mejlet och skriva 'avsluta'. Vänliga hälsningar, Erica Nordlöf, Nordlöf Nordic"
+            >
             <input type="hidden" name="Källa" value="Blogg på webutvecklare.se">
             <input type="hidden" name="Typ" value="Nyhetsbrev med veckans blogginlägg, webbtips och mangaserie">
 
+            <div class="newsletter-success" id="newsletterSuccess" role="status" aria-live="polite" hidden>
+              <strong>Tack! Din prenumeration är mottagen.</strong>
+              <span>Jag har skickat en bekräftelse till din mejl. Du får max ett nyhetsbrev i veckan med blogginlägg, enkla webbtips och mangaserie.</span>
+            </div>
+
             <p class="newsletter-note">
-              Utskick max 1 gång per vecka. Du kan avsluta när du vill. Inget spam, bara webb, lärdomar och manga. Civiliserat kaos.
+              Jag använder din mejladress endast för nyhetsbrevet. Utskick max 1 gång per vecka.
+              Du kan avsluta när du vill genom att svara “avsluta”. Inget spam, bara webb, lärdomar och manga.
             </p>
           </form>
         </div>
@@ -1209,6 +1249,7 @@
     const contrastButton = document.getElementById('toggleContrast');
     const largeTextButton = document.getElementById('toggleLargeText');
     const listenButton = document.getElementById('listenSummary');
+    const newsletterSuccess = document.getElementById('newsletterSuccess');
 
     function safeGet(key) {
       try {
@@ -1230,6 +1271,16 @@
     function setPressed(button, isPressed) {
       if (button) {
         button.setAttribute('aria-pressed', String(isPressed));
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (newsletterSuccess && urlParams.get('nyhetsbrev') === 'tack') {
+      newsletterSuccess.hidden = false;
+
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname + '#newsletter-title');
       }
     }
 
