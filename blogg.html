@@ -7,21 +7,21 @@
   <title>Blogg | Erica Nordlöf | Nyutbildad webbutvecklare</title>
   <meta
     name="description"
-    content="Följ Erica Nordlöfs resa som nyutbildad webbutvecklare och nystartad företagare bakom Nordlöf Nordic och webutvecklare.se."
+    content="Följ Erica Nordlöfs resa som nyutbildad webbutvecklare och nystartad företagare. Läs enkla webbtips, SEO-lärdomar och mangaserier från webutvecklare.se."
   />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="author" content="Erica Nordlöf" />
   <link rel="canonical" href="https://webutvecklare.se/blogg.html" />
 
   <meta property="og:title" content="Blogg | Erica Nordlöf" />
-  <meta property="og:description" content="Följ min resa som nyutbildad webbutvecklare och nystartad företagare." />
+  <meta property="og:description" content="Följ min resa som nyutbildad webbutvecklare. Enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/blogg.html" />
   <meta property="og:image" content="https://webutvecklare.se/blogg/indexera.PNG" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blogg | Erica Nordlöf" />
-  <meta name="twitter:description" content="Följ min resa som nyutbildad webbutvecklare och nystartad företagare." />
+  <meta name="twitter:description" content="Följ min resa som nyutbildad webbutvecklare. Enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se." />
   <meta name="twitter:image" content="https://webutvecklare.se/blogg/indexera.PNG" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
@@ -45,7 +45,7 @@
         "name": "Blogg | Erica Nordlöf",
         "url": "https://webutvecklare.se/blogg.html",
         "inLanguage": "sv-SE",
-        "description": "Dagbok om resan som nyutbildad webbutvecklare och nystartad företagare.",
+        "description": "Dagbok om resan som nyutbildad webbutvecklare och nystartad företagare. Innehåller enkla webbtips, SEO-lärdomar och mangaserier.",
         "author": {
           "@type": "Person",
           "name": "Erica Nordlöf",
@@ -223,7 +223,8 @@
     }
 
     button,
-    select{
+    select,
+    input{
       font:inherit;
     }
 
@@ -237,7 +238,8 @@
 
     a:focus-visible,
     button:focus-visible,
-    select:focus-visible{
+    select:focus-visible,
+    input:focus-visible{
       outline:3px solid #111;
       outline-offset:4px;
       box-shadow:0 0 0 6px rgba(255,255,255,.88);
@@ -460,6 +462,72 @@
       margin-top:24px;
     }
 
+    .newsletter{
+      padding:18px 0 32px;
+    }
+
+    .newsletter-card{
+      background:
+        radial-gradient(circle at top left,rgba(217,134,114,.18),transparent 32%),
+        rgba(255,255,255,.96);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:clamp(22px,4vw,34px);
+      box-shadow:var(--shadow);
+    }
+
+    .newsletter-card h2{
+      margin:14px 0 10px;
+      font-size:clamp(1.9rem,4vw,2.8rem);
+      line-height:1.05;
+    }
+
+    .newsletter-card p{
+      margin:0;
+      max-width:700px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .newsletter-form{
+      margin-top:20px;
+    }
+
+    .newsletter-form label{
+      display:block;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .newsletter-row{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+      align-items:center;
+    }
+
+    .newsletter-row input{
+      width:100%;
+      min-height:52px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      padding:0 18px;
+      font:inherit;
+      box-shadow:0 10px 24px rgba(36,30,26,.05);
+    }
+
+    .newsletter-row input::placeholder{
+      color:#8a7d75;
+    }
+
+    .newsletter-note{
+      margin-top:10px !important;
+      font-size:14px;
+      color:var(--muted);
+    }
+
     .blog{
       padding:28px 0 clamp(44px,7vw,78px);
     }
@@ -595,8 +663,16 @@
 
     body.high-contrast .topbar,
     body.high-contrast .hero-card,
+    body.high-contrast .newsletter-card,
     body.high-contrast .post,
     body.high-contrast .accessibility-tools{
+      background:#fff;
+      color:#000;
+      border:2px solid #000;
+      box-shadow:none;
+    }
+
+    body.high-contrast .newsletter-row input{
       background:#fff;
       color:#000;
       border:2px solid #000;
@@ -743,6 +819,27 @@
         width:100%;
       }
 
+      .newsletter{
+        padding:12px 0 24px;
+      }
+
+      .newsletter-card{
+        border-radius:20px;
+        padding:18px;
+      }
+
+      .newsletter-row{
+        grid-template-columns:1fr;
+      }
+
+      .newsletter-row .btn{
+        width:100%;
+      }
+
+      .newsletter-row input{
+        border-radius:18px;
+      }
+
       .blog-head{
         display:block;
       }
@@ -822,18 +919,69 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-card">
-          <span class="eyebrow">Blogg · Dagbok · Webbutveckling</span>
+          <span class="eyebrow">Blogg · Webbtips · Manga</span>
 
           <h1 id="hero-title">Välkommen till min blogg.</h1>
 
           <p class="lead">
             Här kan du följa min resa som nyutbildad webbutvecklare och nystartad företagare.
-            Jag delar korta inlägg från vardagen bakom webutvecklare.se.
+            Jag delar korta inlägg, enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="/">Till startsidan</a>
+            <a class="btn btn-primary" href="#newsletter-title">Prenumerera på veckans inlägg</a>
+            <a class="btn btn-secondary" href="/">Till startsidan</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter-card">
+          <span class="eyebrow">Nyhetsbrev · 1 gång per vecka</span>
+
+          <h2 id="newsletter-title">Få veckans blogginlägg i mejlen.</h2>
+
+          <p>
+            En gång i veckan skickar jag ett kort nyhetsbrev med veckans blogginlägg,
+            enkla webbtips och senaste mangaserien från min resa som nyutbildad webbutvecklare.
+            Perfekt om du har en hemsida och vill fixa mer själv, men gärna vill ha tips längs vägen.
+          </p>
+
+          <form
+            class="newsletter-form"
+            action="https://formsubmit.co/erica@webutvecklare.se"
+            method="POST"
+          >
+            <label for="newsletter-email">Mejladress</label>
+
+            <div class="newsletter-row">
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                placeholder="din-mejl@exempel.se"
+                autocomplete="email"
+                required
+              >
+
+              <button class="btn btn-primary" type="submit">
+                Prenumerera
+              </button>
+            </div>
+
+            <input type="hidden" name="_subject" value="Ny prenumerant till bloggens nyhetsbrev">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://webutvecklare.se/blogg.html#newsletter-title">
+            <input type="hidden" name="Källa" value="Blogg på webutvecklare.se">
+            <input type="hidden" name="Typ" value="Nyhetsbrev med veckans blogginlägg, webbtips och mangaserie">
+
+            <p class="newsletter-note">
+              Utskick max 1 gång per vecka. Du kan avsluta när du vill. Inget spam, bara webb, lärdomar och manga. Civiliserat kaos.
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -1119,7 +1267,7 @@
       let isSpeaking = false;
 
       const speechText =
-        "Välkommen till min blogg. Den femte maj tvåtusentjugosex handlar inlägget om något tråkigt men viktigt: att indexera nya och uppdaterade sidor. När en sida är publicerad behöver den också skickas in i Google Search Console och Bing Webmaster Tools. Annars kan den finnas på webben, men ändå vara svår att hitta. Dagens lärdom är enkel: bygg sidan, testa sidan, publicera sidan och skicka in URL:en direkt.";
+        "Välkommen till min blogg. Här följer du min resa som nyutbildad webbutvecklare och nystartad företagare. Jag delar korta blogginlägg, enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se. Du kan också prenumerera på veckans blogginlägg via nyhetsbrevet. Den femte maj tvåtusentjugosex handlar inlägget om något tråkigt men viktigt: att indexera nya och uppdaterade sidor. När en sida är publicerad behöver den också skickas in i Google Search Console och Bing Webmaster Tools. Annars kan den finnas på webben, men ändå vara svår att hitta.";
 
       function resetListenButton() {
         listenButton.setAttribute('aria-pressed', 'false');
