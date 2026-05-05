@@ -2740,520 +2740,723 @@
   </footer>
 
   <script>
-    const body = document.body;
-    const root = document.documentElement;
+  const body = document.body;
+  const root = document.documentElement;
 
-    const designToggle = document.getElementById("designToggle");
-    const designPanel = document.getElementById("designPanel");
-    const editToggle = document.getElementById("editToggle");
-    const savePageBtnTop = document.getElementById("savePageBtnTop");
-    const savePageBtnBottom = document.getElementById("savePageBtnBottom");
-    const resetTextBtn = document.getElementById("resetTextBtn");
-    const menuBtn = document.getElementById("menuBtn");
-    const siteNavMobile = document.getElementById("siteNavMobile");
-    const contactForm = document.getElementById("contactForm");
-    const languageSelect = document.getElementById("languageSelect");
+  const designToggle = document.getElementById("designToggle");
+  const designPanel = document.getElementById("designPanel");
+  const editToggle = document.getElementById("editToggle");
+  const savePageBtnTop = document.getElementById("savePageBtnTop");
+  const savePageBtnBottom = document.getElementById("savePageBtnBottom");
+  const resetTextBtn = document.getElementById("resetTextBtn");
+  const menuBtn = document.getElementById("menuBtn");
+  const siteNavMobile = document.getElementById("siteNavMobile");
+  const contactForm = document.getElementById("contactForm");
+  const languageSelect = document.getElementById("languageSelect");
 
-    const stylePreset = document.getElementById("stylePreset");
-    const fontSelect = document.getElementById("fontSelect");
-    const bgColor = document.getElementById("bgColor");
-    const paperColor = document.getElementById("paperColor");
-    const inkColor = document.getElementById("inkColor");
-    const brandColor = document.getElementById("brandColor");
-    const brandDeepColor = document.getElementById("brandDeepColor");
-    const radiusSelect = document.getElementById("radiusSelect");
-    const contrastSelect = document.getElementById("contrastSelect");
+  const stylePreset = document.getElementById("stylePreset");
+  const fontSelect = document.getElementById("fontSelect");
+  const bgColor = document.getElementById("bgColor");
+  const paperColor = document.getElementById("paperColor");
+  const inkColor = document.getElementById("inkColor");
+  const brandColor = document.getElementById("brandColor");
+  const brandDeepColor = document.getElementById("brandDeepColor");
+  const radiusSelect = document.getElementById("radiusSelect");
+  const contrastSelect = document.getElementById("contrastSelect");
 
-    const imageStrip = document.getElementById("imageStrip");
-    const galleryPrev = document.getElementById("galleryPrev");
-    const galleryNext = document.getElementById("galleryNext");
-    const stickyShell = document.querySelector(".sticky-shell");
+  const imageStrip = document.getElementById("imageStrip");
+  const galleryPrev = document.getElementById("galleryPrev");
+  const galleryNext = document.getElementById("galleryNext");
+  const stickyShell = document.querySelector(".sticky-shell");
 
-    const STORAGE_KEY = "nordlofGratisDemoDanskV1";
-    const ORIGINAL_HTML = {};
-    const editableElements = Array.from(document.querySelectorAll("[data-edit]"));
+  const STORAGE_KEY = "nordlofGratisDemoDanskV2";
+  const ORIGINAL_HTML = {};
+  const editableElements = Array.from(document.querySelectorAll("[data-edit]"));
 
-    const isLocalFile = window.location.protocol === "file:";
+  const isLocalFile = window.location.protocol === "file:";
 
-    if(isLocalFile){
-      body.classList.add("is-local-file");
+  if(isLocalFile){
+    body.classList.add("is-local-file");
+  }
+
+  editableElements.forEach((el, index) => {
+    const id = "edit-" + index;
+    el.dataset.editId = id;
+    ORIGINAL_HTML[id] = el.innerHTML;
+  });
+
+  function updateStickyHeight(){
+    if(!stickyShell) return;
+
+    const height = stickyShell.offsetHeight || 0;
+    root.style.setProperty("--sticky-height", height + "px");
+  }
+
+  function normalizeHex(value, fallback){
+    const clean = String(value || "").trim();
+
+    if(/^#[0-9A-Fa-f]{6}$/.test(clean)){
+      return clean.toUpperCase();
     }
 
-    editableElements.forEach((el, index) => {
-      const id = "edit-" + index;
-      el.dataset.editId = id;
-      ORIGINAL_HTML[id] = el.innerHTML;
+    return fallback.toUpperCase();
+  }
+
+  function hexToRgb(hex){
+    const safe = normalizeHex(hex, "#000000").replace("#", "");
+
+    return {
+      r:parseInt(safe.slice(0,2),16),
+      g:parseInt(safe.slice(2,4),16),
+      b:parseInt(safe.slice(4,6),16)
+    };
+  }
+
+  function rgbToHex(r,g,b){
+    return "#" + [r,g,b].map(value => {
+      const hex = Math.max(0, Math.min(255, Math.round(value))).toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    }).join("").toUpperCase();
+  }
+
+  function mixHex(a, b, amount){
+    const x = hexToRgb(a);
+    const y = hexToRgb(b);
+    const t = Math.max(0, Math.min(1, amount));
+
+    return rgbToHex(
+      x.r + (y.r - x.r) * t,
+      x.g + (y.g - x.g) * t,
+      x.b + (y.b - x.b) * t
+    );
+  }
+
+  function brightness(hex){
+    const rgb = hexToRgb(hex);
+    return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+  }
+
+  function contrastText(hex){
+    return brightness(hex) > 150 ? "#111111" : "#FFFFFF";
+  }
+
+  function hexToRgba(hex, alpha){
+    const rgb = hexToRgb(hex);
+    return "rgba(" + rgb.r + "," + rgb.g + "," + rgb.b + "," + alpha + ")";
+  }
+
+  function applyDesign(values = {}, shouldSave = true){
+    const bg = normalizeHex(values.bg || bgColor.value, "#FBF7F4");
+    const paper = normalizeHex(values.paper || paperColor.value, "#FFFFFF");
+    const ink = normalizeHex(values.ink || inkColor.value, "#241E1A");
+    const brand = normalizeHex(values.brand || brandColor.value, "#D98672");
+    const brandDeep = normalizeHex(values.brandDeep || brandDeepColor.value, "#8F4D45");
+    const radius = values.radius || radiusSelect.value || "24px";
+    const font = values.font || fontSelect.value || "Playfair Display";
+    const contrast = values.contrast || contrastSelect.value || "normal";
+
+    const brandContrast = contrastText(brandDeep);
+    const muted = brightness(ink) > 150 ? mixHex(ink, "#000000", .28) : mixHex(ink, "#FFFFFF", .34);
+    const line = hexToRgba(ink, .10);
+    const lineDark = hexToRgba(ink, .18);
+    const brandDark = mixHex(brandDeep, brand, .32);
+    const brandSoft = mixHex("#FFFFFF", brand, .22);
+    const dark = mixHex(brandDeep, "#000000", .72);
+    const dark2 = mixHex(brandDeep, "#000000", .84);
+
+    root.style.setProperty("--bg", bg);
+    root.style.setProperty("--soft", bg);
+    root.style.setProperty("--card", paper);
+    root.style.setProperty("--text", ink);
+    root.style.setProperty("--muted", muted);
+    root.style.setProperty("--line", line);
+    root.style.setProperty("--line-dark", lineDark);
+    root.style.setProperty("--brand", brand);
+    root.style.setProperty("--brand-dark", brandDark);
+    root.style.setProperty("--brand-deep", brandDeep);
+    root.style.setProperty("--brand-soft", brandSoft);
+    root.style.setProperty("--brand-contrast", brandContrast);
+    root.style.setProperty("--dark", dark);
+    root.style.setProperty("--dark-2", dark2);
+    root.style.setProperty("--radius", radius);
+    root.style.setProperty("--font-main", `"Inter", ui-sans-serif, system-ui, sans-serif`);
+    root.style.setProperty("--font-heading", `"${font}", Georgia, serif`);
+
+    if(contrast === "strong"){
+      root.style.setProperty("--shadow", "0 18px 44px rgba(0,0,0,.20)");
+      root.style.setProperty("--shadow-strong", "0 24px 60px rgba(0,0,0,.26)");
+    }else{
+      root.style.setProperty("--shadow", "0 18px 50px rgba(36,30,26,.08)");
+      root.style.setProperty("--shadow-strong", "0 26px 70px rgba(36,30,26,.13)");
+    }
+
+    bgColor.value = bg;
+    paperColor.value = paper;
+    inkColor.value = ink;
+    brandColor.value = brand;
+    brandDeepColor.value = brandDeep;
+    radiusSelect.value = radius;
+    fontSelect.value = font;
+    contrastSelect.value = contrast;
+
+    updateStickyHeight();
+
+    if(shouldSave){
+      saveState();
+    }
+  }
+
+  function applyPreset(key){
+    const presets = {
+      classic:{
+        bg:"#FBF7F4",
+        paper:"#FFFFFF",
+        ink:"#241E1A",
+        brand:"#D98672",
+        brandDeep:"#8F4D45",
+        font:"Playfair Display",
+        radius:"24px",
+        contrast:"normal"
+      },
+      white:{
+        bg:"#FFFFFF",
+        paper:"#FFFFFF",
+        ink:"#111111",
+        brand:"#111111",
+        brandDeep:"#000000",
+        font:"Inter",
+        radius:"24px",
+        contrast:"normal"
+      },
+      blue:{
+        bg:"#EAF2FF",
+        paper:"#FFFFFF",
+        ink:"#102033",
+        brand:"#2563EB",
+        brandDeep:"#1557B0",
+        font:"DM Sans",
+        radius:"24px",
+        contrast:"normal"
+      },
+      forest:{
+        bg:"#E9F3EC",
+        paper:"#FFFFFF",
+        ink:"#102015",
+        brand:"#3B7A57",
+        brandDeep:"#14532D",
+        font:"Manrope",
+        radius:"28px",
+        contrast:"normal"
+      },
+      luxury:{
+        bg:"#090909",
+        paper:"#16120B",
+        ink:"#FFF8E8",
+        brand:"#C89B3C",
+        brandDeep:"#6B4E16",
+        font:"Playfair Display",
+        radius:"30px",
+        contrast:"strong"
+      },
+      pink:{
+        bg:"#FFF0F7",
+        paper:"#FFFFFF",
+        ink:"#2A1020",
+        brand:"#EC4899",
+        brandDeep:"#BE185D",
+        font:"Poppins",
+        radius:"30px",
+        contrast:"normal"
+      },
+      orange:{
+        bg:"#FFF3E6",
+        paper:"#FFFFFF",
+        ink:"#2B1708",
+        brand:"#F97316",
+        brandDeep:"#C2410C",
+        font:"Nunito",
+        radius:"28px",
+        contrast:"normal"
+      },
+      black:{
+        bg:"#000000",
+        paper:"#111111",
+        ink:"#FFFFFF",
+        brand:"#FFFFFF",
+        brandDeep:"#000000",
+        font:"Oswald",
+        radius:"20px",
+        contrast:"strong"
+      }
+    };
+
+    if(!presets[key]) return;
+
+    applyDesign(presets[key]);
+  }
+
+  function setEditMode(active){
+    body.classList.toggle("edit-mode", active);
+
+    editableElements.forEach(el => {
+      el.contentEditable = active ? "true" : "false";
+      el.spellcheck = active ? true : false;
     });
 
-    function updateStickyHeight(){
-      if(!stickyShell) return;
-      const height = stickyShell.offsetHeight || 0;
-      root.style.setProperty("--sticky-height", height + "px");
-    }
-
-    function normalizeHex(value, fallback){
-      const clean = String(value || "").trim();
-      if(/^#[0-9A-Fa-f]{6}$/.test(clean)) return clean.toUpperCase();
-      return fallback.toUpperCase();
-    }
-
-    function hexToRgb(hex){
-      const safe = normalizeHex(hex, "#000000").replace("#", "");
-      return {
-        r:parseInt(safe.slice(0,2),16),
-        g:parseInt(safe.slice(2,4),16),
-        b:parseInt(safe.slice(4,6),16)
-      };
-    }
-
-    function rgbToHex(r,g,b){
-      return "#" + [r,g,b].map(value => {
-        const hex = Math.max(0, Math.min(255, Math.round(value))).toString(16);
-        return hex.length === 1 ? "0" + hex : hex;
-      }).join("").toUpperCase();
-    }
-
-    function mixHex(a, b, amount){
-      const x = hexToRgb(a);
-      const y = hexToRgb(b);
-      const t = Math.max(0, Math.min(1, amount));
-      return rgbToHex(
-        x.r + (y.r - x.r) * t,
-        x.g + (y.g - x.g) * t,
-        x.b + (y.b - x.b) * t
-      );
-    }
-
-    function brightness(hex){
-      const rgb = hexToRgb(hex);
-      return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
-    }
-
-    function contrastText(hex){
-      return brightness(hex) > 150 ? "#111111" : "#FFFFFF";
-    }
-
-    function hexToRgba(hex, alpha){
-      const rgb = hexToRgb(hex);
-      return "rgba(" + rgb.r + "," + rgb.g + "," + rgb.b + "," + alpha + ")";
-    }
-
-    function applyDesign(values = {}, shouldSave = true){
-      const bg = normalizeHex(values.bg || bgColor.value, "#FBF7F4");
-      const paper = normalizeHex(values.paper || paperColor.value, "#FFFFFF");
-      const ink = normalizeHex(values.ink || inkColor.value, "#241E1A");
-      const brand = normalizeHex(values.brand || brandColor.value, "#D98672");
-      const brandDeep = normalizeHex(values.brandDeep || brandDeepColor.value, "#8F4D45");
-      const radius = values.radius || radiusSelect.value || "24px";
-      const font = values.font || fontSelect.value || "Playfair Display";
-      const contrast = values.contrast || contrastSelect.value || "normal";
-
-      const brandContrast = contrastText(brandDeep);
-      const muted = brightness(ink) > 150 ? mixHex(ink, "#000000", .28) : mixHex(ink, "#FFFFFF", .34);
-      const line = hexToRgba(ink, .10);
-      const lineDark = hexToRgba(ink, .18);
-      const brandDark = mixHex(brandDeep, brand, .32);
-      const brandSoft = mixHex("#FFFFFF", brand, .22);
-      const dark = mixHex(brandDeep, "#000000", .72);
-      const dark2 = mixHex(brandDeep, "#000000", .84);
-
-      root.style.setProperty("--bg", "#f7f0ec");
-      root.style.setProperty("--soft", bg);
-      root.style.setProperty("--card", paper);
-      root.style.setProperty("--text", ink);
-      root.style.setProperty("--muted", muted);
-      root.style.setProperty("--line", line);
-      root.style.setProperty("--line-dark", lineDark);
-      root.style.setProperty("--brand", brand);
-      root.style.setProperty("--brand-dark", brandDark);
-      root.style.setProperty("--brand-deep", brandDeep);
-      root.style.setProperty("--brand-soft", brandSoft);
-      root.style.setProperty("--brand-contrast", brandContrast);
-      root.style.setProperty("--dark", dark);
-      root.style.setProperty("--dark-2", dark2);
-      root.style.setProperty("--radius", radius);
-      root.style.setProperty("--font-main", `"Inter", ui-sans-serif, system-ui, sans-serif`);
-      root.style.setProperty("--font-heading", `"${font}", Georgia, serif`);
-
-      if(contrast === "strong"){
-        root.style.setProperty("--shadow", "0 18px 44px rgba(0,0,0,.20)");
-        root.style.setProperty("--shadow-strong", "0 24px 60px rgba(0,0,0,.26)");
-      }else{
-        root.style.setProperty("--shadow", "0 18px 50px rgba(36,30,26,.08)");
-        root.style.setProperty("--shadow-strong", "0 26px 70px rgba(36,30,26,.13)");
-      }
-
-      bgColor.value = bg;
-      paperColor.value = paper;
-      inkColor.value = ink;
-      brandColor.value = brand;
-      brandDeepColor.value = brandDeep;
-      radiusSelect.value = radius;
-      fontSelect.value = font;
-      contrastSelect.value = contrast;
-
-      updateStickyHeight();
-
-      if(shouldSave) saveState();
-    }
-
-    function applyPreset(key){
-      const presets = {
-        classic:{bg:"#FBF7F4", paper:"#FFFFFF", ink:"#241E1A", brand:"#D98672", brandDeep:"#8F4D45", font:"Playfair Display", radius:"24px", contrast:"normal"},
-        white:{bg:"#FFFFFF", paper:"#FFFFFF", ink:"#111111", brand:"#111111", brandDeep:"#000000", font:"Inter", radius:"24px", contrast:"normal"},
-        blue:{bg:"#EAF2FF", paper:"#FFFFFF", ink:"#102033", brand:"#2563EB", brandDeep:"#1557B0", font:"DM Sans", radius:"24px", contrast:"normal"},
-        forest:{bg:"#E9F3EC", paper:"#FFFFFF", ink:"#102015", brand:"#3B7A57", brandDeep:"#14532D", font:"Manrope", radius:"28px", contrast:"normal"},
-        luxury:{bg:"#090909", paper:"#16120B", ink:"#FFF8E8", brand:"#C89B3C", brandDeep:"#6B4E16", font:"Playfair Display", radius:"30px", contrast:"strong"},
-        pink:{bg:"#FFF0F7", paper:"#FFFFFF", ink:"#2A1020", brand:"#EC4899", brandDeep:"#BE185D", font:"Poppins", radius:"30px", contrast:"normal"},
-        orange:{bg:"#FFF3E6", paper:"#FFFFFF", ink:"#2B1708", brand:"#F97316", brandDeep:"#C2410C", font:"Nunito", radius:"28px", contrast:"normal"},
-        black:{bg:"#000000", paper:"#111111", ink:"#FFFFFF", brand:"#FFFFFF", brandDeep:"#000000", font:"Oswald", radius:"20px", contrast:"strong"}
-      };
-
-      if(!presets[key]) return;
-      applyDesign(presets[key]);
-    }
-
-    function setEditMode(active){
-      body.classList.toggle("edit-mode", active);
-
-      editableElements.forEach(el => {
-        el.contentEditable = active ? "true" : "false";
-        el.spellcheck = active ? true : false;
-      });
-
+    if(editToggle){
       editToggle.textContent = active ? "Luk redigering" : "Rediger tekst";
-      saveState();
-      setTimeout(updateStickyHeight, 80);
     }
 
-    function getState(){
-      const text = {};
+    saveState();
+    setTimeout(updateStickyHeight, 80);
+  }
 
-      editableElements.forEach(el => {
-        text[el.dataset.editId] = el.innerHTML;
-      });
+  function getState(){
+    const text = {};
 
-      return {
-        text,
-        design:{
-          bg:bgColor.value,
-          paper:paperColor.value,
-          ink:inkColor.value,
-          brand:brandColor.value,
-          brandDeep:brandDeepColor.value,
-          radius:radiusSelect.value,
-          font:fontSelect.value,
-          contrast:contrastSelect.value
-        }
-      };
-    }
+    editableElements.forEach(el => {
+      text[el.dataset.editId] = el.innerHTML;
+    });
 
-    function saveState(){
-      try{
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
-      }catch(error){}
-    }
-
-    function loadState(){
-      try{
-        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-
-        if(saved.text){
-          editableElements.forEach(el => {
-            const id = el.dataset.editId;
-            if(saved.text[id] !== undefined){
-              el.innerHTML = saved.text[id];
-            }
-          });
-        }
-
-        if(saved.design){
-          applyDesign(saved.design, false);
-        }else{
-          applyDesign({}, false);
-        }
-
-        setEditMode(false);
-      }catch(error){
-        localStorage.removeItem(STORAGE_KEY);
-        applyDesign({}, false);
+    return {
+      text,
+      design:{
+        bg:bgColor.value,
+        paper:paperColor.value,
+        ink:inkColor.value,
+        brand:brandColor.value,
+        brandDeep:brandDeepColor.value,
+        radius:radiusSelect.value,
+        font:fontSelect.value,
+        contrast:contrastSelect.value
       }
+    };
+  }
+
+  function saveState(){
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
+    }catch(error){}
+  }
+
+  function getEmbeddedSavedState(){
+    try{
+      const embedded = document.getElementById("savedDemoState");
+
+      if(!embedded) return null;
+
+      return JSON.parse(embedded.textContent || "{}");
+    }catch(error){
+      return null;
     }
+  }
 
-    function resetText(){
-      if(!confirm("Vil du nulstille al redigeret tekst til originalteksten?")) return;
+  function loadState(){
+    try{
+      const embeddedState = getEmbeddedSavedState();
+      const localState = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      const saved = embeddedState || localState || {};
 
-      editableElements.forEach(el => {
-        const id = el.dataset.editId;
-        el.innerHTML = ORIGINAL_HTML[id];
-      });
+      if(saved.text){
+        editableElements.forEach(el => {
+          const id = el.dataset.editId;
 
-      saveState();
-      updateStickyHeight();
-    }
-
-    function saveEditedPage(){
-      setEditMode(false);
-      saveState();
-
-      const clone = document.documentElement.cloneNode(true);
-
-      clone.querySelectorAll("[contenteditable]").forEach(el => {
-        el.removeAttribute("contenteditable");
-        el.removeAttribute("spellcheck");
-      });
-
-      const clonedBody = clone.querySelector("body");
-
-      if(clonedBody){
-        clonedBody.classList.remove("edit-mode");
-        clonedBody.classList.remove("is-local-file");
-      }
-
-      const meta = document.createElement("meta");
-      meta.setAttribute("name", "saved-edited-page");
-      meta.setAttribute("content", "Denne HTML-fil er gemt fra kundens redigerede demo. Den skal vedhæftes i formularen på den rigtige https-side.");
-      clone.querySelector("head")?.appendChild(meta);
-
-      const html = "<!doctype html>\n" + clone.outerHTML;
-      const blob = new Blob([html], {type:"text/html;charset=utf-8"});
-      const url = URL.createObjectURL(blob);
-
-      const date = new Date();
-      const stamp = date.toISOString().slice(0,19).replace(/[:T]/g, "-");
-      const filename = "redigeret-demo-" + stamp + ".html";
-
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      a.style.display = "none";
-      document.body.appendChild(a);
-      a.click();
-
-      setTimeout(() => {
-        URL.revokeObjectURL(url);
-        a.remove();
-      }, 1500);
-
-      alert("Den ændrede side er gemt som HTML-fil. Gå tilbage til https-siden og vedhæft filen i formularen nederst. Åbn ikke filen og send derfra.");
-    }
-
-    function getSlideWidth(){
-      const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
-      if(!firstSlide) return 320;
-
-      const styles = window.getComputedStyle(imageStrip);
-      const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
-
-      return firstSlide.getBoundingClientRect().width + gap;
-    }
-
-    function updateGalleryButtons(){
-      if(!imageStrip || !galleryPrev || !galleryNext) return;
-
-      const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
-
-      galleryPrev.disabled = imageStrip.scrollLeft <= 8;
-      galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
-    }
-
-    function scrollGallery(direction){
-      if(!imageStrip) return;
-      imageStrip.scrollBy({left:getSlideWidth() * direction, behavior:"smooth"});
-    }
-
-    function formatFileSize(bytes){
-      if(!bytes && bytes !== 0) return "";
-      if(bytes < 1024) return bytes + " B";
-      if(bytes < 1024 * 1024) return Math.round(bytes / 1024) + " KB";
-      return (bytes / (1024 * 1024)).toFixed(1) + " MB";
-    }
-
-    function updateFileList(input){
-      if(!input) return;
-
-      const list = document.getElementById(input.id + "List");
-      if(!list) return;
-
-      list.innerHTML = "";
-
-      const files = Array.from(input.files || []);
-
-      files.forEach(file => {
-        const li = document.createElement("li");
-        li.textContent = file.name + " · " + formatFileSize(file.size);
-        list.appendChild(li);
-      });
-
-      list.classList.toggle("has-files", files.length > 0);
-    }
-
-    function assignFilesToInput(input, fileList){
-      if(!input || !fileList) return;
-
-      const files = Array.from(fileList);
-      const dataTransfer = new DataTransfer();
-
-      files.slice(0, input.multiple ? files.length : 1).forEach(file => {
-        dataTransfer.items.add(file);
-      });
-
-      input.files = dataTransfer.files;
-      input.dispatchEvent(new Event("change", {bubbles:true}));
-    }
-
-    function setupDropZones(){
-      document.querySelectorAll("[data-drop-zone]").forEach(zone => {
-        const inputId = zone.getAttribute("data-drop-zone");
-        const input = document.getElementById(inputId);
-
-        if(!input) return;
-
-        input.addEventListener("change", () => updateFileList(input));
-
-        ["dragenter", "dragover"].forEach(eventName => {
-          zone.addEventListener(eventName, event => {
-            event.preventDefault();
-            event.stopPropagation();
-            zone.classList.add("drag-over");
-          });
-        });
-
-        ["dragleave", "drop"].forEach(eventName => {
-          zone.addEventListener(eventName, event => {
-            event.preventDefault();
-            event.stopPropagation();
-            zone.classList.remove("drag-over");
-          });
-        });
-
-        zone.addEventListener("drop", event => {
-          const files = event.dataTransfer ? event.dataTransfer.files : null;
-
-          if(files && files.length){
-            assignFilesToInput(input, files);
+          if(saved.text[id] !== undefined){
+            el.innerHTML = saved.text[id];
           }
         });
-      });
+      }
 
-      ["dragover", "drop"].forEach(eventName => {
-        document.addEventListener(eventName, event => {
+      if(saved.design){
+        applyDesign(saved.design, false);
+      }else{
+        applyDesign({}, false);
+      }
+
+      setEditMode(false);
+    }catch(error){
+      localStorage.removeItem(STORAGE_KEY);
+      applyDesign({}, false);
+    }
+  }
+
+  function resetText(){
+    if(!confirm("Vil du nulstille al redigeret tekst til originalteksten?")) return;
+
+    editableElements.forEach(el => {
+      const id = el.dataset.editId;
+      el.innerHTML = ORIGINAL_HTML[id];
+    });
+
+    saveState();
+    updateStickyHeight();
+  }
+
+  function setClonedInputValue(clone, id, value){
+    const input = clone.querySelector("#" + id);
+
+    if(!input || value === undefined || value === null) return;
+
+    input.setAttribute("value", value);
+    input.value = value;
+  }
+
+  function setClonedSelectValue(clone, id, value){
+    const select = clone.querySelector("#" + id);
+
+    if(!select || value === undefined || value === null) return;
+
+    Array.from(select.options).forEach(option => {
+      if(option.value === value){
+        option.setAttribute("selected", "selected");
+      }else{
+        option.removeAttribute("selected");
+      }
+    });
+
+    select.value = value;
+  }
+
+  function saveEditedPage(){
+    setEditMode(false);
+    saveState();
+
+    const savedState = getState();
+    const clone = document.documentElement.cloneNode(true);
+
+    clone.setAttribute("style", document.documentElement.getAttribute("style") || "");
+
+    clone.querySelectorAll("[contenteditable]").forEach(el => {
+      el.removeAttribute("contenteditable");
+      el.removeAttribute("spellcheck");
+    });
+
+    const clonedBody = clone.querySelector("body");
+
+    if(clonedBody){
+      clonedBody.classList.remove("edit-mode");
+      clonedBody.classList.remove("is-local-file");
+    }
+
+    if(savedState.design){
+      setClonedInputValue(clone, "bgColor", savedState.design.bg);
+      setClonedInputValue(clone, "paperColor", savedState.design.paper);
+      setClonedInputValue(clone, "inkColor", savedState.design.ink);
+      setClonedInputValue(clone, "brandColor", savedState.design.brand);
+      setClonedInputValue(clone, "brandDeepColor", savedState.design.brandDeep);
+
+      setClonedSelectValue(clone, "fontSelect", savedState.design.font);
+      setClonedSelectValue(clone, "radiusSelect", savedState.design.radius);
+      setClonedSelectValue(clone, "contrastSelect", savedState.design.contrast);
+    }
+
+    clone.querySelector("#savedDemoState")?.remove();
+
+    const stateScript = document.createElement("script");
+    stateScript.id = "savedDemoState";
+    stateScript.type = "application/json";
+    stateScript.textContent = JSON.stringify(savedState).replace(/</g, "\\u003C");
+
+    clone.querySelector("head")?.appendChild(stateScript);
+
+    const meta = document.createElement("meta");
+    meta.setAttribute("name", "saved-edited-page");
+    meta.setAttribute("content", "Denne HTML-fil er gemt fra kundens redigerede demo. Den skal vedhæftes i formularen på den rigtige https-side.");
+    clone.querySelector("head")?.appendChild(meta);
+
+    const html = "<!doctype html>\n" + clone.outerHTML;
+    const blob = new Blob([html], {type:"text/html;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+
+    const date = new Date();
+    const stamp = date.toISOString().slice(0,19).replace(/[:T]/g, "-");
+    const filename = "redigeret-demo-" + stamp + ".html";
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    a.style.display = "none";
+    document.body.appendChild(a);
+    a.click();
+
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+      a.remove();
+    }, 1500);
+
+    alert("Den ændrede side er gemt som HTML-fil. Farver, tekst, font, runding og kontrast følger nu med i filen. Vedhæft HTML-filen i formularen på den rigtige https-side.");
+  }
+
+  function getSlideWidth(){
+    const firstSlide = imageStrip ? imageStrip.querySelector(".photo-slide") : null;
+
+    if(!firstSlide) return 320;
+
+    const styles = window.getComputedStyle(imageStrip);
+    const gap = parseInt(styles.columnGap || styles.gap || 18, 10) || 18;
+
+    return firstSlide.getBoundingClientRect().width + gap;
+  }
+
+  function updateGalleryButtons(){
+    if(!imageStrip || !galleryPrev || !galleryNext) return;
+
+    const maxScroll = imageStrip.scrollWidth - imageStrip.clientWidth;
+
+    galleryPrev.disabled = imageStrip.scrollLeft <= 8;
+    galleryNext.disabled = imageStrip.scrollLeft >= maxScroll - 8;
+  }
+
+  function scrollGallery(direction){
+    if(!imageStrip) return;
+
+    imageStrip.scrollBy({
+      left:getSlideWidth() * direction,
+      behavior:"smooth"
+    });
+  }
+
+  function formatFileSize(bytes){
+    if(!bytes && bytes !== 0) return "";
+    if(bytes < 1024) return bytes + " B";
+    if(bytes < 1024 * 1024) return Math.round(bytes / 1024) + " KB";
+
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+  }
+
+  function updateFileList(input){
+    if(!input) return;
+
+    const list = document.getElementById(input.id + "List");
+
+    if(!list) return;
+
+    list.innerHTML = "";
+
+    const files = Array.from(input.files || []);
+
+    files.forEach(file => {
+      const li = document.createElement("li");
+      li.textContent = file.name + " · " + formatFileSize(file.size);
+      list.appendChild(li);
+    });
+
+    list.classList.toggle("has-files", files.length > 0);
+  }
+
+  function assignFilesToInput(input, fileList){
+    if(!input || !fileList) return;
+
+    const files = Array.from(fileList);
+    const dataTransfer = new DataTransfer();
+
+    files.slice(0, input.multiple ? files.length : 1).forEach(file => {
+      dataTransfer.items.add(file);
+    });
+
+    input.files = dataTransfer.files;
+    input.dispatchEvent(new Event("change", {bubbles:true}));
+  }
+
+  function setupDropZones(){
+    document.querySelectorAll("[data-drop-zone]").forEach(zone => {
+      const inputId = zone.getAttribute("data-drop-zone");
+      const input = document.getElementById(inputId);
+
+      if(!input) return;
+
+      input.addEventListener("change", () => updateFileList(input));
+
+      ["dragenter", "dragover"].forEach(eventName => {
+        zone.addEventListener(eventName, event => {
           event.preventDefault();
+          event.stopPropagation();
+          zone.classList.add("drag-over");
         });
       });
-    }
 
-    function getCurrentLanguagePage(){
-      const path = window.location.pathname;
+      ["dragleave", "drop"].forEach(eventName => {
+        zone.addEventListener(eventName, event => {
+          event.preventDefault();
+          event.stopPropagation();
+          zone.classList.remove("drag-over");
+        });
+      });
 
-      if(path.includes("gratis-demo-en.html")){
-        return "https://webutvecklare.se/gratis-demo-en.html";
-      }
+      zone.addEventListener("drop", event => {
+        const files = event.dataTransfer ? event.dataTransfer.files : null;
 
-      if(path.includes("gratis-demo-da.html")){
-        return "https://webutvecklare.se/gratis-demo-da.html";
-      }
-
-      if(path.includes("gratis-demo-no.html")){
-        return "https://webutvecklare.se/gratis-demo-no.html";
-      }
-
-      return "https://webutvecklare.se/gratis-demo.html";
-    }
-
-    function setupLanguageSelect(){
-      if(!languageSelect) return;
-
-      languageSelect.value = getCurrentLanguagePage();
-
-      languageSelect.addEventListener("change", () => {
-        const target = languageSelect.value;
-
-        if(!target) return;
-
-        if(target !== window.location.href){
-          window.location.href = target;
+        if(files && files.length){
+          assignFilesToInput(input, files);
         }
       });
+    });
+
+    ["dragover", "drop"].forEach(eventName => {
+      document.addEventListener(eventName, event => {
+        event.preventDefault();
+      });
+    });
+  }
+
+  function getCurrentLanguagePage(){
+    const path = window.location.pathname;
+
+    if(path.includes("gratis-demo-en.html")){
+      return "https://webutvecklare.se/gratis-demo-en.html";
     }
 
+    if(path.includes("gratis-demo-da.html")){
+      return "https://webutvecklare.se/gratis-demo-da.html";
+    }
+
+    if(path.includes("gratis-demo-no.html")){
+      return "https://webutvecklare.se/gratis-demo-no.html";
+    }
+
+    return "https://webutvecklare.se/gratis-demo.html";
+  }
+
+  function setupLanguageSelect(){
+    if(!languageSelect) return;
+
+    languageSelect.value = getCurrentLanguagePage();
+
+    languageSelect.addEventListener("change", () => {
+      const target = languageSelect.value;
+
+      if(!target) return;
+
+      if(target !== window.location.href){
+        window.location.href = target;
+      }
+    });
+  }
+
+  if(designToggle && designPanel){
     designToggle.addEventListener("click", () => {
       designPanel.classList.toggle("open");
       setTimeout(updateStickyHeight, 80);
     });
+  }
 
+  if(editToggle){
     editToggle.addEventListener("click", () => {
       setEditMode(!body.classList.contains("edit-mode"));
     });
+  }
 
+  if(savePageBtnTop){
     savePageBtnTop.addEventListener("click", saveEditedPage);
+  }
+
+  if(savePageBtnBottom){
     savePageBtnBottom.addEventListener("click", saveEditedPage);
+  }
+
+  if(resetTextBtn){
     resetTextBtn.addEventListener("click", resetText);
+  }
 
-    if(menuBtn && siteNavMobile){
-      menuBtn.addEventListener("click", () => {
-        const isOpen = siteNavMobile.classList.toggle("open");
-        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        setTimeout(updateStickyHeight, 80);
-      });
+  if(menuBtn && siteNavMobile){
+    menuBtn.addEventListener("click", () => {
+      const isOpen = siteNavMobile.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      setTimeout(updateStickyHeight, 80);
+    });
 
-      siteNavMobile.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          siteNavMobile.classList.remove("open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
-      });
-
-      document.addEventListener("click", event => {
-        if(siteNavMobile.contains(event.target) || menuBtn.contains(event.target)) return;
+    siteNavMobile.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
         siteNavMobile.classList.remove("open");
         menuBtn.setAttribute("aria-expanded", "false");
       });
-    }
+    });
 
+    document.addEventListener("click", event => {
+      if(siteNavMobile.contains(event.target) || menuBtn.contains(event.target)) return;
+
+      siteNavMobile.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  if(stylePreset){
     stylePreset.addEventListener("change", () => applyPreset(stylePreset.value));
+  }
+
+  if(fontSelect){
     fontSelect.addEventListener("change", () => applyDesign({font:fontSelect.value}));
+  }
+
+  if(bgColor){
     bgColor.addEventListener("input", () => applyDesign({bg:bgColor.value}));
+  }
+
+  if(paperColor){
     paperColor.addEventListener("input", () => applyDesign({paper:paperColor.value}));
+  }
+
+  if(inkColor){
     inkColor.addEventListener("input", () => applyDesign({ink:inkColor.value}));
+  }
+
+  if(brandColor){
     brandColor.addEventListener("input", () => applyDesign({brand:brandColor.value}));
+  }
+
+  if(brandDeepColor){
     brandDeepColor.addEventListener("input", () => applyDesign({brandDeep:brandDeepColor.value}));
+  }
+
+  if(radiusSelect){
     radiusSelect.addEventListener("change", () => applyDesign({radius:radiusSelect.value}));
+  }
+
+  if(contrastSelect){
     contrastSelect.addEventListener("change", () => applyDesign({contrast:contrastSelect.value}));
+  }
 
-    editableElements.forEach(el => {
-      el.addEventListener("input", saveState);
-      el.addEventListener("blur", saveState);
+  editableElements.forEach(el => {
+    el.addEventListener("input", saveState);
+    el.addEventListener("blur", saveState);
+  });
+
+  if(galleryPrev){
+    galleryPrev.addEventListener("click", () => scrollGallery(-1));
+  }
+
+  if(galleryNext){
+    galleryNext.addEventListener("click", () => scrollGallery(1));
+  }
+
+  if(imageStrip){
+    imageStrip.addEventListener("scroll", updateGalleryButtons);
+  }
+
+  if(contactForm){
+    contactForm.addEventListener("submit", event => {
+      if(window.location.protocol === "file:"){
+        event.preventDefault();
+        alert("Du har åbnet den gemte HTML-fil fra computeren. Den fil skal kun vedhæftes i formularen. Gå tilbage til det rigtige https-link og vedhæft filen dér.");
+      }
     });
+  }
 
-    if(galleryPrev) galleryPrev.addEventListener("click", () => scrollGallery(-1));
-    if(galleryNext) galleryNext.addEventListener("click", () => scrollGallery(1));
-    if(imageStrip) imageStrip.addEventListener("scroll", updateGalleryButtons);
-
-    if(contactForm){
-      contactForm.addEventListener("submit", event => {
-        if(window.location.protocol === "file:"){
-          event.preventDefault();
-          alert("Du har åbnet den gemte HTML-fil fra computeren. Den fil skal kun vedhæftes i formularen. Gå tilbage til det rigtige https-link og vedhæft filen dér.");
-        }
-      });
-    }
-
-    window.addEventListener("resize", () => {
-      updateGalleryButtons();
-      updateStickyHeight();
-    });
-
-    window.addEventListener("load", () => {
-      updateGalleryButtons();
-      updateStickyHeight();
-    });
-
-    setupLanguageSelect();
-    setupDropZones();
-    loadState();
+  window.addEventListener("resize", () => {
     updateGalleryButtons();
     updateStickyHeight();
-  </script>
+  });
+
+  window.addEventListener("load", () => {
+    updateGalleryButtons();
+    updateStickyHeight();
+  });
+
+  setupLanguageSelect();
+  setupDropZones();
+  loadState();
+  updateGalleryButtons();
+  updateStickyHeight();
+</script>
 </body>
 </html>
