@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
   <title>Blogg | Erica Nordlöf | Nyutbildad webbutvecklare</title>
   <meta
     name="description"
@@ -12,29 +11,25 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="author" content="Erica Nordlöf" />
   <link rel="canonical" href="https://webutvecklare.se/blogg.html" />
-
   <meta property="og:title" content="Blogg | Erica Nordlöf" />
   <meta property="og:description" content="Följ min resa som nyutbildad webbutvecklare. Enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/blogg.html" />
-  <meta property="og:image" content="https://webutvecklare.se/blogg/indexera.PNG" />
-
+  <meta property="og:image" content="https://webutvecklare.se/blogg/valkommen.PNG" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blogg | Erica Nordlöf" />
   <meta name="twitter:description" content="Följ min resa som nyutbildad webbutvecklare. Enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se." />
-  <meta name="twitter:image" content="https://webutvecklare.se/blogg/indexera.PNG" />
-
+  <meta name="twitter:image" content="https://webutvecklare.se/blogg/valkommen.PNG" />
+  <link rel="preload" as="image" href="blogg/valkommen.PNG" fetchpriority="high" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
   <meta name="theme-color" content="#f7f0ec" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,6 +40,7 @@
         "name": "Blogg | Erica Nordlöf",
         "url": "https://webutvecklare.se/blogg.html",
         "inLanguage": "sv-SE",
+        "image": "https://webutvecklare.se/blogg/valkommen.PNG",
         "description": "Dagbok om resan som nyutbildad webbutvecklare och nystartad företagare. Innehåller enkla webbtips, SEO-lärdomar och mangaserier.",
         "author": {
           "@type": "Person",
@@ -154,7 +150,6 @@
     ]
   }
   </script>
-
   <style>
     :root{
       --bg:#f7f0ec;
@@ -170,17 +165,15 @@
       --shadow-strong:0 26px 70px rgba(36,30,26,.13);
       --radius:24px;
       --max:960px;
+      --wide:1320px;
     }
-
     *{
       box-sizing:border-box;
     }
-
     html{
       scroll-behavior:smooth;
       -webkit-text-size-adjust:100%;
     }
-
     body{
       margin:0;
       font-family:Inter,sans-serif;
@@ -191,11 +184,9 @@
         linear-gradient(180deg,#fbf7f4 0%,#f4eeea 100%);
       overflow-x:hidden;
     }
-
     body.large-text{
       font-size:118%;
     }
-
     body.high-contrast{
       --bg:#fff;
       --soft:#fff;
@@ -211,31 +202,25 @@
       background:#fff;
       color:#000;
     }
-
     a{
       color:inherit;
       text-decoration:none;
     }
-
     img{
       max-width:100%;
       display:block;
     }
-
     button,
     select,
     input{
       font:inherit;
     }
-
     button{
       border:0;
     }
-
     :target{
       scroll-margin-top:96px;
     }
-
     a:focus-visible,
     button:focus-visible,
     select:focus-visible,
@@ -244,7 +229,6 @@
       outline-offset:4px;
       box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
-
     .skip-link{
       position:absolute;
       left:12px;
@@ -260,16 +244,17 @@
       box-shadow:0 12px 30px rgba(36,30,26,.16);
       transition:.15s ease;
     }
-
     .skip-link:focus{
       transform:translateY(0);
     }
-
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
     }
-
+    .wide-container{
+      width:min(var(--wide),calc(100% - 28px));
+      margin:auto;
+    }
     .accessibility-tools{
       position:fixed;
       right:12px;
@@ -287,7 +272,6 @@
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
     }
-
     .accessibility-btn{
       min-height:44px;
       padding:10px 14px;
@@ -301,13 +285,11 @@
       white-space:nowrap;
       font-size:13px;
     }
-
     .accessibility-btn[aria-pressed="true"]{
       background:#fff;
       color:#111;
       border-color:#111;
     }
-
     .topbar{
       position:sticky;
       top:0;
@@ -317,7 +299,6 @@
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
     }
-
     .nav{
       min-height:72px;
       display:flex;
@@ -326,14 +307,12 @@
       gap:16px;
       padding:12px 0;
     }
-
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
       min-width:0;
     }
-
     .brand img{
       width:46px;
       height:46px;
@@ -342,7 +321,6 @@
       box-shadow:0 12px 30px rgba(36,30,26,.08);
       flex:0 0 auto;
     }
-
     .brand strong{
       display:block;
       font-size:16px;
@@ -351,7 +329,6 @@
       overflow:hidden;
       text-overflow:ellipsis;
     }
-
     .brand span span{
       display:block;
       color:var(--muted);
@@ -361,14 +338,12 @@
       overflow:hidden;
       text-overflow:ellipsis;
     }
-
     .nav-actions{
       display:flex;
       align-items:center;
       gap:10px;
       flex:0 0 auto;
     }
-
     .btn{
       display:inline-flex;
       align-items:center;
@@ -384,28 +359,65 @@
       line-height:1.1;
       white-space:nowrap;
     }
-
     .btn:hover{
       transform:translateY(-1px);
     }
-
     .btn-primary{
       background:linear-gradient(135deg,var(--brand-deep),var(--brand));
       color:#fff;
       box-shadow:0 14px 30px rgba(185,111,97,.24);
     }
-
     .btn-secondary{
       background:#fff;
       border-color:var(--line);
       color:var(--text);
       box-shadow:0 10px 24px rgba(36,30,26,.05);
     }
-
-    .hero{
-      padding:clamp(34px,6vw,76px) 0 28px;
+    .welcome-manga{
+      padding:clamp(18px,4vw,42px) 0 18px;
     }
-
+    .welcome-manga-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:clamp(20px,4vw,38px);
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-strong);
+    }
+    .welcome-manga-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:inherit;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.65);
+    }
+    .welcome-manga img{
+      width:100%;
+      height:auto;
+      max-height:82vh;
+      object-fit:contain;
+      background:#fff;
+    }
+    .welcome-manga-caption{
+      padding:14px 18px 16px;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+      border-top:1px solid var(--line);
+      background:rgba(251,247,244,.72);
+    }
+    .welcome-manga-caption strong{
+      color:var(--text);
+      font-weight:900;
+    }
+    .hero{
+      padding:clamp(18px,4vw,42px) 0 28px;
+    }
     .hero-card{
       background:
         radial-gradient(circle at top right,rgba(255,255,255,.62),transparent 34%),
@@ -416,7 +428,6 @@
       box-shadow:var(--shadow-strong);
       text-align:center;
     }
-
     .eyebrow{
       display:inline-flex;
       align-items:center;
@@ -431,13 +442,11 @@
       box-shadow:0 10px 30px rgba(36,30,26,.04);
       max-width:100%;
     }
-
     h1,
     h2{
       font-family:"Playfair Display",serif;
       letter-spacing:-.045em;
     }
-
     h1{
       margin:18px auto 14px;
       font-size:clamp(2.35rem,7vw,4.7rem);
@@ -445,7 +454,6 @@
       max-width:760px;
       text-wrap:balance;
     }
-
     .lead{
       margin:0 auto;
       max-width:700px;
@@ -453,7 +461,6 @@
       font-size:clamp(17px,2vw,19px);
       line-height:1.72;
     }
-
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
@@ -461,11 +468,9 @@
       gap:12px;
       margin-top:24px;
     }
-
     .newsletter{
       padding:18px 0 32px;
     }
-
     .newsletter-card{
       background:
         radial-gradient(circle at top left,rgba(217,134,114,.18),transparent 32%),
@@ -475,37 +480,31 @@
       padding:clamp(22px,4vw,34px);
       box-shadow:var(--shadow);
     }
-
     .newsletter-card h2{
       margin:14px 0 10px;
       font-size:clamp(1.9rem,4vw,2.8rem);
       line-height:1.05;
     }
-
     .newsletter-card p{
       margin:0;
       max-width:700px;
       color:var(--muted);
       line-height:1.7;
     }
-
     .newsletter-form{
       margin-top:20px;
     }
-
     .newsletter-form label{
       display:block;
       font-weight:900;
       margin-bottom:8px;
     }
-
     .newsletter-row{
       display:grid;
       grid-template-columns:1fr auto;
       gap:10px;
       align-items:center;
     }
-
     .newsletter-row input{
       width:100%;
       min-height:52px;
@@ -517,11 +516,9 @@
       font:inherit;
       box-shadow:0 10px 24px rgba(36,30,26,.05);
     }
-
     .newsletter-row input::placeholder{
       color:#8a7d75;
     }
-
     .newsletter-success{
       margin-top:14px;
       display:grid;
@@ -533,29 +530,23 @@
       border:1px solid rgba(143,77,69,.20);
       line-height:1.55;
     }
-
     .newsletter-success strong{
       font-weight:900;
     }
-
     .newsletter-success span{
       color:#5f433c;
     }
-
     .newsletter-success[hidden]{
       display:none;
     }
-
     .newsletter-note{
       margin-top:10px !important;
       font-size:14px;
       color:var(--muted);
     }
-
     .blog{
       padding:28px 0 clamp(44px,7vw,78px);
     }
-
     .blog-head{
       display:flex;
       align-items:end;
@@ -563,25 +554,21 @@
       gap:18px;
       margin-bottom:18px;
     }
-
     .blog-head h2{
       margin:0;
       font-size:clamp(2rem,5vw,3.1rem);
       line-height:1.02;
     }
-
     .blog-head p{
       margin:0;
       max-width:470px;
       color:var(--muted);
       line-height:1.7;
     }
-
     .post-list{
       display:grid;
       gap:18px;
     }
-
     .post{
       background:rgba(255,255,255,.96);
       border:1px solid var(--line);
@@ -589,13 +576,11 @@
       overflow:hidden;
       box-shadow:var(--shadow);
     }
-
     .post figure{
       margin:0;
       background:#fff;
       border-bottom:1px solid var(--line);
     }
-
     .post img{
       width:100%;
       height:auto;
@@ -604,11 +589,9 @@
       object-position:center;
       background:#fff;
     }
-
     .post-body{
       padding:clamp(18px,4vw,30px);
     }
-
     .post time{
       display:inline-flex;
       align-items:center;
@@ -621,7 +604,6 @@
       font-weight:900;
       margin-bottom:13px;
     }
-
     .post time::before{
       content:"";
       width:7px;
@@ -630,38 +612,32 @@
       background:currentColor;
       opacity:.7;
     }
-
     .post h2{
       margin:0 0 10px;
       font-size:clamp(1.65rem,4vw,2.45rem);
       line-height:1.05;
       letter-spacing:-.04em;
     }
-
     .post p{
       margin:0;
       color:var(--muted);
       line-height:1.75;
       font-size:16px;
     }
-
     .post p + p{
       margin-top:13px;
     }
-
     .post a{
       color:var(--brand-deep);
       font-weight:900;
       text-decoration:underline;
       text-underline-offset:3px;
     }
-
     footer{
       padding:24px 0 34px;
       color:#6f655e;
       font-size:14px;
     }
-
     .footer-box{
       border-top:1px solid var(--line);
       padding-top:18px;
@@ -672,30 +648,32 @@
       flex-wrap:wrap;
       line-height:1.7;
     }
-
     .footer-links{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
     }
-
     .footer-box a{
       text-decoration:underline;
       text-underline-offset:3px;
       font-weight:800;
     }
-
     body.high-contrast .topbar,
     body.high-contrast .hero-card,
     body.high-contrast .newsletter-card,
     body.high-contrast .post,
-    body.high-contrast .accessibility-tools{
+    body.high-contrast .accessibility-tools,
+    body.high-contrast .welcome-manga-card{
       background:#fff;
       color:#000;
       border:2px solid #000;
       box-shadow:none;
     }
-
+    body.high-contrast .welcome-manga-caption{
+      background:#fff;
+      color:#000;
+      border-top:2px solid #000;
+    }
     body.high-contrast .newsletter-row input,
     body.high-contrast .newsletter-success{
       background:#fff;
@@ -703,11 +681,9 @@
       border:2px solid #000;
       box-shadow:none;
     }
-
     body.high-contrast .newsletter-success span{
       color:#000;
     }
-
     body.high-contrast .btn-primary,
     body.high-contrast .btn-secondary,
     body.high-contrast .accessibility-btn{
@@ -716,30 +692,25 @@
       border:3px solid #000;
       box-shadow:none;
     }
-
     body.high-contrast .accessibility-btn[aria-pressed="true"]{
       background:#fff;
       color:#000;
     }
-
     body.high-contrast .eyebrow,
     body.high-contrast .post time{
       background:#fff;
       color:#000;
       border:2px solid #000;
     }
-
     body.high-contrast a{
       text-decoration:underline;
       text-decoration-thickness:2px;
       text-underline-offset:4px;
     }
-
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
       }
-
       *,
       *::before,
       *::after{
@@ -747,12 +718,10 @@
         animation-iteration-count:1 !important;
         transition-duration:.01ms !important;
       }
-
       .btn:hover{
         transform:none;
       }
     }
-
     @media(max-width:1080px){
       .accessibility-tools{
         position:static;
@@ -762,12 +731,11 @@
         border-radius:22px;
       }
     }
-
     @media(max-width:760px){
-      .container{
+      .container,
+      .wide-container{
         width:min(var(--max),calc(100% - 22px));
       }
-
       .accessibility-tools{
         width:min(var(--max),calc(100% - 22px));
         margin:10px auto 0;
@@ -777,7 +745,6 @@
         padding:8px;
         border-radius:18px;
       }
-
       .accessibility-btn{
         width:100%;
         min-height:44px;
@@ -785,132 +752,121 @@
         font-size:12px;
         white-space:normal;
       }
-
       .nav{
         min-height:auto;
         padding:10px 0;
       }
-
       .brand{
         gap:10px;
       }
-
       .brand img{
         width:40px;
         height:40px;
         border-radius:12px;
       }
-
       .brand strong{
         font-size:15px;
       }
-
       .brand span span{
         display:none;
       }
-
       .nav-actions{
         display:flex;
       }
-
       .nav-actions .btn{
         min-height:42px;
         padding:11px 14px;
         font-size:13px;
       }
-
-      .hero{
-        padding:24px 0 16px;
+      .welcome-manga{
+        padding:14px 0 10px;
       }
-
+      .welcome-manga-card{
+        border-radius:20px;
+      }
+      .welcome-manga img{
+        max-height:none;
+        width:100%;
+        height:auto;
+        object-fit:contain;
+      }
+      .welcome-manga-caption{
+        padding:12px 14px;
+        font-size:13px;
+      }
+      .hero{
+        padding:18px 0 16px;
+      }
       .hero-card{
         border-radius:24px;
         padding:22px 16px;
       }
-
       h1{
         font-size:clamp(2rem,11vw,3.15rem);
         line-height:.98;
         margin:14px 0 12px;
       }
-
       .lead{
         font-size:15.5px;
         line-height:1.65;
       }
-
       .hero-actions{
         display:grid;
         grid-template-columns:1fr;
       }
-
       .hero-actions .btn{
         width:100%;
       }
-
       .newsletter{
         padding:12px 0 24px;
       }
-
       .newsletter-card{
         border-radius:20px;
         padding:18px;
       }
-
       .newsletter-row{
         grid-template-columns:1fr;
       }
-
       .newsletter-row .btn{
         width:100%;
       }
-
       .newsletter-row input{
         border-radius:18px;
       }
-
       .blog-head{
         display:block;
       }
-
       .blog-head p{
         margin-top:8px;
       }
-
       .post{
         border-radius:20px;
       }
-
       .post img{
         max-height:none;
         width:100%;
         height:auto;
         object-fit:contain;
       }
-
       .post-body{
         padding:18px;
       }
-
       .post p{
         font-size:15px;
         line-height:1.68;
       }
     }
-
     @media(max-width:390px){
-      .container{
+      .container,
+      .wide-container{
         width:min(var(--max),calc(100% - 18px));
       }
-
       h1{
         font-size:2rem;
       }
-
       .btn{
         font-size:13px;
       }
-
       .accessibility-btn{
         font-size:11px;
         padding:8px 6px;
@@ -918,16 +874,13 @@
     }
   </style>
 </head>
-
 <body>
   <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
-
   <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
     <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">Hög kontrast</button>
     <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">Större text</button>
     <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false">Kort uppläsning</button>
   </div>
-
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="https://webutvecklare.se/" aria-label="Gå till startsidan">
@@ -937,26 +890,44 @@
           <span>Blogg · Erica Nordlöf</span>
         </span>
       </a>
-
       <div class="nav-actions" aria-label="Startsida">
         <a class="btn btn-secondary" href="/">Startsida</a>
       </div>
     </div>
   </header>
-
   <main id="main">
+    <section class="welcome-manga" aria-labelledby="welcome-manga-title">
+      <div class="wide-container">
+        <div class="welcome-manga-card">
+          <img
+            src="blogg/valkommen.PNG"
+            alt="Välkomstmanga till Erica Nordlöfs blogg om vardagen som junior webbutvecklare, blogginlägg varje vardag och exempel på bloggupplägg för företag"
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            loading="eager"
+          >
+          <div class="welcome-manga-caption">
+            <span>
+              <strong id="welcome-manga-title">Välkomstmanga:</strong>
+              ett nytt inlägg varje vardag tills vidare.
+            </span>
+            <span>
+              Blogg hjälper dig att synas mer i sök. Att stirra på startsidan är tyvärr ingen SEO-plan.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero-card">
           <span class="eyebrow">Blogg · Webbtips · Manga</span>
-
           <h1 id="hero-title">Välkommen till min blogg.</h1>
-
           <p class="lead">
             Här kan du följa min resa som nyutbildad webbutvecklare och nystartad företagare.
             Jag delar korta inlägg, enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se.
           </p>
-
           <div class="hero-actions">
             <a class="btn btn-primary" href="#newsletter-title">Prenumerera på veckans inlägg</a>
             <a class="btn btn-secondary" href="/">Till startsidan</a>
@@ -964,27 +935,22 @@
         </div>
       </div>
     </section>
-
     <section class="newsletter" aria-labelledby="newsletter-title">
       <div class="container">
         <div class="newsletter-card">
           <span class="eyebrow">Nyhetsbrev · 1 gång per vecka</span>
-
           <h2 id="newsletter-title">Få veckans blogginlägg i mejlen.</h2>
-
           <p>
             En gång i veckan skickar jag ett kort nyhetsbrev med veckans blogginlägg,
             enkla webbtips och senaste mangaserien från min resa som nyutbildad webbutvecklare.
             Perfekt om du har en hemsida och vill fixa mer själv, men gärna vill ha tips längs vägen.
           </p>
-
           <form
             class="newsletter-form"
             action="https://formsubmit.co/erica@webutvecklare.se"
             method="POST"
           >
             <label for="newsletter-email">Mejladress</label>
-
             <div class="newsletter-row">
               <input
                 type="email"
@@ -994,23 +960,19 @@
                 autocomplete="email"
                 required
               >
-
               <button class="btn btn-primary" type="submit">
                 Prenumerera
               </button>
             </div>
-
             <input type="hidden" name="_subject" value="Ny prenumerant till bloggens nyhetsbrev">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" value="https://webutvecklare.se/blogg.html?nyhetsbrev=tack#newsletter-title">
             <input type="hidden" name="Källa" value="Blogg på webutvecklare.se">
             <input type="hidden" name="Typ" value="Nyhetsbrev med veckans blogginlägg, webbtips och mangaserie">
-
             <div class="newsletter-success" id="newsletterSuccess" role="status" aria-live="polite" hidden>
               <strong>Tack! Din prenumeration är mottagen.</strong>
               <span>Du får max ett nyhetsbrev i veckan med blogginlägg, enkla webbtips och mangaserie.</span>
             </div>
-
             <p class="newsletter-note">
               Jag använder din mejladress endast för nyhetsbrevet. Utskick max 1 gång per vecka.
               Du kan avsluta när du vill genom att svara “avsluta”. Inget spam, inget annat — bara webb, lärdomar och manga.
@@ -1019,14 +981,12 @@
         </div>
       </div>
     </section>
-
     <section class="blog" aria-labelledby="blog-title">
       <div class="container">
         <div class="blog-head">
           <h2 id="blog-title">Dagbok.</h2>
           <p>Nya inlägg läggs överst. Manga först, lärdom under. Klart.</p>
         </div>
-
         <div class="post-list">
           <article class="post" id="indexera-efter-publicering">
             <figure>
@@ -1036,69 +996,56 @@
                 loading="eager"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-05">5 maj 2026</time>
-
               <h2>Tråkigt att indexera. Ännu tråkigare att vara osynlig.</h2>
-
               <p>
                 Dagens manga är tyvärr inte fiction. Den är dokumentär. Med lite mer hårsvall.
               </p>
-
               <p>
                 Jag har byggt många sidor den senaste tiden. Nya sidor, demosidor, landningssidor,
                 blogginlägg och små förbättringar här och där. Det roliga är att bygga.
                 Det mindre glamorösa är att komma ihåg allt efteråt.
               </p>
-
               <p>
                 Som till exempel att skicka in nya och uppdaterade sidor i
                 <strong>Google Search Console</strong> och <strong>Bing Webmaster Tools</strong>.
                 Sådant som inte känns särskilt kreativt, men som är rätt avgörande om sidan faktiskt ska kunna hittas.
               </p>
-
               <p>
                 Det är lätt att tänka: “Sidan är publicerad, då är jobbet klart.”
                 Men nej. Där ligger man i SEO-processen och snubblar på mållinjen med kaffekoppen i handen.
               </p>
-
               <p>
                 Min nya regel framåt:
                 när en sida är skapad eller redigerad ska den in i indexeringsrutinen direkt.
                 Inte “sen”. Inte “jag tar det när jag får tid”. Inte “jag kommer ihåg det”.
                 För nej, det gör jag uppenbarligen inte alltid.
               </p>
-
               <p>
                 Min checklista efter publicering är nu enkel:
                 bygg sidan, testa sidan, publicera sidan och skicka in URL:en.
                 Google först. Bing också. Det är inte kul, men det är synlighetens tråkiga inträdesbiljett.
               </p>
-
               <p>
                 Lärdomen för småföretagare är densamma:
                 en hemsida behöver inte bara finnas. Den behöver kunna hittas.
                 Annars är den lite som en butik utan skylt, utan adress och med entrén bakom lagret.
               </p>
-
               <p>
                 Så dagens webbtips:
                 när du publicerar eller uppdaterar en sida, begär indexering direkt.
                 Tråkigt? Ja. Viktigt? Också ja. Digitalt smågodis för sökmotorerna.
               </p>
-
               <p>
                 Behöver du hjälp med hemsida, SEO-grund, formulär, bokningsflöde eller annan webblösning?
                 Jag bygger demo först. Du köper bara om du gillar den.
               </p>
-
               <p>
                 <a href="https://webutvecklare.se/">Se priser och upplägg på webutvecklare.se</a>
               </p>
             </div>
           </article>
-
           <article class="post" id="premiumleads-leadscentralen-rankar">
             <figure>
               <img
@@ -1107,67 +1054,55 @@
                 loading="lazy"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-04">4 maj 2026</time>
-
               <h2>200 premiumleads köpta. Nu börjar testet på riktigt.</h2>
-
               <p>
                 Mangan ovan sammanfattar dagens insikt ganska bra:
                 det räcker inte alltid att skriva om vad man gör.
                 Ibland behöver man också skriva om sådant folk faktiskt söker efter.
               </p>
-
               <p>
                 Igår skrev jag om <strong>Leadscentralen</strong> här på bloggen.
                 Idag såg jag att inlägget redan rankar högt på ordet <strong>“Leadscentralen”</strong>.
                 Inte för att jag plötsligt blev SEO-guru över natten, utan för att ordet är tydligt,
                 relevant och inte lika generiskt som “webbutvecklare”.
               </p>
-
               <p>
                 Det blev en praktisk påminnelse:
                 Google gillar inte bara ord. Google gillar sammanhang.
                 Om jag skriver om ett konkret ämne, från min egen vinkel och kopplar det till mitt företag,
                 då kan bloggen börja jobba.
               </p>
-
               <p>
                 Så idag tog jag nästa steg och köpte <strong>200 premiumleads</strong>.
                 Jag fick <strong>nystartsrabatt</strong>, vilket gjorde testet rimligare för mig som ny företagare.
                 Ingen stor kampanj. Mer en kontrollerad chansning med låg budget och hög envishet.
               </p>
-
               <p>
                 Sammanlagt lade jag ungefär <strong>en timme</strong> på det idag.
                 Jag hann gå igenom leads och skriva genomtänkta mejl till två företag.
                 Inte massutskick. Inte copy-paste-kaos. Riktiga mejl till riktiga företag.
               </p>
-
               <p>
                 Min strategi nu är enkel:
                 bygga mitt eget varumärke, skriva om relevanta ämnen, testa leads i liten skala
                 och se vad som faktiskt leder till samtal.
               </p>
-
               <p>
                 Jag satsade ungefär fem matkassar på ICA på det här testet.
                 Så nu får vi se om det blir kund, lärdom eller väldigt dyr marknadsföringsgröt.
                 Oavsett vilket dokumenterar jag resan här.
               </p>
-
               <p>
                 Behöver du hjälp med hemsida, blogg, formulär, bokningsflöde eller annan webblösning?
                 Jag bygger demo först. Du köper bara om du gillar den.
               </p>
-
               <p>
                 <a href="https://webutvecklare.se/">Se priser och upplägg på webutvecklare.se</a>
               </p>
             </div>
           </article>
-
           <article class="post" id="forsta-sparet-leadscentralen">
             <figure>
               <img
@@ -1176,43 +1111,35 @@
                 loading="lazy"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-03">3 maj 2026</time>
-
               <h2>Första spåret: Leadscentralen.</h2>
-
               <p>
                 Mangan ovan är ungefär känslan:
                 jag behöver hitta fler företag som faktiskt behöver webbhjälp,
                 och <strong>Leadscentralen</strong> dök upp som ett möjligt spår.
               </p>
-
               <p>
                 Jag är nyutbildad webbutvecklare och har precis startat eget.
                 Just nu bygger jag allt steg för steg:
                 hemsidan, erbjudandet, kontakterna och sättet att hitta kunder.
               </p>
-
               <p>
                 Det jag letar efter är inte “vem som helst med en hemsida”.
                 Jag vill hitta småföretag som behöver något konkret:
                 en tydligare startsida, bättre kontaktväg, webbfix, formulär,
                 bokningsflöde, landningssida eller en enklare webblösning som sparar tid.
               </p>
-
               <p>
                 Därför testar jag Leadscentralen försiktigt.
                 Inte som magisk kundmaskin, utan som ett möjligt verktyg i lådan.
                 Hammaren först, enhörningen sen.
               </p>
-
               <p>
                 Min plan är att börja smått, skriva personliga mejl och se vad som händer.
                 Om det leder till samtal är det intressant.
                 Om det inte gör det, har jag åtminstone lärt mig något utan att elda upp hela budgeten.
               </p>
-
               <p>
                 Resan mot första kunden fortsätter.
                 Med kod, kaffe och en ganska envis tro på att små steg faktiskt räknas.
@@ -1223,14 +1150,12 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container footer-box">
       <div>
         <strong>© 2026 Nordlöf Nordic</strong><br>
         <span>Blogg av Erica Nordlöf.</span>
       </div>
-
       <div class="footer-links">
         <a href="/">Startsida</a>
         <a href="/om-mig.html">Om mig</a>
@@ -1238,13 +1163,11 @@
       </div>
     </div>
   </footer>
-
   <script>
     const contrastButton = document.getElementById('toggleContrast');
     const largeTextButton = document.getElementById('toggleLargeText');
     const listenButton = document.getElementById('listenSummary');
     const newsletterSuccess = document.getElementById('newsletterSuccess');
-
     function safeGet(key) {
       try {
         return localStorage.getItem(key);
@@ -1252,7 +1175,6 @@
         return null;
       }
     }
-
     function safeSet(key, value) {
       try {
         localStorage.setItem(key, value);
@@ -1261,37 +1183,28 @@
       }
       return true;
     }
-
     function setPressed(button, isPressed) {
       if (button) {
         button.setAttribute('aria-pressed', String(isPressed));
       }
     }
-
     const urlParams = new URLSearchParams(window.location.search);
-
     if (newsletterSuccess && urlParams.get('nyhetsbrev') === 'tack') {
       newsletterSuccess.hidden = false;
-
       if (window.history && window.history.replaceState) {
         window.history.replaceState({}, document.title, window.location.pathname + '#newsletter-title');
       }
     }
-
     const savedContrast = safeGet('blogHighContrast') === 'true';
     const savedLargeText = safeGet('blogLargeText') === 'true';
-
     if (savedContrast) {
       document.body.classList.add('high-contrast');
     }
-
     if (savedLargeText) {
       document.body.classList.add('large-text');
     }
-
     setPressed(contrastButton, savedContrast);
     setPressed(largeTextButton, savedLargeText);
-
     if (contrastButton) {
       contrastButton.addEventListener('click', () => {
         const isActive = document.body.classList.toggle('high-contrast');
@@ -1299,7 +1212,6 @@
         setPressed(contrastButton, isActive);
       });
     }
-
     if (largeTextButton) {
       largeTextButton.addEventListener('click', () => {
         const isActive = document.body.classList.toggle('large-text');
@@ -1307,43 +1219,33 @@
         setPressed(largeTextButton, isActive);
       });
     }
-
     if (listenButton && 'speechSynthesis' in window) {
       let isSpeaking = false;
-
       const speechText =
-        "Välkommen till min blogg. Här följer du min resa som nyutbildad webbutvecklare och nystartad företagare. Jag delar korta blogginlägg, enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se. Du kan också prenumerera på veckans blogginlägg via nyhetsbrevet. Den femte maj tvåtusentjugosex handlar inlägget om något tråkigt men viktigt: att indexera nya och uppdaterade sidor. När en sida är publicerad behöver den också skickas in i Google Search Console och Bing Webmaster Tools. Annars kan den finnas på webben, men ändå vara svår att hitta.";
-
+        "Välkommen till min blogg. Här följer du min resa som nyutbildad webbutvecklare och nystartad företagare. Jag delar korta blogginlägg, enkla webbtips, SEO-lärdomar och mangaserier från vardagen bakom webutvecklare.se. Ett nytt inlägg publiceras varje vardag tills vidare. Bloggen är också ett exempel på ett upplägg jag kan skapa åt företag som vill synas mer i sök. Jag kan visa exakt hur du klistrar in dagens text i koden. Den femte maj tvåtusentjugosex handlar inlägget om något tråkigt men viktigt: att indexera nya och uppdaterade sidor. När en sida är publicerad behöver den också skickas in i Google Search Console och Bing Webmaster Tools. Annars kan den finnas på webben, men ändå vara svår att hitta.";
       function resetListenButton() {
         listenButton.setAttribute('aria-pressed', 'false');
         listenButton.textContent = 'Kort uppläsning';
         isSpeaking = false;
       }
-
       listenButton.addEventListener('click', () => {
         if (isSpeaking) {
           window.speechSynthesis.cancel();
           resetListenButton();
           return;
         }
-
         window.speechSynthesis.cancel();
-
         const utterance = new SpeechSynthesisUtterance(speechText);
         utterance.lang = 'sv-SE';
         utterance.rate = 0.95;
         utterance.pitch = 1;
-
         isSpeaking = true;
         listenButton.setAttribute('aria-pressed', 'true');
         listenButton.textContent = 'Stoppa uppläsning';
-
         utterance.onend = resetListenButton;
         utterance.onerror = resetListenButton;
-
         window.speechSynthesis.speak(utterance);
       });
-
       window.addEventListener('pagehide', () => {
         window.speechSynthesis.cancel();
       });
