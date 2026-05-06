@@ -499,6 +499,22 @@
       align-items:center;
     }
 
+    .hero-grid > div{
+  min-width:0;
+}
+
+.hero h1{
+  max-width:100%;
+  overflow-wrap:break-word;
+  word-break:normal;
+  hyphens:auto;
+}
+
+.hero-card{
+  position:relative;
+  z-index:1;
+}
+
     .eyebrow{
       display:inline-flex;
       align-items:center;
@@ -1153,6 +1169,17 @@
       }
     }
 
+    @media(max-width:1180px){
+  .hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(280px,.82fr);
+    gap:22px;
+  }
+
+  h1{
+    font-size:clamp(2.25rem,5.8vw,4.4rem);
+  }
+}
+
     @media(max-width:1040px){
       .nav-links{
         display:none;
@@ -1438,7 +1465,7 @@
         <div>
           <span class="eyebrow">Sökmotoroptimering · SEO-grund · Texter · Struktur · Landningssidor</span>
 
-          <h1 id="hero-title">Sökmotoroptimering för företag utan SEO-cirkus.</h1>
+          <h1 id="hero-title">Sökmotor<wbr>optimering för företag utan SEO-cirkus.</h1>
 
           <p class="lead">
             Sökmotoroptimering för företag handlar här om att göra hemsidan tydligare för både kunder och sökmotorer.
