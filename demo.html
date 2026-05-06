@@ -1,22 +1,39 @@
 <!doctype html>
-<html lang="sv">
+<html lang="sv-SE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Gratis demo först + 10 % rabatt | Webutvecklare.se</title>
+  <title>Gratis demo först + 10 % rabatt | Nordlöf Nordic</title>
   <meta
     name="description"
     content="Få en gratis demo först. Spara din personliga rabattkod och använd den om du väljer att gå vidare efter godkänd demo."
   />
   <meta name="robots" content="noindex,nofollow" />
+  <meta name="author" content="Erica Nordlöf" />
   <meta name="theme-color" content="#f4eeea" />
+
+  <meta property="og:title" content="Gratis demo först + 10 % rabatt | Nordlöf Nordic" />
+  <meta property="og:description" content="Se upplägget först. Betala bara om du vill gå vidare efter godkänd demo och använd din personliga rabattkod." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gratis demo först + 10 % rabatt | Nordlöf Nordic" />
+  <meta name="twitter:description" content="Gratis demo först. 10 % rabatt om du väljer att gå vidare efter godkänd demo." />
+  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
+  <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+  <link rel="me" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" />
+  <link rel="me" href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
   />
 
   <style>
@@ -26,13 +43,14 @@
       --card:#ffffff;
       --text:#231d1a;
       --muted:#5f5550;
-      --line:rgba(35,29,26,0.08);
+      --line:rgba(35,29,26,0.10);
       --brand:#d98672;
       --brand-dark:#bf715f;
+      --brand-deep:#8f4d45;
       --brand-soft:#f8e4dc;
       --ok:#245d37;
       --ok-bg:#eaf7ee;
-      --warn:#8a5b16;
+      --warn:#765012;
       --warn-bg:#fff6e8;
       --error:#8c322d;
       --error-bg:#fff0ef;
@@ -42,19 +60,68 @@
       --max:1040px;
     }
 
-    *{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      -webkit-text-size-adjust:100%;
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:"Inter",sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(217,134,114,0.14) 0, transparent 26%),
+        radial-gradient(circle at top left, rgba(217,134,114,0.16) 0, transparent 28%),
+        radial-gradient(circle at 85% 5%, rgba(191,113,95,0.10), transparent 24%),
         linear-gradient(180deg, #faf6f3 0%, #f4eeea 100%);
     }
 
-    a{color:inherit;text-decoration:none}
-    button,input,textarea{font:inherit}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,
+    input,
+    textarea{
+      font:inherit;
+    }
+
+    button{
+      border:0;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+      box-shadow:0 0 0 6px rgba(255,255,255,.88);
+    }
+
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      z-index:999;
+      transform:translateY(-150%);
+      background:#fff;
+      color:var(--text);
+      padding:12px 16px;
+      border-radius:999px;
+      font-weight:900;
+      border:2px solid var(--brand-deep);
+      box-shadow:0 12px 30px rgba(36,30,26,.16);
+      transition:.15s ease;
+    }
+
+    .skip-link:focus{
+      transform:translateY(0);
+    }
 
     .container{
       width:min(var(--max), calc(100% - 24px));
@@ -67,6 +134,11 @@
 
     .top-link{
       margin-bottom:16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
     .top-link a{
@@ -77,9 +149,9 @@
       padding:12px 18px;
       border-radius:999px;
       background:#fff;
-      border:1px solid rgba(35,29,26,0.08);
+      border:1px solid var(--line);
       color:#231d1a;
-      font-weight:700;
+      font-weight:800;
       text-decoration:none;
       box-shadow:0 10px 24px rgba(35,29,26,0.06);
       transition:transform .18s ease;
@@ -87,6 +159,13 @@
 
     .top-link a:hover{
       transform:translateY(-1px);
+    }
+
+    .trust-mini{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+      font-weight:700;
     }
 
     .hero{
@@ -119,12 +198,24 @@
       background:#fff;
       border:1px solid var(--line);
       font-size:13px;
-      font-weight:800;
-      color:#7b5f55;
+      font-weight:900;
+      color:#765146;
       margin-bottom:16px;
+      line-height:1.35;
     }
 
-    h1,h2,h3{
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--brand-dark);
+      flex:0 0 auto;
+    }
+
+    h1,
+    h2,
+    h3{
       margin:0;
       letter-spacing:-0.04em;
     }
@@ -143,6 +234,10 @@
       max-width:700px;
     }
 
+    .lead strong{
+      color:var(--text);
+    }
+
     .hero-points{
       list-style:none;
       margin:22px 0 0;
@@ -157,7 +252,7 @@
       align-items:flex-start;
       color:#3d3733;
       line-height:1.6;
-      font-weight:600;
+      font-weight:700;
     }
 
     .check{
@@ -170,7 +265,7 @@
       background:linear-gradient(135deg, var(--brand-dark), var(--brand));
       color:#fff;
       font-size:13px;
-      font-weight:800;
+      font-weight:900;
       box-shadow:0 8px 16px rgba(191,113,95,0.18);
       margin-top:1px;
     }
@@ -194,10 +289,10 @@
 
     .code-label{
       font-size:13px;
-      font-weight:800;
+      font-weight:900;
       text-transform:uppercase;
       letter-spacing:.08em;
-      color:#8b7a73;
+      color:#765146;
       margin-bottom:10px;
     }
 
@@ -210,9 +305,9 @@
       padding:14px;
       border-radius:18px;
       background:var(--bg-soft);
-      border:1px dashed rgba(35,29,26,0.12);
+      border:2px dashed rgba(35,29,26,0.18);
       font-size:clamp(28px, 5vw, 40px);
-      font-weight:800;
+      font-weight:900;
       letter-spacing:-0.05em;
       word-break:break-word;
     }
@@ -230,15 +325,18 @@
       min-height:var(--tap);
       border-radius:999px;
       padding:14px 18px;
-      font-weight:800;
+      font-weight:900;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       text-align:center;
       transition:.18s ease;
+      line-height:1.15;
     }
 
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{
+      transform:translateY(-1px);
+    }
 
     .btn:disabled{
       opacity:.72;
@@ -263,6 +361,7 @@
       color:var(--muted);
       line-height:1.65;
       font-size:14px;
+      font-weight:600;
     }
 
     .info-badges{
@@ -275,7 +374,7 @@
       border-radius:16px;
       font-size:14px;
       line-height:1.55;
-      font-weight:600;
+      font-weight:700;
     }
 
     .badge.ok{
@@ -332,8 +431,8 @@
       display:grid;
       place-items:center;
       background:var(--brand-soft);
-      color:var(--brand-dark);
-      font-weight:800;
+      color:var(--brand-deep);
+      font-weight:900;
     }
 
     .step strong{
@@ -348,6 +447,26 @@
       line-height:1.6;
     }
 
+    .trust-box{
+      margin-top:14px;
+      padding:16px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid var(--line);
+    }
+
+    .trust-box strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .trust-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14px;
+    }
+
     form{
       display:grid;
       gap:12px;
@@ -355,13 +474,14 @@
 
     label{
       font-size:14px;
-      font-weight:700;
-      color:#433b37;
+      font-weight:800;
+      color:#362f2b;
     }
 
-    input, textarea{
+    input,
+    textarea{
       width:100%;
-      border:1px solid rgba(35,29,26,0.12);
+      border:1px solid rgba(35,29,26,0.14);
       background:#fff;
       color:var(--text);
       border-radius:14px;
@@ -370,7 +490,8 @@
       transition:border-color .18s ease, box-shadow .18s ease;
     }
 
-    input:focus, textarea:focus{
+    input:focus,
+    textarea:focus{
       border-color:rgba(217,134,114,0.72);
       box-shadow:0 0 0 4px rgba(217,134,114,0.12);
     }
@@ -383,9 +504,10 @@
 
     .field-note{
       margin-top:-2px;
-      color:#7a6d67;
+      color:#6c5f59;
       font-size:13px;
       line-height:1.55;
+      font-weight:600;
     }
 
     .form-actions{
@@ -399,11 +521,13 @@
       padding:12px 14px;
       border-radius:14px;
       font-size:14px;
-      font-weight:700;
+      font-weight:800;
       line-height:1.5;
     }
 
-    .status.show{display:block}
+    .status.show{
+      display:block;
+    }
 
     .status.loading{
       background:#f3f1ef;
@@ -423,8 +547,19 @@
       border:1px solid rgba(140,50,45,0.12);
     }
 
+    .spam-note{
+      padding:12px 14px;
+      border-radius:14px;
+      background:#fff6e8;
+      color:#765012;
+      border:1px solid rgba(118,80,18,0.14);
+      font-size:13px;
+      font-weight:800;
+      line-height:1.6;
+    }
+
     .smallprint{
-      color:#6d625c;
+      color:#5f5550;
       font-size:13px;
       line-height:1.65;
       margin:0;
@@ -433,6 +568,7 @@
     .smallprint a{
       text-decoration:underline;
       text-underline-offset:2px;
+      font-weight:800;
     }
 
     iframe{
@@ -442,47 +578,112 @@
       border:0;
     }
 
+    @media (prefers-reduced-motion: reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+
+      .btn:hover,
+      .top-link a:hover{
+        transform:none;
+      }
+    }
+
+    @media (prefers-contrast: more){
+      :root{
+        --text:#000;
+        --muted:#222;
+        --line:rgba(0,0,0,.32);
+      }
+    }
+
     @media (max-width:920px){
-      .hero,.grid{
+      .hero,
+      .grid{
         grid-template-columns:1fr;
       }
     }
 
     @media (max-width:560px){
-      .page{padding:16px 0 28px}
-      .container{width:min(var(--max), calc(100% - 16px))}
-      .hero-main,.hero-side,.section-card{padding:18px}
-      .code-box{font-size:30px; min-height:82px}
-      .btn{width:100%}
+      .page{
+        padding:16px 0 28px;
+      }
+
+      .container{
+        width:min(var(--max), calc(100% - 16px));
+      }
+
+      .top-link{
+        display:grid;
+      }
+
+      .top-link a{
+        width:100%;
+      }
+
+      .hero-main,
+      .hero-side,
+      .section-card{
+        padding:18px;
+        border-radius:20px;
+      }
+
+      .code-box{
+        font-size:30px;
+        min-height:82px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .step{
+        padding:14px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <main class="page">
+  <a class="skip-link" href="#main">Hoppa till innehållet</a>
+
+  <main class="page" id="main">
     <div class="container">
 
       <div class="top-link">
         <a href="https://webutvecklare.se/">← Till startsidan</a>
+        <span class="trust-mini">Nordlöf Nordic · Demo först · Ingen betalning här</span>
       </div>
 
-      <section class="hero">
+      <section class="hero" aria-labelledby="heroTitle">
         <div class="hero-main">
-          <div class="eyebrow">Gratis demo först · Du köper inget nu</div>
+          <div class="eyebrow">Gratis demo först · 10 % rabatt om du går vidare</div>
+
           <h1 id="heroTitle">Se upplägget först. Betala bara om du vill gå vidare.</h1>
+
           <p class="lead">
             Här får du din personliga rabattkod och kan skicka in din demo-förfrågan.
-            Upplägget är enkelt: du börjar med en gratis demo, tittar på förslaget och bestämmer sedan om du vill fortsätta.
+            Upplägget är enkelt: du börjar med en <strong>gratis demo</strong>, tittar på förslaget och bestämmer sedan om du vill fortsätta.
             Går du vidare använder du koden vid betalning.
           </p>
 
           <ul class="hero-points">
-            <li><span class="check">✓</span><span>Gratis demo först</span></li>
-            <li><span class="check">✓</span><span>10 % rabatt om du går vidare</span></li>
+            <li><span class="check">✓</span><span>Gratis demo först när uppdraget passar ramen</span></li>
+            <li><span class="check">✓</span><span>10 % rabatt om du väljer att gå vidare efter godkänd demo</span></li>
+            <li><span class="check">✓</span><span>Ingen bindning bara för att du skickar formuläret</span></li>
             <li><span class="check">✓</span><span>Du använder samma kod som du fick via länken</span></li>
           </ul>
         </div>
 
-        <aside class="hero-side">
+        <aside class="hero-side" aria-label="Din rabattkod och nästa steg">
           <div class="code-wrap">
             <div class="code-label">Din personliga rabattkod</div>
             <div class="code-box" id="code">LADDAR...</div>
@@ -505,7 +706,7 @@
               Rabattkoden sparas här på sidan så att du enkelt kan kopiera den senare.
             </div>
             <div class="badge warn">
-              Använd köplänken först efter att du godkänt demon.
+              Använd köplänken först efter att du har sett och godkänt demon.
             </div>
           </div>
 
@@ -515,11 +716,11 @@
         </aside>
       </section>
 
-      <section class="grid">
+      <section class="grid" aria-label="Så fungerar rabatt och demo">
         <div class="section-card">
           <h2>Så funkar det</h2>
           <p class="section-intro">
-            Ett rakt flöde som gör det lätt att komma vidare.
+            Ett rakt flöde som gör det lätt att komma vidare utan att köpa i blindo.
           </p>
 
           <div class="steps">
@@ -547,6 +748,14 @@
               </div>
             </div>
           </div>
+
+          <div class="trust-box">
+            <strong>Vad gäller rabatten?</strong>
+            <p>
+              Koden ger 10 % rabatt på godkänd order när du går vidare efter demo.
+              Den är personlig och används för att koppla förfrågan rätt. Inget magiskt, bara ordning i maskinrummet.
+            </p>
+          </div>
         </div>
 
         <div class="section-card">
@@ -556,11 +765,11 @@
           </p>
 
           <form
-  id="demoForm"
-  action="https://script.google.com/macros/s/AKfycbwy55LsWwhM0JTjDNtrQ1inadeoKBiqsnECsY7SSyQYAw1qhf_Uqb0BgXVRmeUUcyI/exec"
-  method="GET"
-  target="hidden_iframe"
->
+            id="demoForm"
+            action="https://script.google.com/macros/s/AKfycbwy55LsWwhM0JTjDNtrQ1inadeoKBiqsnECsY7SSyQYAw1qhf_Uqb0BgXVRmeUUcyI/exec"
+            method="GET"
+            target="hidden_iframe"
+          >
             <input type="hidden" name="Ref" id="refField" />
 
             <label for="namn">Namn</label>
@@ -595,111 +804,149 @@
 
             <div class="form-actions">
               <button class="btn btn-primary" type="submit" id="submitBtn">Skicka demo-förfrågan</button>
+
               <div class="status" id="status" aria-live="polite"></div>
+
+              <div class="spam-note">
+                När du har skickat formuläret: kontrollera även skräppost om du inte ser bekräftelsen eller svaret i inkorgen.
+                Om mejlet hamnar där, markera det som “Inte skräppost” så framtida mejl kommer rätt.
+              </div>
+
               <p class="smallprint">
                 Rabattkoden används bara om du väljer att gå vidare efter demon.
                 Genom att skicka formuläret godkänner du
                 <a href="https://webutvecklare.se/villkor.html" target="_blank" rel="noopener noreferrer">villkoren</a>
                 och
-                <a href="https://webutvecklare.se/integritet.html" target="_blank" rel="noopener noreferrer">integritetspolicyn</a>.
+                <a href="https://webutvecklare.se/integritetspolicy.html" target="_blank" rel="noopener noreferrer">integritetspolicyn</a>.
               </p>
             </div>
           </form>
 
-          <iframe name="hidden_iframe" id="hidden_iframe"></iframe>
+          <iframe name="hidden_iframe" id="hidden_iframe" title="Dold formulärbekräftelse"></iframe>
         </div>
       </section>
     </div>
   </main>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
+    (function () {
+      const params = new URLSearchParams(window.location.search);
 
-    const codeParam = (params.get("code") || "DEMO-0000").trim().toUpperCase();
-    const refParam = (params.get("ref") || "direkt").trim().toLowerCase();
-    const nameParam = (params.get("name") || "").trim();
-
-    const form = document.getElementById("demoForm");
-    const codeBox = document.getElementById("code");
-    const codeInput = document.getElementById("codeInput");
-    const refField = document.getElementById("refField");
-    const status = document.getElementById("status");
-    const submitBtn = document.getElementById("submitBtn");
-    const copyBtn = document.getElementById("copyBtn");
-    const hiddenIframe = document.getElementById("hidden_iframe");
-    const heroTitle = document.getElementById("heroTitle");
-    const fieldNote = document.getElementById("fieldNote");
-
-    let hasSubmitted = false;
-
-    codeBox.textContent = codeParam;
-    codeInput.value = codeParam;
-    refField.value = refParam;
-
-    if (nameParam) {
-      document.title = nameParam + "s rabattkod | Gratis demo först + 10 % rabatt | Webutvecklare.se";
-      heroTitle.textContent = "Se upplägget först. Betala bara om du vill gå vidare.";
-      fieldNote.textContent = "Använd samma kod som står på sidan. Då matchar leaden rätt direkt till " + nameParam + ".";
-    }
-
-    function showStatus(message, type) {
-      status.className = "status show " + type;
-      status.textContent = message;
-    }
-
-    async function copyCode() {
-      try {
-        await navigator.clipboard.writeText(codeParam);
-        copyBtn.textContent = "Koden kopierad";
-        showStatus("Rabattkoden är kopierad.", "ok");
-
-        setTimeout(() => {
-          copyBtn.textContent = "Kopiera kod";
-        }, 1800);
-      } catch (error) {
-        showStatus("Kunde inte kopiera automatiskt. Kopiera koden manuellt istället.", "error");
-      }
-    }
-
-    copyBtn.addEventListener("click", copyCode);
-
-    codeInput.addEventListener("input", function () {
-      this.value = this.value.toUpperCase();
-      if (status.classList.contains("error")) {
-        status.className = "status";
-        status.textContent = "";
-      }
-    });
-
-    form.addEventListener("submit", function (e) {
-      const inputCode = codeInput.value.trim().toUpperCase();
-
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        form.reportValidity();
-        return;
+      function cleanCode(value) {
+        const raw = (value || "DEMO-0000").trim().toUpperCase();
+        return raw.replace(/[^A-Z0-9ÅÄÖ-]/g, "").slice(0, 40) || "DEMO-0000";
       }
 
-      if (inputCode !== codeParam) {
-        e.preventDefault();
-        showStatus("Använd samma rabattkod som står på sidan.", "error");
-        codeInput.focus();
-        return;
+      function cleanRef(value) {
+        const raw = (value || "direkt").trim().toLowerCase();
+        return raw.replace(/[^a-z0-9åäö_-]/g, "").slice(0, 60) || "direkt";
       }
 
-      hasSubmitted = true;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Skickar...";
-      showStatus("Skickar din demo-förfrågan...", "loading");
-    });
+      function cleanName(value) {
+        return (value || "").trim().replace(/[<>]/g, "").slice(0, 60);
+      }
 
-    hiddenIframe.addEventListener("load", function () {
-      if (!hasSubmitted) return;
-      showStatus("Skickat. Du skickas vidare nu...", "ok");
-      setTimeout(function () {
-        window.location.href = "https://webutvecklare.se/tack.html";
-      }, 700);
-    });
+      const codeParam = cleanCode(params.get("code"));
+      const refParam = cleanRef(params.get("ref"));
+      const nameParam = cleanName(params.get("name"));
+
+      const form = document.getElementById("demoForm");
+      const codeBox = document.getElementById("code");
+      const codeInput = document.getElementById("codeInput");
+      const refField = document.getElementById("refField");
+      const status = document.getElementById("status");
+      const submitBtn = document.getElementById("submitBtn");
+      const copyBtn = document.getElementById("copyBtn");
+      const hiddenIframe = document.getElementById("hidden_iframe");
+      const heroTitle = document.getElementById("heroTitle");
+      const fieldNote = document.getElementById("fieldNote");
+
+      let hasSubmitted = false;
+
+      codeBox.textContent = codeParam;
+      codeInput.value = codeParam;
+      refField.value = refParam;
+
+      if (nameParam) {
+        document.title = nameParam + "s rabattkod | Gratis demo först + 10 % rabatt | Nordlöf Nordic";
+        heroTitle.textContent = "Se upplägget först. Betala bara om du vill gå vidare.";
+        fieldNote.textContent = "Använd samma kod som står på sidan. Då matchar leaden rätt direkt till " + nameParam + ".";
+      }
+
+      function showStatus(message, type) {
+        status.className = "status show " + type;
+        status.textContent = message;
+      }
+
+      async function copyCode() {
+        try {
+          await navigator.clipboard.writeText(codeParam);
+          copyBtn.textContent = "Koden kopierad";
+          showStatus("Rabattkoden är kopierad.", "ok");
+
+          setTimeout(function () {
+            copyBtn.textContent = "Kopiera kod";
+          }, 1800);
+        } catch (error) {
+          showStatus("Kunde inte kopiera automatiskt. Markera och kopiera koden manuellt istället.", "error");
+        }
+      }
+
+      copyBtn.addEventListener("click", copyCode);
+
+      codeInput.addEventListener("input", function () {
+        this.value = cleanCode(this.value);
+
+        if (status.classList.contains("error")) {
+          status.className = "status";
+          status.textContent = "";
+        }
+      });
+
+      form.addEventListener("submit", function (event) {
+        const inputCode = cleanCode(codeInput.value);
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+          return;
+        }
+
+        if (inputCode !== codeParam) {
+          event.preventDefault();
+          showStatus("Använd samma rabattkod som står på sidan.", "error");
+          codeInput.focus();
+          return;
+        }
+
+        codeInput.value = inputCode;
+        hasSubmitted = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Skickar...";
+        submitBtn.setAttribute("aria-busy", "true");
+        showStatus("Skickar din demo-förfrågan...", "loading");
+
+        setTimeout(function () {
+          if (submitBtn.disabled) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Skicka demo-förfrågan";
+            submitBtn.removeAttribute("aria-busy");
+          }
+        }, 15000);
+      });
+
+      hiddenIframe.addEventListener("load", function () {
+        if (!hasSubmitted) {
+          return;
+        }
+
+        showStatus("Skickat. Du skickas vidare nu...", "ok");
+
+        setTimeout(function () {
+          window.location.href = "https://webutvecklare.se/tack.html";
+        }, 700);
+      });
+    })();
   </script>
 </body>
 </html>
