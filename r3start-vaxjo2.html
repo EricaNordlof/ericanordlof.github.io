@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sv">
+<html lang="sv-SE">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -22,9 +22,9 @@
       --bg:#efe8dc;
       --paper:#fffaf3;
       --white:#ffffff;
-      --ink:#16211d;
-      --muted:#53615a;
-      --soft:#6f7b74;
+      --ink:#14211c;
+      --muted:#52615a;
+      --soft:#65736c;
 
       --forest:#16382f;
       --forest-2:#24594b;
@@ -47,98 +47,9 @@
       --radius:28px;
       --max:1180px;
       --focus:#b45309;
-      --header-offset:0px;
+      --tap:48px;
 
       --font-main:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-heading:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body.theme-warm{
-      --bg:#efe8dc;
-      --paper:#fffaf3;
-      --white:#ffffff;
-      --ink:#16211d;
-      --muted:#53615a;
-      --forest:#16382f;
-      --forest-2:#24594b;
-      --forest-soft:#dfeae4;
-      --gold:#b98542;
-      --gold-2:#d9aa67;
-      --gold-soft:#f8ead6;
-      --line:#ddd1c0;
-      --line-dark:#c8b9a4;
-    }
-
-    body.theme-calm{
-      --bg:#eef4f1;
-      --paper:#ffffff;
-      --white:#ffffff;
-      --ink:#10201a;
-      --muted:#51635b;
-      --forest:#12382f;
-      --forest-2:#1f5b4b;
-      --forest-soft:#dcece5;
-      --gold:#7b8f69;
-      --gold-2:#a9bd8a;
-      --gold-soft:#ecf2e4;
-      --line:#d7e2dc;
-      --line-dark:#b7c8bf;
-    }
-
-    body.theme-light{
-      --bg:#f7f7f4;
-      --paper:#ffffff;
-      --white:#ffffff;
-      --ink:#17201c;
-      --muted:#5c6862;
-      --forest:#1f4038;
-      --forest-2:#326355;
-      --forest-soft:#edf3f0;
-      --gold:#9d7a45;
-      --gold-2:#c69a59;
-      --gold-soft:#f6eee2;
-      --line:#e4e1da;
-      --line-dark:#cac4b9;
-    }
-
-    body.theme-dark{
-      --bg:#111916;
-      --paper:#18231f;
-      --white:#1d2a25;
-      --ink:#f4fbf7;
-      --muted:#c5d3cc;
-      --soft:#aab9b1;
-      --forest:#244f43;
-      --forest-2:#3d7a67;
-      --forest-3:#4d967f;
-      --forest-soft:#263b34;
-      --gold:#d7aa68;
-      --gold-2:#ecc583;
-      --gold-soft:#3b2d1d;
-      --line:#31463e;
-      --line-dark:#4b6459;
-      --shadow:0 28px 90px rgba(0,0,0,.32);
-      --shadow-soft:0 18px 50px rgba(0,0,0,.22);
-    }
-
-    body.font-modern{
-      --font-main:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-heading:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    body.font-soft{
-      --font-main:Georgia, "Times New Roman", serif;
-      --font-heading:Georgia, "Times New Roman", serif;
-    }
-
-    body.font-clear{
-      --font-main:Arial, Helvetica, sans-serif;
-      --font-heading:Arial, Helvetica, sans-serif;
-    }
-
-    body.font-authority{
-      --font-main:"Segoe UI", Arial, sans-serif;
-      --font-heading:Georgia, "Times New Roman", serif;
     }
 
     *{
@@ -147,14 +58,9 @@
 
     html{
       scroll-behavior:smooth;
-      text-size-adjust:100%;
-      font-size:16px;
+      -webkit-text-size-adjust:100%;
       max-width:100%;
       overflow-x:hidden;
-    }
-
-    html.large-text{
-      font-size:118%;
     }
 
     body{
@@ -169,13 +75,6 @@
       overflow-x:hidden;
     }
 
-    body.theme-dark{
-      background:
-        radial-gradient(circle at top left, rgba(215,170,104,.18), transparent 34rem),
-        radial-gradient(circle at top right, rgba(61,122,103,.22), transparent 36rem),
-        linear-gradient(180deg, #101815 0%, #18231f 100%);
-    }
-
     a{
       color:inherit;
     }
@@ -183,10 +82,57 @@
     img{
       display:block;
       max-width:100%;
+      height:auto;
     }
 
-    h1,h2,h3,p,li,a,button,label,input,select,textarea,span,strong{
-      overflow-wrap:anywhere;
+    button,
+    input,
+    select,
+    textarea{
+      font:inherit;
+    }
+
+    button{
+      border:0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p{
+      margin:0;
+    }
+
+    h1,
+    h2,
+    h3{
+      line-height:1.04;
+      letter-spacing:-.055em;
+      color:var(--ink);
+      text-wrap:balance;
+    }
+
+    h1{
+      font-size:clamp(2.45rem, 6.2vw, 5.75rem);
+      max-width:920px;
+    }
+
+    h2{
+      font-size:clamp(2rem, 4.2vw, 3.55rem);
+      max-width:860px;
+    }
+
+    h3{
+      font-size:1.32rem;
+      letter-spacing:-.035em;
+    }
+
+    p{
+      color:var(--muted);
+    }
+
+    :target{
+      scroll-margin-top:104px;
     }
 
     :focus-visible{
@@ -195,24 +141,21 @@
       border-radius:10px;
     }
 
-    .sr-only{
-      position:absolute;
-      width:1px;
-      height:1px;
-      padding:0;
-      margin:-1px;
-      overflow:hidden;
-      clip:rect(0,0,0,0);
-      white-space:nowrap;
-      border:0;
+    @media (prefers-reduced-motion: reduce){
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+        transition:none !important;
+      }
     }
 
     .skip-link{
       position:absolute;
       left:12px;
       top:-90px;
-      background:#ffffff;
-      color:#000000;
+      background:#fff;
+      color:#000;
       padding:12px 16px;
       border-radius:999px;
       z-index:1200;
@@ -233,10 +176,6 @@
       z-index:10;
     }
 
-    body.theme-dark .topbar{
-      background:#0b110f;
-    }
-
     .topbar-inner{
       max-width:var(--max);
       margin:auto;
@@ -249,75 +188,48 @@
       font-weight:760;
     }
 
-    .tools{
+    .topbar-actions{
       display:flex;
-      gap:8px;
       align-items:center;
+      gap:10px;
       flex-wrap:wrap;
     }
 
-    .tool-group{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .tool-label{
-      color:#ffffff;
-      font-size:.82rem;
-      font-weight:900;
-      opacity:.9;
-      margin-left:4px;
-    }
-
-    .tool-btn,
     .language-select{
+      min-height:42px;
       border:1px solid rgba(255,255,255,.24);
-      color:#ffffff;
+      color:#fff;
       background:rgba(255,255,255,.08);
       border-radius:999px;
       padding:8px 12px;
       cursor:pointer;
       font-weight:850;
       font-size:.9rem;
-      min-height:39px;
-      transition:.18s ease;
-      font-family:var(--font-main);
     }
 
-    .tool-btn:hover,
-    .language-select:hover,
-    .tool-btn[aria-pressed="true"]{
-      background:#ffffff;
+    .preview-link{
+      min-height:42px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:9px 14px;
+      border-radius:999px;
+      background:#fff;
       color:#13211c;
+      font-weight:900;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.24);
     }
 
     header{
-      position:relative;
+      position:sticky;
+      top:0;
       z-index:100;
       background:rgba(255,250,243,.94);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(22,33,29,.10);
       box-shadow:0 12px 34px rgba(20,32,27,.08);
-    }
-
-    body.theme-dark header{
-      background:rgba(24,35,31,.92);
-      border-bottom-color:rgba(255,255,255,.10);
-    }
-
-    body.header-fixed header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:999;
-    }
-
-    body.header-fixed main{
-      padding-top:var(--header-offset);
     }
 
     .nav{
@@ -337,8 +249,8 @@
       align-items:center;
       gap:12px;
       text-decoration:none;
-      min-width:max-content;
-      flex:0 0 auto;
+      min-width:0;
+      flex:0 1 auto;
     }
 
     .logo-mark{
@@ -346,7 +258,7 @@
       height:46px;
       border-radius:16px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -355,12 +267,19 @@
       flex:0 0 auto;
     }
 
+    .logo-text{
+      min-width:0;
+    }
+
     .logo-text strong{
       display:block;
       font-size:1.05rem;
       letter-spacing:-.03em;
       line-height:1.1;
       color:var(--ink);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
 
     .logo-text span{
@@ -368,55 +287,31 @@
       font-size:.82rem;
       color:var(--muted);
       line-height:1.25;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
 
-    #siteNav{
-      display:none !important;
-    }
-
-    #siteNav.open{
-      display:block !important;
-      position:absolute;
-      top:calc(100% + 12px);
-      right:18px;
-      left:auto;
-      width:min(380px, calc(100vw - 36px));
-      background:var(--paper);
-      border:1px solid var(--line-dark);
-      border-radius:26px;
-      padding:12px;
-      box-shadow:var(--shadow);
-      z-index:1000;
-    }
-
-    #siteNav ul{
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:16px;
       list-style:none;
       margin:0;
       padding:0;
+      font-size:.92rem;
+      font-weight:900;
+      color:#35453e;
     }
 
-    #siteNav.open ul{
-      display:grid;
-      gap:6px;
-    }
-
-    #siteNav.open a{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 16px;
-      border-radius:18px;
-      background:var(--white);
-      color:var(--ink);
-      border:1px solid var(--line);
-      font-weight:950;
+    .nav-links a{
       text-decoration:none;
-      white-space:normal;
+      border-radius:999px;
+      padding:9px 0;
     }
 
-    #siteNav.open a:hover{
-      background:var(--forest-soft);
+    .nav-links a:hover{
+      color:var(--forest-2);
     }
 
     .nav-actions{
@@ -424,23 +319,21 @@
       align-items:center;
       gap:10px;
       flex:0 0 auto;
-      margin-left:auto;
     }
 
     .menu-btn{
-      display:inline-flex;
+      display:none;
       align-items:center;
       justify-content:center;
       border:1px solid var(--line-dark);
       background:var(--white);
       color:var(--forest);
       border-radius:999px;
-      padding:13px 22px;
+      padding:12px 18px;
       font-weight:900;
       cursor:pointer;
       min-height:48px;
       font-size:1rem;
-      font-family:var(--font-main);
     }
 
     .btn{
@@ -450,16 +343,16 @@
       gap:8px;
       border-radius:999px;
       padding:13px 20px;
+      min-height:var(--tap);
       font-weight:900;
       text-decoration:none;
       cursor:pointer;
-      line-height:1;
+      line-height:1.1;
       transition:transform .18s ease, background .18s ease, border-color .18s ease;
       white-space:nowrap;
       border:1px solid transparent;
       font-size:.96rem;
       text-align:center;
-      font-family:var(--font-main);
     }
 
     .btn:hover{
@@ -468,7 +361,7 @@
 
     .btn-primary{
       background:var(--forest);
-      color:#ffffff;
+      color:#fff;
       border-color:var(--forest);
       box-shadow:0 16px 38px rgba(22,56,47,.22);
     }
@@ -484,14 +377,8 @@
       border-color:var(--line-dark);
     }
 
-    body.theme-dark .btn-secondary{
-      background:rgba(255,255,255,.10);
-      color:#ffffff;
-      border-color:var(--line-dark);
-    }
-
     .btn-secondary:hover{
-      background:#ffffff;
+      background:#fff;
       color:#13211c;
     }
 
@@ -508,7 +395,6 @@
 
     section{
       padding:88px 18px;
-      scroll-margin-top:120px;
     }
 
     .wrap{
@@ -522,62 +408,20 @@
       gap:8px;
       padding:8px 13px;
       background:rgba(185,133,66,.14);
-      color:#80531f;
+      color:#704515;
       border:1px solid rgba(185,133,66,.30);
       border-radius:999px;
       font-weight:950;
       font-size:.86rem;
       margin-bottom:18px;
       max-width:100%;
-    }
-
-    body.theme-dark .eyebrow{
-      color:#ffe3b2;
-      background:rgba(215,170,104,.16);
-      border-color:rgba(215,170,104,.34);
-    }
-
-    h1,h2,h3{
-      font-family:var(--font-heading);
-      margin:0;
-      line-height:1.04;
-      letter-spacing:-.055em;
-      color:var(--ink);
-    }
-
-    h1{
-      font-size:clamp(2.8rem, 6.4vw, 6.35rem);
-      max-width:910px;
-    }
-
-    h2{
-      font-size:clamp(2.05rem, 4.2vw, 3.6rem);
-      max-width:850px;
-    }
-
-    h3{
-      font-size:1.32rem;
-      letter-spacing:-.035em;
-    }
-
-    body.font-soft h1,
-    body.font-soft h2,
-    body.font-soft h3,
-    body.font-authority h1,
-    body.font-authority h2,
-    body.font-authority h3{
-      letter-spacing:-.035em;
-    }
-
-    p{
-      margin:0;
-      color:var(--muted);
+      line-height:1.35;
     }
 
     .lead{
       font-size:clamp(1.08rem, 1.6vw, 1.28rem);
       margin-top:22px;
-      max-width:730px;
+      max-width:760px;
       color:var(--muted);
       font-weight:650;
     }
@@ -607,7 +451,7 @@
       grid-template-columns:repeat(3, 1fr);
       gap:12px;
       margin-top:32px;
-      max-width:790px;
+      max-width:820px;
     }
 
     .trust-pill{
@@ -617,11 +461,6 @@
       padding:17px;
       box-shadow:var(--shadow-soft);
       backdrop-filter:blur(14px);
-    }
-
-    body.theme-dark .trust-pill{
-      background:rgba(255,255,255,.08);
-      border-color:var(--line-dark);
     }
 
     .trust-pill strong{
@@ -642,7 +481,6 @@
 
     .hero-visual{
       position:relative;
-      min-height:620px;
     }
 
     .hero-card{
@@ -669,11 +507,11 @@
     .image-panel-text,
     .slide-label,
     .image-note{
-      background:rgba(255,250,243,.90) !important;
-      border:1px solid rgba(255,255,255,.92) !important;
+      background:rgba(255,250,243,.93);
+      border:1px solid rgba(255,255,255,.92);
       box-shadow:0 18px 38px rgba(0,0,0,.14);
-      backdrop-filter:blur(14px) !important;
-      -webkit-backdrop-filter:blur(14px) !important;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .photo-caption{
@@ -690,8 +528,8 @@
     .slide-label strong,
     .image-note strong{
       display:block;
-      color:#10201a !important;
-      font-weight:950 !important;
+      color:#10201a;
+      font-weight:950;
     }
 
     .photo-caption span,
@@ -699,27 +537,9 @@
     .slide-label span,
     .image-note span{
       display:block;
-      color:#173128 !important;
+      color:#173128;
       margin-top:6px;
-      font-weight:850 !important;
-    }
-
-    body.theme-dark .photo-caption,
-    body.theme-dark .image-panel-text,
-    body.theme-dark .slide-label,
-    body.theme-dark .image-note{
-      background:rgba(255,255,255,.94) !important;
-    }
-
-    body.theme-dark .photo-caption strong,
-    body.theme-dark .image-panel-text strong,
-    body.theme-dark .slide-label strong,
-    body.theme-dark .image-note strong,
-    body.theme-dark .photo-caption span,
-    body.theme-dark .image-panel-text span,
-    body.theme-dark .slide-label span,
-    body.theme-dark .image-note span{
-      color:#08120f !important;
+      font-weight:850;
     }
 
     .floating-card{
@@ -728,7 +548,7 @@
       top:42px;
       z-index:3;
       width:min(260px, 72%);
-      background:rgba(255,250,243,.90);
+      background:rgba(255,250,243,.94);
       border:1px solid rgba(200,185,164,.85);
       border-radius:26px;
       padding:20px;
@@ -753,19 +573,6 @@
       line-height:1.35;
     }
 
-    .mini-photo{
-      position:absolute;
-      right:24px;
-      top:24px;
-      width:220px;
-      height:155px;
-      border-radius:28px;
-      border:8px solid rgba(255,250,243,.88);
-      box-shadow:var(--shadow);
-      z-index:4;
-      background:url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Promenadstr%C3%A5ket%20vid%20V%C3%A4xj%C3%B6sj%C3%B6n.jpg") center/cover;
-    }
-
     .section-head{
       display:flex;
       align-items:end;
@@ -775,7 +582,7 @@
     }
 
     .section-head p{
-      max-width:550px;
+      max-width:560px;
       font-size:1.06rem;
       color:var(--muted);
       font-weight:650;
@@ -794,11 +601,6 @@
       padding:27px;
       box-shadow:var(--shadow-soft);
       backdrop-filter:blur(12px);
-    }
-
-    body.theme-dark .card{
-      background:rgba(255,255,255,.07);
-      border-color:var(--line-dark);
     }
 
     .card-icon{
@@ -881,67 +683,19 @@
     .fact span{
       color:var(--muted);
       font-weight:750;
-      min-width:0;
-      overflow-wrap:normal;
-      word-break:normal;
     }
 
     .fact strong{
       color:var(--ink);
       font-weight:950;
       text-align:right;
-      min-width:0;
-      overflow-wrap:normal;
-      word-break:normal;
-    }
-
-    .person-row,
-    .contact-person{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      padding:18px;
-      border-radius:24px;
-      border:1px solid var(--line-dark);
-      background:var(--white);
-      box-shadow:var(--shadow-soft);
-      margin-top:18px;
-    }
-
-    .person-photo{
-  background:
-    linear-gradient(135deg, var(--forest), var(--forest-2));
-  display:grid;
-  place-items:center;
-}
-
-.person-photo::after{
-  content:"S";
-  color:#fff;
-  font-weight:950;
-  font-size:2rem;
-}
-
-    .person-row strong,
-    .contact-person strong{
-      display:block;
-      color:var(--ink);
-      font-weight:950;
-    }
-
-    .person-row span,
-    .contact-person span{
-      display:block;
-      color:var(--muted);
-      font-weight:700;
-      margin-top:3px;
     }
 
     .sidebar-stack{
       display:grid;
       gap:16px;
       position:sticky;
-      top:120px;
+      top:110px;
     }
 
     .mini-box{
@@ -969,10 +723,6 @@
       text-decoration:none;
     }
 
-    body.theme-dark .mini-box a{
-      color:#d7f5e8;
-    }
-
     .badge-list{
       display:flex;
       flex-wrap:wrap;
@@ -991,10 +741,6 @@
       font-weight:900;
       font-size:.9rem;
       border:1px solid var(--line-dark);
-    }
-
-    body.theme-dark .badge{
-      color:#dff6ec;
     }
 
     .image-panel{
@@ -1044,10 +790,9 @@
     .gallery-arrow{
       width:48px;
       height:48px;
-      border:none;
       border-radius:999px;
       background:var(--forest);
-      color:#ffffff;
+      color:#fff;
       cursor:pointer;
       display:grid;
       place-items:center;
@@ -1076,27 +821,9 @@
       padding:6px 2px 10px;
       scroll-snap-type:x mandatory;
       -webkit-overflow-scrolling:touch;
-      cursor:grab;
       scrollbar-width:thin;
       scrollbar-color:#9aa69f transparent;
       scroll-behavior:smooth;
-    }
-
-    .image-strip:active{
-      cursor:grabbing;
-    }
-
-    .image-strip::-webkit-scrollbar{
-      height:10px;
-    }
-
-    .image-strip::-webkit-scrollbar-track{
-      background:transparent;
-    }
-
-    .image-strip::-webkit-scrollbar-thumb{
-      background:rgba(22,56,47,.28);
-      border-radius:999px;
     }
 
     .photo-slide{
@@ -1123,10 +850,6 @@
 
     .text-image{
       background:#f8f3eb;
-    }
-
-    body.theme-dark .text-image{
-      background:#121c18;
     }
 
     .text-image-grid{
@@ -1184,7 +907,7 @@
       height:27px;
       border-radius:999px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -1219,7 +942,7 @@
       height:38px;
       border-radius:14px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -1237,7 +960,7 @@
 
     .quality-wrap{
       background:linear-gradient(135deg, rgba(22,56,47,.98), rgba(36,89,75,.95));
-      color:#ffffff;
+      color:#fff;
       border-radius:44px;
       padding:48px;
       box-shadow:var(--shadow);
@@ -1279,7 +1002,7 @@
       font-size:clamp(3.8rem, 8vw, 7.1rem);
       line-height:.85;
       letter-spacing:-.08em;
-      color:#ffffff;
+      color:#fff;
     }
 
     .score span{
@@ -1291,13 +1014,13 @@
 
     .quality-wrap .eyebrow{
       background:rgba(255,255,255,.12);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.28);
     }
 
     .quality-wrap h2,
     .quality-wrap p{
-      color:#ffffff;
+      color:#fff;
     }
 
     .quality-wrap p{
@@ -1332,7 +1055,7 @@
       height:42px;
       border-radius:15px;
       background:linear-gradient(135deg, var(--forest), var(--forest-2));
-      color:#ffffff;
+      color:#fff;
       display:grid;
       place-items:center;
       font-weight:950;
@@ -1376,21 +1099,66 @@
       font-weight:650;
     }
 
+    .person-row,
+    .contact-person{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding:18px;
+      border-radius:24px;
+      border:1px solid var(--line-dark);
+      background:var(--white);
+      box-shadow:var(--shadow-soft);
+      margin-top:18px;
+    }
+
+    .person-photo{
+      width:68px;
+      height:68px;
+      border-radius:22px;
+      background:linear-gradient(135deg, var(--forest), var(--forest-2));
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+    }
+
+    .person-photo::after{
+      content:"S";
+      color:#fff;
+      font-weight:950;
+      font-size:2rem;
+    }
+
+    .person-row strong,
+    .contact-person strong{
+      display:block;
+      color:var(--ink);
+      font-weight:950;
+    }
+
+    .person-row span,
+    .contact-person span{
+      display:block;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:3px;
+    }
+
     .contact{
       background:#151f1b;
-      color:#ffffff;
+      color:#fff;
       border-top:1px solid rgba(255,255,255,.10);
     }
 
     .contact h2,
     .contact h3,
     .contact p{
-      color:#ffffff;
+      color:#fff;
     }
 
     .contact .eyebrow{
       background:rgba(255,255,255,.10);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.25);
     }
 
@@ -1458,10 +1226,9 @@
     select,
     textarea{
       width:100%;
-      border:1px solid #b9c0bb;
+      border:1px solid #a9b3ad;
       border-radius:16px;
       padding:14px 15px;
-      font:inherit;
       color:var(--ink);
       background:var(--white);
       font-weight:650;
@@ -1491,12 +1258,25 @@
       grid-column:1 / -1;
     }
 
-    .form-note{
+    .form-note,
+    .form-status{
       font-size:.92rem;
       color:var(--muted) !important;
       margin-top:12px;
       font-weight:700;
       line-height:1.55;
+    }
+
+    .form-status{
+      display:none;
+      background:#fff;
+      border:1px solid var(--line-dark);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+
+    .form-status.is-visible{
+      display:block;
     }
 
     .form-actions{
@@ -1508,7 +1288,7 @@
 
     .footer{
       background:#0f1714;
-      color:#ffffff;
+      color:#fff;
       padding:34px 18px;
       border-top:1px solid rgba(255,255,255,.12);
     }
@@ -1528,7 +1308,7 @@
     }
 
     .footer-copy strong{
-      color:#ffffff;
+      color:#fff;
     }
 
     .footer-right{
@@ -1539,67 +1319,68 @@
       justify-content:flex-end;
     }
 
-    .socials{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .social-icon{
-      width:46px;
-      height:46px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      text-decoration:none;
-      color:#ffffff;
-      border:1px solid rgba(255,255,255,.16);
-      transition:.18s ease;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-    }
-
-    .social-icon:hover{
-      transform:translateY(-1px) scale(1.03);
-      filter:brightness(1.06);
-    }
-
-    .social-icon svg{
-      width:20px;
-      height:20px;
-      fill:currentColor;
-    }
-
-    .social-icon.facebook{
-      background:#1877f2;
-    }
-
-    .social-icon.instagram{
-      background:linear-gradient(135deg, #f58529, #feda77, #dd2a7b, #8134af, #515bd4);
-    }
-
-    .social-icon.linkedin{
-      background:#0a66c2;
-    }
-
     .footer .btn-secondary{
       background:rgba(255,255,255,.10);
-      color:#ffffff;
+      color:#fff;
       border-color:rgba(255,255,255,.24);
     }
 
     .footer .btn-secondary:hover{
-      background:#ffffff;
+      background:#fff;
       color:#13211c;
     }
 
-    @media (max-width:1120px){
-      .mini-photo{
+    @media(max-width:1100px){
+      .nav-links{
+        display:none;
+      }
+
+      .menu-btn{
+        display:inline-flex;
+      }
+
+      #siteNav{
+        display:none;
+        position:absolute;
+        top:calc(100% + 12px);
+        left:18px;
+        right:18px;
+        background:var(--paper);
+        border:1px solid var(--line-dark);
+        border-radius:24px;
+        padding:12px;
+        box-shadow:var(--shadow);
+      }
+
+      #siteNav.open{
+        display:block;
+      }
+
+      #siteNav ul{
+        display:grid;
+        gap:6px;
+        list-style:none;
+        margin:0;
+        padding:0;
+      }
+
+      #siteNav a{
+        display:block;
+        padding:14px 16px;
+        border-radius:18px;
+        background:#fff;
+        color:var(--ink);
+        border:1px solid var(--line);
+        font-weight:950;
+        text-decoration:none;
+      }
+
+      .floating-card{
         display:none;
       }
     }
 
-    @media (max-width:980px){
+    @media(max-width:980px){
       .hero-grid,
       .split,
       .quality-grid,
@@ -1621,36 +1402,14 @@
         grid-template-columns:1fr;
       }
 
-      .hero-visual{
-        min-height:auto;
-      }
-
       .hero-photo{
         min-height:470px;
       }
-
-      .floating-card{
-        left:18px;
-        top:18px;
-      }
-
-      #siteNav.open{
-        left:18px;
-        right:18px;
-        width:auto;
-        max-height:72vh;
-        overflow:auto;
-      }
     }
 
-    @media (max-width:760px){
-      html.large-text{
-        font-size:112%;
-      }
-
+    @media(max-width:760px){
       section{
         padding:58px 14px;
-        scroll-margin-top:96px;
       }
 
       .hero{
@@ -1662,40 +1421,16 @@
         gap:10px;
       }
 
-      .topbar-inner > span{
-        font-size:.88rem;
-        line-height:1.35;
-      }
-
-      .tools{
+      .topbar-actions{
         width:100%;
         display:grid;
         grid-template-columns:1fr;
-        gap:10px;
       }
 
-      .tool-group{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:8px;
-      }
-
-      .tool-label{
-        grid-column:1 / -1;
-      }
-
-      .language-select{
+      .language-select,
+      .preview-link{
         width:100%;
-      }
-
-      .tool-btn,
-      .language-select{
-        min-height:44px;
-        padding:10px 12px;
-        font-size:.92rem;
         border-radius:14px;
-        white-space:normal;
-        line-height:1.2;
       }
 
       .nav{
@@ -1706,7 +1441,6 @@
 
       .logo{
         gap:9px;
-        min-width:0;
       }
 
       .logo-mark{
@@ -1718,7 +1452,7 @@
 
       .logo-text strong{
         font-size:1rem;
-        white-space:nowrap;
+        max-width:48vw;
       }
 
       .logo-text span{
@@ -1732,32 +1466,15 @@
       .menu-btn{
         min-height:42px;
         padding:10px 14px;
-        flex:0 0 auto;
-      }
-
-      #siteNav.open{
-        left:12px;
-        right:12px;
-        border-radius:20px;
-      }
-
-      #siteNav.open a{
-        padding:13px 14px;
-        font-size:1rem;
       }
 
       h1{
-        font-size:clamp(2.18rem, 11vw, 3.25rem);
+        font-size:clamp(2.08rem, 10vw, 3.15rem);
         line-height:1.03;
       }
 
       h2{
         font-size:clamp(1.78rem, 8vw, 2.6rem);
-      }
-
-      h3{
-        font-size:1.2rem;
-        line-height:1.16;
       }
 
       .lead{
@@ -1800,10 +1517,6 @@
         width:100%;
         border-radius:18px;
         padding:16px;
-      }
-
-      .floating-card{
-        display:none;
       }
 
       .section-head{
@@ -1933,40 +1646,15 @@
       .footer-right{
         justify-content:flex-start;
       }
-
-      .gallery-tools{
-        width:100%;
-        justify-content:flex-start;
-      }
     }
 
-    @media (max-width:390px){
-      .topbar-inner,
-      .nav,
-      section,
-      .hero,
-      .footer{
-        padding-left:12px;
-        padding-right:12px;
-      }
-
+    @media(max-width:390px){
       h1{
-        font-size:2.02rem;
+        font-size:2rem;
       }
 
       h2{
-        font-size:1.62rem;
-      }
-
-      .logo-text strong{
-        max-width:52vw;
-        overflow:hidden;
-        text-overflow:ellipsis;
-        white-space:nowrap;
-      }
-
-      .hero-photo{
-        min-height:300px;
+        font-size:1.6rem;
       }
 
       .card,
@@ -1981,177 +1669,13 @@
         padding:18px;
       }
     }
-
-    @media (prefers-reduced-motion: reduce){
-      *,
-      *::before,
-      *::after{
-        scroll-behavior:auto !important;
-        transition:none !important;
-      }
-    }
-
-    body.high-contrast{
-      background:#000000 !important;
-      color:#ffffff !important;
-    }
-
-    body.high-contrast *{
-      box-shadow:none !important;
-      text-shadow:none !important;
-    }
-
-    body.high-contrast header,
-    body.high-contrast .topbar,
-    body.high-contrast section,
-    body.high-contrast .editorial,
-    body.high-contrast .quickfacts,
-    body.high-contrast .methods,
-    body.high-contrast .text-image,
-    body.high-contrast .contact,
-    body.high-contrast .footer,
-    body.high-contrast .quality-wrap,
-    body.high-contrast .faq-section{
-      background:#000000 !important;
-      color:#ffffff !important;
-      border-color:#ffffff !important;
-    }
-
-    body.high-contrast h1,
-    body.high-contrast h2,
-    body.high-contrast h3,
-    body.high-contrast p,
-    body.high-contrast li,
-    body.high-contrast a,
-    body.high-contrast span,
-    body.high-contrast strong,
-    body.high-contrast label{
-      color:#ffffff !important;
-    }
-
-    body.high-contrast .card,
-    body.high-contrast .panel,
-    body.high-contrast .step,
-    body.high-contrast .trust-pill,
-    body.high-contrast .check-list li,
-    body.high-contrast .contact-box,
-    body.high-contrast form,
-    body.high-contrast .contact-link,
-    body.high-contrast .contact-person,
-    body.high-contrast .score,
-    body.high-contrast .photo-caption,
-    body.high-contrast .image-panel-text,
-    body.high-contrast .slide-label,
-    body.high-contrast .floating-card,
-    body.high-contrast .quick-card,
-    body.high-contrast .fact,
-    body.high-contrast .person-row,
-    body.high-contrast .method-card,
-    body.high-contrast .image-note,
-    body.high-contrast .info-card,
-    body.high-contrast .faq-item,
-    body.high-contrast .mini-box,
-    body.high-contrast .process-step,
-    body.high-contrast #siteNav.open{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:2px solid #ffffff !important;
-    }
-
-    body.high-contrast .card *,
-    body.high-contrast .panel *,
-    body.high-contrast .step *,
-    body.high-contrast .trust-pill *,
-    body.high-contrast .check-list li *,
-    body.high-contrast .contact-box *,
-    body.high-contrast form *,
-    body.high-contrast .contact-link *,
-    body.high-contrast .contact-person *,
-    body.high-contrast .score *,
-    body.high-contrast .photo-caption *,
-    body.high-contrast .image-panel-text *,
-    body.high-contrast .slide-label *,
-    body.high-contrast .floating-card *,
-    body.high-contrast .quick-card *,
-    body.high-contrast .fact *,
-    body.high-contrast .person-row *,
-    body.high-contrast .method-card *,
-    body.high-contrast .image-note *,
-    body.high-contrast .info-card *,
-    body.high-contrast .faq-item *,
-    body.high-contrast .mini-box *,
-    body.high-contrast .process-step *,
-    body.high-contrast #siteNav.open *{
-      color:#000000 !important;
-    }
-
-    body.high-contrast .btn,
-    body.high-contrast .tool-btn,
-    body.high-contrast .language-select,
-    body.high-contrast .menu-btn{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:2px solid #ffffff !important;
-    }
-
-    body.high-contrast input,
-    body.high-contrast select,
-    body.high-contrast textarea{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:3px solid #000000 !important;
-    }
-
-    body.high-contrast input::placeholder,
-    body.high-contrast textarea::placeholder{
-      color:#333333 !important;
-    }
-
-    body.high-contrast .step::before,
-    body.high-contrast .check-list li::before,
-    body.high-contrast .process-step::before{
-      background:#000000 !important;
-      color:#ffffff !important;
-      border:2px solid #000000 !important;
-    }
-
-    body.high-contrast .eyebrow,
-    body.high-contrast .badge{
-      background:#ffffff !important;
-      color:#000000 !important;
-      border:2px solid #ffffff !important;
-    }
-
-    body.high-contrast .hero-photo,
-    body.high-contrast .mini-photo,
-    body.high-contrast .image-panel,
-    body.high-contrast .rounded-image,
-    body.high-contrast .photo-slide,
-    body.high-contrast .person-photo{
-      background-color:transparent !important;
-      background-size:cover !important;
-      background-position:center !important;
-      background-repeat:no-repeat !important;
-      background-blend-mode:normal !important;
-      filter:contrast(1.15) brightness(.88) saturate(.95) !important;
-    }
-
-    body.high-contrast .person-photo{
-      border:2px solid #ffffff !important;
-    }
-
-    body.high-contrast #siteNav.open a{
-      background:#ffffff !important;
-      border:2px solid #000000 !important;
-      color:#000000 !important;
-    }
   </style>
 </head>
 
-<body class="theme-warm font-modern">
+<body>
   <a class="skip-link" href="#main" data-sv="Hoppa till innehåll" data-en="Skip to content">Hoppa till innehåll</a>
 
-  <div class="topbar" id="topbar" aria-label="Sidverktyg">
+  <div class="topbar" aria-label="Förhandsvisning och sidverktyg">
     <div class="topbar-inner">
       <span
         data-sv="Förhandsvisning: nytt sidförslag för R3start Växjö"
@@ -2160,63 +1684,46 @@
         Förhandsvisning: nytt sidförslag för R3start Växjö
       </span>
 
-      <div class="tools">
+      <div class="topbar-actions">
         <select class="language-select" id="languageSelect" aria-label="Välj språk">
           <option value="sv" selected>🇸🇪 Svenska</option>
           <option value="en">🇬🇧 English</option>
         </select>
 
-        <div class="tool-group" aria-label="Färgtema">
-          <span class="tool-label" data-sv="Färgtema:" data-en="Colour theme:">Färgtema:</span>
-          <button class="tool-btn theme-btn" type="button" data-theme="warm" aria-pressed="true" data-sv="Varm" data-en="Warm">Varm</button>
-          <button class="tool-btn theme-btn" type="button" data-theme="calm" aria-pressed="false" data-sv="Lugn" data-en="Calm">Lugn</button>
-          <button class="tool-btn theme-btn" type="button" data-theme="light" aria-pressed="false" data-sv="Ljus" data-en="Light">Ljus</button>
-          <button class="tool-btn theme-btn" type="button" data-theme="dark" aria-pressed="false" data-sv="Mörk" data-en="Dark">Mörk</button>
-        </div>
-
-        <div class="tool-group" aria-label="Textstil">
-          <span class="tool-label" data-sv="Textstil:" data-en="Text style:">Textstil:</span>
-          <button class="tool-btn font-btn" type="button" data-font="modern" aria-pressed="true" data-sv="Modern" data-en="Modern">Modern</button>
-          <button class="tool-btn font-btn" type="button" data-font="soft" aria-pressed="false" data-sv="Mjuk" data-en="Soft">Mjuk</button>
-          <button class="tool-btn font-btn" type="button" data-font="clear" aria-pressed="false" data-sv="Tydlig" data-en="Clear">Tydlig</button>
-          <button class="tool-btn font-btn" type="button" data-font="authority" aria-pressed="false" data-sv="Myndig" data-en="Authority">Myndig</button>
-        </div>
-
-        <button class="tool-btn" type="button" id="readPage" data-label-sv="Läs kort sammanfattning" data-label-en="Read short summary">
-          Läs kort sammanfattning
-        </button>
-
-        <button class="tool-btn" type="button" id="increaseText" aria-pressed="false" data-off-sv="Större text" data-on-sv="Normal textstorlek" data-off-en="Larger text" data-on-en="Normal text size">
-          Större text
-        </button>
-
-        <button class="tool-btn" type="button" id="contrastToggle" aria-pressed="false" data-off-sv="Hög kontrast" data-on-sv="Normal kontrast" data-off-en="High contrast" data-on-en="Normal contrast">
-          Hög kontrast
-        </button>
+        <a
+          class="preview-link"
+          href="https://webutvecklare.se/uppdatera.html"
+          target="_blank"
+          rel="noopener"
+          data-sv="Lämna feedback på sidan"
+          data-en="Leave feedback on the page"
+        >
+          Lämna feedback på sidan
+        </a>
       </div>
     </div>
   </div>
 
-  <header id="siteHeader">
+  <header>
     <div class="nav">
       <a class="logo" href="#top" aria-label="Till startsidan" id="logoLink">
         <span class="logo-mark">R3</span>
         <span class="logo-text">
           <strong>R3start Växjö</strong>
-          <span data-sv="Stödboende & stödlägenheter" data-en="Supported housing & supported apartments">Stödboende & stödlägenheter</span>
+          <span data-sv="Stödboende & stödlägenheter" data-en="Supported housing & supported apartments">
+            Stödboende & stödlägenheter
+          </span>
         </span>
       </a>
 
       <nav id="siteNav" aria-label="Huvudmeny">
-        <ul>
+        <ul class="nav-links">
           <li><a href="#snabbfakta" data-sv="Snabbfakta" data-en="Quick facts">Snabbfakta</a></li>
           <li><a href="#om" data-sv="Om verksamheten" data-en="About">Om verksamheten</a></li>
           <li><a href="#malgrupp" data-sv="Målgrupp" data-en="Target group">Målgrupp</a></li>
           <li><a href="#arbetssatt" data-sv="Arbetssätt" data-en="Approach">Arbetssätt</a></li>
-          <li><a href="#miljo" data-sv="Fysisk miljö" data-en="Physical environment">Fysisk miljö</a></li>
           <li><a href="#placering" data-sv="Placeringsflöde" data-en="Placement flow">Placeringsflöde</a></li>
           <li><a href="#kvalitet" data-sv="Kvalitet" data-en="Quality">Kvalitet</a></li>
-          <li><a href="#faq" data-sv="Frågor" data-en="FAQ">Frågor</a></li>
           <li><a href="#kontakt" data-sv="Kontakt" data-en="Contact">Kontakt</a></li>
         </ul>
       </nav>
@@ -2250,25 +1757,12 @@
           </p>
 
           <div class="hero-actions">
-  <a class="btn btn-primary" href="#kontakt" data-sv="Gör placeringsförfrågan" data-en="Submit placement enquiry">Gör placeringsförfrågan</a>
-
-  <a
-    class="btn btn-gold"
-    href="https://webutvecklare.se/uppdatera.html"
-    target="_blank"
-    rel="noopener"
-    data-sv="Lämna feedback på sidan"
-    data-en="Leave feedback on the page"
-  >
-    Lämna feedback på sidan
-  </a>
-
-  <a class="btn btn-secondary" href="#snabbfakta" data-sv="Se snabbfakta" data-en="See quick facts">Se snabbfakta</a>
-
-  <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
-    Ladda ner informationsblad
-  </button>
-</div>
+            <a class="btn btn-primary" href="#kontakt" data-sv="Gör placeringsförfrågan" data-en="Submit placement enquiry">Gör placeringsförfrågan</a>
+            <a class="btn btn-secondary" href="#snabbfakta" data-sv="Se snabbfakta" data-en="See quick facts">Se snabbfakta</a>
+            <button class="btn btn-gold download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
+              Ladda ner informationsblad
+            </button>
+          </div>
 
           <div class="trust-row" aria-label="Förtroendepunkter">
             <div class="trust-pill">
@@ -2291,8 +1785,8 @@
         <div class="hero-visual" aria-label="Bild från Växjö">
           <div class="floating-card">
             <strong>9,7</strong>
-            <span data-sv="av 10 i kvalitetsindex. En signal som bör synas direkt." data-en="out of 10 in the quality index. A trust signal that should be visible immediately.">
-              av 10 i kvalitetsindex. En signal som bör synas direkt.
+            <span data-sv="av 10 i kvalitetsindex. En förtroendesignal som bör synas direkt." data-en="out of 10 in the quality index. A trust signal that should be visible immediately.">
+              av 10 i kvalitetsindex. En förtroendesignal som bör synas direkt.
             </span>
           </div>
 
@@ -2308,8 +1802,6 @@
               </div>
             </div>
           </div>
-
-          <div class="mini-photo" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -2634,15 +2126,6 @@
               <strong data-sv="Sjöstadskänsla" data-en="Lake city feeling">Sjöstadskänsla</strong>
               <span data-sv="Vatten och grönska passar sidans lugna ton." data-en="Water and greenery fit the calm tone of the page.">
                 Vatten och grönska passar sidans lugna ton.
-              </span>
-            </div>
-          </article>
-
-          <article class="photo-slide" style='background-image:linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)), url("https://commons.wikimedia.org/wiki/Special:Redirect/file/V%C3%A4xj%C3%B6%20Domkyrka%2C%2020220806.jpg");'>
-            <div class="slide-label">
-              <strong data-sv="Växjö centrum" data-en="Växjö city centre">Växjö centrum</strong>
-              <span data-sv="Bra för trovärdighet och igenkänning." data-en="Good for credibility and recognition.">
-                Bra för trovärdighet och igenkänning.
               </span>
             </div>
           </article>
@@ -2981,17 +2464,17 @@
 
           <div class="contact-links">
             <a class="contact-link" href="tel:+46793594686">
-              <span style="font-size:1rem;font-weight:950;color:var(--ink);" data-sv="Simon: 0793-594686" data-en="Simon: 0793-594686">Simon: 0793-594686</span>
+              <strong data-sv="Simon: 0793-594686" data-en="Simon: 0793-594686">Simon: 0793-594686</strong>
               <span data-sv="Ring vid frågor eller placeringsförfrågan" data-en="Call with questions or placement enquiries">Ring vid frågor eller placeringsförfrågan</span>
             </a>
 
             <a class="contact-link" href="mailto:info@r3start.se">
-              <span style="font-size:1rem;font-weight:950;color:var(--ink);">info@r3start.se</span>
+              <strong>info@r3start.se</strong>
               <span data-sv="Förfrågningar och samarbete" data-en="Enquiries and collaboration">Förfrågningar och samarbete</span>
             </a>
 
             <a class="contact-link" href="https://r3start.se" target="_blank" rel="noopener">
-              <span style="font-size:1rem;font-weight:950;color:var(--ink);">r3start.se</span>
+              <strong>r3start.se</strong>
               <span data-sv="Nuvarande webbplats" data-en="Current website">Nuvarande webbplats</span>
             </a>
           </div>
@@ -3000,12 +2483,12 @@
         <form action="#" method="post" aria-label="Kontaktformulär" id="contactForm">
           <div class="form-grid">
             <div class="field">
-              <label for="name" data-sv="Namn" data-en="Name">Namn</label>
+              <label for="name" data-sv="Namn *" data-en="Name *">Namn *</label>
               <input id="name" name="name" autocomplete="name" required />
             </div>
 
             <div class="field">
-              <label for="role" data-sv="Jag kontaktar som" data-en="I am contacting as">Jag kontaktar som</label>
+              <label for="role" data-sv="Jag kontaktar som *" data-en="I am contacting as *">Jag kontaktar som *</label>
               <select id="role" name="role" required>
                 <option value="" data-sv="Välj alternativ" data-en="Select option">Välj alternativ</option>
                 <option data-sv="Socialtjänst / kommun" data-en="Social services / municipality">Socialtjänst / kommun</option>
@@ -3016,7 +2499,7 @@
             </div>
 
             <div class="field">
-              <label for="email" data-sv="E-post" data-en="Email">E-post</label>
+              <label for="email" data-sv="E-post *" data-en="Email *">E-post *</label>
               <input id="email" name="email" type="email" autocomplete="email" required />
             </div>
 
@@ -3048,6 +2531,8 @@
             </div>
           </div>
 
+          <div class="form-status" aria-live="polite"></div>
+
           <div class="form-actions">
             <button class="btn btn-primary" type="submit" data-sv="Skicka förfrågan" data-en="Send enquiry">Skicka förfrågan</button>
             <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
@@ -3076,20 +2561,7 @@
       </div>
 
       <div class="footer-right">
-        <div class="socials" aria-label="Sociala medier">
-          <a class="social-icon facebook" href="https://r3start.se" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6H16V4.8c-.2 0-.9-.1-1.8-.1-2.6 0-4.2 1.5-4.2 4.3V11H7.5v3H10v7h3.5z"/></svg>
-          </a>
-
-          <a class="social-icon instagram" href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9zm9.6 1.5a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1zM12 7.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 1.8A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1z"/></svg>
-          </a>
-
-          <a class="social-icon linkedin" href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3A1.6 1.6 0 1 1 5.2 5a1.6 1.6 0 0 1 0 3.3zM3.8 9.7h2.9V20H3.8V9.7zm4.8 0h2.8v1.4h.1c.4-.8 1.4-1.7 2.8-1.7 3 0 3.5 2 3.5 4.5V20H15v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20H8.6V9.7z"/></svg>
-          </a>
-        </div>
-
+        <a class="btn btn-secondary" href="#kontakt" data-sv="Kontakt" data-en="Contact">Kontakt</a>
         <button class="btn btn-secondary download-brochure" type="button" data-sv="Ladda ner informationsblad" data-en="Download information sheet">
           Ladda ner informationsblad
         </button>
@@ -3098,29 +2570,14 @@
   </footer>
 
   <script>
-    const body = document.body;
-    const root = document.documentElement;
-    const topbar = document.getElementById("topbar");
-    const siteHeader = document.getElementById("siteHeader");
     const menuBtn = document.getElementById("menuBtn");
     const siteNav = document.getElementById("siteNav");
-    const contrastToggle = document.getElementById("contrastToggle");
-    const readPage = document.getElementById("readPage");
     const languageSelect = document.getElementById("languageSelect");
-    const increaseText = document.getElementById("increaseText");
     const form = document.getElementById("contactForm");
     const imageStrip = document.getElementById("imageStrip");
     const galleryPrev = document.getElementById("galleryPrev");
     const galleryNext = document.getElementById("galleryNext");
     const downloadButtons = document.querySelectorAll(".download-brochure");
-    const themeButtons = document.querySelectorAll(".theme-btn");
-    const fontButtons = document.querySelectorAll(".font-btn");
-
-    const STORAGE_TEXT = "r3startPreviewTextSize";
-    const STORAGE_CONTRAST = "r3startPreviewContrast";
-    const STORAGE_LANG = "r3startPreviewLanguage";
-    const STORAGE_THEME = "r3startPreviewTheme";
-    const STORAGE_FONT = "r3startPreviewFont";
 
     const META = {
       sv: {
@@ -3137,16 +2594,11 @@
       }
     };
 
-    const SUMMARIES = {
-      sv: "R3start Växjö erbjuder stödboende, stödlägenheter, externt stöd och akutplaceringar för vuxna i social utsatthet. Sidan riktar sig till socialtjänst, kommuner, placerare och anhöriga som snabbt behöver förstå målgrupp, placeringsformer, arbetssätt, insatser, kvalitet och kontaktvägar. Verksamheten har 10 platser i Växjö och lyfter SSIL Kvalitetsindex 9,7 av 10 från hösten 2025.",
-      en: "R3start Växjö offers supported housing, supported apartments, external support and emergency placements for adults in social vulnerability. The page is aimed at social services, municipalities, placement officers and relatives who need to quickly understand target group, placement types, approach, support services, quality and contact options. The organisation has 10 places in Växjö and highlights an SSIL Quality Index score of 9.7 out of 10 from autumn 2025."
-    };
-
-    let currentLang = localStorage.getItem(STORAGE_LANG) || "sv";
+    let currentLang = localStorage.getItem("r3startPreviewLanguage") || "sv";
 
     function updateMeta(lang){
       const meta = META[lang] || META.sv;
-      document.documentElement.lang = lang;
+      document.documentElement.lang = lang === "en" ? "en" : "sv-SE";
       document.title = meta.title;
 
       const description = document.querySelector('meta[name="description"]');
@@ -3158,131 +2610,86 @@
       if(ogDescription) ogDescription.setAttribute("content", meta.ogDescription);
     }
 
-    function translateStaticContent(lang){
-      document.querySelectorAll("[data-sv][data-en]").forEach(el => {
-        if(el.tagName === "OPTION"){
-          el.textContent = el.dataset[lang];
+    function applyLanguage(lang){
+      currentLang = lang === "en" ? "en" : "sv";
+      localStorage.setItem("r3startPreviewLanguage", currentLang);
+
+      if(languageSelect){
+        languageSelect.value = currentLang;
+      }
+
+      document.querySelectorAll("[data-sv][data-en]").forEach((element) => {
+        const value = currentLang === "en" ? element.dataset.en : element.dataset.sv;
+
+        if(element.tagName === "OPTION"){
+          element.textContent = value;
           return;
         }
 
-        if(!el.matches("input, textarea") && el.children.length === 0){
-          el.textContent = el.dataset[lang];
+        if(element.children.length === 0){
+          element.textContent = value;
         }
       });
 
-      document.querySelectorAll("[data-placeholder-sv][data-placeholder-en]").forEach(el => {
-        el.placeholder = lang === "en" ? el.dataset.placeholderEn : el.dataset.placeholderSv;
+      document.querySelectorAll("[data-placeholder-sv][data-placeholder-en]").forEach((element) => {
+        element.placeholder = currentLang === "en" ? element.dataset.placeholderEn : element.dataset.placeholderSv;
       });
-
-      const logoLink = document.getElementById("logoLink");
-      if(logoLink) logoLink.setAttribute("aria-label", lang === "en" ? "To start page" : "Till startsidan");
-
-      const topbarElement = document.querySelector(".topbar");
-      if(topbarElement) topbarElement.setAttribute("aria-label", lang === "en" ? "Page tools" : "Sidverktyg");
-
-      if(siteNav) siteNav.setAttribute("aria-label", lang === "en" ? "Main menu" : "Huvudmeny");
-      if(imageStrip) imageStrip.setAttribute("aria-label", lang === "en" ? "Image gallery" : "Bildgalleri");
-      if(form) form.setAttribute("aria-label", lang === "en" ? "Contact form" : "Kontaktformulär");
-
-      const socials = document.querySelector(".socials");
-      if(socials) socials.setAttribute("aria-label", lang === "en" ? "Social media" : "Sociala medier");
-
-      if(galleryPrev) galleryPrev.setAttribute("aria-label", lang === "en" ? "Previous images" : "Föregående bilder");
-      if(galleryNext) galleryNext.setAttribute("aria-label", lang === "en" ? "Next images" : "Nästa bilder");
-
-      updateMeta(lang);
-    }
-
-    function syncToolLabels(){
-      if(increaseText){
-        const isLarge = root.classList.contains("large-text");
-        increaseText.textContent = currentLang === "en"
-          ? (isLarge ? increaseText.dataset.onEn : increaseText.dataset.offEn)
-          : (isLarge ? increaseText.dataset.onSv : increaseText.dataset.offSv);
-        increaseText.setAttribute("aria-pressed", isLarge ? "true" : "false");
-      }
-
-      if(contrastToggle){
-        const isHighContrast = body.classList.contains("high-contrast");
-        contrastToggle.textContent = currentLang === "en"
-          ? (isHighContrast ? contrastToggle.dataset.onEn : contrastToggle.dataset.offEn)
-          : (isHighContrast ? contrastToggle.dataset.onSv : contrastToggle.dataset.offSv);
-        contrastToggle.setAttribute("aria-pressed", isHighContrast ? "true" : "false");
-      }
-
-      if(readPage){
-        const isSpeaking = "speechSynthesis" in window && window.speechSynthesis.speaking;
-        readPage.textContent = isSpeaking
-          ? (currentLang === "en" ? "Stop reading" : "Stoppa uppläsning")
-          : (currentLang === "en" ? readPage.dataset.labelEn : readPage.dataset.labelSv);
-      }
 
       if(menuBtn){
         menuBtn.textContent = currentLang === "en" ? menuBtn.dataset.en : menuBtn.dataset.sv;
       }
-    }
 
-    function applyLanguage(lang){
-      currentLang = lang === "en" ? "en" : "sv";
-      localStorage.setItem(STORAGE_LANG, currentLang);
-      if(languageSelect) languageSelect.value = currentLang;
-      translateStaticContent(currentLang);
-      syncToolLabels();
-    }
-
-    function setLargeText(isLarge){
-      root.classList.toggle("large-text", isLarge);
-      localStorage.setItem(STORAGE_TEXT, isLarge ? "large" : "normal");
-      syncToolLabels();
-    }
-
-    function setHighContrast(isHighContrast){
-      body.classList.toggle("high-contrast", isHighContrast);
-      localStorage.setItem(STORAGE_CONTRAST, isHighContrast ? "high" : "normal");
-      syncToolLabels();
-    }
-
-    function setTheme(theme){
-      const safeTheme = ["warm", "calm", "light", "dark"].includes(theme) ? theme : "warm";
-
-      body.classList.remove("theme-warm", "theme-calm", "theme-light", "theme-dark");
-      body.classList.add("theme-" + safeTheme);
-
-      localStorage.setItem(STORAGE_THEME, safeTheme);
-
-      themeButtons.forEach(btn => {
-        const isActive = btn.dataset.theme === safeTheme;
-        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
-    }
-
-    function setFontStyle(font){
-      const safeFont = ["modern", "soft", "clear", "authority"].includes(font) ? font : "modern";
-
-      body.classList.remove("font-modern", "font-soft", "font-clear", "font-authority");
-      body.classList.add("font-" + safeFont);
-
-      localStorage.setItem(STORAGE_FONT, safeFont);
-
-      fontButtons.forEach(btn => {
-        const isActive = btn.dataset.font === safeFont;
-        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
-    }
-
-    function updateFixedHeader(){
-      if(!siteHeader) return;
-
-      const topbarHeight = topbar ? topbar.offsetHeight : 0;
-      const headerHeight = siteHeader.offsetHeight;
-
-      root.style.setProperty("--header-offset", headerHeight + "px");
-
-      if(window.scrollY > topbarHeight){
-        body.classList.add("header-fixed");
-      }else{
-        body.classList.remove("header-fixed");
+      if(siteNav){
+        siteNav.setAttribute("aria-label", currentLang === "en" ? "Main menu" : "Huvudmeny");
       }
+
+      if(galleryPrev){
+        galleryPrev.setAttribute("aria-label", currentLang === "en" ? "Previous images" : "Föregående bilder");
+      }
+
+      if(galleryNext){
+        galleryNext.setAttribute("aria-label", currentLang === "en" ? "Next images" : "Nästa bilder");
+      }
+
+      if(form){
+        form.setAttribute("aria-label", currentLang === "en" ? "Contact form" : "Kontaktformulär");
+      }
+
+      updateMeta(currentLang);
+    }
+
+    if(languageSelect){
+      languageSelect.addEventListener("change", () => {
+        applyLanguage(languageSelect.value);
+      });
+    }
+
+    if(menuBtn && siteNav){
+      menuBtn.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      siteNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if(!siteNav.contains(event.target) && !menuBtn.contains(event.target)){
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape"){
+          siteNav.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
     }
 
     function getSlideWidth(){
@@ -3312,9 +2719,23 @@
       });
     }
 
+    if(galleryPrev){
+      galleryPrev.addEventListener("click", () => scrollGallery(-1));
+    }
+
+    if(galleryNext){
+      galleryNext.addEventListener("click", () => scrollGallery(1));
+    }
+
+    if(imageStrip){
+      imageStrip.addEventListener("scroll", updateGalleryButtons);
+      window.addEventListener("resize", updateGalleryButtons);
+      window.addEventListener("load", updateGalleryButtons);
+    }
+
     function downloadBrochure(){
       const brochureHtml = `<!doctype html>
-<html lang="sv">
+<html lang="sv-SE">
 <head>
   <meta charset="UTF-8">
   <title>R3start Växjö – Informationsblad</title>
@@ -3584,161 +3005,45 @@
       URL.revokeObjectURL(url);
     }
 
-    if(languageSelect){
-      languageSelect.addEventListener("change", function(){
-        applyLanguage(this.value);
-      });
-    }
-
-    if(menuBtn && siteNav){
-      menuBtn.addEventListener("click", () => {
-        const isOpen = siteNav.classList.toggle("open");
-        menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-
-      siteNav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          siteNav.classList.remove("open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
-      });
-
-      document.addEventListener("click", (event) => {
-        const clickedInsideMenu = siteNav.contains(event.target);
-        const clickedMenuButton = menuBtn.contains(event.target);
-
-        if(!clickedInsideMenu && !clickedMenuButton){
-          siteNav.classList.remove("open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if(event.key === "Escape"){
-          siteNav.classList.remove("open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        }
-      });
-    }
-
-    themeButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        setTheme(btn.dataset.theme);
-      });
+    downloadButtons.forEach((button) => {
+      button.addEventListener("click", downloadBrochure);
     });
-
-    fontButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        setFontStyle(btn.dataset.font);
-      });
-    });
-
-    if(increaseText){
-      increaseText.addEventListener("click", () => {
-        setLargeText(!root.classList.contains("large-text"));
-      });
-    }
-
-    if(contrastToggle){
-      contrastToggle.addEventListener("click", () => {
-        setHighContrast(!body.classList.contains("high-contrast"));
-      });
-    }
-
-    if(readPage){
-      readPage.addEventListener("click", () => {
-        if(!("speechSynthesis" in window)){
-          alert(currentLang === "en" ? "Your browser does not support text-to-speech." : "Din webbläsare stödjer inte uppläsning.");
-          return;
-        }
-
-        if(window.speechSynthesis.speaking){
-          window.speechSynthesis.cancel();
-          syncToolLabels();
-          return;
-        }
-
-        const utterance = new SpeechSynthesisUtterance(SUMMARIES[currentLang] || SUMMARIES.sv);
-        utterance.lang = currentLang === "en" ? "en-GB" : "sv-SE";
-        utterance.rate = currentLang === "en" ? 0.94 : 0.92;
-        utterance.onend = () => syncToolLabels();
-        utterance.onerror = () => syncToolLabels();
-
-        window.speechSynthesis.speak(utterance);
-        syncToolLabels();
-      });
-    }
 
     if(form){
-      form.addEventListener("submit", function(event){
+      const statusBox = form.querySelector(".form-status");
+
+      form.addEventListener("submit", (event) => {
         event.preventDefault();
-        alert(currentLang === "en"
-          ? "Preview form. In the final version, the enquiry is sent onward."
-          : "Förhandsvisning. I färdig version skickas förfrågan vidare."
-        );
+
+        if(!form.checkValidity()){
+          if(statusBox){
+            statusBox.className = "form-status is-visible";
+            statusBox.textContent = currentLang === "en"
+              ? "Please fill in the required fields first."
+              : "Fyll i de obligatoriska fälten först.";
+          }
+
+          form.reportValidity();
+          return;
+        }
+
+        if(statusBox){
+          statusBox.className = "form-status is-visible";
+          statusBox.textContent = currentLang === "en"
+            ? "Preview form. In the final version, the enquiry is sent onward."
+            : "Förhandsvisning. I färdig version skickas förfrågan vidare.";
+        }
+      });
+
+      form.addEventListener("input", () => {
+        if(statusBox && statusBox.classList.contains("is-visible")){
+          statusBox.className = "form-status";
+          statusBox.textContent = "";
+        }
       });
     }
 
-    downloadButtons.forEach(btn => {
-      btn.addEventListener("click", downloadBrochure);
-    });
-
-    if(galleryPrev){
-      galleryPrev.addEventListener("click", () => scrollGallery(-1));
-    }
-
-    if(galleryNext){
-      galleryNext.addEventListener("click", () => scrollGallery(1));
-    }
-
-    if(imageStrip){
-      let isDown = false;
-      let startX = 0;
-      let scrollLeft = 0;
-
-      imageStrip.addEventListener("mousedown", (e) => {
-        isDown = true;
-        startX = e.pageX - imageStrip.offsetLeft;
-        scrollLeft = imageStrip.scrollLeft;
-      });
-
-      imageStrip.addEventListener("mouseleave", () => {
-        isDown = false;
-      });
-
-      imageStrip.addEventListener("mouseup", () => {
-        isDown = false;
-      });
-
-      imageStrip.addEventListener("mousemove", (e) => {
-        if(!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - imageStrip.offsetLeft;
-        const walk = (x - startX) * 1.2;
-        imageStrip.scrollLeft = scrollLeft - walk;
-      });
-
-      imageStrip.addEventListener("scroll", updateGalleryButtons);
-    }
-
-    window.addEventListener("scroll", updateFixedHeader, { passive:true });
-
-    window.addEventListener("resize", () => {
-      updateFixedHeader();
-      updateGalleryButtons();
-    });
-
-    window.addEventListener("load", () => {
-      updateFixedHeader();
-      updateGalleryButtons();
-    });
-
-    setTheme(localStorage.getItem(STORAGE_THEME) || "warm");
-    setFontStyle(localStorage.getItem(STORAGE_FONT) || "modern");
-    setLargeText(localStorage.getItem(STORAGE_TEXT) === "large");
-    setHighContrast(localStorage.getItem(STORAGE_CONTRAST) === "high");
     applyLanguage(currentLang);
-    updateFixedHeader();
     updateGalleryButtons();
   </script>
 </body>
