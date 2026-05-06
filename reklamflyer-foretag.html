@@ -282,7 +282,9 @@
       --tap:48px;
     }
 
-    *{box-sizing:border-box;}
+    *{
+      box-sizing:border-box;
+    }
 
     html{
       scroll-behavior:smooth;
@@ -691,11 +693,46 @@
 
     .card-img{
       border-radius:22px;
-      margin:18px 0;
+      margin:18px auto;
       box-shadow:0 16px 38px rgba(36,30,26,.08);
       width:100%;
-      object-fit:cover;
+      max-width:320px;
+      max-height:520px;
+      object-fit:contain;
       background:#fff;
+    }
+
+    .flyer-showcase{
+      display:grid;
+      grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+      gap:18px;
+      align-items:start;
+    }
+
+    .flyer-frame{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:14px;
+      box-shadow:0 18px 44px rgba(36,30,26,.08);
+      margin:18px 0 0;
+    }
+
+    .flyer-frame img{
+      width:100%;
+      max-width:300px;
+      max-height:520px;
+      margin:auto;
+      object-fit:contain;
+      border-radius:18px;
+      background:#fff;
+    }
+
+    .flyer-note{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
     }
 
     .tag{
@@ -1149,7 +1186,8 @@
       .hero-grid,
       .grid-2,
       .cta-box,
-      .footer-box{
+      .footer-box,
+      .flyer-showcase{
         grid-template-columns:1fr;
       }
 
@@ -1255,6 +1293,11 @@
       .step{
         padding:18px;
         border-radius:20px;
+      }
+
+      .flyer-frame img{
+        max-width:260px;
+        max-height:460px;
       }
 
       .step{
@@ -1534,47 +1577,62 @@
     </section>
 
     <section class="section" id="exempel">
-      <div class="container grid-2">
-        <article class="card">
-          <span class="tag">Exempel</span>
-          <h2>Min egen reklamflyer till Offroad Bumpis.</h2>
+      <div class="container">
+        <div class="section-head">
+          <h2>Exempel på reklamflyer.</h2>
           <p>
-            Här är ett exempel på en reklamflyer jag tagit fram till mitt eget projekt
-            <strong>Offroad Bumpis</strong>, en bumperball-uthyrning i Skåne.
-            Flyern är gjord för att snabbt visa erbjudandet, känslan och vad kunden ska göra sen.
+            Här visas ett eget exempel i mindre format, så sidan fortfarande känns som en tjänstesida — inte som ett bildgalleri med existentiell kris.
           </p>
+        </div>
 
-          <img
-            class="card-img"
-            src="flyer-bumperballs.PNG"
-            alt="Reklamflyer för Offroad Bumpis med bumperballs för barnkalas och aktivitet i Skåne"
-            width="1200"
-            height="1600"
-            loading="lazy"
-            decoding="async"
-          >
+        <div class="flyer-showcase">
+          <article class="card">
+            <span class="tag">Exempel</span>
+            <h3>Min egen reklamflyer till Offroad Bumpis</h3>
+            <p>
+              Här är ett exempel på en reklamflyer jag tagit fram till mitt eget projekt
+              <strong>Offroad Bumpis</strong>, en bumperball-uthyrning i Skåne.
+            </p>
 
-          <p>
-            Samma typ av upplägg kan användas för företag som vill marknadsföra en tjänst,
-            ett erbjudande, ett event eller en kampanj digitalt eller i tryck.
-          </p>
-        </article>
+            <div class="flyer-frame">
+              <img
+                src="flyer-bumperballs.PNG"
+                alt="Reklamflyer för Offroad Bumpis med bumperballs för barnkalas och aktivitet i Skåne"
+                width="900"
+                height="1400"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
 
-        <article class="card">
-          <span class="tag">För vem</span>
-          <h2>Passar när du behöver material som går att använda direkt.</h2>
-          <p>
-            Reklamflyer passar småföretag och tjänsteföretag som vill se mer professionella ut i sin marknadsföring
-            utan att lägga en hel byråbudget på enklare material.
-          </p>
-          <ul class="list">
-            <li>Småföretag och lokala verksamheter</li>
-            <li>Hantverkare, konsulter och salonger</li>
-            <li>Uthyrningsföretag och eventföretag</li>
-            <li>Personliga varumärken</li>
-            <li>Företag som vill marknadsföra ett erbjudande snabbt</li>
-          </ul>
-        </article>
+            <p class="flyer-note">
+              Exemplet visas som förhandsvisning. En färdig flyer kan anpassas för sociala medier,
+              utskrift, mejl, kampanj eller landningssida.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="tag">För vem</span>
+            <h2>Passar när du behöver material som går att använda direkt.</h2>
+            <p>
+              Reklamflyer passar småföretag och tjänsteföretag som vill se mer professionella ut i sin marknadsföring
+              utan att lägga en hel byråbudget på enklare material.
+            </p>
+
+            <ul class="list">
+              <li>Småföretag och lokala verksamheter</li>
+              <li>Hantverkare, konsulter och salonger</li>
+              <li>Uthyrningsföretag och eventföretag</li>
+              <li>Personliga varumärken</li>
+              <li>Företag som vill marknadsföra ett erbjudande snabbt</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#kontakt">Få eget utkast</a>
+              <a class="btn btn-secondary" href="#pris">Se priser</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
