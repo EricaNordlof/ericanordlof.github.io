@@ -666,12 +666,17 @@
     }
 
     .hero-logo{
-      width:100%;
-      max-width:410px;
-      margin:0 auto 22px;
-      border-radius:22px;
-      box-shadow:0 22px 54px rgba(36,30,26,.18);
-    }
+  width:min(100%,340px);
+  aspect-ratio:1 / 1;
+  height:auto;
+  margin:0 auto 22px;
+  padding:22px;
+  border-radius:22px;
+  object-fit:contain;
+  object-position:center;
+  background:#050505;
+  box-shadow:0 22px 54px rgba(36,30,26,.18);
+}
 
     .mini-steps{
       display:grid;
@@ -1568,10 +1573,16 @@
       }
 
       .hero-logo{
-        max-width:100%;
-        border-radius:18px;
-        margin-bottom:14px;
-      }
+  width:min(100%,320px);
+  aspect-ratio:1 / 1;
+  height:auto;
+  padding:18px;
+  border-radius:18px;
+  margin:0 auto 14px;
+  object-fit:contain;
+  object-position:center;
+  background:#050505;
+}
 
       .mini-step{
         padding:14px;
