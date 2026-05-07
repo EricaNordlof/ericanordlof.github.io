@@ -1189,6 +1189,150 @@
       border:1px solid rgba(154,88,85,.18) !important;
       box-shadow:0 16px 34px rgba(36,30,26,.08) !important;
     }
+
+    /* FIX: säkerställ mörk/gradientbakgrund på kort som har vit text */
+.card.highlight,
+.truth-box.highlight,
+.compare-card.mine,
+.commission-box,
+.form-card,
+.hero-card,
+.cta-box{
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 34%),
+    linear-gradient(145deg,#b86b66 0%, #cd817b 52%, #e4a198 100%) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 26px 70px rgba(154,90,87,.20);
+}
+
+/* FIX: vit text bara på mörka/gradientkort */
+.card.highlight h2,
+.card.highlight h3,
+.card.highlight p,
+.card.highlight li,
+.card.highlight strong,
+.card.highlight span,
+.card.highlight a,
+.truth-box.highlight h2,
+.truth-box.highlight h3,
+.truth-box.highlight p,
+.truth-box.highlight li,
+.truth-box.highlight strong,
+.truth-box.highlight span,
+.truth-box.highlight a,
+.compare-card.mine h2,
+.compare-card.mine h3,
+.compare-card.mine p,
+.compare-card.mine li,
+.compare-card.mine strong,
+.compare-card.mine span,
+.compare-card.mine a,
+.commission-box h2,
+.commission-box h3,
+.commission-box p,
+.commission-box li,
+.commission-box strong,
+.commission-box span,
+.commission-box a,
+.form-card h2,
+.form-card h3,
+.form-card p,
+.form-card li,
+.form-card strong,
+.form-card span,
+.form-card a,
+.hero-card h2,
+.hero-card h3,
+.hero-card p,
+.hero-card li,
+.hero-card strong,
+.hero-card span,
+.hero-card a,
+.cta-box h2,
+.cta-box h3,
+.cta-box p,
+.cta-box li,
+.cta-box strong,
+.cta-box span,
+.cta-box a{
+  color:#fff !important;
+}
+
+/* FIX: taggar på gradientkort */
+.card.highlight .tag,
+.truth-box.highlight .tag,
+.compare-card.mine .tag,
+.commission-box .tag,
+.form-card .tag,
+.hero-card .tag,
+.cta-box .tag{
+  background:rgba(255,255,255,.18) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.22);
+}
+
+/* FIX: chips/listikoner på gradientkort */
+.card.highlight .chip,
+.truth-box.highlight .chip,
+.compare-card.mine .chip,
+.commission-box .chip,
+.form-card .chip,
+.hero-card .chip,
+.cta-box .chip{
+  background:rgba(255,255,255,.18) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.22);
+}
+
+.card.highlight .list li:before,
+.truth-box.highlight .list li:before,
+.compare-card.mine .list li:before,
+.commission-box .list li:before,
+.form-card .list li:before,
+.hero-card .list li:before,
+.cta-box .list li:before{
+  background:rgba(255,255,255,.22) !important;
+  color:#fff !important;
+}
+
+/* FIX: knappar på gradientkort ska fortfarande vara läsbara */
+.card.highlight .btn-light,
+.card.highlight .btn-secondary,
+.truth-box.highlight .btn-light,
+.truth-box.highlight .btn-secondary,
+.compare-card.mine .btn-light,
+.compare-card.mine .btn-secondary,
+.commission-box .btn-light,
+.commission-box .btn-secondary,
+.form-card .btn-light,
+.form-card .btn-secondary,
+.hero-card .btn-light,
+.hero-card .btn-secondary,
+.cta-box .btn-light,
+.cta-box .btn-secondary{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  border:1px solid rgba(154,88,85,.18) !important;
+}
+
+.card.highlight .btn-light *,
+.card.highlight .btn-secondary *,
+.truth-box.highlight .btn-light *,
+.truth-box.highlight .btn-secondary *,
+.compare-card.mine .btn-light *,
+.compare-card.mine .btn-secondary *,
+.commission-box .btn-light *,
+.commission-box .btn-secondary *,
+.form-card .btn-light *,
+.form-card .btn-secondary *,
+.hero-card .btn-light *,
+.hero-card .btn-secondary *,
+.cta-box .btn-light *,
+.cta-box .btn-secondary *{
+  color:#262220 !important;
+}
+
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
