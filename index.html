@@ -1507,6 +1507,102 @@ footer{
   background:linear-gradient(180deg,transparent 0%,rgba(215,127,122,.08) 100%);
 }
 
+/* FIX: synlig text på färgade highlight-kort och CTA-knappar */
+.card.highlight,
+.truth-box.highlight,
+.compare-card.mine,
+.price-card.featured,
+.hero-card,
+.form-card,
+.cta-box{
+  background:
+    radial-gradient(circle at top right,rgba(255,255,255,.24),transparent 34%),
+    linear-gradient(145deg,#aa625e 0%,#d77f7a 50%,#e9a69d 100%) !important;
+  color:#fff !important;
+  box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
+  border-color:rgba(255,255,255,.18) !important;
+}
+
+/* Text i färgade kort ska vara vit */
+.card.highlight h2,
+.card.highlight h3,
+.card.highlight p,
+.card.highlight li,
+.card.highlight a,
+.card.highlight strong,
+.truth-box.highlight h2,
+.truth-box.highlight h3,
+.truth-box.highlight p,
+.truth-box.highlight li,
+.truth-box.highlight strong,
+.compare-card.mine h2,
+.compare-card.mine h3,
+.compare-card.mine p,
+.compare-card.mine li,
+.compare-card.mine strong,
+.price-card.featured h2,
+.price-card.featured h3,
+.price-card.featured p,
+.price-card.featured li,
+.price-card.featured small,
+.price-card.featured strong,
+.hero-card h2,
+.hero-card h3,
+.hero-card p,
+.hero-card li,
+.hero-card strong,
+.hero-card span,
+.cta-box h2,
+.cta-box h3,
+.cta-box p,
+.cta-box strong,
+.cta-box span{
+  color:#fff !important;
+}
+
+/* Vita knappar inuti färgade sektioner måste ha mörk text */
+.cta-box .btn-light,
+.cta-box .btn-secondary,
+.hero-card .btn-light,
+.hero-card .btn-secondary,
+.form-card .btn-light,
+.form-card .btn-secondary{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  border-color:rgba(154,88,85,.18) !important;
+}
+
+/* Säkerställ att all text inuti vita knappar syns */
+.cta-box .btn-light *,
+.cta-box .btn-secondary *,
+.hero-card .btn-light *,
+.hero-card .btn-secondary *,
+.form-card .btn-light *,
+.form-card .btn-secondary *{
+  color:#262220 !important;
+}
+
+/* Tags/chips på färgad bakgrund */
+.card.highlight .tag,
+.truth-box.highlight .tag,
+.compare-card.mine .tag,
+.price-card.featured .tag,
+.hero-card .tag,
+.cta-box .tag{
+  background:rgba(255,255,255,.20) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+}
+
+/* Listbockar i färgade kort */
+.card.highlight .list li:before,
+.truth-box.highlight .list li:before,
+.compare-card.mine .list li:before,
+.price-card.featured .list li:before{
+  background:rgba(255,255,255,.22) !important;
+  color:#fff !important;
+}
+
   </style>
 </head>
 
