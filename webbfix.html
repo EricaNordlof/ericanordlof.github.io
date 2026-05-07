@@ -1123,6 +1123,82 @@
       gap:12px;
       margin-top:6px;
     }
+
+    /* FIX: highlight-kort ska ha gradientbakgrund, inte vit kortbakgrund */
+.card.highlight,
+.truth-box.highlight,
+.price-card.featured{
+  background:
+    radial-gradient(circle at top right,rgba(255,255,255,.24),transparent 34%),
+    linear-gradient(145deg,#b86b66 0%,#cd817b 50%,#e4a198 100%) !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.18) !important;
+  box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
+}
+
+/* FIX: all text på gradientkorten ska vara vit */
+.card.highlight h2,
+.card.highlight h3,
+.card.highlight p,
+.card.highlight li,
+.card.highlight strong,
+.card.highlight span,
+.card.highlight a,
+.truth-box.highlight h2,
+.truth-box.highlight h3,
+.truth-box.highlight p,
+.truth-box.highlight li,
+.truth-box.highlight strong,
+.truth-box.highlight span,
+.truth-box.highlight a,
+.price-card.featured h2,
+.price-card.featured h3,
+.price-card.featured p,
+.price-card.featured li,
+.price-card.featured strong,
+.price-card.featured span,
+.price-card.featured a{
+  color:#fff !important;
+}
+
+/* FIX: taggar på gradientkort */
+.card.highlight .tag,
+.truth-box.highlight .tag,
+.price-card.featured .tag{
+  background:rgba(255,255,255,.20) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+}
+
+/* FIX: bockarna i listorna på gradientkort */
+.card.highlight .list li:before,
+.truth-box.highlight .list li:before,
+.price-card.featured .list li:before{
+  background:rgba(255,255,255,.22) !important;
+  color:#fff !important;
+}
+
+/* FIX: vita knappar inne på gradientkort ska ha mörk text */
+.card.highlight .btn-light,
+.card.highlight .btn-secondary,
+.truth-box.highlight .btn-light,
+.truth-box.highlight .btn-secondary,
+.price-card.featured .btn-light,
+.price-card.featured .btn-secondary{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  border-color:rgba(154,88,85,.18) !important;
+}
+
+.card.highlight .btn-light *,
+.card.highlight .btn-secondary *,
+.truth-box.highlight .btn-light *,
+.truth-box.highlight .btn-secondary *,
+.price-card.featured .btn-light *,
+.price-card.featured .btn-secondary *{
+  color:#262220 !important;
+}
+
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
