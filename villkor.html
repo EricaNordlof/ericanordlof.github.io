@@ -959,6 +959,109 @@
       margin-top:6px;
     }
 
+    /* FIX: highlight-kort ska behålla gradientbakgrund även när de också är card/term-card */
+.term-card.highlight,
+.card.highlight,
+.toc-card.highlight,
+.hero-card,
+.cta-box{
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 34%),
+    linear-gradient(145deg,#b86b66 0%, #cd817b 52%, #e4a198 100%) !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.18) !important;
+  box-shadow:0 26px 70px rgba(154,90,87,.20) !important;
+}
+
+/* FIX: text på gradientkort ska vara vit */
+.term-card.highlight h2,
+.term-card.highlight h3,
+.term-card.highlight p,
+.term-card.highlight li,
+.term-card.highlight strong,
+.term-card.highlight span,
+.term-card.highlight a,
+.card.highlight h2,
+.card.highlight h3,
+.card.highlight p,
+.card.highlight li,
+.card.highlight strong,
+.card.highlight span,
+.card.highlight a,
+.toc-card.highlight h2,
+.toc-card.highlight h3,
+.toc-card.highlight p,
+.toc-card.highlight li,
+.toc-card.highlight strong,
+.toc-card.highlight span,
+.toc-card.highlight a,
+.hero-card h2,
+.hero-card h3,
+.hero-card p,
+.hero-card li,
+.hero-card strong,
+.hero-card span,
+.hero-card a,
+.cta-box h2,
+.cta-box h3,
+.cta-box p,
+.cta-box li,
+.cta-box strong,
+.cta-box span,
+.cta-box a{
+  color:#fff !important;
+}
+
+/* FIX: taggar på gradientkort */
+.term-card.highlight .tag,
+.card.highlight .tag,
+.toc-card.highlight .tag,
+.hero-card .tag,
+.cta-box .tag{
+  background:rgba(255,255,255,.18) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+}
+
+/* FIX: listbockar på gradientkort */
+.term-card.highlight .list li:before,
+.card.highlight .list li:before,
+.toc-card.highlight .list li:before,
+.hero-card .list li:before,
+.cta-box .list li:before{
+  background:rgba(255,255,255,.22) !important;
+  color:#fff !important;
+}
+
+/* FIX: vita knappar inne i gradientkort ska ha mörk text */
+.term-card.highlight .btn-light,
+.term-card.highlight .btn-secondary,
+.card.highlight .btn-light,
+.card.highlight .btn-secondary,
+.toc-card.highlight .btn-light,
+.toc-card.highlight .btn-secondary,
+.hero-card .btn-light,
+.hero-card .btn-secondary,
+.cta-box .btn-light,
+.cta-box .btn-secondary{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  border-color:rgba(154,90,87,.18) !important;
+}
+
+.term-card.highlight .btn-light *,
+.term-card.highlight .btn-secondary *,
+.card.highlight .btn-light *,
+.card.highlight .btn-secondary *,
+.toc-card.highlight .btn-light *,
+.toc-card.highlight .btn-secondary *,
+.hero-card .btn-light *,
+.hero-card .btn-secondary *,
+.cta-box .btn-light *,
+.cta-box .btn-secondary *{
+  color:#262220 !important;
+}
+
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
