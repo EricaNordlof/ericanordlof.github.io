@@ -1172,6 +1172,96 @@
         font-size:13px;
       }
     }
+
+    /* FIX: Gradientkort ska behålla färgad bakgrund och vit text */
+.card.is-gradient,
+.truth-box.is-gradient,
+.policy-card.is-gradient,
+.cta-box,
+.hero-card{
+  background:
+    radial-gradient(circle at top right,rgba(255,255,255,.24),transparent 34%),
+    linear-gradient(145deg,#aa625e 0%,#d77f7a 50%,#e9a69d 100%) !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.18) !important;
+  box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
+}
+
+/* All text i gradientkort ska vara synlig */
+.card.is-gradient *,
+.truth-box.is-gradient *,
+.policy-card.is-gradient *,
+.cta-box *,
+.hero-card *{
+  color:#fff !important;
+}
+
+/* Vita knappar i gradientytor ska ha mörk text */
+.card.is-gradient .btn,
+.truth-box.is-gradient .btn,
+.policy-card.is-gradient .btn,
+.cta-box .btn,
+.hero-card .btn{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  border-color:rgba(154,88,85,.18) !important;
+}
+
+.card.is-gradient .btn *,
+.truth-box.is-gradient .btn *,
+.policy-card.is-gradient .btn *,
+.cta-box .btn *,
+.hero-card .btn *{
+  color:#262220 !important;
+}
+
+/* Tags på gradientkort */
+.card.is-gradient .tag,
+.truth-box.is-gradient .tag,
+.policy-card.is-gradient .tag,
+.cta-box .tag,
+.hero-card .tag{
+  background:rgba(255,255,255,.20) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+}
+
+/* Bockarna i listor på gradientkort */
+.card.is-gradient .list li:before,
+.truth-box.is-gradient .list li:before,
+.policy-card.is-gradient .list li:before,
+.cta-box .list li:before,
+.hero-card .list li:before{
+  background:rgba(255,255,255,.22) !important;
+  color:#fff !important;
+}
+
+/* Kontaktkorten under CTA ska inte bli osynliga */
+.contact-row .contact-mini{
+  background:#fffdfc !important;
+  border:1px solid rgba(154,88,85,.13) !important;
+  color:#262220 !important;
+  box-shadow:0 18px 48px rgba(154,88,85,.12) !important;
+}
+
+.contact-row .contact-mini *,
+.contact-row .contact-mini a,
+.contact-row .contact-mini strong{
+  color:#262220 !important;
+}
+
+/* Kontaktkorten inne i gradientsektion, om de ligger där */
+.cta-box .contact-mini{
+  background:rgba(255,255,255,.16) !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+}
+
+.cta-box .contact-mini *,
+.cta-box .contact-mini a,
+.cta-box .contact-mini strong{
+  color:#fff !important;
+}
+
   </style>
 </head>
 
