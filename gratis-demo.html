@@ -1471,6 +1471,59 @@
       overflow-wrap:break-word;
     }
 
+    /* FIX: gör knapptext synlig på vita knappar inne i gradientkort */
+.hero-card .btn-light,
+.hero-card .btn-secondary,
+.form-card .btn-light,
+.form-card .btn-secondary,
+.cta-box .btn-light,
+.cta-box .btn-secondary,
+.card.highlight .btn-light,
+.card.highlight .btn-secondary,
+.truth-box.highlight .btn-light,
+.truth-box.highlight .btn-secondary,
+.price-card.featured .btn-light,
+.price-card.featured .btn-secondary{
+  background:var(--card) !important;
+  color:var(--text) !important;
+  border-color:var(--line) !important;
+}
+
+/* Viktigt: även text/spans inuti knappen ska bli mörka */
+.hero-card .btn-light *,
+.hero-card .btn-secondary *,
+.form-card .btn-light *,
+.form-card .btn-secondary *,
+.cta-box .btn-light *,
+.cta-box .btn-secondary *,
+.card.highlight .btn-light *,
+.card.highlight .btn-secondary *,
+.truth-box.highlight .btn-light *,
+.truth-box.highlight .btn-secondary *,
+.price-card.featured .btn-light *,
+.price-card.featured .btn-secondary *{
+  color:var(--text) !important;
+}
+
+/* Primärknappar på gradient ska fortsatt vara vita i texten */
+.hero-card .btn-primary,
+.form-card .btn-primary,
+.cta-box .btn-primary,
+.card.highlight .btn-primary,
+.truth-box.highlight .btn-primary,
+.price-card.featured .btn-primary{
+  color:#fff !important;
+}
+
+.hero-card .btn-primary *,
+.form-card .btn-primary *,
+.cta-box .btn-primary *,
+.card.highlight .btn-primary *,
+.truth-box.highlight .btn-primary *,
+.price-card.featured .btn-primary *{
+  color:#fff !important;
+}
+
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
