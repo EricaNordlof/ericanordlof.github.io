@@ -1771,6 +1771,244 @@
         max-height:calc(100dvh - 78px - env(safe-area-inset-bottom));
       }
     }
+
+    /* SOFT CONTRAST FIX – same design as the English page */
+:root{
+  --text:#262220;
+  --muted:#5b524d;
+  --line:rgba(38,34,32,.14);
+
+  --brand:#cf7d78;
+  --brand-dark:#b56a66;
+  --brand-deep:#9a5a57;
+
+  --soft:#fff8f7;
+  --shadow:0 18px 50px rgba(38,34,32,.09);
+}
+
+/* Cleaner, lighter background */
+body{
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(207,125,120,.12), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(181,106,102,.08), transparent 24%),
+    linear-gradient(180deg,#fbf6f4 0%,#f3ece8 100%);
+}
+
+/* Normal text */
+p,
+.lead,
+.section-head p,
+.card p,
+.problem-box p,
+.truth-box p,
+.compare-card p,
+.script-box p,
+.faq p,
+.timeline-item span,
+.note,
+.proof-pill span,
+.brand span span,
+.mobile-menu-brand span{
+  color:var(--muted);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+strong,
+.card h3,
+.compare-card h3,
+.script-box h3,
+.timeline-item strong,
+.proof-pill,
+.quick-item strong,
+.quote-box p{
+  color:var(--text);
+}
+
+/* Standard cards */
+.card,
+.problem-box,
+.truth-box,
+.compare-card,
+.script-box,
+.faq details,
+.quick-item,
+.proof-pill,
+.timeline-item,
+.quote-box{
+  background:#fffdfc;
+  border-color:rgba(38,34,32,.10);
+  box-shadow:0 16px 40px rgba(38,34,32,.08);
+}
+
+/* Quote box */
+.quote-box{
+  background:#fff6f4;
+}
+
+.quote-box strong{
+  color:#9a5a57;
+}
+
+/* Tags and chips */
+.tag,
+.chip{
+  background:#f3dfdc;
+  color:#8a514e;
+}
+
+/* Softer gradient cards */
+.hero-card,
+.form-card,
+.cta-box,
+.highlight,
+.commission-box,
+.compare-card.mine{
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 34%),
+    linear-gradient(145deg,#b86b66 0%, #cd817b 52%, #e4a198 100%);
+  color:#fff;
+  box-shadow:0 26px 70px rgba(154,90,87,.20);
+}
+
+/* White text on colored cards */
+.hero-card *,
+.form-card *,
+.cta-box *,
+.highlight *,
+.commission-box *,
+.compare-card.mine *{
+  color:#fff;
+}
+
+/* Keep chips readable on colored cards */
+.highlight .chip,
+.form-card .chip,
+.hero-card .chip,
+.compare-card.mine .chip,
+.commission-box .chip{
+  background:rgba(255,255,255,.18);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+}
+
+/* Buttons */
+.btn-primary{
+  background:linear-gradient(135deg,#9a5a57,#cf7d78);
+  color:#fff;
+  box-shadow:0 14px 30px rgba(154,90,87,.20);
+}
+
+.btn-secondary{
+  background:#fffdfc;
+  color:var(--text);
+  border-color:rgba(38,34,32,.12);
+}
+
+/* Eyebrow */
+.eyebrow{
+  color:#8a514e;
+  background:#fff;
+  border-color:rgba(38,34,32,.10);
+}
+
+/* Lists */
+.list{
+  color:#4c433f;
+}
+
+.list li:before{
+  background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+  color:#fff;
+}
+
+/* Form fields on colored background */
+.form-card input,
+.form-card select,
+.form-card textarea{
+  background:rgba(255,255,255,.95);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.85);
+}
+
+.form-card input::placeholder,
+.form-card textarea::placeholder{
+  color:#6a5f5a;
+}
+
+.form-card label,
+.form-card .small,
+.form-card .small a{
+  color:#fff;
+}
+
+.form-status.is-visible{
+  background:rgba(255,255,255,.16);
+  color:#fff;
+  border-color:rgba(255,255,255,.24);
+}
+
+/* Contact cards inside form */
+.contact-mini{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.24);
+  color:#fff;
+}
+
+/* Table */
+.commission-table,
+.commission-table td,
+.commission-table th{
+  color:var(--text);
+}
+
+.commission-table th{
+  background:#f6ebe8;
+}
+
+.commission-table td{
+  background:#fffdfc;
+}
+
+/* Menu */
+.mobile-menu{
+  background:#fff8f6;
+  border-color:rgba(38,34,32,.12);
+}
+
+.mobile-menu-links a{
+  color:var(--text);
+  background:#fff;
+  border-color:rgba(38,34,32,.10);
+}
+
+/* Footer */
+footer,
+.footer-box,
+.footer-page-grid a{
+  color:#5b524d;
+}
+
+.footer-box a,
+.footer-links a{
+  color:var(--text);
+}
+
+@media(max-width:760px){
+  .lead,
+  .section-head p,
+  .card p,
+  .problem-box p,
+  .truth-box p,
+  .compare-card p,
+  .faq p{
+    color:#544b46;
+  }
+}
+
   </style>
 </head>
 
@@ -1861,8 +2099,6 @@
       </div>
 
       <div class="mobile-menu-actions">
-        <a class="btn btn-primary" href="#apply">Få tipskode</a>
-        <a class="btn btn-secondary" href="#commission">Se provision</a>
         <a class="btn btn-secondary" href="da.html">Dansk forside</a>
       </div>
     </div>
