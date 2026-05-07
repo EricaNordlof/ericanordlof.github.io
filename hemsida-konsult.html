@@ -9,9 +9,12 @@
     name="description"
     content="Hemsida för konsult från 2 900 kr. Få en tydlig konsulthemsida med demo inom 1 arbetsdag, köp först efter godkänd demo och personlig kontakt hela vägen."
   />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="author" content="Erica Nordlöf" />
+  <meta name="msvalidate.01" content="92586BA25D845A7D1185B5EE710E8A08" />
+
   <link rel="canonical" href="https://webutvecklare.se/hemsida-konsult.html" />
+  <link rel="sitemap" type="application/xml" href="https://webutvecklare.se/sitemap.xml" />
 
   <meta property="og:title" content="Hemsida för konsult | Nordlöf Nordic" />
   <meta property="og:description" content="Konsulthemsida från 2 900 kr. Demo inom 1 arbetsdag, fast pris och köp först efter godkänd demo." />
@@ -35,12 +38,12 @@
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
   <meta name="theme-color" content="#f7f0ec" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
-  >
+  />
 
   <script type="application/ld+json">
   {
@@ -89,7 +92,8 @@
         "brand":{"@type":"Brand","name":"Nordlöf Nordic"},
         "sameAs":[
           "https://github.com/EricaNordlof",
-          "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+          "https://www.linkedin.com/in/erica-nordl%C3%B6f/",
+          "https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic"
         ],
         "hasOfferCatalog":{
           "@type":"OfferCatalog",
@@ -280,38 +284,8 @@
       overflow-x:hidden;
     }
 
-    body.large-text{
-      font-size:118%;
-    }
-
-    body.large-text p,
-    body.large-text li,
-    body.large-text a,
-    body.large-text input,
-    body.large-text select,
-    body.large-text textarea,
-    body.large-text button{
-      line-height:1.75;
-    }
-
-    body.large-text .mobile-sticky{
-      display:none;
-    }
-
-    body.high-contrast{
-      --bg:#fff;
-      --soft:#fff;
-      --card:#fff;
-      --text:#000;
-      --muted:#111;
-      --line:#000;
-      --brand:#000;
-      --brand-dark:#000;
-      --brand-deep:#000;
-      --shadow:none;
-      --shadow-strong:none;
-      background:#fff;
-      color:#000;
+    body.menu-open{
+      overflow:hidden;
     }
 
     a{
@@ -375,51 +349,10 @@
       margin:auto;
     }
 
-    .accessibility-tools{
-      position:fixed;
-      right:12px;
-      top:86px;
-      z-index:70;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      padding:8px;
-      border-radius:22px;
-      background:rgba(251,247,244,.92);
-      border:1px solid rgba(36,30,26,.10);
-      box-shadow:0 14px 40px rgba(36,30,26,.12);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-    }
-
-    .accessibility-btn{
-      min-height:42px;
-      padding:9px 13px;
-      border-radius:999px;
-      background:#111;
-      color:#fff;
-      border:2px solid #fff;
-      font-weight:900;
-      cursor:pointer;
-      box-shadow:0 8px 20px rgba(36,30,26,.14);
-      white-space:nowrap;
-      font-size:13px;
-    }
-
-    .accessibility-btn:hover{
-      background:#000;
-    }
-
-    .accessibility-btn[aria-pressed="true"]{
-      background:#fff;
-      color:#111;
-      border-color:#111;
-    }
-
     .topbar{
       position:sticky;
       top:0;
-      z-index:60;
+      z-index:100;
       background:rgba(251,247,244,.94);
       border-bottom:1px solid rgba(36,30,26,.08);
       backdrop-filter:blur(16px);
@@ -518,6 +451,175 @@
       cursor:pointer;
       box-shadow:0 10px 24px rgba(36,30,26,.05);
       outline:none;
+    }
+
+    .mobile-menu-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:46px;
+      padding:12px 16px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 14px 30px rgba(36,30,26,.16);
+      border:2px solid rgba(255,255,255,.88);
+      position:relative;
+      z-index:120;
+    }
+
+    .mobile-menu-toggle span:last-child{
+      line-height:1;
+    }
+
+    .hamburger{
+      width:18px;
+      height:14px;
+      position:relative;
+      display:inline-block;
+      flex:0 0 auto;
+    }
+
+    .hamburger::before,
+    .hamburger::after,
+    .hamburger i{
+      content:"";
+      position:absolute;
+      left:0;
+      width:18px;
+      height:2px;
+      border-radius:999px;
+      background:currentColor;
+      transition:.18s ease;
+    }
+
+    .hamburger::before{top:0}
+    .hamburger i{top:6px}
+    .hamburger::after{bottom:0}
+
+    .mobile-menu-toggle[aria-expanded="true"] .hamburger::before{
+      transform:translateY(6px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .hamburger i{
+      opacity:0;
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .hamburger::after{
+      transform:translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu-backdrop{
+      position:fixed;
+      inset:0;
+      z-index:90;
+      background:rgba(36,30,26,.32);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+    }
+
+    .mobile-menu{
+      position:fixed;
+      top:72px;
+      left:10px;
+      right:10px;
+      z-index:110;
+      max-height:calc(100dvh - 88px - env(safe-area-inset-bottom));
+      overflow:auto;
+      padding:14px;
+      border-radius:24px;
+      background:rgba(251,247,244,.98);
+      border:1px solid rgba(36,30,26,.10);
+      box-shadow:0 26px 80px rgba(36,30,26,.22);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .mobile-menu-inner{
+      display:grid;
+      gap:12px;
+    }
+
+    .mobile-menu-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:8px 8px 12px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:2px;
+    }
+
+    .mobile-menu-brand img{
+      width:42px;
+      height:42px;
+      border-radius:13px;
+      object-fit:cover;
+      box-shadow:0 10px 24px rgba(36,30,26,.08);
+    }
+
+    .mobile-menu-brand strong{
+      display:block;
+      letter-spacing:-.03em;
+    }
+
+    .mobile-menu-brand span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:2px;
+    }
+
+    .mobile-menu-links{
+      display:grid;
+      gap:8px;
+    }
+
+    .mobile-menu-links a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:48px;
+      padding:13px 14px;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid var(--line);
+      font-weight:900;
+      box-shadow:0 10px 24px rgba(36,30,26,.04);
+    }
+
+    .mobile-menu-links a::after{
+      content:"›";
+      color:var(--brand-deep);
+      font-size:22px;
+      line-height:1;
+    }
+
+    .mobile-menu-actions{
+      display:grid;
+      gap:9px;
+      padding-top:4px;
+    }
+
+    .mobile-menu .language-wrap{
+      align-items:stretch;
+      display:grid;
+      gap:7px;
+      padding:12px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid var(--line);
+    }
+
+    .mobile-menu .language-label{
+      display:block;
+    }
+
+    .mobile-menu .language-select{
+      max-width:none;
+      width:100%;
     }
 
     .btn{
@@ -682,11 +784,16 @@
       color:#fff;
     }
 
-    .hero-card img{
+    .hero-logo{
       width:100%;
-      max-width:380px;
+      max-width:340px;
+      height:clamp(220px,26vw,300px);
       margin:0 auto 18px;
+      padding:22px;
       border-radius:22px;
+      object-fit:contain;
+      object-position:center;
+      background:#050505;
       box-shadow:0 22px 54px rgba(36,30,26,.18);
     }
 
@@ -1133,7 +1240,7 @@
     }
 
     footer{
-      padding:34px 0 calc(86px + env(safe-area-inset-bottom));
+      padding:34px 0;
       color:#6f655e;
       font-size:14px;
     }
@@ -1159,68 +1266,6 @@
       margin-top:6px;
     }
 
-    .mobile-sticky{
-      display:none;
-    }
-
-    body.high-contrast .topbar,
-    body.high-contrast .card,
-    body.high-contrast .price-card,
-    body.high-contrast .step,
-    body.high-contrast .faq details,
-    body.high-contrast .language-select,
-    body.high-contrast .accessibility-tools{
-      background:#fff;
-      color:#000;
-      border:2px solid #000;
-      box-shadow:none;
-    }
-
-    body.high-contrast .hero-card,
-    body.high-contrast .form-card,
-    body.high-contrast .cta-box,
-    body.high-contrast .price-card.featured{
-      background:#000;
-      color:#fff;
-      border:2px solid #000;
-      box-shadow:none;
-    }
-
-    body.high-contrast .btn-primary,
-    body.high-contrast .btn-secondary,
-    body.high-contrast .btn-light{
-      background:#000;
-      color:#fff;
-      border:3px solid #000;
-      box-shadow:none;
-    }
-
-    body.high-contrast .form-card .btn-light,
-    body.high-contrast .cta-panel .btn-light{
-      background:#fff;
-      color:#000;
-      border:3px solid #fff;
-    }
-
-    body.high-contrast input,
-    body.high-contrast select,
-    body.high-contrast textarea{
-      background:#000;
-      color:#fff;
-      border:3px solid #fff;
-    }
-
-    body.high-contrast .language-select{
-      background:#fff;
-      color:#000;
-    }
-
-    body.high-contrast a{
-      text-decoration:underline;
-      text-decoration-thickness:2px;
-      text-underline-offset:4px;
-    }
-
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
@@ -1236,15 +1281,6 @@
 
       .btn:hover{
         transform:none;
-      }
-    }
-
-    @media(max-width:1100px){
-      .accessibility-tools{
-        position:static;
-        width:min(var(--max),calc(100% - 28px));
-        margin:10px auto 0;
-        justify-content:center;
       }
     }
 
@@ -1268,73 +1304,28 @@
     }
 
     @media(max-width:760px){
-      body{
-        padding-bottom:86px;
-      }
-
       .container{
         width:min(var(--max),calc(100% - 22px));
       }
 
-      .accessibility-tools{
-        width:min(var(--max),calc(100% - 22px));
-        margin:10px auto 0;
-        display:grid;
-        grid-template-columns:1fr 1fr 1fr;
-        gap:8px;
-        padding:8px;
-        border-radius:18px;
-      }
-
-      .accessibility-btn{
-        width:100%;
-        min-height:44px;
-        padding:9px 8px;
-        font-size:12px;
-        white-space:normal;
+      .topbar{
+        position:sticky;
+        top:0;
       }
 
       .nav{
-        min-height:auto;
-        padding:10px 0;
-        align-items:center;
+        min-height:62px;
+        padding:8px 0;
+        justify-content:flex-end;
       }
 
-      .brand{
-        gap:10px;
-      }
-
-      .brand img{
-        width:40px;
-        height:40px;
-        border-radius:12px;
-      }
-
-      .brand strong{
-        font-size:15px;
-      }
-
-      .brand span span{
-        display:none;
-      }
-
+      .brand,
       .nav-right{
-        gap:8px;
-      }
-
-      .language-label{
         display:none;
       }
 
-      .language-select{
-        min-height:40px;
-        max-width:150px;
-        padding:9px 32px 9px 11px;
-        font-size:13px;
-      }
-
-      .nav-right > .btn{
-        display:none;
+      .mobile-menu-toggle{
+        display:inline-flex;
       }
 
       .hero{
@@ -1376,6 +1367,12 @@
         border-radius:22px;
       }
 
+      .hero-logo{
+        max-width:280px;
+        height:230px;
+        padding:18px;
+      }
+
       .section{
         padding:30px 0;
       }
@@ -1406,31 +1403,7 @@
       }
 
       footer{
-        padding-bottom:104px;
-      }
-
-      .mobile-sticky{
-        position:fixed;
-        left:10px;
-        right:10px;
-        bottom:calc(10px + env(safe-area-inset-bottom));
-        z-index:80;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:8px;
-        padding:8px;
-        border-radius:20px;
-        background:rgba(251,247,244,.94);
-        border:1px solid rgba(36,30,26,.1);
-        box-shadow:0 14px 44px rgba(36,30,26,.16);
-        backdrop-filter:blur(14px);
-        -webkit-backdrop-filter:blur(14px);
-      }
-
-      .mobile-sticky .btn{
-        min-height:42px;
-        padding:10px 8px;
-        font-size:13px;
+        padding-bottom:28px;
       }
     }
 
@@ -1439,18 +1412,15 @@
         width:min(var(--max),calc(100% - 18px));
       }
 
-      .accessibility-tools{
-        width:min(var(--max),calc(100% - 18px));
+      .mobile-menu{
+        left:8px;
+        right:8px;
+        border-radius:20px;
       }
 
-      .accessibility-btn{
-        font-size:11px;
-        padding:8px 6px;
-      }
-
-      .language-select{
-        max-width:132px;
-        font-size:12px;
+      .mobile-menu-toggle{
+        min-height:44px;
+        padding:11px 14px;
       }
 
       h1{
@@ -1463,24 +1433,10 @@
 <body>
   <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
 
-  <div class="accessibility-tools" aria-label="Tillgänglighetsinställningar">
-    <button class="accessibility-btn" type="button" id="toggleContrast" aria-pressed="false">
-      Hög kontrast
-    </button>
-
-    <button class="accessibility-btn" type="button" id="toggleLargeText" aria-pressed="false">
-      Större text
-    </button>
-
-    <button class="accessibility-btn" type="button" id="listenSummary" aria-pressed="false">
-      Kort uppläsning
-    </button>
-  </div>
-
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="/" aria-label="Gå till startsidan">
-        <img src="nordlof-nordic-logo.png" alt="Nordlöf Nordic logga">
+        <img src="nordlof-nordic-logo.png" width="92" height="92" alt="Nordlöf Nordic logga">
         <span>
           <strong>Nordlöf Nordic</strong>
           <span>Hemsidor för konsulter</span>
@@ -1507,8 +1463,58 @@
 
         <a class="btn btn-primary" href="#kontakt">Få min demo</a>
       </div>
+
+      <button
+        class="mobile-menu-toggle"
+        type="button"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="hamburger" aria-hidden="true"><i></i></span>
+        <span>Meny</span>
+      </button>
     </div>
   </header>
+
+  <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" hidden></div>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilmeny" hidden>
+    <div class="mobile-menu-inner">
+      <a class="mobile-menu-brand" href="/" aria-label="Gå till startsidan">
+        <img src="nordlof-nordic-logo.png" width="84" height="84" alt="Nordlöf Nordic logga">
+        <span>
+          <strong>Nordlöf Nordic</strong>
+          <span>Hemsidor för konsulter</span>
+        </span>
+      </a>
+
+      <div class="mobile-menu-links">
+        <a href="#for-vem">För vem passar sidan?</a>
+        <a href="#sa-funkar-det">Så funkar det</a>
+        <a href="#vad-ingar">Vad ingår?</a>
+        <a href="#priser">Priser</a>
+        <a href="#faq">Vanliga frågor</a>
+        <a href="#kontakt">Få demo</a>
+      </div>
+
+      <div class="language-wrap">
+        <label class="language-label" for="mobileLanguageSelect">Språk</label>
+        <select id="mobileLanguageSelect" class="language-select" aria-label="Välj språk">
+          <option value="hemsida-konsult.html" selected>🇸🇪 Svenska</option>
+          <option value="en.html">🇬🇧 English</option>
+          <option value="da.html">🇩🇰 Dansk</option>
+          <option value="no.html">🇳🇴 Norsk</option>
+        </select>
+      </div>
+
+      <div class="mobile-menu-actions">
+        <a class="btn btn-primary" href="#kontakt">Få min demo</a>
+        <a class="btn btn-secondary" href="#priser">Se priser</a>
+        <a class="btn btn-secondary" href="gratis-demo.html">Gratis demo-sidan</a>
+      </div>
+    </div>
+  </nav>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
@@ -1546,7 +1552,7 @@
         </div>
 
         <aside class="hero-card" aria-label="Kort sammanfattning">
-          <img src="nordlof-nordic-logo.png" alt="">
+          <img class="hero-logo" src="nordlof-nordic-logo.png" width="800" height="800" alt="Nordlöf Nordic logga">
           <ul class="mini-list">
             <li>
               <strong>1. Du skickar kort brief</strong>
@@ -1988,12 +1994,12 @@
 
             <div class="form-grid">
               <div>
-                <label for="namn">Namn</label>
+                <label for="namn">Namn *</label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
 
               <div>
-                <label for="email">E-post</label>
+                <label for="email">E-post *</label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
 
@@ -2092,7 +2098,7 @@
               </fieldset>
 
               <div class="full">
-                <label for="mal">Vad ska hemsidan hjälpa dig med?</label>
+                <label for="mal">Vad ska hemsidan hjälpa dig med? *</label>
                 <textarea
                   id="mal"
                   name="Mål med hemsidan"
@@ -2149,6 +2155,7 @@
             <a class="btn btn-primary" href="case.html">Se case</a>
             <a class="btn btn-secondary" href="gratis-demo.html">Läs om gratis demo</a>
             <a class="btn btn-secondary" href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">Se GitHub</a>
+            <a class="btn btn-secondary" href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer">Google Maps</a>
           </div>
         </div>
       </div>
@@ -2177,47 +2184,28 @@
             <a href="ny-hemsida-foretag.html">Ny hemsida</a>
             <a href="hemsida-smaforetag.html">Hemsida småföretag</a>
             <a href="hemsida-till-foretag.html">Hemsida företag</a>
+            <a href="hemsida-hantverkare.html">Hemsida hantverkare</a>
+            <a href="hemsida-byggforetag.html">Hemsida byggföretag</a>
             <a href="webbfix.html">Webbfix</a>
             <a href="uppdatera-hemsida.html">Uppdatera hemsida</a>
             <a href="landningssida-kampanj.html">Landningssida</a>
             <a href="sokmotoroptimering.html">SEO-grund</a>
             <a href="villkor.html">Villkor</a>
             <a href="integritet.html">Integritet</a>
+            <a href="sitemap.xml">Sitemap</a>
+            <a href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer">Google Maps</a>
           </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <nav class="mobile-sticky" aria-label="Snabbval på mobil">
-    <a class="btn btn-secondary" href="#priser">Priser</a>
-    <a class="btn btn-primary" href="#kontakt">Få demo</a>
-  </nav>
-
   <script>
     const languageSelect = document.getElementById("languageSelect");
-    const listenButton = document.getElementById("listenSummary");
-    const contrastButton = document.getElementById("toggleContrast");
-    const largeTextButton = document.getElementById("toggleLargeText");
-
-    const speechSummary = {
-      sv: {
-        lang: "sv-SE",
-        listen: "Kort uppläsning",
-        stop: "Stoppa uppläsning",
-        text: "Nordlöf Nordic bygger hemsidor för konsulter, rådgivare och mindre konsultbolag. Du får en demo inom en arbetsdag och köper först om du vill gå vidare. En ny hemsida börjar från två tusen nio hundra kronor. Vanligaste nivån är fyra tusen nio hundra kronor och större upplägg kostar sju tusen nio hundra kronor. Mindre webbfix börjar från fyra hundra nittio kronor. Konsulthemsidan kan visa vad du gör, vem du hjälper, dina tjänster, din trovärdighet och tydliga kontaktvägar. Sidor byggs främst från grunden i kod, inte WordPress som standard. Efter köp kan du få material, kod och relevanta inloggningar så att du inte blir låst."
-      }
-    };
-
-    let isSpeaking = false;
-
-    function safeGet(key) {
-      try {
-        return localStorage.getItem(key);
-      } catch (error) {
-        return null;
-      }
-    }
+    const mobileLanguageSelect = document.getElementById("mobileLanguageSelect");
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuBackdrop = document.getElementById("mobileMenuBackdrop");
 
     function safeSet(key, value) {
       try {
@@ -2229,101 +2217,68 @@
       return true;
     }
 
-    function setPressed(button, isPressed) {
-      if (button) {
-        button.setAttribute("aria-pressed", String(isPressed));
-      }
-    }
+    function goToLanguage(target) {
+      safeSet("webutvecklareLanguageTarget", target);
 
-    function stopSpeaking() {
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-      }
-
-      isSpeaking = false;
-
-      if (listenButton) {
-        listenButton.setAttribute("aria-pressed", "false");
-        listenButton.textContent = speechSummary.sv.listen;
+      if (target && target !== "hemsida-konsult.html") {
+        window.location.href = target;
       }
     }
 
     if (languageSelect) {
       languageSelect.addEventListener("change", () => {
-        const target = languageSelect.value;
-        safeSet("webutvecklareLanguageTarget", target);
-        stopSpeaking();
-
-        if (target && target !== "hemsida-konsult.html") {
-          window.location.href = target;
-        }
+        goToLanguage(languageSelect.value);
       });
     }
 
-    const savedContrast = safeGet("highContrast") === "true";
-    const savedLargeText = safeGet("largeText") === "true";
-
-    if (savedContrast) {
-      document.body.classList.add("high-contrast");
-    }
-
-    if (savedLargeText) {
-      document.body.classList.add("large-text");
-    }
-
-    setPressed(contrastButton, savedContrast);
-    setPressed(largeTextButton, savedLargeText);
-
-    if (contrastButton) {
-      contrastButton.addEventListener("click", () => {
-        const isActive = document.body.classList.toggle("high-contrast");
-        safeSet("highContrast", String(isActive));
-        setPressed(contrastButton, isActive);
+    if (mobileLanguageSelect) {
+      mobileLanguageSelect.addEventListener("change", () => {
+        goToLanguage(mobileLanguageSelect.value);
       });
     }
 
-    if (largeTextButton) {
-      largeTextButton.addEventListener("click", () => {
-        const isActive = document.body.classList.toggle("large-text");
-        safeSet("largeText", String(isActive));
-        setPressed(largeTextButton, isActive);
+    function setMenuOpen(isOpen) {
+      if (!mobileMenuToggle || !mobileMenu || !mobileMenuBackdrop) {
+        return;
+      }
+
+      mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+      mobileMenu.hidden = !isOpen;
+      mobileMenuBackdrop.hidden = !isOpen;
+      document.body.classList.toggle("menu-open", isOpen);
+    }
+
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
+        setMenuOpen(!isOpen);
       });
     }
 
-    if (listenButton && "speechSynthesis" in window) {
-      listenButton.addEventListener("click", () => {
-        if (isSpeaking) {
-          stopSpeaking();
-          return;
-        }
-
-        window.speechSynthesis.cancel();
-
-        const utterance = new SpeechSynthesisUtterance(speechSummary.sv.text);
-        utterance.lang = speechSummary.sv.lang;
-        utterance.rate = 0.95;
-        utterance.pitch = 1;
-
-        isSpeaking = true;
-        listenButton.setAttribute("aria-pressed", "true");
-        listenButton.textContent = speechSummary.sv.stop;
-
-        utterance.onend = () => {
-          stopSpeaking();
-        };
-
-        utterance.onerror = () => {
-          stopSpeaking();
-        };
-
-        window.speechSynthesis.speak(utterance);
+    if (mobileMenuBackdrop) {
+      mobileMenuBackdrop.addEventListener("click", () => {
+        setMenuOpen(false);
       });
-    } else if (listenButton) {
-      listenButton.hidden = true;
     }
 
-    window.addEventListener("pagehide", () => {
-      stopSpeaking();
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          setMenuOpen(false);
+        });
+      });
+    }
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) {
+        setMenuOpen(false);
+      }
     });
 
     document.querySelectorAll("form").forEach((form) => {
