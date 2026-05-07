@@ -1772,27 +1772,31 @@
       }
     }
 
+/* MJUKARE KONTRASTFIX – mindre brunt, fortfarande tydligt */
 :root{
-  --text:#15100d;
-  --muted:#3f352f;
-  --line:rgba(21,16,13,.18);
-  --brand:#b85f51;
-  --brand-dark:#894237;
-  --brand-deep:#672d29;
-  --soft:#fff8f4;
-  --shadow:0 18px 50px rgba(21,16,13,.12);
+  --text:#262220;
+  --muted:#5b524d;
+  --line:rgba(38,34,32,.14);
+
+  /* mjukare rosa/korall istället för brun */
+  --brand:#cf7d78;
+  --brand-dark:#b56a66;
+  --brand-deep:#9a5a57;
+
+  --soft:#fff8f7;
+  --shadow:0 18px 50px rgba(38,34,32,.09);
 }
 
-/* Lite renare bakgrund så vita kort får bättre separation */
+/* Lite ljusare och renare bakgrund */
 body{
   color:var(--text);
   background:
-    radial-gradient(circle at top left, rgba(184,95,81,.16), transparent 30%),
-    radial-gradient(circle at 80% 10%, rgba(103,45,41,.10), transparent 24%),
-    linear-gradient(180deg,#fbf4ef 0%,#f1e7e0 100%);
+    radial-gradient(circle at top left, rgba(207,125,120,.12), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(181,106,102,.08), transparent 24%),
+    linear-gradient(180deg,#fbf6f4 0%,#f3ece8 100%);
 }
 
-/* Vanlig text mörkare */
+/* Vanlig text */
 p,
 .lead,
 .section-head p,
@@ -1807,10 +1811,10 @@ p,
 .proof-pill span,
 .brand span span,
 .mobile-menu-brand span{
-  color:#3b312b;
+  color:var(--muted);
 }
 
-/* Rubriker och stark text tydligare */
+/* Rubriker */
 h1,
 h2,
 h3,
@@ -1819,11 +1823,13 @@ strong,
 .compare-card h3,
 .script-box h3,
 .timeline-item strong,
-.proof-pill{
-  color:#15100d;
+.proof-pill,
+.quick-item strong,
+.quote-box p{
+  color:var(--text);
 }
 
-/* Kort ska vara tydligt vita, inte mjölkiga */
+/* Vanliga kort */
 .card,
 .problem-box,
 .truth-box,
@@ -1834,33 +1840,28 @@ strong,
 .proof-pill,
 .timeline-item,
 .quote-box{
-  background:#fffdfb;
-  border-color:rgba(21,16,13,.16);
-  box-shadow:0 18px 46px rgba(21,16,13,.11);
+  background:#fffdfc;
+  border-color:rgba(38,34,32,.10);
+  box-shadow:0 16px 40px rgba(38,34,32,.08);
 }
 
-/* Ljus quote-ruta med mörk text */
+/* Quote-ruta */
 .quote-box{
-  background:#fff7f1;
+  background:#fff6f4;
 }
 
 .quote-box strong{
-  color:#67342d;
+  color:#9a5a57;
 }
 
-.quote-box p,
-.script-text p{
-  color:#211916;
-}
-
-/* Tags/chips mer läsbara */
+/* Tags och chips */
 .tag,
 .chip{
-  background:#ead2c7;
-  color:#4f241f;
+  background:#f3dfdc;
+  color:#8a514e;
 }
 
-/* Viktigt: gradientkort blir mörkare så vit text faktiskt syns */
+/* Mjukare gradientkort – inte så mörka */
 .hero-card,
 .form-card,
 .cta-box,
@@ -1868,13 +1869,13 @@ strong,
 .commission-box,
 .compare-card.mine{
   background:
-    radial-gradient(circle at top right,rgba(255,255,255,.13),transparent 34%),
-    linear-gradient(145deg,#6f302b 0%,#9d4b40 48%,#c46b58 100%);
+    radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 34%),
+    linear-gradient(145deg,#b86b66 0%, #cd817b 52%, #e4a198 100%);
   color:#fff;
-  box-shadow:0 32px 90px rgba(103,45,41,.30);
+  box-shadow:0 26px 70px rgba(154,90,87,.20);
 }
 
-/* All text på mörka gradientkort ska vara vit */
+/* Vit text på färgade kort */
 .hero-card *,
 .form-card *,
 .cta-box *,
@@ -1884,7 +1885,7 @@ strong,
   color:#fff;
 }
 
-/* Men behåll ljusa små chips läsbara på gradient */
+/* Behåll chips läsbara på färgade kort */
 .highlight .chip,
 .form-card .chip,
 .hero-card .chip,
@@ -1892,47 +1893,51 @@ strong,
 .commission-box .chip{
   background:rgba(255,255,255,.18);
   color:#fff;
-  border:1px solid rgba(255,255,255,.25);
-}
-
-/* Listbockar tydligare */
-.list li{
-  color:#2b211d;
-}
-
-.highlight .list li,
-.compare-card.mine .list li,
-.hero-card .list li,
-.form-card .list li,
-.commission-box .list li{
-  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
 }
 
 /* Knappar */
 .btn-primary{
-  background:linear-gradient(135deg,#672d29,#a04b40);
+  background:linear-gradient(135deg,#9a5a57,#cf7d78);
   color:#fff;
-  box-shadow:0 14px 30px rgba(103,45,41,.28);
+  box-shadow:0 14px 30px rgba(154,90,87,.20);
 }
 
 .btn-secondary{
-  background:#fffdfb;
-  color:#15100d;
-  border-color:rgba(21,16,13,.18);
+  background:#fffdfc;
+  color:var(--text);
+  border-color:rgba(38,34,32,.12);
 }
 
-/* Formulärfält på mörk bakgrund: mer läsbart */
+/* Eyebrow lite tydligare */
+.eyebrow{
+  color:#8a514e;
+  background:#fff;
+  border-color:rgba(38,34,32,.10);
+}
+
+/* Listor */
+.list{
+  color:#4c433f;
+}
+
+.list li:before{
+  background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+  color:#fff;
+}
+
+/* Formulär på färgad bakgrund */
 .form-card input,
 .form-card select,
 .form-card textarea{
-  background:rgba(255,255,255,.94);
-  color:#15100d;
-  border-color:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.95);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.85);
 }
 
 .form-card input::placeholder,
 .form-card textarea::placeholder{
-  color:#5c4b43;
+  color:#6a5f5a;
 }
 
 .form-card label,
@@ -1942,51 +1947,57 @@ strong,
 }
 
 .form-status.is-visible{
-  background:rgba(255,255,255,.18);
+  background:rgba(255,255,255,.16);
   color:#fff;
-  border-color:rgba(255,255,255,.30);
+  border-color:rgba(255,255,255,.24);
 }
 
-/* Tabell: mörkare text och bättre läsbarhet */
+/* Kontaktkorten i formulärdelen */
+.contact-mini{
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.24);
+  color:#fff;
+}
+
+/* Tabell */
 .commission-table,
 .commission-table td,
 .commission-table th{
-  color:#15100d;
+  color:var(--text);
 }
 
 .commission-table th{
-  background:#f1e1d8;
+  background:#f6ebe8;
 }
 
 .commission-table td{
-  background:#fffdfb;
+  background:#fffdfc;
 }
 
 /* Meny */
 .mobile-menu{
-  background:#fff8f3;
-  border-color:rgba(21,16,13,.18);
+  background:#fff8f6;
+  border-color:rgba(38,34,32,.12);
 }
 
 .mobile-menu-links a{
-  color:#15100d;
+  color:var(--text);
   background:#fff;
-  border-color:rgba(21,16,13,.16);
+  border-color:rgba(38,34,32,.10);
 }
 
 /* Footer */
 footer,
 .footer-box,
 .footer-page-grid a{
-  color:#3f352f;
+  color:#5b524d;
 }
 
 .footer-box a,
 .footer-links a{
-  color:#15100d;
+  color:var(--text);
 }
 
-/* Mobil: extra tydlighet där texten blir liten */
 @media(max-width:760px){
   .lead,
   .section-head p,
@@ -1995,19 +2006,9 @@ footer,
   .truth-box p,
   .compare-card p,
   .faq p{
-    color:#2f2722;
-  }
-
-  .hero-card *,
-  .form-card *,
-  .highlight *,
-  .commission-box *,
-  .compare-card.mine *{
-    color:#fff;
+    color:#544b46;
   }
 }
-```
-
 
   </style>
 </head>
