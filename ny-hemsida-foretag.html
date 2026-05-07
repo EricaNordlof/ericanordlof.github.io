@@ -1579,6 +1579,44 @@
         grid-template-columns:1fr;
       }
     }
+
+    /* FIX: vit knapp i färgade kort ska ha mörk text */
+.card.highlight .btn,
+.card.highlight .btn *,
+.price-card.featured .btn,
+.price-card.featured .btn *,
+.hero-card .btn-light,
+.hero-card .btn-light *,
+.hero-card .btn-secondary,
+.hero-card .btn-secondary *,
+.cta-box .btn-light,
+.cta-box .btn-light *,
+.cta-box .btn-secondary,
+.cta-box .btn-secondary *,
+.form-card .btn-light,
+.form-card .btn-light *,
+.form-card .btn-secondary,
+.form-card .btn-secondary *{
+  color:#262220 !important;
+}
+
+/* Säkerställ vit knappbakgrund i färgade kort */
+.card.highlight .btn-light,
+.card.highlight .btn-secondary,
+.price-card.featured .btn-light,
+.price-card.featured .btn-secondary,
+.hero-card .btn-light,
+.hero-card .btn-secondary,
+.cta-box .btn-light,
+.cta-box .btn-secondary,
+.form-card .btn-light,
+.form-card .btn-secondary{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  border:1px solid rgba(154,88,85,.18) !important;
+  box-shadow:0 16px 34px rgba(36,30,26,.08) !important;
+}
+
   </style>
 </head>
 
