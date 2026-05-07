@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
   <title>Blogg om webbutveckling, SEO och livet som nystartad webbutvecklare | Erica Nordlöf</title>
   <meta
     name="description"
@@ -13,35 +12,29 @@
   <meta name="author" content="Erica Nordlöf" />
   <meta name="theme-color" content="#f7f0ec" />
   <meta name="msvalidate.01" content="92586BA25D845A7D1185B5EE710E8A08" />
-
   <link rel="canonical" href="https://webutvecklare.se/blogg.html" />
   <link rel="sitemap" type="application/xml" href="https://webutvecklare.se/sitemap.xml" />
-
   <meta property="og:title" content="Blogg | Erica Nordlöf | Webbutveckling, SEO och resan bakom webutvecklare.se" />
   <meta property="og:description" content="Praktiska lärdomar om webbutveckling, SEO, indexering, webbfix och livet som nystartad webbutvecklare." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/blogg.html" />
   <meta property="og:image" content="https://webutvecklare.se/blogg/valkommen.PNG" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blogg | Erica Nordlöf" />
   <meta name="twitter:description" content="Webbutveckling, SEO, indexering och vardagen som nystartad webbutvecklare." />
   <meta name="twitter:image" content="https://webutvecklare.se/blogg/valkommen.PNG" />
-
   <link rel="preload" as="image" href="blogg/valkommen.PNG" fetchpriority="high" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
   <link rel="me" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" />
   <link rel="me" href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
-
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -63,7 +56,10 @@
         "inLanguage":"sv-SE",
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"},
-        "breadcrumb":{"@id":"https://webutvecklare.se/blogg.html#breadcrumb"}
+        "breadcrumb":{"@id":"https://webutvecklare.se/blogg.html#breadcrumb"},
+        "hasPart":[
+          {"@id":"https://webutvecklare.se/veckobrev-vecka1-maj-2026.html#webpage"}
+        ]
       },
       {
         "@type":"Person",
@@ -141,6 +137,17 @@
           {"@id":"https://webutvecklare.se/blogg.html#premiumleads-leadscentralen-rankar"},
           {"@id":"https://webutvecklare.se/blogg.html#forsta-sparet-leadscentralen"}
         ]
+      },
+      {
+        "@type":"CreativeWork",
+        "@id":"https://webutvecklare.se/veckobrev-vecka1-maj-2026.html#webpage",
+        "name":"Första veckobrevet från webutvecklare.se – vecka 19",
+        "url":"https://webutvecklare.se/veckobrev-vecka1-maj-2026.html",
+        "datePublished":"2026-05-07",
+        "inLanguage":"sv-SE",
+        "author":{"@id":"https://webutvecklare.se/#person"},
+        "publisher":{"@id":"https://webutvecklare.se/#business"},
+        "about":["Webbutveckling","SEO","Indexering","Hemsidor för småföretag","Webbfix"]
       },
       {
         "@type":"BlogPosting",
@@ -221,6 +228,14 @@
           },
           {
             "@type":"Question",
+            "name":"Kan jag läsa tidigare veckobrev?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Ja. På bloggsidan finns en rullgardin med publicerade veckobrev, bland annat första veckobrevet från vecka 19 år 2026."
+            }
+          },
+          {
+            "@type":"Question",
             "name":"Kan Nordlöf Nordic hjälpa mitt företag med hemsida?",
             "acceptedAnswer":{
               "@type":"Answer",
@@ -250,7 +265,6 @@
     ]
   }
   </script>
-
   <style>
     :root{
       --bg:#f7eee9;
@@ -270,16 +284,13 @@
       --wide:1240px;
       --tap:48px;
     }
-
     *{
       box-sizing:border-box;
     }
-
     html{
       scroll-behavior:smooth;
       -webkit-text-size-adjust:100%;
     }
-
     body{
       margin:0;
       font-family:Inter,sans-serif;
@@ -291,36 +302,29 @@
         linear-gradient(180deg,#fff7f4 0%,#f7eee9 42%,#f1e6e1 100%);
       overflow-x:hidden;
     }
-
     body.menu-open{
       overflow:hidden;
     }
-
     a{
       color:inherit;
       text-decoration:none;
     }
-
     img{
       max-width:100%;
       display:block;
     }
-
     input,
     select,
     textarea,
     button{
       font:inherit;
     }
-
     button{
       border:0;
     }
-
     :target{
       scroll-margin-top:92px;
     }
-
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -331,7 +335,6 @@
       outline-offset:4px;
       box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
-
     .skip-link{
       position:absolute;
       left:12px;
@@ -347,21 +350,17 @@
       box-shadow:0 12px 30px rgba(36,30,26,.16);
       transition:.15s ease;
     }
-
     .skip-link:focus{
       transform:translateY(0);
     }
-
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
     }
-
     .wide-container{
       width:min(var(--wide),calc(100% - 28px));
       margin:auto;
     }
-
     .topbar{
       position:sticky;
       top:0;
@@ -372,7 +371,6 @@
       -webkit-backdrop-filter:blur(16px);
       box-shadow:0 14px 38px rgba(36,30,26,.08);
     }
-
     .nav{
       min-height:72px;
       display:flex;
@@ -381,7 +379,6 @@
       gap:16px;
       padding:12px 0;
     }
-
     .mobile-logo{
       display:flex;
       align-items:center;
@@ -395,13 +392,11 @@
       border:1px solid rgba(36,30,26,.08);
       flex:0 0 auto;
     }
-
     .mobile-logo img{
       width:100%;
       height:100%;
       object-fit:cover;
     }
-
     .mobile-menu-toggle{
       display:inline-flex;
       align-items:center;
@@ -419,7 +414,6 @@
       position:relative;
       z-index:120;
     }
-
     .hamburger{
       width:18px;
       height:14px;
@@ -427,7 +421,6 @@
       display:inline-block;
       flex:0 0 auto;
     }
-
     .hamburger::before,
     .hamburger::after,
     .hamburger i{
@@ -440,23 +433,18 @@
       background:currentColor;
       transition:.18s ease;
     }
-
     .hamburger::before{top:0}
     .hamburger i{top:6px}
     .hamburger::after{bottom:0}
-
     .mobile-menu-toggle[aria-expanded="true"] .hamburger::before{
       transform:translateY(6px) rotate(45deg);
     }
-
     .mobile-menu-toggle[aria-expanded="true"] .hamburger i{
       opacity:0;
     }
-
     .mobile-menu-toggle[aria-expanded="true"] .hamburger::after{
       transform:translateY(-6px) rotate(-45deg);
     }
-
     .mobile-menu-backdrop{
       position:fixed;
       inset:0;
@@ -465,7 +453,6 @@
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
     }
-
     .mobile-menu{
       position:fixed;
       top:82px;
@@ -483,12 +470,10 @@
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
     }
-
     .mobile-menu-inner{
       display:grid;
       gap:12px;
     }
-
     .mobile-menu-brand{
       display:flex;
       align-items:center;
@@ -497,7 +482,6 @@
       border-bottom:1px solid var(--line);
       margin-bottom:2px;
     }
-
     .mobile-menu-brand img{
       width:42px;
       height:42px;
@@ -505,24 +489,20 @@
       object-fit:cover;
       box-shadow:0 10px 24px rgba(36,30,26,.08);
     }
-
     .mobile-menu-brand strong{
       display:block;
       letter-spacing:-.03em;
     }
-
     .mobile-menu-brand span{
       display:block;
       color:var(--muted);
       font-size:13px;
       margin-top:2px;
     }
-
     .mobile-menu-links{
       display:grid;
       gap:8px;
     }
-
     .mobile-menu-links a{
       display:flex;
       align-items:center;
@@ -535,20 +515,17 @@
       font-weight:900;
       box-shadow:0 10px 24px rgba(36,30,26,.04);
     }
-
     .mobile-menu-links a::after{
       content:"›";
       color:var(--brand-deep);
       font-size:22px;
       line-height:1;
     }
-
     .mobile-menu-actions{
       display:grid;
       gap:9px;
       padding-top:4px;
     }
-
     .btn{
       display:inline-flex;
       align-items:center;
@@ -564,42 +541,35 @@
       line-height:1.1;
       white-space:nowrap;
     }
-
     .btn:hover{
       transform:translateY(-1px);
     }
-
     .btn-primary{
       background:linear-gradient(135deg,#9a5855 0%,#d77f7a 55%,#e4a198 100%);
       color:#fff;
       box-shadow:0 16px 34px rgba(154,88,85,.26);
     }
-
     .btn-secondary{
       background:#fffdfc;
       border-color:rgba(154,88,85,.18);
       color:#262220;
       box-shadow:0 10px 24px rgba(36,30,26,.05);
     }
-
     .btn-light{
       background:#fffdfc;
       color:#262220;
       border-color:rgba(154,88,85,.18);
       box-shadow:0 16px 34px rgba(36,30,26,.08);
     }
-
     .hero{
       padding:clamp(38px,7vw,82px) 0 28px;
     }
-
     .hero-grid{
       display:grid;
       grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
       gap:30px;
       align-items:center;
     }
-
     .eyebrow{
       display:inline-flex;
       align-items:center;
@@ -615,56 +585,47 @@
       max-width:100%;
       line-height:1.35;
     }
-
     h1,
     h2{
       font-family:"Playfair Display",serif;
       letter-spacing:-.045em;
     }
-
     h1{
       margin:18px 0 16px;
       font-size:clamp(2.55rem,7vw,5.1rem);
       line-height:.95;
       text-wrap:balance;
     }
-
     h2{
       margin:0 0 12px;
       font-size:clamp(2rem,5vw,3.1rem);
       line-height:1.03;
       text-wrap:balance;
     }
-
     h3{
       margin:0 0 10px;
       font-size:22px;
       letter-spacing:-.035em;
       line-height:1.15;
     }
-
     p{
       margin:0;
     }
-
     .lead{
       max-width:760px;
       color:var(--muted);
       font-size:clamp(17px,2vw,20px);
       line-height:1.72;
     }
-
     .lead strong{
       color:var(--text);
     }
-
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
       margin-top:26px;
     }
-
     .micro-note{
       margin-top:14px;
       color:var(--muted);
@@ -672,7 +633,6 @@
       font-size:14px;
       max-width:760px;
     }
-
     .hero-card,
     .form-card,
     .cta-box{
@@ -685,7 +645,6 @@
       border-radius:34px;
       padding:clamp(22px,4vw,32px);
     }
-
     .hero-card h2,
     .hero-card h3,
     .hero-card p,
@@ -705,7 +664,6 @@
     .cta-box span{
       color:#fff;
     }
-
     .manga-preview{
       position:relative;
       overflow:hidden;
@@ -715,7 +673,6 @@
       box-shadow:0 22px 54px rgba(36,30,26,.18);
       margin-bottom:16px;
     }
-
     .manga-preview img{
       width:100%;
       height:auto;
@@ -724,7 +681,6 @@
       object-position:center;
       background:#fff;
     }
-
     .mini-list{
       display:grid;
       gap:12px;
@@ -732,7 +688,6 @@
       padding:0;
       margin:0;
     }
-
     .mini-list li{
       padding:15px;
       border-radius:18px;
@@ -740,22 +695,18 @@
       border:1px solid rgba(255,255,255,.22);
       line-height:1.55;
     }
-
     .mini-list strong{
       display:block;
       margin-bottom:3px;
     }
-
     .quick-strip{
       padding:12px 0 0;
     }
-
     .quick-grid{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
       gap:12px;
     }
-
     .quick-item{
       background:#fffdfc;
       border:1px solid rgba(154,88,85,.13);
@@ -766,7 +717,6 @@
       box-shadow:0 18px 48px rgba(154,88,85,.12);
       line-height:1.45;
     }
-
     .quick-item strong{
       display:block;
       color:var(--text);
@@ -774,40 +724,33 @@
       letter-spacing:-.04em;
       margin-bottom:3px;
     }
-
     .section{
       padding:clamp(34px,5vw,60px) 0;
     }
-
     .section-head{
       max-width:880px;
       margin-bottom:20px;
     }
-
     .section-head p{
       color:var(--muted);
       line-height:1.75;
       font-size:17px;
     }
-
     .grid-4{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
       gap:18px;
     }
-
     .grid-3{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
-
     .grid-2{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:18px;
     }
-
     .card,
     .post,
     .faq details,
@@ -819,21 +762,18 @@
       box-shadow:0 18px 48px rgba(154,88,85,.12);
       min-width:0;
     }
-
     .card h2,
     .card h3,
     .post h2,
     .post h3{
       color:var(--text);
     }
-
     .card p,
     .post p,
     .price-note{
       color:var(--muted);
       line-height:1.72;
     }
-
     .card a,
     .post a,
     .footer-box a,
@@ -844,7 +784,6 @@
       text-decoration-thickness:1px;
       font-weight:800;
     }
-
     .tag{
       display:inline-flex;
       align-items:center;
@@ -859,7 +798,6 @@
       letter-spacing:.04em;
       margin-bottom:14px;
     }
-
     .tag:before{
       content:"";
       width:7px;
@@ -868,13 +806,11 @@
       background:currentColor;
       opacity:.65;
     }
-
     .tag.dark{
       background:rgba(255,255,255,.20);
       color:#fff;
       border:1px solid rgba(255,255,255,.24);
     }
-
     .card.highlight{
       background:
         radial-gradient(circle at top right,rgba(255,255,255,.24),transparent 34%),
@@ -883,7 +819,6 @@
       border-color:rgba(255,255,255,.20);
       box-shadow:0 30px 80px rgba(154,88,85,.26);
     }
-
     .card.highlight h2,
     .card.highlight h3,
     .card.highlight p,
@@ -893,13 +828,11 @@
     .card.highlight a{
       color:#fff;
     }
-
     .card.highlight .tag{
       background:rgba(255,255,255,.20);
       color:#fff;
       border:1px solid rgba(255,255,255,.24);
     }
-
     .list{
       display:grid;
       gap:11px;
@@ -908,13 +841,11 @@
       margin:18px 0 0;
       color:#4c433f;
     }
-
     .list li{
       display:flex;
       gap:10px;
       line-height:1.55;
     }
-
     .list li:before{
       content:"✓";
       width:22px;
@@ -929,22 +860,18 @@
       font-weight:900;
       margin-top:1px;
     }
-
     .card.highlight .list li:before{
       background:rgba(255,255,255,.22);
       color:#fff;
     }
-
     .newsletter-card{
       border-radius:32px;
     }
-
     form{
       display:grid;
       gap:13px;
       margin-top:20px;
     }
-
     label{
       display:block;
       font-weight:900;
@@ -952,7 +879,6 @@
       margin-bottom:6px;
       color:#fff;
     }
-
     input,
     select,
     textarea{
@@ -965,39 +891,33 @@
       color:#262220;
       outline:none;
     }
-
     input::placeholder,
     textarea::placeholder{
       color:#7a6d68;
     }
-
     input:focus,
     select:focus,
     textarea:focus{
       border-color:rgba(255,255,255,1);
       box-shadow:0 0 0 3px rgba(255,255,255,.22);
     }
-
     .newsletter-row{
       display:grid;
       grid-template-columns:1fr auto;
       gap:10px;
       align-items:end;
     }
-
     .small{
       display:block;
       color:rgba(255,255,255,.92);
       line-height:1.55;
       font-size:13px;
     }
-
     .small a{
       color:#fff;
       text-decoration:underline;
       text-underline-offset:3px;
     }
-
     .form-status{
       display:none;
       padding:12px 14px;
@@ -1008,27 +928,106 @@
       line-height:1.5;
       color:#fff;
     }
-
     .form-status.is-visible{
       display:block;
     }
-
+    .newsletter-archive{
+      margin-bottom:22px;
+    }
+    .newsletter-archive details{
+      background:#fffdfc;
+      border:1px solid rgba(154,88,85,.16);
+      border-radius:26px;
+      box-shadow:0 18px 48px rgba(154,88,85,.12);
+      overflow:hidden;
+    }
+    .newsletter-archive summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:20px 22px;
+      font-weight:900;
+      color:var(--text);
+      letter-spacing:-.025em;
+    }
+    .newsletter-archive summary::-webkit-details-marker{
+      display:none;
+    }
+    .newsletter-archive summary::after{
+      content:"⌄";
+      display:grid;
+      place-items:center;
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:#f4d8d5;
+      color:#8f514e;
+      font-size:20px;
+      line-height:1;
+      transition:.18s ease;
+      flex:0 0 auto;
+    }
+    .newsletter-archive details[open] summary::after{
+      transform:rotate(180deg);
+    }
+    .newsletter-archive-body{
+      padding:0 22px 22px;
+      border-top:1px solid rgba(154,88,85,.12);
+    }
+    .newsletter-archive-intro{
+      color:var(--muted);
+      line-height:1.7;
+      padding:16px 0;
+    }
+    .newsletter-link{
+      display:grid;
+      gap:6px;
+      padding:16px 18px;
+      border-radius:18px;
+      background:#fff7f4;
+      border:1px solid rgba(154,88,85,.13);
+      box-shadow:0 12px 28px rgba(36,30,26,.05);
+      text-decoration:none;
+      transition:.18s ease;
+    }
+    .newsletter-link:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 42px rgba(154,88,85,.12);
+    }
+    .newsletter-link strong{
+      color:var(--text);
+      font-size:18px;
+      letter-spacing:-.03em;
+    }
+    .newsletter-link span{
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+    }
+    .newsletter-link em{
+      color:var(--brand-deep);
+      font-style:normal;
+      font-weight:900;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
     .post-list{
       display:grid;
       gap:18px;
     }
-
     .post{
       padding:0;
       overflow:hidden;
     }
-
     .post figure{
       margin:0;
       background:#fff;
       border-bottom:1px solid var(--line);
     }
-
     .post img{
       width:100%;
       height:auto;
@@ -1037,11 +1036,9 @@
       object-position:center;
       background:#fff;
     }
-
     .post-body{
       padding:clamp(18px,4vw,30px);
     }
-
     .post time{
       display:inline-flex;
       align-items:center;
@@ -1054,7 +1051,6 @@
       font-weight:900;
       margin-bottom:13px;
     }
-
     .post time::before{
       content:"";
       width:7px;
@@ -1063,32 +1059,27 @@
       background:currentColor;
       opacity:.7;
     }
-
     .post h2{
       margin:0 0 10px;
       font-size:clamp(1.65rem,4vw,2.45rem);
       line-height:1.05;
       letter-spacing:-.04em;
     }
-
     .post p + p{
       margin-top:13px;
     }
-
     .cta-box{
       display:grid;
       grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);
       gap:22px;
       align-items:center;
     }
-
     .cta-panel{
       background:rgba(255,255,255,.15);
       border:1px solid rgba(255,255,255,.20);
       border-radius:24px;
       padding:22px;
     }
-
     .cta-panel strong{
       display:block;
       font-size:clamp(34px,5vw,48px);
@@ -1096,35 +1087,29 @@
       letter-spacing:-.055em;
       margin-bottom:10px;
     }
-
     .faq details{
       padding:18px 20px;
     }
-
     .faq details + details{
       margin-top:12px;
     }
-
     .faq summary{
       cursor:pointer;
       font-weight:900;
       font-size:17px;
       line-height:1.4;
     }
-
     .faq p{
       margin:12px 0 0;
       color:var(--muted);
       line-height:1.7;
     }
-
     footer{
       padding:34px 0 calc(34px + env(safe-area-inset-bottom));
       color:#5b524d;
       font-size:14px;
       background:linear-gradient(180deg,transparent 0%,rgba(215,127,122,.08) 100%);
     }
-
     .footer-box{
       border-top:1px solid var(--line);
       padding-top:18px;
@@ -1133,21 +1118,18 @@
       gap:18px;
       line-height:1.7;
     }
-
     .footer-box a{
       color:var(--text);
       text-decoration:underline;
       text-underline-offset:3px;
       font-weight:800;
     }
-
     .footer-links{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
       margin-top:6px;
     }
-
     .card.highlight .btn,
     .card.highlight .btn *,
     .hero-card .btn-light,
@@ -1164,7 +1146,6 @@
     .form-card .btn-secondary *{
       color:#262220 !important;
     }
-
     .card.highlight .btn-light,
     .card.highlight .btn-secondary,
     .hero-card .btn-light,
@@ -1178,12 +1159,10 @@
       border:1px solid rgba(154,88,85,.18) !important;
       box-shadow:0 16px 34px rgba(36,30,26,.08) !important;
     }
-
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
       }
-
       *,
       *::before,
       *::after{
@@ -1191,12 +1170,11 @@
         animation-iteration-count:1 !important;
         transition-duration:.01ms !important;
       }
-
-      .btn:hover{
+      .btn:hover,
+      .newsletter-link:hover{
         transform:none;
       }
     }
-
     @media (forced-colors: active){
       .btn,
       .card,
@@ -1207,16 +1185,16 @@
       input,
       select,
       textarea,
-      .faq details{
+      .faq details,
+      .newsletter-archive details,
+      .newsletter-link{
         border:2px solid ButtonText;
       }
-
       a,
       button{
         text-decoration:underline;
       }
     }
-
     @media(max-width:980px){
       .hero-grid,
       .grid-2,
@@ -1224,40 +1202,33 @@
       .footer-box{
         grid-template-columns:1fr;
       }
-
       .grid-4,
       .grid-3,
       .quick-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
-
       .newsletter-row{
         grid-template-columns:1fr;
       }
     }
-
     @media(max-width:760px){
       .container,
       .wide-container{
         width:min(var(--max),calc(100% - 22px));
       }
-
       .nav{
         min-height:62px;
         padding:8px 0;
       }
-
       .mobile-logo{
         width:44px;
         height:44px;
         border-radius:13px;
       }
-
       .mobile-menu-toggle{
         min-height:44px;
         padding:11px 14px;
       }
-
       .mobile-menu{
         top:68px;
         left:10px;
@@ -1265,127 +1236,113 @@
         width:auto;
         max-height:calc(100dvh - 86px - env(safe-area-inset-bottom));
       }
-
       .hero{
         padding:24px 0 18px;
       }
-
       h1{
         font-size:clamp(2.15rem,10.8vw,3.25rem);
         line-height:.98;
         margin:14px 0 12px;
       }
-
       h2{
         font-size:clamp(1.85rem,9vw,2.55rem);
       }
-
       .lead{
         font-size:15.5px;
         line-height:1.65;
         color:#544b46;
       }
-
       .hero-actions{
         display:grid;
         grid-template-columns:1fr;
         gap:9px;
         margin-top:18px;
       }
-
       .hero-actions .btn,
       .newsletter-row .btn{
         width:100%;
       }
-
       .grid-4,
       .grid-3,
       .quick-grid{
         grid-template-columns:1fr;
       }
-
       .hero-card,
       .form-card,
       .cta-box{
         padding:20px;
         border-radius:22px;
       }
-
       .manga-preview{
         display:block;
         border-radius:18px;
       }
-
       .manga-preview img{
         width:100%;
         height:auto;
         max-height:none;
         object-fit:contain;
       }
-
       .section{
         padding:30px 0;
       }
-
       .section-head p{
         font-size:15px;
         line-height:1.65;
       }
-
       .card,
       .post{
         border-radius:20px;
       }
-
       .card{
         padding:18px;
       }
-
+      .newsletter-archive summary{
+        padding:18px;
+        align-items:flex-start;
+      }
+      .newsletter-archive-body{
+        padding:0 18px 18px;
+      }
+      .newsletter-link{
+        padding:15px;
+      }
       .post img{
         max-height:none;
       }
-
       .post-body{
         padding:18px;
       }
-
       input,
       select,
       textarea{
         font-size:16px;
       }
-
       footer{
         padding-bottom:calc(34px + env(safe-area-inset-bottom));
       }
     }
-
     @media(max-width:390px){
       .container,
       .wide-container{
         width:min(var(--max),calc(100% - 18px));
       }
-
       h1{
         font-size:2rem;
       }
-
       .btn{
         font-size:13px;
       }
     }
   </style>
 </head>
-
 <body>
   <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
-
   <header class="topbar">
     <div class="container nav">
       <a class="mobile-logo" href="/" aria-label="Gå till startsidan">
         <img src="favicon-nordlof.png?v=2" alt="Nordlöf Nordic logga" width="92" height="92" />
       </a>
-
       <button
         class="mobile-menu-toggle"
         type="button"
@@ -1398,9 +1355,7 @@
       </button>
     </div>
   </header>
-
   <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" hidden></div>
-
   <nav class="mobile-menu" id="mobileMenu" aria-label="Meny" hidden>
     <div class="mobile-menu-inner">
       <a class="mobile-menu-brand" href="/" aria-label="Gå till startsidan">
@@ -1410,7 +1365,6 @@
           <span>Kodad webb för småföretag</span>
         </span>
       </a>
-
       <div class="mobile-menu-links">
         <a href="/">Startsida</a>
         <a href="/gratis-demo.html">Gratis demo</a>
@@ -1420,39 +1374,33 @@
         <a href="/case.html">Case</a>
         <a href="/om-mig.html">Om Erica</a>
         <a href="/blogg.html" aria-current="page">Blogg</a>
+        <a href="/veckobrev-vecka1-maj-2026.html">Veckobrev</a>
       </div>
-
       <div class="mobile-menu-actions">
         <a class="btn btn-primary" href="/gratis-demo.html">Be om gratis demo</a>
         <a class="btn btn-secondary" href="#senaste">Läs senaste</a>
       </div>
     </div>
   </nav>
-
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Blogg · Webbutveckling · SEO · Livet som nystartad webbutvecklare</span>
-
           <h1 id="hero-title">Blogg om webbutveckling, SEO och vardagen bakom webutvecklare.se.</h1>
-
           <p class="lead">
             Här följer du min resa som nyutbildad webbutvecklare och nystartad företagare.
             Jag skriver om webbfix, indexering, SEO, hemsidor för småföretag, backend, manga och allt det där praktiska som faktiskt flyttar en webb framåt.
           </p>
-
           <div class="hero-actions">
             <a class="btn btn-primary" href="#senaste">Läs senaste inlägg</a>
             <a class="btn btn-secondary" href="#newsletter">Följ resan</a>
             <a class="btn btn-secondary" href="/gratis-demo.html">Be om gratis demo</a>
           </div>
-
           <p class="micro-note">
             Inga byrådimridåer. Bara lärdomar från verkligheten: sidor som ska byggas, indexeras, länkas, förbättras och helst inte bli en digital julgran.
           </p>
         </div>
-
         <aside class="hero-card" aria-label="Välkomstmanga och sammanfattning">
           <div class="manga-preview">
             <img
@@ -1464,7 +1412,6 @@
               fetchpriority="high"
             >
           </div>
-
           <ul class="mini-list">
             <li>
               <strong>Praktiska webbtips</strong>
@@ -1482,7 +1429,6 @@
         </aside>
       </div>
     </section>
-
     <section class="quick-strip" aria-label="Bloggens kategorier">
       <div class="container quick-grid">
         <div class="quick-item">
@@ -1503,7 +1449,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="intro">
       <div class="container grid-3">
         <article class="card highlight">
@@ -1513,7 +1458,6 @@
             Bloggen är mitt öppna arbetsbord. Här skriver jag om vad jag testar, vad som fungerar, vad som behöver fixas och varför det spelar roll för småföretag.
           </p>
         </article>
-
         <article class="card">
           <span class="tag">För dig</span>
           <h3>Driver du företag?</h3>
@@ -1521,7 +1465,6 @@
             Då får du enkla tips om hemsidor, SEO, kontaktvägar, formulär, innehåll och hur du gör din webb mer begriplig.
           </p>
         </article>
-
         <article class="card">
           <span class="tag">För Google</span>
           <h3>Ja, bloggen har också en SEO-roll.</h3>
@@ -1531,7 +1474,6 @@
         </article>
       </div>
     </section>
-
     <section class="section" id="newsletter">
       <div class="container">
         <div class="form-card newsletter-card">
@@ -1541,7 +1483,6 @@
             Max ett mejl i veckan med blogginlägg, enkla webbtips och ibland en mangaserie från resan som nystartad webbutvecklare.
             Inget spam. Jag har nog med indexering att skämmas över.
           </p>
-
           <form
             action="https://formsubmit.co/erica@webutvecklare.se"
             method="POST"
@@ -1558,9 +1499,7 @@
               name="_autoresponse"
               value="Tack för att du vill följa min blogg på webutvecklare.se. Du får max ett nyhetsbrev i veckan med blogginlägg, enkla webbtips och ibland en mangaserie. Vill du avsluta? Mejla erica@webutvecklare.se och skriv avsluta."
             />
-
             <div class="form-status" id="newsletterSuccess" role="status" aria-live="polite"></div>
-
             <div class="newsletter-row">
               <div>
                 <label for="newsletter-email">Mejladress</label>
@@ -1574,12 +1513,10 @@
                   required
                 >
               </div>
-
               <button class="btn btn-light" type="submit">
                 Prenumerera
               </button>
             </div>
-
             <span class="small">
               Jag använder din mejladress endast för nyhetsbrevet. Du kan avsluta genom att mejla
               <a href="mailto:erica@webutvecklare.se?subject=Avsluta%20nyhetsbrev">erica@webutvecklare.se</a>.
@@ -1588,7 +1525,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="lankar">
       <div class="container">
         <div class="section-head">
@@ -1597,20 +1533,17 @@
             Bloggen visar hur jag tänker. De här sidorna är för dig som vill göra något konkret med din webb.
           </p>
         </div>
-
         <div class="grid-3">
           <a class="card" href="/gratis-demo.html">
             <span class="tag">Demo</span>
             <h3>Gratis demo</h3>
             <p>Skicka material och få ett första konkret sidförslag innan du bestämmer dig.</p>
           </a>
-
           <a class="card" href="/webbfix.html">
             <span class="tag">Webbfix</span>
             <h3>Fixa befintlig hemsida</h3>
             <p>För textändringar, metadata, CTA, mobilbuggar, sitemap och små förbättringar.</p>
           </a>
-
           <a class="card" href="/ny-hemsida-foretag.html">
             <span class="tag">Ny hemsida</span>
             <h3>Ny hemsida till företag</h3>
@@ -1619,16 +1552,31 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="senaste">
       <div class="container">
+        <div class="newsletter-archive" id="veckobrev">
+          <details>
+            <summary>
+              <span>Veckobrev från bloggen</span>
+            </summary>
+            <div class="newsletter-archive-body">
+              <p class="newsletter-archive-intro">
+                Här samlar jag publicerade veckobrev från webutvecklare.se. Kortformat för dig som vill följa resan utan att scrolla igenom hela bloggmattan.
+              </p>
+              <a class="newsletter-link" href="https://webutvecklare.se/veckobrev-vecka1-maj-2026.html">
+                <em>Vecka 19 · 2026</em>
+                <strong>Första veckobrevet från webutvecklare.se</strong>
+                <span>5 korta lärdomar om undersidor, fokus, indexering, leads och synlighet.</span>
+              </a>
+            </div>
+          </details>
+        </div>
         <div class="section-head">
           <h2>Senaste inlägg.</h2>
           <p>
             Nya inlägg överst. Manga först, lärdom under. Business intelligence med pratbubbla.
           </p>
         </div>
-
         <div class="post-list">
           <article class="post" id="max-sju-undersidor">
             <figure>
@@ -1640,74 +1588,62 @@
                 loading="eager"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-07">7 maj 2026</time>
               <h2>Max 7 undersidor räcker ofta för småföretag.</h2>
-
               <p>
                 Idag gjorde jag något väldigt vuxet och lite tråkigt: jag tog bort en massa undersidor.
                 Inte för att de var dåliga, utan för att de blev för många att hålla levande.
                 Och en sida som inte hålls uppdaterad blir snabbt digitalt damm.
               </p>
-
               <p>
                 Min nya tumregel för småföretag är enkel:
                 <strong>ungefär 5–7 undersidor plus blogg räcker långt</strong>.
                 Då finns det plats för startsida, tjänster, webbfix, ny hemsida, lokal sida, case, om-sida och blogg.
                 Det är en webbstruktur som faktiskt går att sköta utan att behöva kalla in ett helt konferensrum med projektledare.
               </p>
-
               <p>
                 För visst kan man skapa fler landningssidor för olika sökintentioner.
                 En sida för varje tjänst. En sida för varje stad. En sida för varje liten variant av vad någon kan tänkas googla klockan 22:43.
                 SEO-hjärnan säger “kul”. Småföretagarhjärnan säger “vem ska uppdatera allt detta?”.
               </p>
-
               <p>
                 Det är där verkligheten kommer in med pärm och visselpipa.
                 Varje undersida behöver uppdateras, länkas, indexeras, kontrolleras och gärna ha ett tydligt syfte.
                 Rubriker ska stämma. Priser ska vara aktuella. Länkar ska fungera. Sitemap ska med.
                 Annars bygger man inte en hemsida. Man bygger ett administrativt litet träsk med fin färgpalett.
               </p>
-
               <p>
                 Fler sidor kan absolut vara rätt.
                 Men då behöver man också ha kapacitet att ta hand om dem.
                 När en verksamhet har en egen IT-avdelning, contentperson, SEO-person och någon som faktiskt hinner kontrollera allt varje månad, då är läget ett annat.
                 Men då är man kanske inte riktigt “liten verksamhet vid köksbordet med kaffe och stark vilja” längre.
               </p>
-
               <p>
                 För många småföretag är det smartare att ha färre sidor som är tydliga, uppdaterade och lätta att förstå.
                 En stark startsida. En tydlig tjänstesida. En konkret kontaktyta. Några bra förtroendepunkter.
                 Och en blogg där man kan bygga vidare med nya ämnen utan att hela menystrukturen blir som ett kommunalt intranät från 2009.
               </p>
-
               <p>
                 Dagens webbtips:
                 hellre <strong>få sidor med skarp funktion</strong> än många sidor som sakta förvandlas till dåligt samvete.
                 Google gillar struktur, men kunder gillar tydlighet.
                 Och småföretagare gillar att hinna göra sitt riktiga jobb också. Detalj, men ändå.
               </p>
-
               <p>
                 Min egen plan framåt är därför mer hållbar:
                 färre undersidor, tydligare meny, bättre innehåll och blogg som löpande nav.
                 Det känns mindre som “bygga allt” och mer som “bygga rätt”.
               </p>
-
               <p>
                 Vill du ha hjälp att förenkla din hemsida, rensa onödiga undersidor eller bygga en tydligare struktur?
                 Jag bygger gärna en demo först. Du köper bara om du gillar den.
               </p>
-
               <p>
                 <a href="/gratis-demo.html">Be om en gratis demo</a>
               </p>
             </div>
           </article>
-
           <article class="post" id="en-sak-i-taget">
             <figure>
               <img
@@ -1718,35 +1654,29 @@
                 loading="lazy"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-06">6 maj 2026</time>
               <h2>En sak i taget. Annars blir allt halvgjort.</h2>
-
               <p>
                 Idag blev en sådan där dag där jag hoppade mellan för många saker samtidigt.
                 Lite webbfix här, lite SEO där, lite mejl, lite idéer och plötsligt hade dagen gått.
                 Klassisk småföretagarbuffé. Mycket på tallriken, oklart vad som blev middag.
               </p>
-
               <p>
                 Lärdomen är enkel: jag behöver följa min plan och göra en sak i taget.
                 Inte för att det låter fint i en kalender, utan för att något faktiskt ska bli klart ordentligt.
               </p>
-
               <p>
                 Planen för imorgon är därför rak:
                 först merga färdigt sidorna med uppdateringsprompten.
                 Sedan mejla leads.
                 Inget sidospår. Ingen “ska bara”. Ingen ny genial idé klockan 14:07.
               </p>
-
               <p>
                 Det är lite samma sak med hemsidor.
                 För mycket samtidigt blir rörigt.
                 En tydlig struktur, ett tydligt mål och ett steg i taget ger oftast bättre resultat.
               </p>
-
               <p>
                 Dagens webbtips:
                 välj en sak som faktiskt flyttar dig framåt och gör den klart.
@@ -1754,7 +1684,6 @@
               </p>
             </div>
           </article>
-
           <article class="post" id="indexera-efter-publicering">
             <figure>
               <img
@@ -1765,68 +1694,56 @@
                 loading="lazy"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-05">5 maj 2026</time>
               <h2>Tråkigt att indexera. Ännu tråkigare att vara osynlig.</h2>
-
               <p>
                 Dagens manga är tyvärr inte fiction. Den är dokumentär. Med lite mer hårsvall.
               </p>
-
               <p>
                 Jag har byggt många sidor den senaste tiden. Nya sidor, demosidor, landningssidor,
                 blogginlägg och små förbättringar här och där. Det roliga är att bygga.
                 Det mindre glamorösa är att komma ihåg allt efteråt.
               </p>
-
               <p>
                 Som till exempel att skicka in nya och uppdaterade sidor i
                 <strong>Google Search Console</strong> och <strong>Bing Webmaster Tools</strong>.
                 Sådant som inte känns särskilt kreativt, men som är rätt avgörande om sidan faktiskt ska kunna hittas.
               </p>
-
               <p>
                 Det är lätt att tänka: “Sidan är publicerad, då är jobbet klart.”
                 Men nej. Där ligger man i SEO-processen och snubblar på mållinjen med kaffekoppen i handen.
               </p>
-
               <p>
                 Min nya regel framåt:
                 när en sida är skapad eller redigerad ska den in i indexeringsrutinen direkt.
                 Inte “sen”. Inte “jag tar det när jag får tid”. Inte “jag kommer ihåg det”.
                 För nej, det gör jag uppenbarligen inte alltid.
               </p>
-
               <p>
                 Min checklista efter publicering är nu enkel:
                 bygg sidan, testa sidan, publicera sidan och skicka in URL:en.
                 Google först. Bing också. Det är inte kul, men det är synlighetens tråkiga inträdesbiljett.
               </p>
-
               <p>
                 Lärdomen för småföretagare är densamma:
                 en hemsida behöver inte bara finnas. Den behöver kunna hittas.
                 Annars är den lite som en butik utan skylt, utan adress och med entrén bakom lagret.
               </p>
-
               <p>
                 Så dagens webbtips:
                 när du publicerar eller uppdaterar en sida, begär indexering direkt.
                 Tråkigt? Ja. Viktigt? Också ja. Digitalt smågodis för sökmotorerna.
               </p>
-
               <p>
                 Behöver du hjälp med hemsida, SEO-grund, formulär, bokningsflöde eller annan webblösning?
                 Jag bygger demo först. Du köper bara om du gillar den.
               </p>
-
               <p>
                 <a href="/gratis-demo.html">Be om en gratis demo</a>
               </p>
             </div>
           </article>
-
           <article class="post" id="premiumleads-leadscentralen-rankar">
             <figure>
               <img
@@ -1837,66 +1754,55 @@
                 loading="lazy"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-04">4 maj 2026</time>
               <h2>200 premiumleads köpta. Nu börjar testet på riktigt.</h2>
-
               <p>
                 Mangan ovan sammanfattar dagens insikt ganska bra:
                 det räcker inte alltid att skriva om vad man gör.
                 Ibland behöver man också skriva om sådant folk faktiskt söker efter.
               </p>
-
               <p>
                 Igår skrev jag om <strong>Leadscentralen</strong> här på bloggen.
                 Idag såg jag att inlägget redan rankar högt på ordet <strong>“Leadscentralen”</strong>.
                 Inte för att jag plötsligt blev SEO-guru över natten, utan för att ordet är tydligt,
                 relevant och inte lika generiskt som “webbutvecklare”.
               </p>
-
               <p>
                 Det blev en praktisk påminnelse:
                 Google gillar inte bara ord. Google gillar sammanhang.
                 Om jag skriver om ett konkret ämne, från min egen vinkel och kopplar det till mitt företag,
                 då kan bloggen börja jobba.
               </p>
-
               <p>
                 Så idag tog jag nästa steg och köpte <strong>200 premiumleads</strong>.
                 Jag fick <strong>nystartsrabatt</strong>, vilket gjorde testet rimligare för mig som ny företagare.
                 Ingen stor kampanj. Mer en kontrollerad chansning med låg budget och hög envishet.
               </p>
-
               <p>
                 Sammanlagt lade jag ungefär <strong>en timme</strong> på det idag.
                 Jag hann gå igenom leads och skriva genomtänkta mejl till två företag.
                 Inte massutskick. Inte copy-paste-kaos. Riktiga mejl till riktiga företag.
               </p>
-
               <p>
                 Min strategi nu är enkel:
                 bygga mitt eget varumärke, skriva om relevanta ämnen, testa leads i liten skala
                 och se vad som faktiskt leder till samtal.
               </p>
-
               <p>
                 Jag satsade ungefär fem matkassar på ICA på det här testet.
                 Så nu får vi se om det blir kund, lärdom eller väldigt dyr marknadsföringsgröt.
                 Oavsett vilket dokumenterar jag resan här.
               </p>
-
               <p>
                 Behöver du hjälp med hemsida, blogg, formulär, bokningsflöde eller annan webblösning?
                 Jag bygger demo först. Du köper bara om du gillar den.
               </p>
-
               <p>
                 <a href="/gratis-demo.html">Be om en gratis demo</a>
               </p>
             </div>
           </article>
-
           <article class="post" id="forsta-sparet-leadscentralen">
             <figure>
               <img
@@ -1907,42 +1813,35 @@
                 loading="lazy"
               >
             </figure>
-
             <div class="post-body">
               <time datetime="2026-05-03">3 maj 2026</time>
               <h2>Första spåret: Leadscentralen.</h2>
-
               <p>
                 Mangan ovan är ungefär känslan:
                 jag behöver hitta fler företag som faktiskt behöver webbhjälp,
                 och <strong>Leadscentralen</strong> dök upp som ett möjligt spår.
               </p>
-
               <p>
                 Jag är nyutbildad webbutvecklare och har precis startat eget.
                 Just nu bygger jag allt steg för steg:
                 hemsidan, erbjudandet, kontakterna och sättet att hitta kunder.
               </p>
-
               <p>
                 Det jag letar efter är inte “vem som helst med en hemsida”.
                 Jag vill hitta småföretag som behöver något konkret:
                 en tydligare startsida, bättre kontaktväg, webbfix, formulär,
                 bokningsflöde, landningssida eller en enklare webblösning som sparar tid.
               </p>
-
               <p>
                 Därför testar jag Leadscentralen försiktigt.
                 Inte som magisk kundmaskin, utan som ett möjligt verktyg i lådan.
                 Hammaren först, enhörningen sen.
               </p>
-
               <p>
                 Min plan är att börja smått, skriva personliga mejl och se vad som händer.
                 Om det leder till samtal är det intressant.
                 Om det inte gör det, har jag åtminstone lärt mig något utan att elda upp hela budgeten.
               </p>
-
               <p>
                 Resan mot första kunden fortsätter.
                 Med kod, kaffe och en ganska envis tro på att små steg faktiskt räknas.
@@ -1952,7 +1851,6 @@
         </div>
       </div>
     </section>
-
     <section class="section" id="cta">
       <div class="container">
         <div class="cta-box">
@@ -1964,7 +1862,6 @@
               Demo först, så du slipper köpa på ren magkänsla.
             </p>
           </div>
-
           <div class="cta-panel">
             <strong>Demo först.</strong>
             <p>
@@ -1980,7 +1877,6 @@
         </div>
       </div>
     </section>
-
     <section class="section faq" id="fragor">
       <div class="container">
         <div class="section-head">
@@ -1989,21 +1885,24 @@
             Kort svar innan du scrollar vidare eller skickar brief.
           </p>
         </div>
-
         <details>
           <summary>Vad handlar bloggen om?</summary>
           <p>
             Bloggen handlar om webbutveckling, SEO, webbfix, indexering, hemsidor för småföretag och min resa som nyutbildad webbutvecklare och nystartad företagare.
           </p>
         </details>
-
         <details>
           <summary>Kan jag få blogginläggen via mejl?</summary>
           <p>
             Ja. Skriv upp din mejladress så får du max ett veckobrev i veckan. Vill du sluta prenumerera mejlar du mig och skriver “avsluta”.
           </p>
         </details>
-
+        <details>
+          <summary>Kan jag läsa tidigare veckobrev?</summary>
+          <p>
+            Ja. Ovanför senaste inläggen finns en rullgardin med publicerade veckobrev. Första veckobrevet är från vecka 19 år 2026.
+          </p>
+        </details>
         <details>
           <summary>Kan Nordlöf Nordic hjälpa mitt företag med hemsida?</summary>
           <p>
@@ -2011,7 +1910,6 @@
             Du kan börja med <a href="/gratis-demo.html">gratis demo</a>.
           </p>
         </details>
-
         <details>
           <summary>Varför blandar bloggen manga och webbutveckling?</summary>
           <p>
@@ -2021,7 +1919,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container">
       <div class="footer-box">
@@ -2030,13 +1927,11 @@
           Webutvecklare.se drivs och är gjord av Erica Nordlöf / Nordlöf Nordic.<br>
           Hemsidor, företagshemsidor, webbfix, uppdateringar, landningssidor och webbutveckling för småföretag.
         </div>
-
         <div>
           Kontakt:
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
-
           <div class="footer-links">
             <a href="/">Startsida</a>
             <a href="/gratis-demo.html">Gratis demo</a>
@@ -2046,6 +1941,7 @@
             <a href="/case.html">Case</a>
             <a href="/om-mig.html">Om Erica</a>
             <a href="/blogg.html" aria-current="page">Blogg</a>
+            <a href="/veckobrev-vecka1-maj-2026.html">Veckobrev</a>
             <a href="/affiliate.html">Tipsprovision</a>
             <a href="/villkor.html">Villkor</a>
             <a href="/integritetspolicy.html">Integritet</a>
@@ -2058,36 +1954,30 @@
       </div>
     </div>
   </footer>
-
   <script>
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileMenuBackdrop = document.getElementById("mobileMenuBackdrop");
-
     function setMenuOpen(isOpen) {
       if (!mobileMenuToggle || !mobileMenu || !mobileMenuBackdrop) {
         return;
       }
-
       mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
       mobileMenu.hidden = !isOpen;
       mobileMenuBackdrop.hidden = !isOpen;
       document.body.classList.toggle("menu-open", isOpen);
     }
-
     if (mobileMenuToggle) {
       mobileMenuToggle.addEventListener("click", () => {
         const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
         setMenuOpen(!isOpen);
       });
     }
-
     if (mobileMenuBackdrop) {
       mobileMenuBackdrop.addEventListener("click", () => {
         setMenuOpen(false);
       });
     }
-
     if (mobileMenu) {
       mobileMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
@@ -2095,16 +1985,13 @@
         });
       });
     }
-
     window.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         setMenuOpen(false);
       }
     });
-
     const newsletterSuccess = document.getElementById("newsletterSuccess");
     const urlParams = new URLSearchParams(window.location.search);
-
     if (newsletterSuccess && urlParams.get("nyhetsbrev") === "tack") {
       newsletterSuccess.className = "form-status is-visible";
       newsletterSuccess.textContent = "Tack! Din prenumeration är mottagen. Kolla gärna skräpposten om första mejlet inte dyker upp.";
