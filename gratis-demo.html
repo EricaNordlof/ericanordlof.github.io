@@ -460,6 +460,19 @@
       background:rgba(255,255,255,.48);
     }
 
+    .btn [data-edit]{
+      display:inline;
+      pointer-events:none;
+    }
+
+    body.edit-mode .btn [data-edit]{
+      pointer-events:auto;
+    }
+
+    body:not(.edit-mode) .btn [data-edit]{
+      pointer-events:none;
+    }
+
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
@@ -1444,6 +1457,82 @@
       margin-top:6px;
     }
 
+    .card.highlight,
+    .truth-box.highlight,
+    .price-card.featured{
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.24), transparent 34%),
+        linear-gradient(145deg, var(--brand-deep) 0%, var(--brand) 52%, #e9a69d 100%) !important;
+      color:#fff !important;
+      border-color:rgba(255,255,255,.20) !important;
+      box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
+    }
+
+    .card.highlight h2,
+    .card.highlight h3,
+    .card.highlight p,
+    .card.highlight li,
+    .card.highlight strong,
+    .card.highlight span,
+    .card.highlight a,
+    .truth-box.highlight h2,
+    .truth-box.highlight h3,
+    .truth-box.highlight p,
+    .truth-box.highlight li,
+    .truth-box.highlight strong,
+    .truth-box.highlight span,
+    .truth-box.highlight a,
+    .price-card.featured h2,
+    .price-card.featured h3,
+    .price-card.featured p,
+    .price-card.featured li,
+    .price-card.featured strong,
+    .price-card.featured span,
+    .price-card.featured small,
+    .price-card.featured a{
+      color:#fff !important;
+    }
+
+    .truth-box h2,
+    .card.highlight h2,
+    .price-card.featured h2{
+      font-size:clamp(1.85rem, 4.2vw, 2.65rem) !important;
+      line-height:1.04 !important;
+      word-break:normal;
+      overflow-wrap:break-word;
+    }
+
+    .card:not(.highlight):not(.featured) h2,
+    .card:not(.highlight):not(.featured) h3,
+    .card:not(.highlight):not(.featured) strong,
+    .truth-box:not(.highlight) h2,
+    .truth-box:not(.highlight) h3,
+    .truth-box:not(.highlight) strong{
+      color:var(--text) !important;
+    }
+
+    .card:not(.highlight):not(.featured) p,
+    .card:not(.highlight):not(.featured) li,
+    .truth-box:not(.highlight) p,
+    .truth-box:not(.highlight) li{
+      color:var(--muted) !important;
+    }
+
+    .card.highlight .list li:before,
+    .truth-box.highlight .list li:before,
+    .price-card.featured .list li:before{
+      background:rgba(255,255,255,.22) !important;
+      color:#fff !important;
+    }
+
+    .card.highlight .tag,
+    .truth-box.highlight .tag,
+    .price-card.featured .tag{
+      background:rgba(255,255,255,.20) !important;
+      color:#fff !important;
+      border:1px solid rgba(255,255,255,.24) !important;
+    }
+
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
@@ -1609,6 +1698,12 @@
         font-size:16px;
       }
 
+      .truth-box h2,
+      .card.highlight h2,
+      .price-card.featured h2{
+        font-size:1.9rem !important;
+      }
+
       footer{
         padding-bottom:28px;
       }
@@ -1629,97 +1724,6 @@
         font-size:2rem;
       }
     }
-
-    /* FIX: highlight-kort fick vit text men vit bakgrund */
-.card.highlight,
-.truth-box.highlight,
-.price-card.featured{
-  background:
-    radial-gradient(circle at top right, rgba(255,255,255,.24), transparent 34%),
-    linear-gradient(145deg, var(--brand-deep) 0%, var(--brand) 52%, #e9a69d 100%) !important;
-  color:#fff !important;
-  border-color:rgba(255,255,255,.20) !important;
-  box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
-}
-
-/* All text på färgade kort ska synas */
-.card.highlight h2,
-.card.highlight h3,
-.card.highlight p,
-.card.highlight li,
-.card.highlight strong,
-.card.highlight span,
-.card.highlight a,
-.truth-box.highlight h2,
-.truth-box.highlight h3,
-.truth-box.highlight p,
-.truth-box.highlight li,
-.truth-box.highlight strong,
-.truth-box.highlight span,
-.truth-box.highlight a,
-.price-card.featured h2,
-.price-card.featured h3,
-.price-card.featured p,
-.price-card.featured li,
-.price-card.featured strong,
-.price-card.featured span,
-.price-card.featured small,
-.price-card.featured a{
-  color:#fff !important;
-}
-
-/* Gör rubriker i kort mindre så de inte spricker på mobil */
-.truth-box h2,
-.card.highlight h2,
-.price-card.featured h2{
-  font-size:clamp(1.85rem, 4.2vw, 2.65rem) !important;
-  line-height:1.04 !important;
-  word-break:normal;
-  overflow-wrap:break-word;
-}
-
-/* Vanliga vita kort ska alltid ha mörk text */
-.card:not(.highlight):not(.featured) h2,
-.card:not(.highlight):not(.featured) h3,
-.card:not(.highlight):not(.featured) strong,
-.truth-box:not(.highlight) h2,
-.truth-box:not(.highlight) h3,
-.truth-box:not(.highlight) strong{
-  color:var(--text) !important;
-}
-
-.card:not(.highlight):not(.featured) p,
-.card:not(.highlight):not(.featured) li,
-.truth-box:not(.highlight) p,
-.truth-box:not(.highlight) li{
-  color:var(--muted) !important;
-}
-
-/* Listbockar på färgade kort */
-.card.highlight .list li:before,
-.truth-box.highlight .list li:before,
-.price-card.featured .list li:before{
-  background:rgba(255,255,255,.22) !important;
-  color:#fff !important;
-}
-
-/* Tags på färgade kort */
-.card.highlight .tag,
-.truth-box.highlight .tag,
-.price-card.featured .tag{
-  background:rgba(255,255,255,.20) !important;
-  color:#fff !important;
-  border:1px solid rgba(255,255,255,.24) !important;
-}
-
-@media(max-width:760px){
-  .truth-box h2,
-  .card.highlight h2,
-  .price-card.featured h2{
-    font-size:1.9rem !important;
-  }
-}
-
   </style>
 </head>
 
@@ -1881,9 +1885,9 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt" data-edit>Beställ gratis demo</a>
-            <a class="btn btn-secondary" href="#material" data-edit>Se vad jag behöver</a>
-            <a class="btn btn-secondary" href="/case.html" data-edit>Se case</a>
+            <a class="btn btn-primary" href="#kontakt"><span data-edit>Beställ gratis demo</span></a>
+            <a class="btn btn-secondary" href="#material"><span data-edit>Se vad jag behöver</span></a>
+            <a class="btn btn-secondary" href="/case.html"><span data-edit>Se case</span></a>
           </div>
 
           <p class="micro-note" data-edit>
@@ -2188,8 +2192,8 @@
             <p data-edit>
               En tydlig förhandsvisning först. Sedan scope, pris och nästa steg om du vill gå vidare.
             </p>
-            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;" data-edit>Beställ gratis demo</a>
-            <a class="btn btn-secondary" href="#material" style="margin-top:10px;width:100%;" data-edit>Se materiallista</a>
+            <a class="btn btn-light" href="#kontakt" style="margin-top:16px;width:100%;"><span data-edit>Beställ gratis demo</span></a>
+            <a class="btn btn-secondary" href="#material" style="margin-top:10px;width:100%;"><span data-edit>Se materiallista</span></a>
           </div>
         </div>
       </div>
@@ -2469,12 +2473,12 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#kontakt" data-edit>Beställ gratis demo</a>
-            <a class="btn btn-secondary" href="/om-mig.html" data-edit>Om mig</a>
-            <a class="btn btn-secondary" href="/case.html" data-edit>Se case</a>
-            <a class="btn btn-secondary" href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer" data-edit>Google Maps</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="me noopener noreferrer" data-edit>LinkedIn</a>
-            <a class="btn btn-secondary" href="https://github.com/EricaNordlof" target="_blank" rel="me noopener noreferrer" data-edit>GitHub</a>
+            <a class="btn btn-primary" href="#kontakt"><span data-edit>Beställ gratis demo</span></a>
+            <a class="btn btn-secondary" href="/om-mig.html"><span data-edit>Om mig</span></a>
+            <a class="btn btn-secondary" href="/case.html"><span data-edit>Se case</span></a>
+            <a class="btn btn-secondary" href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer"><span data-edit>Google Maps</span></a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="me noopener noreferrer"><span data-edit>LinkedIn</span></a>
+            <a class="btn btn-secondary" href="https://github.com/EricaNordlof" target="_blank" rel="me noopener noreferrer"><span data-edit>GitHub</span></a>
           </div>
         </article>
       </div>
@@ -2544,7 +2548,7 @@
 
     const contactForm = document.getElementById("contactForm");
 
-    const STORAGE_KEY = "nordlofGratisDemoSameAsHomeV1";
+    const STORAGE_KEY = "nordlofGratisDemoSameAsHomeV2";
     const ORIGINAL_HTML = {};
     const editableElements = Array.from(document.querySelectorAll("[data-edit]"));
 
@@ -2674,6 +2678,11 @@
       editableElements.forEach(el => {
         el.contentEditable = active ? "true" : "false";
         el.spellcheck = active ? true : false;
+
+        const parentLink = el.closest("a");
+        if(parentLink){
+          parentLink.toggleAttribute("data-editing-link", active);
+        }
       });
 
       if(editToggle){
@@ -2794,6 +2803,10 @@
       clone.querySelectorAll("[contenteditable]").forEach(el => {
         el.removeAttribute("contenteditable");
         el.removeAttribute("spellcheck");
+      });
+
+      clone.querySelectorAll("[data-editing-link]").forEach(el => {
+        el.removeAttribute("data-editing-link");
       });
 
       const clonedBody = clone.querySelector("body");
@@ -2946,6 +2959,14 @@
         });
       });
     }
+
+    document.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if(document.body.classList.contains("edit-mode") && link.hasAttribute("data-editing-link")){
+          event.preventDefault();
+        }
+      });
+    });
 
     if(designToggle && designPanel){
       designToggle.addEventListener("click", () => {
