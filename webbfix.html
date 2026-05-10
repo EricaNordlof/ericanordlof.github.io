@@ -12,10 +12,13 @@
   <meta name="author" content="Erica Nordlöf" />
   <meta name="theme-color" content="#f7f0ec" />
   <meta name="msvalidate.01" content="92586BA25D845A7D1185B5EE710E8A08" />
+
   <link rel="canonical" href="https://webutvecklare.se/webbfix.html" />
   <link rel="sitemap" type="application/xml" href="https://webutvecklare.se/sitemap.xml" />
   <link rel="me" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" />
   <link rel="me" href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" />
+  <link rel="preload" as="image" href="webbfix.PNG" />
+
   <meta property="og:title" content="Webbfix från 490 kr | Nordlöf Nordic" />
   <meta
     property="og:description"
@@ -23,20 +26,24 @@
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/webbfix.html" />
-  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta property="og:image" content="https://webutvecklare.se/webbfix.PNG" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Webbfix från 490 kr | Nordlöf Nordic" />
   <meta name="twitter:description" content="Snabb hjälp med text, bilder, layout, knappar, formulär, SEO-grund, sitemap och tekniska småfel på hemsidan." />
-  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta name="twitter:image" content="https://webutvecklare.se/webbfix.PNG" />
+
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
   <link rel="apple-touch-icon" href="favicon-nordlof.png?v=2" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -153,6 +160,10 @@
         "description":"Webbfix för småföretag: hjälp med text, bilder, CTA, formulär, sitemap, metadata, SEO-grund, mobilbuggar och tekniska småfel på befintlig hemsida.",
         "inLanguage":"sv-SE",
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
+        "primaryImageOfPage":{
+          "@type":"ImageObject",
+          "url":"https://webutvecklare.se/webbfix.PNG"
+        },
         "about":{"@id":"https://webutvecklare.se/webbfix.html#service"},
         "breadcrumb":{"@id":"https://webutvecklare.se/webbfix.html#breadcrumb"}
       },
@@ -241,6 +252,7 @@
     ]
   }
   </script>
+
   <style>
     :root{
       --bg:#f7f0ec;
@@ -257,11 +269,14 @@
       --radius:24px;
       --max:1080px;
     }
+
     *{box-sizing:border-box}
+
     html{
       scroll-behavior:smooth;
       -webkit-text-size-adjust:100%;
     }
+
     body{
       margin:0;
       font-family:Inter,sans-serif;
@@ -273,29 +288,36 @@
         linear-gradient(180deg,#fff7f4 0%,#f7f0ec 42%,#f1e6e1 100%);
       overflow-x:hidden;
     }
+
     body.menu-open{
       overflow:hidden;
     }
+
     a{
       color:inherit;
       text-decoration:none;
     }
+
     img{
       max-width:100%;
       display:block;
     }
+
     input,
     select,
     textarea,
     button{
       font:inherit;
     }
+
     button{
       border:0;
     }
+
     :target{
       scroll-margin-top:92px;
     }
+
     a:focus-visible,
     button:focus-visible,
     input:focus-visible,
@@ -306,6 +328,7 @@
       outline-offset:4px;
       box-shadow:0 0 0 6px rgba(255,255,255,.88);
     }
+
     .skip-link{
       position:absolute;
       left:12px;
@@ -321,13 +344,16 @@
       box-shadow:0 12px 30px rgba(36,30,26,.16);
       transition:.15s ease;
     }
+
     .skip-link:focus{
       transform:translateY(0);
     }
+
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
     }
+
     .topbar{
       position:sticky;
       top:0;
@@ -338,6 +364,7 @@
       -webkit-backdrop-filter:blur(16px);
       box-shadow:0 14px 38px rgba(36,30,26,.08);
     }
+
     .nav{
       min-height:72px;
       display:flex;
@@ -346,6 +373,7 @@
       gap:16px;
       padding:12px 0;
     }
+
     .mobile-logo{
       display:flex;
       align-items:center;
@@ -359,12 +387,14 @@
       border:1px solid rgba(36,30,26,.08);
       flex:0 0 auto;
     }
+
     .mobile-logo img{
       width:100%;
       height:100%;
       object-fit:cover;
       display:block;
     }
+
     .mobile-menu-toggle{
       display:inline-flex;
       align-items:center;
@@ -382,6 +412,7 @@
       position:relative;
       z-index:120;
     }
+
     .hamburger{
       width:18px;
       height:14px;
@@ -389,6 +420,7 @@
       display:inline-block;
       flex:0 0 auto;
     }
+
     .hamburger::before,
     .hamburger::after,
     .hamburger i{
@@ -401,18 +433,23 @@
       background:currentColor;
       transition:.18s ease;
     }
+
     .hamburger::before{top:0}
     .hamburger i{top:6px}
     .hamburger::after{bottom:0}
+
     .mobile-menu-toggle[aria-expanded="true"] .hamburger::before{
       transform:translateY(6px) rotate(45deg);
     }
+
     .mobile-menu-toggle[aria-expanded="true"] .hamburger i{
       opacity:0;
     }
+
     .mobile-menu-toggle[aria-expanded="true"] .hamburger::after{
       transform:translateY(-6px) rotate(-45deg);
     }
+
     .mobile-menu-backdrop{
       position:fixed;
       inset:0;
@@ -421,6 +458,7 @@
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
     }
+
     .mobile-menu{
       position:fixed;
       top:82px;
@@ -438,10 +476,12 @@
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
     }
+
     .mobile-menu-inner{
       display:grid;
       gap:12px;
     }
+
     .mobile-menu-brand{
       display:flex;
       align-items:center;
@@ -450,6 +490,7 @@
       border-bottom:1px solid var(--line);
       margin-bottom:2px;
     }
+
     .mobile-menu-brand img{
       width:42px;
       height:42px;
@@ -457,20 +498,24 @@
       object-fit:cover;
       box-shadow:0 10px 24px rgba(36,30,26,.08);
     }
+
     .mobile-menu-brand strong{
       display:block;
       letter-spacing:-.03em;
     }
+
     .mobile-menu-brand span{
       display:block;
       color:var(--muted);
       font-size:13px;
       margin-top:2px;
     }
+
     .mobile-menu-links{
       display:grid;
       gap:8px;
     }
+
     .mobile-menu-links a{
       display:flex;
       align-items:center;
@@ -483,17 +528,20 @@
       font-weight:900;
       box-shadow:0 10px 24px rgba(36,30,26,.04);
     }
+
     .mobile-menu-links a::after{
       content:"›";
       color:var(--brand-deep);
       font-size:22px;
       line-height:1;
     }
+
     .mobile-menu-actions{
       display:grid;
       gap:9px;
       padding-top:4px;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -510,35 +558,85 @@
       white-space:nowrap;
       text-decoration:none;
     }
+
     .btn:hover{
       transform:translateY(-1px);
     }
+
     .btn-primary{
       background:linear-gradient(135deg,var(--brand-deep) 0%,var(--brand) 55%,#e4a198 100%);
       color:#fff;
       box-shadow:0 16px 34px rgba(154,88,85,.26);
     }
+
     .btn-secondary{
       background:#fffdfc;
       border-color:rgba(154,88,85,.18);
       color:var(--text);
       box-shadow:0 10px 24px rgba(36,30,26,.05);
     }
+
     .btn-light{
       background:#fffdfc;
       color:#262220;
       border-color:rgba(154,88,85,.18);
       box-shadow:0 16px 34px rgba(36,30,26,.08);
     }
-    .hero{
-      padding:clamp(38px,7vw,82px) 0 28px;
+
+    .promo-top{
+      padding:18px 0 0;
     }
+
+    .promo-image-link{
+      display:block;
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      background:#fff8f6;
+      border:1px solid rgba(154,88,85,.16);
+      box-shadow:var(--shadow-strong);
+      transition:.18s ease;
+    }
+
+    .promo-image-link:hover{
+      transform:translateY(-2px);
+      box-shadow:0 34px 92px rgba(154,88,85,.24);
+    }
+
+    .promo-image-link img{
+      width:100%;
+      height:auto;
+      object-fit:cover;
+    }
+
+    .promo-image-link::after{
+      content:"Tryck för att skicka förfrågan";
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      z-index:2;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(17,17,17,.84);
+      color:#fff;
+      font-size:13px;
+      font-weight:900;
+      box-shadow:0 12px 28px rgba(36,30,26,.18);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .hero{
+      padding:clamp(34px,6vw,70px) 0 28px;
+    }
+
     .hero-grid{
       display:grid;
       grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
       gap:30px;
       align-items:center;
     }
+
     .eyebrow{
       display:inline-flex;
       align-items:center;
@@ -554,53 +652,63 @@
       max-width:100%;
       line-height:1.35;
     }
+
     h1,
     h2{
       font-family:"Playfair Display",serif;
       letter-spacing:-.045em;
     }
+
     h1{
       margin:18px 0 16px;
       font-size:clamp(2.55rem,7vw,5.1rem);
       line-height:.95;
       text-wrap:balance;
     }
+
     h2{
       margin:0 0 12px;
       font-size:clamp(2rem,5vw,3.1rem);
       line-height:1.03;
       text-wrap:balance;
     }
+
     h3{
       margin:0 0 10px;
       font-size:22px;
       letter-spacing:-.035em;
       line-height:1.15;
     }
+
     p{
       margin:0;
     }
+
     .lead{
       max-width:760px;
       color:var(--muted);
       font-size:clamp(17px,2vw,20px);
       line-height:1.72;
     }
+
     .lead strong{
       color:var(--text);
     }
+
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
       margin-top:26px;
     }
+
     .micro-note{
       margin-top:14px;
       color:var(--muted);
       line-height:1.65;
       font-size:14px;
     }
+
     .proof-row{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -608,6 +716,7 @@
       margin-top:22px;
       max-width:840px;
     }
+
     .proof-pill{
       background:#fffdfc;
       border:1px solid rgba(154,88,85,.13);
@@ -617,12 +726,14 @@
       font-weight:900;
       line-height:1.35;
     }
+
     .proof-pill strong{
       display:block;
       font-size:16px;
       margin-bottom:5px;
       color:var(--text);
     }
+
     .proof-pill span{
       display:block;
       color:var(--muted);
@@ -631,6 +742,7 @@
       line-height:1.45;
       margin-top:5px;
     }
+
     .hero-card,
     .form-card,
     .cta-box,
@@ -643,10 +755,12 @@
       box-shadow:0 30px 80px rgba(154,88,85,.26);
       border-color:rgba(255,255,255,.18);
     }
+
     .hero-card{
       border-radius:34px;
       padding:clamp(22px,4vw,32px);
     }
+
     .hero-card *,
     .form-card > h2,
     .form-card > p,
@@ -660,6 +774,7 @@
     .price-card.featured *{
       color:#fff;
     }
+
     .hero-logo{
       width:100%;
       max-width:340px;
@@ -672,6 +787,7 @@
       background:#050505;
       box-shadow:0 22px 54px rgba(36,30,26,.18);
     }
+
     .mini-list{
       display:grid;
       gap:12px;
@@ -679,6 +795,7 @@
       padding:0;
       margin:0;
     }
+
     .mini-list li{
       padding:15px;
       border-radius:18px;
@@ -686,18 +803,22 @@
       border:1px solid rgba(255,255,255,.22);
       line-height:1.55;
     }
+
     .mini-list strong{
       display:block;
       margin-bottom:3px;
     }
+
     .quick-strip{
       padding:12px 0 0;
     }
+
     .quick-grid{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
       gap:12px;
     }
+
     .quick-item{
       background:#fffdfc;
       border:1px solid rgba(154,88,85,.13);
@@ -708,6 +829,7 @@
       box-shadow:var(--shadow);
       line-height:1.45;
     }
+
     .quick-item strong{
       display:block;
       color:var(--text);
@@ -715,33 +837,40 @@
       letter-spacing:-.04em;
       margin-bottom:3px;
     }
+
     .section{
       padding:clamp(34px,5vw,60px) 0;
     }
+
     .section-head{
       max-width:880px;
       margin-bottom:20px;
     }
+
     .section-head p{
       color:var(--muted);
       line-height:1.75;
       font-size:17px;
     }
+
     .grid-4{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
       gap:18px;
     }
+
     .grid-3{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
+
     .grid-2{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:18px;
     }
+
     .card,
     .truth-box,
     .faq details,
@@ -755,33 +884,40 @@
       box-shadow:var(--shadow);
       min-width:0;
     }
+
     a.card{
       display:block;
       text-decoration:none;
       transition:.18s ease;
     }
+
     a.card:hover{
       transform:translateY(-1px);
     }
+
     .truth-box{
       border-radius:32px;
       padding:clamp(24px,4vw,36px);
     }
+
     .card p,
     .truth-box p,
     .price-card p{
       color:var(--muted);
       line-height:1.72;
     }
+
     .card a{
       text-decoration:underline;
       text-underline-offset:4px;
       text-decoration-thickness:1px;
       font-weight:800;
     }
+
     .card a:hover{
       color:var(--brand-dark);
     }
+
     .tag{
       display:inline-flex;
       align-items:center;
@@ -796,6 +932,7 @@
       letter-spacing:.04em;
       margin-bottom:14px;
     }
+
     .tag:before{
       content:"";
       width:7px;
@@ -804,6 +941,7 @@
       background:currentColor;
       opacity:.65;
     }
+
     .tag.dark,
     .hero-card .tag,
     .highlight .tag,
@@ -813,6 +951,7 @@
       color:#fff;
       border:1px solid rgba(255,255,255,.24);
     }
+
     .list{
       display:grid;
       gap:11px;
@@ -821,11 +960,13 @@
       margin:18px 0 0;
       color:#4c433f;
     }
+
     .list li{
       display:flex;
       gap:10px;
       line-height:1.55;
     }
+
     .list li:before{
       content:"✓";
       width:22px;
@@ -840,11 +981,13 @@
       font-weight:900;
       margin-top:1px;
     }
+
     .highlight .list li:before,
     .price-card.featured .list li:before{
       background:rgba(255,255,255,.22);
       color:#fff;
     }
+
     .price{
       font-size:42px;
       line-height:1;
@@ -852,6 +995,7 @@
       letter-spacing:-.055em;
       margin:8px 0 12px;
     }
+
     .price small{
       display:block;
       font-size:15px;
@@ -860,6 +1004,7 @@
       margin-top:7px;
       font-weight:800;
     }
+
     .price-note{
       margin-top:18px;
       border-radius:20px;
@@ -867,20 +1012,24 @@
       color:var(--muted);
       line-height:1.7;
     }
+
     .price-note strong{
       color:var(--text);
     }
+
     .timeline{
       display:grid;
       gap:14px;
       counter-reset:steps;
     }
+
     .timeline-item{
       position:relative;
       border-radius:22px;
       padding:20px 20px 20px 70px;
       min-height:74px;
     }
+
     .timeline-item:before{
       counter-increment:steps;
       content:counter(steps);
@@ -896,16 +1045,19 @@
       color:#fff;
       font-weight:900;
     }
+
     .timeline-item strong{
       display:block;
       margin-bottom:4px;
       font-size:17px;
     }
+
     .timeline-item span{
       display:block;
       color:var(--muted);
       line-height:1.65;
     }
+
     .cta-box{
       border-radius:32px;
       padding:clamp(24px,4vw,36px);
@@ -914,12 +1066,14 @@
       gap:22px;
       align-items:center;
     }
+
     .cta-panel{
       background:rgba(255,255,255,.15);
       border:1px solid rgba(255,255,255,.20);
       border-radius:24px;
       padding:22px;
     }
+
     .cta-panel strong{
       display:block;
       font-size:clamp(34px,5vw,48px);
@@ -927,6 +1081,7 @@
       letter-spacing:-.055em;
       margin-bottom:10px;
     }
+
     .cta-box .btn-light,
     .cta-box .btn-secondary,
     .hero-card .btn-light,
@@ -937,6 +1092,7 @@
       color:#262220;
       border-color:rgba(154,88,85,.18);
     }
+
     .cta-box .btn-light *,
     .cta-box .btn-secondary *,
     .hero-card .btn-light *,
@@ -945,32 +1101,39 @@
     .form-card .btn-secondary *{
       color:#262220;
     }
+
     .faq details{
       padding:18px 20px;
     }
+
     .faq details + details{
       margin-top:12px;
     }
+
     .faq summary{
       cursor:pointer;
       font-weight:900;
       font-size:17px;
       line-height:1.4;
     }
+
     .faq p{
       margin:12px 0 0;
       color:var(--muted);
       line-height:1.7;
     }
+
     .form-card{
       border-radius:32px;
       padding:clamp(20px,4vw,32px);
     }
+
     form{
       display:grid;
       gap:13px;
       margin-top:20px;
     }
+
     label{
       display:block;
       font-weight:900;
@@ -978,6 +1141,7 @@
       margin-bottom:6px;
       color:#fff;
     }
+
     input,
     select,
     textarea{
@@ -990,28 +1154,34 @@
       color:#262220;
       outline:none;
     }
+
     input::placeholder,
     textarea::placeholder{
       color:#7a6d68;
     }
+
     select option{
       background:#fff;
       color:#111;
     }
+
     textarea{
       min-height:120px;
       resize:vertical;
     }
+
     input:focus,
     select:focus,
     textarea:focus{
       border-color:rgba(255,255,255,1);
       box-shadow:0 0 0 3px rgba(255,255,255,.22);
     }
+
     input[type="file"]{
       cursor:pointer;
       padding:12px;
     }
+
     input[type="file"]::file-selector-button{
       border:0;
       border-radius:999px;
@@ -1023,31 +1193,37 @@
       font-weight:900;
       cursor:pointer;
     }
+
     .form-grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:13px;
     }
+
     .full{
       grid-column:1/-1;
     }
+
     .hidden-field{
       position:absolute;
       left:-9999px;
       opacity:0;
       pointer-events:none;
     }
+
     .small{
       display:block;
       color:rgba(255,255,255,.9);
       line-height:1.55;
       font-size:13px;
     }
+
     .small a{
       text-decoration:underline;
       text-underline-offset:3px;
       color:#fff;
     }
+
     .required-note{
       display:block;
       margin-top:14px;
@@ -1055,10 +1231,12 @@
       font-size:13px;
       line-height:1.55;
     }
+
     .required-mark{
       font-weight:900;
       color:#fff;
     }
+
     .form-status{
       display:none;
       padding:12px 14px;
@@ -1069,15 +1247,18 @@
       line-height:1.5;
       color:#fff;
     }
+
     .form-status.is-visible{
       display:block;
     }
+
     .contact-row{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
       gap:12px;
       margin-top:18px;
     }
+
     .contact-mini{
       background:rgba(255,255,255,.16);
       border:1px solid rgba(255,255,255,.24);
@@ -1086,23 +1267,27 @@
       line-height:1.5;
       color:#fff;
     }
+
     .contact-mini strong{
       display:block;
       margin-bottom:4px;
       color:#fff;
     }
+
     .contact-mini a{
       text-decoration:underline;
       text-underline-offset:3px;
       color:#fff;
       font-weight:900;
     }
+
     footer{
       padding:34px 0;
       color:#5b524d;
       font-size:14px;
       background:linear-gradient(180deg,transparent 0%,rgba(207,125,120,.08) 100%);
     }
+
     .footer-box{
       border-top:1px solid var(--line);
       padding-top:18px;
@@ -1111,12 +1296,14 @@
       gap:18px;
       line-height:1.7;
     }
+
     .footer-box a{
       color:var(--text);
       text-decoration:underline;
       text-underline-offset:3px;
       font-weight:800;
     }
+
     .footer-links{
       display:flex;
       flex-wrap:wrap;
@@ -1124,85 +1311,81 @@
       margin-top:6px;
     }
 
-    /* FIX: highlight-kort ska ha gradientbakgrund, inte vit kortbakgrund */
-.card.highlight,
-.truth-box.highlight,
-.price-card.featured{
-  background:
-    radial-gradient(circle at top right,rgba(255,255,255,.24),transparent 34%),
-    linear-gradient(145deg,#b86b66 0%,#cd817b 50%,#e4a198 100%) !important;
-  color:#fff !important;
-  border-color:rgba(255,255,255,.18) !important;
-  box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
-}
+    .card.highlight,
+    .truth-box.highlight,
+    .price-card.featured{
+      background:
+        radial-gradient(circle at top right,rgba(255,255,255,.24),transparent 34%),
+        linear-gradient(145deg,#b86b66 0%,#cd817b 50%,#e4a198 100%) !important;
+      color:#fff !important;
+      border-color:rgba(255,255,255,.18) !important;
+      box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
+    }
 
-/* FIX: all text på gradientkorten ska vara vit */
-.card.highlight h2,
-.card.highlight h3,
-.card.highlight p,
-.card.highlight li,
-.card.highlight strong,
-.card.highlight span,
-.card.highlight a,
-.truth-box.highlight h2,
-.truth-box.highlight h3,
-.truth-box.highlight p,
-.truth-box.highlight li,
-.truth-box.highlight strong,
-.truth-box.highlight span,
-.truth-box.highlight a,
-.price-card.featured h2,
-.price-card.featured h3,
-.price-card.featured p,
-.price-card.featured li,
-.price-card.featured strong,
-.price-card.featured span,
-.price-card.featured a{
-  color:#fff !important;
-}
+    .card.highlight h2,
+    .card.highlight h3,
+    .card.highlight p,
+    .card.highlight li,
+    .card.highlight strong,
+    .card.highlight span,
+    .card.highlight a,
+    .truth-box.highlight h2,
+    .truth-box.highlight h3,
+    .truth-box.highlight p,
+    .truth-box.highlight li,
+    .truth-box.highlight strong,
+    .truth-box.highlight span,
+    .truth-box.highlight a,
+    .price-card.featured h2,
+    .price-card.featured h3,
+    .price-card.featured p,
+    .price-card.featured li,
+    .price-card.featured strong,
+    .price-card.featured span,
+    .price-card.featured a{
+      color:#fff !important;
+    }
 
-/* FIX: taggar på gradientkort */
-.card.highlight .tag,
-.truth-box.highlight .tag,
-.price-card.featured .tag{
-  background:rgba(255,255,255,.20) !important;
-  color:#fff !important;
-  border:1px solid rgba(255,255,255,.24) !important;
-}
+    .card.highlight .tag,
+    .truth-box.highlight .tag,
+    .price-card.featured .tag{
+      background:rgba(255,255,255,.20) !important;
+      color:#fff !important;
+      border:1px solid rgba(255,255,255,.24) !important;
+    }
 
-/* FIX: bockarna i listorna på gradientkort */
-.card.highlight .list li:before,
-.truth-box.highlight .list li:before,
-.price-card.featured .list li:before{
-  background:rgba(255,255,255,.22) !important;
-  color:#fff !important;
-}
+    .card.highlight .list li:before,
+    .truth-box.highlight .list li:before,
+    .price-card.featured .list li:before{
+      background:rgba(255,255,255,.22) !important;
+      color:#fff !important;
+    }
 
-/* FIX: vita knappar inne på gradientkort ska ha mörk text */
-.card.highlight .btn-light,
-.card.highlight .btn-secondary,
-.truth-box.highlight .btn-light,
-.truth-box.highlight .btn-secondary,
-.price-card.featured .btn-light,
-.price-card.featured .btn-secondary{
-  background:#fffdfc !important;
-  color:#262220 !important;
-  border-color:rgba(154,88,85,.18) !important;
-}
+    .card.highlight .btn-light,
+    .card.highlight .btn-secondary,
+    .truth-box.highlight .btn-light,
+    .truth-box.highlight .btn-secondary,
+    .price-card.featured .btn-light,
+    .price-card.featured .btn-secondary{
+      background:#fffdfc !important;
+      color:#262220 !important;
+      border-color:rgba(154,88,85,.18) !important;
+    }
 
-.card.highlight .btn-light *,
-.card.highlight .btn-secondary *,
-.truth-box.highlight .btn-light *,
-.truth-box.highlight .btn-secondary *,
-.price-card.featured .btn-light *,
-.price-card.featured .btn-secondary *{
-  color:#262220 !important;
-}
+    .card.highlight .btn-light *,
+    .card.highlight .btn-secondary *,
+    .truth-box.highlight .btn-light *,
+    .truth-box.highlight .btn-secondary *,
+    .price-card.featured .btn-light *,
+    .price-card.featured .btn-secondary *{
+      color:#262220 !important;
+    }
 
     @media (prefers-reduced-motion: reduce){
       html{
         scroll-behavior:auto;
       }
+
       *,
       *::before,
       *::after{
@@ -1210,11 +1393,14 @@
         animation-iteration-count:1 !important;
         transition-duration:.01ms !important;
       }
+
       .btn:hover,
-      a.card:hover{
+      a.card:hover,
+      .promo-image-link:hover{
         transform:none;
       }
     }
+
     @media(max-width:980px){
       .hero-grid,
       .grid-2,
@@ -1222,6 +1408,7 @@
       .footer-box{
         grid-template-columns:1fr;
       }
+
       .grid-4,
       .grid-3,
       .quick-grid,
@@ -1229,23 +1416,28 @@
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
     }
+
     @media(max-width:760px){
       .container{
         width:min(var(--max),calc(100% - 22px));
       }
+
       .nav{
         min-height:62px;
         padding:8px 0;
       }
+
       .mobile-logo{
         width:44px;
         height:44px;
         border-radius:13px;
       }
+
       .mobile-menu-toggle{
         min-height:44px;
         padding:11px 14px;
       }
+
       .mobile-menu{
         top:70px;
         left:10px;
@@ -1253,28 +1445,49 @@
         width:auto;
         max-height:calc(100dvh - 84px - env(safe-area-inset-bottom));
       }
+
+      .promo-top{
+        padding:12px 0 0;
+      }
+
+      .promo-image-link{
+        border-radius:20px;
+      }
+
+      .promo-image-link::after{
+        right:10px;
+        bottom:10px;
+        font-size:12px;
+        padding:8px 10px;
+      }
+
       .hero{
         padding:24px 0 18px;
       }
+
       h1{
         font-size:clamp(2.15rem,10.8vw,3.25rem);
         line-height:.98;
         margin:14px 0 12px;
       }
+
       .lead{
         font-size:15.5px;
         line-height:1.65;
         color:#544b46;
       }
+
       .hero-actions{
         display:grid;
         grid-template-columns:1fr;
         gap:9px;
         margin-top:18px;
       }
+
       .hero-actions .btn{
         width:100%;
       }
+
       .proof-row,
       .grid-4,
       .grid-3,
@@ -1283,20 +1496,24 @@
       .form-grid{
         grid-template-columns:1fr;
       }
+
       .hero-card,
       .form-card,
       .cta-box{
         padding:20px;
         border-radius:22px;
       }
+
       .hero-logo{
         max-width:280px;
         height:230px;
         padding:18px;
       }
+
       .section{
         padding:30px 0;
       }
+
       .card,
       .truth-box,
       .timeline-item,
@@ -1304,9 +1521,11 @@
         padding:18px;
         border-radius:20px;
       }
+
       .timeline-item{
         padding:16px 16px 16px 56px;
       }
+
       .timeline-item:before{
         left:16px;
         top:16px;
@@ -1314,37 +1533,49 @@
         height:30px;
         font-size:13px;
       }
+
       input,
       select,
       textarea{
         font-size:16px;
       }
+
       footer{
         padding-bottom:28px;
       }
     }
+
     @media(max-width:390px){
       .container{
         width:min(var(--max),calc(100% - 18px));
       }
+
       .mobile-menu{
         left:8px;
         right:8px;
         border-radius:20px;
       }
+
       h1{
         font-size:2rem;
+      }
+
+      .promo-image-link::after{
+        content:"Skicka förfrågan";
       }
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Hoppa till huvudinnehåll</a>
+
   <header class="topbar">
     <div class="container nav">
       <a class="mobile-logo" href="/" aria-label="Gå till startsidan">
         <img src="favicon-nordlof.png?v=2" alt="Nordlöf Nordic logga" width="92" height="92" />
       </a>
+
       <button
         class="mobile-menu-toggle"
         type="button"
@@ -1357,7 +1588,9 @@
       </button>
     </div>
   </header>
+
   <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" hidden></div>
+
   <nav class="mobile-menu" id="mobileMenu" aria-label="Meny" hidden>
     <div class="mobile-menu-inner">
       <a class="mobile-menu-brand" href="/" aria-label="Gå till startsidan">
@@ -1367,6 +1600,7 @@
           <span>Kodad webb för småföretag</span>
         </span>
       </a>
+
       <div class="mobile-menu-links">
         <a href="/">Startsida</a>
         <a href="/gratis-demo.html">Gratis demo</a>
@@ -1377,46 +1611,71 @@
         <a href="/om-mig.html">Om Erica</a>
         <a href="/blogg.html">Blogg</a>
       </div>
+
       <div class="mobile-menu-actions">
         <a class="btn btn-primary" href="#kontakt">Skicka webbfix</a>
         <a class="btn btn-secondary" href="/gratis-demo.html">Få gratis demo</a>
       </div>
     </div>
   </nav>
+
   <main id="main">
+    <section class="promo-top" aria-label="Webbfix reklam">
+      <div class="container">
+        <a class="promo-image-link" href="#kontakt" aria-label="Gå till formuläret för webbfix-förfrågan">
+          <img
+            src="webbfix.PNG"
+            width="1536"
+            height="1024"
+            alt="Webbfix – hjälp med befintlig hemsida, layout, buggar, bilder, texter, länkar, kontaktformulär och mobilanpassning"
+            loading="eager"
+            fetchpriority="high"
+          >
+        </a>
+      </div>
+    </section>
+
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Webbfix · Uppdatera hemsida · SEO-grund · Sitemap · Mobilbuggar</span>
+
           <h1 id="hero-title">Webbfix när hemsidan nästan funkar — men inte riktigt säljer.</h1>
+
           <p class="lead">
             Webbfix är för mindre och större ändringar på en befintlig hemsida. Jag hjälper småföretag med text, bilder,
             CTA-knappar, formulär, SEO-grund, sitemap, metadata, mobilanpassning och tekniska småfel.
             Du skickar vad som ska ändras, får bedömning och godkänner innan jobbet startar.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Skicka webbfix-förfrågan</a>
             <a class="btn btn-secondary" href="#priser">Se priser</a>
             <a class="btn btn-secondary" href="/gratis-demo.html">Gratis demo</a>
           </div>
+
           <p class="micro-note">
             Passar när sidan redan finns, men något skaver: fel text, svag CTA, trasig länk, rörigt formulär, metadata som glömts bort eller en mobilvy som lever sitt eget lilla rebelliv.
           </p>
+
           <div class="proof-row" aria-label="Fördelar">
             <div class="proof-pill">
               <strong>Från 490 kr</strong>
               <span>För en mindre ändring på befintlig hemsida.</span>
             </div>
+
             <div class="proof-pill">
               <strong>Snabbt och konkret</strong>
               <span>Skicka länk, önskad ändring och material.</span>
             </div>
+
             <div class="proof-pill">
               <strong>Ingen stor process</strong>
               <span>Småfix ska inte bli digitalt styrelsemöte.</span>
             </div>
           </div>
         </div>
+
         <aside class="hero-card" aria-label="Kort sammanfattning">
           <img
             class="hero-logo"
@@ -1425,6 +1684,7 @@
             height="600"
             alt="Nordlöf Nordic – webbfix, kodade hemsidor och webbutveckling för småföretag"
           >
+
           <ul class="mini-list">
             <li>
               <strong>1. Skicka länken</strong>
@@ -1446,6 +1706,7 @@
         </aside>
       </div>
     </section>
+
     <section class="quick-strip" aria-label="Snabb information">
       <div class="container quick-grid">
         <div class="quick-item">
@@ -1466,6 +1727,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="vanliga-fixar">
       <div class="container">
         <div class="section-head">
@@ -1474,6 +1736,7 @@
             Webbfix är perfekt när du inte behöver ett helt nytt projekt, utan bara vill få ordning på sådant som påverkar förtroende, synlighet eller kontaktvägen.
           </p>
         </div>
+
         <div class="grid-3">
           <article class="card">
             <span class="tag">Text och struktur</span>
@@ -1487,6 +1750,7 @@
               <li>Tydligare säljstruktur</li>
             </ul>
           </article>
+
           <article class="card highlight">
             <span class="tag dark">CTA och kontakt</span>
             <h3>Fixa vägen till förfrågan</h3>
@@ -1499,6 +1763,7 @@
               <li>Trasiga länkar</li>
             </ul>
           </article>
+
           <article class="card">
             <span class="tag">Bilder och layout</span>
             <h3>Byta bilder och städa designen</h3>
@@ -1511,6 +1776,7 @@
               <li>Mobilanpassning</li>
             </ul>
           </article>
+
           <article class="card">
             <span class="tag">Formulär</span>
             <h3>Formulär som faktiskt går att använda</h3>
@@ -1523,6 +1789,7 @@
               <li>Statusmeddelanden</li>
             </ul>
           </article>
+
           <article class="card">
             <span class="tag">SEO och indexering</span>
             <h3>Metadata, sitemap och sökstruktur</h3>
@@ -1535,6 +1802,7 @@
               <li>Sitemap/backend-småfix</li>
             </ul>
           </article>
+
           <article class="card">
             <span class="tag">Tekniskt</span>
             <h3>Små tekniska fel och mobilbuggar</h3>
@@ -1550,6 +1818,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="priser">
       <div class="container">
         <div class="section-head">
@@ -1558,6 +1827,7 @@
             Skicka vad du vill ändra, så bedömer jag vilken nivå det passar. Hellre tydligt pris än offert-teater i tre akter.
           </p>
         </div>
+
         <div class="grid-3">
           <article class="price-card">
             <span class="tag">Liten</span>
@@ -1572,6 +1842,7 @@
               <li>Snabbt upplägg</li>
             </ul>
           </article>
+
           <article class="price-card featured">
             <span class="tag dark">Vanligast</span>
             <h3>Normal webbfix</h3>
@@ -1585,6 +1856,7 @@
               <li>Bra för testjobb</li>
             </ul>
           </article>
+
           <article class="price-card">
             <span class="tag">Större</span>
             <h3>Större webbfix</h3>
@@ -1599,12 +1871,14 @@
             </ul>
           </article>
         </div>
+
         <div class="price-note">
           <strong>Vad som inte ingår i fast småfix:</strong> stora system, avancerade integrationer, bokningslogik, inloggning, betalflöden, API, backend eller större felsökning utan separat bedömning.
           Sådant går ofta att lösa, men då från <strong>650 kr/h</strong> eller separat offert. Inga tentakler i smyg.
         </div>
       </div>
     </section>
+
     <section class="section" id="sa-funkar-det">
       <div class="container">
         <div class="section-head">
@@ -1613,6 +1887,7 @@
             Enkel process. Du skickar problemet, jag säger vad som krävs.
           </p>
         </div>
+
         <div class="timeline">
           <div class="timeline-item">
             <strong>Du skickar länk och önskad ändring</strong>
@@ -1633,6 +1908,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="atkomst">
       <div class="container grid-2">
         <article class="truth-box">
@@ -1648,6 +1924,7 @@
             <li>Eventuella bilder, texter eller nya uppgifter</li>
           </ul>
         </article>
+
         <article class="truth-box highlight">
           <span class="tag dark">Ny sida ibland smartare</span>
           <h2>Ibland ska man inte laga lapptäcket.</h2>
@@ -1663,6 +1940,7 @@
         </article>
       </div>
     </section>
+
     <section class="section" id="proof">
       <div class="container">
         <div class="section-head">
@@ -1671,6 +1949,7 @@
             Webbfix är ofta smått, men grunden är densamma: struktur, kod, SEO-bas, mobil och kontaktflöde som håller ihop.
           </p>
         </div>
+
         <div class="grid-4">
           <article class="card">
             <span class="tag">Kundcase</span>
@@ -1679,6 +1958,7 @@
               Kodad one page för bygg, snickeri och trädgård i Skåne med tydlig struktur och kontaktväg.
             </p>
           </article>
+
           <article class="card">
             <span class="tag">Eget projekt</span>
             <h3>Offroad Bumpis</h3>
@@ -1686,6 +1966,7 @@
               Uthyrningssida med villkor, bokningsflöde och lokal SEO för bumperballs i Skåne.
             </p>
           </article>
+
           <article class="card">
             <span class="tag">Webbapp</span>
             <h3>Safe Standard</h3>
@@ -1693,6 +1974,7 @@
               Dokumentationsflöde för direktuthyrning med avtal, villkor, bilder och återlämning.
             </p>
           </article>
+
           <article class="card">
             <span class="tag">Backend</span>
             <h3>GitHub/API</h3>
@@ -1703,6 +1985,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="tillganglighet">
       <div class="container">
         <div class="section-head">
@@ -1714,6 +1997,7 @@
             Inga onödiga frontend-knappar. Bara bättre grund.
           </p>
         </div>
+
         <div class="grid-3">
           <article class="card">
             <span class="tag">Struktur</span>
@@ -1722,6 +2006,7 @@
               H1, H2 och H3 ska ligga logiskt, inte bara användas som styling. Det hjälper både människor, Google och AI att förstå sidan.
             </p>
           </article>
+
           <article class="card">
             <span class="tag">Formulär</span>
             <h3>Labels och tydliga fält</h3>
@@ -1729,6 +2014,7 @@
               Formulär ska ha labels, tydliga obligatoriska fält och meddelanden som hjälper användaren vidare.
             </p>
           </article>
+
           <article class="card">
             <span class="tag">Mobil</span>
             <h3>Tryckytor och läsbarhet</h3>
@@ -1739,6 +2025,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="relaterat">
       <div class="container">
         <div class="section-head">
@@ -1747,17 +2034,20 @@
             Webbfix hänger ofta ihop med ny hemsida, demo först och case. Internlänkar som faktiskt gör jobbet — inte SEO-spaghetti.
           </p>
         </div>
+
         <div class="grid-3">
           <a class="card" href="/gratis-demo.html">
             <span class="tag">Demo först</span>
             <h3>Gratis demo</h3>
             <p>För dig som vill se en ny riktning innan du bestämmer dig.</p>
           </a>
+
           <a class="card" href="/ny-hemsida-foretag.html">
             <span class="tag">Ny grund</span>
             <h3>Ny hemsida till företag</h3>
             <p>För dig som hellre vill börja om med bättre struktur, design och kodad grund.</p>
           </a>
+
           <a class="card" href="/case.html">
             <span class="tag">Proof</span>
             <h3>Case och exempel</h3>
@@ -1766,6 +2056,7 @@
         </div>
       </div>
     </section>
+
     <section class="section">
       <div class="container">
         <div class="cta-box">
@@ -1777,6 +2068,7 @@
               Skicka länken och vad som ska fixas.
             </p>
           </div>
+
           <div class="cta-panel">
             <strong>Från 490 kr</strong>
             <p>
@@ -1789,6 +2081,7 @@
         </div>
       </div>
     </section>
+
     <section class="section faq" id="faq">
       <div class="container">
         <div class="section-head">
@@ -1797,36 +2090,42 @@
             Det viktigaste innan du skickar in.
           </p>
         </div>
+
         <details>
           <summary>Vad räknas som liten webbfix?</summary>
           <p>
             En mindre ändring, till exempel textbyte, bildbyte, knapp, länk, enklare layoutjustering, sitemap-länk eller liten SEO-ändring.
           </p>
         </details>
+
         <details>
           <summary>Kan du fixa min befintliga hemsida?</summary>
           <p>
             Ja, om jag får rätt åtkomst till sidan eller koden. Skicka länken och berätta vilket system sidan ligger i om du vet det.
           </p>
         </details>
+
         <details>
           <summary>Jobbar du i WordPress?</summary>
           <p>
             Jag bygger främst nya sidor i kod, men enklare text-, bild- och innehållsändringar kan ofta göras i befintliga system om åtkomsten finns.
           </p>
         </details>
+
         <details>
           <summary>Kan du fixa SEO?</summary>
           <p>
             Ja, enklare SEO-grund som title, meta description, rubriker, internlänkar, sitemap-länk och tydligare struktur. Större SEO-arbete bedöms separat.
           </p>
         </details>
+
         <details>
           <summary>Kan du säga pris innan du börjar?</summary>
           <p>
             Ja. Skicka vad som ska göras, så bedömer jag om det passar 490 kr, 990 kr, 1490 kr eller timpris.
           </p>
         </details>
+
         <details>
           <summary>Vad händer om sidan är för rörig?</summary>
           <p>
@@ -1835,6 +2134,7 @@
         </details>
       </div>
     </section>
+
     <section class="section" id="kontakt">
       <div class="container">
         <div class="form-card">
@@ -1842,21 +2142,26 @@
           <p>
             Fyll i länken till sidan och skriv konkret vad du vill ändra. Ju tydligare du är, desto snabbare kan jag bedöma pris.
           </p>
+
           <div class="contact-row" aria-label="Kontaktuppgifter">
             <div class="contact-mini">
               <strong>E-post</strong>
               <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
             </div>
+
             <div class="contact-mini">
               <strong>Telefon</strong>
               <a href="tel:+46793442520">079-344 25 20</a>
             </div>
+
             <div class="contact-mini">
               <strong>Google Maps</strong>
               <a href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer">Visa profil</a>
             </div>
           </div>
+
           <span class="required-note">Fält markerade med <span class="required-mark">*</span> är obligatoriska.</span>
+
           <form
             action="https://formsubmit.co/erica@webutvecklare.se"
             method="POST"
@@ -1871,28 +2176,35 @@
             <input type="hidden" name="_autoresponse" value="Tack! Jag har tagit emot din webbfix-förfrågan och återkommer så snart jag kan." />
             <input type="hidden" name="Källa" value="webbfix.html" />
             <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
             <div class="form-status" aria-live="polite"></div>
+
             <div class="form-grid">
               <div>
                 <label for="namn">Namn <span class="required-mark" aria-hidden="true">*</span></label>
                 <input id="namn" name="Namn" type="text" autocomplete="name" required>
               </div>
+
               <div>
                 <label for="email">E-post <span class="required-mark" aria-hidden="true">*</span></label>
                 <input id="email" name="E-post" type="email" autocomplete="email" inputmode="email" required>
               </div>
+
               <div>
                 <label for="telefon">Telefon</label>
                 <input id="telefon" name="Telefon" type="tel" autocomplete="tel" inputmode="tel">
               </div>
+
               <div>
                 <label for="foretag">Företag</label>
                 <input id="foretag" name="Företag" type="text" autocomplete="organization">
               </div>
+
               <div class="full">
                 <label for="hemsida">Länk till hemsidan <span class="required-mark" aria-hidden="true">*</span></label>
                 <input id="hemsida" name="Hemsida" type="url" inputmode="url" placeholder="https://..." required>
               </div>
+
               <div>
                 <label for="typ">Vad behöver fixas?</label>
                 <select id="typ" name="Typ av webbfix">
@@ -1907,6 +2219,7 @@
                   <option value="Vet inte än">Vet inte än</option>
                 </select>
               </div>
+
               <div>
                 <label for="budget">Trolig nivå</label>
                 <select id="budget" name="Trolig nivå">
@@ -1917,6 +2230,7 @@
                   <option value="Timpris 650 kr/h">Timpris 650 kr/h</option>
                 </select>
               </div>
+
               <div class="full">
                 <label for="beskrivning">Beskriv vad som ska fixas <span class="required-mark" aria-hidden="true">*</span></label>
                 <textarea
@@ -1926,6 +2240,7 @@
                   required
                 ></textarea>
               </div>
+
               <div class="full">
                 <label for="material">Nya texter, bilder eller instruktioner</label>
                 <textarea
@@ -1934,6 +2249,7 @@
                   placeholder="Klistra in ny text, länkar till bilder eller annan viktig information."
                 ></textarea>
               </div>
+
               <div class="full">
                 <label for="filer">Bifoga skärmdump eller material</label>
                 <input
@@ -1948,10 +2264,12 @@
                 </span>
               </div>
             </div>
+
             <span class="small">
               Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
               <a href="/integrit.html">integritetspolicyn</a>.
             </span>
+
             <button class="btn btn-light" type="submit" style="width:100%;">
               Skicka webbfix-förfrågan
             </button>
@@ -1959,6 +2277,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="om">
       <div class="container">
         <article class="card">
@@ -1972,6 +2291,7 @@
             Jag är nystartad som egenföretagare, vilket jag använder som styrka: personlig kontakt, låg overhead och konkret arbete.
             Mindre byråjazz, mer verkstad.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Skicka webbfix</a>
             <a class="btn btn-secondary" href="/case.html">Se case</a>
@@ -1984,6 +2304,7 @@
       </div>
     </section>
   </main>
+
   <footer>
     <div class="container">
       <div class="footer-box">
@@ -1992,11 +2313,13 @@
           Webutvecklare.se drivs och är gjord av Erica Nordlöf / Nordlöf Nordic.<br>
           Webbfix, kodade hemsidor, landningssidor och webbutveckling för småföretag.
         </div>
+
         <div>
           Kontakt:
           <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
           ·
           <a href="tel:+46793442520">079-344 25 20</a>
+
           <div class="footer-links">
             <a href="/">Startsida</a>
             <a href="/gratis-demo.html">Gratis demo</a>
@@ -2018,30 +2341,36 @@
       </div>
     </div>
   </footer>
+
   <script>
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
     const mobileMenu = document.getElementById("mobileMenu");
     const mobileMenuBackdrop = document.getElementById("mobileMenuBackdrop");
+
     function setMenuOpen(isOpen) {
       if (!mobileMenuToggle || !mobileMenu || !mobileMenuBackdrop) {
         return;
       }
+
       mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
       mobileMenu.hidden = !isOpen;
       mobileMenuBackdrop.hidden = !isOpen;
       document.body.classList.toggle("menu-open", isOpen);
     }
+
     if (mobileMenuToggle) {
       mobileMenuToggle.addEventListener("click", () => {
         const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
         setMenuOpen(!isOpen);
       });
     }
+
     if (mobileMenuBackdrop) {
       mobileMenuBackdrop.addEventListener("click", () => {
         setMenuOpen(false);
       });
     }
+
     if (mobileMenu) {
       mobileMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
@@ -2049,15 +2378,18 @@
         });
       });
     }
+
     window.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         setMenuOpen(false);
       }
     });
+
     document.querySelectorAll("form").forEach((form) => {
       const submitButton = form.querySelector('button[type="submit"]');
       const statusBox = form.querySelector(".form-status");
       const originalButtonText = submitButton ? submitButton.textContent : "";
+
       function updateInvalidFields() {
         form.querySelectorAll("input, select, textarea").forEach((field) => {
           if (field.matches(":invalid")) {
@@ -2067,30 +2399,38 @@
           }
         });
       }
+
       form.querySelectorAll("input, select, textarea").forEach((field) => {
         field.addEventListener("input", updateInvalidFields);
         field.addEventListener("change", updateInvalidFields);
       });
+
       form.addEventListener("submit", (event) => {
         updateInvalidFields();
+
         if (!form.checkValidity()) {
           event.preventDefault();
+
           if (statusBox) {
             statusBox.className = "form-status is-visible";
             statusBox.textContent = "Fyll i de obligatoriska fälten först. Kontrollera namn, e-post, hemsida och beskrivning.";
           }
+
           form.reportValidity();
           return;
         }
+
         if (submitButton) {
           submitButton.disabled = true;
           submitButton.textContent = "Skickar...";
           submitButton.setAttribute("aria-busy", "true");
         }
+
         if (statusBox) {
           statusBox.className = "form-status is-visible";
           statusBox.textContent = "Skickar formuläret...";
         }
+
         setTimeout(() => {
           if (submitButton && submitButton.disabled) {
             submitButton.disabled = false;
@@ -2099,6 +2439,7 @@
           }
         }, 15000);
       });
+
       form.addEventListener("input", () => {
         if (statusBox && statusBox.classList.contains("is-visible")) {
           statusBox.className = "form-status";
