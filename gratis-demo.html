@@ -174,10 +174,10 @@
           },
           {
             "@type":"Question",
-            "name":"Kan jag redigera demon själv?",
+            "name":"Kan jag redigera demosidan själv?",
             "acceptedAnswer":{
               "@type":"Answer",
-              "text":"Ja. Demosidan har en kontrollpanel där text, färger och typsnitt kan ändras. Den ändrade sidan kan sparas som HTML-fil och bifogas i formuläret."
+              "text":"Ja, det är valfritt. Högst upp på sidan finns en kontrollpanel där du kan ändra text, färger och font för att visa vilken känsla du vill ha på din egen sida. När du är klar klickar du på Spara ändrad sida och bifogar HTML-filen i beställningsformuläret."
             }
           }
         ]
@@ -1732,7 +1732,7 @@
   <div class="sticky-shell" id="stickyShell">
     <div class="controlbar">
       <div class="controlbar-inner">
-        <span class="control-title" data-edit>Kontrollpanel för demo: ändra design, redigera text och spara sidan</span>
+        <span class="control-title" data-edit>Kontrollpanel för demo: ändra färg, font och text. Spara sedan sidan och bifoga HTML-filen i formuläret.</span>
 
         <div class="control-actions">
           <button class="tool-btn" type="button" id="designToggle">Ändra design</button>
@@ -1812,7 +1812,7 @@
     </div>
 
     <div class="edit-hint">
-      Redigeringsläge är på. Klicka direkt på rubriker och texter. När du är klar: klicka “Spara ändrad sida” och bifoga HTML-filen längst ner i formuläret.
+      Redigeringsläge är på. Klicka direkt på rubriker och texter. När du är klar: klicka “Spara ändrad sida” och dra in HTML-filen i beställningsformuläret längst ner.
     </div>
 
     <header class="topbar">
@@ -1850,6 +1850,7 @@
       <div class="mobile-menu-links">
         <a href="/">Startsida</a>
         <a href="/gratis-demo.html" aria-current="page">Gratis demo</a>
+        <a href="#redigera">Redigera demo</a>
         <a href="/webbfix.html">Webbfix</a>
         <a href="/ny-hemsida-foretag.html">Ny hemsida</a>
         <a href="/webbutveckling-malmo.html">Webbutveckling Malmö</a>
@@ -1878,6 +1879,25 @@
             fetchpriority="high"
           />
         </a>
+      </div>
+    </section>
+
+    <section class="section" id="redigera" aria-labelledby="redigera-title">
+      <div class="container">
+        <article class="card highlight">
+          <span class="tag dark" data-edit>Valfritt men smart</span>
+          <h2 id="redigera-title" data-edit>Vill du testa färger, font och text själv?</h2>
+          <p data-edit>
+            Högst upp på sidan finns en kontrollpanel. Där kan du ändra text, färger och typsnitt så att demosidan mer liknar den stil du vill ha på din egen hemsida.
+            Du måste inte göra det, men det kan vara ett enkelt sätt att visa vilken känsla du gillar.
+          </p>
+          <ul class="list">
+            <li data-edit>Ändra text direkt på sidan</li>
+            <li data-edit>Testa färger, font och färdiga designstilar</li>
+            <li data-edit>Klicka på “Spara ändrad sida” när du är klar</li>
+            <li data-edit>Dra in HTML-filen i beställningsformuläret längst ner</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -1939,8 +1959,8 @@
             </li>
 
             <li>
-              <strong data-edit>4. Du kan redigera direkt</strong>
-              <span data-edit>Ändra text/design i kontrollpanelen och bifoga sparad version i formuläret.</span>
+              <strong data-edit>4. Valfritt: redigera själv</strong>
+              <span data-edit>Testa text, färger och font i kontrollpanelen. Spara sidan och bifoga HTML-filen om du vill visa din stil.</span>
             </li>
           </ul>
         </aside>
@@ -1966,7 +1986,7 @@
 
         <div class="quick-item">
           <strong data-edit>Kontrollpanel</strong>
-          <span data-edit>Redigera text och design direkt på sidan</span>
+          <span data-edit>Valfritt: testa färg, font och text själv</span>
         </div>
       </div>
     </section>
@@ -2080,6 +2100,11 @@
           </div>
 
           <div class="timeline-item">
+            <strong data-edit>Du kan testa egen känsla</strong>
+            <span data-edit>Vill du kan du ändra färger, typsnitt och text i kontrollpanelen. Spara sidan och bifoga HTML-filen i formuläret.</span>
+          </div>
+
+          <div class="timeline-item">
             <strong data-edit>Du ger feedback</strong>
             <span data-edit>Säg vad som känns rätt, fel, saknas eller ska justeras. Det är här sidan blir mer du.</span>
           </div>
@@ -2166,7 +2191,8 @@
           <span class="tag dark" data-edit>Kontrollpanelen</span>
           <h2 data-edit>Demosidan kan redigeras. Skarpa sidan hålls ren.</h2>
           <p data-edit>
-            Den här sidan har kontrollpanel för demo, test och kundfeedback. På den färdiga kundsidan håller vi frontend kort, tydlig och konverterande.
+            Den här sidan har kontrollpanel för demo, test och kundfeedback. Du kan ändra text, färger och font för att visa vilken stil du gillar.
+            På den färdiga kundsidan håller vi frontend kort, tydlig och konverterande.
           </p>
           <ul class="list">
             <li data-edit>Redigera text direkt på sidan</li>
@@ -2225,6 +2251,11 @@
         </details>
 
         <details>
+          <summary data-edit>Måste jag redigera demosidan själv?</summary>
+          <p data-edit>Nej, det är helt valfritt. Men om du vill kan du använda kontrollpanelen högst upp för att testa färger, font och text som du vill ha på din egen sida. När du är klar klickar du på “Spara ändrad sida” och bifogar HTML-filen i formuläret.</p>
+        </details>
+
+        <details>
           <summary data-edit>Måste jag ha färdiga texter?</summary>
           <p data-edit>Nej. Punkter, stödord och råmaterial räcker långt. Jag kan hjälpa till att strukturera och skriva om så det blir tydligt.</p>
         </details>
@@ -2275,10 +2306,10 @@
           </div>
 
           <div class="required-upload">
-            <strong>Har du redigerat sidan med kontrollpanelen?</strong>
+            <strong>Har du testat färger, font eller text i kontrollpanelen?</strong>
             <p>
-              Klicka först på <strong>“Spara ändrad sida”</strong>. Bifoga sedan den nedladdade HTML-filen i formuläret.
-              Då kan jag öppna exakt den version du ändrat.
+              Klicka först på <strong>“Spara ändrad sida”</strong> högst upp. Dra sedan in den nedladdade HTML-filen i fältet nedan.
+              Det är helt valfritt, men hjälper mig att se vilken känsla du vill ha på din sida.
             </p>
 
             <div class="hero-actions" style="margin-top:14px;">
@@ -2308,12 +2339,15 @@
 
             <div class="form-grid">
               <div class="full">
-                <label for="editedPageFile">Bifoga sparad HTML-sida</label>
+                <label for="editedPageFile">Bifoga din redigerade demosida</label>
 
                 <div class="drop-zone" data-drop-zone="editedPageFile">
                   <div class="drop-zone-text">
-                    Dra HTML-filen hit
-                    <span>eller klicka på filknappen nedan. Endast .html eller .htm.</span>
+                    Dra in den sparade HTML-filen här
+                    <span>
+                      Om du har ändrat text, färger eller font i kontrollpanelen: klicka först på “Spara ändrad sida” högst upp.
+                      Dra sedan in HTML-filen här.
+                    </span>
                   </div>
 
                   <input id="editedPageFile" name="Sparad_HTML_sida" type="file" accept=".html,.htm,text/html" />
@@ -2321,7 +2355,7 @@
                 </div>
 
                 <span class="small" style="margin-top:8px;">
-                  Lämna tomt om du inte har redigerat sidan själv.
+                  Valfritt. Lämna tomt om du inte har redigerat sidan själv.
                 </span>
               </div>
 
@@ -2504,6 +2538,7 @@
           <div class="footer-links">
             <a href="/">Startsida</a>
             <a href="/gratis-demo.html" aria-current="page">Gratis demo</a>
+            <a href="#redigera">Redigera demo</a>
             <a href="/webbfix.html">Webbfix</a>
             <a href="/ny-hemsida-foretag.html">Ny hemsida</a>
             <a href="/webbutveckling-malmo.html">Webbutveckling Malmö</a>
@@ -2547,7 +2582,7 @@
     const brandColor = document.getElementById("brandColor");
     const brandDeepColor = document.getElementById("brandDeepColor");
 
-    const STORAGE_KEY = "nordlofGratisDemoFixedColorsV4";
+    const STORAGE_KEY = "nordlofGratisDemoFixedColorsV5";
     const ORIGINAL_HTML = {};
     const editableElements = Array.from(document.querySelectorAll("[data-edit]"));
 
@@ -2864,7 +2899,7 @@
         a.remove();
       }, 1500);
 
-      alert("Den ändrade sidan har sparats som HTML-fil. Bifoga HTML-filen i formuläret på rätt https-sida.");
+      alert("Den ändrade sidan har sparats som HTML-fil. Dra in HTML-filen i beställningsformuläret längst ner på sidan.");
     }
 
     function formatFileSize(bytes){
