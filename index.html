@@ -21,12 +21,12 @@
   <meta property="og:description" content="Kodade hemsidor, webbfix, landningssidor, formulärflöden, API:er och webbutveckling för småföretag. Demo först, tydliga priser och ingen inlåsning." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/" />
-  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta property="og:image" content="https://webutvecklare.se/flyer.PNG" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hemsida för småföretag & webbutveckling Malmö | Nordlöf Nordic" />
   <meta name="twitter:description" content="Kodade hemsidor, webbfix och webbutveckling. Demo först, tydliga priser och ingen inlåsning." />
-  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta name="twitter:image" content="https://webutvecklare.se/flyer.PNG" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
@@ -90,7 +90,7 @@
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
         "url":"https://webutvecklare.se/",
-        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "image":"https://webutvecklare.se/flyer.PNG",
         "logo":"https://webutvecklare.se/nordlof-nordic-logo.png",
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
@@ -694,17 +694,28 @@
       color:#fff;
     }
 
-    .hero-logo{
-      width:100%;
-      max-width:340px;
-      height:clamp(220px,26vw,300px);
+    .hero-flyer-link{
+      display:block;
+      width:min(100%,390px);
       margin:0 auto 18px;
-      padding:22px;
-      border-radius:22px;
-      object-fit:contain;
-      object-position:center;
+      border-radius:26px;
+      overflow:hidden;
       background:#050505;
-      box-shadow:0 22px 54px rgba(36,30,26,.18);
+      box-shadow:0 24px 60px rgba(36,30,26,.24);
+      border:1px solid rgba(255,255,255,.22);
+      transition:.18s ease;
+    }
+
+    .hero-flyer-link:hover{
+      transform:translateY(-2px);
+      box-shadow:0 30px 76px rgba(36,30,26,.32);
+    }
+
+    .hero-flyer{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
     }
 
     .mini-list{
@@ -1236,7 +1247,8 @@
         transition-duration:.01ms !important;
       }
 
-      .btn:hover{
+      .btn:hover,
+      .hero-flyer-link:hover{
         transform:none;
       }
     }
@@ -1330,10 +1342,9 @@
         border-radius:22px;
       }
 
-      .hero-logo{
-        max-width:280px;
-        height:230px;
-        padding:18px;
+      .hero-flyer-link{
+        width:min(100%,320px);
+        border-radius:22px;
       }
 
       .section{
@@ -1683,13 +1694,15 @@
         </div>
 
         <aside class="hero-card" aria-label="Kort process">
-          <img
-            class="hero-logo"
-            src="nordlof-nordic-logo.png"
-            alt="Nordlöf Nordic logga"
-            width="820"
-            height="820"
-          />
+          <a class="hero-flyer-link" href="/gratis-demo.html" aria-label="Gå till gratis demo">
+            <img
+              class="hero-flyer"
+              src="flyer.PNG"
+              alt="Reklamflyer för Nordlöf Nordic och webutvecklare.se"
+              width="1024"
+              height="1536"
+            />
+          </a>
 
           <ul class="mini-list">
             <li>
