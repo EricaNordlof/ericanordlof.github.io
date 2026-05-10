@@ -16,17 +16,18 @@
 
   <link rel="canonical" href="https://webutvecklare.se/ny-hemsida-foretag.html" />
   <link rel="sitemap" type="application/xml" href="https://webutvecklare.se/sitemap.xml" />
+  <link rel="preload" as="image" href="ny-hemsida.png" />
 
   <meta property="og:title" content="Ny hemsida till företag från 2 900 kr | Nordlöf Nordic" />
   <meta property="og:description" content="Kodad företagshemsida med demo först, tydliga priser, SEO-grund och ingen onödig inlåsning." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/ny-hemsida-foretag.html" />
-  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta property="og:image" content="https://webutvecklare.se/ny-hemsida.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ny hemsida till företag från 2 900 kr | Nordlöf Nordic" />
   <meta name="twitter:description" content="Fast pris, demo först och köp efter godkänd demo. Ny hemsida från 2 900 kr." />
-  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta name="twitter:image" content="https://webutvecklare.se/ny-hemsida.png" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
@@ -59,6 +60,7 @@
         "url":"https://webutvecklare.se/ny-hemsida-foretag.html",
         "name":"Ny hemsida till företag från 2 900 kr",
         "description":"Köp ny hemsida till företag från 2 900 kr. Kodad företagshemsida med demo först, tydliga priser, SEO-grund, kontaktväg och ingen onödig inlåsning.",
+        "image":"https://webutvecklare.se/ny-hemsida.png",
         "inLanguage":"sv-SE",
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/#business"},
@@ -98,8 +100,8 @@
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
         "url":"https://webutvecklare.se/",
-        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
-        "logo":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "image":"https://webutvecklare.se/ny-hemsida.png",
+        "logo":"https://webutvecklare.se/favicon-nordlof.png",
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
@@ -560,8 +562,27 @@
       box-shadow:0 16px 34px rgba(36,30,26,.08);
     }
 
+    .top-visual{
+      padding:clamp(18px,3vw,34px) 0 0;
+    }
+
+    .top-visual-link{
+      display:block;
+      border-radius:30px;
+      overflow:hidden;
+      background:#fffdfc;
+      border:1px solid rgba(154,88,85,.16);
+      box-shadow:0 24px 70px rgba(154,88,85,.18);
+    }
+
+    .top-visual-img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
     .hero{
-      padding:clamp(38px,7vw,82px) 0 28px;
+      padding:clamp(34px,6vw,70px) 0 28px;
     }
 
     .hero-grid{
@@ -708,19 +729,6 @@
     .cta-box strong,
     .cta-box span{
       color:#fff;
-    }
-
-    .hero-logo{
-      width:100%;
-      max-width:340px;
-      height:clamp(220px,26vw,300px);
-      margin:0 auto 18px;
-      padding:22px;
-      border-radius:22px;
-      object-fit:contain;
-      object-position:center;
-      background:#050505;
-      box-shadow:0 22px 54px rgba(36,30,26,.18);
     }
 
     .mini-list{
@@ -1280,64 +1288,6 @@
       margin-top:6px;
     }
 
-    .footer-pages{
-      margin-top:18px;
-      border-top:1px solid var(--line);
-      padding-top:14px;
-    }
-
-    .footer-pages summary{
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-weight:900;
-      color:#6f655e;
-      list-style:none;
-      font-size:14px;
-    }
-
-    .footer-pages summary::-webkit-details-marker{
-      display:none;
-    }
-
-    .footer-pages summary::after{
-      content:"+";
-      width:22px;
-      height:22px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:#fff;
-      border:1px solid var(--line);
-      font-weight:900;
-    }
-
-    .footer-pages[open] summary::after{
-      content:"–";
-    }
-
-    .footer-page-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 14px;
-      margin-top:12px;
-      font-size:13px;
-      line-height:1.6;
-    }
-
-    .footer-page-grid a{
-      color:#6f655e;
-      text-decoration:underline;
-      text-underline-offset:3px;
-      opacity:.86;
-    }
-
-    .footer-page-grid a:hover{
-      opacity:1;
-      color:var(--brand-dark);
-    }
-
     .mobile-sticky{
       display:none;
     }
@@ -1430,6 +1380,14 @@
         max-height:calc(100dvh - 86px - env(safe-area-inset-bottom));
       }
 
+      .top-visual{
+        padding:14px 0 0;
+      }
+
+      .top-visual-link{
+        border-radius:20px;
+      }
+
       .hero{
         padding:24px 0 18px;
       }
@@ -1478,12 +1436,6 @@
         border-radius:22px;
       }
 
-      .hero-logo{
-        max-width:280px;
-        height:230px;
-        padding:18px;
-      }
-
       .section{
         padding:30px 0;
       }
@@ -1527,16 +1479,6 @@
         padding-bottom:104px;
       }
 
-      .footer-page-grid{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-      }
-
-      .footer-page-grid a{
-        padding:8px 0;
-      }
-
       .mobile-sticky{
         position:fixed;
         left:10px;
@@ -1574,49 +1516,42 @@
       .btn{
         font-size:13px;
       }
-
-      .footer-page-grid{
-        grid-template-columns:1fr;
-      }
     }
 
-    /* FIX: vit knapp i färgade kort ska ha mörk text */
-.card.highlight .btn,
-.card.highlight .btn *,
-.price-card.featured .btn,
-.price-card.featured .btn *,
-.hero-card .btn-light,
-.hero-card .btn-light *,
-.hero-card .btn-secondary,
-.hero-card .btn-secondary *,
-.cta-box .btn-light,
-.cta-box .btn-light *,
-.cta-box .btn-secondary,
-.cta-box .btn-secondary *,
-.form-card .btn-light,
-.form-card .btn-light *,
-.form-card .btn-secondary,
-.form-card .btn-secondary *{
-  color:#262220 !important;
-}
+    .card.highlight .btn,
+    .card.highlight .btn *,
+    .price-card.featured .btn,
+    .price-card.featured .btn *,
+    .hero-card .btn-light,
+    .hero-card .btn-light *,
+    .hero-card .btn-secondary,
+    .hero-card .btn-secondary *,
+    .cta-box .btn-light,
+    .cta-box .btn-light *,
+    .cta-box .btn-secondary,
+    .cta-box .btn-secondary *,
+    .form-card .btn-light,
+    .form-card .btn-light *,
+    .form-card .btn-secondary,
+    .form-card .btn-secondary *{
+      color:#262220 !important;
+    }
 
-/* Säkerställ vit knappbakgrund i färgade kort */
-.card.highlight .btn-light,
-.card.highlight .btn-secondary,
-.price-card.featured .btn-light,
-.price-card.featured .btn-secondary,
-.hero-card .btn-light,
-.hero-card .btn-secondary,
-.cta-box .btn-light,
-.cta-box .btn-secondary,
-.form-card .btn-light,
-.form-card .btn-secondary{
-  background:#fffdfc !important;
-  color:#262220 !important;
-  border:1px solid rgba(154,88,85,.18) !important;
-  box-shadow:0 16px 34px rgba(36,30,26,.08) !important;
-}
-
+    .card.highlight .btn-light,
+    .card.highlight .btn-secondary,
+    .price-card.featured .btn-light,
+    .price-card.featured .btn-secondary,
+    .hero-card .btn-light,
+    .hero-card .btn-secondary,
+    .cta-box .btn-light,
+    .cta-box .btn-secondary,
+    .form-card .btn-light,
+    .form-card .btn-secondary{
+      background:#fffdfc !important;
+      color:#262220 !important;
+      border:1px solid rgba(154,88,85,.18) !important;
+      box-shadow:0 16px 34px rgba(36,30,26,.08) !important;
+    }
   </style>
 </head>
 
@@ -1673,6 +1608,22 @@
   </nav>
 
   <main id="main">
+    <section class="top-visual" aria-label="Ny hemsida till företag">
+      <div class="container">
+        <a class="top-visual-link" href="/gratis-demo.html" aria-label="Be om gratis demo för ny hemsida">
+          <img
+            class="top-visual-img"
+            src="ny-hemsida.png"
+            width="1536"
+            height="1024"
+            fetchpriority="high"
+            decoding="async"
+            alt="Ny hemsida till företag från 2 900 kr – demo först, kodad företagshemsida och ingen onödig inlåsning"
+          />
+        </a>
+      </div>
+    </section>
+
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
@@ -1715,17 +1666,6 @@
         </div>
 
         <aside class="hero-card" aria-label="Kort sammanfattning">
-          <img
-            class="hero-logo"
-            src="nordlof-nordic-logo.png"
-            width="600"
-            height="600"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            alt="Nordlöf Nordic – kodade hemsidor och webbutveckling för småföretag"
-          >
-
           <ul class="mini-list">
             <li>
               <strong>1. Skicka kort brief</strong>
@@ -1740,6 +1680,11 @@
             <li>
               <strong>3. Du köper efter godkännande</strong>
               <span>Gillar du riktningen avtalar vi scope, pris och nästa steg innan färdigbyggnad.</span>
+            </li>
+
+            <li>
+              <strong>4. Sidan görs klar</strong>
+              <span>Vi justerar innehåll, kontaktvägar, mobilvy och detaljer tills sidan känns redo att användas.</span>
             </li>
           </ul>
         </aside>
@@ -2297,41 +2242,41 @@
   </main>
 
   <footer>
-  <div class="container">
-    <div class="footer-box">
-      <div>
-        <strong>© 2026 Nordlöf Nordic</strong><br>
-        Webutvecklare.se drivs och är gjord av Erica Nordlöf / Nordlöf Nordic.<br>
-        Hemsidor, företagshemsidor, webbfix, uppdateringar, landningssidor och webbutveckling för småföretag.
-      </div>
+    <div class="container">
+      <div class="footer-box">
+        <div>
+          <strong>© 2026 Nordlöf Nordic</strong><br>
+          Webutvecklare.se drivs och är gjord av Erica Nordlöf / Nordlöf Nordic.<br>
+          Hemsidor, företagshemsidor, webbfix, uppdateringar, landningssidor och webbutveckling för småföretag.
+        </div>
 
-      <div>
-        Kontakt:
-        <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
-        ·
-        <a href="tel:+46793442520">079-344 25 20</a>
+        <div>
+          Kontakt:
+          <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+          ·
+          <a href="tel:+46793442520">079-344 25 20</a>
 
-        <div class="footer-links">
-          <a href="/">Startsida</a>
-          <a href="/gratis-demo.html">Gratis demo</a>
-          <a href="/webbfix.html">Webbfix</a>
-          <a href="/ny-hemsida-foretag.html" aria-current="page">Ny hemsida</a>
-          <a href="/webbutveckling-malmo.html">Webbutveckling Malmö</a>
-          <a href="/case.html">Case</a>
-          <a href="/om-mig.html">Om Erica</a>
-          <a href="/blogg.html">Blogg</a>
-          <a href="/affiliate.html">Tipsprovision</a>
-          <a href="/villkor.html">Villkor</a>
-          <a href="/integritet.html">Integritet</a>
-          <a href="/sitemap.xml">Sitemap</a>
-          <a href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer">Google Maps</a>
-          <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <div class="footer-links">
+            <a href="/">Startsida</a>
+            <a href="/gratis-demo.html">Gratis demo</a>
+            <a href="/webbfix.html">Webbfix</a>
+            <a href="/ny-hemsida-foretag.html" aria-current="page">Ny hemsida</a>
+            <a href="/webbutveckling-malmo.html">Webbutveckling Malmö</a>
+            <a href="/case.html">Case</a>
+            <a href="/om-mig.html">Om Erica</a>
+            <a href="/blogg.html">Blogg</a>
+            <a href="/affiliate.html">Tipsprovision</a>
+            <a href="/villkor.html">Villkor</a>
+            <a href="/integritet.html">Integritet</a>
+            <a href="/sitemap.xml">Sitemap</a>
+            <a href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer">Google Maps</a>
+            <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <script>
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
