@@ -16,17 +16,18 @@
 
   <link rel="canonical" href="https://webutvecklare.se/webbutveckling-malmo.html" />
   <link rel="sitemap" type="application/xml" href="https://webutvecklare.se/sitemap.xml" />
+  <link rel="preload" as="image" href="malmo.png" />
 
   <meta property="og:title" content="Webbutveckling Malmö | Nordlöf Nordic" />
   <meta property="og:description" content="Webbutveckling i Malmö för småföretag. Hemsidor, webbfix, landningssidor, formulärflöden och kodade lösningar med demo först." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/webbutveckling-malmo.html" />
-  <meta property="og:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta property="og:image" content="https://webutvecklare.se/malmo.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Webbutveckling Malmö | Nordlöf Nordic" />
   <meta name="twitter:description" content="Webbutvecklare för småföretag i Malmö och Skåne. Demo först, tydliga priser och ingen onödig inlåsning." />
-  <meta name="twitter:image" content="https://webutvecklare.se/nordlof-nordic-logo.png" />
+  <meta name="twitter:image" content="https://webutvecklare.se/malmo.png" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=2" />
@@ -59,6 +60,7 @@
         "url":"https://webutvecklare.se/webbutveckling-malmo.html",
         "name":"Webbutveckling Malmö",
         "description":"Webbutveckling i Malmö för småföretag som vill få ordning på webben. Hemsida, webbfix, landningssida, formulärflöde, API och backend vid behov.",
+        "image":"https://webutvecklare.se/malmo.png",
         "inLanguage":"sv-SE",
         "isPartOf":{"@id":"https://webutvecklare.se/#website"},
         "about":{"@id":"https://webutvecklare.se/webbutveckling-malmo.html#service"},
@@ -99,8 +101,8 @@
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
         "url":"https://webutvecklare.se/",
-        "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
-        "logo":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "image":"https://webutvecklare.se/malmo.png",
+        "logo":"https://webutvecklare.se/favicon-nordlof.png",
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
@@ -585,8 +587,27 @@
       box-shadow:0 16px 34px rgba(36,30,26,.08);
     }
 
+    .top-visual{
+      padding:clamp(18px,3vw,34px) 0 0;
+    }
+
+    .top-visual-link{
+      display:block;
+      border-radius:30px;
+      overflow:hidden;
+      background:#fffdfc;
+      border:1px solid rgba(154,88,85,.16);
+      box-shadow:0 24px 70px rgba(154,88,85,.18);
+    }
+
+    .top-visual-img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
     .hero{
-      padding:clamp(38px,7vw,82px) 0 28px;
+      padding:clamp(34px,6vw,70px) 0 28px;
     }
 
     .hero-grid{
@@ -733,19 +754,6 @@
     .cta-box strong,
     .cta-box span{
       color:#fff;
-    }
-
-    .hero-logo{
-      width:100%;
-      max-width:340px;
-      height:clamp(220px,26vw,300px);
-      margin:0 auto 18px;
-      padding:22px;
-      border-radius:22px;
-      object-fit:contain;
-      object-position:center;
-      background:#050505;
-      box-shadow:0 22px 54px rgba(36,30,26,.18);
     }
 
     .mini-list{
@@ -1454,6 +1462,14 @@
         max-height:calc(100dvh - 86px - env(safe-area-inset-bottom));
       }
 
+      .top-visual{
+        padding:14px 0 0;
+      }
+
+      .top-visual-link{
+        border-radius:20px;
+      }
+
       .hero{
         padding:24px 0 18px;
       }
@@ -1500,12 +1516,6 @@
       .cta-box{
         padding:20px;
         border-radius:22px;
-      }
-
-      .hero-logo{
-        max-width:280px;
-        height:230px;
-        padding:18px;
       }
 
       .section{
@@ -1645,6 +1655,22 @@
   </nav>
 
   <main id="main">
+    <section class="top-visual" aria-label="Webbutveckling Malmö">
+      <div class="container">
+        <a class="top-visual-link" href="#kontakt" aria-label="Gå till formuläret för webbutveckling i Malmö">
+          <img
+            class="top-visual-img"
+            src="malmo.png"
+            width="1536"
+            height="1024"
+            fetchpriority="high"
+            decoding="async"
+            alt="Webbutveckling Malmö som gör skillnad – kodade lösningar, webbapplikationer och integrationer för företag i Malmö och Skåne"
+          />
+        </a>
+      </div>
+    </section>
+
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
@@ -1687,17 +1713,6 @@
         </div>
 
         <aside class="hero-card" aria-label="Kort sammanfattning">
-          <img
-            class="hero-logo"
-            src="nordlof-nordic-logo.png"
-            width="600"
-            height="600"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            alt="Nordlöf Nordic – webbutveckling för småföretag i Malmö och Skåne"
-          >
-
           <ul class="mini-list">
             <li>
               <strong>1. Du skickar kort brief</strong>
