@@ -1491,6 +1491,78 @@
         font-size:2.05rem;
       }
     }
+
+/* FIX: stoppa vit text på vita knappar/rutor */
+.hero-card .btn,
+.form-card .btn,
+.cta-box .btn,
+.highlight .btn,
+.compare-card.mine .btn,
+.price-card.featured .btn{
+  color:#262220 !important;
+}
+
+.hero-card .btn *,
+.form-card .btn *,
+.cta-box .btn *,
+.highlight .btn *,
+.compare-card.mine .btn *,
+.price-card.featured .btn *{
+  color:#262220 !important;
+}
+
+.hero-card .btn-primary,
+.form-card .btn-primary,
+.cta-box .btn-primary,
+.highlight .btn-primary{
+  color:#fff !important;
+}
+
+.hero-card .btn-primary *,
+.form-card .btn-primary *,
+.cta-box .btn-primary *,
+.highlight .btn-primary *{
+  color:#fff !important;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  -webkit-text-fill-color:#262220 !important;
+}
+
+.form-card input::placeholder,
+.form-card textarea::placeholder{
+  color:#756a65 !important;
+  opacity:1 !important;
+}
+
+.form-card .small,
+.form-card .small a,
+.form-card .required-note,
+.form-card label{
+  color:#fff !important;
+}
+
+.cta-panel .btn-light,
+.cta-panel .btn-secondary,
+.form-card .btn-light,
+.form-card .btn-secondary,
+.hero-card .btn-light,
+.hero-card .btn-secondary{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  -webkit-text-fill-color:#262220 !important;
+  border-color:rgba(154,88,85,.18) !important;
+}
+
+.cta-panel .btn-light,
+.cta-panel .btn-secondary{
+  box-shadow:0 16px 34px rgba(36,30,26,.10) !important;
+}
+
   </style>
 </head>
 
