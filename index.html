@@ -695,15 +695,6 @@
       padding:clamp(22px,4vw,34px);
     }
 
-    .hero-card *,
-    .form-card *,
-    .cta-box *,
-    .highlight *,
-    .compare-card.mine *,
-    .price-card.featured *{
-      color:#fff;
-    }
-
     .hero-flyer-link{
       display:block;
       width:min(100%,460px);
@@ -1561,6 +1552,134 @@
 .cta-panel .btn-light,
 .cta-panel .btn-secondary{
   box-shadow:0 16px 34px rgba(36,30,26,.10) !important;
+}
+
+/* SLUTFIX: rosa kort ska inte bli vita */
+.card.highlight,
+.truth-box.highlight,
+.compare-card.mine,
+.price-card.featured,
+.hero-card,
+.form-card,
+.cta-box{
+  background:
+    radial-gradient(circle at top right,rgba(255,255,255,.24),transparent 34%),
+    linear-gradient(145deg,#aa625e 0%,#d77f7a 50%,#e9a69d 100%) !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.18) !important;
+  box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
+}
+
+/* Vit text på rosa kort */
+.card.highlight,
+.card.highlight *,
+.truth-box.highlight,
+.truth-box.highlight *,
+.compare-card.mine,
+.compare-card.mine *,
+.price-card.featured,
+.price-card.featured *,
+.hero-card,
+.hero-card *,
+.form-card,
+.form-card *,
+.cta-box,
+.cta-box *{
+  color:#fff !important;
+}
+
+/* Men vita knappar och formulärfält ska ha mörk text */
+.btn-light,
+.btn-secondary,
+.cta-box .btn-light,
+.cta-box .btn-secondary,
+.form-card .btn-light,
+.form-card .btn-secondary,
+.hero-card .btn-light,
+.hero-card .btn-secondary{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  -webkit-text-fill-color:#262220 !important;
+  border-color:rgba(154,88,85,.18) !important;
+}
+
+/* Direkt text i knappar */
+.btn-light *,
+.btn-secondary *,
+.cta-box .btn-light *,
+.cta-box .btn-secondary *,
+.form-card .btn-light *,
+.form-card .btn-secondary *,
+.hero-card .btn-light *,
+.hero-card .btn-secondary *{
+  color:#262220 !important;
+  -webkit-text-fill-color:#262220 !important;
+}
+
+/* Formulärfält */
+.form-card input,
+.form-card select,
+.form-card textarea{
+  background:#fffdfc !important;
+  color:#262220 !important;
+  -webkit-text-fill-color:#262220 !important;
+  border:1px solid rgba(255,255,255,.88) !important;
+}
+
+/* Placeholder i formulär */
+.form-card input::placeholder,
+.form-card textarea::placeholder{
+  color:#7a6d68 !important;
+  opacity:1 !important;
+  -webkit-text-fill-color:#7a6d68 !important;
+}
+
+/* Vanliga vita kort ska ha mörk text */
+.card:not(.highlight):not(.price-card.featured),
+.truth-box:not(.highlight),
+.compare-card:not(.mine),
+.faq details,
+.timeline-item,
+.quick-item,
+.proof-pill,
+.price-note{
+  background:#fffdfc !important;
+  color:#262220 !important;
+}
+
+.card:not(.highlight):not(.price-card.featured) *,
+.truth-box:not(.highlight) *,
+.compare-card:not(.mine) *,
+.faq details *,
+.timeline-item *,
+.quick-item *,
+.proof-pill *,
+.price-note *{
+  color:inherit;
+}
+
+.card:not(.highlight):not(.price-card.featured) p,
+.truth-box:not(.highlight) p,
+.compare-card:not(.mine) p,
+.faq details p,
+.timeline-item span,
+.quick-item,
+.proof-pill span,
+.price-note{
+  color:#5b524d !important;
+}
+
+/* Rubriker/länkar i vita kort */
+.card:not(.highlight):not(.price-card.featured) h3,
+.card:not(.highlight):not(.price-card.featured) h3 a,
+.truth-box:not(.highlight) h2,
+.compare-card:not(.mine) h3,
+.faq details summary,
+.timeline-item strong,
+.quick-item strong,
+.proof-pill,
+.price-note strong{
+  color:#262220 !important;
 }
 
   </style>
