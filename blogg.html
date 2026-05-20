@@ -1011,12 +1011,14 @@
 
     .legal-grid{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
       gap:12px;
       margin-top:18px;
     }
 
     .legal-item{
+      min-width:0;
+      overflow:hidden;
       background:#fff7f4;
       border:1px solid rgba(154,88,85,.13);
       border-radius:18px;
@@ -1028,11 +1030,14 @@
       display:block;
       color:var(--text);
       margin-bottom:4px;
+      overflow-wrap:anywhere;
     }
 
     .legal-item span,
     .legal-item a{
       color:var(--muted);
+      overflow-wrap:anywhere;
+      word-break:break-word;
     }
 
     .newsletter-card,
@@ -1352,7 +1357,9 @@
       .hero-inner,
       .footer-box,
       .internal-link{grid-template-columns:1fr}
-      .legal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .legal-grid{
+        grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
+      }
       .internal-link .btn{width:100%}
       .newsletter-row{grid-template-columns:1fr}
     }
