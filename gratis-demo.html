@@ -95,11 +95,20 @@
         "@type":"ProfessionalService",
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
+        "legalName":"Erica Nordlöf / Nordlöf Nordic",
+        "taxID":"861225-3966",
         "url":"https://webutvecklare.se/",
         "image":"https://webutvecklare.se/demo-sidan.PNG",
         "logo":"https://webutvecklare.se/favicon-nordlof.png",
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"Lövviksgatan 10",
+          "postalCode":"21374",
+          "addressLocality":"Malmö",
+          "addressCountry":"SE"
+        },
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
         "description":"Nordlöf Nordic bygger kodade hemsidor, företagshemsidor, webbfix, landningssidor, formulärflöden, API:er, backend och enklare webblösningar för småföretag. Demo först, tydliga priser och ingen inlåsning.",
         "areaServed":[
@@ -658,6 +667,20 @@
       line-height:1;
     }
 
+    .mobile-menu-links a[aria-current="page"]{
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+      box-shadow:0 16px 34px var(--brand-deep-glow);
+    }
+
+    .mobile-menu-links a[aria-current="page"]::after{
+      content:"✓";
+      color:#fff;
+      font-size:16px;
+      font-weight:900;
+    }
+
     .mobile-menu-actions{
       display:grid;
       gap:9px;
@@ -1084,6 +1107,61 @@
       color:var(--text);
     }
 
+    .legal-box{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(22px,4vw,34px);
+      box-shadow:var(--shadow);
+    }
+
+    .legal-box p{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:17px;
+      max-width:900px;
+    }
+
+    .legal-box a{
+      color:var(--text);
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:900;
+    }
+
+    .legal-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .legal-item{
+      background:var(--soft);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:15px;
+      line-height:1.55;
+    }
+
+    .legal-item strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:4px;
+      font-weight:900;
+    }
+
+    .legal-item span,
+    .legal-item a{
+      color:var(--muted);
+    }
+
+    .legal-item a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:800;
+    }
+
     .timeline{
       display:grid;
       gap:14px;
@@ -1469,6 +1547,14 @@
       margin-top:6px;
     }
 
+    .footer-links a[aria-current="page"]{
+      background:linear-gradient(135deg,var(--brand-deep),var(--brand));
+      color:#fff;
+      text-decoration:none;
+      border-radius:999px;
+      padding:3px 10px;
+    }
+
     .truth-box h2,
     .card.highlight h2,
     .price-card.featured h2{
@@ -1557,7 +1643,8 @@
       .grid-4,
       .grid-3,
       .quick-grid,
-      .contact-row{
+      .contact-row,
+      .legal-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
@@ -1654,13 +1741,15 @@
       .grid-3,
       .quick-grid,
       .contact-row,
-      .form-grid{
+      .form-grid,
+      .legal-grid{
         grid-template-columns:1fr;
       }
 
       .hero-card,
       .form-card,
-      .cta-box{
+      .cta-box,
+      .legal-box{
         padding:20px;
         border-radius:22px;
       }
@@ -1851,6 +1940,7 @@
       <div class="mobile-menu-links">
         <a href="/">Startsida</a>
         <a href="/gratis-demo.html" aria-current="page">Gratis demo</a>
+        <a href="#foretagsinfo">Företagsinfo</a>
         <a href="#redigera">Redigera demo</a>
         <a href="/webbfix.html">Webbfix</a>
         <a href="/ny-hemsida-foretag.html">Ny hemsida</a>
@@ -1988,6 +2078,66 @@
         <div class="quick-item">
           <strong data-edit>Kontrollpanel</strong>
           <span data-edit>Valfritt: testa färg, font och text själv</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="foretagsinfo">
+      <div class="container">
+        <div class="legal-box">
+          <span class="tag">Företagsinformation</span>
+          <h2>Vem står bakom sidan?</h2>
+          <p>
+            Webutvecklare.se drivs av Erica Nordlöf genom den enskilda firman Nordlöf Nordic.
+            Här finns juridisk företagsinformation, kontaktvägar och vem som ansvarar för personuppgifter som skickas via formulär.
+          </p>
+
+          <div class="legal-grid" aria-label="Juridisk företagsinformation">
+            <div class="legal-item">
+              <strong>Företag</strong>
+              <span>Nordlöf Nordic</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Juridiskt namn</strong>
+              <span>Erica Nordlöf / Nordlöf Nordic</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Organisationsnummer</strong>
+              <span>861225-3966</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Adress</strong>
+              <span>Lövviksgatan 10<br>213 74 Malmö</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>E-post</strong>
+              <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+            </div>
+
+            <div class="legal-item">
+              <strong>Telefon</strong>
+              <a href="tel:+46793442520">079-344 25 20</a>
+            </div>
+
+            <div class="legal-item">
+              <strong>Personuppgiftsansvarig</strong>
+              <span>Erica Nordlöf / Nordlöf Nordic</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Integritet</strong>
+              <a href="/integritet.html">Läs integritetspolicy</a>
+            </div>
+          </div>
+
+          <p style="margin-top:18px;">
+            Uppgifter som skickas via formulär används för att kunna svara på förfrågningar och hanteras enligt
+            <a href="/integritet.html">integritetspolicyn</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -2294,7 +2444,8 @@
 
             <div class="contact-mini">
               <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              Nordlöf Nordic<br>
+              Enskild firma · Org.nr 861225-3966
             </div>
           </div>
 
@@ -2485,7 +2636,7 @@
             </div>
 
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+              Genom att skicka formuläret godkänner du att dina uppgifter behandlas av Nordlöf Nordic, org.nr 861225-3966, enligt
               <a href="/integritet.html">integritetspolicyn</a>.
             </span>
 
@@ -2526,7 +2677,8 @@
       <div class="footer-box">
         <div>
           <strong data-edit>© 2026 Nordlöf Nordic</strong><br>
-          <span data-edit>Webutvecklare.se drivs och är gjord av Erica Nordlöf / Nordlöf Nordic.</span><br>
+          <span>Webutvecklare.se drivs av Erica Nordlöf / Nordlöf Nordic, enskild firma.</span><br>
+          <span>Org.nr: 861225-3966 · Adress: Lövviksgatan 10, 213 74 Malmö</span><br>
           <span data-edit>Gratis demo av ny hemsida · Kodade hemsidor, webbfix, landningssidor och webbutveckling för småföretag.</span>
         </div>
 
@@ -2539,6 +2691,7 @@
           <div class="footer-links">
             <a href="/">Startsida</a>
             <a href="/gratis-demo.html" aria-current="page">Gratis demo</a>
+            <a href="#foretagsinfo">Företagsinfo</a>
             <a href="#redigera">Redigera demo</a>
             <a href="/webbfix.html">Webbfix</a>
             <a href="/ny-hemsida-foretag.html">Ny hemsida</a>
