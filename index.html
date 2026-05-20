@@ -524,6 +524,17 @@
       line-height:1;
     }
 
+    .mobile-menu-links a[aria-current="page"]{
+      background:linear-gradient(135deg,#9a5855 0%,#d77f7a 60%,#e4a198 100%);
+      color:#fff;
+      border-color:rgba(255,255,255,.24);
+      box-shadow:0 14px 34px rgba(154,88,85,.22);
+    }
+
+    .mobile-menu-links a[aria-current="page"]::after{
+      color:#fff;
+    }
+
     .mobile-menu-actions{
       display:grid;
       gap:9px;
@@ -998,12 +1009,14 @@
 
     .legal-grid{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
       gap:12px;
       margin-top:18px;
     }
 
     .legal-item{
+      min-width:0;
+      overflow:hidden;
       background:#fff7f4;
       border:1px solid rgba(154,88,85,.13);
       border-radius:18px;
@@ -1015,17 +1028,25 @@
       display:block;
       color:#262220;
       margin-bottom:4px;
+      overflow-wrap:anywhere;
     }
 
     .legal-item span,
     .legal-item a{
       color:#5b524d;
+      overflow-wrap:anywhere;
+      word-break:break-word;
     }
 
     .legal-item a{
       text-decoration:underline;
       text-underline-offset:3px;
       font-weight:800;
+    }
+
+    .footer-links a[aria-current="page"]{
+      color:var(--brand-deep);
+      font-weight:900;
     }
 
     .timeline{
@@ -1375,9 +1396,12 @@
 
       .grid-3,
       .quick-grid,
-      .contact-row,
-      .legal-grid{
+      .contact-row{
         grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .legal-grid{
+        grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
       }
     }
 
@@ -1737,7 +1761,7 @@
       </a>
 
       <div class="mobile-menu-links">
-        <a href="/">Startsida</a>
+        <a href="/" aria-current="page">Startsida</a>
         <a href="/gratis-demo.html">Gratis demo</a>
         <a href="/webbfix.html">Webbfix</a>
         <a href="/ny-hemsida-foretag.html">Ny hemsida</a>
