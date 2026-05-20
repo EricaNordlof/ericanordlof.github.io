@@ -28,7 +28,7 @@
   <meta name="twitter:description" content="Kodade hemsidor, webbfix och webbutveckling. Demo först, tydliga priser och ingen inlåsning." />
   <meta name="twitter:image" content="https://webutvecklare.se/startsida.png" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=3" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-nordlof.png?v=3" />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-nordlof.png?v=3" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3" />
 
@@ -90,12 +90,21 @@
         "@type":"ProfessionalService",
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
+        "legalName":"Erica Nordlöf / Nordlöf Nordic",
         "url":"https://webutvecklare.se/",
         "image":"https://webutvecklare.se/startsida.png",
         "logo":"https://webutvecklare.se/nordlof-nordic-logo.png",
+        "taxID":"861225-3966",
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"Lövviksgatan 10",
+          "postalCode":"21374",
+          "addressLocality":"Malmö",
+          "addressCountry":"SE"
+        },
         "description":"Nordlöf Nordic bygger kodade hemsidor, företagshemsidor, webbfix, landningssidor, formulärflöden, API:er, backend och enklare webblösningar för småföretag. Demo först, tydliga priser och ingen inlåsning.",
         "areaServed":[
           {"@type":"Country","name":"Sverige"},
@@ -965,6 +974,60 @@
       color:var(--text);
     }
 
+    .legal-box{
+      background:#fffdfc;
+      border:1px solid rgba(154,88,85,.13);
+      border-radius:28px;
+      padding:clamp(22px,4vw,34px);
+      box-shadow:0 18px 48px rgba(154,88,85,.12);
+    }
+
+    .legal-box p{
+      color:#5b524d;
+      line-height:1.75;
+      font-size:17px;
+      max-width:900px;
+    }
+
+    .legal-box a{
+      color:#262220;
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:900;
+    }
+
+    .legal-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .legal-item{
+      background:#fff7f4;
+      border:1px solid rgba(154,88,85,.13);
+      border-radius:18px;
+      padding:15px;
+      line-height:1.55;
+    }
+
+    .legal-item strong{
+      display:block;
+      color:#262220;
+      margin-bottom:4px;
+    }
+
+    .legal-item span,
+    .legal-item a{
+      color:#5b524d;
+    }
+
+    .legal-item a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:800;
+    }
+
     .timeline{
       display:grid;
       gap:14px;
@@ -1312,7 +1375,8 @@
 
       .grid-3,
       .quick-grid,
-      .contact-row{
+      .contact-row,
+      .legal-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
       }
     }
@@ -1390,7 +1454,8 @@
       .grid-3,
       .quick-grid,
       .contact-row,
-      .form-grid{
+      .form-grid,
+      .legal-grid{
         grid-template-columns:1fr;
       }
 
@@ -1399,7 +1464,8 @@
       }
 
       .form-card,
-      .cta-box{
+      .cta-box,
+      .legal-box{
         padding:20px;
         border-radius:22px;
       }
@@ -1457,7 +1523,6 @@
       }
     }
 
-    /* FIX: stoppa vit text på vita knappar/rutor */
     .form-card .btn,
     .cta-box .btn,
     .highlight .btn,
@@ -1522,7 +1587,6 @@
       box-shadow:0 16px 34px rgba(36,30,26,.10) !important;
     }
 
-    /* SLUTFIX: rosa kort ska inte bli vita */
     .card.highlight,
     .truth-box.highlight,
     .compare-card.mine,
@@ -1537,7 +1601,6 @@
       box-shadow:0 30px 80px rgba(154,88,85,.26) !important;
     }
 
-    /* Vit text på rosa kort */
     .card.highlight,
     .card.highlight *,
     .truth-box.highlight,
@@ -1553,7 +1616,6 @@
       color:#fff !important;
     }
 
-    /* Men vita knappar och formulärfält ska ha mörk text */
     .btn-light,
     .btn-secondary,
     .cta-box .btn-light,
@@ -1566,7 +1628,6 @@
       border-color:rgba(154,88,85,.18) !important;
     }
 
-    /* Direkt text i knappar */
     .btn-light *,
     .btn-secondary *,
     .cta-box .btn-light *,
@@ -1577,7 +1638,6 @@
       -webkit-text-fill-color:#262220 !important;
     }
 
-    /* Formulärfält */
     .form-card input,
     .form-card select,
     .form-card textarea{
@@ -1587,7 +1647,6 @@
       border:1px solid rgba(255,255,255,.88) !important;
     }
 
-    /* Placeholder i formulär */
     .form-card input::placeholder,
     .form-card textarea::placeholder{
       color:#7a6d68 !important;
@@ -1595,7 +1654,6 @@
       -webkit-text-fill-color:#7a6d68 !important;
     }
 
-    /* Vanliga vita kort ska ha mörk text */
     .card:not(.highlight):not(.price-card.featured),
     .truth-box:not(.highlight),
     .compare-card:not(.mine),
@@ -1630,7 +1688,6 @@
       color:#5b524d !important;
     }
 
-    /* Rubriker/länkar i vita kort */
     .card:not(.highlight):not(.price-card.featured) h3,
     .card:not(.highlight):not(.price-card.featured) h3 a,
     .truth-box:not(.highlight) h2,
@@ -1688,6 +1745,7 @@
         <a href="/case.html">Case</a>
         <a href="/om-mig.html">Om Erica</a>
         <a href="/blogg.html">Blogg</a>
+        <a href="#foretagsinfo">Företagsinfo</a>
       </div>
 
       <div class="mobile-menu-actions">
@@ -1775,6 +1833,66 @@
         <div class="quick-item">
           <strong>Demo först</strong>
           När uppdraget passar ramen
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="foretagsinfo">
+      <div class="container">
+        <div class="legal-box">
+          <span class="tag">Företagsinformation</span>
+          <h2>Vem står bakom sidan?</h2>
+          <p>
+            Webutvecklare.se drivs av Erica Nordlöf genom den enskilda firman Nordlöf Nordic.
+            Här finns juridisk företagsinformation, kontaktvägar och vem som ansvarar för personuppgifter som skickas via formulär.
+          </p>
+
+          <div class="legal-grid" aria-label="Juridisk företagsinformation">
+            <div class="legal-item">
+              <strong>Företag</strong>
+              <span>Nordlöf Nordic</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Juridiskt namn</strong>
+              <span>Erica Nordlöf / Nordlöf Nordic</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Organisationsnummer</strong>
+              <span>861225-3966</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Adress</strong>
+              <span>Lövviksgatan 10<br>213 74 Malmö</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>E-post</strong>
+              <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a>
+            </div>
+
+            <div class="legal-item">
+              <strong>Telefon</strong>
+              <a href="tel:+46793442520">079-344 25 20</a>
+            </div>
+
+            <div class="legal-item">
+              <strong>Personuppgiftsansvarig</strong>
+              <span>Erica Nordlöf / Nordlöf Nordic</span>
+            </div>
+
+            <div class="legal-item">
+              <strong>Integritet</strong>
+              <a href="/integritet.html">Läs integritetspolicy</a>
+            </div>
+          </div>
+
+          <p style="margin-top:18px;">
+            Uppgifter som skickas via formulär används för att kunna svara på förfrågningar och hanteras enligt
+            <a href="/integritet.html">integritetspolicyn</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -2228,7 +2346,8 @@
 
             <div class="contact-mini">
               <strong>Företag</strong>
-              Nordlöf Nordic · Enskild firma
+              Nordlöf Nordic<br>
+              Enskild firma · Org.nr 861225-3966
             </div>
           </div>
 
@@ -2310,7 +2429,7 @@
             </div>
 
             <span class="small">
-              Genom att skicka formuläret godkänner du att dina uppgifter behandlas enligt
+              Genom att skicka formuläret godkänner du att dina uppgifter behandlas av Nordlöf Nordic, org.nr 861225-3966, enligt
               <a href="/integritet.html">integritetspolicyn</a>.
             </span>
 
@@ -2326,7 +2445,8 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Webutvecklare.se drivs och är gjord av Erica Nordlöf / Nordlöf Nordic.<br>
+          Webutvecklare.se drivs av Erica Nordlöf / Nordlöf Nordic, enskild firma.<br>
+          Org.nr: 861225-3966 · Adress: Lövviksgatan 10, 213 74 Malmö<br>
           Kodade hemsidor, webbfix, landningssidor och webbutveckling för småföretag.
         </div>
 
