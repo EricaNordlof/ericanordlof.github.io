@@ -100,11 +100,20 @@
         "@type":"ProfessionalService",
         "@id":"https://webutvecklare.se/#business",
         "name":"Nordlöf Nordic",
+        "legalName":"Erica Nordlöf / Nordlöf Nordic",
+        "taxID":"861225-3966",
         "url":"https://webutvecklare.se/",
         "image":"https://webutvecklare.se/nordlof-nordic-logo.png",
         "logo":"https://webutvecklare.se/nordlof-nordic-logo.png",
         "email":"erica@webutvecklare.se",
         "telephone":"+46793442520",
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"Lövviksgatan 10",
+          "postalCode":"21374",
+          "addressLocality":"Malmö",
+          "addressCountry":"SE"
+        },
         "priceRange":"490 SEK - 7900 SEK, 650 SEK/h",
         "founder":{"@id":"https://webutvecklare.se/#erica"},
         "brand":{"@type":"Brand","name":"Nordlöf Nordic"},
@@ -445,6 +454,23 @@
       color:var(--brand-deep);
       font-size:22px;
       line-height:1;
+    }
+
+    .mobile-menu-links a[aria-current="page"]{
+      background:linear-gradient(135deg,#9a5a57,#cf7d78);
+      color:#fff;
+      border-color:rgba(154,90,87,.28);
+      box-shadow:0 16px 34px rgba(154,90,87,.18);
+    }
+
+    .mobile-menu-links a[aria-current="page"]::after{
+      color:#fff;
+    }
+
+    .footer-links a[aria-current="page"]{
+      color:var(--brand-deep);
+      font-weight:900;
+      text-decoration-thickness:2px;
     }
 
     .mobile-menu-actions{
@@ -1325,6 +1351,7 @@
         <a href="/om-mig.html">Om Erica</a>
         <a href="/blogg.html">Blogg</a>
         <a href="/villkor.html" aria-current="page">Villkor</a>
+        <a href="#foretagsinfo">Företagsinfo</a>
       </div>
 
       <div class="mobile-menu-actions">
@@ -1421,6 +1448,53 @@
           <strong>Kodad sida</strong>
           Byggd utan onödig plattformsinlåsning
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="foretagsinfo">
+      <div class="container">
+        <article class="term-card">
+          <span class="tag">Företagsinformation</span>
+          <h2>Vem står bakom villkoren?</h2>
+          <p>
+            Webutvecklare.se drivs av Erica Nordlöf genom den enskilda firman Nordlöf Nordic.
+            Det är dessa uppgifter som gäller för kontakt, förfrågningar, beställningar, villkor och kundadministration.
+          </p>
+
+          <div class="grid-4" style="margin-top:18px;">
+            <article class="card">
+              <span class="tag">Företag</span>
+              <h3>Nordlöf Nordic</h3>
+              <p>Enskild firma som drivs av Erica Nordlöf.</p>
+            </article>
+
+            <article class="card">
+              <span class="tag">Org.nr</span>
+              <h3>861225-3966</h3>
+              <p>Organisationsnummer för Nordlöf Nordic.</p>
+            </article>
+
+            <article class="card">
+              <span class="tag">Adress</span>
+              <h3>Lövviksgatan 10</h3>
+              <p>213 74 Malmö, Sverige.</p>
+            </article>
+
+            <article class="card highlight">
+              <span class="tag dark">Kontakt</span>
+              <h3>Frågor om villkor</h3>
+              <p>
+                <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a><br>
+                <a href="tel:+46793442520">079-344 25 20</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="note">
+            Personuppgiftsansvarig är Erica Nordlöf / Nordlöf Nordic. Läs mer i
+            <a href="/integritet.html">integritetspolicyn</a>.
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1757,6 +1831,9 @@
             <strong>Nordlöf Nordic</strong>
             <p>
               Kontaktperson: Erica Nordlöf<br>
+              Företag: Nordlöf Nordic, enskild firma<br>
+              Org.nr: 861225-3966<br>
+              Adress: Lövviksgatan 10, 213 74 Malmö<br>
               E-post: <a href="mailto:erica@webutvecklare.se">erica@webutvecklare.se</a><br>
               Telefon: <a href="tel:+46793442520">079-344 25 20</a>
             </p>
@@ -1770,6 +1847,12 @@
           <div class="contact-mini">
             <strong>Webbplats</strong>
             <a href="https://webutvecklare.se/">webutvecklare.se</a>
+          </div>
+
+          <div class="contact-mini">
+            <strong>Företag</strong>
+            Nordlöf Nordic<br>
+            Org.nr 861225-3966
           </div>
 
           <div class="contact-mini">
@@ -1839,7 +1922,8 @@
       <div class="footer-box">
         <div>
           <strong>© 2026 Nordlöf Nordic</strong><br>
-          Webutvecklare.se drivs och är gjord av Erica Nordlöf / Nordlöf Nordic.<br>
+          Webutvecklare.se drivs av Erica Nordlöf / Nordlöf Nordic, enskild firma.<br>
+          Org.nr: 861225-3966 · Adress: Lövviksgatan 10, 213 74 Malmö<br>
           Hemsidor, webbfix, landningssidor och webbutveckling för småföretag.
         </div>
 
@@ -1861,6 +1945,7 @@
             <a href="/affiliate.html">Tipsprovision</a>
             <a href="/integritet.html">Integritetspolicy</a>
             <a href="/villkor.html" aria-current="page">Villkor</a>
+            <a href="#foretagsinfo">Företagsinfo</a>
             <a href="/sitemap.xml">Sitemap</a>
             <a href="https://maps.app.goo.gl/w8RhpSHCQoAdggNR6?g_st=ic" target="_blank" rel="me noopener noreferrer">Google Maps</a>
             <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
