@@ -4,27 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Om Erica Nordlöf | Fullstackutvecklare</title>
+  <title>Om Erica Nordlöf | Fullstackutvecklare i Malmö</title>
+
   <meta
     name="description"
-    content="Lär känna Erica Nordlöf, fullstackutvecklare i Malmö med bakgrund inom fastighet, logistik och praktiska verksamheter. JavaScript, TypeScript, React, Node.js, databaser och Docker."
+    content="Om Erica Nordlöf, fullstackutvecklare i Malmö med bakgrund inom fastighet, logistik och praktiska verksamheter. React, TypeScript, Node.js, API, databaser och Docker."
   />
+
   <meta
     name="robots"
     content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
   />
+
   <meta name="author" content="Erica Nordlöf" />
   <meta name="theme-color" content="#f7f0ec" />
 
   <link rel="canonical" href="https://webutvecklare.se/om-mig.html" />
 
-  <meta property="og:title" content="Om Erica Nordlöf | Fullstackutvecklare" />
+  <meta
+    property="og:title"
+    content="Om Erica Nordlöf | Fullstackutvecklare"
+  />
+
   <meta
     property="og:description"
     content="Fullstackutvecklare med praktisk verksamhetsbakgrund och fokus på att förstå problemet först och bygga rätt lösning."
   />
+
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://webutvecklare.se/om-mig.html" />
+
   <meta
     property="og:image"
     content="https://webutvecklare.se/erica-nordlof-linkedin.JPG"
@@ -36,6 +45,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3" />
 
   <link rel="me" href="https://github.com/EricaNordlof" />
+
   <link
     rel="me"
     href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
@@ -68,17 +78,15 @@
       "Next.js",
       "Node.js",
       "Express",
+      "REST API",
       "MongoDB",
       "MySQL",
-      "Java",
-      "REST API",
       "Docker",
       "Git",
       "GitHub",
       "Systemdesign",
       "Kravanalys",
       "UX",
-      "Testning",
       "Deployment"
     ]
   }
@@ -91,17 +99,21 @@
       --text:#262220;
       --muted:#5b524d;
       --line:rgba(38,34,32,.12);
+
       --brand:#d77f7a;
       --brand-dark:#9a5855;
       --brand-soft:#f4d8d5;
+
       --shadow:0 18px 50px rgba(154,88,85,.13);
-      --shadow-strong:0 30px 80px rgba(154,88,85,.22);
+      --shadow-strong:0 28px 72px rgba(154,88,85,.20);
+
       --radius:24px;
       --max:1120px;
     }
 
     *{
       box-sizing:border-box;
+      min-width:0;
     }
 
     html{
@@ -111,11 +123,27 @@
 
     body{
       margin:0;
+
       font-family:Inter,sans-serif;
       color:var(--text);
+
       background:
-        radial-gradient(circle at top left,rgba(215,127,122,.24),transparent 34%),
-        linear-gradient(180deg,#fff8f5 0%,var(--bg) 100%);
+        radial-gradient(
+          circle at top left,
+          rgba(215,127,122,.24),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 90% 12%,
+          rgba(215,127,122,.10),
+          transparent 26%
+        ),
+        linear-gradient(
+          180deg,
+          #fff8f5 0%,
+          var(--bg) 100%
+        );
+
       overflow-x:hidden;
     }
 
@@ -143,92 +171,133 @@
     }
 
     .container{
-      width:min(var(--max),calc(100% - 28px));
+      width:min(
+        var(--max),
+        calc(100% - 28px)
+      );
+
       margin:auto;
     }
 
-    /* HEADER — SAMMA SOM STARTSIDAN */
+    /* HEADER */
 
     .topbar{
       position:sticky;
       top:0;
+
       z-index:100;
+
       background:rgba(255,248,245,.94);
+
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
+
       border-bottom:1px solid var(--line);
     }
 
     .nav{
       min-height:70px;
+
       display:flex;
       align-items:center;
       justify-content:space-between;
+
       gap:16px;
     }
 
     .brand{
       display:flex;
       align-items:center;
+
       gap:12px;
+
       font-weight:900;
-      min-width:0;
     }
 
     .brand img{
       width:44px;
       height:44px;
-      border-radius:13px;
-      object-fit:cover;
+
       flex:0 0 auto;
+
+      border-radius:13px;
+
+      object-fit:cover;
     }
 
-    .brand span{
-      line-height:1.1;
+    .brand strong{
+      display:block;
+
+      line-height:1.05;
+
+      letter-spacing:-.03em;
     }
 
     .brand small{
       display:block;
-      margin-top:3px;
+
+      margin-top:4px;
+
       color:var(--muted);
+
       font-size:12px;
       font-weight:600;
     }
 
     .menu-button{
       min-height:44px;
+
       padding:11px 16px;
+
       border:0;
       border-radius:999px;
+
       background:#111;
       color:#fff;
+
       font-weight:900;
+
       cursor:pointer;
-      flex:0 0 auto;
     }
+
+    /* MENU */
 
     .menu-backdrop{
       position:fixed;
       inset:0;
+
       z-index:90;
+
       background:rgba(20,16,14,.35);
     }
 
     .menu{
       position:fixed;
+
       top:78px;
       right:14px;
+
       z-index:110;
-      width:min(360px,calc(100vw - 28px));
+
+      width:min(
+        370px,
+        calc(100vw - 28px)
+      );
+
       padding:14px;
+
       background:#fff;
+
       border:1px solid var(--line);
       border-radius:24px;
-      box-shadow:0 30px 80px rgba(36,30,26,.2);
+
+      box-shadow:
+        0 30px 80px rgba(36,30,26,.20);
     }
 
     .menu-links{
       display:grid;
+
       gap:8px;
     }
 
@@ -236,23 +305,38 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
+
       min-height:50px;
+
       padding:14px 15px;
+
       border-radius:15px;
+
       background:#fff8f5;
+
       border:1px solid var(--line);
+
       font-weight:900;
     }
 
     .menu-links a::after{
       content:"›";
+
       color:var(--brand-dark);
+
       font-size:21px;
     }
 
     .menu-links a[aria-current="page"]{
-      background:linear-gradient(135deg,var(--brand-dark),var(--brand));
       color:#fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--brand-dark),
+          var(--brand)
+        );
+
       border-color:transparent;
     }
 
@@ -265,26 +349,46 @@
     h1,
     h2{
       font-family:"Playfair Display",serif;
+
       letter-spacing:-.045em;
     }
 
     h1{
       margin:18px 0;
-      font-size:clamp(3rem,7vw,5.6rem);
-      line-height:.94;
+
+      max-width:790px;
+
+      font-size:
+        clamp(
+          3rem,
+          6vw,
+          5rem
+        );
+
+      line-height:.96;
     }
 
     h2{
       margin:0 0 12px;
-      font-size:clamp(2.05rem,5vw,3.25rem);
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3rem
+        );
+
       line-height:1;
     }
 
     h3{
-      margin:0 0 10px;
-      font-size:22px;
-      line-height:1.15;
+      margin:0 0 9px;
+
+      font-size:21px;
+
       letter-spacing:-.03em;
+
+      line-height:1.15;
     }
 
     p{
@@ -293,417 +397,431 @@
 
     .eyebrow{
       display:inline-flex;
+
       padding:8px 12px;
+
       border-radius:999px;
+
       background:#fff;
+
       border:1px solid var(--line);
+
       color:var(--brand-dark);
+
       font-size:13px;
       font-weight:900;
-      box-shadow:0 10px 25px rgba(36,30,26,.04);
     }
 
     .lead{
-      max-width:760px;
+      max-width:730px;
+
       color:var(--muted);
-      font-size:19px;
-      line-height:1.72;
+
+      font-size:18px;
+
+      line-height:1.7;
     }
 
     .lead strong{
       color:var(--text);
     }
 
-    /* BUTTONS */
+    /* KNAPPAR */
 
-    .hero-actions{
+    .actions{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
-      margin-top:26px;
+
+      gap:10px;
+
+      margin-top:24px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:50px;
-      padding:14px 20px;
-      border-radius:999px;
-      font-weight:900;
-      border:1px solid transparent;
-      text-align:center;
-      transition:.18s ease;
-    }
 
-    .btn:hover{
-      transform:translateY(-1px);
+      min-height:48px;
+
+      padding:13px 19px;
+
+      border-radius:999px;
+
+      border:1px solid transparent;
+
+      font-weight:900;
+
+      text-align:center;
     }
 
     .btn-primary{
-      background:linear-gradient(
-        135deg,
-        var(--brand-dark),
-        var(--brand)
-      );
       color:#fff;
-      box-shadow:0 16px 34px rgba(154,88,85,.24);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--brand-dark),
+          var(--brand)
+        );
+
+      box-shadow:
+        0 16px 34px rgba(154,88,85,.24);
     }
 
     .btn-secondary{
-      background:#fff;
-      border-color:var(--line);
       color:var(--text);
+
+      background:#fff;
+
+      border-color:var(--line);
     }
 
     /* HERO */
 
     .hero{
-      padding:70px 0 48px;
+      padding:62px 0 42px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.18fr) minmax(260px,.72fr);
-      gap:46px;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        230px;
+
+      gap:50px;
+
       align-items:center;
     }
 
+    /*
+      FIX:
+      Porträttet har en bestämd storlek på desktop.
+      Det kan alltså inte bli långt eller "korvigt".
+    */
+
     .hero-photo{
-      width:100%;
-      max-width:330px;
+      width:222px;
+      height:222px;
+
+      padding:6px;
+
       justify-self:end;
-      padding:14px;
-      background:#fff;
+
+      overflow:hidden;
+
       border-radius:30px;
+
+      background:#fff;
+
       box-shadow:var(--shadow-strong);
     }
 
     .hero-photo img{
-      width:100%;
-      aspect-ratio:4 / 5;
+      width:210px;
+      height:210px;
+
+      max-width:none;
+
       object-fit:cover;
-      object-position:center 24%;
-      border-radius:21px;
+
+      object-position:center 27%;
+
+      border-radius:24px;
     }
 
-    .photo-caption{
-      padding:14px 6px 2px;
-    }
-
-    .photo-caption strong{
-      display:block;
-      font-size:18px;
-      margin-bottom:4px;
-    }
-
-    .photo-caption span{
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-    }
-
-    /* GENERELLT */
+    /* SECTIONS */
 
     .section{
-      padding:52px 0;
+      padding:42px 0;
     }
 
     .section-head{
-      max-width:840px;
-      margin-bottom:22px;
+      max-width:780px;
+
+      margin-bottom:20px;
     }
 
     .section-head p{
       color:var(--muted);
-      font-size:17px;
-      line-height:1.72;
+
+      font-size:16px;
+
+      line-height:1.7;
     }
 
-    .grid-2{
+    /* INTRO STORY */
+
+    .story{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+
+      grid-template-columns:
+        minmax(0,.8fr)
+        minmax(0,1.2fr);
+
       gap:18px;
     }
+
+    .story-highlight{
+      padding:28px;
+
+      border-radius:28px;
+
+      color:#fff;
+
+      background:
+        linear-gradient(
+          145deg,
+          #aa625e,
+          #d77f7a 54%,
+          #e9a69d
+        );
+
+      box-shadow:var(--shadow-strong);
+    }
+
+    .story-highlight h2,
+    .story-highlight p{
+      color:#fff;
+    }
+
+    .story-highlight p{
+      margin-top:13px;
+
+      color:rgba(255,255,255,.92);
+
+      line-height:1.7;
+    }
+
+    .story-copy{
+      padding:28px;
+
+      background:#fff;
+
+      border:1px solid var(--line);
+      border-radius:28px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .story-copy p{
+      color:var(--muted);
+
+      line-height:1.78;
+    }
+
+    .story-copy p + p{
+      margin-top:14px;
+    }
+
+    .story-copy strong{
+      color:var(--text);
+    }
+
+    /* STYRKOR */
 
     .grid-3{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-    }
 
-    .grid-4{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:12px;
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap:16px;
     }
 
     .card{
+      padding:22px;
+
       background:var(--card);
+
       border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:24px;
+      border-radius:22px;
+
       box-shadow:var(--shadow);
     }
 
     .card p{
       color:var(--muted);
-      line-height:1.72;
-    }
 
-    .card-highlight{
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(255,255,255,.22),
-          transparent 35%
-        ),
-        linear-gradient(
-          145deg,
-          #aa625e,
-          #d77f7a 52%,
-          #e9a69d
-        );
-      color:#fff;
-      border-color:rgba(255,255,255,.18);
-      box-shadow:var(--shadow-strong);
-    }
-
-    .card-highlight h2,
-    .card-highlight h3,
-    .card-highlight p,
-    .card-highlight li{
-      color:#fff;
-    }
-
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      padding:7px 10px;
-      margin-bottom:13px;
-      border-radius:999px;
-      background:var(--brand-soft);
-      color:#8f514e;
-      font-size:12px;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-    }
-
-    .card-highlight .tag{
-      background:rgba(255,255,255,.18);
-      color:#fff;
-    }
-
-    /* STORY */
-
-    .story{
-      display:grid;
-      grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
-      gap:18px;
-    }
-
-    .story-intro{
-      background:linear-gradient(
-        145deg,
-        #aa625e,
-        #d77f7a 55%,
-        #e9a69d
-      );
-      color:#fff;
-      border-radius:30px;
-      padding:30px;
-      box-shadow:var(--shadow-strong);
-    }
-
-    .story-intro h2,
-    .story-intro p{
-      color:#fff;
-    }
-
-    .story-intro p{
-      margin-top:14px;
-      line-height:1.72;
-      color:rgba(255,255,255,.92);
-    }
-
-    .story-text{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:30px;
-      padding:30px;
-      box-shadow:var(--shadow);
-    }
-
-    .story-text p{
-      color:var(--muted);
-      line-height:1.82;
-    }
-
-    .story-text p + p{
-      margin-top:16px;
-    }
-
-    .story-text strong{
-      color:var(--text);
-    }
-
-    /* EXPERIENCE */
-
-    .experience-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .experience{
-      display:grid;
-      grid-template-columns:150px minmax(0,1fr);
-      gap:20px;
-      padding:20px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-    }
-
-    .experience-year{
-      color:var(--brand-dark);
-      font-weight:900;
-      font-size:14px;
-    }
-
-    .experience strong{
-      display:block;
-      font-size:18px;
-      margin-bottom:6px;
-    }
-
-    .experience p{
-      color:var(--muted);
       line-height:1.65;
+
+      font-size:15px;
     }
 
-    /* TECH */
-
-    .skill-box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .skill-box strong{
-      display:block;
-      margin-bottom:7px;
-    }
-
-    .skill-box span{
-      color:var(--muted);
-      line-height:1.6;
-      font-size:14px;
-    }
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:20px;
-    }
-
-    .chip{
-      display:inline-flex;
-      padding:8px 11px;
-      border-radius:999px;
-      background:#f4d8d5;
-      color:#754b48;
-      font-size:12px;
-      font-weight:900;
-    }
-
-    /* WORK STYLE */
-
-    .strength-number{
+    .number{
       display:grid;
       place-items:center;
-      width:38px;
-      height:38px;
-      margin-bottom:18px;
-      border-radius:13px;
-      background:linear-gradient(
-        135deg,
-        var(--brand-dark),
-        var(--brand)
-      );
-      color:#fff;
-      font-weight:900;
-    }
 
-    /* ROLES */
+      width:36px;
+      height:36px;
 
-    .roles{
+      margin-bottom:16px;
+
+      border-radius:12px;
+
       background:
-        radial-gradient(
-          circle at top right,
-          rgba(255,255,255,.22),
-          transparent 35%
-        ),
         linear-gradient(
-          145deg,
-          #aa625e,
-          #d77f7a 52%,
-          #e9a69d
+          135deg,
+          var(--brand-dark),
+          var(--brand)
         );
-      border-radius:32px;
-      padding:34px;
+
       color:#fff;
-      box-shadow:var(--shadow-strong);
-    }
 
-    .roles h2,
-    .roles p{
-      color:#fff;
-    }
-
-    .roles p{
-      max-width:800px;
-      color:rgba(255,255,255,.92);
-      line-height:1.72;
-    }
-
-    .role-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:9px;
-      margin-top:22px;
-    }
-
-    .role{
-      padding:9px 13px;
-      border:1px solid rgba(255,255,255,.25);
-      border-radius:999px;
-      background:rgba(255,255,255,.14);
-      color:#fff;
       font-size:13px;
       font-weight:900;
     }
 
-    /* CTA */
+    /* TECH */
+
+    .skills{
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+      gap:12px;
+    }
+
+    .skill{
+      padding:18px;
+
+      background:#fff;
+
+      border:1px solid var(--line);
+      border-radius:18px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .skill strong{
+      display:block;
+
+      margin-bottom:7px;
+    }
+
+    .skill span{
+      display:block;
+
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.58;
+    }
+
+    /* PROJECT PROOF */
+
+    .project-proof{
+      display:grid;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        minmax(260px,.72fr);
+
+      gap:28px;
+
+      align-items:center;
+
+      padding:32px;
+
+      border-radius:30px;
+
+      color:#fff;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.22),
+          transparent 32%
+        ),
+        linear-gradient(
+          145deg,
+          #9a5855,
+          #d77f7a 56%,
+          #e9a69d
+        );
+
+      box-shadow:var(--shadow-strong);
+    }
+
+    .project-proof h2,
+    .project-proof p{
+      color:#fff;
+    }
+
+    .project-proof p{
+      color:rgba(255,255,255,.92);
+
+      line-height:1.7;
+
+      max-width:680px;
+    }
+
+    .project-list{
+      display:grid;
+
+      gap:10px;
+    }
+
+    .project-link{
+      display:block;
+
+      padding:16px;
+
+      border-radius:18px;
+
+      background:rgba(255,255,255,.15);
+
+      border:1px solid rgba(255,255,255,.22);
+
+      color:#fff;
+    }
+
+    .project-link strong{
+      display:block;
+
+      margin-bottom:5px;
+    }
+
+    .project-link span{
+      display:block;
+
+      color:rgba(255,255,255,.84);
+
+      font-size:13px;
+
+      line-height:1.5;
+    }
+
+    /* JOB CTA */
 
     .cta{
-      background:linear-gradient(
-        145deg,
-        #aa625e,
-        #d77f7a 52%,
-        #e9a69d
-      );
-      color:#fff;
-      border-radius:32px;
-      padding:34px;
       display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        minmax(210px,250px);
+
       gap:28px;
+
       align-items:center;
+
+      padding:32px;
+
+      border-radius:30px;
+
+      color:#fff;
+
+      background:
+        linear-gradient(
+          145deg,
+          #aa625e,
+          #d77f7a 52%,
+          #e9a69d
+        );
+
       box-shadow:var(--shadow-strong);
     }
 
@@ -712,84 +830,114 @@
     }
 
     .cta p{
-      color:rgba(255,255,255,.91);
-      line-height:1.72;
-      max-width:720px;
+      max-width:700px;
+
+      color:rgba(255,255,255,.92);
+
+      line-height:1.7;
     }
 
     .cta-actions{
       display:grid;
-      gap:10px;
-      min-width:220px;
+
+      gap:9px;
     }
 
     .cta .btn-secondary{
+      width:100%;
+
       background:#fff;
+
       color:var(--text);
     }
 
-    /* FOOTER — SAMMA SOM STARTSIDAN */
+    /* FOOTER */
 
     footer{
       padding:34px 0;
+
       color:var(--muted);
+
       font-size:14px;
     }
 
     .footer{
-      border-top:1px solid var(--line);
-      padding-top:20px;
       display:flex;
       justify-content:space-between;
+
       gap:18px;
+
       flex-wrap:wrap;
+
+      padding-top:20px;
+
+      border-top:1px solid var(--line);
     }
 
     .footer-links{
       display:flex;
       flex-wrap:wrap;
+
       gap:12px;
     }
 
     .footer-links a{
-      text-decoration:underline;
-      text-underline-offset:3px;
       font-weight:800;
+
+      text-decoration:underline;
+
+      text-underline-offset:3px;
     }
 
     .footer-links a[aria-current="page"]{
       color:var(--brand-dark);
+
       text-decoration-thickness:2px;
     }
 
-    @media(max-width:980px){
-      .hero-grid,
+    /* TABLET */
+
+    @media(max-width:900px){
+
+      .hero-grid{
+        grid-template-columns:
+          minmax(0,1fr)
+          190px;
+
+        gap:30px;
+      }
+
+      .hero-photo{
+        width:182px;
+        height:182px;
+      }
+
+      .hero-photo img{
+        width:170px;
+        height:170px;
+      }
+
       .story,
+      .project-proof,
       .cta{
         grid-template-columns:1fr;
       }
 
-      .hero-photo{
-        justify-self:start;
-      }
-
-      .grid-3{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .grid-4{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
-      .cta-actions{
-        min-width:0;
+      .skills{
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
       }
     }
+
+    /* MOBIL */
 
     @media(max-width:700px){
 
       .container{
-        width:min(var(--max),calc(100% - 22px));
+        width:min(
+          var(--max),
+          calc(100% - 22px)
+        );
       }
 
       .nav{
@@ -801,150 +949,142 @@
         height:42px;
       }
 
-      .brand span{
+      .brand strong{
         font-size:15px;
-      }
-
-      .menu-button{
-        padding:10px 15px;
       }
 
       .menu{
         top:72px;
+
         left:11px;
         right:11px;
+
         width:auto;
       }
 
       .hero{
-        padding:34px 0 30px;
+        padding:34px 0 28px;
       }
 
       .hero-grid{
         display:flex;
+
         flex-direction:column;
-        gap:26px;
+
         align-items:stretch;
+
+        gap:24px;
       }
 
-      .hero-grid > div:first-child{
+      .hero-grid > div{
         order:1;
       }
 
       .hero-photo{
         order:2;
 
-        width:150px !important;
-        height:auto !important;
-
-        min-width:150px;
-        max-width:150px;
+        width:152px;
+        height:152px;
 
         margin:0 auto;
+
         padding:6px;
 
-        border-radius:26px;
+        justify-self:center;
+
+        border-radius:25px;
       }
 
       .hero-photo img{
-        width:138px !important;
-        height:138px !important;
+        width:140px;
+        height:140px;
 
-        min-width:138px;
-        max-width:138px;
-
-        min-height:138px;
-        max-height:138px;
-
-        aspect-ratio:auto !important;
-
-        object-fit:cover;
         object-position:center 27%;
 
-        border-radius:21px;
-      }
-
-      .photo-caption{
-        display:none;
+        border-radius:20px;
       }
 
       h1{
-        font-size:clamp(2.3rem,11vw,3.45rem);
-        line-height:.98;
         margin:15px 0;
+
+        font-size:
+          clamp(
+            2.3rem,
+            11vw,
+            3.45rem
+          );
+
+        line-height:.98;
       }
 
       h2{
-        font-size:clamp(1.9rem,9vw,2.6rem);
+        font-size:
+          clamp(
+            1.9rem,
+            9vw,
+            2.55rem
+          );
       }
 
       .lead{
         font-size:16px;
-        line-height:1.67;
+
+        line-height:1.65;
       }
 
-      .hero-actions{
+      .actions{
         display:grid;
+
         grid-template-columns:1fr;
+
         gap:9px;
+
         margin-top:20px;
       }
 
-      .hero-actions .btn,
-      .cta-actions .btn{
+      .actions .btn{
         width:100%;
       }
 
       .section{
-        padding:38px 0;
+        padding:34px 0;
       }
 
-      .grid-2,
-      .grid-3,
-      .grid-4{
-        grid-template-columns:1fr;
-      }
-
-      .card,
-      .story-intro,
-      .story-text{
-        padding:20px;
-        border-radius:21px;
-      }
-
-      .experience{
-        grid-template-columns:1fr;
-        gap:7px;
-        padding:18px;
-      }
-
-      .roles{
-        padding:23px;
-        border-radius:24px;
-      }
-
+      .story-highlight,
+      .story-copy,
+      .project-proof,
       .cta{
-        grid-template-columns:1fr;
-        padding:23px;
-        border-radius:24px;
+        padding:21px;
+
+        border-radius:23px;
       }
 
-      .cta-actions{
-        min-width:0;
+      .grid-3,
+      .skills{
+        grid-template-columns:1fr;
+      }
+
+      .cta-actions .btn{
+        width:100%;
       }
     }
 
     @media(max-width:390px){
+
       .container{
-        width:min(var(--max),calc(100% - 18px));
+        width:min(
+          var(--max),
+          calc(100% - 18px)
+        );
       }
 
       h1{
-        font-size:2.05rem;
+        font-size:2.08rem;
       }
     }
 
     @media(prefers-reduced-motion:reduce){
+
       html{
         scroll-behavior:auto;
       }
@@ -954,29 +1094,43 @@
       *::after{
         transition:none !important;
       }
-
-      .btn:hover{
-        transform:none;
-      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
+
   <header class="topbar">
+
     <div class="container nav">
 
-      <a class="brand" href="/" aria-label="Startsida">
+      <a
+        class="brand"
+        href="/"
+        aria-label="Startsida"
+      >
+
         <img
           src="favicon-nordlof.png?v=3"
-          alt="Erica Nordlöf"
+          alt=""
+          width="92"
+          height="92"
         />
 
         <span>
-          Erica Nordlöf
-          <small>Fullstackutvecklare</small>
+
+          <strong>
+            Erica Nordlöf
+          </strong>
+
+          <small>
+            Fullstackutvecklare
+          </small>
+
         </span>
+
       </a>
 
       <button
@@ -990,6 +1144,7 @@
       </button>
 
     </div>
+
   </header>
 
   <div
@@ -1004,6 +1159,7 @@
     aria-label="Huvudmeny"
     hidden
   >
+
     <div class="menu-links">
 
       <a href="/">
@@ -1019,6 +1175,14 @@
         aria-current="page"
       >
         Om mig
+      </a>
+
+      <a
+        href="https://fastighetsnavet-1.onrender.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fastighetsnavet
       </a>
 
       <a
@@ -1038,6 +1202,7 @@
       </a>
 
     </div>
+
   </nav>
 
   <main>
@@ -1060,24 +1225,26 @@
 
           <p class="lead">
             Jag heter <strong>Erica Nordlöf</strong> och är fullstackutvecklare
-            med en ovanligt praktisk väg in i tech.
-            Innan jag började utveckla system arbetade jag inom bland annat
-            fastighet, utemiljö, lager och transport.
+            med bakgrund inom fastighet, utemiljö, lager och transport.
+            Det gör att jag ofta ser både tekniken och verksamheten bakom problemet.
           </p>
 
-          <p class="lead" style="margin-top:14px;">
-            Det har format hur jag arbetar:
-            jag vill förstå <strong>vad som faktiskt behöver fungera</strong>,
-            inte bara vad som står i en teknisk specifikation.
-          </p>
-
-          <div class="hero-actions">
+          <div class="actions">
 
             <a
               class="btn btn-primary"
               href="/projekt.html"
             >
               Se mina projekt
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://fastighetsnavet-1.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Öppna Fastighetsnavet
             </a>
 
             <a
@@ -1089,35 +1256,21 @@
               GitHub
             </a>
 
-            <a
-              class="btn btn-secondary"
-              href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-
           </div>
 
         </div>
 
-        <aside class="hero-photo">
+        <aside
+          class="hero-photo"
+          aria-label="Porträtt av Erica Nordlöf"
+        >
 
           <img
             src="erica-nordlof-linkedin.JPG"
             alt="Erica Nordlöf, fullstackutvecklare"
-            width="900"
-            height="1125"
+            width="210"
+            height="210"
           />
-
-          <div class="photo-caption">
-            <strong>Erica Nordlöf</strong>
-            <span>
-              Fullstackutvecklare i Malmö med fokus på praktiska,
-              användbara system.
-            </span>
-          </div>
 
         </aside>
 
@@ -1129,54 +1282,37 @@
 
     <section class="section">
 
-      <div class="container">
+      <div class="container story">
 
-        <div class="story">
+        <div class="story-highlight">
 
-          <div class="story-intro">
+          <h2>
+            En praktisk väg in i tech.
+          </h2>
 
-            <span class="tag">
-              Min väg till utveckling
-            </span>
+          <p>
+            Innan jag började utveckla system arbetade jag i verksamheter
+            där saker måste fungera på riktigt — inte bara se bra ut på papper.
+          </p>
 
-            <h2>
-              Tech blev nästa steg — inte första steget.
-            </h2>
+        </div>
 
-            <p>
-              Jag kommer från verksamheter där saker måste fungera i verkligheten:
-              transporter ska komma fram, fastigheter ska fungera och problem
-              behöver lösas när de uppstår.
-            </p>
+        <div class="story-copy">
 
-          </div>
+          <p>
+            Jag har flera års erfarenhet från
+            <strong>fastighet och utemiljö</strong>
+            och tidigare från
+            <strong>lager och transport</strong>.
+            Där lärde jag mig att arbeta självständigt,
+            prioritera och lösa problem hela vägen.
+          </p>
 
-          <div class="story-text">
-
-            <p>
-              Innan jag utbildade mig till fullstackutvecklare arbetade jag flera
-              år inom <strong>fastighet och utemiljö</strong> samt tidigare inom
-              <strong>lager och transport</strong>.
-            </p>
-
-            <p>
-              Där lärde jag mig att ta ansvar, prioritera, arbeta självständigt
-              och lösa problem utan att alltid ha en färdig manual.
-            </p>
-
-            <p>
-              När jag sedan började utveckla mjukvara tog jag med mig samma
-              arbetssätt: förstå situationen, hitta flaskhalsen och bygg något
-              som faktiskt förbättrar processen.
-            </p>
-
-            <p>
-              Det är också därför jag tycker om <strong>fullstack</strong>.
-              Jag vill förstå hela kedjan — från användarens behov och
-              gränssnitt till backend, data och deployment.
-            </p>
-
-          </div>
+          <p>
+            När jag utbildade mig till fullstackutvecklare tog jag med mig
+            samma arbetssätt: förstå problemet, hitta flaskhalsen
+            och bygg en lösning som faktiskt går att använda.
+          </p>
 
         </div>
 
@@ -1184,7 +1320,7 @@
 
     </section>
 
-    <!-- BAKGRUND -->
+    <!-- STYRKOR -->
 
     <section class="section">
 
@@ -1193,119 +1329,8 @@
         <div class="section-head">
 
           <h2>
-            Min bakgrund är en del av min tekniska styrka.
+            Det jag tar med mig in i utvecklarrollen.
           </h2>
-
-          <p>
-            Jag har inte bara studerat hur system fungerar.
-            Jag har arbetat i verksamheter där systemen ska användas.
-          </p>
-
-        </div>
-
-        <div class="experience-list">
-
-          <article class="experience">
-
-            <div class="experience-year">
-              2026
-            </div>
-
-            <div>
-              <strong>
-                Fullstack Developer
-              </strong>
-
-              <p>
-                Avslutad utbildning med JavaScript, TypeScript,
-                Node.js, Express, React, Next.js, databaser,
-                autentisering, Docker och Git/GitHub.
-              </p>
-            </div>
-
-          </article>
-
-          <article class="experience">
-
-            <div class="experience-year">
-              Egna system
-            </div>
-
-            <div>
-              <strong>
-                Från krav till produktion
-              </strong>
-
-              <p>
-                Jag har byggt egna webbsystem och produktionslösningar,
-                bland annat boknings- och administrationssystemet för
-                Offroad Bumpis och Fastighetsnätet.
-              </p>
-            </div>
-
-          </article>
-
-          <article class="experience">
-
-            <div class="experience-year">
-              2020–2024
-            </div>
-
-            <div>
-              <strong>
-                Fastighet och utemiljö
-              </strong>
-
-              <p>
-                Praktiskt och självständigt arbete med ansvar för
-                fastighetsmiljö, underhåll, problemlösning och planering.
-                Erfarenheten gör att jag snabbt förstår verksamhetsnära behov.
-              </p>
-            </div>
-
-          </article>
-
-          <article class="experience">
-
-            <div class="experience-year">
-              Tidigare
-            </div>
-
-            <div>
-              <strong>
-                Lager och transport
-              </strong>
-
-              <p>
-                Flera års erfarenhet av logistik, flöden, ansvar och
-                arbete där struktur och rätt information vid rätt tidpunkt
-                är avgörande.
-              </p>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- VAD BAKGRUNDEN GER -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <h2>
-            Vad jag tar med mig in i utvecklarrollen.
-          </h2>
-
-          <p>
-            Min styrka är kombinationen av teknik och verksamhetsförståelse.
-          </p>
 
         </div>
 
@@ -1313,7 +1338,7 @@
 
           <article class="card">
 
-            <span class="strength-number">
+            <span class="number">
               01
             </span>
 
@@ -1322,17 +1347,15 @@
             </h3>
 
             <p>
-              Jag tänker inte bara på en komponent.
-              Jag tittar på användaren, processen, datan och vad som händer
-              före och efter varje steg.
+              Jag tänker på användaren, processen,
+              datan och vad som händer före och efter varje steg.
             </p>
 
           </article>
 
-          <article class="card card-highlight">
+          <article class="card">
 
-            <span class="strength-number"
-              style="background:rgba(255,255,255,.22);">
+            <span class="number">
               02
             </span>
 
@@ -1341,16 +1364,15 @@
             </h3>
 
             <p>
-              Jag gillar att gå från problem till fungerande lösning.
-              Hellre en verklig produkt som används än en perfekt
-              PowerPoint om hur den kanske borde byggas.
+              Jag föredrar fungerande produkter,
+              testbara lösningar och tydliga resultat framför teori för teorins skull.
             </p>
 
           </article>
 
           <article class="card">
 
-            <span class="strength-number">
+            <span class="number">
               03
             </span>
 
@@ -1359,8 +1381,8 @@
             </h3>
 
             <p>
-              Jag är van att arbeta självständigt, prioritera och lösa
-              problem hela vägen — utan att behöva bli styrd i varje detalj.
+              Jag är van att arbeta självständigt,
+              lösa problem och driva arbetet framåt.
             </p>
 
           </article>
@@ -1380,163 +1402,68 @@
         <div class="section-head">
 
           <h2>
-            Min tekniska verktygslåda.
+            Teknik jag arbetar med.
           </h2>
 
           <p>
-            Jag arbetar främst med modern webb- och fullstackutveckling
-            och fortsätter aktivt att bredda min kompetens.
+            Jag arbetar främst med modern webb- och fullstackutveckling.
           </p>
 
         </div>
 
-        <div class="grid-4">
+        <div class="skills">
 
-          <div class="skill-box">
+          <div class="skill">
 
             <strong>
               Frontend
             </strong>
 
             <span>
-              JavaScript, TypeScript, React, Next.js,
-              HTML och CSS.
+              JavaScript, TypeScript, React,
+              Next.js, HTML och CSS
             </span>
 
           </div>
 
-          <div class="skill-box">
+          <div class="skill">
 
             <strong>
               Backend
             </strong>
 
             <span>
-              Node.js, Express, REST API och Java.
+              Node.js, Express,
+              REST API och Java
             </span>
 
           </div>
 
-          <div class="skill-box">
+          <div class="skill">
 
             <strong>
               Data & infra
             </strong>
 
             <span>
-              MongoDB, MySQL, Docker, Git och GitHub.
+              MongoDB, MySQL, SQLite,
+              Docker, Git och GitHub
             </span>
 
           </div>
 
-          <div class="skill-box">
+          <div class="skill">
 
             <strong>
-              Produkt & kvalitet
+              Hela processen
             </strong>
 
             <span>
-              Kravanalys, UX, systemdesign, testning
-              och deployment.
+              Kravanalys, UX,
+              systemdesign, testning och deployment
             </span>
 
           </div>
-
-        </div>
-
-        <div class="chips">
-
-          <span class="chip">JavaScript</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">React</span>
-          <span class="chip">Next.js</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">Express</span>
-          <span class="chip">MongoDB</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">Java</span>
-          <span class="chip">REST API</span>
-          <span class="chip">Docker</span>
-          <span class="chip">Git</span>
-          <span class="chip">GitHub</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ARBETSSÄTT -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <h2>
-            Så arbetar jag.
-          </h2>
-
-          <p>
-            Jag fungerar bäst när jag får förstå målet,
-            ta ansvar och arbeta strukturerat mot en fungerande leverans.
-          </p>
-
-        </div>
-
-        <div class="grid-3">
-
-          <article class="card">
-
-            <span class="tag">
-              Först
-            </span>
-
-            <h3>
-              Förstå problemet
-            </h3>
-
-            <p>
-              Vad behöver användaren egentligen?
-              Vad är verksamhetsproblemet och vilka krav är faktiskt viktiga?
-            </p>
-
-          </article>
-
-          <article class="card">
-
-            <span class="tag">
-              Sedan
-            </span>
-
-            <h3>
-              Strukturera lösningen
-            </h3>
-
-            <p>
-              Jag bryter ner problemet i data, flöden,
-              komponenter och tydliga tekniska beslut.
-            </p>
-
-          </article>
-
-          <article class="card">
-
-            <span class="tag">
-              Till sist
-            </span>
-
-            <h3>
-              Bygg, testa och förbättra
-            </h3>
-
-            <p>
-              Jag vill få lösningen i fungerande skick,
-              testa den i verkligheten och förbättra utifrån vad som händer.
-            </p>
-
-          </article>
 
         </div>
 
@@ -1550,116 +1477,73 @@
 
       <div class="container">
 
-        <div class="card card-highlight">
+        <div class="project-proof">
 
-          <span class="tag">
-            Praktiskt bevis
-          </span>
+          <div>
 
-          <h2>
-            Jag har redan byggt system som löser verkliga problem.
-          </h2>
+            <h2>
+              Jag har redan byggt system som går att använda.
+            </h2>
 
-          <p>
-            Mitt tydligaste exempel är Offroad Bumpis Booking:
-            ett eget boknings- och administrationssystem byggt för en
-            verklig uthyrningsverksamhet.
-          </p>
+            <p>
+              Två av mina tydligaste projekt är Fastighetsnavet,
+              ett fullstacksystem för fastighetsförvaltning,
+              och Offroad Bumpis Booking,
+              ett boknings- och administrationssystem för en verklig verksamhet.
+            </p>
 
-          <p style="margin-top:14px;">
-            Där har jag arbetat med bland annat bokningar,
-            tillgänglighet, inventarieregler, kunddata,
-            betalningsstatus, rabattkoder, dokumentflöden,
-            administration och responsiv användarupplevelse.
-          </p>
+            <div class="actions">
 
-          <div class="hero-actions">
+              <a
+                class="btn btn-secondary"
+                href="/projekt.html"
+              >
+                Se alla projekt
+              </a>
 
-            <a
-              class="btn btn-secondary"
-              href="/projekt.html"
-            >
-              Se alla projekt
-            </a>
+            </div>
+
+          </div>
+
+          <div class="project-list">
 
             <a
-              class="btn btn-secondary"
-              href="https://github.com/EricaNordlof"
+              class="project-link"
+              href="https://fastighetsnavet-1.onrender.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Se koden på GitHub
+
+              <strong>
+                Fastighetsnavet →
+              </strong>
+
+              <span>
+                React, TypeScript, Node.js,
+                Express, REST API, SQLite och JWT.
+              </span>
+
+            </a>
+
+            <a
+              class="project-link"
+              href="https://offroad-bumpis-booking.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <strong>
+                Offroad Bumpis Booking →
+              </strong>
+
+              <span>
+                Bokningslogik, lagerregler,
+                administration och verkliga affärsflöden.
+              </span>
+
             </a>
 
           </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ROLLER -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="roles">
-
-          <span class="tag"
-            style="
-              background:rgba(255,255,255,.18);
-              color:#fff;
-            "
-          >
-            Nästa steg
-          </span>
-
-          <h2>
-            Roller jag är intresserad av.
-          </h2>
-
-          <p>
-            Jag söker framför allt en roll där jag får fortsätta utvecklas,
-            bidra praktiskt och ta mer ansvar över tid.
-            Jag är öppen för både breda fullstackroller och roller där jag
-            börjar mer fokuserat inom frontend, backend eller systemutveckling.
-          </p>
-
-          <div class="role-list">
-
-            <span class="role">
-              Fullstack Developer
-            </span>
-
-            <span class="role">
-              Systemutvecklare
-            </span>
-
-            <span class="role">
-              Frontend Developer
-            </span>
-
-            <span class="role">
-              Backend Developer
-            </span>
-
-            <span class="role">
-              Webbutvecklare
-            </span>
-
-            <span class="role">
-              Junior / utvecklande IT-roll
-            </span>
-
-          </div>
-
-          <p style="margin-top:22px;">
-            Malmöregionen är särskilt intressant,
-            liksom distansroller med tydlig skriftlig kommunikation
-            och möjlighet att fokusera på utveckling.
-          </p>
 
         </div>
 
@@ -1678,13 +1562,14 @@
           <div>
 
             <h2>
-              Letar ni efter en utvecklare som tar ansvar hela vägen?
+              Jag söker nästa utvecklarroll.
             </h2>
 
             <p>
-              Jag söker nya möjligheter inom system-, fullstack-
-              och webbutveckling i Malmöregionen eller på distans.
-              Mina projekt och GitHub visar bäst hur jag arbetar.
+              Jag är intresserad av roller inom fullstack-,
+              frontend-, backend- och systemutveckling där jag får
+              bygga praktiskt och fortsätta utvecklas.
+              Malmöregionen och distans är särskilt intressant.
             </p>
 
           </div>
@@ -1696,15 +1581,6 @@
               href="/projekt.html"
             >
               Se projekt
-            </a>
-
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/EricaNordlof"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
             </a>
 
             <a
@@ -1761,6 +1637,14 @@
         </a>
 
         <a
+          href="https://fastighetsnavet-1.onrender.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Fastighetsnavet
+        </a>
+
+        <a
           href="https://github.com/EricaNordlof"
           target="_blank"
           rel="noopener noreferrer"
@@ -1783,7 +1667,6 @@
   </footer>
 
   <script>
-
     const menuButton =
       document.getElementById("menuButton");
 
@@ -1793,7 +1676,15 @@
     const menuBackdrop =
       document.getElementById("menuBackdrop");
 
-    function setMenu(open) {
+    function setMenu(open){
+
+      if(
+        !menuButton ||
+        !menu ||
+        !menuBackdrop
+      ){
+        return;
+      }
 
       menu.hidden = !open;
 
@@ -1808,19 +1699,18 @@
         "menu-open",
         open
       );
-
     }
 
     menuButton.addEventListener(
       "click",
       () => {
 
-        setMenu(
+        const open =
           menuButton.getAttribute(
             "aria-expanded"
-          ) !== "true"
-        );
+          ) !== "true";
 
+        setMenu(open);
       }
     );
 
@@ -1829,16 +1719,16 @@
       () => setMenu(false)
     );
 
-    menu.querySelectorAll("a").forEach(
-      link => {
+    menu
+      .querySelectorAll("a")
+      .forEach(link => {
 
         link.addEventListener(
           "click",
           () => setMenu(false)
         );
 
-      }
-    );
+      });
 
     document.addEventListener(
       "keydown",
@@ -1848,9 +1738,7 @@
           setMenu(false);
         }
 
-      }
-    );
-
+      });
   </script>
 
 </body>
