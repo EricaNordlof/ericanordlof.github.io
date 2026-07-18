@@ -22,12 +22,15 @@
   <link rel="canonical" href="https://webutvecklare.se/" />
 
   <meta property="og:title" content="Erica Nordlöf | Fullstackutvecklare" />
+
   <meta
     property="og:description"
     content="Fullstackutvecklare med praktisk erfarenhet av produktionssystem, webbapplikationer, API:er, databaser och deployment."
   />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/" />
+
   <meta
     property="og:image"
     content="https://webutvecklare.se/erica-nordlof-linkedin.JPG"
@@ -95,11 +98,8 @@
       --brand-dark:#9a5855;
       --brand-soft:#f4d8d5;
 
-      --shadow:
-        0 18px 50px rgba(154,88,85,.12);
-
-      --shadow-strong:
-        0 28px 75px rgba(154,88,85,.20);
+      --shadow:0 18px 50px rgba(154,88,85,.12);
+      --shadow-strong:0 28px 75px rgba(154,88,85,.20);
 
       --radius:24px;
       --max:1120px;
@@ -189,6 +189,7 @@
       z-index:100;
 
       background:rgba(255,248,245,.94);
+
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
 
@@ -416,9 +417,9 @@
 
       grid-template-columns:
         minmax(0,1fr)
-        270px;
+        230px;
 
-      gap:58px;
+      gap:48px;
 
       align-items:center;
     }
@@ -524,16 +525,17 @@
 
     /* =========================
        PORTRÄTT
-       Mindre på desktop
+       LÅST STORLEK – INGEN AVLÅNG BILD
     ========================== */
 
     .hero-photo{
-      width:100%;
-      max-width:255px;
+      width:230px !important;
+      max-width:230px !important;
+      height:auto !important;
 
       justify-self:end;
 
-      padding:9px;
+      padding:8px;
 
       overflow:hidden;
 
@@ -541,25 +543,37 @@
 
       border:1px solid rgba(154,88,85,.11);
 
-      border-radius:30px;
+      border-radius:28px;
 
       box-shadow:var(--shadow-strong);
     }
 
     .hero-photo img{
-      width:100%;
+      display:block;
 
-      aspect-ratio:1 / 1;
+      width:212px !important;
+      height:212px !important;
 
-      object-fit:cover;
+      min-width:212px !important;
+      max-width:212px !important;
 
-      object-position:center 27%;
+      min-height:212px !important;
+      max-height:212px !important;
 
-      border-radius:22px;
+      aspect-ratio:1 / 1 !important;
+
+      object-fit:cover !important;
+
+      /*
+        Flytta beskärningen lite uppåt så ansiktet hamnar rätt.
+      */
+      object-position:center 26% !important;
+
+      border-radius:21px;
     }
 
     .photo-caption{
-      padding:13px 8px 5px;
+      padding:11px 6px 4px;
 
       text-align:center;
     }
@@ -577,7 +591,7 @@
 
       color:var(--muted);
 
-      font-size:12px;
+      font-size:11px;
       line-height:1.4;
     }
 
@@ -711,8 +725,7 @@
     }
 
     .card.featured h3,
-    .card.featured p,
-    .card.featured .project-links a{
+    .card.featured p{
       color:#fff;
     }
 
@@ -796,6 +809,7 @@
     .project-links a{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
 
       min-height:40px;
 
@@ -994,13 +1008,27 @@
       .hero-grid{
         grid-template-columns:
           minmax(0,1fr)
-          220px;
+          190px;
 
         gap:30px;
       }
 
       .hero-photo{
-        max-width:210px;
+        width:190px !important;
+        max-width:190px !important;
+
+        padding:7px;
+      }
+
+      .hero-photo img{
+        width:174px !important;
+        height:174px !important;
+
+        min-width:174px !important;
+        max-width:174px !important;
+
+        min-height:174px !important;
+        max-height:174px !important;
       }
 
       .proof-grid{
@@ -1077,7 +1105,7 @@
 
         flex-direction:column;
 
-        gap:24px;
+        gap:22px;
 
         align-items:stretch;
       }
@@ -1089,30 +1117,36 @@
       .hero-photo{
         order:2;
 
-        width:150px;
-        height:auto;
+        width:150px !important;
+        height:auto !important;
 
-        min-width:150px;
-        max-width:150px;
+        min-width:150px !important;
+        max-width:150px !important;
 
         margin:0 auto;
 
         padding:6px;
 
-        border-radius:25px;
+        border-radius:24px;
       }
 
       .hero-photo img{
-        width:138px;
-        height:138px;
+        width:138px !important;
+        height:138px !important;
 
-        aspect-ratio:1 / 1;
+        min-width:138px !important;
+        max-width:138px !important;
 
-        object-fit:cover;
+        min-height:138px !important;
+        max-height:138px !important;
 
-        object-position:center 27%;
+        aspect-ratio:1 / 1 !important;
 
-        border-radius:20px;
+        object-fit:cover !important;
+
+        object-position:center 26% !important;
+
+        border-radius:19px;
       }
 
       .photo-caption{
@@ -1295,13 +1329,11 @@
 
   </header>
 
-
   <div
     class="menu-backdrop"
     id="menuBackdrop"
     hidden
   ></div>
-
 
   <nav
     class="menu"
@@ -1328,6 +1360,14 @@
       </a>
 
       <a
+        href="https://fastighetsnavet-1.onrender.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fastighetsnavet
+      </a>
+
+      <a
         href="https://github.com/EricaNordlof"
         target="_blank"
         rel="noopener noreferrer"
@@ -1346,7 +1386,6 @@
     </div>
 
   </nav>
-
 
   <main>
 
@@ -1403,7 +1442,6 @@
 
         </div>
 
-
         <aside
           class="hero-photo"
           aria-label="Porträtt av Erica Nordlöf"
@@ -1434,7 +1472,6 @@
       </div>
 
     </section>
-
 
     <!-- SNABB PROOF -->
 
@@ -1497,7 +1534,6 @@
 
     </section>
 
-
     <!-- PROJEKT -->
 
     <section
@@ -1520,10 +1556,9 @@
 
         </div>
 
-
         <div class="grid">
 
-          <!-- OFFROAD -->
+          <!-- OFFROAD BUMPIS -->
 
           <article class="card featured">
 
@@ -1537,9 +1572,9 @@
 
             <p>
               Eget boknings- och administrationssystem för en verklig
-              uthyrningsverksamhet.
-              Systemet hanterar bokningar, lagerregler, tillgänglighet,
-              kunddata, betalningsstatus, rabattkoder och administrativa flöden.
+              uthyrningsverksamhet. Systemet hanterar bokningar,
+              lagerregler, tillgänglighet, kunddata, betalningsstatus,
+              rabattkoder och administrativa flöden.
             </p>
 
             <div class="tech">
@@ -1587,7 +1622,6 @@
             </div>
 
           </article>
-
 
           <!-- FASTIGHETSNAVET -->
 
@@ -1662,8 +1696,7 @@
 
           </article>
 
-
-          <!-- SAFESTANDARD -->
+          <!-- SAFE STANDARD -->
 
           <article class="card">
 
@@ -1724,7 +1757,6 @@
 
           </article>
 
-
           <!-- HANSEN -->
 
           <article class="card">
@@ -1780,7 +1812,6 @@
 
         </div>
 
-
         <div class="hero-actions">
 
           <a
@@ -1805,7 +1836,6 @@
 
     </section>
 
-
     <!-- TEKNIK -->
 
     <section class="section">
@@ -1825,7 +1855,6 @@
 
         </div>
 
-
         <div class="skills">
 
           <div class="skill-box">
@@ -1840,7 +1869,6 @@
 
           </div>
 
-
           <div class="skill-box">
 
             <strong>
@@ -1853,7 +1881,6 @@
 
           </div>
 
-
           <div class="skill-box">
 
             <strong>
@@ -1865,7 +1892,6 @@
             </span>
 
           </div>
-
 
           <div class="skill-box">
 
@@ -1885,7 +1911,6 @@
 
     </section>
 
-
     <!-- JOBB CTA -->
 
     <section class="section">
@@ -1901,15 +1926,14 @@
             </h2>
 
             <p>
-              Jag är intresserad av roller inom fullstack-,
-              frontend-, backend- och systemutveckling.
-              Jag söker både heltid och andra relevanta upplägg där jag får
-              bygga praktiskt, lösa problem och fortsätta utvecklas.
+              Jag är intresserad av roller inom fullstack-, frontend-,
+              backend- och systemutveckling. Jag söker både heltid,
+              deltid och andra relevanta upplägg där jag får bygga praktiskt,
+              lösa problem och fortsätta utvecklas.
               Malmöregionen och distans är särskilt intressant.
             </p>
 
           </div>
-
 
           <div class="cta-actions">
 
@@ -1946,7 +1970,6 @@
 
   </main>
 
-
   <footer>
 
     <div class="container footer">
@@ -1962,7 +1985,6 @@
         Fullstackutvecklare · Malmö
 
       </div>
-
 
       <nav
         class="footer-links"
@@ -2011,9 +2033,7 @@
 
   </footer>
 
-
   <script>
-
     const menuButton =
       document.getElementById("menuButton");
 
@@ -2022,7 +2042,6 @@
 
     const menuBackdrop =
       document.getElementById("menuBackdrop");
-
 
     function setMenu(open){
 
@@ -2039,9 +2058,7 @@
         "menu-open",
         open
       );
-
     }
-
 
     menuButton.addEventListener(
       "click",
@@ -2053,16 +2070,13 @@
           ) !== "true";
 
         setMenu(open);
-
       }
     );
-
 
     menuBackdrop.addEventListener(
       "click",
       () => setMenu(false)
     );
-
 
     menu
       .querySelectorAll("a")
@@ -2072,9 +2086,7 @@
           "click",
           () => setMenu(false)
         );
-
       });
-
 
     document.addEventListener(
       "keydown",
@@ -2083,10 +2095,8 @@
         if(event.key === "Escape"){
           setMenu(false);
         }
-
       }
     );
-
   </script>
 
 </body>
