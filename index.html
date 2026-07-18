@@ -483,39 +483,89 @@
     }
 
     @media(max-width:700px){
+
+  .container{
+    width:min(var(--max),calc(100% - 22px));
+  }
+
   .hero{
-    padding:40px 0 26px;
+    padding:32px 0 28px;
   }
 
   .hero-grid{
-    gap:26px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    align-items:stretch;
   }
 
+  /* TEXT FÖRST */
+  .hero-grid > div:first-child{
+    order:1;
+  }
+
+  /* BILD EFTER INTROTEXTEN */
   .hero-photo{
-    max-width:220px;
+    order:2;
+
+    width:150px !important;
+    height:150px !important;
+
+    min-width:150px !important;
+    max-width:150px !important;
+
+    min-height:150px !important;
+    max-height:150px !important;
+
     margin:0 auto;
-    padding:8px;
-    border-radius:22px;
+
+    padding:6px;
+
+    overflow:hidden;
+
+    border-radius:26px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow);
   }
 
   .hero-photo img{
-    width:100%;
-    aspect-ratio:1 / 1;
-    object-fit:cover;
-    object-position:center 28%;
-    border-radius:16px;
+    display:block;
+
+    width:138px !important;
+    height:138px !important;
+
+    min-width:138px !important;
+    max-width:138px !important;
+
+    min-height:138px !important;
+    max-height:138px !important;
+
+    aspect-ratio:auto !important;
+
+    object-fit:cover !important;
+    object-position:center 27% !important;
+
+    border-radius:21px;
   }
 
   h1{
-    font-size:clamp(2.4rem,12vw,3.7rem);
+    font-size:clamp(2.35rem,11vw,3.5rem);
+    line-height:.98;
+    margin:15px 0;
   }
 
   .lead{
     font-size:16px;
+    line-height:1.65;
   }
 
   .hero-actions{
     display:grid;
+    grid-template-columns:1fr;
+    gap:9px;
+    margin-top:20px;
   }
 
   .hero-actions .btn,
@@ -523,30 +573,34 @@
     width:100%;
   }
 
+  .section{
+    padding:38px 0;
+  }
+
   .grid,
   .skills{
     grid-template-columns:1fr;
   }
 
-      .portrait-card{
-  width:150px !important;
-  height:150px !important;
-}
+  .card{
+    padding:20px;
+    border-radius:20px;
+  }
 
-.portrait-frame{
-  width:138px !important;
-  height:138px !important;
-}
+  .cta{
+    grid-template-columns:1fr;
+    padding:23px;
+    border-radius:24px;
+  }
 
-.portrait-frame img{
-  width:138px !important;
-  height:138px !important;
-  object-fit:cover !important;
+  .cta-actions{
+    min-width:0;
+  }
 }
 }
   </style>
 </head>
-
+  
 <body>
   <header class="topbar">
     <div class="container nav">
