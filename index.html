@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>Erica Nordlöf | Fullstackutvecklare</title>
+
   <meta
     name="description"
-    content="Portfolio för Erica Nordlöf, fullstackutvecklare i Malmö. Projekt inom JavaScript, TypeScript, Node.js, React, Next.js, API:er, databaser och Docker."
+    content="Portfolio för Erica Nordlöf, fullstackutvecklare i Malmö. Projekt inom JavaScript, TypeScript, Node.js, React, API:er, databaser, Docker och webbutveckling."
   />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  />
+
   <meta name="author" content="Erica Nordlöf" />
   <meta name="theme-color" content="#f7f0ec" />
 
@@ -18,11 +24,14 @@
   <meta property="og:title" content="Erica Nordlöf | Fullstackutvecklare" />
   <meta
     property="og:description"
-    content="Fullstackutvecklare med praktisk erfarenhet av produktionssystem, webbapplikationer, API:er och databaser."
+    content="Fullstackutvecklare med praktisk erfarenhet av produktionssystem, webbapplikationer, API:er, databaser och deployment."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://webutvecklare.se/" />
-  <meta property="og:image" content="https://webutvecklare.se/erica-nordlof-linkedin.JPG" />
+  <meta
+    property="og:image"
+    content="https://webutvecklare.se/erica-nordlof-linkedin.JPG"
+  />
 
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -34,6 +43,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
@@ -41,30 +51,33 @@
 
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Erica Nordlöf",
-    "url":"https://webutvecklare.se/",
-    "image":"https://webutvecklare.se/erica-nordlof-linkedin.JPG",
-    "jobTitle":"Fullstackutvecklare",
-    "sameAs":[
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Erica Nordlöf",
+    "url": "https://webutvecklare.se/",
+    "image": "https://webutvecklare.se/erica-nordlof-linkedin.JPG",
+    "jobTitle": "Fullstackutvecklare",
+    "sameAs": [
       "https://github.com/EricaNordlof",
       "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
     ],
-    "knowsAbout":[
+    "knowsAbout": [
       "JavaScript",
       "TypeScript",
       "React",
       "Next.js",
       "Node.js",
       "Express",
+      "REST API",
       "MongoDB",
       "MySQL",
       "Java",
-      "REST API",
       "Docker",
       "Git",
-      "GitHub"
+      "GitHub",
+      "Systemdesign",
+      "Databaser",
+      "Webbutveckling"
     ]
   }
   </script>
@@ -76,14 +89,25 @@
       --text:#262220;
       --muted:#5b524d;
       --line:rgba(38,34,32,.12);
+
       --brand:#d77f7a;
+      --brand-mid:#bd6d68;
       --brand-dark:#9a5855;
-      --shadow:0 18px 50px rgba(154,88,85,.13);
+      --brand-soft:#f4d8d5;
+
+      --shadow:
+        0 18px 50px rgba(154,88,85,.12);
+
+      --shadow-strong:
+        0 28px 75px rgba(154,88,85,.20);
+
       --radius:24px;
       --max:1120px;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
 
     html{
       scroll-behavior:smooth;
@@ -92,14 +116,34 @@
 
     body{
       margin:0;
+      min-width:320px;
+
       font-family:Inter,sans-serif;
       color:var(--text);
+
       background:
-        radial-gradient(circle at top left,rgba(215,127,122,.24),transparent 34%),
-        linear-gradient(180deg,#fff8f5 0%,var(--bg) 100%);
+        radial-gradient(
+          circle at top left,
+          rgba(215,127,122,.24),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 88% 8%,
+          rgba(215,127,122,.11),
+          transparent 24%
+        ),
+        linear-gradient(
+          180deg,
+          #fff8f5 0%,
+          var(--bg) 100%
+        );
+
+      overflow-x:hidden;
     }
 
-    body.menu-open{overflow:hidden}
+    body.menu-open{
+      overflow:hidden;
+    }
 
     a{
       color:inherit;
@@ -111,85 +155,159 @@
       max-width:100%;
     }
 
-    button{font:inherit}
+    button{
+      font:inherit;
+    }
+
+    button,
+    a{
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    :target{
+      scroll-margin-top:90px;
+    }
+
+    a:focus-visible,
+    button:focus-visible{
+      outline:3px solid #111;
+      outline-offset:4px;
+    }
 
     .container{
       width:min(var(--max),calc(100% - 28px));
       margin:auto;
     }
 
+    /* =========================
+       HEADER
+    ========================== */
+
     .topbar{
       position:sticky;
       top:0;
       z-index:100;
+
       background:rgba(255,248,245,.94);
-      backdrop-filter:blur(14px);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+
       border-bottom:1px solid var(--line);
     }
 
     .nav{
-      min-height:70px;
+      min-height:72px;
+
       display:flex;
       align-items:center;
       justify-content:space-between;
+
       gap:16px;
+      padding:10px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
+
       font-weight:900;
+      min-width:0;
     }
 
     .brand img{
-      width:44px;
-      height:44px;
-      border-radius:13px;
+      width:46px;
+      height:46px;
+
+      flex:0 0 auto;
+
+      border-radius:14px;
+
       object-fit:cover;
+
+      background:#050505;
+
+      box-shadow:
+        0 10px 24px rgba(36,30,26,.10);
     }
 
-    .brand span{
-      line-height:1.1;
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand strong{
+      display:block;
+
+      font-size:17px;
+      line-height:1.05;
+      letter-spacing:-.03em;
     }
 
     .brand small{
       display:block;
-      margin-top:3px;
+
+      margin-top:4px;
+
       color:var(--muted);
+
       font-size:12px;
-      font-weight:600;
+      font-weight:700;
     }
 
     .menu-button{
-      min-height:44px;
-      padding:11px 16px;
+      min-height:46px;
+
+      padding:12px 18px;
+
       border:0;
       border-radius:999px;
+
       background:#111;
       color:#fff;
+
       font-weight:900;
+
       cursor:pointer;
+
+      box-shadow:
+        0 12px 28px rgba(20,16,14,.15);
     }
+
+    /* =========================
+       MENU
+    ========================== */
 
     .menu-backdrop{
       position:fixed;
       inset:0;
+
       z-index:90;
-      background:rgba(20,16,14,.35);
+
+      background:rgba(20,16,14,.38);
+
+      backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px);
     }
 
     .menu{
       position:fixed;
-      top:78px;
+
+      top:82px;
       right:14px;
+
       z-index:110;
-      width:min(360px,calc(100vw - 28px));
+
+      width:min(380px,calc(100vw - 28px));
+
       padding:14px;
-      background:#fff;
+
+      background:#fffaf8;
+
       border:1px solid var(--line);
       border-radius:24px;
-      box-shadow:0 30px 80px rgba(36,30,26,.2);
+
+      box-shadow:
+        0 30px 80px rgba(36,30,26,.22);
     }
 
     .menu-links{
@@ -198,111 +316,324 @@
     }
 
     .menu-links a{
-      padding:14px 15px;
-      border-radius:15px;
-      background:#fff8f5;
-      border:1px solid var(--line);
-      font-weight:900;
-    }
-
-    .hero{
-      padding:70px 0 42px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
-      gap:46px;
+      display:flex;
       align-items:center;
-    }
+      justify-content:space-between;
 
-    .eyebrow{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
+      min-height:50px;
+
+      padding:14px 15px;
+
+      border-radius:16px;
+
       background:#fff;
+
       border:1px solid var(--line);
-      color:var(--brand-dark);
-      font-size:13px;
+
       font-weight:900;
     }
 
-    h1,h2{
+    .menu-links a::after{
+      content:"→";
+
+      color:var(--brand-dark);
+
+      font-size:17px;
+    }
+
+    .menu-links a[aria-current="page"]{
+      color:#fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--brand-dark),
+          var(--brand)
+        );
+
+      border-color:transparent;
+    }
+
+    .menu-links a[aria-current="page"]::after{
+      color:#fff;
+    }
+
+    /* =========================
+       TYPOGRAFI
+    ========================== */
+
+    h1,
+    h2{
       font-family:"Playfair Display",serif;
       letter-spacing:-.045em;
     }
 
     h1{
       margin:18px 0;
-      font-size:clamp(3rem,7vw,5.8rem);
-      line-height:.94;
+
+      max-width:820px;
+
+      font-size:clamp(3rem,6.5vw,5.6rem);
+
+      line-height:.95;
     }
 
     h2{
       margin:0 0 12px;
+
       font-size:clamp(2.1rem,5vw,3.3rem);
+
       line-height:1;
     }
 
     h3{
       margin:0 0 10px;
+
       font-size:23px;
+
       letter-spacing:-.03em;
+
+      line-height:1.15;
     }
 
     p{
       margin:0;
     }
 
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      padding:
+        clamp(44px,7vw,84px)
+        0
+        42px;
+    }
+
+    .hero-grid{
+      display:grid;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        270px;
+
+      gap:58px;
+
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+
+      padding:9px 13px;
+
+      border-radius:999px;
+
+      background:#fff;
+
+      border:1px solid var(--line);
+
+      color:var(--brand-dark);
+
+      font-size:13px;
+      font-weight:900;
+
+      box-shadow:
+        0 9px 26px rgba(36,30,26,.04);
+    }
+
     .lead{
-      max-width:760px;
+      max-width:770px;
+
       color:var(--muted);
+
       font-size:19px;
+
       line-height:1.72;
+    }
+
+    .lead strong{
+      color:var(--text);
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+
+      gap:11px;
+
       margin-top:26px;
     }
+
+    /* =========================
+       KNAPPAR
+    ========================== */
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
+
       min-height:50px;
+
       padding:14px 20px;
+
       border-radius:999px;
-      font-weight:900;
+
       border:1px solid transparent;
+
+      font-weight:900;
+
+      line-height:1.15;
+
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
     }
 
     .btn-primary{
-      background:linear-gradient(135deg,var(--brand-dark),var(--brand));
+      background:
+        linear-gradient(
+          135deg,
+          var(--brand-dark),
+          var(--brand)
+        );
+
       color:#fff;
-      box-shadow:0 16px 34px rgba(154,88,85,.24);
+
+      box-shadow:
+        0 16px 34px rgba(154,88,85,.24);
     }
 
     .btn-secondary{
       background:#fff;
+
+      color:var(--text);
+
       border-color:var(--line);
+
+      box-shadow:
+        0 9px 24px rgba(36,30,26,.04);
     }
 
+    /* =========================
+       PORTRÄTT
+       Mindre på desktop
+    ========================== */
+
     .hero-photo{
+      width:100%;
+      max-width:255px;
+
+      justify-self:end;
+
+      padding:9px;
+
+      overflow:hidden;
+
       background:#fff;
-      padding:16px;
-      border-radius:28px;
-      box-shadow:var(--shadow);
+
+      border:1px solid rgba(154,88,85,.11);
+
+      border-radius:30px;
+
+      box-shadow:var(--shadow-strong);
     }
 
     .hero-photo img{
       width:100%;
-      aspect-ratio:4 / 5;
+
+      aspect-ratio:1 / 1;
+
       object-fit:cover;
-      border-radius:20px;
+
+      object-position:center 27%;
+
+      border-radius:22px;
     }
+
+    .photo-caption{
+      padding:13px 8px 5px;
+
+      text-align:center;
+    }
+
+    .photo-caption strong{
+      display:block;
+
+      font-size:14px;
+    }
+
+    .photo-caption span{
+      display:block;
+
+      margin-top:3px;
+
+      color:var(--muted);
+
+      font-size:12px;
+      line-height:1.4;
+    }
+
+    /* =========================
+       QUICK PROOF
+    ========================== */
+
+    .proof{
+      padding:0 0 22px;
+    }
+
+    .proof-grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+      gap:12px;
+    }
+
+    .proof-item{
+      padding:16px;
+
+      background:rgba(255,255,255,.78);
+
+      border:1px solid var(--line);
+
+      border-radius:18px;
+
+      box-shadow:
+        0 12px 34px rgba(154,88,85,.08);
+    }
+
+    .proof-item strong{
+      display:block;
+
+      margin-bottom:4px;
+
+      color:var(--text);
+
+      font-size:16px;
+
+      letter-spacing:-.02em;
+    }
+
+    .proof-item span{
+      color:var(--muted);
+
+      font-size:13px;
+
+      line-height:1.45;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
 
     .section{
       padding:52px 0;
@@ -310,109 +641,273 @@
 
     .section-head{
       max-width:820px;
-      margin-bottom:22px;
+
+      margin-bottom:24px;
     }
 
     .section-head p{
       color:var(--muted);
+
       font-size:17px;
+
       line-height:1.72;
     }
 
+    /* =========================
+       PROJECT GRID
+    ========================== */
+
     .grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
       gap:18px;
     }
 
     .card{
+      display:flex;
+      flex-direction:column;
+
+      min-height:100%;
+
+      padding:26px;
+
       background:var(--card);
+
       border:1px solid var(--line);
+
       border-radius:var(--radius);
-      padding:24px;
+
       box-shadow:var(--shadow);
+    }
+
+    .card.featured{
+      color:#fff;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.18),
+          transparent 32%
+        ),
+        linear-gradient(
+          145deg,
+          #9a5855 0%,
+          #c66f6b 52%,
+          #e09a92 100%
+        );
+
+      border-color:rgba(255,255,255,.18);
+
+      box-shadow:var(--shadow-strong);
     }
 
     .card p{
       color:var(--muted);
-      line-height:1.7;
+
+      line-height:1.72;
+    }
+
+    .card.featured h3,
+    .card.featured p,
+    .card.featured .project-links a{
+      color:#fff;
     }
 
     .tag{
+      align-self:flex-start;
+
       display:inline-flex;
-      margin-bottom:13px;
+      align-items:center;
+
+      margin-bottom:14px;
+
       padding:7px 10px;
+
       border-radius:999px;
-      background:#f4d8d5;
+
+      background:var(--brand-soft);
+
       color:#8f514e;
-      font-size:12px;
+
+      font-size:11px;
       font-weight:900;
+
       text-transform:uppercase;
+
+      letter-spacing:.04em;
+    }
+
+    .featured .tag{
+      color:#fff;
+
+      background:rgba(255,255,255,.18);
+
+      border:1px solid rgba(255,255,255,.20);
     }
 
     .tech{
       display:flex;
       flex-wrap:wrap;
-      gap:8px;
+
+      gap:7px;
+
       margin-top:18px;
     }
 
     .chip{
+      display:inline-flex;
+      align-items:center;
+
       padding:7px 10px;
+
       border-radius:999px;
+
       background:#f7eee9;
+
+      color:#514743;
+
       font-size:12px;
+
       font-weight:800;
+    }
+
+    .featured .chip{
+      color:#fff;
+
+      background:rgba(255,255,255,.17);
+
+      border:1px solid rgba(255,255,255,.17);
     }
 
     .project-links{
       display:flex;
       flex-wrap:wrap;
+
       gap:10px;
-      margin-top:18px;
+
+      margin-top:auto;
+
+      padding-top:20px;
     }
 
     .project-links a{
+      display:inline-flex;
+      align-items:center;
+
+      min-height:40px;
+
+      padding:9px 13px;
+
+      border-radius:999px;
+
+      background:#fff;
+
+      color:var(--text);
+
+      border:1px solid var(--line);
+
+      font-size:13px;
       font-weight:900;
-      text-decoration:underline;
-      text-underline-offset:3px;
     }
+
+    .project-links a.primary-link{
+      color:#fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--brand-dark),
+          var(--brand)
+        );
+
+      border-color:transparent;
+    }
+
+    .featured .project-links a{
+      color:var(--text);
+
+      background:#fff;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
 
     .skills{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
       gap:12px;
     }
 
     .skill-box{
+      padding:19px;
+
       background:#fff;
+
       border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px;
+
+      border-radius:19px;
+
       box-shadow:var(--shadow);
     }
 
     .skill-box strong{
       display:block;
+
       margin-bottom:7px;
+
+      font-size:16px;
     }
 
     .skill-box span{
       color:var(--muted);
-      line-height:1.6;
+
       font-size:14px;
+
+      line-height:1.6;
     }
 
+    /* =========================
+       CTA
+    ========================== */
+
     .cta{
-      background:linear-gradient(145deg,#aa625e 0%,#d77f7a 52%,#e9a69d 100%);
-      color:#fff;
-      border-radius:32px;
-      padding:34px;
       display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:24px;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        minmax(210px,260px);
+
+      gap:30px;
+
       align-items:center;
-      box-shadow:0 30px 80px rgba(154,88,85,.24);
+
+      padding:36px;
+
+      color:#fff;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.20),
+          transparent 34%
+        ),
+        linear-gradient(
+          145deg,
+          #9a5855 0%,
+          #d77f7a 56%,
+          #e9a69d 100%
+        );
+
+      border-radius:32px;
+
+      box-shadow:var(--shadow-strong);
     }
 
     .cta h2{
@@ -420,196 +915,370 @@
     }
 
     .cta p{
-      color:rgba(255,255,255,.9);
-      line-height:1.7;
-      max-width:700px;
+      max-width:690px;
+
+      color:rgba(255,255,255,.92);
+
+      line-height:1.72;
     }
 
     .cta-actions{
       display:grid;
+
       gap:10px;
-      min-width:210px;
     }
 
     .cta .btn-secondary{
+      width:100%;
+
       background:#fff;
-      color:#262220;
+
+      color:var(--text);
+
+      border-color:rgba(255,255,255,.65);
     }
 
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer{
-      padding:34px 0;
+      padding:36px 0;
+
       color:var(--muted);
+
       font-size:14px;
     }
 
     .footer{
-      border-top:1px solid var(--line);
-      padding-top:20px;
       display:flex;
       justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
+      align-items:flex-start;
+
+      gap:20px;
+
+      padding-top:22px;
+
+      border-top:1px solid var(--line);
+    }
+
+    .footer-copy{
+      max-width:480px;
+
+      line-height:1.65;
     }
 
     .footer-links{
       display:flex;
       flex-wrap:wrap;
+
+      justify-content:flex-end;
+
       gap:12px;
     }
 
     .footer-links a{
-      text-decoration:underline;
-      text-underline-offset:3px;
       font-weight:800;
+
+      text-decoration:underline;
+
+      text-underline-offset:3px;
     }
 
+    /* =========================
+       TABLET
+    ========================== */
+
     @media(max-width:900px){
-      .hero-grid,
+
+      .hero-grid{
+        grid-template-columns:
+          minmax(0,1fr)
+          220px;
+
+        gap:30px;
+      }
+
+      .hero-photo{
+        max-width:210px;
+      }
+
+      .proof-grid{
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
+      .skills{
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+      }
+
       .cta{
         grid-template-columns:1fr;
       }
 
-      .hero-photo{
-        max-width:430px;
-      }
-
-      .skills{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-
       .cta-actions{
-        min-width:0;
+        grid-template-columns:
+          repeat(3,minmax(0,1fr));
       }
     }
 
+    /* =========================
+       MOBIL
+    ========================== */
+
     @media(max-width:700px){
 
-  .container{
-    width:min(var(--max),calc(100% - 22px));
-  }
+      .container{
+        width:min(
+          var(--max),
+          calc(100% - 22px)
+        );
+      }
 
-  .hero{
-    padding:32px 0 28px;
-  }
+      .nav{
+        min-height:64px;
+      }
 
-  .hero-grid{
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-    align-items:stretch;
-  }
+      .brand img{
+        width:44px;
+        height:44px;
+      }
 
-  /* TEXT FÖRST */
-  .hero-grid > div:first-child{
-    order:1;
-  }
+      .brand strong{
+        font-size:16px;
+      }
 
-  /* BILD EFTER INTROTEXTEN */
-  .hero-photo{
-    order:2;
+      .brand small{
+        font-size:12px;
+      }
 
-    width:150px !important;
-    height:150px !important;
+      .menu-button{
+        min-height:44px;
 
-    min-width:150px !important;
-    max-width:150px !important;
+        padding:11px 16px;
+      }
 
-    min-height:150px !important;
-    max-height:150px !important;
+      .menu{
+        top:70px;
 
-    margin:0 auto;
+        left:10px;
+        right:10px;
 
-    padding:6px;
+        width:auto;
+      }
 
-    overflow:hidden;
+      .hero{
+        padding:34px 0 28px;
+      }
 
-    border-radius:26px;
+      .hero-grid{
+        display:flex;
 
-    background:#fff;
+        flex-direction:column;
 
-    box-shadow:var(--shadow);
-  }
+        gap:24px;
 
-  .hero-photo img{
-    display:block;
+        align-items:stretch;
+      }
 
-    width:138px !important;
-    height:138px !important;
+      .hero-copy{
+        order:1;
+      }
 
-    min-width:138px !important;
-    max-width:138px !important;
+      .hero-photo{
+        order:2;
 
-    min-height:138px !important;
-    max-height:138px !important;
+        width:150px;
+        height:auto;
 
-    aspect-ratio:auto !important;
+        min-width:150px;
+        max-width:150px;
 
-    object-fit:cover !important;
-    object-position:center 27% !important;
+        margin:0 auto;
 
-    border-radius:21px;
-  }
+        padding:6px;
 
-  h1{
-    font-size:clamp(2.35rem,11vw,3.5rem);
-    line-height:.98;
-    margin:15px 0;
-  }
+        border-radius:25px;
+      }
 
-  .lead{
-    font-size:16px;
-    line-height:1.65;
-  }
+      .hero-photo img{
+        width:138px;
+        height:138px;
 
-  .hero-actions{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:9px;
-    margin-top:20px;
-  }
+        aspect-ratio:1 / 1;
 
-  .hero-actions .btn,
-  .cta-actions .btn{
-    width:100%;
-  }
+        object-fit:cover;
 
-  .section{
-    padding:38px 0;
-  }
+        object-position:center 27%;
 
-  .grid,
-  .skills{
-    grid-template-columns:1fr;
-  }
+        border-radius:20px;
+      }
 
-  .card{
-    padding:20px;
-    border-radius:20px;
-  }
+      .photo-caption{
+        display:none;
+      }
 
-  .cta{
-    grid-template-columns:1fr;
-    padding:23px;
-    border-radius:24px;
-  }
+      h1{
+        margin:15px 0;
 
-  .cta-actions{
-    min-width:0;
-  }
-}
-}
+        font-size:
+          clamp(
+            2.3rem,
+            11vw,
+            3.45rem
+          );
+
+        line-height:.98;
+      }
+
+      h2{
+        font-size:
+          clamp(
+            2rem,
+            9vw,
+            2.7rem
+          );
+      }
+
+      .lead{
+        font-size:16px;
+
+        line-height:1.65;
+      }
+
+      .hero-actions{
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:9px;
+
+        margin-top:20px;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .proof-grid,
+      .grid,
+      .skills{
+        grid-template-columns:1fr;
+      }
+
+      .proof-item{
+        padding:15px;
+      }
+
+      .section{
+        padding:38px 0;
+      }
+
+      .section-head p{
+        font-size:15.5px;
+
+        line-height:1.66;
+      }
+
+      .card{
+        padding:21px;
+
+        border-radius:21px;
+      }
+
+      .cta{
+        padding:24px;
+
+        border-radius:25px;
+      }
+
+      .cta-actions{
+        grid-template-columns:1fr;
+      }
+
+      .footer{
+        flex-direction:column;
+      }
+
+      .footer-links{
+        justify-content:flex-start;
+      }
+    }
+
+    @media(max-width:390px){
+
+      .container{
+        width:min(
+          var(--max),
+          calc(100% - 18px)
+        );
+      }
+
+      .brand strong{
+        font-size:15px;
+      }
+
+      .brand small{
+        font-size:11px;
+      }
+
+      h1{
+        font-size:2.1rem;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after{
+        transition:none !important;
+        animation:none !important;
+      }
+
+      .btn:hover{
+        transform:none;
+      }
+    }
   </style>
 </head>
-  
+
 <body>
+
   <header class="topbar">
+
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Startsida">
-        <img src="favicon-nordlof.png?v=3" alt="Erica Nordlöf" />
-        <span>
-          Erica Nordlöf
-          <small>Fullstackutvecklare</small>
+
+      <a
+        class="brand"
+        href="/"
+        aria-label="Erica Nordlöf startsida"
+      >
+
+        <img
+          src="favicon-nordlof.png?v=3"
+          alt=""
+          width="92"
+          height="92"
+        />
+
+        <span class="brand-text">
+
+          <strong>
+            Erica Nordlöf
+          </strong>
+
+          <small>
+            Fullstackutvecklare
+          </small>
+
         </span>
+
       </a>
 
       <button
@@ -621,259 +1290,804 @@
       >
         Meny
       </button>
+
     </div>
+
   </header>
 
-  <div class="menu-backdrop" id="menuBackdrop" hidden></div>
 
-  <nav class="menu" id="menu" aria-label="Huvudmeny" hidden>
+  <div
+    class="menu-backdrop"
+    id="menuBackdrop"
+    hidden
+  ></div>
+
+
+  <nav
+    class="menu"
+    id="menu"
+    aria-label="Huvudmeny"
+    hidden
+  >
+
     <div class="menu-links">
-      <a href="/">Hem</a>
-      <a href="/projekt.html">Projekt</a>
-      <a href="/om-mig.html">Om mig</a>
-      <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+      <a
+        href="/"
+        aria-current="page"
+      >
+        Hem
+      </a>
+
+      <a href="/projekt.html">
+        Projekt
+      </a>
+
+      <a href="/om-mig.html">
+        Om mig
+      </a>
+
+      <a
+        href="https://github.com/EricaNordlof"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
     </div>
+
   </nav>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Fullstack Developer · Malmö</span>
 
-          <h1>Jag bygger digitala lösningar från idé till fungerande produkt.</h1>
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <span class="eyebrow">
+            Fullstack Developer · Malmö
+          </span>
+
+          <h1>
+            Jag bygger digitala lösningar från idé till fungerande produkt.
+          </h1>
 
           <p class="lead">
-            Jag är Erica Nordlöf, fullstackutvecklare med praktisk erfarenhet av
+            Jag är <strong>Erica Nordlöf</strong>,
+            fullstackutvecklare med praktisk erfarenhet av att bygga
             produktionssystem, webbapplikationer, API:er och databaser.
-            Jag tycker om att förstå hela problemet och bygga lösningar som faktiskt fungerar i verkligheten.
+            Jag gillar att förstå hela problemet och omsätta det till
+            en lösning som faktiskt fungerar i verkligheten.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projekt">Se mina projekt</a>
-            <a class="btn btn-secondary" href="/om-mig.html">Om mig</a>
-            <a class="btn btn-secondary" href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="btn btn-primary"
+              href="#projekt"
+            >
+              Se mina projekt
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="/om-mig.html"
+            >
+              Om mig
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/EricaNordlof"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </a>
+
           </div>
+
         </div>
 
-        <div class="hero-photo">
+
+        <aside
+          class="hero-photo"
+          aria-label="Porträtt av Erica Nordlöf"
+        >
+
           <img
             src="erica-nordlof-linkedin.JPG"
             alt="Erica Nordlöf, fullstackutvecklare"
             width="900"
             height="1125"
+            fetchpriority="high"
           />
-        </div>
+
+          <div class="photo-caption">
+
+            <strong>
+              Erica Nordlöf
+            </strong>
+
+            <span>
+              Fullstackutvecklare · Malmö
+            </span>
+
+          </div>
+
+        </aside>
+
       </div>
+
     </section>
 
-    <section class="section" id="projekt">
+
+    <!-- SNABB PROOF -->
+
+    <section
+      class="proof"
+      aria-label="Kort om min erfarenhet"
+    >
+
+      <div class="container proof-grid">
+
+        <div class="proof-item">
+
+          <strong>
+            Produktionssystem
+          </strong>
+
+          <span>
+            Byggt och driftsatt ett eget boknings- och administrationssystem.
+          </span>
+
+        </div>
+
+        <div class="proof-item">
+
+          <strong>
+            Fullstack
+          </strong>
+
+          <span>
+            Frontend, backend, API, databaser och deployment.
+          </span>
+
+        </div>
+
+        <div class="proof-item">
+
+          <strong>
+            Egna produkter
+          </strong>
+
+          <span>
+            Bygger lösningar utifrån verkliga verksamhetsbehov.
+          </span>
+
+        </div>
+
+        <div class="proof-item">
+
+          <strong>
+            GitHub
+          </strong>
+
+          <span>
+            Koden och projekten finns öppet att granska.
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJEKT -->
+
+    <section
+      class="section"
+      id="projekt"
+    >
+
       <div class="container">
+
         <div class="section-head">
-          <h2>Utvalda projekt</h2>
+
+          <h2>
+            Utvalda projekt
+          </h2>
+
           <p>
             Projekt där jag har arbetat med hela eller stora delar av kedjan:
             behov, struktur, frontend, backend, databas, testning och deployment.
           </p>
+
         </div>
 
+
         <div class="grid">
-          <article class="card">
-            <span class="tag">Produktionssystem</span>
-            <h3>Offroad Bumpis Booking</h3>
+
+          <!-- OFFROAD -->
+
+          <article class="card featured">
+
+            <span class="tag">
+              Produktionssystem
+            </span>
+
+            <h3>
+              Offroad Bumpis Booking
+            </h3>
+
             <p>
-              Eget boknings- och administrationssystem för en verklig uthyrningsverksamhet.
-              Hanterar bokningar, tillgänglighet, lagerregler, kunddata, betalningsstatus,
-              rabattkoder, dokument och administrativa flöden.
+              Eget boknings- och administrationssystem för en verklig
+              uthyrningsverksamhet.
+              Systemet hanterar bokningar, lagerregler, tillgänglighet,
+              kunddata, betalningsstatus, rabattkoder och administrativa flöden.
             </p>
 
             <div class="tech">
-              <span class="chip">Node.js</span>
-              <span class="chip">Express</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">Databas</span>
-              <span class="chip">Render</span>
-              <span class="chip">GitHub</span>
+
+              <span class="chip">
+                Node.js
+              </span>
+
+              <span class="chip">
+                Express
+              </span>
+
+              <span class="chip">
+                JavaScript
+              </span>
+
+              <span class="chip">
+                Databas
+              </span>
+
+              <span class="chip">
+                Render
+              </span>
+
             </div>
 
             <div class="project-links">
-              <a href="https://offroad-bumpis-booking.onrender.com/" target="_blank" rel="noopener noreferrer">Live system</a>
-              <a href="https://github.com/EricaNordlof/offroad-bumpis-booking" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+              <a
+                href="https://offroad-bumpis-booking.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Öppna live
+              </a>
+
+              <a
+                href="https://github.com/EricaNordlof/offroad-bumpis-booking"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+
             </div>
+
           </article>
 
+
+          <!-- FASTIGHETSNAVET -->
+
           <article class="card">
-            <span class="tag">Fullstack</span>
-            <h3>Fastighetsnätet</h3>
+
+            <span class="tag">
+              Fullstack · Live
+            </span>
+
+            <h3>
+              Fastighetsnavet
+            </h3>
+
             <p>
-              Property Management System med fokus på fastigheter, hyresgäster,
-              ärenden och administration. Projektet visar systemstruktur,
-              datamodellering och hur olika delar av en verksamhet kopplas ihop.
+              Ett svenskt Property Management System för fastighetsförvaltning.
+              Systemet samlar fastigheter, hyresgäster, felanmälningar,
+              arbetsorder och administration i ett gemensamt gränssnitt.
             </p>
 
             <div class="tech">
-              <span class="chip">Frontend</span>
-              <span class="chip">Backend</span>
-              <span class="chip">Databas</span>
-              <span class="chip">Docker</span>
+
+              <span class="chip">
+                React
+              </span>
+
+              <span class="chip">
+                TypeScript
+              </span>
+
+              <span class="chip">
+                Node.js
+              </span>
+
+              <span class="chip">
+                REST API
+              </span>
+
+              <span class="chip">
+                Databas
+              </span>
+
+              <span class="chip">
+                Docker
+              </span>
+
+              <span class="chip">
+                Render
+              </span>
+
             </div>
 
             <div class="project-links">
-              <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">Se på GitHub</a>
+
+              <a
+                class="primary-link"
+                href="https://fastighetsnavet-1.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Öppna Fastighetsnavet
+              </a>
+
+              <a
+                href="https://github.com/EricaNordlof/fastighetsnavet"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+
             </div>
+
           </article>
 
+
+          <!-- SAFESTANDARD -->
+
           <article class="card">
-            <span class="tag">Webbapp</span>
-            <h3>SafeStandard</h3>
+
+            <span class="tag">
+              Webbapp
+            </span>
+
+            <h3>
+              Safe Standard
+            </h3>
+
             <p>
-              Webblösning för strukturerade dokumentationsflöden.
-              Projektet fokuserar på användarflöden, formulär, dokumentation
-              och hur data samlas in på ett tydligt sätt.
+              Webblösning för strukturerad dokumentation vid direktuthyrning.
+              Fokus ligger på användarflöden, avtal, bilder,
+              överlämning, skador och tydlig dokumentation.
             </p>
 
             <div class="tech">
-              <span class="chip">JavaScript</span>
-              <span class="chip">Webbapp</span>
-              <span class="chip">Workflow</span>
-              <span class="chip">GitHub</span>
+
+              <span class="chip">
+                JavaScript
+              </span>
+
+              <span class="chip">
+                Webbapp
+              </span>
+
+              <span class="chip">
+                Workflow
+              </span>
+
+              <span class="chip">
+                Produktdesign
+              </span>
+
             </div>
 
             <div class="project-links">
-              <a href="https://safestandard.se/" target="_blank" rel="noopener noreferrer">Live</a>
-              <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+              <a
+                class="primary-link"
+                href="https://safestandard.se/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Öppna live
+              </a>
+
+              <a
+                href="https://github.com/EricaNordlof"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+
             </div>
+
           </article>
 
+
+          <!-- HANSEN -->
+
           <article class="card">
-            <span class="tag">Frontend</span>
-            <h3>Hansen Bygg & Grönt</h3>
+
+            <span class="tag">
+              Frontend
+            </span>
+
+            <h3>
+              Hansen Bygg & Grönt
+            </h3>
+
             <p>
-              Företagswebb byggd med fokus på tydlig struktur, responsiv design,
+              Företagswebb för bygg, snickeri och trädgård.
+              Byggd med fokus på tydlig struktur, responsiv design,
               användarvänlighet och enkel kontaktväg.
             </p>
 
             <div class="tech">
-              <span class="chip">HTML</span>
-              <span class="chip">CSS</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">Responsive</span>
+
+              <span class="chip">
+                HTML
+              </span>
+
+              <span class="chip">
+                CSS
+              </span>
+
+              <span class="chip">
+                JavaScript
+              </span>
+
+              <span class="chip">
+                Responsive
+              </span>
+
             </div>
 
             <div class="project-links">
-              <a href="https://hansen-byggochgront.se/" target="_blank" rel="noopener noreferrer">Live</a>
+
+              <a
+                class="primary-link"
+                href="https://hansen-byggochgront.se/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Öppna live
+              </a>
+
             </div>
+
           </article>
+
         </div>
+
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/projekt.html">Se alla projekt</a>
+
+          <a
+            class="btn btn-primary"
+            href="/projekt.html"
+          >
+            Se alla projekt
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/EricaNordlof"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Se hela GitHub
+          </a>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- TEKNIK -->
+
     <section class="section">
+
       <div class="container">
+
         <div class="section-head">
-          <h2>Teknik jag arbetar med</h2>
+
+          <h2>
+            Teknik jag arbetar med
+          </h2>
+
           <p>
-            Jag är bredast inom webbutveckling och fullstack, men gillar framför allt
-            att sätta ihop hela lösningen och förstå hur delarna påverkar varandra.
+            Jag arbetar brett inom fullstackutveckling och gillar framför allt
+            att förstå hur frontend, backend, data och verksamhetslogik hänger ihop.
           </p>
+
         </div>
+
 
         <div class="skills">
-          <div class="skill-box">
-            <strong>Frontend</strong>
-            <span>JavaScript, TypeScript, React, Next.js, HTML, CSS</span>
-          </div>
 
           <div class="skill-box">
-            <strong>Backend</strong>
-            <span>Node.js, Express, REST API, Java</span>
+
+            <strong>
+              Frontend
+            </strong>
+
+            <span>
+              JavaScript, TypeScript, React, Next.js, HTML och CSS.
+            </span>
+
           </div>
 
-          <div class="skill-box">
-            <strong>Data & infra</strong>
-            <span>MongoDB, MySQL, Docker, Git, GitHub</span>
-          </div>
 
           <div class="skill-box">
-            <strong>Arbetssätt</strong>
-            <span>Systemdesign, kravanalys, UX, testning och deployment</span>
+
+            <strong>
+              Backend
+            </strong>
+
+            <span>
+              Node.js, Express, REST API och Java.
+            </span>
+
           </div>
+
+
+          <div class="skill-box">
+
+            <strong>
+              Data & infra
+            </strong>
+
+            <span>
+              MongoDB, MySQL, databaser, Docker, Git, GitHub och Render.
+            </span>
+
+          </div>
+
+
+          <div class="skill-box">
+
+            <strong>
+              Hela processen
+            </strong>
+
+            <span>
+              Kravanalys, systemstruktur, UX, testning, felsökning och deployment.
+            </span>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- JOBB CTA -->
 
     <section class="section">
+
       <div class="container">
+
         <div class="cta">
+
           <div>
-            <h2>Jag söker nästa utvecklarroll.</h2>
+
+            <h2>
+              Jag söker nästa utvecklarroll.
+            </h2>
+
             <p>
-              Jag är intresserad av roller inom fullstack-, frontend- och systemutveckling,
-              gärna där jag får ta ansvar, bygga praktiskt och fortsätta utvecklas.
-              Malmöregionen eller distans är särskilt intressant.
+              Jag är intresserad av roller inom fullstack-,
+              frontend-, backend- och systemutveckling.
+              Jag söker både heltid och andra relevanta upplägg där jag får
+              bygga praktiskt, lösa problem och fortsätta utvecklas.
+              Malmöregionen och distans är särskilt intressant.
             </p>
+
           </div>
+
 
           <div class="cta-actions">
-            <a class="btn btn-secondary" href="/om-mig.html">Läs mer om mig</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="btn btn-secondary"
+              href="/om-mig.html"
+            >
+              Läs mer om mig
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn
             </a>
-            <a class="btn btn-secondary" href="mailto:nordloferica@gmail.com">Kontakta mig</a>
+
+            <a
+              class="btn btn-secondary"
+              href="mailto:nordloferica@gmail.com"
+            >
+              Kontakta mig
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
-  <footer>
-    <div class="container footer">
-      <span>© 2026 Erica Nordlöf · Fullstackutvecklare</span>
 
-      <div class="footer-links">
-        <a href="/">Hem</a>
-        <a href="/projekt.html">Projekt</a>
-        <a href="/om-mig.html">Om mig</a>
-        <a href="https://github.com/EricaNordlof" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <footer>
+
+    <div class="container footer">
+
+      <div class="footer-copy">
+
+        <strong>
+          © 2026 Erica Nordlöf
+        </strong>
+
+        <br>
+
+        Fullstackutvecklare · Malmö
+
       </div>
+
+
+      <nav
+        class="footer-links"
+        aria-label="Sidfot"
+      >
+
+        <a href="/">
+          Hem
+        </a>
+
+        <a href="/projekt.html">
+          Projekt
+        </a>
+
+        <a href="/om-mig.html">
+          Om mig
+        </a>
+
+        <a
+          href="https://fastighetsnavet-1.onrender.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Fastighetsnavet
+        </a>
+
+        <a
+          href="https://github.com/EricaNordlof"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+      </nav>
+
     </div>
+
   </footer>
 
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const menu = document.getElementById("menu");
-    const menuBackdrop = document.getElementById("menuBackdrop");
 
-    function setMenu(open) {
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const menu =
+      document.getElementById("menu");
+
+    const menuBackdrop =
+      document.getElementById("menuBackdrop");
+
+
+    function setMenu(open){
+
       menu.hidden = !open;
+
       menuBackdrop.hidden = !open;
-      menuButton.setAttribute("aria-expanded", String(open));
-      document.body.classList.toggle("menu-open", open);
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+      document.body.classList.toggle(
+        "menu-open",
+        open
+      );
+
     }
 
-    menuButton.addEventListener("click", () => {
-      setMenu(menuButton.getAttribute("aria-expanded") !== "true");
-    });
 
-    menuBackdrop.addEventListener("click", () => setMenu(false));
+    menuButton.addEventListener(
+      "click",
+      () => {
 
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => setMenu(false));
-    });
+        const open =
+          menuButton.getAttribute(
+            "aria-expanded"
+          ) !== "true";
 
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
-        setMenu(false);
+        setMenu(open);
+
       }
-    });
+    );
+
+
+    menuBackdrop.addEventListener(
+      "click",
+      () => setMenu(false)
+    );
+
+
+    menu
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => setMenu(false)
+        );
+
+      });
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if(event.key === "Escape"){
+          setMenu(false);
+        }
+
+      }
+    );
+
   </script>
+
 </body>
 </html>
