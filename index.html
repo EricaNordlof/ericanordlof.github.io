@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Portfolio för Erica Nordlöf, fullstackutvecklare i Malmö. Projekt inom JavaScript, TypeScript, Node.js, React, API:er, databaser, Docker och webbutveckling."
+    content="Portfolio för Erica Nordlöf, fullstackutvecklare i Malmö. Projekt inom JavaScript, TypeScript, Node.js, React, API:er, databaser, Docker, automation och webbutveckling."
   />
 
   <meta
@@ -25,7 +25,7 @@
 
   <meta
     property="og:description"
-    content="Fullstackutvecklare med praktisk erfarenhet av produktionssystem, webbapplikationer, API:er, databaser och deployment."
+    content="Fullstackutvecklare med praktisk erfarenhet av produktionssystem, automation, webbapplikationer, API:er, databaser och deployment."
   />
 
   <meta property="og:type" content="website" />
@@ -79,6 +79,7 @@
       "Git",
       "GitHub",
       "Systemdesign",
+      "Automation",
       "Databaser",
       "Webbutveckling"
     ]
@@ -179,9 +180,7 @@
       margin:auto;
     }
 
-    /* =========================
-       HEADER
-    ========================== */
+    /* HEADER */
 
     .topbar{
       position:sticky;
@@ -274,9 +273,7 @@
         0 12px 28px rgba(20,16,14,.15);
     }
 
-    /* =========================
-       MENU
-    ========================== */
+    /* MENU */
 
     .menu-backdrop{
       position:fixed;
@@ -359,9 +356,7 @@
       color:#fff;
     }
 
-    /* =========================
-       TYPOGRAFI
-    ========================== */
+    /* TYPOGRAFI */
 
     h1,
     h2{
@@ -401,9 +396,7 @@
       margin:0;
     }
 
-    /* =========================
-       HERO
-    ========================== */
+    /* HERO */
 
     .hero{
       padding:
@@ -468,9 +461,7 @@
       margin-top:26px;
     }
 
-    /* =========================
-       KNAPPAR
-    ========================== */
+    /* KNAPPAR */
 
     .btn{
       display:inline-flex;
@@ -523,10 +514,7 @@
         0 9px 24px rgba(36,30,26,.04);
     }
 
-    /* =========================
-       PORTRÄTT
-       LÅST STORLEK – INGEN AVLÅNG BILD
-    ========================== */
+    /* PORTRÄTT */
 
     .hero-photo{
       width:230px !important;
@@ -563,10 +551,6 @@
       aspect-ratio:1 / 1 !important;
 
       object-fit:cover !important;
-
-      /*
-        Flytta beskärningen lite uppåt så ansiktet hamnar rätt.
-      */
       object-position:center 26% !important;
 
       border-radius:21px;
@@ -595,9 +579,7 @@
       line-height:1.4;
     }
 
-    /* =========================
-       QUICK PROOF
-    ========================== */
+    /* QUICK PROOF */
 
     .proof{
       padding:0 0 22px;
@@ -645,9 +627,7 @@
       line-height:1.45;
     }
 
-    /* =========================
-       SECTIONS
-    ========================== */
+    /* SECTIONS */
 
     .section{
       padding:52px 0;
@@ -667,9 +647,7 @@
       line-height:1.72;
     }
 
-    /* =========================
-       PROJECT GRID
-    ========================== */
+    /* PROJECT GRID */
 
     .grid{
       display:grid;
@@ -846,9 +824,7 @@
       background:#fff;
     }
 
-    /* =========================
-       SKILLS
-    ========================== */
+    /* SKILLS */
 
     .skills{
       display:grid;
@@ -887,9 +863,7 @@
       line-height:1.6;
     }
 
-    /* =========================
-       CTA
-    ========================== */
+    /* CTA */
 
     .cta{
       display:grid;
@@ -952,9 +926,7 @@
       border-color:rgba(255,255,255,.65);
     }
 
-    /* =========================
-       FOOTER
-    ========================== */
+    /* FOOTER */
 
     footer{
       padding:36px 0;
@@ -999,9 +971,7 @@
       text-underline-offset:3px;
     }
 
-    /* =========================
-       TABLET
-    ========================== */
+    /* TABLET */
 
     @media(max-width:900px){
 
@@ -1051,9 +1021,7 @@
       }
     }
 
-    /* =========================
-       MOBIL
-    ========================== */
+    /* MOBIL */
 
     @media(max-width:700px){
 
@@ -1143,7 +1111,6 @@
         aspect-ratio:1 / 1 !important;
 
         object-fit:cover !important;
-
         object-position:center 26% !important;
 
         border-radius:19px;
@@ -1408,7 +1375,8 @@
           <p class="lead">
             Jag är <strong>Erica Nordlöf</strong>,
             fullstackutvecklare med praktisk erfarenhet av att bygga
-            produktionssystem, webbapplikationer, API:er och databaser.
+            produktionssystem, webbapplikationer, API:er, databaser
+            och automatiserade arbetsflöden.
             Jag gillar att förstå hela problemet och omsätta det till
             en lösning som faktiskt fungerar i verkligheten.
           </p>
@@ -1497,6 +1465,18 @@
         <div class="proof-item">
 
           <strong>
+            Automation
+          </strong>
+
+          <span>
+            Automatiserat bokning, dokumentation och administrativa kundflöden.
+          </span>
+
+        </div>
+
+        <div class="proof-item">
+
+          <strong>
             Fullstack
           </strong>
 
@@ -1509,23 +1489,11 @@
         <div class="proof-item">
 
           <strong>
-            Egna produkter
+            Verkliga behov
           </strong>
 
           <span>
-            Bygger lösningar utifrån verkliga verksamhetsbehov.
-          </span>
-
-        </div>
-
-        <div class="proof-item">
-
-          <strong>
-            GitHub
-          </strong>
-
-          <span>
-            Koden och projekten finns öppet att granska.
+            Bygger vidare på lösningar när verksamheten och behoven utvecklas.
           </span>
 
         </div>
@@ -1550,8 +1518,10 @@
           </h2>
 
           <p>
-            Projekt där jag har arbetat med hela eller stora delar av kedjan:
-            behov, struktur, frontend, backend, databas, testning och deployment.
+            Projekten visar hur jag har utvecklats från mitt första
+            dokumentationsverktyg till kompletta produktionssystem
+            med automation, affärslogik, frontend, backend,
+            databas och deployment.
           </p>
 
         </div>
@@ -1563,7 +1533,7 @@
           <article class="card featured">
 
             <span class="tag">
-              Produktionssystem
+              Produktionssystem · Aktivt
             </span>
 
             <h3>
@@ -1571,10 +1541,21 @@
             </h3>
 
             <p>
-              Eget boknings- och administrationssystem för en verklig
-              uthyrningsverksamhet. Systemet hanterar bokningar,
-              lagerregler, tillgänglighet, kunddata, betalningsstatus,
-              rabattkoder och administrativa flöden.
+              Mitt eget boknings- och administrationssystem för
+              uthyrningsverksamheten Offroad Bumpis.
+              Jag byggde systemet för att automatisera ett flöde
+              som tidigare krävde manuella bokningsbekräftelser
+              och administration via e-post.
+            </p>
+
+            <p style="margin-top:12px;">
+              Systemet hanterar bland annat bokningar,
+              lager och tillgänglighet, kunddata,
+              betalningsstatus och rabattkoder.
+              Samma dokumentationsprincip som jag först utvecklade
+              i Safe Standard är nu integrerad direkt i bokningsflödet:
+              <strong>villkor, avtal, checklista vid överlämning och retur
+              samt skadefaktura vid behov.</strong>
             </p>
 
             <div class="tech">
@@ -1593,6 +1574,14 @@
 
               <span class="chip">
                 Databas
+              </span>
+
+              <span class="chip">
+                Automation
+              </span>
+
+              <span class="chip">
+                PDF-flöden
               </span>
 
               <span class="chip">
@@ -1701,7 +1690,7 @@
           <article class="card">
 
             <span class="tag">
-              Webbapp
+              Mitt första projekt · Gratis
             </span>
 
             <h3>
@@ -1709,9 +1698,27 @@
             </h3>
 
             <p>
-              Webblösning för strukturerad dokumentation vid direktuthyrning.
-              Fokus ligger på användarflöden, avtal, bilder,
-              överlämning, skador och tydlig dokumentation.
+              Safe Standard var mitt första större egna projekt.
+              Jag byggde det för att skapa en tydlig dokumentationskedja
+              vid direktuthyrning med villkor, avtal,
+              överlämning, checklista, bilder och skadedokumentation.
+            </p>
+
+            <p style="margin-top:12px;">
+              Jag använder inte längre Safe Standard själv i min
+              uthyrningsverksamhet eftersom jag senare byggde
+              <strong>Offroad Bumpis Booking</strong> och automatiserade
+              samma princip direkt i det egna bokningssystemet.
+              Där slipper jag nu manuella mejlbekräftelser och får
+              bokning och dokumentation i ett sammanhängande flöde.
+            </p>
+
+            <p style="margin-top:12px;">
+              Safe Standard finns fortfarande kvar som ett
+              <strong>gratis portfolio-projekt</strong> och visar
+              ett tidigt steg i hur jag arbetar:
+              identifiera ett verkligt problem, bygga en lösning
+              och sedan vidareutveckla konceptet när behoven förändras.
             </p>
 
             <div class="tech">
@@ -1729,7 +1736,11 @@
               </span>
 
               <span class="chip">
-                Produktdesign
+                Dokumentation
+              </span>
+
+              <span class="chip">
+                Produktutveckling
               </span>
 
             </div>
@@ -1742,15 +1753,15 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Öppna live
+                Öppna gratis
               </a>
 
               <a
-                href="https://github.com/EricaNordlof"
+                href="https://safe-standard-app-git.pages.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub
+                Öppna appen
               </a>
 
             </div>
@@ -1850,7 +1861,8 @@
 
           <p>
             Jag arbetar brett inom fullstackutveckling och gillar framför allt
-            att förstå hur frontend, backend, data och verksamhetslogik hänger ihop.
+            att förstå hur frontend, backend, data, automation
+            och verksamhetslogik hänger ihop.
           </p>
 
         </div>
@@ -1876,7 +1888,7 @@
             </strong>
 
             <span>
-              Node.js, Express, REST API och Java.
+              Node.js, Express, REST API, affärslogik och Java.
             </span>
 
           </div>
@@ -1896,11 +1908,11 @@
           <div class="skill-box">
 
             <strong>
-              Hela processen
+              Automation & flöden
             </strong>
 
             <span>
-              Kravanalys, systemstruktur, UX, testning, felsökning och deployment.
+              Bokningslogik, dokumentflöden, PDF, statusflöden, testning och deployment.
             </span>
 
           </div>
@@ -1927,8 +1939,9 @@
 
             <p>
               Jag är intresserad av roller inom fullstack-, frontend-,
-              backend- och systemutveckling. Jag söker både heltid,
-              deltid och andra relevanta upplägg där jag får bygga praktiskt,
+              backend- och systemutveckling.
+              Jag söker både heltid, deltid och andra relevanta upplägg
+              där jag får bygga praktiskt, automatisera processer,
               lösa problem och fortsätta utvecklas.
               Malmöregionen och distans är särskilt intressant.
             </p>
