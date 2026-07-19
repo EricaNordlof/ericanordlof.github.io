@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Projekt av Erica Nordlöf, fullstackutvecklare i Malmö. Se produktionssystem, React- och TypeScript-appar, Node.js, REST API, databaser, Docker och responsiv frontend."
+    content="Projekt av Erica Nordlöf, fullstackutvecklare i Malmö. Se produktionssystem, automation, React, TypeScript, Node.js, REST API, databaser, Docker och responsiv frontend."
   />
 
   <meta
@@ -28,7 +28,7 @@
 
   <meta
     property="og:description"
-    content="Fullstackprojekt och case inom React, TypeScript, Node.js, API, databaser, Docker och produktutveckling."
+    content="Fullstackprojekt och case inom React, TypeScript, Node.js, API, databaser, automation, Docker och produktutveckling."
   />
 
   <meta property="og:type" content="website" />
@@ -45,6 +45,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3" />
 
   <link rel="me" href="https://github.com/EricaNordlof" />
+
   <link
     rel="me"
     href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
@@ -88,7 +89,15 @@
         "name":"Offroad Bumpis Booking",
         "applicationCategory":"BusinessApplication",
         "url":"https://offroad-bumpis-booking.onrender.com/",
-        "codeRepository":"https://github.com/EricaNordlof/offroad-bumpis-booking"
+        "codeRepository":"https://github.com/EricaNordlof/offroad-bumpis-booking",
+        "description":"Boknings- och administrationssystem med affärsregler, lagerlogik, automatiserade kundflöden och dokumentation."
+      },
+      {
+        "@type":"SoftwareApplication",
+        "name":"Safe Standard",
+        "applicationCategory":"BusinessApplication",
+        "url":"https://safestandard.se/",
+        "description":"Gratis portfolio-projekt för strukturerad dokumentation vid direktuthyrning."
       }
     ]
   }
@@ -876,39 +885,6 @@
         0 24px 64px rgba(154,88,85,.17);
     }
 
-    .live-pill{
-      display:inline-flex;
-      align-items:center;
-
-      gap:6px;
-
-      margin-left:6px;
-
-      padding:4px 7px;
-
-      border-radius:999px;
-
-      color:#285f3b;
-
-      background:#e8f6ed;
-
-      font-size:10px;
-      font-weight:900;
-
-      vertical-align:middle;
-    }
-
-    .live-pill::before{
-      content:"";
-
-      width:6px;
-      height:6px;
-
-      border-radius:50%;
-
-      background:#3e9c61;
-    }
-
     .case-header{
       margin-bottom:20px;
     }
@@ -1049,7 +1025,6 @@
 
     .case-dark .btn-secondary{
       color:#262220;
-
       background:#fff;
     }
 
@@ -1673,9 +1648,10 @@
         <p class="lead">
           Här visar jag hur jag arbetar från
           <strong>problem och krav</strong>
-          till struktur, frontend, backend, data och fungerande produkt.
-          Projekten visar hur jag kombinerar teknik med
-          verksamhetsförståelse och praktisk problemlösning.
+          till struktur, frontend, backend, data,
+          automation och fungerande produkt.
+          Projekten visar också hur jag bygger vidare på tidigare lösningar
+          när verksamheten och behoven utvecklas.
         </p>
 
         <div class="actions">
@@ -1692,6 +1668,13 @@
             href="#offroad"
           >
             Se Offroad Bumpis
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="#safe-standard"
+          >
+            Se Safe Standard
           </a>
 
           <a
@@ -1724,6 +1707,10 @@
 
           <span class="summary-chip">
             Databaser & JWT
+          </span>
+
+          <span class="summary-chip">
+            Automation & dokumentflöden
           </span>
 
           <span class="summary-chip">
@@ -2027,8 +2014,10 @@
 
           <p>
             Ett eget boknings- och administrationssystem byggt för
-            min faktiska uthyrningsverksamhet. Här möts kod,
-            affärsregler, lagerlogik och kundflöden på riktigt.
+            min faktiska uthyrningsverksamhet.
+            Systemet ersätter manuella delar av bokningsflödet
+            och samlar affärsregler, lager, kunddata,
+            dokumentation och administration på samma ställe.
           </p>
 
         </div>
@@ -2038,18 +2027,18 @@
           <div class="case-header">
 
             <span class="case-type">
-              Fullstack · Bokningssystem
+              Fullstack · Bokning · Automation
             </span>
 
             <h3>
-              Ett system byggt runt verkliga affärsregler
+              Från manuella mejl till ett automatiserat kundflöde
             </h3>
 
             <p>
               Det som började som ett behov av enklare bokning
-              utvecklades till ett system för tillgänglighet,
-              inventarier, priser, flerdagarsbokningar,
-              betalningsstatus, rabattkoder och administration.
+              utvecklades till ett eget produktionssystem där
+              bokning, tillgänglighet, lagerregler och dokumentation
+              kan hanteras i ett sammanhängande flöde.
             </p>
 
           </div>
@@ -2063,10 +2052,10 @@
               </h4>
 
               <p>
-                Manuell hantering av bokningar och utrustning
-                blir snabbt svår när olika bollstorlekar,
-                datum, lagerregler, leverans och priser påverkar
-                om en bokning faktiskt kan genomföras.
+                Bokningar krävde tidigare mer manuell administration,
+                bland annat kundkommunikation och mejlbekräftelser.
+                Samtidigt måste systemet ta hänsyn till datum,
+                olika inventarier, lagerregler, priser och tillgänglighet.
               </p>
 
             </div>
@@ -2078,9 +2067,9 @@
               </h4>
 
               <p>
-                Ett eget system där affärsreglerna ligger i
-                logiken och där kunden kan boka samtidigt som
-                verksamheten får strukturerad information.
+                Jag byggde ett eget boknings- och administrationssystem
+                där verksamhetsreglerna ligger direkt i systemlogiken
+                och där bokningen kan driva nästa steg automatiskt.
               </p>
 
             </div>
@@ -2088,13 +2077,13 @@
             <div class="case-block">
 
               <h4>
-                Mitt fokus
+                Dokumentationsflöde
               </h4>
 
               <p>
-                Produktägarskap, kravställning, frontend,
-                backend, bokningslogik, lagerregler,
-                datamodell och deployment.
+                Samma grundprincip som jag först arbetade fram
+                i Safe Standard finns nu integrerad i bokningssystemet:
+                villkor, avtal, checklista och vid behov skadefaktura.
               </p>
 
             </div>
@@ -2106,9 +2095,10 @@
               </h4>
 
               <p>
-                Ett produktionssystem byggt för ett riktigt
-                företag och verkliga kunder, inte bara
-                ett skolprojekt med låtsasdata.
+                Jag behöver inte längre arbeta på samma sätt
+                med manuella mejlbekräftelser.
+                Bokning och dokumentation är i stället delar
+                av samma digitala arbetsflöde.
               </p>
 
             </div>
@@ -2137,6 +2127,14 @@
 
               <span class="tech-badge">
                 Affärslogik
+              </span>
+
+              <span class="tech-badge">
+                Automation
+              </span>
+
+              <span class="tech-badge">
+                Dokumentflöden
               </span>
 
               <span class="tech-badge">
@@ -2175,9 +2173,12 @@
 
     </section>
 
-    <!-- FLER CASE -->
+    <!-- FLER PROJEKT -->
 
-    <section class="section">
+    <section
+      class="section"
+      id="safe-standard"
+    >
 
       <div class="container">
 
@@ -2188,33 +2189,35 @@
           </h2>
 
           <p>
-            Projekten visar olika delar av min kompetens:
-            produktutveckling, React och TypeScript,
-            frontend, UX, dokumentflöden och teknisk struktur.
+            Projekten visar olika steg i min utveckling:
+            från mitt första egna produktprojekt
+            till frontend, backend och större system
+            som används för verkliga verksamhetsbehov.
           </p>
 
         </div>
 
         <div class="case-grid">
 
-          <!-- SAFE STANDARD APP -->
+          <!-- SAFE STANDARD -->
 
           <article class="case case-dark">
 
             <div class="case-header">
 
               <span class="case-type">
-                React · TypeScript · Produktutveckling
+                Mitt första projekt · Gratis
               </span>
 
               <h3>
-                Safe Standard App
+                Safe Standard
               </h3>
 
               <p>
-                En React- och TypeScript-applikation
-                för strukturerad dokumentation
-                vid direktuthyrning.
+                Safe Standard var mitt första större egna projekt
+                och byggdes för att skapa en tydligare
+                dokumentationskedja vid direktuthyrning.
+                Projektet är nu gratis att använda.
               </p>
 
             </div>
@@ -2224,13 +2227,14 @@
               <div class="case-block">
 
                 <h4>
-                  Problem
+                  Problemet jag började med
                 </h4>
 
                 <p>
-                  Avtal, villkor, bilder, överlämning,
-                  skador och dokumentation hamnar lätt
-                  utspridda i olika system och meddelanden.
+                  Villkor, avtal, checklistor, bilder
+                  och eventuell skadedokumentation
+                  riskerar att hamna utspridda i mejl
+                  och manuella arbetsflöden.
                 </p>
 
               </div>
@@ -2238,13 +2242,13 @@
               <div class="case-block">
 
                 <h4>
-                  Lösning
+                  Min första lösning
                 </h4>
 
                 <p>
-                  Ett case-baserat arbetsflöde där information
-                  och dokumentation samlas kring samma
-                  uthyrningsärende.
+                  Jag byggde ett case-baserat arbetsflöde
+                  där dokumentation kunde samlas runt
+                  samma uthyrningsärende.
                 </p>
 
               </div>
@@ -2252,14 +2256,13 @@
               <div class="case-block">
 
                 <h4>
-                  Funktioner
+                  Hur projektet utvecklades vidare
                 </h4>
 
                 <p>
-                  Avtal, villkor, checklistor,
-                  skadedokumentation, bilder,
-                  PDF-flöden, licensstyrning
-                  och publik verifiering.
+                  När jag senare byggde mitt eget bokningssystem
+                  för Offroad Bumpis integrerade jag samma princip
+                  direkt i boknings- och administrationsflödet.
                 </p>
 
               </div>
@@ -2267,13 +2270,15 @@
               <div class="case-block">
 
                 <h4>
-                  Vad projektet visar
+                  Hur jag använder det idag
                 </h4>
 
                 <p>
-                  Produktlogik, React-arkitektur
-                  och hur ett större användarflöde
-                  kan delas upp i tydliga moduler.
+                  Jag använder inte längre Safe Standard själv
+                  i min uthyrningsverksamhet eftersom
+                  Offroad Bumpis Booking nu automatiserar
+                  bokning och dokumentation i samma system.
+                  Safe Standard finns kvar som ett gratis portfolio-projekt.
                 </p>
 
               </div>
@@ -2297,15 +2302,15 @@
                 </span>
 
                 <span class="tech-badge">
-                  React Router
-                </span>
-
-                <span class="tech-badge">
-                  PWA
+                  Workflow
                 </span>
 
                 <span class="tech-badge">
                   PDF
+                </span>
+
+                <span class="tech-badge">
+                  Produktutveckling
                 </span>
 
               </div>
@@ -2314,11 +2319,20 @@
 
                 <a
                   class="btn btn-secondary"
+                  href="https://safestandard.se/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Öppna Safe Standard
+                </a>
+
+                <a
+                  class="btn btn-secondary"
                   href="https://safe-standard-app-git.pages.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Öppna app
+                  Öppna appen
                 </a>
 
                 <a
@@ -2380,9 +2394,9 @@
                 </h4>
 
                 <p>
-                  En kompakt one-page-struktur med
-                  tydlig hierarki, tjänsteområden,
-                  kontaktvägar och responsiv design.
+                  En kompakt struktur med tydlig hierarki,
+                  tjänsteområden, kontaktvägar
+                  och responsiv design.
                 </p>
 
               </div>
@@ -2468,127 +2482,6 @@
 
           </article>
 
-          <!-- SAFE STANDARD WEB -->
-
-          <article class="case">
-
-            <div class="case-header">
-
-              <span class="case-type">
-                Produktwebb · Systemtänk
-              </span>
-
-              <h3>
-                Safe Standard
-              </h3>
-
-              <p>
-                Produktwebben visar hur jag kopplar ihop
-                en teknisk applikation med begriplig
-                produktkommunikation och tydliga flöden.
-              </p>
-
-            </div>
-
-            <div class="case-story">
-
-              <div class="case-block">
-
-                <h4>
-                  Problem
-                </h4>
-
-                <p>
-                  En teknisk produkt är svår att använda
-                  om besökaren inte snabbt förstår
-                  vad den löser och hur den fungerar.
-                </p>
-
-              </div>
-
-              <div class="case-block">
-
-                <h4>
-                  Lösning
-                </h4>
-
-                <p>
-                  En separat produktsida som förklarar
-                  konceptet och leder vidare
-                  till själva applikationen.
-                </p>
-
-              </div>
-
-              <div class="case-block">
-
-                <h4>
-                  Mitt fokus
-                </h4>
-
-                <p>
-                  Produktstruktur, informationsarkitektur,
-                  responsiv frontend och kopplingen
-                  mellan webb och applikation.
-                </p>
-
-              </div>
-
-              <div class="case-block">
-
-                <h4>
-                  Resultat
-                </h4>
-
-                <p>
-                  Ett sammanhängande produktprojekt
-                  där marknadswebb och app har
-                  olika roller i samma lösning.
-                </p>
-
-              </div>
-
-            </div>
-
-            <div class="case-footer">
-
-              <div class="tech-row">
-
-                <span class="tech-badge">
-                  HTML
-                </span>
-
-                <span class="tech-badge">
-                  CSS
-                </span>
-
-                <span class="tech-badge">
-                  JavaScript
-                </span>
-
-                <span class="tech-badge">
-                  Produktdesign
-                </span>
-
-              </div>
-
-              <div class="actions">
-
-                <a
-                  class="btn btn-primary"
-                  href="https://safestandard.se/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Öppna live
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
           <!-- MINI API -->
 
           <article class="case">
@@ -2636,7 +2529,8 @@
                 <p>
                   Det visar backend separat från
                   mina större produktprojekt och
-                  gör det lättare att granska den tekniska grunden.
+                  gör det lättare att granska
+                  den tekniska grunden.
                 </p>
 
               </div>
@@ -2692,7 +2586,7 @@
 
     </section>
 
-    <!-- HELA KEDJAN -->
+    <!-- UTVECKLING -->
 
     <section class="section">
 
@@ -2705,14 +2599,16 @@
           </span>
 
           <h2>
-            Jag gillar att förstå hela kedjan.
+            Jag bygger vidare när behoven förändras.
           </h2>
 
           <p>
-            Jag vill inte bara kunna ett ramverk.
-            Jag vill förstå varför systemet behövs,
-            hur datan hänger ihop, vad användaren behöver
-            och hur lösningen ska fungera när den är live.
+            Safe Standard är ett tydligt exempel.
+            Jag började med ett separat dokumentationsverktyg,
+            lärde mig av det och byggde senare in samma grundidé
+            direkt i Offroad Bumpis Booking när jag såg
+            att bokning och dokumentation fungerade bättre
+            som ett sammanhängande system.
           </p>
 
         </div>
@@ -2722,13 +2618,12 @@
           <article class="responsibility-card">
 
             <strong>
-              Krav & problem
+              Identifiera problemet
             </strong>
 
             <p>
-              Förstå verksamheten,
-              användaren och vad lösningen
-              faktiskt måste lösa.
+              Förstå var det manuella arbetet,
+              dubbelarbetet eller risken för fel finns.
             </p>
 
           </article>
@@ -2736,13 +2631,13 @@
           <article class="responsibility-card">
 
             <strong>
-              UX & struktur
+              Bygga första lösningen
             </strong>
 
             <p>
-              Göra komplex funktionalitet
-              begriplig och logisk
-              för användaren.
+              Göra idén konkret
+              och skapa ett fungerande flöde
+              som går att testa i praktiken.
             </p>
 
           </article>
@@ -2750,13 +2645,13 @@
           <article class="responsibility-card">
 
             <strong>
-              Frontend & backend
+              Lära av användningen
             </strong>
 
             <p>
-              Bygga gränssnitt,
-              affärslogik, API-flöden
-              och datakopplingar.
+              Se vilka delar som fungerar,
+              vilka som kan förenklas
+              och vad som bör automatiseras.
             </p>
 
           </article>
@@ -2764,13 +2659,13 @@
           <article class="responsibility-card">
 
             <strong>
-              Test & deployment
+              Integrera och automatisera
             </strong>
 
             <p>
-              Få lösningen från lokal kod
-              till något som faktiskt
-              går att öppna och använda.
+              Flytta funktionerna närmare
+              kärnprocessen och minska
+              manuella steg för användaren.
             </p>
 
           </article>
@@ -2790,7 +2685,7 @@
         <div class="section-head">
 
           <h2>
-            Kod som går att granska
+            Kod och system som går att granska
           </h2>
 
           <p>
@@ -2851,9 +2746,10 @@
             </strong>
 
             <p>
-              Offroad Bumpis Booking visar kod
-              byggd för ett faktiskt verksamhetsbehov
-              med riktiga affärsregler.
+              Offroad Bumpis Booking visar ett system
+              byggt för ett faktiskt verksamhetsbehov
+              med bokningslogik, automation
+              och riktiga affärsregler.
             </p>
 
             <a
@@ -2889,7 +2785,8 @@
             <p>
               Jag är intresserad av roller inom fullstack-,
               frontend-, backend- och systemutveckling där jag får
-              bygga praktiskt, lösa problem och fortsätta utvecklas.
+              bygga praktiskt, automatisera processer,
+              lösa problem och fortsätta utvecklas.
               Malmöregionen och distans är särskilt intressant.
             </p>
 
