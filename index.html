@@ -2,6 +2,7 @@
 <html lang="sv-SE">
 <head>
   <meta charset="UTF-8" />
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
@@ -11,7 +12,7 @@
 
   <meta
     name="description"
-    content="Erica Nordlöf är fullstackutvecklare i Malmö med kompetens inom JavaScript, TypeScript, React, Next.js, Node.js, Express, API:er, databaser, Docker och automation. Se portfolio och projekt."
+    content="Erica Nordlöf är fullstackutvecklare i Malmö med kompetens inom JavaScript, TypeScript, React, Next.js, Node.js, Express, API:er, databaser, Docker, automation och deployment."
   />
 
   <meta
@@ -19,8 +20,15 @@
     content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
   />
 
-  <meta name="author" content="Erica Nordlöf" />
-  <meta name="theme-color" content="#f7f0ec" />
+  <meta
+    name="author"
+    content="Erica Nordlöf"
+  />
+
+  <meta
+    name="theme-color"
+    content="#f7f0ec"
+  />
 
   <link
     rel="canonical"
@@ -34,7 +42,7 @@
 
   <meta
     property="og:description"
-    content="Fullstackutvecklare med kompetens inom frontend, backend, API:er, databaser, automation och deployment."
+    content="Fullstackutvecklare med kompetens inom frontend, backend, API:er, databaser, automation, Docker och deployment."
   />
 
   <meta
@@ -121,6 +129,7 @@
       "REST API",
       "MongoDB",
       "MySQL",
+      "SQL",
       "Java",
       "Docker",
       "Git",
@@ -130,7 +139,10 @@
       "Systemdesign",
       "Automation",
       "Databaser",
-      "Webbutveckling"
+      "Webbutveckling",
+      "CI/CD",
+      "Nätverk",
+      "IT-säkerhet"
     ]
   }
   </script>
@@ -437,7 +449,7 @@
     h1{
       margin:18px 0;
 
-      max-width:850px;
+      max-width:880px;
 
       font-size:
         clamp(
@@ -520,7 +532,7 @@
     }
 
     .lead{
-      max-width:780px;
+      max-width:790px;
 
       color:var(--muted);
 
@@ -542,7 +554,7 @@
       margin-top:26px;
     }
 
-    /* BUTTON */
+    /* BUTTONS */
 
     .btn{
       display:inline-flex;
@@ -648,10 +660,10 @@
       font-size:11px;
     }
 
-    /* VALUE BAR */
+    /* QUICK VALUE */
 
     .value-section{
-      padding:0 0 36px;
+      padding:0 0 38px;
     }
 
     .value-grid{
@@ -664,7 +676,7 @@
     }
 
     .value-card{
-      padding:18px;
+      padding:19px;
 
       background:
         rgba(255,255,255,.82);
@@ -694,7 +706,7 @@
       line-height:1.55;
     }
 
-    /* SECTION */
+    /* SECTIONS */
 
     .section{
       padding:54px 0;
@@ -703,7 +715,7 @@
     .section-head{
       max-width:850px;
 
-      margin-bottom:26px;
+      margin-bottom:27px;
     }
 
     .section-head p{
@@ -726,6 +738,11 @@
     }
 
     .stack-card{
+      display:flex;
+      flex-direction:column;
+
+      min-height:100%;
+
       padding:22px;
 
       background:var(--card);
@@ -781,7 +798,63 @@
       font-weight:900;
     }
 
-    /* WHAT I BUILD */
+    /* BREADTH */
+
+    .breadth-grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap:15px;
+    }
+
+    .breadth-card{
+      padding:25px;
+
+      background:#fff;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:24px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .breadth-icon{
+      display:grid;
+      place-items:center;
+
+      width:42px;
+      height:42px;
+
+      margin-bottom:18px;
+
+      border-radius:13px;
+
+      color:#fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--brand-dark),
+          var(--brand)
+        );
+
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .breadth-card p{
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.68;
+    }
+
+    /* SERVICES */
 
     .services{
       display:grid;
@@ -872,6 +945,16 @@
       box-shadow:var(--shadow-strong);
     }
 
+    .portfolio-panel .eyebrow{
+      color:#fff;
+
+      background:
+        rgba(255,255,255,.14);
+
+      border-color:
+        rgba(255,255,255,.24);
+    }
+
     .portfolio-panel h2{
       color:#fff;
     }
@@ -921,6 +1004,8 @@
       display:block;
 
       margin-bottom:8px;
+
+      font-size:16px;
     }
 
     .work-card p{
@@ -1070,6 +1155,7 @@
           repeat(2,minmax(0,1fr));
       }
 
+      .breadth-grid,
       .services,
       .work-grid{
         grid-template-columns:1fr;
@@ -1411,7 +1497,7 @@
           </span>
 
           <h1>
-            Jag bygger hela vägen från frontend till backend.
+            Jag bygger digitala lösningar som fungerar hela vägen.
           </h1>
 
           <p class="lead">
@@ -1420,12 +1506,13 @@
             fullstackutvecklare med kompetens inom
             <strong>
               JavaScript, TypeScript, React, Next.js,
-              Node.js, Express, API:er och databaser.
+              Node.js, Express, API:er, databaser och Docker.
             </strong>
 
-            Jag gillar att ta ett problem från idé och krav
-            till struktur, kod, testning och en lösning
-            som går att använda på riktigt.
+            Jag arbetar gärna från ett verkligt problem
+            hela vägen till struktur, kod, data,
+            testning, deployment och en lösning
+            som går att använda i praktiken.
           </p>
 
           <div class="hero-actions">
@@ -1434,7 +1521,7 @@
               class="btn btn-primary"
               href="/projekt.html"
             >
-              Se mina projekt
+              Se min portfolio
             </a>
 
             <a
@@ -1516,7 +1603,7 @@
 
           <span>
             Node.js, Express,
-            REST API och serverlogik.
+            REST API, autentisering och serverlogik.
           </span>
 
         </div>
@@ -1529,7 +1616,7 @@
 
           <span>
             Databaser, Docker,
-            Git, GitHub och deployment.
+            Git, GitHub, CI/CD och deployment.
           </span>
 
         </div>
@@ -1537,12 +1624,12 @@
         <div class="value-card">
 
           <strong>
-            Från idé till produkt
+            Problemlösning
           </strong>
 
           <span>
-            Krav, struktur, implementation,
-            felsökning och vidareutveckling.
+            Krav, systemflöden,
+            felsökning, automation och vidareutveckling.
           </span>
 
         </div>
@@ -1564,13 +1651,15 @@
           </span>
 
           <h2 style="margin-top:16px;">
-            Tekniken jag arbetar med.
+            Från gränssnitt till drift.
           </h2>
 
           <p>
-            Jag arbetar över hela stacken och tycker om
-            att förstå hur gränssnitt, backend,
-            data och infrastruktur hänger ihop.
+            Jag vill förstå hela kedjan:
+            vad användaren behöver,
+            hur systemet ska fungera,
+            hur data ska hanteras
+            och hur lösningen ska komma hela vägen ut i drift.
           </p>
 
         </div>
@@ -1635,7 +1724,7 @@
             <p>
               Backendlogik, API:er,
               autentisering och funktioner
-              som driver applikationen.
+              som driver applikationens flöden.
             </p>
 
             <div class="tech-list">
@@ -1671,13 +1760,13 @@
             </span>
 
             <h3>
-              Databaser
+              Databaser & modeller
             </h3>
 
             <p>
-              Datamodellering och lagring
-              för system där information
-              behöver struktureras och kopplas ihop.
+              Strukturering och lagring av data
+              för system där information,
+              relationer och status behöver hänga ihop.
             </p>
 
             <div class="tech-list">
@@ -1709,13 +1798,13 @@
             </span>
 
             <h3>
-              Drift & utvecklingsflöde
+              Drift & leverans
             </h3>
 
             <p>
               Versionshantering, containers,
-              deployment och tekniska arbetsflöden
-              runt applikationen.
+              deployment och automatiserade
+              utvecklingsflöden runt applikationen.
             </p>
 
             <div class="tech-list">
@@ -1750,6 +1839,95 @@
 
     </section>
 
+    <!-- BREDD -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            Jag bygger vidare
+          </span>
+
+          <h2 style="margin-top:16px;">
+            Jag vill förstå mer än bara min egen kod.
+          </h2>
+
+          <p>
+            Fullstackutveckling har gjort mig allt mer intresserad
+            av vad som händer runt själva applikationen:
+            infrastruktur, nätverk, automation och säkerhet.
+          </p>
+
+        </div>
+
+        <div class="breadth-grid">
+
+          <article class="breadth-card">
+
+            <div class="breadth-icon">
+              01
+            </div>
+
+            <h3>
+              Automation
+            </h3>
+
+            <p>
+              Jag gillar att identifiera manuella steg
+              och fundera på hur kod,
+              skript och tydligare systemflöden
+              kan göra arbetet enklare och säkrare.
+            </p>
+
+          </article>
+
+          <article class="breadth-card">
+
+            <div class="breadth-icon">
+              02
+            </div>
+
+            <h3>
+              Infrastruktur & nätverk
+            </h3>
+
+            <p>
+              Jag utvecklar mina kunskaper inom
+              nätverksarkitektur, redundans,
+              routing, segmentering och hur
+              moderna system kommunicerar.
+            </p>
+
+          </article>
+
+          <article class="breadth-card">
+
+            <div class="breadth-icon">
+              03
+            </div>
+
+            <h3>
+              Säkerhet
+            </h3>
+
+            <p>
+              Jag är särskilt intresserad av
+              säker utveckling, digital säkerhet,
+              åtkomstkontroll, spårbarhet
+              och hur system kan byggas mer robusta.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
     <!-- VAD JAG KAN BYGGA -->
 
     <section class="section">
@@ -1763,13 +1941,14 @@
           </span>
 
           <h2 style="margin-top:16px;">
-            Jag bygger mer än bara en snygg frontend.
+            Jag bygger lösningar, inte bara kod.
           </h2>
 
           <p>
             Jag trivs bäst när jag får förstå
             det faktiska behovet och sedan bygga
-            en lösning som fungerar som en helhet.
+            en lösning där teknik och verksamhet
+            fungerar tillsammans.
           </p>
 
         </div>
@@ -1789,7 +1968,7 @@
             <p>
               Kompletta webbapplikationer med
               responsiv frontend, backend,
-              data och användarflöden.
+              data och tydliga användarflöden.
             </p>
 
           </article>
@@ -1819,13 +1998,14 @@
             </div>
 
             <h3>
-              Automation
+              Digitalisering & automation
             </h3>
 
             <p>
-              Digitalisering av manuella processer,
-              dokumentflöden och arbetsmoment
-              som kan förenklas med kod.
+              Manuella processer och arbetsmoment
+              kan ofta struktureras,
+              förenklas eller automatiseras
+              med rätt digital lösning.
             </p>
 
           </article>
@@ -1836,7 +2016,7 @@
 
     </section>
 
-    <!-- PROJEKT CTA -->
+    <!-- PORTFOLIO -->
 
     <section class="section">
 
@@ -1851,15 +2031,16 @@
             </span>
 
             <h2 style="margin-top:16px;">
-              Se vad jag faktiskt har byggt.
+              Se vad jag faktiskt kan bygga.
             </h2>
 
             <p>
-              På projektsidan finns mina
-              fullstack-, frontend-, backend-
-              och portfolio-case samlade,
-              med liveversioner, teknikstack
-              och länkar till GitHub.
+              Alla mina projekt är samlade på en egen projektsida.
+
+              Där finns fullstack-, frontend-,
+              backend-, nätverks- och tekniska portfolio-case
+              med liveversioner, teknikstack,
+              dokumentation och länkar till GitHub.
             </p>
 
           </div>
@@ -1881,7 +2062,7 @@
 
     </section>
 
-    <!-- HUR JAG ARBETAR -->
+    <!-- ARBETSSÄTT -->
 
     <section class="section">
 
@@ -1894,7 +2075,7 @@
           </span>
 
           <h2 style="margin-top:16px;">
-            Praktiskt, självständigt och lösningsorienterat.
+            Självständigt, nyfiket och lösningsorienterat.
           </h2>
 
         </div>
@@ -1904,13 +2085,13 @@
           <article class="work-card">
 
             <strong>
-              Jag börjar med problemet
+              Jag börjar med varför
             </strong>
 
             <p>
-              Jag försöker förstå behovet
-              innan jag bestämmer hur lösningen
-              ska byggas tekniskt.
+              Jag försöker förstå det verkliga problemet
+              innan jag bestämmer
+              hur lösningen ska byggas tekniskt.
             </p>
 
           </article>
@@ -1918,13 +2099,13 @@
           <article class="work-card">
 
             <strong>
-              Jag bygger hela flödet
+              Jag ser hela flödet
             </strong>
 
             <p>
-              Jag kan arbeta mellan frontend,
-              backend, data och deployment
-              i samma produkt.
+              Jag tycker om att förstå sambandet
+              mellan frontend, backend,
+              data, användaren och infrastrukturen runt omkring.
             </p>
 
           </article>
@@ -1932,13 +2113,16 @@
           <article class="work-card">
 
             <strong>
-              Jag förbättrar vidare
+              Jag fortsätter förbättra
             </strong>
 
             <p>
-              Jag ser en första version
-              som början på processen,
-              inte slutpunkten.
+              Jag ser en första fungerande version
+              som början på processen.
+
+              Sedan går det nästan alltid
+              att förenkla, automatisera
+              eller göra lösningen mer robust.
             </p>
 
           </article>
@@ -1960,21 +2144,22 @@
           <div>
 
             <h2>
-              Söker du en utvecklare som kan se hela bilden?
+              Söker du en utvecklare som vill förstå hela bilden?
             </h2>
 
             <p>
-              Jag är intresserad av roller inom
-              fullstack-, frontend-, backend-
-              och systemutveckling.
+              Jag söker nästa steg inom
+              fullstack-, backend-, frontend-
+              eller systemutveckling och är även
+              intresserad av roller där utveckling möter
+              automation, säkerhet och infrastruktur.
 
               Jag söker framför allt möjligheter
               där jag får bygga praktiskt,
               lösa verkliga problem
               och fortsätta utvecklas.
 
-              Distans och Malmöregionen
-              är särskilt intressant.
+              Distans är särskilt intressant.
             </p>
 
           </div>
@@ -1990,18 +2175,18 @@
 
             <a
               class="btn btn-secondary"
+              href="/projekt.html"
+            >
+              Se portfolio
+            </a>
+
+            <a
+              class="btn btn-secondary"
               href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
               target="_blank"
               rel="noopener noreferrer"
             >
               LinkedIn
-            </a>
-
-            <a
-              class="btn btn-secondary"
-              href="/projekt.html"
-            >
-              Portfolio
             </a>
 
           </div>
@@ -2114,6 +2299,7 @@
         "menu-open",
         open
       );
+
     }
 
     menuButton?.addEventListener(
@@ -2126,13 +2312,16 @@
           ) !== "true";
 
         setMenu(open);
+
       }
     );
 
     menuBackdrop?.addEventListener(
       "click",
       () => {
+
         setMenu(false);
+
       }
     );
 
@@ -2143,7 +2332,9 @@
         link.addEventListener(
           "click",
           () => {
+
             setMenu(false);
+
           }
         );
 
