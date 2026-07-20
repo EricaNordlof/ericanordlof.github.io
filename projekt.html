@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Projekt av Erica Nordlöf, fullstackutvecklare i Malmö. Se fullstack, React, TypeScript, Node.js, REST API, databaser, Docker, blockchain, nätverk, automation och säkerhet."
+    content="Projekt av Erica Nordlöf, fullstackutvecklare i Malmö. Se fullstack, React, TypeScript, Node.js, REST API, AI, RAG, Python, Docker, blockchain, nätverk, automation och säkerhet."
   />
 
   <meta
@@ -34,7 +34,7 @@
 
   <meta
     property="og:description"
-    content="Fullstackprojekt och tekniska case inom React, TypeScript, Node.js, API, databaser, automation, Docker, blockchain, nätverk och säkerhet."
+    content="Fullstackprojekt och tekniska case inom React, TypeScript, Node.js, API, AI, RAG, Python, automation, Docker, blockchain, nätverk och säkerhet."
   />
 
   <meta
@@ -127,6 +127,14 @@
         "url":"https://offroad-bumpis-booking.onrender.com/",
         "codeRepository":"https://github.com/EricaNordlof/offroad-bumpis-booking",
         "description":"Boknings- och administrationssystem med affärsregler, lagerlogik, automatiserade kundflöden och dokumentation."
+      },
+      {
+        "@type":"SoftwareApplication",
+        "name":"EnableFlow AI",
+        "applicationCategory":"DeveloperApplication",
+        "url":"https://enableflow-ai.onrender.com/",
+        "codeRepository":"https://github.com/EricaNordlof/enableflow-ai",
+        "description":"Självständigt AI Enablement-portfolio-projekt med Python, FastAPI, RAG, återanvändbara AI-workflows, modellabstraktion, Ollama, Qdrant-koncept och Docker."
       },
       {
         "@type":"SoftwareApplication",
@@ -1420,8 +1428,7 @@
 
       background:#fff;
 
-      border:
-        1px solid var(--line);
+      border:1px solid var(--line);
 
       box-shadow:var(--shadow);
     }
@@ -1946,7 +1953,7 @@
           Här visar jag hur jag arbetar från
           <strong>problem och krav</strong>
           till struktur, frontend, backend, data,
-          automation, infrastruktur och fungerande lösning.
+          AI, automation, infrastruktur och fungerande lösning.
 
           Projekten visar både system byggda för verkliga verksamhetsbehov
           och självständiga tekniska labb där jag utvecklar min kompetens
@@ -1967,6 +1974,13 @@
             href="#offroad"
           >
             Offroad Bumpis
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="#enableflow"
+          >
+            EnableFlow AI
           </a>
 
           <a
@@ -2015,11 +2029,15 @@
           </span>
 
           <span class="summary-chip">
+            Python & FastAPI
+          </span>
+
+          <span class="summary-chip">
             REST API
           </span>
 
           <span class="summary-chip">
-            Databaser & JWT
+            AI & RAG
           </span>
 
           <span class="summary-chip">
@@ -2083,85 +2101,30 @@
 
               <ul class="feature-list">
 
-                <li>
-                  Fastighetsregister
-                </li>
-
-                <li>
-                  Hyresgästhantering
-                </li>
-
-                <li>
-                  Felanmälningar
-                </li>
-
-                <li>
-                  Arbetsorder
-                </li>
-
-                <li>
-                  Relationsdata
-                </li>
-
-                <li>
-                  JWT-autentisering
-                </li>
-
-                <li>
-                  Rollstyrda funktioner
-                </li>
-
-                <li>
-                  Bilduppladdning
-                </li>
-
-                <li>
-                  REST API
-                </li>
-
-                <li>
-                  Live deployment
-                </li>
+                <li>Fastighetsregister</li>
+                <li>Hyresgästhantering</li>
+                <li>Felanmälningar</li>
+                <li>Arbetsorder</li>
+                <li>Relationsdata</li>
+                <li>JWT-autentisering</li>
+                <li>Rollstyrda funktioner</li>
+                <li>Bilduppladdning</li>
+                <li>REST API</li>
+                <li>Live deployment</li>
 
               </ul>
 
               <div class="tech-row">
 
-                <span class="tech-badge">
-                  React
-                </span>
-
-                <span class="tech-badge">
-                  TypeScript
-                </span>
-
-                <span class="tech-badge">
-                  Node.js
-                </span>
-
-                <span class="tech-badge">
-                  Express
-                </span>
-
-                <span class="tech-badge">
-                  REST API
-                </span>
-
-                <span class="tech-badge">
-                  SQLite
-                </span>
-
-                <span class="tech-badge">
-                  JWT
-                </span>
-
-                <span class="tech-badge">
-                  Docker
-                </span>
-
-                <span class="tech-badge">
-                  Render
-                </span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">REST API</span>
+                <span class="tech-badge">SQLite</span>
+                <span class="tech-badge">JWT</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Render</span>
 
               </div>
 
@@ -2433,37 +2396,14 @@
 
             <div class="tech-row">
 
-              <span class="tech-badge">
-                Node.js
-              </span>
-
-              <span class="tech-badge">
-                Express
-              </span>
-
-              <span class="tech-badge">
-                JavaScript
-              </span>
-
-              <span class="tech-badge">
-                Databas
-              </span>
-
-              <span class="tech-badge">
-                Affärslogik
-              </span>
-
-              <span class="tech-badge">
-                Automation
-              </span>
-
-              <span class="tech-badge">
-                Dokumentflöden
-              </span>
-
-              <span class="tech-badge">
-                Render
-              </span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Express</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Databas</span>
+              <span class="tech-badge">Affärslogik</span>
+              <span class="tech-badge">Automation</span>
+              <span class="tech-badge">Dokumentflöden</span>
+              <span class="tech-badge">Render</span>
 
             </div>
 
@@ -2518,8 +2458,8 @@
 
           <p>
             Här utvecklar jag min bredd inom
-            nätverk, infrastruktur, blockchain,
-            frontend, backend och säkerhet.
+            AI, automation, nätverk, infrastruktur,
+            blockchain, frontend, backend och säkerhet.
 
             Projekten är byggda för att göra kunskapen konkret:
             något som går att öppna, testa, läsa och granska.
@@ -2528,6 +2468,134 @@
         </div>
 
         <div class="case-grid">
+
+          <!-- ENABLEFLOW AI -->
+
+          <article
+            class="case"
+            id="enableflow"
+          >
+
+            <div class="case-header">
+
+              <span class="case-type">
+                AI Enablement · RAG · Automation
+              </span>
+
+              <h3>
+                EnableFlow AI
+              </h3>
+
+              <p>
+                Ett självständigt AI-portfolio-projekt
+                som visar hur AI kan användas praktiskt
+                över flera delar av en organisation.
+              </p>
+
+            </div>
+
+            <div class="case-story">
+
+              <div class="case-block">
+
+                <h4>
+                  AI där det skapar värde
+                </h4>
+
+                <p>
+                  Projektet skiljer mellan vanlig
+                  deterministisk automation och AI-baserade flöden
+                  så att en språkmodell inte används
+                  där vanlig kod är säkrare och mer exakt.
+                </p>
+
+              </div>
+
+              <div class="case-block">
+
+                <h4>
+                  RAG & intern kunskap
+                </h4>
+
+                <p>
+                  En intern kunskapsassistent hämtar
+                  relevant information från dokument
+                  innan modellen skapar sitt svar.
+                </p>
+
+              </div>
+
+              <div class="case-block">
+
+                <h4>
+                  Modellabstraktion
+                </h4>
+
+                <p>
+                  Arkitekturen stödjer både
+                  kommersiella AI-API:er och lokala
+                  open-source-modeller via Ollama,
+                  exempelvis Llama och Qwen.
+                </p>
+
+              </div>
+
+              <div class="case-block">
+
+                <h4>
+                  Fokus
+                </h4>
+
+                <p>
+                  Praktisk AI-adoption, återanvändbara prompts,
+                  workflows, säkerhet, mänsklig granskning
+                  och self-hosted AI-koncept.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="case-footer">
+
+              <div class="tech-row">
+
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">RAG</span>
+                <span class="tech-badge">REST API</span>
+                <span class="tech-badge">Qdrant</span>
+                <span class="tech-badge">Ollama</span>
+                <span class="tech-badge">Llama / Qwen</span>
+                <span class="tech-badge">Docker</span>
+
+              </div>
+
+              <div class="actions">
+
+                <a
+                  class="btn btn-primary"
+                  href="https://enableflow-ai.onrender.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Öppna live-demo
+                </a>
+
+                <a
+                  class="btn btn-secondary"
+                  href="https://github.com/EricaNordlof/enableflow-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
 
           <!-- RESILIENTCORE -->
 
@@ -2716,49 +2784,17 @@
 
               <div class="tech-row">
 
-                <span class="tech-badge">
-                  IS-IS
-                </span>
-
-                <span class="tech-badge">
-                  SR-MPLS
-                </span>
-
-                <span class="tech-badge">
-                  MPLS
-                </span>
-
-                <span class="tech-badge">
-                  MP-BGP
-                </span>
-
-                <span class="tech-badge">
-                  L3VPN
-                </span>
-
-                <span class="tech-badge">
-                  VRF
-                </span>
-
-                <span class="tech-badge">
-                  EVPN
-                </span>
-
-                <span class="tech-badge">
-                  Ansible
-                </span>
-
-                <span class="tech-badge">
-                  Python
-                </span>
-
-                <span class="tech-badge">
-                  Containerlab
-                </span>
-
-                <span class="tech-badge">
-                  FRRouting
-                </span>
+                <span class="tech-badge">IS-IS</span>
+                <span class="tech-badge">SR-MPLS</span>
+                <span class="tech-badge">MPLS</span>
+                <span class="tech-badge">MP-BGP</span>
+                <span class="tech-badge">L3VPN</span>
+                <span class="tech-badge">VRF</span>
+                <span class="tech-badge">EVPN</span>
+                <span class="tech-badge">Ansible</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Containerlab</span>
+                <span class="tech-badge">FRRouting</span>
 
               </div>
 
@@ -2881,37 +2917,14 @@
 
               <div class="tech-row">
 
-                <span class="tech-badge">
-                  Next.js
-                </span>
-
-                <span class="tech-badge">
-                  TypeScript
-                </span>
-
-                <span class="tech-badge">
-                  Solidity
-                </span>
-
-                <span class="tech-badge">
-                  ethers.js
-                </span>
-
-                <span class="tech-badge">
-                  Hardhat
-                </span>
-
-                <span class="tech-badge">
-                  SHA-256
-                </span>
-
-                <span class="tech-badge">
-                  Docker
-                </span>
-
-                <span class="tech-badge">
-                  Render
-                </span>
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Solidity</span>
+                <span class="tech-badge">ethers.js</span>
+                <span class="tech-badge">Hardhat</span>
+                <span class="tech-badge">SHA-256</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Render</span>
 
               </div>
 
@@ -3030,29 +3043,12 @@
 
               <div class="tech-row">
 
-                <span class="tech-badge">
-                  React
-                </span>
-
-                <span class="tech-badge">
-                  TypeScript
-                </span>
-
-                <span class="tech-badge">
-                  Vite
-                </span>
-
-                <span class="tech-badge">
-                  Workflow
-                </span>
-
-                <span class="tech-badge">
-                  PDF
-                </span>
-
-                <span class="tech-badge">
-                  Produktutveckling
-                </span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Vite</span>
+                <span class="tech-badge">Workflow</span>
+                <span class="tech-badge">PDF</span>
+                <span class="tech-badge">Produktutveckling</span>
 
               </div>
 
@@ -3176,25 +3172,11 @@
 
               <div class="tech-row">
 
-                <span class="tech-badge">
-                  HTML
-                </span>
-
-                <span class="tech-badge">
-                  CSS
-                </span>
-
-                <span class="tech-badge">
-                  JavaScript
-                </span>
-
-                <span class="tech-badge">
-                  Responsive
-                </span>
-
-                <span class="tech-badge">
-                  Accessibility
-                </span>
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Responsive</span>
+                <span class="tech-badge">Accessibility</span>
 
               </div>
 
@@ -3284,25 +3266,11 @@
 
               <div class="tech-row">
 
-                <span class="tech-badge">
-                  Java
-                </span>
-
-                <span class="tech-badge">
-                  Spring Boot
-                </span>
-
-                <span class="tech-badge">
-                  PostgreSQL
-                </span>
-
-                <span class="tech-badge">
-                  Swagger
-                </span>
-
-                <span class="tech-badge">
-                  Docker
-                </span>
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Swagger</span>
+                <span class="tech-badge">Docker</span>
 
               </div>
 
@@ -3475,6 +3443,28 @@
           <article class="proof-card">
 
             <strong>
+              EnableFlow AI
+            </strong>
+
+            <p>
+              AI Enablement-case med Python,
+              FastAPI, RAG, AI-workflows,
+              modellabstraktion och self-hosted AI-koncept.
+            </p>
+
+            <a
+              href="https://enableflow-ai.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Öppna EnableFlow AI →
+            </a>
+
+          </article>
+
+          <article class="proof-card">
+
+            <strong>
               ResilientCore Lab
             </strong>
 
@@ -3589,7 +3579,7 @@
               fullstack-, frontend-, backend-
               och systemutveckling
               och utvecklar även min kompetens
-              inom automation,
+              inom AI, automation,
               nätverk, infrastruktur och säkerhet.
 
               Jag söker möjligheter där jag får
@@ -3679,6 +3669,14 @@
 
         <a href="/om-mig.html">
           Om mig
+        </a>
+
+        <a
+          href="https://enableflow-ai.onrender.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          EnableFlow AI
         </a>
 
         <a
