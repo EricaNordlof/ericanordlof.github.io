@@ -2,13 +2,16 @@
 <html lang="sv-SE">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
 
-  <title>Erica Nordlöf | Fullstackutvecklare</title>
+  <title>Erica Nordlöf | Fullstackutvecklare i Malmö</title>
 
   <meta
     name="description"
-    content="Portfolio för Erica Nordlöf, fullstackutvecklare i Malmö. Projekt inom JavaScript, TypeScript, Node.js, React, API:er, databaser, Docker, automation och webbutveckling."
+    content="Erica Nordlöf är fullstackutvecklare i Malmö med kompetens inom JavaScript, TypeScript, React, Next.js, Node.js, Express, API:er, databaser, Docker och automation. Se portfolio och projekt."
   />
 
   <meta
@@ -19,33 +22,72 @@
   <meta name="author" content="Erica Nordlöf" />
   <meta name="theme-color" content="#f7f0ec" />
 
-  <link rel="canonical" href="https://webutvecklare.se/" />
+  <link
+    rel="canonical"
+    href="https://webutvecklare.se/"
+  />
 
-  <meta property="og:title" content="Erica Nordlöf | Fullstackutvecklare" />
+  <meta
+    property="og:title"
+    content="Erica Nordlöf | Fullstackutvecklare"
+  />
 
   <meta
     property="og:description"
-    content="Fullstackutvecklare med praktisk erfarenhet av produktionssystem, automation, webbapplikationer, API:er, databaser och deployment."
+    content="Fullstackutvecklare med kompetens inom frontend, backend, API:er, databaser, automation och deployment."
   />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://webutvecklare.se/" />
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:url"
+    content="https://webutvecklare.se/"
+  />
 
   <meta
     property="og:image"
     content="https://webutvecklare.se/erica-nordlof-linkedin.JPG"
   />
 
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
 
-  <link rel="icon" type="image/png" href="favicon-nordlof.png?v=3" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3" />
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon-nordlof.png?v=3"
+  />
 
-  <link rel="me" href="https://www.linkedin.com/in/erica-nordl%C3%B6f/" />
-  <link rel="me" href="https://github.com/EricaNordlof" />
+  <link
+    rel="apple-touch-icon"
+    href="apple-touch-icon.png?v=3"
+  />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="me"
+    href="https://github.com/EricaNordlof"
+  />
+
+  <link
+    rel="me"
+    href="https://www.linkedin.com/in/erica-nordl%C3%B6f/"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
@@ -54,17 +96,22 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Erica Nordlöf",
-    "url": "https://webutvecklare.se/",
-    "image": "https://webutvecklare.se/erica-nordlof-linkedin.JPG",
-    "jobTitle": "Fullstackutvecklare",
-    "sameAs": [
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Erica Nordlöf",
+    "url":"https://webutvecklare.se/",
+    "image":"https://webutvecklare.se/erica-nordlof-linkedin.JPG",
+    "jobTitle":"Fullstackutvecklare",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Malmö",
+      "addressCountry":"SE"
+    },
+    "sameAs":[
       "https://github.com/EricaNordlof",
       "https://www.linkedin.com/in/erica-nordl%C3%B6f/"
     ],
-    "knowsAbout": [
+    "knowsAbout":[
       "JavaScript",
       "TypeScript",
       "React",
@@ -78,6 +125,8 @@
       "Docker",
       "Git",
       "GitHub",
+      "HTML",
+      "CSS",
       "Systemdesign",
       "Automation",
       "Databaser",
@@ -87,6 +136,7 @@
   </script>
 
   <style>
+
     :root{
       --bg:#f7eee9;
       --card:#fffdfc;
@@ -99,8 +149,11 @@
       --brand-dark:#9a5855;
       --brand-soft:#f4d8d5;
 
-      --shadow:0 18px 50px rgba(154,88,85,.12);
-      --shadow-strong:0 28px 75px rgba(154,88,85,.20);
+      --shadow:
+        0 18px 50px rgba(154,88,85,.12);
+
+      --shadow-strong:
+        0 28px 75px rgba(154,88,85,.20);
 
       --radius:24px;
       --max:1120px;
@@ -108,6 +161,7 @@
 
     *{
       box-sizing:border-box;
+      min-width:0;
     }
 
     html{
@@ -169,14 +223,17 @@
       scroll-margin-top:90px;
     }
 
-    a:focus-visible,
-    button:focus-visible{
+    :focus-visible{
       outline:3px solid #111;
       outline-offset:4px;
     }
 
     .container{
-      width:min(var(--max),calc(100% - 28px));
+      width:min(
+        var(--max),
+        calc(100% - 28px)
+      );
+
       margin:auto;
     }
 
@@ -185,14 +242,17 @@
     .topbar{
       position:sticky;
       top:0;
+
       z-index:100;
 
-      background:rgba(255,248,245,.94);
+      background:
+        rgba(255,248,245,.94);
 
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
 
-      border-bottom:1px solid var(--line);
+      border-bottom:
+        1px solid var(--line);
     }
 
     .nav{
@@ -203,16 +263,17 @@
       justify-content:space-between;
 
       gap:16px;
+
       padding:10px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
+
       gap:12px;
 
       font-weight:900;
-      min-width:0;
     }
 
     .brand img{
@@ -231,15 +292,12 @@
         0 10px 24px rgba(36,30,26,.10);
     }
 
-    .brand-text{
-      min-width:0;
-    }
-
     .brand strong{
       display:block;
 
       font-size:17px;
       line-height:1.05;
+
       letter-spacing:-.03em;
     }
 
@@ -277,11 +335,13 @@
 
     .menu-backdrop{
       position:fixed;
+
       inset:0;
 
       z-index:90;
 
-      background:rgba(20,16,14,.38);
+      background:
+        rgba(20,16,14,.38);
 
       backdrop-filter:blur(3px);
       -webkit-backdrop-filter:blur(3px);
@@ -295,13 +355,18 @@
 
       z-index:110;
 
-      width:min(380px,calc(100vw - 28px));
+      width:min(
+        380px,
+        calc(100vw - 28px)
+      );
 
       padding:14px;
 
       background:#fffaf8;
 
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
+
       border-radius:24px;
 
       box-shadow:
@@ -315,6 +380,7 @@
 
     .menu-links a{
       display:flex;
+
       align-items:center;
       justify-content:space-between;
 
@@ -326,7 +392,8 @@
 
       background:#fff;
 
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
 
       font-weight:900;
     }
@@ -360,16 +427,24 @@
 
     h1,
     h2{
-      font-family:"Playfair Display",serif;
+      font-family:
+        "Playfair Display",
+        serif;
+
       letter-spacing:-.045em;
     }
 
     h1{
       margin:18px 0;
 
-      max-width:820px;
+      max-width:850px;
 
-      font-size:clamp(3rem,6.5vw,5.6rem);
+      font-size:
+        clamp(
+          3rem,
+          6.5vw,
+          5.6rem
+        );
 
       line-height:.95;
     }
@@ -377,7 +452,12 @@
     h2{
       margin:0 0 12px;
 
-      font-size:clamp(2.1rem,5vw,3.3rem);
+      font-size:
+        clamp(
+          2.1rem,
+          5vw,
+          3.3rem
+        );
 
       line-height:1;
     }
@@ -385,15 +465,37 @@
     h3{
       margin:0 0 10px;
 
-      font-size:23px;
+      font-size:21px;
 
       letter-spacing:-.03em;
 
-      line-height:1.15;
+      line-height:1.2;
     }
 
     p{
       margin:0;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+
+      padding:9px 13px;
+
+      border-radius:999px;
+
+      background:#fff;
+
+      border:
+        1px solid var(--line);
+
+      color:var(--brand-dark);
+
+      font-size:13px;
+      font-weight:900;
+
+      box-shadow:
+        0 9px 26px rgba(36,30,26,.04);
     }
 
     /* HERO */
@@ -402,7 +504,7 @@
       padding:
         clamp(44px,7vw,84px)
         0
-        42px;
+        54px;
     }
 
     .hero-grid{
@@ -417,29 +519,8 @@
       align-items:center;
     }
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-
-      padding:9px 13px;
-
-      border-radius:999px;
-
-      background:#fff;
-
-      border:1px solid var(--line);
-
-      color:var(--brand-dark);
-
-      font-size:13px;
-      font-weight:900;
-
-      box-shadow:
-        0 9px 26px rgba(36,30,26,.04);
-    }
-
     .lead{
-      max-width:770px;
+      max-width:780px;
 
       color:var(--muted);
 
@@ -461,10 +542,11 @@
       margin-top:26px;
     }
 
-    /* KNAPPAR */
+    /* BUTTON */
 
     .btn{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
 
@@ -474,11 +556,12 @@
 
       border-radius:999px;
 
-      border:1px solid transparent;
+      border:
+        1px solid transparent;
 
       font-weight:900;
 
-      line-height:1.15;
+      text-align:center;
 
       transition:
         transform .15s ease,
@@ -490,6 +573,8 @@
     }
 
     .btn-primary{
+      color:#fff;
+
       background:
         linear-gradient(
           135deg,
@@ -497,16 +582,14 @@
           var(--brand)
         );
 
-      color:#fff;
-
       box-shadow:
         0 16px 34px rgba(154,88,85,.24);
     }
 
     .btn-secondary{
-      background:#fff;
-
       color:var(--text);
+
+      background:#fff;
 
       border-color:var(--line);
 
@@ -514,22 +597,19 @@
         0 9px 24px rgba(36,30,26,.04);
     }
 
-    /* PORTRÄTT */
+    /* PHOTO */
 
     .hero-photo{
-      width:230px !important;
-      max-width:230px !important;
-      height:auto !important;
+      width:230px;
 
       justify-self:end;
 
       padding:8px;
 
-      overflow:hidden;
-
       background:#fff;
 
-      border:1px solid rgba(154,88,85,.11);
+      border:
+        1px solid rgba(154,88,85,.11);
 
       border-radius:28px;
 
@@ -537,21 +617,11 @@
     }
 
     .hero-photo img{
-      display:block;
+      width:212px;
+      height:212px;
 
-      width:212px !important;
-      height:212px !important;
-
-      min-width:212px !important;
-      max-width:212px !important;
-
-      min-height:212px !important;
-      max-height:212px !important;
-
-      aspect-ratio:1 / 1 !important;
-
-      object-fit:cover !important;
-      object-position:center 26% !important;
+      object-fit:cover;
+      object-position:center 26%;
 
       border-radius:21px;
     }
@@ -576,16 +646,15 @@
       color:var(--muted);
 
       font-size:11px;
-      line-height:1.4;
     }
 
-    /* QUICK PROOF */
+    /* VALUE BAR */
 
-    .proof{
-      padding:0 0 22px;
+    .value-section{
+      padding:0 0 36px;
     }
 
-    .proof-grid{
+    .value-grid{
       display:grid;
 
       grid-template-columns:
@@ -594,49 +663,47 @@
       gap:12px;
     }
 
-    .proof-item{
-      padding:16px;
+    .value-card{
+      padding:18px;
 
-      background:rgba(255,255,255,.78);
+      background:
+        rgba(255,255,255,.82);
 
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
 
-      border-radius:18px;
+      border-radius:19px;
 
       box-shadow:
         0 12px 34px rgba(154,88,85,.08);
     }
 
-    .proof-item strong{
+    .value-card strong{
       display:block;
 
-      margin-bottom:4px;
-
-      color:var(--text);
+      margin-bottom:6px;
 
       font-size:16px;
-
-      letter-spacing:-.02em;
     }
 
-    .proof-item span{
+    .value-card span{
       color:var(--muted);
 
       font-size:13px;
 
-      line-height:1.45;
+      line-height:1.55;
     }
 
-    /* SECTIONS */
+    /* SECTION */
 
     .section{
-      padding:52px 0;
+      padding:54px 0;
     }
 
     .section-head{
-      max-width:820px;
+      max-width:850px;
 
-      margin-bottom:24px;
+      margin-bottom:26px;
     }
 
     .section-head p{
@@ -647,165 +714,108 @@
       line-height:1.72;
     }
 
-    /* PROJECT GRID */
+    /* STACK */
 
-    .grid{
+    .stack-grid{
       display:grid;
 
       grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(4,minmax(0,1fr));
 
-      gap:18px;
+      gap:14px;
     }
 
-    .card{
-      display:flex;
-      flex-direction:column;
-
-      min-height:100%;
-
-      padding:26px;
+    .stack-card{
+      padding:22px;
 
       background:var(--card);
 
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
 
-      border-radius:var(--radius);
+      border-radius:22px;
 
       box-shadow:var(--shadow);
     }
 
-    .card.featured{
-      color:#fff;
+    .stack-number{
+      display:inline-flex;
 
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(255,255,255,.18),
-          transparent 32%
-        ),
-        linear-gradient(
-          145deg,
-          #9a5855 0%,
-          #c66f6b 52%,
-          #e09a92 100%
-        );
+      margin-bottom:18px;
 
-      border-color:rgba(255,255,255,.18);
+      color:var(--brand-dark);
 
-      box-shadow:var(--shadow-strong);
+      font-size:12px;
+      font-weight:900;
     }
 
-    .card p{
+    .stack-card p{
       color:var(--muted);
 
-      line-height:1.72;
+      font-size:14px;
+
+      line-height:1.65;
     }
 
-    .card.featured h3,
-    .card.featured p{
-      color:#fff;
-    }
-
-    .tag{
-      align-self:flex-start;
-
-      display:inline-flex;
-      align-items:center;
-
-      margin-bottom:14px;
-
-      padding:7px 10px;
-
-      border-radius:999px;
-
-      background:var(--brand-soft);
-
-      color:#8f514e;
-
-      font-size:11px;
-      font-weight:900;
-
-      text-transform:uppercase;
-
-      letter-spacing:.04em;
-    }
-
-    .featured .tag{
-      color:#fff;
-
-      background:rgba(255,255,255,.18);
-
-      border:1px solid rgba(255,255,255,.20);
-    }
-
-    .tech{
+    .tech-list{
       display:flex;
       flex-wrap:wrap;
 
       gap:7px;
 
-      margin-top:18px;
+      margin-top:16px;
     }
 
-    .chip{
+    .tech-chip{
       display:inline-flex;
-      align-items:center;
 
-      padding:7px 10px;
+      padding:7px 9px;
 
       border-radius:999px;
 
-      background:#f7eee9;
+      background:var(--brand-soft);
 
-      color:#514743;
+      color:#744a47;
 
-      font-size:12px;
-
-      font-weight:800;
-    }
-
-    .featured .chip{
-      color:#fff;
-
-      background:rgba(255,255,255,.17);
-
-      border:1px solid rgba(255,255,255,.17);
-    }
-
-    .project-links{
-      display:flex;
-      flex-wrap:wrap;
-
-      gap:10px;
-
-      margin-top:auto;
-
-      padding-top:20px;
-    }
-
-    .project-links a{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-
-      min-height:40px;
-
-      padding:9px 13px;
-
-      border-radius:999px;
-
-      background:#fff;
-
-      color:var(--text);
-
-      border:1px solid var(--line);
-
-      font-size:13px;
+      font-size:11px;
       font-weight:900;
     }
 
-    .project-links a.primary-link{
+    /* WHAT I BUILD */
+
+    .services{
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap:16px;
+    }
+
+    .service{
+      padding:25px;
+
+      background:#fff;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:24px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .service-icon{
+      width:42px;
+      height:42px;
+
+      display:grid;
+      place-items:center;
+
+      margin-bottom:18px;
+
+      border-radius:13px;
+
       color:#fff;
 
       background:
@@ -815,52 +825,110 @@
           var(--brand)
         );
 
-      border-color:transparent;
+      font-weight:900;
     }
 
-    .featured .project-links a{
-      color:var(--text);
-
-      background:#fff;
-    }
-
-    /* SKILLS */
-
-    .skills{
-      display:grid;
-
-      grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
-      gap:12px;
-    }
-
-    .skill-box{
-      padding:19px;
-
-      background:#fff;
-
-      border:1px solid var(--line);
-
-      border-radius:19px;
-
-      box-shadow:var(--shadow);
-    }
-
-    .skill-box strong{
-      display:block;
-
-      margin-bottom:7px;
-
-      font-size:16px;
-    }
-
-    .skill-box span{
+    .service p{
       color:var(--muted);
 
       font-size:14px;
 
-      line-height:1.6;
+      line-height:1.68;
+    }
+
+    /* PORTFOLIO CTA */
+
+    .portfolio-panel{
+      display:grid;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        auto;
+
+      gap:30px;
+
+      align-items:center;
+
+      padding:
+        clamp(26px,5vw,44px);
+
+      color:#fff;
+
+      border-radius:32px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255,255,255,.20),
+          transparent 34%
+        ),
+        linear-gradient(
+          145deg,
+          #9a5855 0%,
+          #d77f7a 56%,
+          #e9a69d 100%
+        );
+
+      box-shadow:var(--shadow-strong);
+    }
+
+    .portfolio-panel h2{
+      color:#fff;
+    }
+
+    .portfolio-panel p{
+      max-width:720px;
+
+      color:
+        rgba(255,255,255,.92);
+
+      line-height:1.72;
+    }
+
+    .portfolio-panel .btn{
+      white-space:nowrap;
+
+      background:#fff;
+
+      color:var(--text);
+    }
+
+    /* WORKSTYLE */
+
+    .work-grid{
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+      gap:14px;
+    }
+
+    .work-card{
+      padding:22px;
+
+      background:#fff;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:21px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .work-card strong{
+      display:block;
+
+      margin-bottom:8px;
+    }
+
+    .work-card p{
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.65;
     }
 
     /* CTA */
@@ -881,21 +949,16 @@
       color:#fff;
 
       background:
-        radial-gradient(
-          circle at top right,
-          rgba(255,255,255,.20),
-          transparent 34%
-        ),
         linear-gradient(
           145deg,
-          #9a5855 0%,
-          #d77f7a 56%,
-          #e9a69d 100%
+          #171412,
+          #2d2522
         );
 
       border-radius:32px;
 
-      box-shadow:var(--shadow-strong);
+      box-shadow:
+        0 28px 70px rgba(30,22,19,.20);
     }
 
     .cta h2{
@@ -903,9 +966,10 @@
     }
 
     .cta p{
-      max-width:690px;
+      max-width:700px;
 
-      color:rgba(255,255,255,.92);
+      color:
+        rgba(255,255,255,.78);
 
       line-height:1.72;
     }
@@ -916,14 +980,16 @@
       gap:10px;
     }
 
-    .cta .btn-secondary{
+    .cta .btn{
       width:100%;
+    }
 
+    .cta .btn-primary{
+      box-shadow:none;
+    }
+
+    .cta .btn-secondary{
       background:#fff;
-
-      color:var(--text);
-
-      border-color:rgba(255,255,255,.65);
     }
 
     /* FOOTER */
@@ -938,6 +1004,7 @@
 
     .footer{
       display:flex;
+
       justify-content:space-between;
       align-items:flex-start;
 
@@ -945,12 +1012,11 @@
 
       padding-top:22px;
 
-      border-top:1px solid var(--line);
+      border-top:
+        1px solid var(--line);
     }
 
     .footer-copy{
-      max-width:480px;
-
       line-height:1.65;
     }
 
@@ -971,6 +1037,12 @@
       text-underline-offset:3px;
     }
 
+    .footer-links a[aria-current="page"]{
+      color:var(--brand-dark);
+
+      text-decoration-thickness:2px;
+    }
+
     /* TABLET */
 
     @media(max-width:900px){
@@ -984,35 +1056,32 @@
       }
 
       .hero-photo{
-        width:190px !important;
-        max-width:190px !important;
-
-        padding:7px;
+        width:190px;
       }
 
       .hero-photo img{
-        width:174px !important;
-        height:174px !important;
-
-        min-width:174px !important;
-        max-width:174px !important;
-
-        min-height:174px !important;
-        max-height:174px !important;
+        width:172px;
+        height:172px;
       }
 
-      .proof-grid{
+      .value-grid,
+      .stack-grid{
         grid-template-columns:
           repeat(2,minmax(0,1fr));
       }
 
-      .skills{
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
+      .services,
+      .work-grid{
+        grid-template-columns:1fr;
       }
 
+      .portfolio-panel,
       .cta{
         grid-template-columns:1fr;
+      }
+
+      .portfolio-panel .btn{
+        width:100%;
       }
 
       .cta-actions{
@@ -1021,7 +1090,7 @@
       }
     }
 
-    /* MOBIL */
+    /* MOBILE */
 
     @media(max-width:700px){
 
@@ -1065,7 +1134,7 @@
       }
 
       .hero{
-        padding:34px 0 28px;
+        padding:34px 0 34px;
       }
 
       .hero-grid{
@@ -1085,11 +1154,7 @@
       .hero-photo{
         order:2;
 
-        width:150px !important;
-        height:auto !important;
-
-        min-width:150px !important;
-        max-width:150px !important;
+        width:150px;
 
         margin:0 auto;
 
@@ -1099,19 +1164,8 @@
       }
 
       .hero-photo img{
-        width:138px !important;
-        height:138px !important;
-
-        min-width:138px !important;
-        max-width:138px !important;
-
-        min-height:138px !important;
-        max-height:138px !important;
-
-        aspect-ratio:1 / 1 !important;
-
-        object-fit:cover !important;
-        object-position:center 26% !important;
+        width:136px;
+        height:136px;
 
         border-radius:19px;
       }
@@ -1162,30 +1216,23 @@
         width:100%;
       }
 
-      .proof-grid,
-      .grid,
-      .skills{
+      .value-grid,
+      .stack-grid{
         grid-template-columns:1fr;
       }
 
-      .proof-item{
-        padding:15px;
-      }
-
       .section{
-        padding:38px 0;
+        padding:40px 0;
       }
 
       .section-head p{
         font-size:15.5px;
-
-        line-height:1.66;
       }
 
-      .card{
-        padding:21px;
+      .portfolio-panel{
+        padding:24px;
 
-        border-radius:21px;
+        border-radius:25px;
       }
 
       .cta{
@@ -1246,10 +1293,13 @@
         transform:none;
       }
     }
+
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
 
   <header class="topbar">
 
@@ -1268,7 +1318,7 @@
           height="92"
         />
 
-        <span class="brand-text">
+        <span>
 
           <strong>
             Erica Nordlöf
@@ -1327,14 +1377,6 @@
       </a>
 
       <a
-        href="https://fastighetsnavet-1.onrender.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Fastighetsnavet
-      </a>
-
-      <a
         href="https://github.com/EricaNordlof"
         target="_blank"
         rel="noopener noreferrer"
@@ -1369,23 +1411,28 @@
           </span>
 
           <h1>
-            Jag bygger digitala lösningar från idé till fungerande produkt.
+            Jag bygger hela vägen från frontend till backend.
           </h1>
 
           <p class="lead">
-            Jag är <strong>Erica Nordlöf</strong>,
-            fullstackutvecklare med praktisk erfarenhet av att bygga
-            produktionssystem, webbapplikationer, API:er, databaser
-            och automatiserade arbetsflöden.
-            Jag gillar att förstå hela problemet och omsätta det till
-            en lösning som faktiskt fungerar i verkligheten.
+            Jag är
+            <strong>Erica Nordlöf</strong>,
+            fullstackutvecklare med kompetens inom
+            <strong>
+              JavaScript, TypeScript, React, Next.js,
+              Node.js, Express, API:er och databaser.
+            </strong>
+
+            Jag gillar att ta ett problem från idé och krav
+            till struktur, kod, testning och en lösning
+            som går att använda på riktigt.
           </p>
 
           <div class="hero-actions">
 
             <a
               class="btn btn-primary"
-              href="#projekt"
+              href="/projekt.html"
             >
               Se mina projekt
             </a>
@@ -1394,16 +1441,14 @@
               class="btn btn-secondary"
               href="/om-mig.html"
             >
-              Om mig
+              Lär känna mig
             </a>
 
             <a
               class="btn btn-secondary"
-              href="https://github.com/EricaNordlof"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:nordloferica@gmail.com"
             >
-              GitHub
+              Kontakta mig
             </a>
 
           </div>
@@ -1417,7 +1462,7 @@
 
           <img
             src="erica-nordlof-linkedin.JPG"
-            alt="Erica Nordlöf, fullstackutvecklare"
+            alt="Erica Nordlöf, fullstackutvecklare i Malmö"
             width="900"
             height="1125"
             fetchpriority="high"
@@ -1441,59 +1486,63 @@
 
     </section>
 
-    <!-- SNABB PROOF -->
+    <!-- KORT SAMMANFATTNING -->
 
     <section
-      class="proof"
-      aria-label="Kort om min erfarenhet"
+      class="value-section"
+      aria-label="Min kompetens i korthet"
     >
 
-      <div class="container proof-grid">
+      <div class="container value-grid">
 
-        <div class="proof-item">
+        <div class="value-card">
 
           <strong>
-            Produktionssystem
+            Frontend
           </strong>
 
           <span>
-            Byggt och driftsatt ett eget boknings- och administrationssystem.
+            React, Next.js, TypeScript,
+            JavaScript, HTML och CSS.
           </span>
 
         </div>
 
-        <div class="proof-item">
+        <div class="value-card">
 
           <strong>
-            Automation
+            Backend
           </strong>
 
           <span>
-            Automatiserat bokning, dokumentation och administrativa kundflöden.
+            Node.js, Express,
+            REST API och serverlogik.
           </span>
 
         </div>
 
-        <div class="proof-item">
+        <div class="value-card">
 
           <strong>
-            Fullstack
+            Data & drift
           </strong>
 
           <span>
-            Frontend, backend, API, databaser och deployment.
+            Databaser, Docker,
+            Git, GitHub och deployment.
           </span>
 
         </div>
 
-        <div class="proof-item">
+        <div class="value-card">
 
           <strong>
-            Verkliga behov
+            Från idé till produkt
           </strong>
 
           <span>
-            Bygger vidare på lösningar när verksamheten och behoven utvecklas.
+            Krav, struktur, implementation,
+            felsökning och vidareutveckling.
           </span>
 
         </div>
@@ -1502,352 +1551,7 @@
 
     </section>
 
-    <!-- PROJEKT -->
-
-    <section
-      class="section"
-      id="projekt"
-    >
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <h2>
-            Utvalda projekt
-          </h2>
-
-          <p>
-            Projekten visar hur jag har utvecklats från mitt första
-            dokumentationsverktyg till kompletta produktionssystem
-            med automation, affärslogik, frontend, backend,
-            databas och deployment.
-          </p>
-
-        </div>
-
-        <div class="grid">
-
-          <!-- OFFROAD BUMPIS -->
-
-          <article class="card featured">
-
-            <span class="tag">
-              Produktionssystem · Aktivt
-            </span>
-
-            <h3>
-              Offroad Bumpis Booking
-            </h3>
-
-            <p>
-              Mitt eget boknings- och administrationssystem för
-              uthyrningsverksamheten Offroad Bumpis.
-              Jag byggde systemet för att automatisera ett flöde
-              som tidigare krävde manuella bokningsbekräftelser
-              och administration via e-post.
-            </p>
-
-            <p style="margin-top:12px;">
-              Systemet hanterar bland annat bokningar,
-              lager och tillgänglighet, kunddata,
-              betalningsstatus och rabattkoder.
-              Samma dokumentationsprincip som jag först utvecklade
-              i Safe Standard är nu integrerad direkt i bokningsflödet:
-              <strong>villkor, avtal, checklista vid överlämning och retur
-              samt skadefaktura vid behov.</strong>
-            </p>
-
-            <div class="tech">
-
-              <span class="chip">
-                Node.js
-              </span>
-
-              <span class="chip">
-                Express
-              </span>
-
-              <span class="chip">
-                JavaScript
-              </span>
-
-              <span class="chip">
-                Databas
-              </span>
-
-              <span class="chip">
-                Automation
-              </span>
-
-              <span class="chip">
-                PDF-flöden
-              </span>
-
-              <span class="chip">
-                Render
-              </span>
-
-            </div>
-
-            <div class="project-links">
-
-              <a
-                href="https://offroad-bumpis-booking.onrender.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Öppna live
-              </a>
-
-              <a
-                href="https://github.com/EricaNordlof/offroad-bumpis-booking"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-
-            </div>
-
-          </article>
-
-          <!-- FASTIGHETSNAVET -->
-
-          <article class="card">
-
-            <span class="tag">
-              Fullstack · Live
-            </span>
-
-            <h3>
-              Fastighetsnavet
-            </h3>
-
-            <p>
-              Ett svenskt Property Management System för fastighetsförvaltning.
-              Systemet samlar fastigheter, hyresgäster, felanmälningar,
-              arbetsorder och administration i ett gemensamt gränssnitt.
-            </p>
-
-            <div class="tech">
-
-              <span class="chip">
-                React
-              </span>
-
-              <span class="chip">
-                TypeScript
-              </span>
-
-              <span class="chip">
-                Node.js
-              </span>
-
-              <span class="chip">
-                REST API
-              </span>
-
-              <span class="chip">
-                Databas
-              </span>
-
-              <span class="chip">
-                Docker
-              </span>
-
-              <span class="chip">
-                Render
-              </span>
-
-            </div>
-
-            <div class="project-links">
-
-              <a
-                class="primary-link"
-                href="https://fastighetsnavet-1.onrender.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Öppna Fastighetsnavet
-              </a>
-
-              <a
-                href="https://github.com/EricaNordlof/fastighetsnavet"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-
-            </div>
-
-          </article>
-
-          <!-- SAFE STANDARD -->
-
-          <article class="card">
-
-            <span class="tag">
-              Mitt första projekt · Gratis
-            </span>
-
-            <h3>
-              Safe Standard
-            </h3>
-
-            <p>
-              Safe Standard var mitt första större egna projekt.
-              Jag byggde det för att skapa en tydlig dokumentationskedja
-              vid direktuthyrning med villkor, avtal,
-              överlämning, checklista, bilder och skadedokumentation.
-            </p>
-
-            <p style="margin-top:12px;">
-              Jag använder inte längre Safe Standard själv i min
-              uthyrningsverksamhet eftersom jag senare byggde
-              <strong>Offroad Bumpis Booking</strong> och automatiserade
-              samma princip direkt i det egna bokningssystemet.
-              Där slipper jag nu manuella mejlbekräftelser och får
-              bokning och dokumentation i ett sammanhängande flöde.
-            </p>
-
-            <p style="margin-top:12px;">
-              Safe Standard finns fortfarande kvar som ett
-              <strong>gratis portfolio-projekt</strong> och visar
-              ett tidigt steg i hur jag arbetar:
-              identifiera ett verkligt problem, bygga en lösning
-              och sedan vidareutveckla konceptet när behoven förändras.
-            </p>
-
-            <div class="tech">
-
-              <span class="chip">
-                JavaScript
-              </span>
-
-              <span class="chip">
-                Webbapp
-              </span>
-
-              <span class="chip">
-                Workflow
-              </span>
-
-              <span class="chip">
-                Dokumentation
-              </span>
-
-              <span class="chip">
-                Produktutveckling
-              </span>
-
-            </div>
-
-            <div class="project-links">
-
-              <a
-                class="primary-link"
-                href="https://safestandard.se/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Öppna gratis
-              </a>
-
-              <a
-                href="https://safe-standard-app-git.pages.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Öppna appen
-              </a>
-
-            </div>
-
-          </article>
-
-          <!-- HANSEN -->
-
-          <article class="card">
-
-            <span class="tag">
-              Frontend
-            </span>
-
-            <h3>
-              Hansen Bygg & Grönt
-            </h3>
-
-            <p>
-              Företagswebb för bygg, snickeri och trädgård.
-              Byggd med fokus på tydlig struktur, responsiv design,
-              användarvänlighet och enkel kontaktväg.
-            </p>
-
-            <div class="tech">
-
-              <span class="chip">
-                HTML
-              </span>
-
-              <span class="chip">
-                CSS
-              </span>
-
-              <span class="chip">
-                JavaScript
-              </span>
-
-              <span class="chip">
-                Responsive
-              </span>
-
-            </div>
-
-            <div class="project-links">
-
-              <a
-                class="primary-link"
-                href="https://hansen-byggochgront.se/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Öppna live
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
-        <div class="hero-actions">
-
-          <a
-            class="btn btn-primary"
-            href="/projekt.html"
-          >
-            Se alla projekt
-          </a>
-
-          <a
-            class="btn btn-secondary"
-            href="https://github.com/EricaNordlof"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Se hela GitHub
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- TEKNIK -->
+    <!-- FULLSTACK -->
 
     <section class="section">
 
@@ -1855,67 +1559,389 @@
 
         <div class="section-head">
 
-          <h2>
-            Teknik jag arbetar med
+          <span class="eyebrow">
+            Min fullstack
+          </span>
+
+          <h2 style="margin-top:16px;">
+            Tekniken jag arbetar med.
           </h2>
 
           <p>
-            Jag arbetar brett inom fullstackutveckling och gillar framför allt
-            att förstå hur frontend, backend, data, automation
-            och verksamhetslogik hänger ihop.
+            Jag arbetar över hela stacken och tycker om
+            att förstå hur gränssnitt, backend,
+            data och infrastruktur hänger ihop.
           </p>
 
         </div>
 
-        <div class="skills">
+        <div class="stack-grid">
 
-          <div class="skill-box">
+          <article class="stack-card">
 
-            <strong>
-              Frontend
-            </strong>
-
-            <span>
-              JavaScript, TypeScript, React, Next.js, HTML och CSS.
+            <span class="stack-number">
+              01 · FRONTEND
             </span>
+
+            <h3>
+              Gränssnitt
+            </h3>
+
+            <p>
+              Responsiva och användbara gränssnitt
+              för webbapplikationer och digitala tjänster.
+            </p>
+
+            <div class="tech-list">
+
+              <span class="tech-chip">
+                JavaScript
+              </span>
+
+              <span class="tech-chip">
+                TypeScript
+              </span>
+
+              <span class="tech-chip">
+                React
+              </span>
+
+              <span class="tech-chip">
+                Next.js
+              </span>
+
+              <span class="tech-chip">
+                HTML
+              </span>
+
+              <span class="tech-chip">
+                CSS
+              </span>
+
+            </div>
+
+          </article>
+
+          <article class="stack-card">
+
+            <span class="stack-number">
+              02 · BACKEND
+            </span>
+
+            <h3>
+              Server & API
+            </h3>
+
+            <p>
+              Backendlogik, API:er,
+              autentisering och funktioner
+              som driver applikationen.
+            </p>
+
+            <div class="tech-list">
+
+              <span class="tech-chip">
+                Node.js
+              </span>
+
+              <span class="tech-chip">
+                Express
+              </span>
+
+              <span class="tech-chip">
+                REST API
+              </span>
+
+              <span class="tech-chip">
+                JWT
+              </span>
+
+              <span class="tech-chip">
+                Java
+              </span>
+
+            </div>
+
+          </article>
+
+          <article class="stack-card">
+
+            <span class="stack-number">
+              03 · DATA
+            </span>
+
+            <h3>
+              Databaser
+            </h3>
+
+            <p>
+              Datamodellering och lagring
+              för system där information
+              behöver struktureras och kopplas ihop.
+            </p>
+
+            <div class="tech-list">
+
+              <span class="tech-chip">
+                MongoDB
+              </span>
+
+              <span class="tech-chip">
+                MySQL
+              </span>
+
+              <span class="tech-chip">
+                SQL
+              </span>
+
+              <span class="tech-chip">
+                Datamodellering
+              </span>
+
+            </div>
+
+          </article>
+
+          <article class="stack-card">
+
+            <span class="stack-number">
+              04 · DEVOPS
+            </span>
+
+            <h3>
+              Drift & utvecklingsflöde
+            </h3>
+
+            <p>
+              Versionshantering, containers,
+              deployment och tekniska arbetsflöden
+              runt applikationen.
+            </p>
+
+            <div class="tech-list">
+
+              <span class="tech-chip">
+                Docker
+              </span>
+
+              <span class="tech-chip">
+                Git
+              </span>
+
+              <span class="tech-chip">
+                GitHub
+              </span>
+
+              <span class="tech-chip">
+                Render
+              </span>
+
+              <span class="tech-chip">
+                CI/CD
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- VAD JAG KAN BYGGA -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            Praktisk utveckling
+          </span>
+
+          <h2 style="margin-top:16px;">
+            Jag bygger mer än bara en snygg frontend.
+          </h2>
+
+          <p>
+            Jag trivs bäst när jag får förstå
+            det faktiska behovet och sedan bygga
+            en lösning som fungerar som en helhet.
+          </p>
+
+        </div>
+
+        <div class="services">
+
+          <article class="service">
+
+            <div class="service-icon">
+              01
+            </div>
+
+            <h3>
+              Webbapplikationer
+            </h3>
+
+            <p>
+              Kompletta webbapplikationer med
+              responsiv frontend, backend,
+              data och användarflöden.
+            </p>
+
+          </article>
+
+          <article class="service">
+
+            <div class="service-icon">
+              02
+            </div>
+
+            <h3>
+              API & systemlogik
+            </h3>
+
+            <p>
+              API:er, autentisering,
+              affärsregler, statusflöden
+              och integration mellan systemets delar.
+            </p>
+
+          </article>
+
+          <article class="service">
+
+            <div class="service-icon">
+              03
+            </div>
+
+            <h3>
+              Automation
+            </h3>
+
+            <p>
+              Digitalisering av manuella processer,
+              dokumentflöden och arbetsmoment
+              som kan förenklas med kod.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROJEKT CTA -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="portfolio-panel">
+
+          <div>
+
+            <span class="eyebrow">
+              Portfolio
+            </span>
+
+            <h2 style="margin-top:16px;">
+              Se vad jag faktiskt har byggt.
+            </h2>
+
+            <p>
+              På projektsidan finns mina
+              fullstack-, frontend-, backend-
+              och portfolio-case samlade,
+              med liveversioner, teknikstack
+              och länkar till GitHub.
+            </p>
 
           </div>
 
-          <div class="skill-box">
+          <div>
 
-            <strong>
-              Backend
-            </strong>
-
-            <span>
-              Node.js, Express, REST API, affärslogik och Java.
-            </span>
-
-          </div>
-
-          <div class="skill-box">
-
-            <strong>
-              Data & infra
-            </strong>
-
-            <span>
-              MongoDB, MySQL, databaser, Docker, Git, GitHub och Render.
-            </span>
+            <a
+              class="btn"
+              href="/projekt.html"
+            >
+              Se alla projekt →
+            </a>
 
           </div>
 
-          <div class="skill-box">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- HUR JAG ARBETAR -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            Så arbetar jag
+          </span>
+
+          <h2 style="margin-top:16px;">
+            Praktiskt, självständigt och lösningsorienterat.
+          </h2>
+
+        </div>
+
+        <div class="work-grid">
+
+          <article class="work-card">
 
             <strong>
-              Automation & flöden
+              Jag börjar med problemet
             </strong>
 
-            <span>
-              Bokningslogik, dokumentflöden, PDF, statusflöden, testning och deployment.
-            </span>
+            <p>
+              Jag försöker förstå behovet
+              innan jag bestämmer hur lösningen
+              ska byggas tekniskt.
+            </p>
 
-          </div>
+          </article>
+
+          <article class="work-card">
+
+            <strong>
+              Jag bygger hela flödet
+            </strong>
+
+            <p>
+              Jag kan arbeta mellan frontend,
+              backend, data och deployment
+              i samma produkt.
+            </p>
+
+          </article>
+
+          <article class="work-card">
+
+            <strong>
+              Jag förbättrar vidare
+            </strong>
+
+            <p>
+              Jag ser en första version
+              som början på processen,
+              inte slutpunkten.
+            </p>
+
+          </article>
 
         </div>
 
@@ -1934,16 +1960,21 @@
           <div>
 
             <h2>
-              Jag söker nästa utvecklarroll.
+              Söker du en utvecklare som kan se hela bilden?
             </h2>
 
             <p>
-              Jag är intresserad av roller inom fullstack-, frontend-,
-              backend- och systemutveckling.
-              Jag söker både heltid, deltid och andra relevanta upplägg
-              där jag får bygga praktiskt, automatisera processer,
-              lösa problem och fortsätta utvecklas.
-              Malmöregionen och distans är särskilt intressant.
+              Jag är intresserad av roller inom
+              fullstack-, frontend-, backend-
+              och systemutveckling.
+
+              Jag söker framför allt möjligheter
+              där jag får bygga praktiskt,
+              lösa verkliga problem
+              och fortsätta utvecklas.
+
+              Distans och Malmöregionen
+              är särskilt intressant.
             </p>
 
           </div>
@@ -1951,10 +1982,10 @@
           <div class="cta-actions">
 
             <a
-              class="btn btn-secondary"
-              href="/om-mig.html"
+              class="btn btn-primary"
+              href="mailto:nordloferica@gmail.com"
             >
-              Läs mer om mig
+              Kontakta mig
             </a>
 
             <a
@@ -1968,9 +1999,9 @@
 
             <a
               class="btn btn-secondary"
-              href="mailto:nordloferica@gmail.com"
+              href="/projekt.html"
             >
-              Kontakta mig
+              Portfolio
             </a>
 
           </div>
@@ -1982,6 +2013,8 @@
     </section>
 
   </main>
+
+  <!-- FOOTER -->
 
   <footer>
 
@@ -2004,7 +2037,10 @@
         aria-label="Sidfot"
       >
 
-        <a href="/">
+        <a
+          href="/"
+          aria-current="page"
+        >
           Hem
         </a>
 
@@ -2014,14 +2050,6 @@
 
         <a href="/om-mig.html">
           Om mig
-        </a>
-
-        <a
-          href="https://fastighetsnavet-1.onrender.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Fastighetsnavet
         </a>
 
         <a
@@ -2047,16 +2075,31 @@
   </footer>
 
   <script>
+
     const menuButton =
-      document.getElementById("menuButton");
+      document.getElementById(
+        "menuButton"
+      );
 
     const menu =
-      document.getElementById("menu");
+      document.getElementById(
+        "menu"
+      );
 
     const menuBackdrop =
-      document.getElementById("menuBackdrop");
+      document.getElementById(
+        "menuBackdrop"
+      );
 
     function setMenu(open){
+
+      if(
+        !menuButton ||
+        !menu ||
+        !menuBackdrop
+      ){
+        return;
+      }
 
       menu.hidden = !open;
 
@@ -2073,7 +2116,7 @@
       );
     }
 
-    menuButton.addEventListener(
+    menuButton?.addEventListener(
       "click",
       () => {
 
@@ -2086,30 +2129,39 @@
       }
     );
 
-    menuBackdrop.addEventListener(
+    menuBackdrop?.addEventListener(
       "click",
-      () => setMenu(false)
+      () => {
+        setMenu(false);
+      }
     );
 
     menu
-      .querySelectorAll("a")
+      ?.querySelectorAll("a")
       .forEach(link => {
 
         link.addEventListener(
           "click",
-          () => setMenu(false)
+          () => {
+            setMenu(false);
+          }
         );
+
       });
 
     document.addEventListener(
       "keydown",
       event => {
 
-        if(event.key === "Escape"){
+        if(
+          event.key === "Escape"
+        ){
           setMenu(false);
         }
+
       }
     );
+
   </script>
 
 </body>
