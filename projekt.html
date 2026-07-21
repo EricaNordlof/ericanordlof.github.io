@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Projekt av Erica Nordlöf inom fullstack, AI, backend, embedded C++, edge deep learning, nätverk, blockchain, automation och säkerhet."
+    content="Projekt av Erica Nordlöf inom fullstack, Java, Spring Boot, AI, backend, embedded C++, nätverk, blockchain och automation."
   />
 
   <meta
@@ -34,7 +34,7 @@
 
   <meta
     property="og:description"
-    content="Fullstackprojekt och tekniska portfolio-case inom AI, backend, embedded C++, nätverk, blockchain och automation."
+    content="Fullstackprojekt och tekniska portfolio-case inom Java, AI, backend, embedded C++, nätverk, blockchain och automation."
   />
 
   <meta property="og:type" content="website" />
@@ -118,6 +118,13 @@
       },
       {
         "@type":"SoftwareApplication",
+        "name":"FlowForge Java Platform",
+        "applicationCategory":"DeveloperApplication",
+        "url":"https://flowforge-java-platform.onrender.com/",
+        "codeRepository":"https://github.com/EricaNordlof/flowforge-java-platform"
+      },
+      {
+        "@type":"SoftwareApplication",
         "name":"Offroad Bumpis Booking",
         "applicationCategory":"BusinessApplication",
         "url":"https://offroad-bumpis-booking.onrender.com/",
@@ -164,19 +171,12 @@
         "applicationCategory":"WebApplication",
         "url":"https://hansen-byggochgront.se/",
         "codeRepository":"https://github.com/EricaNordlof/hansen-byggochgront"
-      },
-      {
-        "@type":"SoftwareApplication",
-        "name":"Mini API",
-        "applicationCategory":"DeveloperApplication",
-        "codeRepository":"https://github.com/EricaNordlof/mini-api"
       }
     ]
   }
   </script>
 
   <style>
-
     :root{
       --bg:#f7eee9;
       --card:#fffdfc;
@@ -188,14 +188,8 @@
       --brand-dark:#9a5855;
       --brand-soft:#f4d8d5;
 
-      --dark:#131a24;
-      --dark-soft:#1a2635;
-
-      --shadow:
-        0 18px 50px rgba(154,88,85,.11);
-
-      --shadow-strong:
-        0 28px 70px rgba(154,88,85,.18);
+      --shadow:0 18px 50px rgba(154,88,85,.11);
+      --shadow-strong:0 28px 70px rgba(154,88,85,.18);
 
       --max:1120px;
     }
@@ -213,7 +207,6 @@
     body{
       margin:0;
       min-width:320px;
-
       font-family:Inter,sans-serif;
       color:var(--text);
 
@@ -302,9 +295,7 @@
     .brand{
       display:flex;
       align-items:center;
-
       gap:12px;
-
       font-weight:900;
     }
 
@@ -328,7 +319,6 @@
 
       font-size:17px;
       line-height:1.05;
-
       letter-spacing:-.03em;
     }
 
@@ -345,7 +335,6 @@
 
     .menu-button{
       min-height:46px;
-
       padding:12px 18px;
 
       border:0;
@@ -420,7 +409,6 @@
 
     .menu-links a::after{
       content:"→";
-
       color:var(--brand-dark);
     }
 
@@ -569,7 +557,6 @@
 
     .section-head{
       max-width:760px;
-
       margin-bottom:22px;
     }
 
@@ -655,6 +642,28 @@
         0 25px 65px rgba(5,19,36,.18);
     }
 
+    .project-java{
+      color:#fff;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(88,166,255,.17),
+          transparent 34%
+        ),
+        linear-gradient(
+          145deg,
+          #101820,
+          #182a3b
+        );
+
+      border-color:
+        rgba(88,166,255,.20);
+
+      box-shadow:
+        0 25px 65px rgba(15,28,42,.18);
+    }
+
     .type{
       display:inline-flex;
 
@@ -678,7 +687,8 @@
     }
 
     .project-featured .type,
-    .project-dark .type{
+    .project-dark .type,
+    .project-java .type{
       color:#fff;
 
       background:
@@ -696,7 +706,8 @@
     }
 
     .project-featured .description,
-    .project-dark .description{
+    .project-dark .description,
+    .project-java .description{
       color:
         rgba(255,255,255,.78);
     }
@@ -720,7 +731,8 @@
     }
 
     .project-featured .project-note,
-    .project-dark .project-note{
+    .project-dark .project-note,
+    .project-java .project-note{
       color:
         rgba(255,255,255,.78);
 
@@ -754,7 +766,8 @@
     }
 
     .project-featured .tech span,
-    .project-dark .tech span{
+    .project-dark .tech span,
+    .project-java .tech span{
       color:#fff;
 
       background:
@@ -813,13 +826,15 @@
     }
 
     .project-featured .btn-primary,
-    .project-dark .btn-primary{
+    .project-dark .btn-primary,
+    .project-java .btn-primary{
       background:#fff;
       color:#171412;
     }
 
     .project-featured .btn-secondary,
-    .project-dark .btn-secondary{
+    .project-dark .btn-secondary,
+    .project-java .btn-secondary{
       color:#fff;
 
       background:
@@ -977,7 +992,6 @@
       .cta-links{
         justify-content:flex-start;
       }
-
     }
 
     /* MOBILE */
@@ -985,8 +999,7 @@
     @media(max-width:700px){
 
       .container{
-        width:
-          calc(100% - 22px);
+        width:calc(100% - 22px);
       }
 
       .nav{
@@ -1038,13 +1051,11 @@
 
       .project{
         padding:20px;
-
         border-radius:22px;
       }
 
       .project-actions{
         display:grid;
-
         grid-template-columns:1fr;
       }
 
@@ -1074,17 +1085,13 @@
       .footer-links{
         justify-content:flex-start;
       }
-
     }
 
     @media(prefers-reduced-motion:reduce){
-
       html{
         scroll-behavior:auto;
       }
-
     }
-
   </style>
 </head>
 
@@ -1196,7 +1203,7 @@
       <div class="container hero-inner">
 
         <span class="eyebrow">
-          Portfolio · Fullstack · Teknik
+          Portfolio · Fullstack · Systemutveckling
         </span>
 
         <h1>
@@ -1206,15 +1213,18 @@
         <p class="lead">
           Från
           <strong>fullstacksystem för verklig verksamhet</strong>
-          till självständiga labb inom AI, embedded,
-          nätverk och blockchain.
-          Här finns projekten samlade utan mockups eller onödiga upprepningar.
+          till självständiga tekniska projekt inom Java,
+          AI, embedded, nätverk och blockchain.
         </p>
 
         <div
           class="summary"
           aria-label="Teknikområden"
         >
+
+          <span class="chip">
+            Java & Spring Boot
+          </span>
 
           <span class="chip">
             JavaScript & TypeScript
@@ -1241,10 +1251,6 @@
           </span>
 
           <span class="chip">
-            Linux & nätverk
-          </span>
-
-          <span class="chip">
             Docker & CI
           </span>
 
@@ -1267,8 +1273,8 @@
           </h2>
 
           <p>
-            Varje projekt visar ett eget område,
-            en fungerande lösning och den teknik jag arbetat med.
+            Fungerande system och tekniska case med fokus
+            på praktisk utveckling och problemlösning.
           </p>
 
         </div>
@@ -1296,8 +1302,6 @@
                 Fullstacksystem för fastighetsförvaltning med
                 fastigheter, hyresgäster, felanmälningar,
                 arbetsorder, relationsdata och autentisering.
-                Projektet kombinerar min tidigare erfarenhet
-                från fastighetsbranschen med systemutveckling.
               </p>
 
               <div class="tech">
@@ -1359,8 +1363,8 @@
                 </strong>
 
                 <span>
-                  Verkliga relationer mellan
-                  fastigheter, ärenden och arbetsorder.
+                  Relationer mellan fastigheter,
+                  ärenden och arbetsorder.
                 </span>
 
               </div>
@@ -1373,12 +1377,72 @@
 
                 <span>
                   Driftsatt applikation som går
-                  att öppna och testa direkt.
+                  att testa direkt.
                 </span>
 
               </div>
 
             </aside>
+
+          </article>
+
+          <!-- FLOWFORGE -->
+
+          <article
+            class="project project-java"
+            id="flowforge"
+          >
+
+            <span class="type">
+              Java · Systemutveckling
+            </span>
+
+            <h3>
+              FlowForge Java Platform
+            </h3>
+
+            <p class="description">
+              Fullstackprojekt med Java och Spring Boot
+              där arbetsärenden hanteras via REST API,
+              PostgreSQL och en JavaScript-frontend.
+              Innehåller validering, tester, Docker och CI.
+            </p>
+
+            <div class="tech">
+
+              <span>Java 21</span>
+              <span>Spring Boot</span>
+              <span>REST API</span>
+              <span>PostgreSQL</span>
+              <span>JPA</span>
+              <span>JavaScript</span>
+              <span>Maven</span>
+              <span>Docker</span>
+              <span>CI</span>
+
+            </div>
+
+            <div class="project-actions">
+
+              <a
+                class="btn btn-primary"
+                href="https://flowforge-java-platform.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Öppna live
+              </a>
+
+              <a
+                class="btn btn-secondary"
+                href="https://github.com/EricaNordlof/flowforge-java-platform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+
+            </div>
 
           </article>
 
@@ -1439,7 +1503,7 @@
 
           </article>
 
-          <!-- ENABLEFLOW AI -->
+          <!-- ENABLEFLOW -->
 
           <article
             class="project"
@@ -1457,8 +1521,8 @@
             <p class="description">
               AI Enablement-labb med RAG,
               återanvändbara AI-workflows,
-              modellabstraktion och fokus på
-              praktisk AI-användning i organisationer.
+              modellabstraktion och praktiska
+              AI-flöden för organisationer.
             </p>
 
             <div class="tech">
@@ -1513,15 +1577,13 @@
 
             <p class="description">
               C/C++-labb för edge inference med Linux/POSIX,
-              egen runtime-API, neural nätverksinferens,
-              prestandamätning och CPU-fallback
-              när en simulerad accelerator fallerar.
+              runtime-API, neural nätverksinferens,
+              prestandamätning och CPU-fallback.
             </p>
 
             <div class="project-note">
               Acceleratorn är simulerad för att demonstrera
-              integration, felhantering och fallback –
-              inte som påstående om verklig NPU-erfarenhet.
+              integration, felhantering och fallback.
             </div>
 
             <div class="tech">
@@ -1578,9 +1640,8 @@
 
             <p class="description">
               Nätverkslabb med redundant PE/P/CE-arkitektur,
-              routing- och VPN-koncept,
-              automation, validering och
-              simulerad incidenthantering.
+              routing- och VPN-koncept, automation,
+              validering och simulerad incidenthantering.
             </p>
 
             <div class="tech">
@@ -1692,10 +1753,9 @@
             </h3>
 
             <p class="description">
-              Ett tidigt större eget projekt
-              för att samla avtal, checklistor,
-              bilder och dokumentation kring
-              direktuthyrning i ett tydligare flöde.
+              Projekt för att samla avtal,
+              checklistor, bilder och dokumentation
+              kring direktuthyrning i ett tydligare flöde.
             </p>
 
             <div class="tech">
@@ -1748,10 +1808,9 @@
             </h3>
 
             <p class="description">
-              Responsiv företagswebb med fokus på
-              tydlig informationsstruktur,
-              mobil användning, navigation
-              och tillgänglighet.
+              Responsiv företagswebb med fokus
+              på informationsstruktur, mobil användning,
+              navigation och tillgänglighet.
             </p>
 
             <div class="tech">
@@ -1788,53 +1847,6 @@
 
           </article>
 
-          <!-- MINI API -->
-
-          <article
-            class="project"
-            id="mini-api"
-          >
-
-            <span class="type">
-              Backend · REST API
-            </span>
-
-            <h3>
-              Mini API
-            </h3>
-
-            <p class="description">
-              Mindre backendprojekt med
-              REST-struktur, databas,
-              dokumenterade endpoints
-              och containerisering.
-            </p>
-
-            <div class="tech">
-
-              <span>Java</span>
-              <span>Spring Boot</span>
-              <span>PostgreSQL</span>
-              <span>Swagger</span>
-              <span>Docker</span>
-
-            </div>
-
-            <div class="project-actions">
-
-              <a
-                class="btn btn-primary"
-                href="https://github.com/EricaNordlof/mini-api"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Se GitHub
-              </a>
-
-            </div>
-
-          </article>
-
         </div>
 
       </div>
@@ -1852,13 +1864,13 @@
           <div>
 
             <h2>
-              Från webbutveckling till bredare systemförståelse.
+              Fullstack med bredare systemförståelse.
             </h2>
 
             <p>
               Jag söker utvecklarroller där jag får bygga praktiskt,
               lösa verkliga problem och fortsätta utvecklas inom
-              fullstack, backend, AI och systemutveckling.
+              systemutveckling, backend, fullstack och AI.
             </p>
 
           </div>
@@ -1991,7 +2003,6 @@
         "menu-open",
         open
       );
-
     }
 
     menuButton?.addEventListener(
@@ -2004,7 +2015,6 @@
           ) !== "true";
 
         setMenu(open);
-
       }
     );
 
@@ -2021,7 +2031,6 @@
           "click",
           () => setMenu(false)
         );
-
       });
 
     document.addEventListener(
@@ -2031,7 +2040,6 @@
         if(event.key === "Escape"){
           setMenu(false);
         }
-
       }
     );
 
