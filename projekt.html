@@ -8,11 +8,11 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
 
-  <title>Projekt | Erica Nordlöf – Java, backend och fullstack</title>
+  <title>Projekt | Erica Nordlöf – Java, fullstack, nätverk och backend</title>
 
   <meta
     name="description"
-    content="Projekt av Erica Nordlöf inom Java, Spring Boot, React, TypeScript, API, databaser och Docker. Se riktiga fullstack- och backendprojekt."
+    content="Projekt av Erica Nordlöf inom Java, Spring Boot, fullstack, API, nätverk, Docker, Prometheus, Grafana, databaser och säkerhet."
   />
 
   <meta
@@ -37,12 +37,12 @@
 
   <meta
     property="og:title"
-    content="Projekt | Erica Nordlöf – Java, backend och fullstack"
+    content="Projekt | Erica Nordlöf – Java, fullstack, nätverk och backend"
   />
 
   <meta
     property="og:description"
-    content="Produktionssystem, verksamhetsplattformar, Java-projekt och säkerhetslösningar byggda av Erica Nordlöf."
+    content="Produktionssystem, Java-projekt, nätverkslabb, verksamhetsplattformar och säkerhetslösningar byggda av Erica Nordlöf."
   />
 
   <meta
@@ -72,12 +72,12 @@
 
   <meta
     name="twitter:title"
-    content="Projekt | Erica Nordlöf – Java, backend och fullstack"
+    content="Projekt | Erica Nordlöf – Java, fullstack, nätverk och backend"
   />
 
   <meta
     name="twitter:description"
-    content="Riktiga projekt inom Java, Spring Boot, React, API, databaser, säkerhet och Docker."
+    content="Projekt inom Java, Spring Boot, fullstack, API, nätverk, Docker, observability, säkerhet och databaser."
   />
 
   <meta
@@ -133,7 +133,7 @@
     "@type": "CollectionPage",
     "name": "Projekt – Erica Nordlöf",
     "url": "https://webutvecklare.se/projekt.html",
-    "description": "Utvalda projekt inom Java, backend, fullstackutveckling, API, databaser och säkerhet.",
+    "description": "Utvalda projekt inom Java, backend, fullstackutveckling, API, nätverk, observability, databaser och säkerhet.",
     "author": {
       "@type": "Person",
       "name": "Erica Nordlöf",
@@ -168,6 +168,14 @@
         "url": "https://flowforge-java-platform.onrender.com/",
         "codeRepository": "https://github.com/EricaNordlof/flowforge-java-platform",
         "description": "Java- och Spring Boot-plattform med REST API, PostgreSQL, validering, tester, Docker och CI."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Network Platform Lab",
+        "applicationCategory": "DeveloperApplication",
+        "url": "https://github.com/EricaNordlof/network-platform-lab",
+        "codeRepository": "https://github.com/EricaNordlof/network-platform-lab",
+        "description": "Testat nätverks- och plattformslabb med FRRouting, BGP, OSPF, Docker, FastAPI, Prometheus, Grafana, Ansible och automatiska CI-kontroller."
       },
       {
         "@type": "SoftwareApplication",
@@ -996,7 +1004,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(2, minmax(0, 1fr));
 
       gap: 15px;
     }
@@ -1584,7 +1592,7 @@
           </strong>
 
           <small>
-            Javautvecklare · Fullstackbakgrund
+            Blivande Javautvecklare · Fullstackbakgrund
           </small>
 
         </span>
@@ -1668,7 +1676,7 @@
       <div class="container hero-inner">
 
         <span class="eyebrow eyebrow-green">
-          Portfolio · Java · Backend · Fullstack
+          Portfolio · Java · Backend · Fullstack · Nätverk
         </span>
 
         <h1>
@@ -1677,13 +1685,14 @@
 
         <p class="lead">
           Mina projekt sträcker sig från bokningssystem
-          och fastighetsplattformar till Java-backend
-          och säkerhetskritiska applikationer.
+          och fastighetsplattformar till Java-backend,
+          nätverksinfrastruktur och säkerhetskritiska applikationer.
 
           Här visar jag inte bara vilka tekniker jag har använt,
           utan även vilka problem systemen löser,
           hur data och affärsregler hänger ihop
-          och hur lösningarna har byggts för verklig användning.
+          och hur lösningarna har byggts, testats
+          och körts i praktiken.
         </p>
 
         <div
@@ -1713,6 +1722,10 @@
 
           <span class="summary-chip">
             Docker och CI/CD
+          </span>
+
+          <span class="summary-chip">
+            Nätverk och observability
           </span>
 
           <span class="summary-chip">
@@ -1784,9 +1797,9 @@
 
             <p>
               Jag delar upp lösningen mellan frontend,
-              backend, databas och externa tjänster.
+              backend, databas, nätverk och externa tjänster.
 
-              Målet är kod som går att förstå,
+              Målet är kod och infrastruktur som går att förstå,
               bygga vidare på och felsöka.
             </p>
 
@@ -1806,8 +1819,8 @@
               Ett projekt är inte färdigt bara för att det fungerar lokalt.
 
               Jag arbetar även med deployment,
-              loggar, Docker, Git, dokumentation
-              och förbättringar efter verklig användning.
+              övervakning, loggar, Docker,
+              Git, dokumentation och testning.
             </p>
 
           </article>
@@ -2052,13 +2065,14 @@
           </span>
 
           <h2 style="margin-top: 16px;">
-            Verksamhetssystem, Java och säkerhet.
+            Verksamhetssystem, Java, nätverk och säkerhet.
           </h2>
 
           <p>
             Projekten kompletterar varandra
             och visar erfarenhet av fullstackutveckling,
             Java-backend, databaser,
+            nätverk, observability,
             autentisering och säkerhetskritiska flöden.
           </p>
 
@@ -2257,6 +2271,97 @@
                 rel="noopener noreferrer"
               >
                 Se GitHub
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- NETWORK PLATFORM LAB -->
+
+          <article
+            class="project-card project-dark"
+            id="network-platform-lab"
+          >
+
+            <span class="project-label">
+              Nätverk · Platform Engineering · Observability
+            </span>
+
+            <h3>
+              Network Platform Lab
+            </h3>
+
+            <p>
+              Ett lokalt nätverks- och plattformslabb
+              med två virtuella edge-routrar,
+              dynamisk routing, infrastruktur-API,
+              övervakning och automatiserade kontroller.
+            </p>
+
+            <div class="project-section">
+
+              <strong>
+                Problemet
+              </strong>
+
+              <p>
+                Flera nätverk och tjänster behöver kunna
+                kommunicera stabilt, utbyta routes
+                och övervakas från en gemensam plattform.
+              </p>
+
+            </div>
+
+            <div class="project-section">
+
+              <strong>
+                Vad projektet visar
+              </strong>
+
+              <p>
+                Praktisk förståelse för Linux-nätverk,
+                BGP, OSPF, Docker Compose,
+                API:er, övervakning, felsökning och CI.
+              </p>
+
+            </div>
+
+            <div class="quality-box">
+
+              <strong>
+                Verifierat lokalt:
+              </strong>
+
+              BGP-session etablerad mellan AS65001 och AS65002,
+              OSPF-grannskap i Full-läge,
+              routes utbytta mellan Malmö och London
+              samt samtliga Prometheus-mål uppe.
+            </div>
+
+            <div class="tech">
+
+              <span>FRRouting</span>
+              <span>BGP</span>
+              <span>OSPF</span>
+              <span>Docker</span>
+              <span>FastAPI</span>
+              <span>Prometheus</span>
+              <span>Grafana</span>
+              <span>Ansible</span>
+              <span>GitHub Actions</span>
+
+            </div>
+
+            <div class="project-actions">
+
+              <a
+                class="btn btn-primary"
+                href="https://github.com/EricaNordlof/network-platform-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Se projektet
               </a>
 
             </div>
@@ -2521,7 +2626,7 @@
               som bäst representerar min nuvarande profil:
               verkliga verksamhetsproblem,
               fullstackutveckling, Java,
-              backend och säkerhet.
+              backend, nätverk, observability och säkerhet.
 
               Fler projekt och kodhistorik
               finns på min publika GitHub-profil.
@@ -2565,7 +2670,8 @@
               Jag bygger redan nu relationer med företag
               inför framtida LIA och juniora roller
               inom Java, backend,
-              systemutveckling och fullstackutveckling.
+              systemutveckling, fullstackutveckling
+              och tekniska plattformar.
 
               Malmö, Skåne och distans är särskilt relevant.
             </p>
@@ -2621,7 +2727,7 @@
 
         <br>
 
-        Javautvecklare · Fullstackbakgrund · Malmö
+        Blivande Javautvecklare · Fullstackbakgrund · Malmö
 
       </div>
 
